@@ -358,6 +358,13 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
 .ctquick__news-btn:disabled {
   background: rgba(11,10,8,.16); color: var(--ink-3); cursor: not-allowed;
 }
+.ctquick__news-done {
+  margin-top: auto;
+  padding: 14px 16px; border-radius: 8px;
+  background: rgba(31,143,75,.1); color: #1F8F4B;
+  font-family: var(--f-mono); font-size: 13px; letter-spacing: .02em;
+  border: 1px solid rgba(31,143,75,.25);
+}
 
 @media (max-width: 920px) {
   .ctquick__grid { grid-template-columns: 1fr; }

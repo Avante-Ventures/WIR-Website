@@ -46,13 +46,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Styles -->
-<link rel="stylesheet" href="style.css?v=20260429p" />
-<link rel="stylesheet" href="home.css?v=20260429p" />
-<link rel="stylesheet" href="solutions.css?v=20260429p" />
-<link rel="stylesheet" href="about.css?v=20260429p" />
-<link rel="stylesheet" href="blog.css?v=20260429p" />
-<link rel="stylesheet" href="contact.css?v=20260429p" />
-<link rel="stylesheet" href="data-protection.css?v=20260429p" />
+<link rel="stylesheet" href="style.css?v=20260429q" />
+<link rel="stylesheet" href="home.css?v=20260429q" />
+<link rel="stylesheet" href="solutions.css?v=20260429q" />
+<link rel="stylesheet" href="about.css?v=20260429q" />
+<link rel="stylesheet" href="blog.css?v=20260429q" />
+<link rel="stylesheet" href="contact.css?v=20260429q" />
+<link rel="stylesheet" href="data-protection.css?v=20260429q" />
 
 <!-- Structured data for SEO / GEO (ChatGPT, Perplexity) -->
 <script type="application/ld+json">
@@ -88,12 +88,12 @@
        is designed for browser use, protected by RLS policies).            -->
   <script>
     window.WIR_CONFIG = {
-      // Supabase (recommended primary): create project at supabase.com, then:
-      //   1) Run the SQL in /docs/setup-supabase.sql to create the leads table
-      //   2) Settings → API → copy "Project URL" and "anon public" key below
-      supabaseUrl:     "",  // e.g. "https://abcd1234.supabase.co"
-      supabaseAnonKey: "",  // public anon key (safe to expose, RLS-protected)
+      // Supabase: project cthpptndtxwqdvxfblpd · tables: leads + newsletter_subs
+      // Publishable key is safe to expose (RLS allows insert-only from anon)
+      supabaseUrl:     "https://cthpptndtxwqdvxfblpd.supabase.co",
+      supabaseAnonKey: "sb_publishable_PzCTzPWED6o5wwfoGDde0A_aGrFRqpZ",
       leadsTable:      "leads",
+      newsletterTable: "newsletter_subs",
 
       // Optional: webhook fired in parallel (n8n / Make / Zapier / Slack incoming)
       // Use this for instant notifications, not as primary storage.
@@ -105,16 +105,16 @@
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-  <script type="text/babel" src="src/shared.jsx?v=20260429p"></script>
-  <script type="text/babel" src="src/home-opening.jsx?v=20260429p"></script>
-  <script type="text/babel" src="src/home-shift.jsx?v=20260429p"></script>
-  <script type="text/babel" src="src/home-how.jsx?v=20260429p"></script>
-  <script type="text/babel" src="src/home.jsx?v=20260429p"></script>
-  <script type="text/babel" src="src/solutions.jsx?v=20260429p"></script>
-  <script type="text/babel" src="src/about.jsx?v=20260429p"></script>
-  <script type="text/babel" src="src/blog.jsx?v=20260429p"></script>
-  <script type="text/babel" src="src/contact.jsx?v=20260429p"></script>
-  <script type="text/babel" src="src/data-protection.jsx?v=20260429p"></script>
-  <script type="text/babel" src="src/app.jsx?v=20260429p"></script>
+  <script type="text/babel" src="src/shared.jsx?v=20260429q"></script>
+  <script type="text/babel" src="src/home-opening.jsx?v=20260429q"></script>
+  <script type="text/babel" src="src/home-shift.jsx?v=20260429q"></script>
+  <script type="text/babel" src="src/home-how.jsx?v=20260429q"></script>
+  <script type="text/babel" src="src/home.jsx?v=20260429q"></script>
+  <script type="text/babel" src="src/solutions.jsx?v=20260429q"></script>
+  <script type="text/babel" src="src/about.jsx?v=20260429q"></script>
+  <script type="text/babel" src="src/blog.jsx?v=20260429q"></script>
+  <script type="text/babel" src="src/contact.jsx?v=20260429q"></script>
+  <script type="text/babel" src="src/data-protection.jsx?v=20260429q"></script>
+  <script type="text/babel" src="src/app.jsx?v=20260429q"></script>
 </body>
 </html>

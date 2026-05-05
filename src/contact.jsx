@@ -413,14 +413,52 @@ Enviado pelo formulário do site wirinnovation.ai`;
 function ContactQuickChannels() {
   const [email, setEmail] = React.useState("");
   const [honey, setHoney] = React.useState(""); // anti-bot honeypot
+  const [newsState, setNewsState] = React.useState("idle"); // idle | sending | done | error
   const waNumber = "5511981757505"; // Nicholas Weiser · BR
   const waText = encodeURIComponent("Olá Nicholas, vim pelo site da WIR Innovation. Gostaria de conversar sobre…");
   const waHref = `https://wa.me/${waNumber}?text=${waText}`;
 
   const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const newsHref = validEmail
-    ? `mailto:nicholas@wirinnovation.ai?subject=${encodeURIComponent("Newsletter signup")}&body=${encodeURIComponent("Inscreva-me na newsletter da WIR Innovation.\n\nE-mail: " + email)}`
-    : null;
+
+  const submitNewsletter = async (e) => {
+    e.preventDefault();
+    if (honey) return; // bot trap
+    if (!validEmail) return;
+    setNewsState("sending");
+
+    const cfg = window.WIR_CONFIG || {};
+    const payload = { email, source: "website", page: "/contact", submitted_at: new Date().toISOString() };
+    let ok = false;
+
+    if (cfg.supabaseUrl && cfg.supabaseAnonKey) {
+      try {
+        const res = await fetch(`${cfg.supabaseUrl}/rest/v1/${cfg.newsletterTable || "newsletter_subs"}`, {
+          method: "POST",
+          headers: {
+            "Content-Type":  "application/json",
+            "apikey":        cfg.supabaseAnonKey,
+            "Authorization": `Bearer ${cfg.supabaseAnonKey}`,
+            "Prefer":        "return=minimal",
+          },
+          body: JSON.stringify(payload),
+        });
+        // 201 = created · 409 = duplicate email (already subscribed) — both count as success
+        ok = res.ok || res.status === 409;
+      } catch (err) {
+        console.warn("Newsletter insert failed", err);
+      }
+    }
+
+    if (ok) {
+      setNewsState("done");
+      setEmail("");
+    } else {
+      // Fallback to mailto so signup still reaches us
+      const href = `mailto:nicholas@wirinnovation.ai?subject=${encodeURIComponent("Newsletter signup")}&body=${encodeURIComponent("Inscreva-me na newsletter da WIR Innovation.\n\nE-mail: " + email)}`;
+      window.location.href = href;
+      setNewsState("error");
+    }
+  };
 
   return (
     <section className="ctquick">
@@ -432,12 +470,7 @@ function ContactQuickChannels() {
             <div className="ctquick__d">Resposta rápida pelo celular do nosso CEO. Para quem prefere conversa imediata em vez de formulário.</div>
             <span className="ctquick__cta">Abrir conversa <span className="btn__arrow">→</span></span>
           </a>
-          <form className="ctquick__card ctquick__card--news"
-            onSubmit={(e) => {
-              e.preventDefault();
-              if (honey) return; // bot trap
-              if (newsHref) window.location.href = newsHref;
-            }}>
+          <form className="ctquick__card ctquick__card--news" onSubmit={submitNewsletter}>
             <input type="text" name="company_url" tabIndex="-1" autoComplete="off"
               value={honey} onChange={(e) => setHoney(e.target.value)}
               aria-hidden="true"
@@ -445,14 +478,21 @@ function ContactQuickChannels() {
             <div className="ctquick__k">· Newsletter</div>
             <div className="ctquick__t display">Receba o que <em>publicamos.</em></div>
             <div className="ctquick__d">Análises sobre IA aplicada ao setor segurador. Sem spam, sem agenda comercial — só o que produzimos de conteúdo.</div>
-            <div className="ctquick__form">
-              <input type="email" required value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="seu@email.com" aria-label="Seu e-mail"/>
-              <button type="submit" className="ctquick__news-btn" disabled={!validEmail}>
-                Inscrever <span className="btn__arrow">→</span>
-              </button>
-            </div>
+            {newsState === "done" ? (
+              <div className="ctquick__news-done">
+                ✓ Inscrição recebida. Você receberá os próximos Insights.
+              </div>
+            ) : (
+              <div className="ctquick__form">
+                <input type="email" required value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="seu@email.com" aria-label="Seu e-mail"
+                  disabled={newsState === "sending"}/>
+                <button type="submit" className="ctquick__news-btn" disabled={!validEmail || newsState === "sending"}>
+                  {newsState === "sending" ? "Enviando…" : "Inscrever"} <span className="btn__arrow">→</span>
+                </button>
+              </div>
+            )}
           </form>
         </div>
       </div>
