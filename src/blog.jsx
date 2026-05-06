@@ -55,8 +55,8 @@ function BlogHero({ go }) {
         <article className="blhero__feature is-clickable" onClick={open} role="link" tabIndex={0}
           onKeyDown={(e)=>{ if(e.key==="Enter") open(); }}>
           <div className="blhero__feature-img"
-            style={hero.img
-              ? { backgroundImage: `linear-gradient(180deg, rgba(11,10,8,0.15), rgba(11,10,8,0.65)), url(${hero.img})`, backgroundSize: "cover", backgroundPosition: "center" }
+            style={hero.image
+              ? { backgroundImage: `linear-gradient(180deg, rgba(11,10,8,0.15), rgba(11,10,8,0.65)), url(${hero.image})`, backgroundSize: "cover", backgroundPosition: "center" }
               : { background: hero.grad }}>
             <span className="blhero__feature-label">· {hero.cat.toLowerCase()} · editorial</span>
           </div>
@@ -121,8 +121,8 @@ function BlogGrid({ posts, go }) {
                   onClick={() => open(p.slug)} role="link" tabIndex={0}
                   onKeyDown={(e)=>{ if(e.key==="Enter") open(p.slug); }}>
                   <div className="blpost__img"
-                    style={p.img
-                      ? { backgroundImage: `linear-gradient(180deg, rgba(11,10,8,0.2), rgba(11,10,8,0.7)), url(${p.img})`, backgroundSize: "cover", backgroundPosition: "center" }
+                    style={p.image
+                      ? { backgroundImage: `linear-gradient(180deg, rgba(11,10,8,0.2), rgba(11,10,8,0.7)), url(${p.image})`, backgroundSize: "cover", backgroundPosition: "center" }
                       : { background: p.grad }}>
                     <span className="blpost__img-label">{p.cat}</span>
                     <span className="blpost__img-meta">· {p.time}</span>

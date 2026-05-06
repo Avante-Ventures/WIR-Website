@@ -4,9 +4,12 @@ const ARTICLES = [
   {
     slug: "o-underwriter-nao-morre",
     cat: "Ensaio", hero: true, grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80&auto=format&fit=crop",
+    imageAlt: "Underwriter analisando documentos em mesa de trabalho",
     title: "O underwriter não morre. O modelo operacional dele, sim.",
     sub: "Por que a próxima década do seguro vai ser definida pela divisão entre quem tem infraestrutura de decisão e quem ainda mora em planilha.",
     author: "Nicholas Weiser", role: "CEO · Co-Founder",
+    authorPhoto: "assets/team/nicholas.jpg",
     time: "12 min", date: "18 · Abr · 2026",
     metaDesc: "A IA não substitui underwriters — substitui os 80% do trabalho que não é underwriting. Como o setor segurador brasileiro vai se dividir.",
     body: `Há um debate que consome conferências, painéis e LinkedIn no setor segurador brasileiro: a IA vai substituir o underwriter?
@@ -18,6 +21,8 @@ A pergunta é errada.
 A IA não substitui o underwriter. A IA substitui os 80% do trabalho do underwriter que não é underwriting — o intake manual de submissões, a extração repetitiva de dados de PDFs, o ping-pong com corretora pedindo a mesma informação três vezes, a planilha rabiscada em paralelo, o e-mail de "qual é a apólice mãe?" enviado às 19h da terça-feira.
 
 E é exatamente por isso que o setor vai se dividir em dois: as seguradoras que reorganizaram a operação em torno desse princípio, e as que ainda estão tentando fazer 47 cotações por dia com o mesmo time, no mesmo Excel, com o mesmo CRM de 2014.
+
+> A IA não substitui o underwriter. A IA substitui os 80% do trabalho dele que não é underwriting.
 
 ### A pergunta errada
 
@@ -41,7 +46,7 @@ No meio disso, atender à reunião de pipeline com diretoria às 10h, voltar pra
 
 Às 18h, ele cotou três riscos. Tem 12 na fila. A diretoria pergunta por que o ciclo de cotação está em 11 dias quando o concorrente cota em 5.
 
-Em entrevistas com underwriters seniores em mais de uma dúzia de seguradoras e corretoras corporativas brasileiras, a resposta é consistente: 15% julgamento, 85% operação.
+Em entrevistas com underwriters seniores em mais de uma dúzia de seguradoras e corretoras corporativas brasileiras, a resposta é consistente: 15% julgamento, 85% operação. O mercado segurador brasileiro fechou 2024 com prêmios de R$ 415 bilhões segundo a [CNseg](https://cnseg.org.br) — e ainda assim o ciclo médio de cotação corporativa em Tier-1 está acima de 7 dias úteis.
 
 ### O que a IA realmente substitui
 
@@ -63,11 +68,11 @@ O resultado: o mesmo underwriter que cotava 3 riscos por dia agora pode processa
 
 Em operações reais que acompanhamos no setor durante 2025 e 2026, o padrão se repete. Throughput por underwriter aumenta entre 4× e 7×. O lead time da cotação cai entre 70% e 90%. A taxa de conversão sobe entre 15% e 35%. O loss ratio fica estável ou marginalmente melhor. O custo de DA por apólice emitida cai entre 40% e 60%.
 
-Uma corretora que processava 800 cotações por mês com 6 underwriters passa a processar 3.000 com os mesmos 6 — sem aumentar headcount, sem reescrever o core, sem renegociar resseguro.
+Uma corretora que processava 800 cotações por mês com 6 underwriters passa a processar 3.000 com os mesmos 6 — sem aumentar headcount, sem reescrever o core, sem renegociar resseguro. O detalhe está descrito no [estudo de caso da implementação Mahway](#blog/caso-implementacao-mahway).
 
 ### A divergência de capacidade
 
-Em mercados onde a infraestrutura está madura, o efeito sobre o ranking competitivo é brutal. Seguradoras com infra de decisão ganham RFPs que seguradoras sem infra nem sabiam estar disponíveis: o corretor precisa de cotação em 2 horas para fechar com um cliente que já está com a concorrência na linha. Quem tem infra responde. Quem não tem, perde a deal antes mesmo de saber que existia.
+Em mercados onde a infraestrutura está madura, o efeito sobre o ranking competitivo é brutal. Operações como [Lemonade](https://www.lemonade.com), [Federato](https://www.federato.ai) e seguradoras Tier-1 norte-americanas com infra de decisão ganham RFPs que seguradoras sem infra nem sabiam estar disponíveis: o corretor precisa de cotação em 2 horas para fechar com um cliente que já está com a concorrência na linha. Quem tem infra responde. Quem não tem, perde a deal antes mesmo de saber que existia.
 
 O Brasil ainda está cedo nessa curva — mas só ainda. Em 2027 e 2028, a diferença entre quem se moveu e quem não se moveu vai aparecer em três lugares: na conta de resultado, no ranking de receita, e na composição dos times.
 
@@ -75,7 +80,7 @@ O Brasil ainda está cedo nessa curva — mas só ainda. Em 2027 e 2028, a difer
 
 **Recrutamento muda.** A pirâmide tradicional de underwriting deixa de fazer sentido. Quem tem a infra precisa menos de júnior e mais de seniores capazes de decidir com mais autonomia. A função de "underwriter operacional" some. A função de "underwriter de orquestração" surge.
 
-**Compliance vira fundação, não fricção.** Quando cada decisão é gravada com modelo, versão, inputs e timestamp, a auditoria deixa de ser uma operação separada. Ela é a operação. LGPD, ISO 27001 — não são frameworks que rodam em paralelo. Eles *são* a forma como a plataforma opera.
+**Compliance vira fundação, não fricção.** Quando cada decisão é gravada com modelo, versão, inputs e timestamp, a auditoria deixa de ser uma operação separada. Ela é a operação. LGPD, ISO 27001 — não são frameworks que rodam em paralelo. Eles *são* a forma como a plataforma opera. Esse ponto está desenvolvido em [A falsa dicotomia entre velocidade e compliance](#blog/falsa-dicotomia-velocidade-compliance).
 
 **A pergunta executiva muda.** Diretorias que ainda discutem "vamos adotar IA" estão fazendo a pergunta errada. A correta é: *estamos reorganizando o modelo operacional em torno da capacidade que a IA libera?*
 
@@ -85,18 +90,29 @@ A WIR Innovation foi fundada exatamente sobre essa tese: o futuro do seguro não
 
 O underwriter não morre.
 
-O modelo operacional dele, sim.`,
+O modelo operacional dele, sim.
+
+### Referências e leituras
+
+- [CNseg — Confederação Nacional das Seguradoras](https://cnseg.org.br) · dados macro do mercado segurador BR
+- [BCG Insurance Industry Reports](https://www.bcg.com/industries/insurance) · análises globais
+- [Federato](https://www.federato.ai) · plataforma de underwriting moderna (US)
+- [Lemonade](https://www.lemonade.com) · insurtech de varejo automatizada
+- [Caso de implementação WIR + Mahway](#blog/caso-implementacao-mahway) · números reais de uma operação
+- [A falsa dicotomia entre velocidade e compliance](#blog/falsa-dicotomia-velocidade-compliance) · por que escolher entre os dois é arquitetura ruim`,
   },
 
   {
     slug: "explicabilidade-alem-de-shap",
     cat: "Técnico", grad: "linear-gradient(135deg,#7540AC,#FE8B77)",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop",
+    imageAlt: "Visualização abstrata de camadas de dados e analytics",
     title: "Explicabilidade que vai além do SHAP",
     sub: "Por que a ferramenta favorita de explicabilidade do data scientist não chega para responder ao regulador. As 4 camadas que tornam uma decisão de seguro defensável.",
     author: "Head of AI", role: "ML · WIR Innovation",
     time: "9 min", date: "12 · Abr · 2026",
     metaDesc: "SHAP explica modelos tabulares — mas decisões de seguro hoje são híbridas (LLM + rules + retrieval). Por que SHAP não basta e o que substitui.",
-    body: `Em quase toda conversa técnica sobre IA aplicada a seguros, alguém menciona SHAP. Em quase toda apresentação para diretoria de risco, há um slide com SHAP values. Em quase todo paper acadêmico sobre fairness em ML financeiro, SHAP é a ferramenta default.
+    body: `Em quase toda conversa técnica sobre IA aplicada a seguros, alguém menciona SHAP. Em quase toda apresentação para diretoria de risco, há um slide com SHAP values. Em quase todo paper acadêmico sobre fairness em ML financeiro, [SHAP](https://arxiv.org/abs/1705.07874) é a ferramenta default.
 
 SHAP é uma boa ferramenta. Para o que ela faz.
 
@@ -104,7 +120,7 @@ O problema é que o que ela faz cobre só uma fatia pequena do que uma decisão 
 
 ### O que SHAP realmente explica
 
-SHAP responde uma pergunta específica: dado um modelo de machine learning treinado em dados tabulares, qual foi a contribuição de cada feature para o output de uma predição individual?
+SHAP (proposto por [Lundberg & Lee em 2017](https://arxiv.org/abs/1705.07874), e LIME por [Ribeiro et al em 2016](https://arxiv.org/abs/1602.04938)) responde uma pergunta específica: dado um modelo de machine learning treinado em dados tabulares, qual foi a contribuição de cada feature para o output de uma predição individual?
 
 É uma pergunta excelente para o cenário em que SHAP foi desenhado: você tem um random forest, um XGBoost, ou uma rede neural, alimentados por uma tabela de features estruturadas, produzindo um score numérico. SHAP te diz: "o CNPJ ativo contribuiu +0.12 para o score, a sinistralidade declarada contribuiu -0.08".
 
@@ -124,6 +140,8 @@ Finalmente, um pricing engine produz output — às vezes um número, às vezes 
 
 A consequência: você pode ter SHAP perfeito no modelo de scoring final e ainda assim ser incapaz de explicar ao regulador *por que* essa submissão específica recebeu essa decisão específica.
 
+> Auditabilidade nativa é arquitetura. Não é feature. Você não a adiciona depois — você a constrói antes.
+
 ### As 4 camadas de explicabilidade real
 
 A arquitetura que adotamos na WIR tem quatro camadas. SHAP, quando aplicável, vive na camada 3.
@@ -140,7 +158,7 @@ A arquitetura que adotamos na WIR tem quatro camadas. SHAP, quando aplicável, v
 
 **Resseguro.** Resseguradoras europeias e norte-americanas já estão exigindo trilha completa para subscrição automatizada acima de certos limites. SHAP isolado não atende.
 
-**Susep e LGPD.** A LGPD garante ao titular do dado o direito de obter explicação sobre decisões automatizadas. Operações que dependem de SHAP isolado vão precisar refazer arquitetura quando a fiscalização chegar.
+**Susep e LGPD.** A [LGPD (Lei 13.709/2018)](http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm) garante ao titular do dado o direito de obter explicação sobre decisões automatizadas que o afetam. As [comunicações da SUSEP](https://www.gov.br/susep) sobre IA em subscrição estão evoluindo na mesma direção. Operações que dependem de SHAP isolado vão precisar refazer arquitetura quando a fiscalização chegar.
 
 **Diretoria.** Quando o CFO pergunta por que a sinistralidade aumentou 1.2 pontos no trimestre, a resposta com auditabilidade nativa é uma query, não uma investigação de semanas.
 
@@ -148,12 +166,24 @@ A arquitetura que adotamos na WIR tem quatro camadas. SHAP, quando aplicável, v
 
 Auditabilidade nativa é arquitetura. Não é feature. Você não a adiciona depois — você a constrói antes, e ela vira o ambiente em que tudo o mais opera. Tentar adicionar trilha completa a um sistema que foi construído sem ela é, em geral, mais caro do que reescrever.
 
-SHAP fica. Mas como uma das ferramentas, não como a resposta.`,
+SHAP fica. Mas como uma das ferramentas, não como a resposta. A discussão completa sobre como LLMs e motores de regras se complementam está em [LLMs não substituem motores de regras](#blog/llms-vs-motores-de-regras), e o monitoramento contínuo desses sistemas em produção em [Observabilidade de agentes](#blog/observabilidade-de-agentes).
+
+### Referências e leituras
+
+- [Lundberg & Lee 2017 — A Unified Approach to Interpreting Model Predictions (SHAP)](https://arxiv.org/abs/1705.07874)
+- [Ribeiro et al 2016 — "Why Should I Trust You?" (LIME)](https://arxiv.org/abs/1602.04938)
+- [LGPD — Lei 13.709/2018](http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm)
+- [SUSEP — comunicações regulatórias](https://www.gov.br/susep)
+- [ISO/IEC 27001 — Sistema de Gestão de Segurança da Informação](https://www.iso.org/standard/27001)
+- [LLMs vs motores de regras — arquitetura híbrida](#blog/llms-vs-motores-de-regras)
+- [Observabilidade de agentes em produção](#blog/observabilidade-de-agentes)`,
   },
 
   {
     slug: "caso-implementacao-mahway",
     cat: "Caso", grad: "linear-gradient(135deg,#FE8B77,#F8AD39)",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80&auto=format&fit=crop",
+    imageAlt: "Gráficos de crescimento e métricas de negócio",
     title: "Como uma seguradora portfólio Mahway reduziu seu ciclo de cotação em ordens de grandeza",
     sub: "Estudo de caso da primeira implementação completa da stack WIR. O que funcionou, o que não funcionou, e os números reais.",
     author: "Head of Delivery", role: "Delivery · WIR Innovation",
@@ -161,7 +191,7 @@ SHAP fica. Mas como uma das ferramentas, não como a resposta.`,
     metaDesc: "Antes: 11 dias de ciclo, 800 cotações/mês, 6 underwriters no limite. Depois: 2h, 3.000 cotações/mês, mesmos 6. O que aconteceu no meio.",
     body: `Casos de uso publicados no setor de seguros costumam ser desonestos. Os números são apresentados sem contexto, o "antes" é caricaturado, e os problemas que apareceram no meio do projeto somem do narrativo final.
 
-Esse texto é o oposto disso. É uma descrição honesta do primeiro caso de implementação completa da stack WIR — incluindo as três coisas que não funcionaram de primeira e as duas que tivemos que abandonar.
+Esse texto é o oposto disso. É uma descrição honesta do primeiro caso de implementação completa da stack WIR em uma operação portfólio [Mahway](https://mahway.com) — incluindo as três coisas que não funcionaram de primeira e as duas que tivemos que abandonar.
 
 ### O ponto de partida
 
@@ -171,7 +201,7 @@ A queixa interna não era falta de competência técnica. Era throughput. O time
 
 A diretoria havia tentado três coisas antes: contratar mais um underwriter (bottleneck virou onboarding), implementar um portal (corretoras não usaram), comprar uma ferramenta de OCR (extraiu campos, não decidiu nada).
 
-Nenhuma resolveu, porque nenhuma atacou o que era um problema de modelo operacional, não de capacidade.
+Nenhuma resolveu, porque nenhuma atacou o que era um problema de modelo operacional, não de capacidade. O contexto desse problema estrutural é a tese central de [O underwriter não morre](#blog/o-underwriter-nao-morre).
 
 ### A intervenção
 
@@ -179,11 +209,13 @@ Nenhuma resolveu, porque nenhuma atacou o que era um problema de modelo operacio
 
 **Fase 2 (semanas 5-12): Enriquecimento e classificação por apetite.** Em paralelo, ligamos o motor de regras de apetite e o módulo de enriquecimento. Cada submissão passou a chegar pré-classificada em três fluxos: dentro do apetite, borda, ou fora.
 
-**Fase 3 (semanas 11-18): Pricing assistido e auditoria.** Sugestão de pricing calibrada ao livro histórico, e a infraestrutura de logging que registra cada decisão com modelo, versão, inputs, output, timestamp e justificativa.
+**Fase 3 (semanas 11-18): Pricing assistido e auditoria.** Sugestão de pricing calibrada ao livro histórico, e a infraestrutura de logging que registra cada decisão com modelo, versão, inputs, output, timestamp e justificativa — exatamente a arquitetura descrita em [Explicabilidade que vai além do SHAP](#blog/explicabilidade-alem-de-shap).
 
 ### O que funcionou
 
 Resultados na semana 18, comparados à baseline. Ciclo de cotação: 11 dias → 2 horas. Volume processado: 800 → 3.000/mês. Headcount: 6 (mesmo time). Conversão: 19% → 26%. Loss ratio: 64% → 61%. NPS dos corretores: 31 → 67.
+
+> A IA isolada não teria movido a agulha — porque o gargalo não era extração de PDF, era operação fragmentada.
 
 O número mais subestimado é o NPS de corretores. A operação não comunicou tecnologia para fora. O que corretores perceberam foi: a seguradora respondia rápido, em formato útil, com explicação quando recusava. Em 6 meses, três corretoras top-30 realocaram volume para frente da fila.
 
@@ -205,24 +237,36 @@ O número mais subestimado é o NPS de corretores. A operação não comunicou t
 
 A leitura clássica desse caso seria "implementar IA = ganhar 4× throughput". Está errada. A leitura correta é: redesenhar o modelo operacional, com IA como infraestrutura, ganhou 4× throughput. A IA isolada não teria movido a agulha — porque o gargalo não era extração de PDF, era operação fragmentada.
 
-Para qualquer operação considerando o caminho similar: o primeiro investimento não é em modelo. É em logging, schema unificado e política de aceitação versionada.`,
+Para qualquer operação considerando o caminho similar: o primeiro investimento não é em modelo. É em logging, schema unificado e política de aceitação versionada.
+
+### Referências e leituras
+
+- [Mahway](https://mahway.com) · venture builder Tech & IA (California, EUA)
+- [O underwriter não morre — a tese estrutural](#blog/o-underwriter-nao-morre)
+- [Explicabilidade que vai além do SHAP — a arquitetura de auditoria usada nesta implementação](#blog/explicabilidade-alem-de-shap)
+- [Por que MGAs são a ponta da lança da IA em seguro](#blog/mgas-ponta-da-lanca)`,
   },
 
   {
     slug: "mgas-ponta-da-lanca",
     cat: "Mercado", grad: "linear-gradient(135deg,#F8AD39,#3222E9)",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1600&q=80&auto=format&fit=crop",
+    imageAlt: "Equipe de startup trabalhando em escritório moderno",
     title: "Por que MGAs são a ponta da lança da IA em seguro",
     sub: "Estrutura enxuta, apetite próprio e fome de capacidade. A combinação que faz MGAs adotarem IA mais rápido que Tier-1 — e por que essa vantagem é estrutural.",
     author: "José Carlos de Paula", role: "CSO · Co-Founder",
+    authorPhoto: "assets/team/jose-carlos.jpg",
     time: "8 min", date: "28 · Mar · 2026",
     metaDesc: "MGAs adotam IA mais rápido que seguradoras Tier-1 por razões estruturais, não acidentais. As 4 vantagens que mudam quem define a curva de adoção.",
     body: `Em 2024, dei uma palestra para uma plateia de executivos de seguradoras Tier-1 em São Paulo sobre adoção de IA no setor. Uma das primeiras perguntas foi: "vocês estão vendo movimento nas grandes seguradoras?". A resposta honesta era: pouco. O movimento real estava acontecendo em outro lugar — nas MGAs.
 
-Em 2026, virou padrão claro. As primeiras operações brasileiras saindo de POC e entrando em produção com IA aplicada à subscrição não são as Tier-1 — são MGAs e corretoras corporativas que se converteram em quase-MGAs.
+Em 2026, virou padrão claro. As primeiras operações brasileiras saindo de POC e entrando em produção com IA aplicada à subscrição não são as Tier-1 — são MGAs e corretoras corporativas que se converteram em quase-MGAs. O mesmo padrão é descrito em análises do [Insurance Journal](https://www.insurancejournal.com) sobre o mercado norte-americano e refletido nos dados que a [SUSEP](https://www.gov.br/susep) e a [CNseg](https://cnseg.org.br) publicam sobre crescimento de MGA no Brasil.
 
 ### O que faz uma MGA estruturalmente diferente
 
 Uma MGA, no modelo brasileiro, opera com três características que a distinguem da seguradora tradicional. Tem apetite próprio — pode definir, em larga medida, qual risco aceita ou não, dentro do framework do resseguro. Tem operação enxuta — costuma ter de 5 a 50 pessoas no total. E tem incentivo direto sobre throughput — cada decisão a mais é receita marginal direta, sem o ruído organizacional de uma seguradora de 2.000 funcionários.
+
+> A vantagem competitiva da MGA não está no produto — está na arquitetura organizacional que faz adoção rápida ser default.
 
 ### As quatro vantagens estruturais
 
@@ -248,18 +292,28 @@ A reação típica de um executivo Tier-1 lendo isso é: "ok, mas nossa estrutur
 
 Não é replicável estruturalmente. Mas é replicável em isolamento. Uma Tier-1 que cria uma sub-operação dedicada — equipe pequena, política codificada, canal único, autoridade de decisão concentrada — pode operar com a mesma velocidade adaptativa de uma MGA. Várias Tier-1 globais já fizeram isso.
 
-A pergunta real é: vamos criar essa célula com prioridade executiva, ou vamos esperar até que as MGAs tenham capturado share suficiente para forçar a decisão?
+A pergunta real é: vamos criar essa célula com prioridade executiva, ou vamos esperar até que as MGAs tenham capturado share suficiente para forçar a decisão? A relação entre essa decisão e a discussão de compliance está em [A falsa dicotomia entre velocidade e compliance](#blog/falsa-dicotomia-velocidade-compliance).
 
 ### A pergunta para quem é MGA
 
 A vantagem estrutural não é eterna. Ela existe enquanto a MGA mantém o que a torna MGA — operação enxuta, política codificada, decisão concentrada. Operações de MGA que crescem rápido e replicam complexidade de Tier-1 perdem essa vantagem em 18 a 24 meses sem perceber.
 
-A vantagem competitiva da MGA não está no produto — está na arquitetura organizacional que faz adoção rápida ser default.`,
+A vantagem competitiva da MGA não está no produto — está na arquitetura organizacional que faz adoção rápida ser default.
+
+### Referências e leituras
+
+- [CNseg — Confederação Nacional das Seguradoras](https://cnseg.org.br) · dados de mercado BR
+- [SUSEP — Superintendência de Seguros Privados](https://www.gov.br/susep) · regulação setorial
+- [Insurance Journal — análises sobre MGA](https://www.insurancejournal.com)
+- [A falsa dicotomia entre velocidade e compliance](#blog/falsa-dicotomia-velocidade-compliance)
+- [O underwriter não morre — a tese de modelo operacional](#blog/o-underwriter-nao-morre)`,
   },
 
   {
     slug: "llms-vs-motores-de-regras",
     cat: "Técnico", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80&auto=format&fit=crop",
+    imageAlt: "Circuitos e arquitetura computacional abstrata",
     title: "LLMs não substituem motores de regras — eles os complementam",
     sub: "A arquitetura híbrida da WIR. Quando LLM decide, quando rule engine decide, e como os dois conversam em decisões críticas.",
     author: "Head of AI", role: "ML · WIR Innovation",
@@ -269,13 +323,13 @@ A vantagem competitiva da MGA não está no produto — está na arquitetura org
 
 A primeira: "LLM resolve tudo, motor de regras é coisa do passado". Quem defende essa posição costuma ter mais experiência em chatbot do que em produção financeira.
 
-A segunda: "LLM é caixa-preta, decisão crítica continua sendo motor de regras". Quem defende essa posição costuma estar tentando vender exatamente um motor de regras.
+A segunda: "LLM é caixa-preta, decisão crítica continua sendo motor de regras". Quem defende essa posição costuma estar tentando vender exatamente um motor de regras (geralmente em torno de [Drools](https://www.drools.org) ou similar).
 
 A realidade técnica em produção real é mais sutil. Decisões automatizadas que escalam sem explodir compliance e sem perder qualidade são, quase sempre, híbridas.
 
 ### Onde LLMs ganham, onde regras ganham
 
-LLMs são dominantes onde o input é não-estruturado e o universo de variações é amplo: extrair campos de PDFs com layouts diferentes, normalizar atividades econômicas descritas em texto livre, classificar tom de e-mail. Tarefas onde o problema é "interpretação".
+LLMs são dominantes onde o input é não-estruturado e o universo de variações é amplo: extrair campos de PDFs com layouts diferentes (problema endereçado por modelos como [LayoutLM da Microsoft](https://arxiv.org/abs/1912.13318)), normalizar atividades econômicas descritas em texto livre, classificar tom de e-mail. Tarefas onde o problema é "interpretação".
 
 Regras são dominantes onde a decisão precisa ser determinística, auditável linha-a-linha e responder a política versionada: aplicar limites de exposição, validar combinações proibidas, calcular fatores de pricing. Tarefas onde o problema é "enforcement".
 
@@ -293,7 +347,7 @@ Chega um e-mail de uma corretora corporativa Tier-1, com 9 anexos: questionário
 
 **Etapa 3 — Enriquecimento (Híbrido).** Cruza CNPJ com bases. Consulta é determinística (regras). Interpretação dos resultados — classificar processos judiciais como "operacional" vs "regulatório" vs "fraude" — usa LLM.
 
-**Etapa 4 — Classificação por apetite (Regras + LLM).** Regras aplicam critérios duros: CNAE está em exclusão? Região tem suspensão? Faturamento ultrapassa limite? Se qualquer regra hard dispara, decisão é determinística e não passamos pelo LLM. Se o caso é borderline, LLM-as-judge avalia o contexto e produz recomendação textual + score.
+**Etapa 4 — Classificação por apetite (Regras + LLM).** Regras aplicam critérios duros: CNAE está em exclusão? Região tem suspensão? Faturamento ultrapassa limite? Se qualquer regra hard dispara, decisão é determinística e não passamos pelo LLM. Se o caso é borderline, LLM-as-judge avalia o contexto e produz recomendação textual + score (técnica relacionada ao [Constitutional AI da Anthropic](https://arxiv.org/abs/2212.08073), em que o LLM é treinado para seguir critérios explícitos).
 
 **Etapa 5 — Pricing (Modelo ML + Regras).** Motor de pricing tabular sugere prêmio. Regras aplicam ajustes determinísticos: fatores regulatórios, comissão, IOF, mínimo técnico.
 
@@ -303,6 +357,8 @@ Chega um e-mail de uma corretora corporativa Tier-1, com 9 anexos: questionário
 
 Em todo o pipeline, há uma regra que não negociamos: o LLM nunca é o decisor final em uma decisão que afeta o livro. Ele extrai, classifica, recomenda, gera explicação. A decisão final, quando automática, é tomada por motor de regras com apoio do score do modelo tabular calibrado. Quando manual, é tomada pelo underwriter com o contexto preparado pelos dois.
 
+> LLMs interpretam. Regras enforçam. Modelos tabulares scoream. A decisão crítica é tomada pelo conjunto.
+
 LLMs em produção, mesmo os melhores, têm uma cauda de comportamento inesperado em casos fora da distribuição. Para a maioria das aplicações, gerenciável. Para decisões financeiras com efeito em loss ratio e exposição regulatória, inaceitável como primeira linha.
 
 Isso não diminui o LLM. Pelo contrário — ele faz o trabalho que regras não conseguem (interpretação) e libera regras para fazer o que elas fazem melhor (enforcement).
@@ -311,17 +367,28 @@ Isso não diminui o LLM. Pelo contrário — ele faz o trabalho que regras não 
 
 Em conversas com equipes de IA em seguradoras, o padrão de erro mais frequente é: time monta pipeline integralmente baseado em LLM, demonstra POC bonito com 10 casos cuidadosamente escolhidos, sobe para staging, escala para 5.000 casos, descobre que 2% têm comportamento esquisito, tenta corrigir com prompt engineering, vê regression em casos que antes funcionavam, e termina o trimestre com sistema mais frágil que o manual que substituiu.
 
-A correção não é "voltar para regras". É reconhecer onde cada tecnologia tem força e desenhar a divisão de trabalho desde o começo.
+A correção não é "voltar para regras". É reconhecer onde cada tecnologia tem força e desenhar a divisão de trabalho desde o começo. A auditoria desse pipeline híbrido — qual modelo decidiu, em qual versão, com quais inputs — é o tema de [Explicabilidade que vai além do SHAP](#blog/explicabilidade-alem-de-shap), e seu monitoramento contínuo está em [Observabilidade de agentes](#blog/observabilidade-de-agentes).
 
-LLMs interpretam. Regras enforçam. Modelos tabulares scoream. A decisão crítica é tomada pelo conjunto — não pelo componente mais novo.`,
+LLMs interpretam. Regras enforçam. Modelos tabulares scoream. A decisão crítica é tomada pelo conjunto — não pelo componente mais novo.
+
+### Referências e leituras
+
+- [Xu et al. — LayoutLM (Microsoft Research)](https://arxiv.org/abs/1912.13318) · parsing layout-aware de documentos
+- [Bai et al. — Constitutional AI (Anthropic)](https://arxiv.org/abs/2212.08073) · LLM com critérios explícitos
+- [Drools](https://www.drools.org) · motor de regras open-source
+- [Explicabilidade que vai além do SHAP](#blog/explicabilidade-alem-de-shap) · auditoria de pipelines híbridos
+- [Observabilidade de agentes em produção](#blog/observabilidade-de-agentes) · monitoramento contínuo`,
   },
 
   {
     slug: "falsa-dicotomia-velocidade-compliance",
     cat: "Ensaio", grad: "linear-gradient(135deg,#AE46C0,#F8AD39)",
+    image: "https://images.unsplash.com/photo-1454165205744-3b78555e5572?w=1600&q=80&auto=format&fit=crop",
+    imageAlt: "Arquitetura moderna em equilíbrio simétrico",
     title: "A falsa dicotomia entre velocidade e compliance",
     sub: "A indústria insiste em \"ou rápido OU em compliance\". Isso é arquitetura ruim, não trade-off real. Como auditabilidade nativa elimina a escolha.",
     author: "Nicholas Weiser", role: "CEO · Co-Founder",
+    authorPhoto: "assets/team/nicholas.jpg",
     time: "7 min", date: "15 · Mar · 2026",
     metaDesc: "A escolha entre 'rápido ou em compliance' no setor segurador é falsa. Por que ela existe — e a arquitetura que a elimina.",
     body: `Em quase toda conversa que tenho com diretoria de seguradora sobre adoção de IA, em algum momento aparece a frase: "tudo isso é ótimo, mas a gente não pode comprometer compliance por velocidade". A frase é dita com convicção, como se descrevesse um trade-off real.
@@ -329,6 +396,8 @@ LLMs interpretam. Regras enforçam. Modelos tabulares scoream. A decisão críti
 Não descreve.
 
 A escolha entre velocidade e compliance é um artefato de arquitetura, não uma lei física. Ela existe quando a operação foi desenhada com compliance como camada externa — algo que se adiciona depois para satisfazer regulador, auditor, área jurídica. Quando compliance é arquitetura nativa, a escolha desaparece.
+
+> A escolha verdadeira não é entre velocidade e compliance. É entre arquitetura que paga juros e arquitetura que rende.
 
 ### De onde vem a frase
 
@@ -356,28 +425,41 @@ Se nativa, velocidade e compliance crescem juntas.
 
 Se externa, brigam.
 
-A diferença é decisão de arquitetura tomada na primeira semana do projeto. Times que tratam logging estruturado, versionamento e provenance como prioridade de fundação produzem operações que escalam sem comprometer compliance. Times que tratam essas coisas como detalhe de implementação produzem operações que travam na primeira fiscalização.
+A diferença é decisão de arquitetura tomada na primeira semana do projeto. Times que tratam logging estruturado, versionamento e provenance como prioridade de fundação produzem operações que escalam sem comprometer compliance. Times que tratam essas coisas como detalhe de implementação produzem operações que travam na primeira fiscalização. Esse detalhe arquitetural está descrito em [Explicabilidade que vai além do SHAP](#blog/explicabilidade-alem-de-shap).
 
 ### Por que isso importa hoje
 
-A regulamentação infralegal de IA em decisões automatizadas no Brasil ainda está sendo definida. LGPD garante direitos de explicação. SUSEP tem comunicações sinalizando expectativa crescente sobre auditabilidade.
+A regulamentação infralegal de IA em decisões automatizadas no Brasil ainda está sendo definida. A [LGPD (Lei 13.709/2018)](http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm) garante direitos de explicação. As [orientações da ANPD](https://www.gov.br/anpd) sobre tratamento de dados em decisões automatizadas continuam evoluindo. E a [SUSEP](https://www.gov.br/susep) tem comunicações sinalizando expectativa crescente sobre auditabilidade de modelos em subscrição.
 
 Operações construindo arquitetura com compliance nativa hoje vão acordar em 2027 ou 2028 e descobrir que cumpriram a regulamentação nova sem precisar refatorar. Operações com compliance externa vão acordar e descobrir que precisam reconstruir o que já está em produção — e o custo de fazer isso depois é múltiplas vezes maior.
 
-A escolha verdadeira não é entre velocidade e compliance. É entre arquitetura que paga juros e arquitetura que rende.`,
+A escolha verdadeira não é entre velocidade e compliance. É entre arquitetura que paga juros e arquitetura que rende.
+
+### Referências e leituras
+
+- [LGPD — Lei 13.709/2018](http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm)
+- [ANPD — Autoridade Nacional de Proteção de Dados](https://www.gov.br/anpd) · orientações regulatórias
+- [SUSEP — comunicações sobre IA em seguros](https://www.gov.br/susep)
+- [Explicabilidade que vai além do SHAP — a arquitetura que torna isso possível](#blog/explicabilidade-alem-de-shap)
+- [O custo invisível do straight-through processing mal feito](#blog/custo-invisivel-stp-mal-feito)`,
   },
 
   {
     slug: "custo-invisivel-stp-mal-feito",
     cat: "Mercado", grad: "linear-gradient(135deg,#7540AC,#3222E9)",
+    image: "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=1600&q=80&auto=format&fit=crop",
+    imageAlt: "Iceberg com porção oculta sob a água — risco invisível",
     title: "O custo invisível do straight-through processing mal feito",
     sub: "STP sem auditabilidade cria risco regulatório, reputacional e de carteira. Checklist de 9 itens para verificar antes de escalar.",
     author: "José Carlos de Paula", role: "CSO · Co-Founder",
+    authorPhoto: "assets/team/jose-carlos.jpg",
     time: "8 min", date: "08 · Mar · 2026",
     metaDesc: "Straight-through processing sem auditabilidade nativa é bomba-relógio regulatória. Checklist de 9 itens para validar antes de escalar volume.",
     body: `Straight-through processing — STP — virou termo de venda no setor. Toda apresentação promete STP. Toda diretoria coloca STP em deck de transformação digital.
 
 Muito do que se chama de STP no mercado brasileiro hoje é, tecnicamente, automação parcial sem trilha de auditoria. Funciona. Escala um pouco. E acumula risco invisível ao longo do tempo, até que o risco aparece — em fiscalização, em sinistro inesperado, em RFP de resseguro perdido.
+
+> STP feito direito é vantagem competitiva durável. STP feito mal é dívida operacional acumulando juros silenciosos.
 
 ### O que STP exige de verdade
 
@@ -397,38 +479,42 @@ A terceira: os outputs do STP precisam ser comparáveis ao que decisão humana t
 
 **Custo de loss ratio invisível.** Drift de modelo em STP sem monitoramento aparece em sinistralidade — com lag. Sem trilha completa, a análise causal é praticamente impossível.
 
-**Custo de resseguro.** Resseguradoras europeias e norte-americanas começaram a pedir documentação detalhada sobre auditabilidade. Operações sem entregar enfrentam: reset do tratado em condições piores, exclusão de segmentos, ou substituição por estruturas mais caras.
+**Custo de resseguro.** Resseguradoras europeias e norte-americanas como [Munich Re](https://www.munichre.com) e [Swiss Re](https://www.swissre.com/institute) começaram a pedir documentação detalhada sobre auditabilidade de pricing automatizado. Operações sem entregar enfrentam: reset do tratado em condições piores, exclusão de segmentos, ou substituição por estruturas mais caras.
 
 ### Checklist: 9 itens antes de escalar
 
-**1. Cada decisão automática gera log estruturado** com modelo, versão, inputs, output, score, timestamp e ID único. Imutável.
-
-**2. Versionamento de política está em vigor.** Cada mudança é registrada com autor, motivo, data, impacto esperado. Versões anteriores podem ser recuperadas e simuladas.
-
-**3. Limite entre auto e human está explícito.** Critério documentado para quando passar pelo humano. Versionado.
-
-**4. Override humano está habilitado e registrado.** Quando humano altera ou rejeita, sistema registra: o quê, por quem, com qual motivo (campo obrigatório), em qual timestamp.
-
-**5. Drift detection está em produção.** Sistema monitora distribuição das features, dos outputs, e divergência entre auto e validação humana.
-
-**6. Loss ratio segmentado por automação.** Book mensurável separado por nível de envolvimento humano: 100% automático, parcial, integralmente humano.
-
-**7. Recusa automática gera copy aceitável.** Justificativa em linguagem comercial — não código de erro.
-
-**8. Existe revisão amostral periódica.** Fração das decisões automáticas (1% a 5%) revisada por humano após o fato, para validar concordância.
-
-**9. Plano de rollback está documentado e testado.** Reverter a versão anterior em horas — não em dias.
+1. Cada decisão automática gera log estruturado com modelo, versão, inputs, output, score, timestamp e ID único. Imutável.
+2. Versionamento de política está em vigor. Cada mudança é registrada com autor, motivo, data, impacto esperado. Versões anteriores podem ser recuperadas e simuladas.
+3. Limite entre auto e human está explícito. Critério documentado para quando passar pelo humano. Versionado.
+4. Override humano está habilitado e registrado. Quando humano altera ou rejeita, sistema registra: o quê, por quem, com qual motivo (campo obrigatório), em qual timestamp.
+5. Drift detection está em produção. Sistema monitora distribuição das features, dos outputs, e divergência entre auto e validação humana.
+6. Loss ratio segmentado por automação. Book mensurável separado por nível de envolvimento humano: 100% automático, parcial, integralmente humano.
+7. Recusa automática gera copy aceitável. Justificativa em linguagem comercial — não código de erro.
+8. Existe revisão amostral periódica. Fração das decisões automáticas (1% a 5%) revisada por humano após o fato, para validar concordância.
+9. Plano de rollback está documentado e testado. Reverter a versão anterior em horas — não em dias.
 
 ### O que isso significa para diretoria
 
 A pergunta executiva não é "vamos fazer STP?". É "o STP que estamos construindo cumpre os 9 itens?". Se sim, escalar é caminho de receita. Se não, escalar é caminho de risco invisível que aparece tarde.
 
-STP feito direito é vantagem competitiva durável. STP feito mal é dívida operacional acumulando juros silenciosos.`,
+A relação entre essa disciplina arquitetural e a velocidade de operação está em [A falsa dicotomia entre velocidade e compliance](#blog/falsa-dicotomia-velocidade-compliance). E o monitoramento contínuo dessa qualidade está em [Observabilidade de agentes](#blog/observabilidade-de-agentes).
+
+STP feito direito é vantagem competitiva durável. STP feito mal é dívida operacional acumulando juros silenciosos.
+
+### Referências e leituras
+
+- [Munich Re — publicações sobre IA e resseguro](https://www.munichre.com)
+- [Swiss Re Institute — research sobre InsurTech](https://www.swissre.com/institute)
+- [SUSEP — comunicações regulatórias](https://www.gov.br/susep)
+- [A falsa dicotomia entre velocidade e compliance](#blog/falsa-dicotomia-velocidade-compliance)
+- [Observabilidade de agentes em produção](#blog/observabilidade-de-agentes)`,
   },
 
   {
     slug: "tres-formatos-pdf-quebravam",
     cat: "Caso", grad: "linear-gradient(135deg,#F8AD39,#FE8B77)",
+    image: "https://images.unsplash.com/photo-1568667256549-094345857637?w=1600&q=80&auto=format&fit=crop",
+    imageAlt: "Pilha de documentos e papelada de seguros",
     title: "Três formatos de PDF que quebravam submissões — e como resolvemos",
     sub: "Do OCR ingênuo ao parsing semântico. Os PDFs específicos que destruíam extrações até a virada técnica.",
     author: "Head of AI", role: "ML · WIR Innovation",
@@ -436,7 +522,9 @@ STP feito direito é vantagem competitiva durável. STP feito mal é dívida ope
     metaDesc: "PDFs de submissão são heterogêneos. OCR comum extrai 60% dos campos. Parsing semântico resolve os casos onde OCR quebra — com exemplos concretos.",
     body: `PDF é o formato favorito da indústria de seguros e o pesadelo favorito de qualquer engenheiro tentando automatizar extração no setor. Cada corretora tem o seu padrão. Cada cliente final tem o seu jeito de preencher o questionário.
 
-Quando começamos a operação de extração da WIR, o pipeline naive — Tesseract OCR + regex pós-processamento + LLM para campos não estruturados — funcionava em algo como 60% dos casos. O dado importante é o complemento: 40% das submissões tinham algum campo crítico extraído incorretamente, ou não extraído.
+Quando começamos a operação de extração da WIR, o pipeline naive — [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) + regex pós-processamento + LLM para campos não estruturados — funcionava em algo como 60% dos casos. O dado importante é o complemento: 40% das submissões tinham algum campo crítico extraído incorretamente, ou não extraído.
+
+> Pipeline robusto valida coerência, dispara revisão quando dados não passam sanity check e nunca propaga incerteza como verdade.
 
 Esse texto descreve três formatos específicos que quebravam o pipeline naive, qual era o modo de falha, e qual foi a virada técnica.
 
@@ -456,13 +544,13 @@ Esse texto descreve três formatos específicos que quebravam o pipeline naive, 
 
 **O modo de falha:** OCR linear lê linha por linha, sem entender estrutura. Quando uma tabela quebra de página, a primeira linha da página seguinte é lida sem o cabeçalho, e o pipeline associa valores às colunas erradas. Em uma submissão real, um equipamento de R$ 2.4M na página 3 foi associado a "ano de fabricação" porque o OCR pegou só o valor da segunda coluna sem o cabeçalho.
 
-**A virada técnica:** trocamos OCR puro por modelo layout-aware (família LayoutLM), que entende estrutura visual — onde está o cabeçalho, onde estão as colunas, qual valor pertence a qual campo, mesmo entre páginas. Para validação, LLM pós-processa checando coerência: faturamento consistente com porte, valores compatíveis com atividade.
+**A virada técnica:** trocamos OCR puro por modelo layout-aware (família [LayoutLM da Microsoft](https://github.com/microsoft/unilm)), que entende estrutura visual — onde está o cabeçalho, onde estão as colunas, qual valor pertence a qual campo, mesmo entre páginas. Para validação, LLM pós-processa checando coerência: faturamento consistente com porte, valores compatíveis com atividade.
 
 **Resultado:** taxa de erro em extração de tabelas multi-página caiu de ~25% para menos de 2%.
 
 ### Formato 3: PDF protegido ou com camada de assinatura digital
 
-**O caso:** clientes corporativos em segmentos regulados exigem questionário com assinatura digital ICP-Brasil. O PDF resultante tem camada criptográfica que, dependendo de como foi gerada, bloqueia OCR e até copy-paste.
+**O caso:** clientes corporativos em segmentos regulados exigem questionário com assinatura digital [ICP-Brasil](https://www.gov.br/iti) padrão. O PDF resultante tem camada criptográfica que, dependendo de como foi gerada, bloqueia OCR e até copy-paste.
 
 **O modo de falha:** o pipeline simplesmente não conseguia abrir esses PDFs. Voltavam para fila manual, criando gargalo silencioso — em uma operação que recebia 800 submissões/mês, ~8% caíam nesse modo.
 
@@ -478,12 +566,22 @@ Primeiro: pipeline de extração bem feito não é uma ferramenta — é uma cad
 
 Segundo: o valor está no long tail. Os 60% de PDFs simples que qualquer ferramenta resolve não são onde a tecnologia diferencia. A diferença está no 40% restante.
 
-Terceiro: validação importa mais que extração. O custo de uma extração errada propagada é maior que o custo de uma extração que falha visivelmente. Pipeline robusto valida coerência, dispara revisão quando dados não passam sanity check e nunca propaga incerteza como verdade.`,
+Terceiro: validação importa mais que extração. O custo de uma extração errada propagada é maior que o custo de uma extração que falha visivelmente. Pipeline robusto valida coerência, dispara revisão quando dados não passam sanity check e nunca propaga incerteza como verdade. Esse princípio se conecta diretamente à arquitetura de auditoria descrita em [Explicabilidade que vai além do SHAP](#blog/explicabilidade-alem-de-shap).
+
+### Referências e leituras
+
+- [LayoutLM family — Microsoft Research GitHub](https://github.com/microsoft/unilm) · parsing layout-aware
+- [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) · OCR open-source clássico
+- [ICP-Brasil — Instituto Nacional de Tecnologia da Informação](https://www.gov.br/iti)
+- [Explicabilidade que vai além do SHAP — auditoria de pipelines](#blog/explicabilidade-alem-de-shap)
+- [Caso de implementação WIR + Mahway — onde isso virou produção](#blog/caso-implementacao-mahway)`,
   },
 
   {
     slug: "observabilidade-de-agentes",
     cat: "Técnico", grad: "linear-gradient(135deg,#3222E9,#FE8B77)",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100",
+    imageAlt: "Múltiplas telas com dashboards de monitoramento",
     title: "Observabilidade de agentes: o que monitorar em produção",
     sub: "Latência, precisão, drift, custo por decisão, divergência humano-vs-modelo. O dashboard mínimo que toda seguradora deveria exigir antes de escalar IA.",
     author: "Head of AI", role: "ML · WIR Innovation",
@@ -493,7 +591,9 @@ Terceiro: validação importa mais que extração. O custo de uma extração err
 
 Esse dashboard funciona durante o primeiro mês. Depois, ele para de ser útil.
 
-As perguntas que importam quando você tem IA decidindo riscos reais não são "qual a acurácia no test set". São perguntas operacionais sobre comportamento ao longo do tempo, sobre divergência entre o que o modelo decide e o que humano decidiria, e sobre custo por unidade de valor entregue.
+As perguntas que importam quando você tem IA decidindo riscos reais não são "qual a acurácia no test set". São perguntas operacionais sobre comportamento ao longo do tempo, sobre divergência entre o que o modelo decide e o que humano decidiria, e sobre custo por unidade de valor entregue. É exatamente o tipo de problema que ferramentas como [Arize AI](https://arize.com), [Fiddler](https://www.fiddler.ai), [WhyLabs](https://whylabs.ai) e [Evidently AI](https://www.evidentlyai.com) atacam — cada uma com ângulos um pouco diferentes.
+
+> Construir observabilidade é caro. Não revisar a observabilidade que se construiu é mais caro.
 
 ### Por que observabilidade de IA é diferente
 
@@ -507,7 +607,7 @@ Sistemas de IA têm camada adicional: comportamento estatístico. Eles podem est
 
 **2. Taxa de override humano.** A fração de decisões automáticas alteradas pelo underwriter. É o termômetro mais direto de qualidade do modelo em produção. Override tendendo para baixo significa concordância crescente. Tendendo para cima significa que algo está mudando — drift de dados, drift de política, ou modelo errando onde antes acertava.
 
-**3. Distribuição de features e drift detection.** Para cada feature relevante, monitore distribuição (média, std, percentis) ao longo do tempo. Compare com a distribuição de treino. Quando diverge significativamente, o modelo está operando fora do que viu — ainda funciona, mas com confiança decrescente.
+**3. Distribuição de features e drift detection.** Para cada feature relevante, monitore distribuição (média, std, percentis) ao longo do tempo. Compare com a distribuição de treino. Quando diverge significativamente, o modelo está operando fora do que viu — ainda funciona, mas com confiança decrescente. [Evidently AI](https://www.evidentlyai.com) tem boa documentação aberta sobre os testes estatísticos típicos (KS, PSI, Wasserstein).
 
 **4. Custo por decisão.** Inclui chamadas de API LLM, infraestrutura de inferência, retrieval de bases externas. Em sistemas híbridos, custo por decisão pode variar 10× entre tipos de caso. Sem essa métrica, custo total balona sem explicação.
 
@@ -541,32 +641,84 @@ O ponto de trava mais comum não é técnico — é organizacional. O dashboard 
 
 Operações onde "alguém da TI olha o dashboard quando há queixa" não capturam drift. Operações onde a equipe de subscrição vê o dashboard junto com a equipe de modelo, semanalmente, em reunião curta, capturam.
 
-Construir observabilidade é caro. Não revisar a observabilidade que se construiu é mais caro — é pagar pela infraestrutura sem extrair o sinal.`,
+A trilha completa que alimenta esse dashboard é a mesma descrita em [Explicabilidade que vai além do SHAP](#blog/explicabilidade-alem-de-shap), e a divisão entre LLM e regras que precisa ser monitorada em separado está em [LLMs não substituem motores de regras](#blog/llms-vs-motores-de-regras).
+
+Construir observabilidade é caro. Não revisar a observabilidade que se construiu é mais caro — é pagar pela infraestrutura sem extrair o sinal.
+
+### Referências e leituras
+
+- [Arize AI](https://arize.com) · ML observability platform
+- [Fiddler AI](https://www.fiddler.ai) · model monitoring + explainability
+- [WhyLabs](https://whylabs.ai) · open-source data and ML monitoring
+- [Evidently AI](https://www.evidentlyai.com) · ML monitoring open-source
+- [Explicabilidade que vai além do SHAP](#blog/explicabilidade-alem-de-shap) · arquitetura de auditoria
+- [LLMs não substituem motores de regras](#blog/llms-vs-motores-de-regras) · arquitetura híbrida que precisa ser monitorada`,
   },
 ];
 
-// Markdown-lite parser
+// Markdown-lite parser: paragraphs, ### subheads, **bold**, *italic*, [text](url), > quote, 1./- lists
 function parseBody(text) {
   return text.trim().split(/\n\s*\n/).map(block => {
     const t = block.trim();
     if (t.startsWith("### ")) return { type: "h3", text: t.slice(4) };
+    if (t.startsWith("> ")) return { type: "quote", text: t.slice(2) };
+    if (/^\d+\.\s/.test(t)) {
+      const items = t.split("\n").map(l => l.replace(/^\d+\.\s+/, "").trim()).filter(Boolean);
+      return { type: "ol", items };
+    }
+    if (/^-\s/.test(t)) {
+      const items = t.split("\n").map(l => l.replace(/^-\s+/, "").trim()).filter(Boolean);
+      return { type: "ul", items };
+    }
     return { type: "p", text: t };
   });
 }
 
 function renderInline(text) {
   const parts = [];
-  const re = /(\*\*[^*]+\*\*|\*[^*]+\*)/g;
+  // Order matters: bold first, then italic, then images, then links
+  const re = /(\*\*[^*]+\*\*|!\[[^\]]*\]\([^)]+\)|\[[^\]]+\]\([^)]+\)|\*[^*]+\*)/g;
   let last = 0, m, key = 0;
   while ((m = re.exec(text)) !== null) {
     if (m.index > last) parts.push(text.slice(last, m.index));
     const tok = m[0];
-    if (tok.startsWith("**")) parts.push(React.createElement("strong", { key: key++ }, tok.slice(2, -2)));
-    else parts.push(React.createElement("em", { key: key++ }, tok.slice(1, -1)));
+    if (tok.startsWith("**")) {
+      parts.push(React.createElement("strong", { key: key++ }, tok.slice(2, -2)));
+    } else if (tok.startsWith("![")) {
+      const im = /^!\[([^\]]*)\]\(([^)]+)\)$/.exec(tok);
+      if (im) parts.push(React.createElement("img", { key: key++, src: im[2], alt: im[1] }));
+    } else if (tok.startsWith("[")) {
+      const lm = /^\[([^\]]+)\]\(([^)]+)\)$/.exec(tok);
+      if (lm) {
+        const isInternal = lm[2].startsWith("#blog");
+        parts.push(React.createElement("a", {
+          key: key++,
+          href: lm[2],
+          target: isInternal ? undefined : "_blank",
+          rel: isInternal ? undefined : "noopener noreferrer",
+          className: isInternal ? "blarticle__link-int" : "blarticle__link-ext",
+        }, lm[1]));
+      }
+    } else {
+      parts.push(React.createElement("em", { key: key++ }, tok.slice(1, -1)));
+    }
     last = m.index + tok.length;
   }
   if (last < text.length) parts.push(text.slice(last));
   return parts;
+}
+
+function ArticleAuthorAvatar({ article }) {
+  if (article.authorPhoto) {
+    return React.createElement("div", {
+      className: "blarticle__author-photo",
+      style: { backgroundImage: `url(${article.authorPhoto})` },
+      role: "img",
+      "aria-label": article.author,
+    });
+  }
+  const initials = article.author.split(" ").map(w => w[0]).slice(0, 2).join("");
+  return React.createElement("div", { className: "blarticle__author-initials" }, initials);
 }
 
 function BlogArticle({ article, go }) {
@@ -588,6 +740,7 @@ function BlogArticle({ article, go }) {
       "@type": "Article",
       headline: article.title,
       description: article.metaDesc,
+      image: article.image || undefined,
       datePublished: article.date,
       author: { "@type": "Person", name: article.author, jobTitle: article.role },
       publisher: { "@type": "Organization", name: "WIR Innovation",
@@ -612,22 +765,39 @@ function BlogArticle({ article, go }) {
         <button className="blarticle__back" onClick={() => go("blog")}>
           <span aria-hidden>←</span> Voltar para Insights & News
         </button>
+
         <header className="blarticle__head">
           <div className="eyebrow">· {article.cat}</div>
           <h1 className="display blarticle__title">{article.title}</h1>
           <p className="blarticle__sub">{article.sub}</p>
-          <div className="blarticle__meta">
-            <span><b>{article.author}</b> · {article.role}</span>
-            <span>· {article.date}</span>
-            <span>· {article.time} de leitura</span>
+          <div className="blarticle__byline">
+            <ArticleAuthorAvatar article={article}/>
+            <div className="blarticle__byline-meta">
+              <div className="blarticle__byline-author"><b>{article.author}</b> · {article.role}</div>
+              <div className="blarticle__byline-time">{article.date} · {article.time} de leitura</div>
+            </div>
           </div>
         </header>
+
+        {/* Hero image with gradient fallback */}
+        <figure className="blarticle__hero-img" style={{ background: article.grad }}>
+          {article.image && (
+            <img src={article.image} alt={article.imageAlt || article.title}
+              loading="eager"
+              onError={(e) => { e.target.style.display = "none"; }}/>
+          )}
+        </figure>
+
         <div className="blarticle__body">
           {blocks.map((b, i) => {
             if (b.type === "h3") return <h3 key={i}>{renderInline(b.text)}</h3>;
+            if (b.type === "quote") return <blockquote key={i}>{renderInline(b.text)}</blockquote>;
+            if (b.type === "ol") return <ol key={i}>{b.items.map((it, j) => <li key={j}>{renderInline(it)}</li>)}</ol>;
+            if (b.type === "ul") return <ul key={i}>{b.items.map((it, j) => <li key={j}>{renderInline(it)}</li>)}</ul>;
             return <p key={i}>{renderInline(b.text)}</p>;
           })}
         </div>
+
         <footer className="blarticle__foot">
           <button className="btn btn--ghost" onClick={() => go("blog")}>
             <span aria-hidden>←</span> Outros Insights

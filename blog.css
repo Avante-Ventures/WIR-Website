@@ -189,3 +189,117 @@
   .blarticle__body p:first-child { font-size: 18px; }
   .blarticle__body h3 { font-size: 22px; margin-top: 36px; }
 }
+
+/* ───────── Article reader · enrichments (hero img, byline, blockquote, links, lists, refs) ───────── */
+
+/* Hero image (16/9) — gradient fallback if URL fails */
+.blarticle__hero-img {
+  aspect-ratio: 16/9;
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 0 0 40px 0;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.blarticle__hero-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+/* Byline with author photo or initials */
+.blarticle__byline {
+  display: flex; align-items: center; gap: 14px;
+  margin-top: 24px;
+}
+.blarticle__author-photo, .blarticle__author-initials {
+  width: 48px; height: 48px; border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid var(--paper-2);
+  box-shadow: 0 2px 8px rgba(11,10,8,.10);
+}
+.blarticle__author-photo {
+  background-size: cover; background-position: center top;
+}
+.blarticle__author-initials {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--wir-purple); color: #fff;
+  font-family: var(--f-mono); font-size: 14px;
+  letter-spacing: .02em; font-weight: 600;
+}
+.blarticle__byline-meta { display: flex; flex-direction: column; gap: 2px; }
+.blarticle__byline-author { font-size: 14px; color: var(--ink); }
+.blarticle__byline-author b { font-weight: 500; }
+.blarticle__byline-time {
+  font-family: var(--f-mono); font-size: 11px;
+  letter-spacing: .04em; color: var(--ink-3);
+}
+
+/* Pullquotes */
+.blarticle__body blockquote {
+  margin: 40px 0;
+  padding: 16px 0 16px 24px;
+  border-left: 3px solid var(--wir-purple);
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.blarticle__body blockquote em { color: var(--wir-purple); }
+
+/* External and internal links */
+.blarticle__body a, .blarticle__link-ext, .blarticle__link-int {
+  color: var(--wir-purple);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color .18s ease;
+}
+.blarticle__body a:hover, .blarticle__link-ext:hover, .blarticle__link-int:hover {
+  color: #5e3490;
+}
+.blarticle__link-ext::after {
+  content: " ↗";
+  font-size: 0.85em;
+  color: var(--ink-3);
+  text-decoration: none;
+}
+.blarticle__link-int { text-decoration-style: dotted; }
+
+/* Ordered + unordered lists */
+.blarticle__body ol, .blarticle__body ul {
+  margin: 0 0 22px 0; padding-left: 24px;
+}
+.blarticle__body ol li, .blarticle__body ul li {
+  margin-bottom: 10px; padding-left: 4px;
+}
+.blarticle__body ol { list-style: decimal; }
+.blarticle__body ul { list-style: none; padding-left: 0; }
+.blarticle__body ul li { position: relative; padding-left: 22px; }
+.blarticle__body ul li::before {
+  content: "·"; position: absolute; left: 6px; top: 0;
+  color: var(--wir-purple); font-weight: 700; font-size: 22px; line-height: 1;
+}
+
+/* References section (last h3 + ul/items) */
+.blarticle__body h3:last-of-type {
+  margin-top: 64px; padding-top: 32px;
+  border-top: 1px solid rgba(11,10,8,.10);
+  font-size: 18px; letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-family: var(--f-mono);
+}
+.blarticle__body h3:last-of-type + ul li {
+  font-size: 14px; line-height: 1.55;
+  color: var(--ink-2);
+}
+
+@media (max-width: 760px) {
+  .blarticle__hero-img { border-radius: 10px; margin-bottom: 28px; }
+  .blarticle__body blockquote { font-size: 20px; padding-left: 18px; margin: 32px 0; }
+  .blarticle__byline { gap: 12px; }
+  .blarticle__author-photo, .blarticle__author-initials { width: 42px; height: 42px; }
+}
