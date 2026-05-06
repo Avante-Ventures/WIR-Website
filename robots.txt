@@ -1,0 +1,21 @@
+# WIR Innovation — robots.txt
+# https://wirinnovation.ai/
+
+User-agent: *
+Allow: /
+
+# AI crawlers — allow indexing for visibility in ChatGPT / Perplexity / Claude / Gemini
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap
+Sitemap: https://wirinnovation.ai/sitemap.xml
