@@ -1,9 +1,11 @@
 /* ───────── App shell & routing ───────── */
 
 function App() {
+  const baseRoute = (h) => h.split("/")[0].split("#")[0];
   const [route, setRoute] = useState(() => {
     const h = (location.hash || "#home").replace("#","");
-    return ["home","solutions","about","blog","contact","protection"].includes(h) ? h : "home";
+    const r = baseRoute(h);
+    return ["home","solutions","about","blog","contact","protection"].includes(r) ? r : "home";
   });
 
   const go = (id, anchor) => {
@@ -27,7 +29,8 @@ function App() {
   useEffect(() => {
     const onHash = () => {
       const h = (location.hash || "#home").replace("#","");
-      if (["home","solutions","about","blog","contact","protection"].includes(h)) setRoute(h);
+      const r = baseRoute(h);
+      if (["home","solutions","about","blog","contact","protection"].includes(r)) setRoute(r);
     };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);

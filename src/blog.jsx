@@ -30,8 +30,11 @@ grad:"linear-gradient(135deg,#AE46C0,#F8AD39)" },
     grad:"linear-gradient(135deg,#3222E9,#FE8B77)" },
 ];
 
-function BlogHero() {
-  const hero = POSTS.find(p => p.hero);
+function BlogHero({ go }) {
+  const articles = window.ARTICLES || [];
+  const hero = articles.find(p => p.hero);
+  if (!hero) return null;
+  const open = () => { location.hash = `#blog/${hero.slug}`; };
   return (
     <section className="blhero">
       <div className="wrap">
@@ -49,7 +52,8 @@ function BlogHero() {
           </h1>
           <p className="blhero__sub">Ensaios, casos de uso e notas técnicas do time da WIR sobre como Inteligência Artificial está redesenhando a operação do mercado segurador.</p>
         </div>
-        <article className="blhero__feature">
+        <article className="blhero__feature is-clickable" onClick={open} role="link" tabIndex={0}
+          onKeyDown={(e)=>{ if(e.key==="Enter") open(); }}>
           <div className="blhero__feature-img"
             style={hero.img
               ? { backgroundImage: `linear-gradient(180deg, rgba(11,10,8,0.15), rgba(11,10,8,0.65)), url(${hero.img})`, backgroundSize: "cover", backgroundPosition: "center" }
@@ -70,7 +74,7 @@ function BlogHero() {
                 <b>{hero.author}</b>
                 <span>{hero.role}</span>
               </div>
-              <span className="blhero__feature-cta blhero__feature-cta--soon">Em breve <span aria-hidden>·</span></span>
+              <span className="blhero__feature-cta">Ler artigo <span aria-hidden>→</span></span>
             </div>
           </div>
         </article>
@@ -103,7 +107,8 @@ function BlogFilter({ active, setActive, counts }) {
   );
 }
 
-function BlogGrid({ posts }) {
+function BlogGrid({ posts, go }) {
+  const open = (slug) => { location.hash = `#blog/${slug}`; };
   return (
     <section className="blgrid" data-reveal>
       <div className="wrap">
@@ -112,7 +117,9 @@ function BlogGrid({ posts }) {
             <div className="eyebrow" style={{marginBottom: 24}}>· {posts.length} artigos</div>
             <div className="blgrid__list">
               {posts.map((p,i) => (
-                <article key={p.id} className={"blpost" + (i === 0 ? " blpost--big" : "")}>
+                <article key={p.slug} className={"blpost is-clickable" + (i === 0 ? " blpost--big" : "")}
+                  onClick={() => open(p.slug)} role="link" tabIndex={0}
+                  onKeyDown={(e)=>{ if(e.key==="Enter") open(p.slug); }}>
                   <div className="blpost__img"
                     style={p.img
                       ? { backgroundImage: `linear-gradient(180deg, rgba(11,10,8,0.2), rgba(11,10,8,0.7)), url(${p.img})`, backgroundSize: "cover", backgroundPosition: "center" }
@@ -134,7 +141,7 @@ function BlogGrid({ posts }) {
                         <b>{p.author}</b>
                         <span>{p.role}</span>
                       </div>
-                      <span className="blpost__cta blpost__cta--soon">Em breve</span>
+                      <span className="blpost__cta">Ler artigo →</span>
                     </div>
                   </div>
                 </article>
@@ -145,8 +152,8 @@ function BlogGrid({ posts }) {
             <div className="blside__card">
               <div className="eyebrow" style={{marginBottom: 16}}>· Em destaque</div>
               <ul className="blside__list">
-                {POSTS.slice(0,4).map((p,i) => (
-                  <li key={p.id}>
+                {(window.ARTICLES || []).slice(0,4).map((p,i) => (
+                  <li key={p.slug} className="is-clickable" onClick={() => open(p.slug)}>
                     <div className="blside__num">/0{i+1}</div>
                     <div>
                       <div className="blside__title">{p.title}</div>
@@ -233,24 +240,48 @@ function BlogClose() {
   );
 }
 
-function BlogPage() {
+function BlogPage({ go }) {
   useReveal();
   const [active, setActive] = React.useState("Todos");
+  const [slug, setSlug] = React.useState(() => {
+    const h = location.hash.replace(/^#/, "");
+    const parts = h.split("/");
+    return parts[0] === "blog" && parts[1] ? parts[1] : null;
+  });
+
+  React.useEffect(() => {
+    const onHash = () => {
+      const h = location.hash.replace(/^#/, "");
+      const parts = h.split("/");
+      setSlug(parts[0] === "blog" && parts[1] ? parts[1] : null);
+    };
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+
+  // Article reader view
+  if (slug) {
+    const article = (window.ARTICLES || []).find(a => a.slug === slug);
+    if (article) return <BlogArticle article={article} go={go}/>;
+  }
+
+  // Index view
+  const articles = window.ARTICLES || [];
   const posts = React.useMemo(() => {
-    const list = POSTS.filter(p => !p.hero);
+    const list = articles.filter(p => !p.hero);
     if (active === "Todos") return list;
     return list.filter(p => p.cat === active);
-  }, [active]);
+  }, [active, articles.length]);
   const counts = React.useMemo(() => {
-    const c = { Todos: POSTS.length - 1 };
-    POSTS.filter(p => !p.hero).forEach(p => { c[p.cat] = (c[p.cat] || 0) + 1; });
+    const c = { Todos: articles.length - 1 };
+    articles.filter(p => !p.hero).forEach(p => { c[p.cat] = (c[p.cat] || 0) + 1; });
     return c;
-  }, []);
+  }, [articles.length]);
   return (
     <>
-      <BlogHero/>
+      <BlogHero go={go}/>
       <BlogFilter active={active} setActive={setActive} counts={counts}/>
-      <BlogGrid posts={posts}/>
+      <BlogGrid posts={posts} go={go}/>
       <BlogClose/>
     </>
   );
