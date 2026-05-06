@@ -10,7 +10,12 @@ function App() {
 
   const go = (id, anchor) => {
     setRoute(id);
-    history.replaceState(null, "", "#" + id + (anchor ? "#" + anchor : ""));
+    const newHash = "#" + id + (anchor ? "#" + anchor : "");
+    // location.hash assignment fires hashchange (replaceState does not).
+    // We need hashchange so BlogPage's slug listener clears when navigating away from articles.
+    if (location.hash !== newHash) {
+      location.hash = newHash;
+    }
     if (anchor) {
       // Wait for React to mount the new route, then scroll to the anchor.
       // Double RAF guarantees the new <main> is painted before getElementById.
