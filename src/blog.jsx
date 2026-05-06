@@ -34,7 +34,7 @@ function BlogHero({ go }) {
   const articles = window.ARTICLES || [];
   const hero = articles.find(p => p.hero);
   if (!hero) return null;
-  const open = () => { location.hash = `#blog/${hero.slug}`; };
+  const open = () => { window.location.href = `/insights/${hero.slug}/`; };
   return (
     <section className="blhero">
       <div className="wrap">
@@ -108,7 +108,7 @@ function BlogFilter({ active, setActive, counts }) {
 }
 
 function BlogGrid({ posts, go }) {
-  const open = (slug) => { location.hash = `#blog/${slug}`; };
+  const open = (slug) => { window.location.href = `/insights/${slug}/`; };
   return (
     <section className="blgrid" data-reveal>
       <div className="wrap">
@@ -153,7 +153,7 @@ function BlogGrid({ posts, go }) {
               <div className="eyebrow" style={{marginBottom: 16}}>· Em destaque</div>
               <ul className="blside__list">
                 {(window.ARTICLES || []).slice(0,4).map((p,i) => (
-                  <li key={p.slug} className="is-clickable" onClick={() => open(p.slug)}>
+                  <li key={p.slug} className="is-clickable" onClick={() => { window.location.href = `/insights/${p.slug}/`; }}>
                     <div className="blside__num">/0{i+1}</div>
                     <div>
                       <div className="blside__title">{p.title}</div>
@@ -272,11 +272,11 @@ function BlogPage({ go }) {
     return c;
   }, [articles.length]);
 
-  // Article reader view (after all hooks)
-  if (slug) {
-    const article = articles.find(a => a.slug === slug);
-    if (article) return <BlogArticle article={article} go={go}/>;
-  }
+  // Old #blog/<slug> URLs redirect to real /insights/<slug>/ pages
+  React.useEffect(() => {
+    if (slug) window.location.replace(`/insights/${slug}/`);
+  }, [slug]);
+  if (slug) return null; // Brief blank while redirecting
 
   return (
     <>

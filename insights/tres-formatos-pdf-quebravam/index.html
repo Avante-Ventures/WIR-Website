@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>Três formatos de PDF que quebravam submissões — e como resolvemos — WIR Innovation</title>
+<meta name="description" content="PDFs de submissão são heterogêneos. OCR comum extrai 60% dos campos. Parsing semântico resolve os casos onde OCR quebra — com exemplos concretos." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/tres-formatos-pdf-quebravam/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Três formatos de PDF que quebravam submissões — e como resolvemos" />
+<meta property="og:description" content="PDFs de submissão são heterogêneos. OCR comum extrai 60% dos campos. Parsing semântico resolve os casos onde OCR quebra — com exemplos concretos." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/tres-formatos-pdf-quebravam/" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1568667256549-094345857637?w=1600&q=80&auto=format&fit=crop" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="Head of AI" />
+<meta property="article:section" content="Caso" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Três formatos de PDF que quebravam submissões — e como resolvemos" />
+<meta name="twitter:description" content="PDFs de submissão são heterogêneos. OCR comum extrai 60% dos campos. Parsing semântico resolve os casos onde OCR quebra — com exemplos concretos." />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1568667256549-094345857637?w=1600&q=80&auto=format&fit=crop" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css?v=20260429x" />
+<link rel="stylesheet" href="/home.css?v=20260429x" />
+<link rel="stylesheet" href="/blog.css?v=20260429x" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Três formatos de PDF que quebravam submissões — e como resolvemos","description":"PDFs de submissão são heterogêneos. OCR comum extrai 60% dos campos. Parsing semântico resolve os casos onde OCR quebra — com exemplos concretos.","image":"https://images.unsplash.com/photo-1568667256549-094345857637?w=1600&q=80&auto=format&fit=crop","datePublished":"01 · Mar · 2026","author":{"@type":"Person","name":"Head of AI","jobTitle":"ML · WIR Innovation"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/tres-formatos-pdf-quebravam/","articleSection":"Caso"}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>Plataforma de IA para seguros</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>Em conformidade com LGPD</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:44px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/" class="nav__link">Início</a>
+      <a href="/#about" class="nav__link">Sobre</a>
+      <a href="/#solutions" class="nav__link">Produtos &amp; IA</a>
+      <a href="/#protection" class="nav__link">Proteção de Dados</a>
+      <a href="/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contato
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/insights/">
+      <span aria-hidden="true">←</span> Voltar para Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Caso</div>
+      <h1 class="display blarticle__title">Três formatos de PDF que quebravam submissões — e como resolvemos</h1>
+      <p class="blarticle__sub">Do OCR ingênuo ao parsing semântico. Os PDFs específicos que destruíam extrações até a virada técnica.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">Ho</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>Head of AI</b> · ML · WIR Innovation</div>
+          <div class="blarticle__byline-time">01 · Mar · 2026 · 6 min de leitura</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#F8AD39,#FE8B77);">
+      <img src="https://images.unsplash.com/photo-1568667256549-094345857637?w=1600&q=80&auto=format&fit=crop" alt="Pilha de documentos e papelada de seguros" loading="eager" />
+    </figure>
+
+    <div class="blarticle__body">
+<p>PDF é o formato favorito da indústria de seguros e o pesadelo favorito de qualquer engenheiro tentando automatizar extração no setor. Cada corretora tem o seu padrão. Cada cliente final tem o seu jeito de preencher o questionário.</p>
+<p>Quando começamos a operação de extração da WIR, o pipeline naive — <a href="https://github.com/tesseract-ocr/tesseract" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Tesseract OCR</a> + regex pós-processamento + LLM para campos não estruturados — funcionava em algo como 60% dos casos. O dado importante é o complemento: 40% das submissões tinham algum campo crítico extraído incorretamente, ou não extraído.</p>
+<blockquote>Pipeline robusto valida coerência, dispara revisão quando dados não passam sanity check e nunca propaga incerteza como verdade.</blockquote>
+<p>Esse texto descreve três formatos específicos que quebravam o pipeline naive, qual era o modo de falha, e qual foi a virada técnica.</p>
+<h3>Formato 1: PDF escaneado de questionário antigo</h3>
+<p><strong>O caso:</strong> corretoras tradicionais imprimem o questionário, pedem ao cliente que preencha à mão, escaneiam e enviam como PDF. O resultado é um PDF cujo conteúdo é, na prática, uma imagem.</p>
+<p><strong>O modo de falha:</strong> OCR comum lê a maior parte do texto impresso, mas falha consistentemente nos campos preenchidos à mão. CNPJ, faturamento, nome do segurado — saem com 30% a 50% de taxa de erro. Pior: quando o OCR confundia &quot;1&quot; com &quot;I&quot; em um CNPJ, o pipeline downstream assumia o CNPJ como string válida e seguia, gerando enriquecimento contra entidade errada.</p>
+<p><strong>A virada técnica:</strong> abandonamos a leitura linear e adotamos pipeline de duas camadas. Primeira: detecção da região do documento (form layout detection) que identifica onde estão os campos preenchidos. Segunda: modelo treinado especificamente para handwriting OCR, com pós-processamento contextual via LLM que valida coerência entre campos relacionados. Quando o CNPJ extraído não passa no dígito verificador, é flagado para revisão.</p>
+<p><strong>Resultado:</strong> taxa de erro em campos críticos caiu de ~40% para abaixo de 3%.</p>
+<h3>Formato 2: Tabela multi-coluna em layout complexo</h3>
+<p><strong>O caso:</strong> questionários de risco industrial apresentam tabelas com 5 a 20 colunas que se estendem por múltiplas páginas. PDF não tem conceito nativo de &quot;essa tabela continua na próxima página&quot;.</p>
+<p><strong>O modo de falha:</strong> OCR linear lê linha por linha, sem entender estrutura. Quando uma tabela quebra de página, a primeira linha da página seguinte é lida sem o cabeçalho, e o pipeline associa valores às colunas erradas. Em uma submissão real, um equipamento de R$ 2.4M na página 3 foi associado a &quot;ano de fabricação&quot; porque o OCR pegou só o valor da segunda coluna sem o cabeçalho.</p>
+<p><strong>A virada técnica:</strong> trocamos OCR puro por modelo layout-aware (família <a href="https://github.com/microsoft/unilm" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">LayoutLM da Microsoft</a>), que entende estrutura visual — onde está o cabeçalho, onde estão as colunas, qual valor pertence a qual campo, mesmo entre páginas. Para validação, LLM pós-processa checando coerência: faturamento consistente com porte, valores compatíveis com atividade.</p>
+<p><strong>Resultado:</strong> taxa de erro em extração de tabelas multi-página caiu de ~25% para menos de 2%.</p>
+<h3>Formato 3: PDF protegido ou com camada de assinatura digital</h3>
+<p><strong>O caso:</strong> clientes corporativos em segmentos regulados exigem questionário com assinatura digital <a href="https://www.gov.br/iti" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">ICP-Brasil</a> padrão. O PDF resultante tem camada criptográfica que, dependendo de como foi gerada, bloqueia OCR e até copy-paste.</p>
+<p><strong>O modo de falha:</strong> o pipeline simplesmente não conseguia abrir esses PDFs. Voltavam para fila manual, criando gargalo silencioso — em uma operação que recebia 800 submissões/mês, ~8% caíam nesse modo.</p>
+<p><strong>A virada técnica:</strong> fluxo de detecção de proteção que identifica o tipo aplicado e segue caminho específico. Para assinatura ICP-Brasil padrão, a camada de texto está acessível atrás da assinatura — basta ler com biblioteca correta. Para PDFs com password de leitura, automação que pede senha ao corretor de origem. Para PDFs que bloqueiam extração de texto mas não imagem, render para imagem + pipeline OCR + layout-aware.</p>
+<p><strong>Resultado:</strong> fila manual por &quot;PDF não processável&quot; caiu de 8% para abaixo de 0.5%.</p>
+<h3>O que isso significa</h3>
+<p>Três aprendizados consolidados.</p>
+<p>Primeiro: pipeline de extração bem feito não é uma ferramenta — é uma cadeia. OCR é uma camada. Layout-aware é outra. Validação semântica via LLM é outra. Cada camada cobre os casos onde a anterior quebra.</p>
+<p>Segundo: o valor está no long tail. Os 60% de PDFs simples que qualquer ferramenta resolve não são onde a tecnologia diferencia. A diferença está no 40% restante.</p>
+<p>Terceiro: validação importa mais que extração. O custo de uma extração errada propagada é maior que o custo de uma extração que falha visivelmente. Pipeline robusto valida coerência, dispara revisão quando dados não passam sanity check e nunca propaga incerteza como verdade. Esse princípio se conecta diretamente à arquitetura de auditoria descrita em <a href="/insights/explicabilidade-alem-de-shap/" class="blarticle__link-int">Explicabilidade que vai além do SHAP</a>.</p>
+<h3>Referências e leituras</h3>
+<ul>
+  <li><a href="https://github.com/microsoft/unilm" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">LayoutLM family — Microsoft Research GitHub</a> · parsing layout-aware</li>
+  <li><a href="https://github.com/tesseract-ocr/tesseract" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Tesseract OCR</a> · OCR open-source clássico</li>
+  <li><a href="https://www.gov.br/iti" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">ICP-Brasil — Instituto Nacional de Tecnologia da Informação</a></li>
+  <li><a href="/insights/explicabilidade-alem-de-shap/" class="blarticle__link-int">Explicabilidade que vai além do SHAP — auditoria de pipelines</a></li>
+  <li><a href="/insights/caso-implementacao-mahway/" class="blarticle__link-int">Caso de implementação WIR + Mahway — onde isso virou produção</a></li>
+</ul>
+    </div>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/insights/">
+        <span aria-hidden="true">←</span> Outros Insights
+      </a>
+      <a class="btn btn--solid" href="/#contact">
+        Falar com a equipe <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#solutions">Produtos &amp; IA</a></li>
+          <li><a href="/#protection">Proteção de Dados</a></li>
+          <li><a href="/insights/">Insights &amp; News</a></li>
+          <li><a href="/#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/#contact">Falar com a equipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sócios &amp; Holding</h4>
+        <ul>
+          <li><a href="/#about">Mahway · California</a></li>
+          <li><a href="/#about">Avante · Brasil</a></li>
+          <li><a href="/#about">Conselheiros estratégicos</a></li>
+          <li><a href="/#about">Princípios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Ol%C3%A1%20Nicholas%2C%20vim%20pelo%20site%20da%20WIR%20Innovation.%20Gostaria%20de%20conversar%20sobre%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Falar com Nicholas no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>

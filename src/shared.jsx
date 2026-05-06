@@ -41,7 +41,7 @@ function Nav({ route, go }) {
     { id: "about", label: "Sobre" },
     { id: "solutions", label: "Produtos & IA" },
     { id: "protection", label: "Proteção de Dados" },
-    { id: "blog", label: "Insights & News" },
+    { id: "blog", label: "Insights & News", href: "/insights/" }, // real static page
   ];
   return (
     <>
@@ -54,10 +54,17 @@ function Nav({ route, go }) {
           </a>
           <div className="nav__links">
             {links.map(l => (
-              <a key={l.id} href={"#"+l.id} onClick={(e)=>{e.preventDefault();go(l.id)}}
-                className={"nav__link" + (route===l.id ? " nav__link--active": "")}>
-                {l.label}
-              </a>
+              l.href ? (
+                <a key={l.id} href={l.href}
+                  className={"nav__link" + (route===l.id ? " nav__link--active": "")}>
+                  {l.label}
+                </a>
+              ) : (
+                <a key={l.id} href={"#"+l.id} onClick={(e)=>{e.preventDefault();go(l.id)}}
+                  className={"nav__link" + (route===l.id ? " nav__link--active": "")}>
+                  {l.label}
+                </a>
+              )
             ))}
           </div>
           <a href="#contact" onClick={(e)=>{e.preventDefault();go("contact")}} className="nav__cta">

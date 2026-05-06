@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>Observabilidade de agentes: o que monitorar em produção — WIR Innovation</title>
+<meta name="description" content="Sistemas de IA em produção precisam de monitoramento específico — não basta logging genérico. As 6 métricas que separam sistema robusto de frágil." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/observabilidade-de-agentes/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Observabilidade de agentes: o que monitorar em produção" />
+<meta property="og:description" content="Sistemas de IA em produção precisam de monitoramento específico — não basta logging genérico. As 6 métricas que separam sistema robusto de frágil." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/observabilidade-de-agentes/" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="Head of AI" />
+<meta property="article:section" content="Técnico" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Observabilidade de agentes: o que monitorar em produção" />
+<meta name="twitter:description" content="Sistemas de IA em produção precisam de monitoramento específico — não basta logging genérico. As 6 métricas que separam sistema robusto de frágil." />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css?v=20260429x" />
+<link rel="stylesheet" href="/home.css?v=20260429x" />
+<link rel="stylesheet" href="/blog.css?v=20260429x" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Observabilidade de agentes: o que monitorar em produção","description":"Sistemas de IA em produção precisam de monitoramento específico — não basta logging genérico. As 6 métricas que separam sistema robusto de frágil.","image":"https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100","datePublished":"22 · Fev · 2026","author":{"@type":"Person","name":"Head of AI","jobTitle":"ML · WIR Innovation"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/observabilidade-de-agentes/","articleSection":"Técnico"}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>Plataforma de IA para seguros</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>Em conformidade com LGPD</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:44px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/" class="nav__link">Início</a>
+      <a href="/#about" class="nav__link">Sobre</a>
+      <a href="/#solutions" class="nav__link">Produtos &amp; IA</a>
+      <a href="/#protection" class="nav__link">Proteção de Dados</a>
+      <a href="/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contato
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/insights/">
+      <span aria-hidden="true">←</span> Voltar para Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Técnico</div>
+      <h1 class="display blarticle__title">Observabilidade de agentes: o que monitorar em produção</h1>
+      <p class="blarticle__sub">Latência, precisão, drift, custo por decisão, divergência humano-vs-modelo. O dashboard mínimo que toda seguradora deveria exigir antes de escalar IA.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">Ho</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>Head of AI</b> · ML · WIR Innovation</div>
+          <div class="blarticle__byline-time">22 · Fev · 2026 · 9 min de leitura</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#3222E9,#FE8B77);">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100" alt="Múltiplas telas com dashboards de monitoramento" loading="eager" />
+    </figure>
+
+    <div class="blarticle__body">
+<p>Equipes que sobem o primeiro modelo de IA para produção em uma seguradora costumam montar um dashboard inicial focado nas métricas que aprenderam a importar durante desenvolvimento: acurácia no test set, AUC, F1.</p>
+<p>Esse dashboard funciona durante o primeiro mês. Depois, ele para de ser útil.</p>
+<p>As perguntas que importam quando você tem IA decidindo riscos reais não são &quot;qual a acurácia no test set&quot;. São perguntas operacionais sobre comportamento ao longo do tempo, sobre divergência entre o que o modelo decide e o que humano decidiria, e sobre custo por unidade de valor entregue. É exatamente o tipo de problema que ferramentas como <a href="https://arize.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Arize AI</a>, <a href="https://www.fiddler.ai" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Fiddler</a>, <a href="https://whylabs.ai" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">WhyLabs</a> e <a href="https://www.evidentlyai.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Evidently AI</a> atacam — cada uma com ângulos um pouco diferentes.</p>
+<blockquote>Construir observabilidade é caro. Não revisar a observabilidade que se construiu é mais caro.</blockquote>
+<h3>Por que observabilidade de IA é diferente</h3>
+<p>Sistemas tradicionais têm comportamento determinístico — quando funcionam, funcionam igual; quando quebram, quebram de jeito reproduzível. Observabilidade clássica (logs, métricas, traces) lida bem com isso.</p>
+<p>Sistemas de IA têm camada adicional: comportamento estatístico. Eles podem estar funcionando perfeitamente em termos de software — sem erros, latência boa, throughput estável — e ainda estar produzindo decisões progressivamente piores ao longo do tempo. Essa degradação não dispara alerta em monitoramento clássico. Aparece em loss ratio meses depois.</p>
+<h3>As 6 métricas do dashboard mínimo</h3>
+<p><strong>1. Latência por tipo de decisão (p50, p95, p99).</strong> Não basta latência média. Para decisões automatizadas que afetam experiência de canal, p99 importa tanto quanto p50 — porque é o caso de uma submissão em 100 que demora 12 segundos que vira complaint do corretor. Quebra por tipo: extração, classificação, scoring, geração.</p>
+<p><strong>2. Taxa de override humano.</strong> A fração de decisões automáticas alteradas pelo underwriter. É o termômetro mais direto de qualidade do modelo em produção. Override tendendo para baixo significa concordância crescente. Tendendo para cima significa que algo está mudando — drift de dados, drift de política, ou modelo errando onde antes acertava.</p>
+<p><strong>3. Distribuição de features e drift detection.</strong> Para cada feature relevante, monitore distribuição (média, std, percentis) ao longo do tempo. Compare com a distribuição de treino. Quando diverge significativamente, o modelo está operando fora do que viu — ainda funciona, mas com confiança decrescente. <a href="https://www.evidentlyai.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Evidently AI</a> tem boa documentação aberta sobre os testes estatísticos típicos (KS, PSI, Wasserstein).</p>
+<p><strong>4. Custo por decisão.</strong> Inclui chamadas de API LLM, infraestrutura de inferência, retrieval de bases externas. Em sistemas híbridos, custo por decisão pode variar 10× entre tipos de caso. Sem essa métrica, custo total balona sem explicação.</p>
+<p><strong>5. Loss ratio segmentado por automação.</strong> Book observável separado por nível de envolvimento humano: 100% automático, parcialmente automático, integralmente humano. Diferenças significativas sinalizam algo — qualidade do modelo, viés de seleção, ou diferença de produto.</p>
+<p><strong>6. Divergência humano-vs-modelo amostral.</strong> Fração das decisões automáticas (1% a 5%) submetida a revisão humana cega após o fato. Calcula-se a concordância. Em sistemas saudáveis, tende a 80%-90%, com discordância concentrada em casos genuinamente ambíguos.</p>
+<h3>O que NÃO basta</h3>
+<p><strong>Acurácia no test set.</strong> Útil durante desenvolvimento. Em produção, a única acurácia que importa é a operacional, medida pela divergência humano-vs-modelo amostral.</p>
+<p><strong>AUC, F1.</strong> Métricas de modelo, não de sistema. Importantes para troubleshooting; insuficientes para monitoramento contínuo.</p>
+<p><strong>Volume e throughput.</strong> Importante para capacity planning. Não diz nada sobre qualidade.</p>
+<p><strong>Confidence score isolado.</strong> Útil para roteamento, não como métrica de saúde. Modelo overconfident ou underconfident tem distribuição enviesada.</p>
+<h3>Cadência de revisão</h3>
+<p>Diário, alerta-driven: latência, custo, drift de features.</p>
+<p>Semanal, equipe técnica: taxa de override, divergência humano-vs-modelo.</p>
+<p>Mensal, executivo: loss ratio segmentado, custo total, comparação modelo-vs-humano agregada.</p>
+<p>Trimestral, auditoria estendida: simulações contrafactuais, revisão de overrides com motivo livre, análise de viés por segmento.</p>
+<h3>Onde a maioria trava</h3>
+<p>O ponto de trava mais comum não é técnico — é organizacional. O dashboard existe ou pode ser construído com esforço razoável. O que falta é dono claro e cadência.</p>
+<p>Operações onde &quot;alguém da TI olha o dashboard quando há queixa&quot; não capturam drift. Operações onde a equipe de subscrição vê o dashboard junto com a equipe de modelo, semanalmente, em reunião curta, capturam.</p>
+<p>A trilha completa que alimenta esse dashboard é a mesma descrita em <a href="/insights/explicabilidade-alem-de-shap/" class="blarticle__link-int">Explicabilidade que vai além do SHAP</a>, e a divisão entre LLM e regras que precisa ser monitorada em separado está em <a href="/insights/llms-vs-motores-de-regras/" class="blarticle__link-int">LLMs não substituem motores de regras</a>.</p>
+<p>Construir observabilidade é caro. Não revisar a observabilidade que se construiu é mais caro — é pagar pela infraestrutura sem extrair o sinal.</p>
+<h3>Referências e leituras</h3>
+<ul>
+  <li><a href="https://arize.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Arize AI</a> · ML observability platform</li>
+  <li><a href="https://www.fiddler.ai" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Fiddler AI</a> · model monitoring + explainability</li>
+  <li><a href="https://whylabs.ai" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">WhyLabs</a> · open-source data and ML monitoring</li>
+  <li><a href="https://www.evidentlyai.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Evidently AI</a> · ML monitoring open-source</li>
+  <li><a href="/insights/explicabilidade-alem-de-shap/" class="blarticle__link-int">Explicabilidade que vai além do SHAP</a> · arquitetura de auditoria</li>
+  <li><a href="/insights/llms-vs-motores-de-regras/" class="blarticle__link-int">LLMs não substituem motores de regras</a> · arquitetura híbrida que precisa ser monitorada</li>
+</ul>
+    </div>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/insights/">
+        <span aria-hidden="true">←</span> Outros Insights
+      </a>
+      <a class="btn btn--solid" href="/#contact">
+        Falar com a equipe <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#solutions">Produtos &amp; IA</a></li>
+          <li><a href="/#protection">Proteção de Dados</a></li>
+          <li><a href="/insights/">Insights &amp; News</a></li>
+          <li><a href="/#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/#contact">Falar com a equipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sócios &amp; Holding</h4>
+        <ul>
+          <li><a href="/#about">Mahway · California</a></li>
+          <li><a href="/#about">Avante · Brasil</a></li>
+          <li><a href="/#about">Conselheiros estratégicos</a></li>
+          <li><a href="/#about">Princípios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Ol%C3%A1%20Nicholas%2C%20vim%20pelo%20site%20da%20WIR%20Innovation.%20Gostaria%20de%20conversar%20sobre%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Falar com Nicholas no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>

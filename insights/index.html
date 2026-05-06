@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Insights &amp; News — WIR Innovation</title>
+<meta name="description" content="Ensaios, casos e notas técnicas do time da WIR sobre IA aplicada ao mercado segurador." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Insights &amp; News — WIR Innovation" />
+<meta property="og:description" content="Ensaios, casos e notas técnicas do time da WIR sobre IA aplicada ao mercado segurador." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/" />
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css?v=20260429x" />
+<link rel="stylesheet" href="/home.css?v=20260429x" />
+<link rel="stylesheet" href="/blog.css?v=20260429x" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+<script>document.documentElement.classList.add('js-ready');</script>
+<style>
+.ix { padding:80px 0; background:var(--paper);}
+.ix__head { max-width:760px; margin-bottom:48px;}
+.ix__head h1 { font-size:clamp(40px,5vw,64px); line-height:1.05; letter-spacing:-0.015em; margin:16px 0 20px; }
+.ix__head p { font-size:19px; color:var(--ink-2); line-height:1.5; max-width:600px;}
+.ix__grid { display:grid; grid-template-columns:repeat(3,1fr); gap:32px;}
+.ix-card { display:flex; flex-direction:column; gap:14px; text-decoration:none; color:inherit; transition:transform .2s ease;}
+.ix-card:hover { transform:translateY(-3px);}
+.ix-card__img { aspect-ratio:16/10; border-radius:12px; position:relative; overflow:hidden;}
+.ix-card__cat { position:absolute; top:14px; left:14px; padding:4px 10px; background:rgba(255,255,255,.92); border-radius:4px; font-family:var(--f-mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;}
+.ix-card__meta { font-family:var(--f-mono); font-size:11px; letter-spacing:.04em; color:var(--ink-3); text-transform:uppercase;}
+.ix-card__body h2 { font-family:var(--f-display); font-weight:500; font-size:22px; line-height:1.2; margin:8px 0 8px; letter-spacing:-0.005em;}
+.ix-card__body p { font-size:14px; line-height:1.55; color:var(--ink-2);}
+.ix-card__by { font-family:var(--f-mono); font-size:11px; letter-spacing:.04em; color:var(--ink-3); margin-top:6px;}
+.ix-card__by b { color:var(--ink); font-weight:500;}
+@media (max-width:980px){ .ix__grid { grid-template-columns:repeat(2,1fr);} }
+@media (max-width:640px){ .ix__grid { grid-template-columns:1fr; gap:24px;} .ix { padding:48px 0;} }
+</style>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>Plataforma de IA para seguros</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>Em conformidade com LGPD</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:44px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/" class="nav__link">Início</a>
+      <a href="/#about" class="nav__link">Sobre</a>
+      <a href="/#solutions" class="nav__link">Produtos &amp; IA</a>
+      <a href="/#protection" class="nav__link">Proteção de Dados</a>
+      <a href="/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contato
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+<main>
+<section class="ix">
+  <div class="wrap">
+    <div class="ix__head">
+      <div class="eyebrow">· Insights &amp; News</div>
+      <h1>Insights sobre <em>IA, seguro</em> e decisão.</h1>
+      <p>Ensaios, casos de uso e notas técnicas do time da WIR sobre como Inteligência Artificial está redesenhando a operação do mercado segurador.</p>
+    </div>
+    <div class="ix__grid">
+
+    <a href="/insights/o-underwriter-nao-morre/" class="ix-card">
+      <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80&auto=format&fit=crop);background-size:cover;background-position:center;">
+        <span class="ix-card__cat">Ensaio</span>
+      </div>
+      <div class="ix-card__body">
+        <div class="ix-card__meta">Ensaio · 12 min · 18 · Abr · 2026</div>
+        <h2>O underwriter não morre. O modelo operacional dele, sim.</h2>
+        <p>Por que a próxima década do seguro vai ser definida pela divisão entre quem tem infraestrutura de decisão e quem ainda mora em planilha.</p>
+        <div class="ix-card__by"><b>Nicholas Weiser</b> · CEO · Co-Founder</div>
+      </div>
+    </a>
+
+    <a href="/insights/explicabilidade-alem-de-shap/" class="ix-card">
+      <div class="ix-card__img" style="background:linear-gradient(135deg,#7540AC,#FE8B77);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop);background-size:cover;background-position:center;">
+        <span class="ix-card__cat">Técnico</span>
+      </div>
+      <div class="ix-card__body">
+        <div class="ix-card__meta">Técnico · 9 min · 12 · Abr · 2026</div>
+        <h2>Explicabilidade que vai além do SHAP</h2>
+        <p>Por que a ferramenta favorita de explicabilidade do data scientist não chega para responder ao regulador. As 4 camadas que tornam uma decisão de seguro defensável.</p>
+        <div class="ix-card__by"><b>Head of AI</b> · ML · WIR Innovation</div>
+      </div>
+    </a>
+
+    <a href="/insights/caso-implementacao-mahway/" class="ix-card">
+      <div class="ix-card__img" style="background:linear-gradient(135deg,#FE8B77,#F8AD39);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80&auto=format&fit=crop);background-size:cover;background-position:center;">
+        <span class="ix-card__cat">Caso</span>
+      </div>
+      <div class="ix-card__body">
+        <div class="ix-card__meta">Caso · 7 min · 05 · Abr · 2026</div>
+        <h2>Como uma seguradora portfólio Mahway reduziu seu ciclo de cotação em ordens de grandeza</h2>
+        <p>Estudo de caso da primeira implementação completa da stack WIR. O que funcionou, o que não funcionou, e os números reais.</p>
+        <div class="ix-card__by"><b>Head of Delivery</b> · Delivery · WIR Innovation</div>
+      </div>
+    </a>
+
+    <a href="/insights/mgas-ponta-da-lanca/" class="ix-card">
+      <div class="ix-card__img" style="background:linear-gradient(135deg,#F8AD39,#3222E9);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(https://images.unsplash.com/photo-1551434678-e076c223a692?w=1600&q=80&auto=format&fit=crop);background-size:cover;background-position:center;">
+        <span class="ix-card__cat">Mercado</span>
+      </div>
+      <div class="ix-card__body">
+        <div class="ix-card__meta">Mercado · 8 min · 28 · Mar · 2026</div>
+        <h2>Por que MGAs são a ponta da lança da IA em seguro</h2>
+        <p>Estrutura enxuta, apetite próprio e fome de capacidade. A combinação que faz MGAs adotarem IA mais rápido que Tier-1 — e por que essa vantagem é estrutural.</p>
+        <div class="ix-card__by"><b>José Carlos de Paula</b> · CSO · Co-Founder</div>
+      </div>
+    </a>
+
+    <a href="/insights/llms-vs-motores-de-regras/" class="ix-card">
+      <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80&auto=format&fit=crop);background-size:cover;background-position:center;">
+        <span class="ix-card__cat">Técnico</span>
+      </div>
+      <div class="ix-card__body">
+        <div class="ix-card__meta">Técnico · 10 min · 22 · Mar · 2026</div>
+        <h2>LLMs não substituem motores de regras — eles os complementam</h2>
+        <p>A arquitetura híbrida da WIR. Quando LLM decide, quando rule engine decide, e como os dois conversam em decisões críticas.</p>
+        <div class="ix-card__by"><b>Head of AI</b> · ML · WIR Innovation</div>
+      </div>
+    </a>
+
+    <a href="/insights/falsa-dicotomia-velocidade-compliance/" class="ix-card">
+      <div class="ix-card__img" style="background:linear-gradient(135deg,#AE46C0,#F8AD39);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(https://images.unsplash.com/photo-1454165205744-3b78555e5572?w=1600&q=80&auto=format&fit=crop);background-size:cover;background-position:center;">
+        <span class="ix-card__cat">Ensaio</span>
+      </div>
+      <div class="ix-card__body">
+        <div class="ix-card__meta">Ensaio · 7 min · 15 · Mar · 2026</div>
+        <h2>A falsa dicotomia entre velocidade e compliance</h2>
+        <p>A indústria insiste em &quot;ou rápido OU em compliance&quot;. Isso é arquitetura ruim, não trade-off real. Como auditabilidade nativa elimina a escolha.</p>
+        <div class="ix-card__by"><b>Nicholas Weiser</b> · CEO · Co-Founder</div>
+      </div>
+    </a>
+
+    <a href="/insights/custo-invisivel-stp-mal-feito/" class="ix-card">
+      <div class="ix-card__img" style="background:linear-gradient(135deg,#7540AC,#3222E9);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=1600&q=80&auto=format&fit=crop);background-size:cover;background-position:center;">
+        <span class="ix-card__cat">Mercado</span>
+      </div>
+      <div class="ix-card__body">
+        <div class="ix-card__meta">Mercado · 8 min · 08 · Mar · 2026</div>
+        <h2>O custo invisível do straight-through processing mal feito</h2>
+        <p>STP sem auditabilidade cria risco regulatório, reputacional e de carteira. Checklist de 9 itens para verificar antes de escalar.</p>
+        <div class="ix-card__by"><b>José Carlos de Paula</b> · CSO · Co-Founder</div>
+      </div>
+    </a>
+
+    <a href="/insights/tres-formatos-pdf-quebravam/" class="ix-card">
+      <div class="ix-card__img" style="background:linear-gradient(135deg,#F8AD39,#FE8B77);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(https://images.unsplash.com/photo-1568667256549-094345857637?w=1600&q=80&auto=format&fit=crop);background-size:cover;background-position:center;">
+        <span class="ix-card__cat">Caso</span>
+      </div>
+      <div class="ix-card__body">
+        <div class="ix-card__meta">Caso · 6 min · 01 · Mar · 2026</div>
+        <h2>Três formatos de PDF que quebravam submissões — e como resolvemos</h2>
+        <p>Do OCR ingênuo ao parsing semântico. Os PDFs específicos que destruíam extrações até a virada técnica.</p>
+        <div class="ix-card__by"><b>Head of AI</b> · ML · WIR Innovation</div>
+      </div>
+    </a>
+
+    <a href="/insights/observabilidade-de-agentes/" class="ix-card">
+      <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#FE8B77);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100);background-size:cover;background-position:center;">
+        <span class="ix-card__cat">Técnico</span>
+      </div>
+      <div class="ix-card__body">
+        <div class="ix-card__meta">Técnico · 9 min · 22 · Fev · 2026</div>
+        <h2>Observabilidade de agentes: o que monitorar em produção</h2>
+        <p>Latência, precisão, drift, custo por decisão, divergência humano-vs-modelo. O dashboard mínimo que toda seguradora deveria exigir antes de escalar IA.</p>
+        <div class="ix-card__by"><b>Head of AI</b> · ML · WIR Innovation</div>
+      </div>
+    </a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#solutions">Produtos &amp; IA</a></li>
+          <li><a href="/#protection">Proteção de Dados</a></li>
+          <li><a href="/insights/">Insights &amp; News</a></li>
+          <li><a href="/#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/#contact">Falar com a equipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sócios &amp; Holding</h4>
+        <ul>
+          <li><a href="/#about">Mahway · California</a></li>
+          <li><a href="/#about">Avante · Brasil</a></li>
+          <li><a href="/#about">Conselheiros estratégicos</a></li>
+          <li><a href="/#about">Princípios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Ol%C3%A1%20Nicholas%2C%20vim%20pelo%20site%20da%20WIR%20Innovation.%20Gostaria%20de%20conversar%20sobre%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Falar com Nicholas no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>
