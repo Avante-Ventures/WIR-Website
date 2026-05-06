@@ -259,13 +259,7 @@ function BlogPage({ go }) {
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
 
-  // Article reader view
-  if (slug) {
-    const article = (window.ARTICLES || []).find(a => a.slug === slug);
-    if (article) return <BlogArticle article={article} go={go}/>;
-  }
-
-  // Index view
+  // Hooks must be called unconditionally — keep memos before any return
   const articles = window.ARTICLES || [];
   const posts = React.useMemo(() => {
     const list = articles.filter(p => !p.hero);
@@ -273,10 +267,17 @@ function BlogPage({ go }) {
     return list.filter(p => p.cat === active);
   }, [active, articles.length]);
   const counts = React.useMemo(() => {
-    const c = { Todos: articles.length - 1 };
+    const c = { Todos: Math.max(0, articles.length - 1) };
     articles.filter(p => !p.hero).forEach(p => { c[p.cat] = (c[p.cat] || 0) + 1; });
     return c;
   }, [articles.length]);
+
+  // Article reader view (after all hooks)
+  if (slug) {
+    const article = articles.find(a => a.slug === slug);
+    if (article) return <BlogArticle article={article} go={go}/>;
+  }
+
   return (
     <>
       <BlogHero go={go}/>
