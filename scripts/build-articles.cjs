@@ -6,7 +6,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const CACHE_VER = "v=2026042B";
+const CACHE_VER = "v=2026042C";
 const SITE_URL = "https://wirinnovation.ai";
 
 // ---- Read + parse ARTICLES from articles.jsx ----

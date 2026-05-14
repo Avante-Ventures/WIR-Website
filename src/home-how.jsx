@@ -144,44 +144,44 @@ function ArchFlow() {
             {/* Animated dots — RIDE THE EXACT VISIBLE PIPES via mpath */}
             {/* Halos behind */}
             <circle r="18" fill="#F8AD39" opacity="0.22" filter="url(#archGlow)">
-              <animateMotion dur="9s" repeatCount="indefinite" begin="0s">
+              <animateMotion dur="18s" repeatCount="indefinite" begin="0s">
                 <mpath href="#pipe-top"/>
               </animateMotion>
             </circle>
             <circle r="18" fill="#A44F98" opacity="0.22" filter="url(#archGlow)">
-              <animateMotion dur="8s" repeatCount="indefinite" begin="-2s">
+              <animateMotion dur="16s" repeatCount="indefinite" begin="-4s">
                 <mpath href="#pipe-mid"/>
               </animateMotion>
             </circle>
             <circle r="18" fill="#10B981" opacity="0.22" filter="url(#archGlow)">
-              <animateMotion dur="9.5s" repeatCount="indefinite" begin="-4s">
+              <animateMotion dur="19s" repeatCount="indefinite" begin="-8s">
                 <mpath href="#pipe-bot"/>
               </animateMotion>
             </circle>
             <circle r="18" fill="#FE8B77" opacity="0.22" filter="url(#archGlow)">
-              <animateMotion dur="11s" repeatCount="indefinite" begin="-5s">
+              <animateMotion dur="22s" repeatCount="indefinite" begin="-10s">
                 <mpath href="#pipe-feedback"/>
               </animateMotion>
             </circle>
 
             {/* Solid dots front */}
             <circle r="8" fill="#F8AD39" stroke="#FAF6EE" strokeWidth="2" filter="url(#archDotShadow)">
-              <animateMotion dur="9s" repeatCount="indefinite" begin="0s">
+              <animateMotion dur="18s" repeatCount="indefinite" begin="0s">
                 <mpath href="#pipe-top"/>
               </animateMotion>
             </circle>
             <circle r="8" fill="#A44F98" stroke="#FAF6EE" strokeWidth="2" filter="url(#archDotShadow)">
-              <animateMotion dur="8s" repeatCount="indefinite" begin="-2s">
+              <animateMotion dur="16s" repeatCount="indefinite" begin="-4s">
                 <mpath href="#pipe-mid"/>
               </animateMotion>
             </circle>
             <circle r="8" fill="#10B981" stroke="#FAF6EE" strokeWidth="2" filter="url(#archDotShadow)">
-              <animateMotion dur="9.5s" repeatCount="indefinite" begin="-4s">
+              <animateMotion dur="19s" repeatCount="indefinite" begin="-8s">
                 <mpath href="#pipe-bot"/>
               </animateMotion>
             </circle>
             <circle r="8" fill="#FE8B77" stroke="#FAF6EE" strokeWidth="2" filter="url(#archDotShadow)">
-              <animateMotion dur="11s" repeatCount="indefinite" begin="-5s">
+              <animateMotion dur="22s" repeatCount="indefinite" begin="-10s">
                 <mpath href="#pipe-feedback"/>
               </animateMotion>
             </circle>

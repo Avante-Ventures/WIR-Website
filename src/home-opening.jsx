@@ -4,7 +4,7 @@
 function DecisionFlow() {
   const [pulse, setPulse] = React.useState(0);
   React.useEffect(() => {
-    const id = setInterval(() => setPulse(p => (p + 1) % 5), 1100);
+    const id = setInterval(() => setPulse(p => (p + 1) % 5), 2400);
     return () => clearInterval(id);
   }, []);
 
