@@ -466,7 +466,7 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
   display: flex; flex-direction: row; align-items: center; justify-content: center;
   gap: 16px; padding: 0 40px;
   min-width: 220px; min-height: 100px;
-  animation: trustbarScroll 40s linear infinite;
+  animation: trustbarScroll 6s linear infinite;
 }
 .trustbar__cell:hover { /* pause on hover not possible across all kids — use group */ }
 .trustbar__grid:hover .trustbar__cell { animation-play-state: paused; }
