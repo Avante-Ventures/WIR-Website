@@ -53,15 +53,17 @@ function TrustBar() {
         <div className="trustbar__experience">
           <div className="eyebrow trustbar__experience-kicker">· Experiência no setor</div>
           <div className="trustbar__grid">
-            {/* Duplicate cells for seamless infinite marquee */}
-            {[...cells, ...cells].map((c, i) => (
-              <div key={i} className={"trustbar__cell" + (c.composite ? " trustbar__cell--composite" : "")}
-                aria-hidden={i >= cells.length ? "true" : undefined}>
-                {c.composite
-                  ? c.composite.map((it, j) => renderItem(it, j))
-                  : renderItem(c, 0)}
-              </div>
-            ))}
+            <div className="trustbar__track">
+              {/* Duplicate cells for seamless infinite marquee */}
+              {[...cells, ...cells].map((c, i) => (
+                <div key={i} className={"trustbar__cell" + (c.composite ? " trustbar__cell--composite" : "")}
+                  aria-hidden={i >= cells.length ? "true" : undefined}>
+                  {c.composite
+                    ? c.composite.map((it, j) => renderItem(it, j))
+                    : renderItem(c, 0)}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
