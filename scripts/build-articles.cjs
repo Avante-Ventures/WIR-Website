@@ -6,7 +6,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const CACHE_VER = "v=20260429x";
+const CACHE_VER = "v=20260429y";
 const SITE_URL = "https://wirinnovation.ai";
 
 // ---- Read + parse ARTICLES from articles.jsx ----
@@ -151,7 +151,7 @@ function renderNav() {
 <nav class="nav">
   <div class="wrap nav__inner">
     <a href="/" class="nav__brand">
-      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:44px;width:auto;display:block" />
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
       <span class="nav__brand-sub">Innovation · AI Stack</span>
     </a>
     <div class="nav__links">

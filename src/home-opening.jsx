@@ -136,7 +136,6 @@ function Opening({ go }) {
           </div>
           <div className="opening__mast-R">
             <span>SÃO PAULO ⟶ SILICON VALLEY</span>
-            <span className="opening__mast-lang"><em>PT</em> · EN · ES</span>
           </div>
         </div>
 

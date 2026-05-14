@@ -63,7 +63,7 @@
 .abhero__lede { max-width: 900px; font-size: 22px; line-height: 1.5; color: var(--ink-2); text-wrap: pretty; padding-top: 48px; border-top: 1px solid rgba(11,10,8,.1); }
 
 /* ── abessay ── */
-.abessay { padding: 140px 0; background: var(--paper-2); border-bottom: 1px solid rgba(11,10,8,.08); }
+.abessay { padding: 96px 0; background: var(--paper-2); border-bottom: 1px solid rgba(11,10,8,.08); }
 .abessay__grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
 .abessay__side { position: sticky; top: 120px; }
 .abessay__pullquote { font-family: var(--f-display); font-weight: 400; font-size: clamp(36px, 3.5vw, 52px); line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); margin: 24px 0 32px; text-wrap: balance; }
@@ -77,7 +77,7 @@
 .abessay__para-t { font-family: var(--f-display); font-weight: 400; font-size: 24px; line-height: 1.45; color: var(--ink); letter-spacing: -0.005em; text-wrap: pretty; }
 
 /* ── abtime ── */
-.abtime { padding: 140px 0 120px; background: var(--paper); }
+.abtime { padding: 96px 0 80px; background: var(--paper); }
 .abtime__head { max-width: 900px; margin-bottom: 80px; }
 .abtime__title { font-family: var(--f-display); font-weight: 400; font-size: clamp(56px, 7vw, 104px); line-height: 1; letter-spacing: -0.025em; margin: 24px 0; color: var(--ink); }
 .abtime__title em { font-style: italic; color: var(--ink-3); }
@@ -91,7 +91,7 @@
 .abtime__d { font-size: 13px; line-height: 1.5; color: var(--ink-3); }
 
 /* ── abteam ── */
-.abteam { padding: 140px 0; background: var(--paper-2); border-top: 1px solid rgba(11,10,8,.08); border-bottom: 1px solid rgba(11,10,8,.08); }
+.abteam { padding: 96px 0; background: var(--paper-2); border-top: 1px solid rgba(11,10,8,.08); border-bottom: 1px solid rgba(11,10,8,.08); }
 .abteam__head { max-width: 900px; margin: 0 auto 64px; text-align: center; }
 .abteam__title { font-family: var(--f-display); font-weight: 400; font-size: clamp(56px, 7vw, 100px); line-height: 1; letter-spacing: -0.025em; margin: 24px 0; color: var(--ink); }
 .abteam__title em { font-style: italic; color: var(--ink-3); }
@@ -129,7 +129,7 @@
 @media (max-width: 760px) { .abteam__partner { grid-template-columns: 1fr; text-align: center; } .abteam__partner-photo { margin: 0 auto; } .abteam__partner-bullets { text-align: left; } }
 
 /* ── abtech · Time TECH & IA ── */
-.abtech { padding: 120px 0; background: var(--paper-2); border-top: 1px solid rgba(11,10,8,.06); border-bottom: 1px solid rgba(11,10,8,.06); }
+.abtech { padding: 80px 0; background: var(--paper-2); border-top: 1px solid rgba(11,10,8,.06); border-bottom: 1px solid rgba(11,10,8,.06); }
 .abtech__head { max-width: 920px; margin-bottom: 56px; }
 .abtech__title { font-family: var(--f-display); font-weight: 400; font-size: clamp(48px, 5.5vw, 84px); line-height: 1.05; letter-spacing: -0.025em; color: var(--ink); margin: 20px 0 18px; text-wrap: balance; }
 .abtech__title em { font-style: italic; background: linear-gradient(90deg, var(--wir-blue), var(--wir-purple) 60%, var(--wir-amber)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
@@ -168,7 +168,7 @@
 .abteam__loc { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; color: var(--ink-4); padding-top: 14px; border-top: 1px solid rgba(11,10,8,.08); }
 
 /* ── abvals ── */
-.abvals { padding: 140px 0; background: var(--paper); }
+.abvals { padding: 96px 0; background: var(--paper); }
 .abvals__head { max-width: 900px; margin-bottom: 64px; }
 .abvals__title { font-family: var(--f-display); font-weight: 400; font-size: clamp(56px, 7vw, 100px); line-height: 1; letter-spacing: -0.025em; margin: 24px 0; color: var(--ink); }
 .abvals__title em { font-style: italic; color: var(--ink-3); }
@@ -184,7 +184,7 @@
 .abvals__d { font-size: 15px; line-height: 1.55; color: var(--ink-2); }
 
 /* ── abpart ── */
-.abpart { padding: 140px 0; background: var(--ink); color: var(--night-text); position: relative; overflow: hidden; }
+.abpart { padding: 96px 0; background: var(--ink); color: var(--night-text); position: relative; overflow: hidden; }
 .abpart::before { content: ""; position: absolute; inset: 0; pointer-events: none;
   background:
     radial-gradient(900px 500px at 15% 15%, rgba(117,64,172,.14), transparent 60%),
@@ -213,7 +213,7 @@
 .abpart__meta { display: flex; gap: 24px; flex-wrap: wrap; font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; color: var(--night-muted); }
 
 /* ── abfaq ── */
-.abfaq { padding: 140px 0; background: var(--paper); }
+.abfaq { padding: 96px 0; background: var(--paper); }
 .abfaq__head { max-width: 900px; margin-bottom: 56px; }
 .abfaq__title { font-family: var(--f-display); font-weight: 400; font-size: clamp(48px, 6vw, 88px); line-height: 1.05; letter-spacing: -0.025em; margin: 24px 0; color: var(--ink); }
 .abfaq__title em { font-style: italic; color: var(--ink-3); }
@@ -229,7 +229,7 @@
 .abfaq__a p { padding: 0 60px 28px 80px; font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 800px; }
 
 /* ── abclose ── */
-.abclose { padding: 120px 0; background: var(--ink); color: var(--night-text); position: relative; overflow: hidden; }
+.abclose { padding: 80px 0; background: var(--ink); color: var(--night-text); position: relative; overflow: hidden; }
 .abclose::before { content: ""; position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(900px 500px at 20% 30%, rgba(117,64,172,.14), transparent 60%),
               radial-gradient(800px 500px at 90% 80%, rgba(248,173,57,.08), transparent 60%); }

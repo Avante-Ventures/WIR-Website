@@ -6,7 +6,7 @@ const { useEffect, useState, useRef, useMemo } = React;
 
 // Official WIR logo — uses brandbook SVG with proper gradient
 function Wordmark({ small, variant }) {
-  const h = small ? 44 : 64;
+  const h = small ? 60 : 80;
   const src = variant === "white" ? "assets/wir-logo-branco.svg" : "assets/wir-logo-azul.svg";
   return (
     <img src={src} alt="WIR Innovation" style={{ height: h + "px", width: "auto", display: "block" }} />

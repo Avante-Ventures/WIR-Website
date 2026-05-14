@@ -325,7 +325,7 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
    04.5 · OUTCOMES (6 strategic indicators — from AXA deck)
    ───────────────────────────────────────── */
 .outcomes {
-  padding: 120px 0 140px;
+  padding: 80px 0 96px;
   background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
   border-top: 1px solid rgba(11,10,8,.06);
   position: relative; overflow: hidden;
@@ -445,27 +445,41 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
 }
 .trustbar__experience { margin-top: 8px; }
 .trustbar__experience-kicker { margin-bottom: 24px; display: block; }
+
+/* Auto-scrolling horizontal logo marquee — 2+ logos visible side-by-side, infinite scroll */
 .trustbar__grid {
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
-  border-left: 1px solid rgba(11,10,8,.08);
+  display: flex; overflow: hidden;
   border-top: 1px solid rgba(11,10,8,.08);
-  border-radius: 10px; overflow: hidden;
+  border-bottom: 1px solid rgba(11,10,8,.08);
   background: var(--paper);
+  position: relative;
+  padding: 28px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 80px, #000 calc(100% - 80px), transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 80px, #000 calc(100% - 80px), transparent 100%);
+}
+.trustbar__grid::before {
+  content: "";
+  display: block; width: 100%; flex-shrink: 0;
 }
 .trustbar__cell {
+  flex-shrink: 0;
   display: flex; flex-direction: row; align-items: center; justify-content: center;
-  flex-wrap: wrap; gap: 18px; padding: 36px 24px;
-  border-right: 1px solid rgba(11,10,8,.08);
-  border-bottom: 1px solid rgba(11,10,8,.08);
-  position: relative; min-height: 180px;
-  transition: background .3s ease;
+  gap: 16px; padding: 0 40px;
+  min-width: 220px; min-height: 100px;
+  animation: trustbarScroll 40s linear infinite;
 }
-.trustbar__cell:hover { background: color-mix(in srgb, var(--wir-purple) 3%, var(--paper)); }
+.trustbar__cell:hover { /* pause on hover not possible across all kids — use group */ }
+.trustbar__grid:hover .trustbar__cell { animation-play-state: paused; }
 /* Composite cells (Bain+Notredame, Pátria+Athena) — two logos side-by-side */
-.trustbar__cell--composite { gap: 24px; padding: 36px 18px; }
+.trustbar__cell--composite { gap: 18px; }
 .trustbar__cell--composite .trustbar__logo-img { width: auto; }
 .trustbar__cell--composite .trustbar__logo-img img {
-  max-width: 110px; max-height: 56px;
+  max-width: 90px; max-height: 50px;
+}
+
+@keyframes trustbarScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
 }
 
 .trustbar__logo-img {
@@ -476,27 +490,26 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
    so visual size is consistent regardless of source PNG aspect ratio.
    Bigger max-height ensures logos with extra padding (Lockton, JLT) fill out. */
 .trustbar__logo-img img {
-  max-width: 200px; max-height: 90px;
+  max-width: 160px; max-height: 70px;
   width: auto; height: auto;
   filter: grayscale(1) brightness(0.4) contrast(1.5);
-  opacity: 0.85;
-  transition: filter .3s ease, opacity .3s ease, transform .3s ease;
+  opacity: 0.75;
+  transition: filter .3s ease, opacity .3s ease;
   object-fit: contain;
 }
 .trustbar__cell:hover .trustbar__logo-img img {
   filter: grayscale(0) brightness(1) contrast(1);
-  opacity: 1; transform: scale(1.05);
+  opacity: 1;
 }
 .trustbar__logo-sub {
   font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .18em;
   text-transform: uppercase; color: var(--ink-4);
 }
-@media (max-width: 900px) {
-  .trustbar__grid { grid-template-columns: repeat(2, 1fr); }
-  .trustbar__cell--composite { flex-direction: column; }
-}
-@media (max-width: 540px) {
-  .trustbar__grid { grid-template-columns: 1fr; }
+@media (max-width: 760px) {
+  .trustbar__cell { min-width: 180px; padding: 0 28px; }
+  .trustbar__cell--composite { flex-direction: row; gap: 12px; }
+  .trustbar__logo-img img { max-width: 130px; max-height: 56px; }
+  .trustbar__cell--composite .trustbar__logo-img img { max-width: 70px; max-height: 40px; }
 }
 
 /* ─────────────────────────────────────────
@@ -537,7 +550,7 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
 /* ─────────────────────────────────────────
    02 · PROOF
    ───────────────────────────────────────── */
-.proof { padding: 120px 0; background: var(--paper); }
+.proof { padding: 80px 0; background: var(--paper); }
 .proof__head {
   display: flex; justify-content: space-between; align-items: baseline;
   margin-bottom: 64px;
@@ -556,7 +569,7 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
    05.5 · ARCHFLOW — animated architecture (bolinhas andando, ex-AXA)
    ───────────────────────────────────────── */
 .archflow {
-  padding: 120px 0; background: var(--paper);
+  padding: 80px 0; background: var(--paper);
   border-top: 1px solid rgba(11,10,8,.08);
   border-bottom: 1px solid rgba(11,10,8,.08);
   position: relative; overflow: hidden;
@@ -712,7 +725,7 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
    03 · SHIFT (before / after)
    ───────────────────────────────────────── */
 .shift {
-  padding: 140px 0 120px;
+  padding: 96px 0 80px;
   background: var(--paper-2);
   border-top: 1px solid rgba(11,10,8,.08);
   border-bottom: 1px solid rgba(11,10,8,.08);
@@ -878,7 +891,7 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
 /* ─────────────────────────────────────────
    04 · STACK (product tabs)
    ───────────────────────────────────────── */
-.stack { padding: 140px 0 120px; background: var(--paper); display: block; }
+.stack { padding: 96px 0 80px; background: var(--paper); display: block; }
 .stack > .wrap { width: 100%; }
 .stack__head { max-width: 1000px; margin: 0 auto 72px; text-align: center; }
 .stack__title {
@@ -1064,7 +1077,7 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
    05 · WORKFLOW
    ───────────────────────────────────────── */
 .wf {
-  padding: 140px 0 120px;
+  padding: 96px 0 80px;
   background: var(--paper-2);
   border-top: 1px solid rgba(11,10,8,.08);
   border-bottom: 1px solid rgba(11,10,8,.08);
@@ -1117,7 +1130,7 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
    06 · TRUST
    ───────────────────────────────────────── */
 .trust {
-  padding: 140px 0 120px;
+  padding: 96px 0 80px;
   background: var(--night); color: var(--night-text);
   position: relative; overflow: hidden;
 }
@@ -1238,7 +1251,7 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
 /* ─────────────────────────────────────────
    07 · CLOSING
    ───────────────────────────────────────── */
-.closing { padding: 140px 0 120px; background: var(--paper); }
+.closing { padding: 96px 0 80px; background: var(--paper); }
 .closing__top {
   max-width: 1080px; margin: 0 auto 72px;
   text-align: center;

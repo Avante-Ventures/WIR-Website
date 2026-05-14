@@ -9,8 +9,8 @@
   --paper-3:      #E4DCCC;    /* rule / divider */
   --ink:          #0B0A08;    /* near-black */
   --ink-2:        #2B2720;    /* body */
-  --ink-3:        #6A6458;    /* muted */
-  --ink-4:        #9A9484;    /* disabled */
+  --ink-3:        #524C42;    /* muted — was #6A6458, darkened for contrast */
+  --ink-4:        #6E695C;    /* disabled — was #9A9484, darkened for contrast (WCAG AA) */
 
   /* Signature colors — aligned to WIR Innovation Brandbook 04-11-2025.
      Never mix all four in a gradient bar. Use as SOLID accents, one per context. */

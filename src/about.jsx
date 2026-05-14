@@ -239,7 +239,7 @@ function AboutTechIA() {
             <div className="abtech__stat-d">Acesso direto a desenvolvedores, modelos de IA e práticas de ponta da Mahway (California, EUA) — escalamos o time de engenharia sem fricção de recrutamento local.</div>
           </div>
           <div className="abtech__stat">
-            <div className="abtech__stat-v display">Future-proof</div>
+            <div className="abtech__stat-v display">À prova do futuro</div>
             <div className="abtech__stat-l">Operação que evolui com o setor</div>
             <div className="abtech__stat-d">Modelos versionados, observabilidade contínua e arquitetura preparada para novas regulamentações e novos canais — sem refazer o stack.</div>
           </div>
