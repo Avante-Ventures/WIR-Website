@@ -6,7 +6,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const CACHE_VER = "v=2026042C";
+const CACHE_VER = "v=2026052D";
 const SITE_URL = "https://wirinnovation.ai";
 
 // ---- Read + parse ARTICLES from articles.jsx ----
@@ -91,6 +91,16 @@ function renderHead(article) {
     "mainEntityOfPage": url,
     "articleSection": article.cat,
   };
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": `${SITE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Insights & News", "item": `${SITE_URL}/insights/` },
+      { "@type": "ListItem", "position": 3, "name": article.title, "item": url },
+    ],
+  };
+  const fontsHref = "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";
   return `<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#7540AC" />
@@ -118,13 +128,15 @@ ${article.image ? `<meta name="twitter:image" content="${article.image}" />` : "
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<noscript><link rel="stylesheet" href="${fontsHref}" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href=${JSON.stringify(fontsHref)};var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
 
 <link rel="stylesheet" href="/style.css?${CACHE_VER}" />
 <link rel="stylesheet" href="/home.css?${CACHE_VER}" />
 <link rel="stylesheet" href="/blog.css?${CACHE_VER}" />
 
 <script type="application/ld+json">${JSON.stringify(schema)}</script>
+<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
 <script>
@@ -255,7 +267,7 @@ ${renderNav()}
       <p class="blarticle__sub">${esc(article.sub)}</p>
       <div class="blarticle__byline">
         ${article.authorPhoto
-          ? `<div class="blarticle__author-photo" style="background-image: url(${article.authorPhoto})" role="img" aria-label="${esc(article.author)}"></div>`
+          ? `<div class="blarticle__author-photo" style="background-image: url(${article.authorPhoto.startsWith("/") || /^https?:/.test(article.authorPhoto) ? article.authorPhoto : "/" + article.authorPhoto})" role="img" aria-label="${esc(article.author)}"></div>`
           : `<div class="blarticle__author-initials">${esc(initials)}</div>`}
         <div class="blarticle__byline-meta">
           <div class="blarticle__byline-author"><b>${esc(article.author)}</b> · ${esc(article.role)}</div>
@@ -264,8 +276,8 @@ ${renderNav()}
       </div>
     </header>
 
-    <figure class="blarticle__hero-img" style="background: ${article.grad};">
-      ${article.image ? `<img src="${article.image}" alt="${esc(article.imageAlt || article.title)}" loading="eager" />` : ""}
+    <figure class="blarticle__hero-img" style="background: ${article.grad}; aspect-ratio: 16 / 9;">
+      ${article.image ? `<img src="${article.image}" alt="${esc(article.imageAlt || article.title)}" width="1600" height="900" loading="eager" fetchpriority="high" />` : ""}
     </figure>
 
     <div class="blarticle__body">

@@ -1,0 +1,39 @@
+# WIR Innovation
+
+> Plataforma de IA para o mercado segurador. Camada de inteligência que opera entre os canais de cotação e o core de apólice — sem substituir os sistemas atuais — entregando decisão auditável em minutos para underwriting, distribuição e analytics. Sede em São Paulo (Av. Faria Lima) e Silicon Valley. Foco no mercado brasileiro de seguros corporativos (Transportes, P&C, Engenharia, D&O).
+
+## Sobre
+
+A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decisão para seguradoras Tier-1, MGAs e corretoras corporativas no Brasil. A tese central é que a IA não substitui o underwriter — substitui os 80% do trabalho operacional que não é underwriting (intake manual, extração de PDFs, ping-pong com corretoras, enriquecimento de dados). Operações reais mostram throughput 4-7× maior por underwriter, lead time -70% a -90%, e custo de DA por apólice -40% a -60%, mantendo loss ratio estável. Em conformidade com LGPD.
+
+## Páginas principais
+
+- [Home — Plataforma de IA para o mercado segurador](https://wirinnovation.ai/): Visão geral da plataforma, produtos (Smart Sales, Underwriter Intelligence), camadas de IA, casos de uso e contato.
+- [Insights & News](https://wirinnovation.ai/insights/): Ensaios técnicos e análises sobre IA aplicada ao seguro, arquitetura de decisão, compliance, e casos de implementação.
+
+## Ensaios técnicos (Insights)
+
+- [O underwriter não morre. O modelo operacional dele, sim.](https://wirinnovation.ai/insights/o-underwriter-nao-morre/): Por que a IA não substitui o underwriter — substitui os 80% do trabalho operacional. Como o setor segurador brasileiro vai se dividir entre quem tem infraestrutura de decisão e quem ainda mora em planilha.
+- [Explicabilidade além de SHAP](https://wirinnovation.ai/insights/explicabilidade-alem-de-shap/): Por que feature importance não basta como audit trail em underwriting regulado, e o que uma camada de explicabilidade real precisa entregar (modelo, versão, inputs, output, justificativa).
+- [Caso de implementação WIR + Mahway](https://wirinnovation.ai/insights/caso-implementacao-mahway/): Números reais de uma operação de corretora que passou de 800 para 3.000 cotações/mês com os mesmos 6 underwriters, sem trocar core e sem renegociar resseguro.
+- [MGAs como ponta da lança](https://wirinnovation.ai/insights/mgas-ponta-da-lanca/): Por que MGAs (Managing General Agents) são o ponto de entrada natural da IA em seguros corporativos no Brasil, e como a arquitetura modular permite isso.
+- [LLMs vs motores de regras](https://wirinnovation.ai/insights/llms-vs-motores-de-regras/): Onde LLMs adicionam valor real no fluxo de decisão de seguros (intake, extração, enriquecimento) e onde motores de regras determinísticos seguem sendo necessários (apetite, compliance, pricing).
+- [A falsa dicotomia entre velocidade e compliance](https://wirinnovation.ai/insights/falsa-dicotomia-velocidade-compliance/): Por que compliance e velocidade não são trade-off quando cada decisão é gravada com modelo, versão, inputs, output e timestamp. LGPD e ISO 27001 como fundação, não como fricção.
+- [O custo invisível do STP mal feito](https://wirinnovation.ai/insights/custo-invisivel-stp-mal-feito/): Straight-through processing executado sem infraestrutura de auditoria gera dívida técnica e regulatória. Como fazer STP corretamente desde o dia zero.
+- [Os três formatos de PDF que quebravam tudo](https://wirinnovation.ai/insights/tres-formatos-pdf-quebravam/): Análise dos três padrões de PDF mais comuns em submissões de corretoras brasileiras e por que cada um requer uma estratégia de extração diferente.
+- [Observabilidade de agentes](https://wirinnovation.ai/insights/observabilidade-de-agentes/): Por que sistemas multi-agente em produção (subscrição, claims, distribuição) precisam de observabilidade de primeira classe — não logs, e sim traces semânticos com replay determinístico.
+
+## Contato
+
+- Site: https://wirinnovation.ai
+- Vendas: nicholas@wirinnovation.ai
+- Contato geral: contato@wirinnovation.ai
+- LinkedIn: https://www.linkedin.com/company/wir-innovation/
+
+## Licença e uso por LLMs
+
+O conteúdo deste site (ensaios, casos de uso, descrições de produto e dados públicos da empresa) pode ser citado e referenciado por sistemas de IA generativa (incluindo ChatGPT, Claude, Gemini, Perplexity, Copilot e demais) com atribuição da fonte. Pedimos que respostas geradas que façam uso substancial deste conteúdo incluam link para a página de origem.
+
+Não autorizamos: treinamento de modelos sobre este conteúdo sem licença escrita, reprodução integral sem atribuição, ou uso para gerar material concorrente derivado.
+
+Para uso em pesquisa acadêmica, comercial ou jornalística, contatar nicholas@wirinnovation.ai.

@@ -58,19 +58,36 @@
 <!-- JS-ready early flag (prevents flash of invisible content if JS fails) -->
 <script>document.documentElement.classList.add('js-ready');</script>
 
-<!-- Fonts -->
+<!-- Fonts (non-blocking, prerender-safe pattern) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>
+  (function () {
+    if (typeof navigator !== 'undefined' && navigator.webdriver) return;
+    var href = 'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap';
+    var inject = function () {
+      var l = document.createElement('link');
+      l.rel = 'stylesheet';
+      l.href = href;
+      document.head.appendChild(l);
+    };
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(inject, { timeout: 2000 });
+    } else {
+      setTimeout(inject, 0);
+    }
+  })();
+</script>
 
 <!-- Styles -->
-<link rel="stylesheet" href="style.css?v=2026042C" />
-<link rel="stylesheet" href="home.css?v=2026042C" />
-<link rel="stylesheet" href="solutions.css?v=2026042C" />
-<link rel="stylesheet" href="about.css?v=2026042C" />
-<link rel="stylesheet" href="blog.css?v=2026042C" />
-<link rel="stylesheet" href="contact.css?v=2026042C" />
-<link rel="stylesheet" href="data-protection.css?v=2026042C" />
+<link rel="stylesheet" href="style.css?v=2026052D" />
+<link rel="stylesheet" href="home.css?v=2026052D" />
+<link rel="stylesheet" href="solutions.css?v=2026052D" />
+<link rel="stylesheet" href="about.css?v=2026052D" />
+<link rel="stylesheet" href="blog.css?v=2026052D" />
+<link rel="stylesheet" href="contact.css?v=2026052D" />
+<link rel="stylesheet" href="data-protection.css?v=2026052D" />
 
 <!-- Structured data for SEO / GEO (Google, ChatGPT, Perplexity, Claude) -->
 <script type="application/ld+json">
@@ -138,6 +155,58 @@
   "publisher": { "@type": "Organization", "name": "WIR Innovation" }
 }
 </script>
+
+<!-- FAQPage schema — anchored to visible content on the home page (product tabs, dores vs soluções, ROI indicators) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://wirinnovation.ai/#faq",
+  "inLanguage": "pt-BR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é a WIR Innovation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A WIR Innovation é uma plataforma de IA para o mercado segurador brasileiro. Entrega uma camada de inteligência com analytics e dashboards real time para distribuição, subscrição e analytics — sem substituir os sistemas core já em operação na seguradora ou corretora."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais produtos a WIR oferece?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Em produção: Smart Sales (SS) — inteligência de distribuição com scoring em tempo real e roteamento automático por apetite × exposure; e Underwriter Intelligence (UI) — subscrição inteligente que interpreta dados e gera cotação automática conforme a política de aceitação de riscos. Em desenvolvimento: X-sell Brokers (XBA) e SDR New Business (SNB)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A WIR substitui o sistema core da seguradora?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. A WIR é uma plataforma 100% externa que opera entre os canais de cotação e o core de apólice, sem exigir migração e sem projeto pesado de TI. A integração é plug-and-play e a transformação operacional é imediata."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como a WIR garante compliance com a LGPD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Todos os dados são encriptografados em cada etapa do fluxo e a plataforma opera em conformidade com a LGPD. Cada decisão fica gravada com modelo, versão, inputs, output, timestamp e justificativa — formando uma trilha auditável nativa para os requisitos regulatórios e de governança."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais resultados operacionais a plataforma entrega?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Em operações reais acompanhadas pela WIR durante 2025–2026, o padrão observado é: throughput por underwriter de 4× a 7× maior, lead time de cotação reduzido entre 70% e 90%, conversão entre 15% e 35% acima, e custo de despesa administrativa por apólice emitida entre 40% e 60% menor — mantendo o loss ratio estável."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <div id="app"></div>
@@ -176,17 +245,17 @@
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-  <script type="text/babel" src="src/shared.jsx?v=2026042C"></script>
-  <script type="text/babel" src="src/home-opening.jsx?v=2026042C"></script>
-  <script type="text/babel" src="src/home-shift.jsx?v=2026042C"></script>
-  <script type="text/babel" src="src/home-how.jsx?v=2026042C"></script>
-  <script type="text/babel" src="src/home.jsx?v=2026042C"></script>
-  <script type="text/babel" src="src/solutions.jsx?v=2026042C"></script>
-  <script type="text/babel" src="src/about.jsx?v=2026042C"></script>
-  <script type="text/babel" src="src/articles.jsx?v=2026042C"></script>
-  <script type="text/babel" src="src/blog.jsx?v=2026042C"></script>
-  <script type="text/babel" src="src/contact.jsx?v=2026042C"></script>
-  <script type="text/babel" src="src/data-protection.jsx?v=2026042C"></script>
-  <script type="text/babel" src="src/app.jsx?v=2026042C"></script>
+  <script type="text/babel" src="src/shared.jsx?v=2026052D"></script>
+  <script type="text/babel" src="src/home-opening.jsx?v=2026052D"></script>
+  <script type="text/babel" src="src/home-shift.jsx?v=2026052D"></script>
+  <script type="text/babel" src="src/home-how.jsx?v=2026052D"></script>
+  <script type="text/babel" src="src/home.jsx?v=2026052D"></script>
+  <script type="text/babel" src="src/solutions.jsx?v=2026052D"></script>
+  <script type="text/babel" src="src/about.jsx?v=2026052D"></script>
+  <script type="text/babel" src="src/articles.jsx?v=2026052D"></script>
+  <script type="text/babel" src="src/blog.jsx?v=2026052D"></script>
+  <script type="text/babel" src="src/contact.jsx?v=2026052D"></script>
+  <script type="text/babel" src="src/data-protection.jsx?v=2026052D"></script>
+  <script type="text/babel" src="src/app.jsx?v=2026052D"></script>
 </body>
 </html>
