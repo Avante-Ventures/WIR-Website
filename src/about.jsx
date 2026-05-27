@@ -1,3 +1,6 @@
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { useReveal } from './shared.jsx';
+
 /* ───────── Sobre · ensayo editorial ───────── */
 
 function AboutHero() {
@@ -407,7 +410,7 @@ function AboutClose({ go }) {
   );
 }
 
-function AboutPage({ go }) {
+export function AboutPage({ go }) {
   useReveal();
   return (
     <>
@@ -424,4 +427,3 @@ function AboutPage({ go }) {
   );
 }
 
-Object.assign(window, { AboutPage });

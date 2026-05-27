@@ -1,3 +1,6 @@
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { useReveal } from './shared.jsx';
+
 /* ───────── Soluções · catalog editorial ───────── */
 
 // Workflow Inteligente de Subscrição (SS + UI) — institutional flow
@@ -135,7 +138,7 @@ function SolClosing({ go }) {
   );
 }
 
-function SolutionsPage({ go }) {
+export function SolutionsPage({ go }) {
   useReveal();
   return (
     <>
@@ -148,4 +151,3 @@ function SolutionsPage({ go }) {
   );
 }
 
-Object.assign(window, { SolutionsPage });

@@ -1,6 +1,8 @@
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+
 /* Insights & News — articles + reader */
 
-const ARTICLES = [
+export const ARTICLES = [
   {
     slug: "o-underwriter-nao-morre",
     cat: "Ensaio", hero: true, grad: "linear-gradient(135deg,#3222E9,#7540AC)",
@@ -721,7 +723,7 @@ function ArticleAuthorAvatar({ article }) {
   return React.createElement("div", { className: "blarticle__author-initials" }, initials);
 }
 
-function BlogArticle({ article, go }) {
+export function BlogArticle({ article, go }) {
   const blocks = parseBody(article.body);
 
   React.useEffect(() => {
@@ -811,4 +813,3 @@ function BlogArticle({ article, go }) {
   );
 }
 
-Object.assign(window, { ARTICLES, BlogArticle });

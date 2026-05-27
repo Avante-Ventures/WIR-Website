@@ -1,6 +1,8 @@
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+
 /* ───────── Movement 03 · The Shift + 04 · The Stack ───────── */
 
-function Shift() {
+export function Shift() {
   // Dores vs Soluções — slide institucional, mapeado a SS/UI/em-dev
   const rows = [
     { dor:"E-mails de cotações desorganizados",       sol:"Estruturação e leitura automática de submissões",  prod:"SS",       status:"prod" },
@@ -52,7 +54,7 @@ function Shift() {
   );
 }
 
-function ProductTabs({ go }) {
+export function ProductTabs({ go }) {
   const prods = [
     { k:"SS", c:"#1C17FF", status:"prod", title:"Smart Sales", tag:"Inteligência de distribuição",
       lede:"Uma camada de IA com inteligência de distribuição, workflow, priorização, Dashboards, analytics e insights de negócio.",
@@ -132,4 +134,3 @@ function ProductTabs({ go }) {
   );
 }
 
-Object.assign(window, { Shift, ProductTabs });

@@ -1,3 +1,6 @@
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { useReveal } from './shared.jsx';
+
 /* ───────── Proteção de Dados · Segurança & Compliance ───────── */
 
 // SecurityShield — visual SVG: concentric rings representing defense in depth
@@ -339,7 +342,7 @@ function DPClose({ go }) {
   );
 }
 
-function DataProtectionPage({ go }) {
+export function DataProtectionPage({ go }) {
   useReveal();
   return (
     <>
@@ -353,4 +356,3 @@ function DataProtectionPage({ go }) {
   );
 }
 
-Object.assign(window, { DataProtectionPage });
