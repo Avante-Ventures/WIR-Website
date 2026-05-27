@@ -295,7 +295,7 @@ export function Trust() {
             "Mercado de Seguros e Danos cresce <em>dois dígitos ao ano</em>. Mas a estrutura das empresas não acompanha esta aceleração."
           </blockquote>
           <div className="trust__attrib">
-            <div className="trust__avatar trust__avatar--photo" style={{backgroundImage:"url(assets/team/nicholas.jpg)"}}/>
+            <div className="trust__avatar trust__avatar--photo" style={{backgroundImage:"url(/assets/team/nicholas.jpg)"}}/>
             <div>
               <b>Nicholas Weiser</b>
               <span>CEO · Co-Founder · WIR Innovation</span>
