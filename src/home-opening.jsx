@@ -1,3 +1,5 @@
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+
 /* ───────── Movement 01 · Opening + 02 · Proof ───────── */
 
 // DecisionFlow — network pipeline visualization showing how data becomes decisions
@@ -124,7 +126,7 @@ function DecisionFlow() {
   );
 }
 
-function Opening({ go }) {
+export function Opening({ go }) {
   return (
     <section className="opening">
       <div className="wrap">
@@ -174,7 +176,7 @@ function Opening({ go }) {
   );
 }
 
-function Proof() {
+export function Proof() {
   const indicators = [
     { sign:"+", w:"Eficiência",   l:"Escalar volume de cotações",
       c:"Possibilidade de crescer exponencialmente o volume de cotações." },
@@ -212,4 +214,3 @@ function Proof() {
   );
 }
 
-Object.assign(window, { Opening, Proof });

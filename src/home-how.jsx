@@ -1,8 +1,11 @@
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { useReveal } from './shared.jsx';
+
 /* ───────── Movement 05 · Workflow + 06 · Trust + 07 · Closing ───────── */
 
 // ArchFlow — 3 pipelines + 1 feedback loop visíveis. Cada dot percorre exatamente
 // a mesma curva renderizada no diagrama (via <mpath href="#pipe-X"/>).
-function ArchFlow() {
+export function ArchFlow() {
   // Coordenadas das zonas (centro vertical de cada lane)
   // 5 zonas: INTAKE / WIR PLATFORM / AI ENGINE / OUTPUT / CORE
   // 3 lanes: TOP (y=130) / MID (y=210) / BOT (y=290)
@@ -197,7 +200,7 @@ function ArchFlow() {
   );
 }
 
-function WorkflowSVG() {
+export function WorkflowSVG() {
   const ref = React.useRef(null);
   const [progress, setProgress] = React.useState(0);
   React.useEffect(() => {
@@ -276,7 +279,7 @@ function WorkflowSVG() {
   );
 }
 
-function Trust() {
+export function Trust() {
   const stats = [
     { k:"Eficiência",            v:"40%",    l:"do tempo do underwriter gasto com tarefas administrativas.",         src:"Deloitte" },
     { k:"Transformação Digital", v:"70%",    l:"das seguradoras não executam inovação por limitação de TI.",         src:"BCG" },
@@ -318,7 +321,7 @@ function Trust() {
   );
 }
 
-function Closing({ go }) {
+export function Closing({ go }) {
   return (
     <section className="closing" data-reveal>
       <div className="wrap">
@@ -342,4 +345,3 @@ function Closing({ go }) {
   );
 }
 
-Object.assign(window, { WorkflowSVG, ArchFlow, Trust, Closing });

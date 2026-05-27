@@ -1,3 +1,6 @@
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { useReveal } from './shared.jsx';
+
 /* ───────── Contato · humano + steps ───────── */
 
 function ContactClocks() {
@@ -528,7 +531,7 @@ function ContactSocial() {
   );
 }
 
-function ContactPage() {
+export function ContactPage() {
   useReveal();
   return (
     <>
@@ -540,4 +543,3 @@ function ContactPage() {
   );
 }
 
-Object.assign(window, { ContactPage });

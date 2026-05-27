@@ -1,3 +1,7 @@
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { useReveal } from './shared.jsx';
+import { BlogArticle, ARTICLES } from './articles.jsx';
+
 /* ───────── Insights & News · publicação digital ───────── */
 
 const POSTS = [
@@ -240,7 +244,7 @@ function BlogClose() {
   );
 }
 
-function BlogPage({ go }) {
+export function BlogPage({ go }) {
   useReveal();
   const [active, setActive] = React.useState("Todos");
   const [slug, setSlug] = React.useState(() => {
@@ -288,4 +292,3 @@ function BlogPage({ go }) {
   );
 }
 
-Object.assign(window, { BlogPage });

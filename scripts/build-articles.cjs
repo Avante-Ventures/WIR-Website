@@ -8,6 +8,7 @@ const path = require("path");
 
 const CACHE_VER = "v=2026052D";
 const SITE_URL = "https://wirinnovation.ai";
+const OUT_DIR = "public/insights"; // Vite copies public/* to dist/ root, so this lands at dist/insights/
 
 // ---- Read + parse ARTICLES from articles.jsx ----
 const src = fs.readFileSync("src/articles.jsx", "utf8");
@@ -386,17 +387,17 @@ ${renderWhatsAppFAB()}
 </html>`;
 }
 
-const insightsDir = path.join(process.cwd(), "insights");
+const insightsDir = path.join(process.cwd(), OUT_DIR);
 fs.mkdirSync(insightsDir, { recursive: true });
 
 ARTICLES.forEach(article => {
   const dir = path.join(insightsDir, article.slug);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, "index.html"), renderArticleHTML(article), "utf8");
-  console.log(`  ok insights/${article.slug}/index.html`);
+  console.log(`  ok ${OUT_DIR}/${article.slug}/index.html`);
 });
 
 fs.writeFileSync(path.join(insightsDir, "index.html"), renderInsightsIndex(), "utf8");
-console.log(`  ok insights/index.html`);
+console.log(`  ok ${OUT_DIR}/index.html`);
 
 console.log(`\nBuilt ${ARTICLES.length} static article pages + index.\n`);

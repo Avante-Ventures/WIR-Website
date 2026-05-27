@@ -1,6 +1,15 @@
 /* ───────── App shell & routing ───────── */
 
-function App() {
+import React, { useState, useEffect } from 'react';
+import { Nav, Footer, WhatsappFab } from './shared.jsx';
+import { HomePage } from './home.jsx';
+import { SolutionsPage } from './solutions.jsx';
+import { AboutPage } from './about.jsx';
+import { BlogPage } from './blog.jsx';
+import { ContactPage } from './contact.jsx';
+import { DataProtectionPage } from './data-protection.jsx';
+
+export function App() {
   const baseRoute = (h) => h.split("/")[0].split("#")[0];
   const [route, setRoute] = useState(() => {
     const h = (location.hash || "#home").replace("#","");
@@ -66,4 +75,3 @@ function App() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("app")).render(<App/>);

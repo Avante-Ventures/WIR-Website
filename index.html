@@ -80,14 +80,9 @@
   })();
 </script>
 
-<!-- Styles -->
-<link rel="stylesheet" href="style.css?v=2026052D" />
-<link rel="stylesheet" href="home.css?v=2026052D" />
-<link rel="stylesheet" href="solutions.css?v=2026052D" />
-<link rel="stylesheet" href="about.css?v=2026052D" />
-<link rel="stylesheet" href="blog.css?v=2026052D" />
-<link rel="stylesheet" href="contact.css?v=2026052D" />
-<link rel="stylesheet" href="data-protection.css?v=2026052D" />
+<!-- Styles: bundled by Vite into a single hashed file (imported from src/main.jsx) -->
+<!-- Public CSS copies stay in /public so static /insights/<slug>/index.html pages can still reference them -->
+
 
 <!-- Structured data for SEO / GEO (Google, ChatGPT, Perplexity, Claude) -->
 <script type="application/ld+json">
@@ -241,21 +236,7 @@
     };
   </script>
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-
-  <script type="text/babel" src="src/shared.jsx?v=2026052D"></script>
-  <script type="text/babel" src="src/home-opening.jsx?v=2026052D"></script>
-  <script type="text/babel" src="src/home-shift.jsx?v=2026052D"></script>
-  <script type="text/babel" src="src/home-how.jsx?v=2026052D"></script>
-  <script type="text/babel" src="src/home.jsx?v=2026052D"></script>
-  <script type="text/babel" src="src/solutions.jsx?v=2026052D"></script>
-  <script type="text/babel" src="src/about.jsx?v=2026052D"></script>
-  <script type="text/babel" src="src/articles.jsx?v=2026052D"></script>
-  <script type="text/babel" src="src/blog.jsx?v=2026052D"></script>
-  <script type="text/babel" src="src/contact.jsx?v=2026052D"></script>
-  <script type="text/babel" src="src/data-protection.jsx?v=2026052D"></script>
-  <script type="text/babel" src="src/app.jsx?v=2026052D"></script>
+  <!-- Vite handles React + bundling in a single ES module entry — no more Babel runtime, no more unpkg -->
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

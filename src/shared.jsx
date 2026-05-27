@@ -2,10 +2,10 @@
    Shared: Logo, Nav, Footer, Ticker, helpers
    ─────────────────────────────────────────── */
 
-const { useEffect, useState, useRef, useMemo } = React;
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 
 // Official WIR logo — uses brandbook SVG with proper gradient
-function Wordmark({ small, variant }) {
+export function Wordmark({ small, variant }) {
   const h = small ? 60 : 80;
   const src = variant === "white" ? "assets/wir-logo-branco.svg" : "assets/wir-logo-azul.svg";
   return (
@@ -13,7 +13,7 @@ function Wordmark({ small, variant }) {
   );
 }
 
-function Ticker() {
+export function Ticker() {
   const items = [
     { d: "a", t: "Decisão em minutos · auditável · explicável" },
     { d: "p", t: "Straight-through processing como padrão" },
@@ -35,7 +35,7 @@ function Ticker() {
   );
 }
 
-function Nav({ route, go }) {
+export function Nav({ route, go }) {
   const links = [
     { id: "home", label: "Início" },
     { id: "about", label: "Sobre" },
@@ -78,7 +78,7 @@ function Nav({ route, go }) {
   );
 }
 
-function Footer({ go }) {
+export function Footer({ go }) {
   const socials = [
     { k:"LinkedIn",  href:"https://www.linkedin.com/company/wir-innovation/" },
     { k:"Instagram", href:"https://www.instagram.com/wirinnovation" },
@@ -137,7 +137,7 @@ function Footer({ go }) {
 }
 
 // Floating WhatsApp button — visible on every page, bottom-right
-function WhatsappFab() {
+export function WhatsappFab() {
   const num = "5511981757505"; // Nicholas Weiser · BR
   const text = encodeURIComponent("Olá Nicholas, vim pelo site da WIR Innovation. Gostaria de conversar sobre…");
   return (
@@ -153,7 +153,7 @@ function WhatsappFab() {
 }
 
 /* Reveal-on-scroll */
-function useReveal() {
+export function useReveal() {
   useEffect(() => {
     const els = document.querySelectorAll("[data-reveal]");
     const io = new IntersectionObserver((entries) => {
@@ -164,4 +164,3 @@ function useReveal() {
   });
 }
 
-Object.assign(window, { Wordmark, Nav, Footer, Ticker, WhatsappFab, useReveal });

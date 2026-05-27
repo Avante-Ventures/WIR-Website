@@ -1,7 +1,13 @@
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { useReveal } from './shared.jsx';
+import { Opening, Proof } from './home-opening.jsx';
+import { Shift, ProductTabs } from './home-shift.jsx';
+import { ArchFlow, Trust, Closing } from './home-how.jsx';
+
 /* ───────── Home · assembler ───────── */
 
 // Sócios & Conselheiros + Experiência no setor
-function TrustBar() {
+export function TrustBar() {
   // 5×2 grid with composite top-cells in cols 1 & 2:
   //   Col 1 top: Bain Capital + Notredame Intermédica (both in same cell)
   //   Col 2 top: Pátria + Athena Saúde (both in same cell)
@@ -71,7 +77,7 @@ function TrustBar() {
   );
 }
 
-function HomePage({ go }) {
+export function HomePage({ go }) {
   useReveal();
   return (
     <>
@@ -86,4 +92,3 @@ function HomePage({ go }) {
   );
 }
 
-Object.assign(window, { HomePage });
