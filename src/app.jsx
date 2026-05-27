@@ -1,13 +1,16 @@
 /* ───────── App shell & routing ───────── */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Nav, Footer, WhatsappFab } from './shared.jsx';
-import { HomePage } from './home.jsx';
-import { SolutionsPage } from './solutions.jsx';
-import { AboutPage } from './about.jsx';
-import { BlogPage } from './blog.jsx';
-import { ContactPage } from './contact.jsx';
-import { DataProtectionPage } from './data-protection.jsx';
+import { HomePage } from './home.jsx'; // Home loads eagerly — it's the LCP path
+
+// Secondary routes lazy-loaded — separated into their own JS chunks.
+// User downloads them only when navigating away from home.
+const SolutionsPage = lazy(() => import('./solutions.jsx').then(m => ({ default: m.SolutionsPage })));
+const AboutPage = lazy(() => import('./about.jsx').then(m => ({ default: m.AboutPage })));
+const BlogPage = lazy(() => import('./blog.jsx').then(m => ({ default: m.BlogPage })));
+const ContactPage = lazy(() => import('./contact.jsx').then(m => ({ default: m.ContactPage })));
+const DataProtectionPage = lazy(() => import('./data-protection.jsx').then(m => ({ default: m.DataProtectionPage })));
 
 export function App() {
   const baseRoute = (h) => h.split("/")[0].split("#")[0];
@@ -68,7 +71,9 @@ export function App() {
   return (
     <>
       <Nav route={route} go={go}/>
-      <main key={route}>{Page}</main>
+      <main key={route}>
+        <Suspense fallback={<div style={{minHeight: '60vh'}}/>}>{Page}</Suspense>
+      </main>
       <Footer go={go}/>
       <WhatsappFab/>
     </>

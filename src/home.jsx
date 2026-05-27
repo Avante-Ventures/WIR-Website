@@ -16,27 +16,27 @@ export function TrustBar() {
   const cells = [
     // Row 1
     { composite: [
-        { src: "assets/logos/bain-capital.png",          alt: "Bain Capital" },
-        { src: "assets/logos/notredame-intermedica.png", alt: "Notredame Intermédica" },
+        { src: "/assets/logos/bain-capital.webp",          alt: "Bain Capital" },
+        { src: "/assets/logos/notredame-intermedica.webp", alt: "Notredame Intermédica" },
       ] },
     { composite: [
-        { src: "assets/logos/patria.png",       alt: "Pátria Investimentos" },
-        { src: "assets/logos/athena-saude.svg", alt: "Athena Saúde" },
+        { src: "/assets/logos/patria.webp",       alt: "Pátria Investimentos" },
+        { src: "/assets/logos/athena-saude.svg", alt: "Athena Saúde" },
       ] },
-    { src: "assets/logos/ezze.png",      alt: "EZZE" },
-    { src: "assets/logos/santander.png", alt: "Santander Seguros", sub: "seguros" },
-    { src: "assets/logos/hapvida-notredame.png", alt: "Hapvida · NotreDame Intermédica" },
+    { src: "/assets/logos/ezze.webp",      alt: "EZZE" },
+    { src: "/assets/logos/santander.webp", alt: "Santander Seguros", sub: "seguros" },
+    { src: "/assets/logos/hapvida-notredame.webp", alt: "Hapvida · NotreDame Intermédica" },
     // Row 2
-    { src: "assets/logos/aon.png",       alt: "Aon" },
-    { src: "assets/logos/gallagher.png", alt: "Gallagher" },
-    { src: "assets/logos/jlt.png",       alt: "JLT" },
-    { src: "assets/logos/lockton.png",   alt: "Lockton" },
-    { src: "assets/logos/vis.png",       alt: "VIS" },
+    { src: "/assets/logos/aon.webp",       alt: "Aon" },
+    { src: "/assets/logos/gallagher.webp", alt: "Gallagher" },
+    { src: "/assets/logos/jlt.webp",       alt: "JLT" },
+    { src: "/assets/logos/lockton.webp",   alt: "Lockton" },
+    { src: "/assets/logos/vis.webp",       alt: "VIS" },
   ];
 
   const renderItem = (it, key) => (
     <span key={key} className="trustbar__logo-img">
-      <img src={it.src} alt={it.alt} title={it.alt}/>
+      <img src={it.src} alt={it.alt} title={it.alt} width="200" height="90" loading="lazy" decoding="async"/>
       {it.sub && <span className="trustbar__logo-sub">{it.sub}</span>}
     </span>
   );
