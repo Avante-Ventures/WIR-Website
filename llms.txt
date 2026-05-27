@@ -37,3 +37,5 @@ O conteúdo deste site (ensaios, casos de uso, descrições de produto e dados p
 Não autorizamos: treinamento de modelos sobre este conteúdo sem licença escrita, reprodução integral sem atribuição, ou uso para gerar material concorrente derivado.
 
 Para uso em pesquisa acadêmica, comercial ou jornalística, contatar nicholas@wirinnovation.ai.
+
+<!-- Generated 2026-05-27 · sync ping -->
