@@ -4,6 +4,78 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 export const ARTICLES = [
   {
+    slug: "automatizar-subscricao-seguros-en",
+    cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    title: "How to automate insurance underwriting with an AI layer",
+    sub: "A practical guide to automate insurance underwriting with an external AI layer on top of your core. The 6-stage flow, deployment path, governance, and LGPD.",
+    author: "WIR Innovation", role: "Team",
+    time: "10 min", date: "02 · Jun · 2026",
+    metaDesc: "A practical guide to automate insurance underwriting with an external AI layer on top of your core. The 6-stage flow, deployment path, governance, and LGPD.",
+    body: `### What it means to automate underwriting with an AI layer
+
+How to automate insurance underwriting with AI starts with one architectural choice: place an external AI layer on top of the systems the insurer already runs, instead of rebuilding the core. WIR is the AI layer for insurance in Brazil. It reads broker submissions, structures them, scores the risk against the insurer's own appetite, prices within set authority, and returns an explainable decision, while the core remains the system of record for binding, issuance, and regulatory reporting.
+
+In Brazilian Seguros e Danos (P&C), the path from a broker submission to a bound quote is still largely manual, and that is where service levels, consistency, and underwriter capacity leak away. Submissions arrive by email, broker portal, PDF, and spreadsheet, so the subscritor (underwriter) re-keys data before any risk judgment begins. Two underwriters can price the same risk differently when the manual lives in human memory rather than in a calibrated scoring layer. The cost shows up as slow turnaround, lost conversion, and pricing drift.
+
+The reader who benefits from this is the underwriting or subscrição (underwriting) lead, the product or innovation head, and the broker (corretor) channel that chooses insurers by response speed. The pressure is structural. The Brazilian Seguros e Danos market grows double digits per year, while company structure does not keep pace with that acceleration, so headcount alone cannot absorb the volume. Deloitte finds that underwriters spend 40% of their time on administrative tasks rather than risk judgment, which is precisely the layer an external AI engine is built to remove. This guide explains the mechanism, the deployment, and the governance that make automation defensible. Where a market claim appears, see WIR's insurance market intelligence for the underlying context.
+
+### How the automated underwriting journey works
+
+The automated journey replaces the manual one with a six-stage flow that preserves an audit record at every step. It is worth describing in sequence, because each stage removes a specific failure in the manual process.
+
+The first stage is multichannel intake with automatic validation. The layer ingests submissions through the formats the insurer already uses, whether API, portal, or direct upload of email and attachments. Each submission is registered with its own identifier, timestamp, channel, and source broker, which creates the first audit record before any analysis runs. The second stage is intelligent document reading. Machine Learning and document-AI extract fields from propostas, schedules, laudos, and financials with high precision, then normalize them into the insurer's data dictionary, so cargo manifests, property schedules, and fleet lists no longer demand manual re-keying.
+
+The third stage is broker enrichment and context. The layer cross-references external and historical sources such as CNPJ records, broker conversion history, exposure, and credit, then scores submission completeness and prioritizes the work. An incomplete submission triggers an automated request for information back to the corretor instead of stalling in silence. The fourth stage is the risk and fraud engine, a multi-factor ML model calibrated to the insurer's appetite and underwriting manual. It produces a risk score and probability, runs a parallel check for anomalies and manipulated documents, and reaches an automated decision tuned to that insurer's loss data rather than a generic benchmark.
+
+The fifth stage is dynamic pricing. The layer calculates a risk-adjusted premium (prêmio) using the insurer's own rating logic, instantly and within the authority bands the underwriting team defines, so pricing reflects the line of business (ramo), the exposure, and the risk grade. The sixth stage is decision and prioritization. Each risk returns as a quote, an automatic decline, or an escalation to a human, always with the explanation attached, then writes back to the policy core and returns the audit trail with a visible service level and underwriter queue. Stages one and two remove re-keying, stages three and four remove inconsistent judgment, stage five removes pricing drift, and stage six puts underwriter time only where human judgment adds value.
+
+### How to deploy the external AI layer
+
+Deployment is a staged rollout that keeps the core untouched and de-risks adoption, which matters in a market where BCG reports that 70% of insurers do not execute innovation because of IT limitations. The starting point is scope. The insurer chooses one or two lines (ramos) and a submission channel to begin, for example SME Patrimonial or Transportes cargo, and defines the target service level, the straight-through-processing goal, and the metrics that count, such as quote turnaround and underwriter hours saved.
+
+Integration comes next. WIR connects through API to read submissions and write structured decisions back, while the core stays the system of record for binding, issuance, and regulatory reporting. No migration of historical policies is required to begin, because this is an external AI layer, not a system migration and not an IT project the insurer's team has to run. Calibration follows. The insurer's authority limits, exclusions, appetite, and underwriting manual are encoded into the scoring and pricing layer, and the model is tuned on the insurer's loss history so decisions reflect that insurer's policy rather than a market average.
+
+Testing runs the layer in shadow mode against live submissions, comparing machine recommendations to underwriter decisions and measuring agreement, false-positive fraud flags, and extraction accuracy before any automated decision goes live. Go-live then starts narrow, with auto-quote for low-complexity, in-appetite risks and human-in-the-loop escalation for the rest, expanding the straight-through band as confidence builds. Continuous operation closes the loop, monitoring model drift, recalibrating to new loss experience, and feeding underwriter overrides back into the model. Setup runs 3 to 12 months with a fixed price, a clear scope, and KPIs agreed before the work starts, followed by continuous operation in production after go-live.
+
+### Governance, explainability, and LGPD
+
+Automated underwriting in Brazil operates inside data-protection and supervisory expectations, so every automated decision has to be explainable and auditable rather than a black-box score. Each quote, decline, or escalation carries the reasons behind it, meaning the fields, the risk factors, and the appetite rules that drove the outcome, so an underwriter or an auditor can reconstruct any decision after the fact. Every stage from intake to decision is logged with timestamp, inputs, model version, and outcome, and the platform returns a complete audit trail.
+
+LGPD, the Lei Geral de Proteção de Dados (Lei 13.709/2018), governs this directly. Insurance submissions contain personal and sometimes sensitive data, so the layer processes only what is necessary, on a lawful basis, with data-subject rights respected. LGPD's provisions on automated decision-making give the data subject the right to request review, which turns explainability from a nice-to-have into a compliance requirement. Data is encrypted at every step, in transit and at rest, with access controls and segregation so submission data stays protected end to end.
+
+Calibration is what keeps governance honest. Because the model encodes the insurer's own underwriting manual and risk appetite, its decisions stay consistent with the insurer's stated policy, which supports the auditability that SUSEP-supervised entities are expected to maintain. The published frame in the LGPD full text and the ANPD guidance both point the same way. An automated decision is acceptable when it is explainable, auditable, and lawful, and that is the standard an external AI layer has to meet to operate in Brazilian insurance.
+
+### How WIR automates underwriting
+
+WIR is the AI layer for insurance. On top of the systems the insurer already runs, never in their place. It is a 100% external intelligence layer that automates the quotation and underwriting journey according to the insurer's own risk-acceptance policy, with Machine Learning calibrated to the insurer's risk appetite and underwriting manual. It does not replace the core, does not carry risk, and is not an insurer, a broker, or an MGA. The intelligence sits on top, and the insurer's core stays the system of record.
+
+Two modules carry the work. Underwriter Intelligence automates the quotation journey per the insurer's risk policy, so underwriters analyze risk and focus on business development rather than re-keying, with real-time ML scoring calibrated to appetite, automatic routing by appetite and exposure, and predictive conversion analysis across product, risk, and broker. Smart Sales handles distribution intelligence, mapping the portfolio by client and product, scoring upsell and next-best-action, and running multi-channel campaigns with an attribution trail, so penetration and retention grow together. Real-time dashboards and analytics give a proactive view of in-flight deals and the pipeline.
+
+The traction is deliberately conservative. WIR has a first POC in execution with a global insurer in the Transport line, and nothing beyond that is claimed. Every decision the platform returns is explainable and carries a full audit trail, data is encrypted at every step and LGPD compliant, and the model stays calibrated to each insurer's underwriting policy rather than a generic benchmark. Capgemini finds that 60%+ of brokers choose an insurer by response speed, and Gartner estimates that companies lose 20-30% of their time organizing unstructured data, which is the time an external AI layer gives back to the underwriting team. To see where automation creates the most value in a specific underwriting journey, book a conversation with WIR.
+
+### Frequently asked questions
+
+**Does WIR's AI layer replace the insurer's core?**
+
+No. WIR is a 100% external AI layer that sits on top of the systems the insurer already runs. It reads broker submissions, scores risk against the insurer's own appetite, prices within set authority, and returns an explainable decision. The core stays the system of record for binding, issuance, and regulatory reporting. WIR does not carry risk and is not an insurer, broker, or MGA. The intelligence sits on top, never in the core's place.
+
+**How long does it take to deploy underwriting automation?**
+
+Setup runs 3 to 12 months, with a fixed price, a clear scope, and KPIs agreed before the work starts. Continuous operation in production follows go-live. The rollout is staged: the insurer scopes one or two lines and a channel, WIR integrates by API, the model is calibrated, the layer runs in shadow mode, then go-live starts narrow with auto-quote for low-complexity, in-appetite risks. No migration of historical policies is required to begin.
+
+**How is the AI model calibrated to the insurer's risk appetite?**
+
+WIR encodes the insurer's authority limits, exclusions, appetite, and underwriting manual into the scoring and pricing layer, then tunes the Machine Learning model on the insurer's own loss history. Decisions reflect that insurer's stated policy rather than a market average. The risk and fraud engine produces a score and probability calibrated to appetite, dynamic pricing uses the insurer's own rating logic, and underwriter overrides feed back into the model during continuous operation to keep it aligned.
+
+**Are automated decisions auditable and LGPD compliant?**
+
+Yes. Every quote, decline, or escalation carries the reasons behind it, the fields, risk factors, and appetite rules that drove the outcome, so an underwriter or auditor can reconstruct any decision. Every stage from intake to decision is logged with timestamp, inputs, model version, and outcome, and the platform returns a complete audit trail. Data is encrypted in transit and at rest, processed on a lawful basis, and LGPD compliant, with data-subject rights respected, including the right to request review.
+
+**Does the insurer need an IT project to get started?**
+
+No. WIR is an external AI layer, not a system migration and not an IT project the insurer's team has to run. It connects through API to read submissions and write structured decisions back, while the core stays untouched as the system of record. No migration of historical policies is required to begin. This matters because BCG reports that 70% of insurers do not execute innovation due to IT limitations, the exact barrier an external layer removes.`
+  },
+  {
     slug: "o-underwriter-nao-morre",
     cat: "Ensaio", hero: true, grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80&auto=format&fit=crop",
