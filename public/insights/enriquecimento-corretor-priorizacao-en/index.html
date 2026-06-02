@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>Broker enrichment and prioritization with an AI layer — WIR Innovation</title>
+<meta name="description" content="How insurers enrich and prioritize brokers with an external AI layer: broker scoring, CNPJ, conversion history, and exposure, without replacing the core. See how." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/enriquecimento-corretor-priorizacao-en/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Broker enrichment and prioritization with an AI layer" />
+<meta property="og:description" content="How insurers enrich and prioritize brokers with an external AI layer: broker scoring, CNPJ, conversion history, and exposure, without replacing the core. See how." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/enriquecimento-corretor-priorizacao-en/" />
+
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Article" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Broker enrichment and prioritization with an AI layer" />
+<meta name="twitter:description" content="How insurers enrich and prioritize brokers with an external AI layer: broker scoring, CNPJ, conversion history, and exposure, without replacing the core. See how." />
+
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Broker enrichment and prioritization with an AI layer","description":"How insurers enrich and prioritize brokers with an external AI layer: broker scoring, CNPJ, conversion history, and exposure, without replacing the core. See how.","datePublished":"02 · Jun · 2026","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Team"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/enriquecimento-corretor-priorizacao-en/","articleSection":"Article"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"Broker enrichment and prioritization with an AI layer","item":"https://wirinnovation.ai/insights/enriquecimento-corretor-priorizacao-en/"}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>Plataforma de IA para seguros</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>Em conformidade com LGPD</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/" class="nav__link">Início</a>
+      <a href="/#about" class="nav__link">Sobre</a>
+      <a href="/#solutions" class="nav__link">Produtos &amp; IA</a>
+      <a href="/#protection" class="nav__link">Proteção de Dados</a>
+      <a href="/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contato
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/insights/">
+      <span aria-hidden="true">←</span> Voltar para Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Article</div>
+      <h1 class="display blarticle__title">Broker enrichment and prioritization with an AI layer</h1>
+      <p class="blarticle__sub">How insurers enrich and prioritize brokers with an external AI layer: broker scoring, CNPJ, conversion history, and exposure, without replacing the core. See how.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Team</div>
+          <div class="blarticle__byline-time">02 · Jun · 2026 · 10 min de leitura</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#3222E9,#7540AC); aspect-ratio: 16 / 9;">
+      
+    </figure>
+
+    <div class="blarticle__body">
+<h3>What broker enrichment with an AI layer means</h3>
+<p>Broker enrichment and prioritization with AI is the practice of resolving, scoring, and ranking each broker submission the moment it arrives, so the insurer responds fastest to the cases most likely to bind. In the Brazilian Seguros e Danos (P&amp;C) market, the corretor (broker) is the dominant route to market, yet at the instant of quotation the insurer usually knows almost nothing about the broker who sent the submission. The underwriter sees a name, a CNPJ (company tax ID) or a registration code, and a risk to price, but not the context that decides whether this case deserves fast, deep attention. This guide is written for underwriting (subscrição) and distribution leads, and for innovation heads, who want to prioritize the right brokers without changing their core systems.</p>
+<p>An external AI layer closes that gap. It sits on top of the insurer&#39;s existing core, policy, and quotation systems, reads each submission whatever channel it came from, enriches the broker, scores the case, and returns a prioritization decision with the reasoning attached. Nothing is replaced and no core migration is involved. The layer is additive, writing enriched context and a priority score back into the flow the insurer already runs. WIR is the AI layer of insurance built for exactly this work, calibrated to each insurer&#39;s own risk appetite and underwriting manual.</p>
+<p>The reason this matters is structural. Brokers reward response speed above almost anything else, and 60%+ of brokers choose an insurer by response speed, according to Capgemini. When triage is manual and broker-blind, the broker who deserves a two-hour answer and the broker who deserves a deprioritized answer are treated the same, and the insurer loses placement to whoever quotes faster and more reliably. Because enrichment cross-references external and internal sources, every CNPJ check, history lookup, exposure read, and credit signal runs inside a framework that is LGPD compliant, encrypted at every step, explainable, and auditable.</p>
+<h3>How broker score and conversion history enter the journey</h3>
+<p>Broker enrichment is one stage in an automated underwriting journey with six steps that run in sequence. First, multichannel intake captures submissions from email, broker portal, upload, and API into one structured pipeline. Second, intelligent document reading uses Machine Learning to extract and structure the risk data from PDFs, spreadsheets, and forms, removing the re-keying. Third comes broker enrichment and scoring, the focus of this guide. Fourth, a risk and fraud ML engine scores the structured risk against the insurer&#39;s appetite and against fraud and loss patterns. Fifth, dynamic pricing sets the premium (prêmio) to the enriched, scored risk and to the underwriting manual. Sixth, the decision and prioritization step quotes, declines, or escalates, with an audit trail and an SLA-aware priority.</p>
+<p>Inside the enrichment stage, the layer answers one question before the underwriter spends any time: how much, and how fast, is this submission worth. It builds the broker context an underwriter would otherwise assemble by hand. Identity and validation resolve the brokerage&#39;s CNPJ, confirm active and regular status, and validate the counterparty, which blocks submissions from irregular or dormant entities. Broker history draws on the insurer&#39;s own systems to show how many submissions this broker sent, how many bound, in which lines of business (ramos), and with what loss experience, which is the real conversion track record. Exposure and accumulation show how much exposure this broker already concentrates with the insurer by ramo and region, so accumulation limits and risk appetite are applied at intake rather than after binding. Credit signals add financial-standing context where premium financing or payment risk matters.</p>
+<p>The model then estimates the probability that this specific submission converts, conditioned on the product, the risk profile, and the broker&#39;s historical binding behavior. A broker with a valid CNPJ and a strong conversion record, sending a case inside the insurer&#39;s appetite, is flagged for fast, deep attention. A low-conversion pattern is queued accordingly. The output is a broker score and a conversion-likelihood signal attached to the submission, plus a recommended priority, so the underwriter starts from context instead of a blank screen and the quotation system can route automatically. The mechanism reflects WIR&#39;s own platform flow, where broker enrichment feeds the risk engine, the pricing step, and the final decision.</p>
+<h3>How to deploy enrichment as an external layer</h3>
+<p>Adding broker enrichment as an external layer follows a contained path, not a core program. It begins with scope: the insurer picks the lines and broker segments where triage pain and volume are highest in Seguros e Danos, and defines what priority means for its own service-level targets. Next comes integration with the core, connecting by API, portal, or upload to the existing quotation and policy systems. The layer reads submissions and writes enriched broker context and a priority score back into the existing flow. This is integration, not migration, which matters because 70% of insurers do not execute innovation due to IT limitations, according to BCG.</p>
+<p>Calibration follows. The scoring and conversion models are tuned to the insurer&#39;s underwriting manual, its appetite by ramo and region, and its accumulation limits, so the enrichment respects existing rules and does not invent new ones. Testing then validates the models against historical submissions, checking whether the score predicted conversion, whether prioritization improved response time on the cases that mattered, and whether the CNPJ and exposure checks were correct. Go-live rolls the layer out on the scoped lines with the underwriter in the loop and the score visible and overridable. Continuous operation keeps the models retraining on new conversion and loss outcomes, with thresholds adjusting as the insurer&#39;s appetite changes.</p>
+<p>With WIR, this work runs as a defined setup that takes three to twelve months, with a clear scope and KPIs agreed before start, followed by a continuous operation phase after go-live. The reason an external layer is realistic here is that underwriters already lose 40% of their time to administrative tasks, according to Deloitte, and 20% to 30% of corporate time is lost organizing unstructured data, according to Gartner. Removing manual broker triage returns that time to risk judgment without an IT program the insurer&#39;s team has to run.</p>
+<h3>Governance, explainability, and LGPD</h3>
+<p>Cross-referencing external sources to score a broker is personal-data and counterparty-data processing, so it is governed by design. Every prioritization and scoring decision is explainable, showing which factors raised or lowered the broker score and why the submission was prioritized or deprioritized. Good underwriting governance and SUSEP supervision of the P&amp;C market both expect automated decisions to be reconstructable and auditable, with a trail per decision, and the enrichment layer returns exactly that. Instead of ad-hoc manual checks that leave no record, every CNPJ validation, exposure check, and score is logged.</p>
+<p>The legal frame is Brazil&#39;s Lei Geral de Proteção de Dados, the LGPD (Lei 13.709/2018), which governs the processing of personal data, sets a legal-basis requirement, and gives data subjects the right to review of decisions taken solely on automated processing, as set out in the <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">LGPD text on planalto.gov.br</a>. Cross-referencing CNPJ, broker history, exposure, and credit must rest on a valid legal basis, be minimized to what the underwriting decision needs, and keep a human-review path. Data is encrypted in transit and at rest, access is controlled, and the enrichment pulls only the fields the scoring decision requires.</p>
+<p>This is the posture WIR holds across its platform. Decisions are explainable and return a full audit trail, data is encrypted at every step and LGPD compliant, and the underwriter stays in the loop with the score visible and overridable. The enrichment layer strengthens governance rather than weakening it, turning a previously invisible manual process into one that is recorded, minimized, and auditable end to end. For wider market context on Brazilian P&amp;C, see WIR&#39;s insurance market intelligence guide.</p>
+<h3>How WIR enriches and prioritizes brokers</h3>
+<p>WIR is the AI layer of insurance in Brazil, an external AI platform that sits on top of the systems the insurer already runs and automates the quotation and underwriting journey according to the insurer&#39;s own risk-acceptance policy. For broker enrichment specifically, WIR ingests each submission through API, portal, or upload, resolves and enriches the broker by cross-referencing external and internal sources, including CNPJ status, the insurer&#39;s own broker and conversion history, exposure data, and credit signals, and returns a broker score with a recommended priority. The work is delivered through two modules. Underwriter Intelligence automates the quotation journey per the insurer&#39;s risk policy, with real-time ML scoring calibrated to appetite, automatic routing by appetite and exposure, and predictive conversion analysis by product, risk, and broker. Smart Sales adds distribution intelligence, mapping the portfolio by client and product and scoring next-best-action so penetration and retention grow together. Real-time dashboards keep in-flight deals and pipeline visible.</p>
+<p>WIR is 100% external, with no load on the insurer&#39;s IT and no core migration. It is the AI layer for insurance, on top of the systems the insurer already runs, never in their place. WIR is not an insurer, a broker, or an MGA, and it does not carry risk. It automates the journey calibrated to each insurer&#39;s risk appetite and underwriting manual, and every decision is explainable, auditable, encrypted at every step, and LGPD compliant. WIR Innovation was founded in 2025 and built with Mahway, a Venture Builder in California, and Avante, a Venture Studio in Brazil. Its first POC is in execution with a global insurer in the Transport line, and that is the only public traction point. To see how broker enrichment and prioritization would work at a specific insurer, the next step is a working conversation with the WIR team.</p>
+<h3>Frequently asked questions</h3>
+<p><strong>Which external sources does the layer cross-reference for the broker?</strong></p>
+<p>The layer cross-references CNPJ status, broker and conversion history, exposure and accumulation data, and credit signals to contextualize each submission. WIR resolves the brokerage&#39;s CNPJ, confirms active and regular status, draws conversion track record from the insurer&#39;s own systems, and reads exposure by ramo and region. Every cross-reference runs inside an LGPD-compliant, encrypted framework, minimized to the fields the underwriting decision requires, with a full audit trail per check.</p>
+<p><strong>How does conversion history influence prioritization?</strong></p>
+<p>Conversion history estimates how likely a specific submission is to bind, so high-converting brokers inside appetite are flagged for fast, deep attention. WIR draws on the insurer&#39;s own systems to show how many submissions a broker sent, how many bound, in which ramos, and with what loss experience. Underwriter Intelligence conditions a conversion-likelihood signal on product, risk profile, and the broker&#39;s historical binding behavior, then attaches a recommended priority to the case.</p>
+<p><strong>Does enrichment replace the insurer&#39;s CRM?</strong></p>
+<p>No. Enrichment never replaces the insurer&#39;s CRM or core. WIR is an external AI layer on top of the systems the insurer already runs, reading submissions by API, portal, or upload and writing enriched broker context and a priority score back into the existing flow. This is integration, not migration, which matters because 70% of insurers do not execute innovation due to IT limitations, according to BCG. WIR carries no risk and adds no load on the insurer&#39;s IT.</p>
+<p><strong>Is the data cross-referencing LGPD compliant?</strong></p>
+<p>Yes. Cross-referencing CNPJ, broker history, exposure, and credit rests on a valid legal basis under Brazil&#39;s LGPD, with data encrypted in transit and at rest. WIR minimizes processing to the fields the scoring decision requires, controls access, and keeps a human-review path so decisions are not taken solely by automation. Every validation and score is logged, making the broker enrichment explainable and auditable rather than an ad-hoc manual check that leaves no record.</p>
+<p><strong>How does prioritization speed up the response to the broker?</strong></p>
+<p>Prioritization scores and ranks each submission at intake, so underwriters start from context and the quotation system routes the highest-value cases first. This matters because 60%+ of brokers choose an insurer by response speed, according to Capgemini. WIR returns a broker score and a recommended priority with the reasoning attached, replacing manual, broker-blind triage. Underwriters recover time, given that they already lose 40% of it to administrative tasks, according to Deloitte, and direct it to the cases most likely to bind.</p>
+    </div>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/insights/">
+        <span aria-hidden="true">←</span> Outros Insights
+      </a>
+      <a class="btn btn--solid" href="/#contact">
+        Falar com a equipe <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#solutions">Produtos &amp; IA</a></li>
+          <li><a href="/#protection">Proteção de Dados</a></li>
+          <li><a href="/insights/">Insights &amp; News</a></li>
+          <li><a href="/#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/#contact">Falar com a equipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sócios &amp; Holding</h4>
+        <ul>
+          <li><a href="/#about">Mahway · California</a></li>
+          <li><a href="/#about">Avante · Brasil</a></li>
+          <li><a href="/#about">Conselheiros estratégicos</a></li>
+          <li><a href="/#about">Princípios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Ol%C3%A1%20Nicholas%2C%20vim%20pelo%20site%20da%20WIR%20Innovation.%20Gostaria%20de%20conversar%20sobre%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Falar com Nicholas no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>

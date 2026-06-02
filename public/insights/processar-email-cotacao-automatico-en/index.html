@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>How to automatically process insurance quote e-mails with AI — WIR Innovation</title>
+<meta name="description" content="How an external AI layer reads insurance quote e-mails and attachments, extracts and validates the data, and feeds P&amp;C underwriting without replacing the core." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/processar-email-cotacao-automatico-en/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to automatically process insurance quote e-mails with AI" />
+<meta property="og:description" content="How an external AI layer reads insurance quote e-mails and attachments, extracts and validates the data, and feeds P&amp;C underwriting without replacing the core." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/processar-email-cotacao-automatico-en/" />
+
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Article" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to automatically process insurance quote e-mails with AI" />
+<meta name="twitter:description" content="How an external AI layer reads insurance quote e-mails and attachments, extracts and validates the data, and feeds P&amp;C underwriting without replacing the core." />
+
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to automatically process insurance quote e-mails with AI","description":"How an external AI layer reads insurance quote e-mails and attachments, extracts and validates the data, and feeds P&C underwriting without replacing the core.","datePublished":"02 · Jun · 2026","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Team"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/processar-email-cotacao-automatico-en/","articleSection":"Article"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"How to automatically process insurance quote e-mails with AI","item":"https://wirinnovation.ai/insights/processar-email-cotacao-automatico-en/"}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>Plataforma de IA para seguros</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>Em conformidade com LGPD</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/" class="nav__link">Início</a>
+      <a href="/#about" class="nav__link">Sobre</a>
+      <a href="/#solutions" class="nav__link">Produtos &amp; IA</a>
+      <a href="/#protection" class="nav__link">Proteção de Dados</a>
+      <a href="/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contato
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/insights/">
+      <span aria-hidden="true">←</span> Voltar para Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Article</div>
+      <h1 class="display blarticle__title">How to automatically process insurance quote e-mails with AI</h1>
+      <p class="blarticle__sub">How an external AI layer reads insurance quote e-mails and attachments, extracts and validates the data, and feeds P&amp;C underwriting without replacing the core.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Team</div>
+          <div class="blarticle__byline-time">02 · Jun · 2026 · 10 min de leitura</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#3222E9,#7540AC); aspect-ratio: 16 / 9;">
+      
+    </figure>
+
+    <div class="blarticle__body">
+<h3>What it means to process quote e-mails with an AI layer</h3>
+<p>To automatically process insurance quote e-mails with AI means putting an external intelligence layer over the mailbox the insurer already publishes, so the layer reads each inbound message, opens its attachments, extracts the risk fields, validates them, and hands clean structured data to the existing quotation and underwriting flow. In Brazilian Seguros e Danos (P&amp;C), the quotation journey for mid-market and corporate risks still begins in an inbox. A corretor (broker) sends a cotação (quote request) as free text, with the real data buried in a proposta, a spreadsheet of locations or fleet schedules, a prior apólice (policy), or a scanned PDF. Nothing arrives as structured data.</p>
+<p>That intake stage is where time and accuracy leak. Someone in underwriting operations opens each message, downloads the attachments, interprets inconsistent layouts, and re-keys the fields into the core before a subscritor (underwriter) can even look at the risk. Manual re-keying is slow and prone to transposing a CNPJ or mis-entering an importância segurada (sum insured), and every error found later forces re-work and re-quoting.</p>
+<p>The reader who should consider this is an underwriting lead or innovation head whose team is drowning in inbox submissions. The cost is structural, not cosmetic. Capgemini reports that 60%+ of brokers choose an insurer by response speed, so a quote that comes back in hours while a competitor answers in minutes simply loses the business. Gartner estimates that corporates lose 20-30% of their time organizing unstructured data, and an insurance submission inbox is exactly that problem at scale. WIR is the AI layer for insurance, and this guide stays on the intake and reading stages, where the e-mail becomes structured data.</p>
+<h3>How an e-mail becomes structured data in the journey</h3>
+<p>The journey runs in six stages, but the work specific to e-mail lives in the first two. Stage one is multichannel intake. The AI layer connects to the insurer&#39;s existing quote mailbox, and to any portal or API channels, and captures every inbound submission automatically. For each message it pulls the e-mail body, the sender and broker identity, and all attachments, whether PDF, DOCX, XLSX, images, or scanned documents. Nothing waits for a human to open it. The submission is logged, time-stamped, and queued the moment it arrives, which is what makes a fast SLA possible in the first place.</p>
+<p>Stage two is intelligent document reading, and it is the core of this use case. The layer first reads the e-mail body in natural language to extract intent and any inline data, such as the ramo (line of business), the segurado (insured), the requested coverages, dates, and special instructions written in prose. It then reads every attachment with document AI, including OCR for scanned and image-based files, so it can interpret proposals, spreadsheets, prior policies, and schedules regardless of layout. From that reading it maps the content to the underwriting data model: CNPJ and CPF, activity code, addresses and locations, importância segurada per item, occupancy and construction for property, fleet and use for auto, claims history, and the coverages and limits requested.</p>
+<p>Validation is the step that makes automation safe. Each field is checked for format and check-digit, for internal consistency so that sums reconcile and locations are complete, against reference data, and for completeness against what the ramo requires. Missing or low-confidence fields are flagged for review or for an automated follow-up to the broker, rather than passing bad data downstream. The result is a clean, structured submission record where every extracted field traces back to the exact source document and position it came from. The later stages then enrich the submission with external and internal context, score it against the insurer&#39;s risk appetite and underwriting manual, price it with the insurer&#39;s own rating logic, and either issue a quote or route the case to a subscritor with a full audit trail. At the end of stage two, an e-mail that arrived as prose plus a PDF is a validated, structured quote, and the underwriter starts from clean data instead of from an inbox.</p>
+<h3>How to deploy e-mail capture as an external layer</h3>
+<p>Deployment is an integration, not a migration. The first move is to scope a single high-volume line of business with painful intake, commonly Patrimonial, Auto frota, or Transporte, and to define the target fields, the validation rules, and what good extraction looks like for that ramo. Narrow scope proves value fast and de-risks the program, because the insurer can see results on one line before scaling to others. The second move is to connect the channels. The layer points at the existing quote inbox, and at any portal or API feeds, read-only at first. Brokers keep sending to the same address they always have, with no new portal and no behavior change.</p>
+<p>Integration with the core comes next. The structured output is mapped to the insurer&#39;s quotation and core fields, and the handoff is agreed as an API call, a controlled file drop, or RPA into the existing screen. The core stays the system of record, and the layer feeds it. Before go-live, the insurer runs historical and live e-mails through the layer in shadow mode, measures extraction accuracy and validation catch-rate per field, and tunes the model while keeping humans in the loop on low-confidence cases. Go-live is progressive: the insurer starts by auto-processing the clean, high-confidence submissions and routing the rest to people, then widens the automatic band as accuracy proves out. After go-live the layer is operated continuously, monitoring extraction quality, model drift, new document formats, and broker feedback, and it improves as it sees more of the insurer&#39;s real traffic.</p>
+<p>A full setup runs 3 to 12 months, with fixed scope and KPIs agreed before the work starts, followed by continuous operation in production after go-live. None of this is a core program. The insurer modernizes the intake and reading experience without touching policy administration or the rating engine, which removes the number-one objection underwriting teams raise against automating the journey.</p>
+<h3>Governance, explainability, and LGPD</h3>
+<p>Automated processing is only defensible when governance is built into the design rather than added later. Validation of extracted data is the foundation: every field is checked, and low-confidence values are flagged rather than trusted, with a human-in-the-loop path on exceptions. Explainability is the second pillar. Each extracted field traces back to the exact source document and position it came from, and each downstream classification exposes its drivers, which is what lets an insurer explain and document an automated decision to an auditor or to SUSEP. SUSEP supervises the Brazilian P&amp;C market and expects insurers to be able to show how risks are assessed and priced.</p>
+<p>Data protection runs through every step. Submissions carry personal and commercial data, so the layer encrypts data in transit and at rest across intake, reading, and handoff. Processing is governed by Brazil&#39;s Lei Geral de Proteção de Dados, the LGPD, which is set out in the <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Lei nº 13.709/2018</a> and supervised by the <a href="https://www.gov.br/anpd" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">ANPD</a>. Processing must rest on a valid legal basis and follow purpose limitation and data minimization. For automated decisions specifically, the LGPD gives the data subject the right to request review of decisions taken solely on automated processing, which is exactly why an explainable, auditable layer with a human-in-the-loop path matters for automated quoting. Every WIR decision is explainable, returns a full audit trail, and runs on data that is encrypted at every step and LGPD compliant.</p>
+<h3>How WIR processes quote e-mails</h3>
+<p>WIR is the AI layer of insurance in Brazil. It sits on top of the systems the insurer already runs, never in their place. For quote e-mails, this means WIR listens to the insurer&#39;s existing mailbox and channels, reads the body and every attachment with intelligent document reading, extracts the fields with high precision, validates them, and feeds the structured result into the existing quotation and underwriting flow. There is no new address for brokers, no core migration, and no IT project the insurer&#39;s team has to run. The core stays the system of record, and WIR writes back the structured submission and the audit trail.</p>
+<p>Two modules carry the work. Underwriter Intelligence automates the quotation journey per the insurer&#39;s own risk policy, with real-time Machine Learning scoring calibrated to the insurer&#39;s risk appetite and underwriting manual, automatic routing by appetite and exposure, and predictive conversion analysis by product, risk, and broker, so underwriters spend their time on risk selection instead of triage and data entry. Smart Sales adds distribution intelligence, mapping the portfolio by client and product, scoring upsell and next-best-action, and running multi-channel campaigns with an attribution trail. Real-time dashboards give a proactive view of in-flight deals and the underwriter queue. BCG finds that 70% of insurers do not execute innovation because of IT limitations, and an external layer is built precisely to remove that blocker.</p>
+<p>WIR was founded in 2025, built with Mahway, a Venture Builder in California, and Avante, a Venture Studio in Brazil. Its first POC is in execution with a global insurer in the Transport line, and that is the only traction WIR claims today. The AI layer for insurance. On top of the systems the insurer already runs, never in their place. To map how this would read your insurer&#39;s quote inbox, the next step is a working conversation with the WIR team.</p>
+<h3>Frequently asked questions</h3>
+<p><strong>Does the AI layer read the e-mail body and quote attachments?</strong></p>
+<p>Yes. The AI layer reads the e-mail body in natural language and every attachment with intelligent document reading, including OCR for scanned files. It interprets proposals, spreadsheets, prior policies, and schedules regardless of layout, then maps the content to the underwriting data model: CNPJ, activity, locations, sum insured, coverages, and limits. WIR extracts these fields with high precision and feeds the structured result into the existing quotation flow, never replacing the mailbox.</p>
+<p><strong>Do we need to change our e-mail or core to use this?</strong></p>
+<p>No. Deployment is an integration, not a migration. WIR points at the existing quote inbox and at any portal or API feeds, read-only at first, so brokers keep sending to the same address with no behavior change. The structured output maps to the insurer&#39;s quotation and core fields by API call, controlled file drop, or RPA. The core stays the system of record. BCG finds 70% of insurers do not execute innovation because of IT limitations.</p>
+<p><strong>Is data extracted from the e-mail validated before it moves on?</strong></p>
+<p>Yes. Validation is the step that makes automation safe. Each extracted field is checked for format and check-digit, for internal consistency so sums reconcile, against reference data, and for completeness against what the line of business requires. Missing or low-confidence fields are flagged for human review or an automated follow-up to the broker, rather than passing bad data downstream. The result is a clean, structured submission where every field traces back to its source document.</p>
+<p><strong>Is e-mail processing LGPD compliant?</strong></p>
+<p>Yes. Processing is governed by Brazil&#39;s Lei Geral de Proteção de Dados and rests on a valid legal basis, purpose limitation, and data minimization. Submissions carry personal and commercial data, so WIR encrypts data in transit and at rest across intake, reading, and handoff. Every decision is explainable and returns a full audit trail, and each extracted field traces to its exact source, which lets an insurer document an automated decision to an auditor or to SUSEP.</p>
+    </div>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/insights/">
+        <span aria-hidden="true">←</span> Outros Insights
+      </a>
+      <a class="btn btn--solid" href="/#contact">
+        Falar com a equipe <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#solutions">Produtos &amp; IA</a></li>
+          <li><a href="/#protection">Proteção de Dados</a></li>
+          <li><a href="/insights/">Insights &amp; News</a></li>
+          <li><a href="/#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/#contact">Falar com a equipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sócios &amp; Holding</h4>
+        <ul>
+          <li><a href="/#about">Mahway · California</a></li>
+          <li><a href="/#about">Avante · Brasil</a></li>
+          <li><a href="/#about">Conselheiros estratégicos</a></li>
+          <li><a href="/#about">Princípios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Ol%C3%A1%20Nicholas%2C%20vim%20pelo%20site%20da%20WIR%20Innovation.%20Gostaria%20de%20conversar%20sobre%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Falar com Nicholas no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>
