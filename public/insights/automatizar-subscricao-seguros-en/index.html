@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>How to automate insurance underwriting with an AI layer — WIR Innovation</title>
+<meta name="description" content="A practical guide to automate insurance underwriting with an external AI layer on top of your core. The 6-stage flow, deployment path, governance, and LGPD." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/automatizar-subscricao-seguros-en/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to automate insurance underwriting with an AI layer" />
+<meta property="og:description" content="A practical guide to automate insurance underwriting with an external AI layer on top of your core. The 6-stage flow, deployment path, governance, and LGPD." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/automatizar-subscricao-seguros-en/" />
+
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Article" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to automate insurance underwriting with an AI layer" />
+<meta name="twitter:description" content="A practical guide to automate insurance underwriting with an external AI layer on top of your core. The 6-stage flow, deployment path, governance, and LGPD." />
+
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to automate insurance underwriting with an AI layer","description":"A practical guide to automate insurance underwriting with an external AI layer on top of your core. The 6-stage flow, deployment path, governance, and LGPD.","datePublished":"02 · Jun · 2026","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Team"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/automatizar-subscricao-seguros-en/","articleSection":"Article"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"How to automate insurance underwriting with an AI layer","item":"https://wirinnovation.ai/insights/automatizar-subscricao-seguros-en/"}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>Plataforma de IA para seguros</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>Em conformidade com LGPD</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/" class="nav__link">Início</a>
+      <a href="/#about" class="nav__link">Sobre</a>
+      <a href="/#solutions" class="nav__link">Produtos &amp; IA</a>
+      <a href="/#protection" class="nav__link">Proteção de Dados</a>
+      <a href="/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contato
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/insights/">
+      <span aria-hidden="true">←</span> Voltar para Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Article</div>
+      <h1 class="display blarticle__title">How to automate insurance underwriting with an AI layer</h1>
+      <p class="blarticle__sub">A practical guide to automate insurance underwriting with an external AI layer on top of your core. The 6-stage flow, deployment path, governance, and LGPD.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Team</div>
+          <div class="blarticle__byline-time">02 · Jun · 2026 · 10 min de leitura</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#3222E9,#7540AC); aspect-ratio: 16 / 9;">
+      
+    </figure>
+
+    <div class="blarticle__body">
+<h3>What it means to automate underwriting with an AI layer</h3>
+<p>How to automate insurance underwriting with AI starts with one architectural choice: place an external AI layer on top of the systems the insurer already runs, instead of rebuilding the core. WIR is the AI layer for insurance in Brazil. It reads broker submissions, structures them, scores the risk against the insurer&#39;s own appetite, prices within set authority, and returns an explainable decision, while the core remains the system of record for binding, issuance, and regulatory reporting.</p>
+<p>In Brazilian Seguros e Danos (P&amp;C), the path from a broker submission to a bound quote is still largely manual, and that is where service levels, consistency, and underwriter capacity leak away. Submissions arrive by email, broker portal, PDF, and spreadsheet, so the subscritor (underwriter) re-keys data before any risk judgment begins. Two underwriters can price the same risk differently when the manual lives in human memory rather than in a calibrated scoring layer. The cost shows up as slow turnaround, lost conversion, and pricing drift.</p>
+<p>The reader who benefits from this is the underwriting or subscrição (underwriting) lead, the product or innovation head, and the broker (corretor) channel that chooses insurers by response speed. The pressure is structural. The Brazilian Seguros e Danos market grows double digits per year, while company structure does not keep pace with that acceleration, so headcount alone cannot absorb the volume. Deloitte finds that underwriters spend 40% of their time on administrative tasks rather than risk judgment, which is precisely the layer an external AI engine is built to remove. This guide explains the mechanism, the deployment, and the governance that make automation defensible. Where a market claim appears, see WIR&#39;s insurance market intelligence for the underlying context.</p>
+<h3>How the automated underwriting journey works</h3>
+<p>The automated journey replaces the manual one with a six-stage flow that preserves an audit record at every step. It is worth describing in sequence, because each stage removes a specific failure in the manual process.</p>
+<p>The first stage is multichannel intake with automatic validation. The layer ingests submissions through the formats the insurer already uses, whether API, portal, or direct upload of email and attachments. Each submission is registered with its own identifier, timestamp, channel, and source broker, which creates the first audit record before any analysis runs. The second stage is intelligent document reading. Machine Learning and document-AI extract fields from propostas, schedules, laudos, and financials with high precision, then normalize them into the insurer&#39;s data dictionary, so cargo manifests, property schedules, and fleet lists no longer demand manual re-keying.</p>
+<p>The third stage is broker enrichment and context. The layer cross-references external and historical sources such as CNPJ records, broker conversion history, exposure, and credit, then scores submission completeness and prioritizes the work. An incomplete submission triggers an automated request for information back to the corretor instead of stalling in silence. The fourth stage is the risk and fraud engine, a multi-factor ML model calibrated to the insurer&#39;s appetite and underwriting manual. It produces a risk score and probability, runs a parallel check for anomalies and manipulated documents, and reaches an automated decision tuned to that insurer&#39;s loss data rather than a generic benchmark.</p>
+<p>The fifth stage is dynamic pricing. The layer calculates a risk-adjusted premium (prêmio) using the insurer&#39;s own rating logic, instantly and within the authority bands the underwriting team defines, so pricing reflects the line of business (ramo), the exposure, and the risk grade. The sixth stage is decision and prioritization. Each risk returns as a quote, an automatic decline, or an escalation to a human, always with the explanation attached, then writes back to the policy core and returns the audit trail with a visible service level and underwriter queue. Stages one and two remove re-keying, stages three and four remove inconsistent judgment, stage five removes pricing drift, and stage six puts underwriter time only where human judgment adds value.</p>
+<h3>How to deploy the external AI layer</h3>
+<p>Deployment is a staged rollout that keeps the core untouched and de-risks adoption, which matters in a market where BCG reports that 70% of insurers do not execute innovation because of IT limitations. The starting point is scope. The insurer chooses one or two lines (ramos) and a submission channel to begin, for example SME Patrimonial or Transportes cargo, and defines the target service level, the straight-through-processing goal, and the metrics that count, such as quote turnaround and underwriter hours saved.</p>
+<p>Integration comes next. WIR connects through API to read submissions and write structured decisions back, while the core stays the system of record for binding, issuance, and regulatory reporting. No migration of historical policies is required to begin, because this is an external AI layer, not a system migration and not an IT project the insurer&#39;s team has to run. Calibration follows. The insurer&#39;s authority limits, exclusions, appetite, and underwriting manual are encoded into the scoring and pricing layer, and the model is tuned on the insurer&#39;s loss history so decisions reflect that insurer&#39;s policy rather than a market average.</p>
+<p>Testing runs the layer in shadow mode against live submissions, comparing machine recommendations to underwriter decisions and measuring agreement, false-positive fraud flags, and extraction accuracy before any automated decision goes live. Go-live then starts narrow, with auto-quote for low-complexity, in-appetite risks and human-in-the-loop escalation for the rest, expanding the straight-through band as confidence builds. Continuous operation closes the loop, monitoring model drift, recalibrating to new loss experience, and feeding underwriter overrides back into the model. Setup runs 3 to 12 months with a fixed price, a clear scope, and KPIs agreed before the work starts, followed by continuous operation in production after go-live.</p>
+<h3>Governance, explainability, and LGPD</h3>
+<p>Automated underwriting in Brazil operates inside data-protection and supervisory expectations, so every automated decision has to be explainable and auditable rather than a black-box score. Each quote, decline, or escalation carries the reasons behind it, meaning the fields, the risk factors, and the appetite rules that drove the outcome, so an underwriter or an auditor can reconstruct any decision after the fact. Every stage from intake to decision is logged with timestamp, inputs, model version, and outcome, and the platform returns a complete audit trail.</p>
+<p>LGPD, the Lei Geral de Proteção de Dados (Lei 13.709/2018), governs this directly. Insurance submissions contain personal and sometimes sensitive data, so the layer processes only what is necessary, on a lawful basis, with data-subject rights respected. LGPD&#39;s provisions on automated decision-making give the data subject the right to request review, which turns explainability from a nice-to-have into a compliance requirement. Data is encrypted at every step, in transit and at rest, with access controls and segregation so submission data stays protected end to end.</p>
+<p>Calibration is what keeps governance honest. Because the model encodes the insurer&#39;s own underwriting manual and risk appetite, its decisions stay consistent with the insurer&#39;s stated policy, which supports the auditability that SUSEP-supervised entities are expected to maintain. The published frame in the LGPD full text and the ANPD guidance both point the same way. An automated decision is acceptable when it is explainable, auditable, and lawful, and that is the standard an external AI layer has to meet to operate in Brazilian insurance.</p>
+<h3>How WIR automates underwriting</h3>
+<p>WIR is the AI layer for insurance. On top of the systems the insurer already runs, never in their place. It is a 100% external intelligence layer that automates the quotation and underwriting journey according to the insurer&#39;s own risk-acceptance policy, with Machine Learning calibrated to the insurer&#39;s risk appetite and underwriting manual. It does not replace the core, does not carry risk, and is not an insurer, a broker, or an MGA. The intelligence sits on top, and the insurer&#39;s core stays the system of record.</p>
+<p>Two modules carry the work. Underwriter Intelligence automates the quotation journey per the insurer&#39;s risk policy, so underwriters analyze risk and focus on business development rather than re-keying, with real-time ML scoring calibrated to appetite, automatic routing by appetite and exposure, and predictive conversion analysis across product, risk, and broker. Smart Sales handles distribution intelligence, mapping the portfolio by client and product, scoring upsell and next-best-action, and running multi-channel campaigns with an attribution trail, so penetration and retention grow together. Real-time dashboards and analytics give a proactive view of in-flight deals and the pipeline.</p>
+<p>The traction is deliberately conservative. WIR has a first POC in execution with a global insurer in the Transport line, and nothing beyond that is claimed. Every decision the platform returns is explainable and carries a full audit trail, data is encrypted at every step and LGPD compliant, and the model stays calibrated to each insurer&#39;s underwriting policy rather than a generic benchmark. Capgemini finds that 60%+ of brokers choose an insurer by response speed, and Gartner estimates that companies lose 20-30% of their time organizing unstructured data, which is the time an external AI layer gives back to the underwriting team. To see where automation creates the most value in a specific underwriting journey, book a conversation with WIR.</p>
+<h3>Frequently asked questions</h3>
+<p><strong>Does WIR&#39;s AI layer replace the insurer&#39;s core?</strong></p>
+<p>No. WIR is a 100% external AI layer that sits on top of the systems the insurer already runs. It reads broker submissions, scores risk against the insurer&#39;s own appetite, prices within set authority, and returns an explainable decision. The core stays the system of record for binding, issuance, and regulatory reporting. WIR does not carry risk and is not an insurer, broker, or MGA. The intelligence sits on top, never in the core&#39;s place.</p>
+<p><strong>How long does it take to deploy underwriting automation?</strong></p>
+<p>Setup runs 3 to 12 months, with a fixed price, a clear scope, and KPIs agreed before the work starts. Continuous operation in production follows go-live. The rollout is staged: the insurer scopes one or two lines and a channel, WIR integrates by API, the model is calibrated, the layer runs in shadow mode, then go-live starts narrow with auto-quote for low-complexity, in-appetite risks. No migration of historical policies is required to begin.</p>
+<p><strong>How is the AI model calibrated to the insurer&#39;s risk appetite?</strong></p>
+<p>WIR encodes the insurer&#39;s authority limits, exclusions, appetite, and underwriting manual into the scoring and pricing layer, then tunes the Machine Learning model on the insurer&#39;s own loss history. Decisions reflect that insurer&#39;s stated policy rather than a market average. The risk and fraud engine produces a score and probability calibrated to appetite, dynamic pricing uses the insurer&#39;s own rating logic, and underwriter overrides feed back into the model during continuous operation to keep it aligned.</p>
+<p><strong>Are automated decisions auditable and LGPD compliant?</strong></p>
+<p>Yes. Every quote, decline, or escalation carries the reasons behind it, the fields, risk factors, and appetite rules that drove the outcome, so an underwriter or auditor can reconstruct any decision. Every stage from intake to decision is logged with timestamp, inputs, model version, and outcome, and the platform returns a complete audit trail. Data is encrypted in transit and at rest, processed on a lawful basis, and LGPD compliant, with data-subject rights respected, including the right to request review.</p>
+<p><strong>Does the insurer need an IT project to get started?</strong></p>
+<p>No. WIR is an external AI layer, not a system migration and not an IT project the insurer&#39;s team has to run. It connects through API to read submissions and write structured decisions back, while the core stays untouched as the system of record. No migration of historical policies is required to begin. This matters because BCG reports that 70% of insurers do not execute innovation due to IT limitations, the exact barrier an external layer removes.</p>
+    </div>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/insights/">
+        <span aria-hidden="true">←</span> Outros Insights
+      </a>
+      <a class="btn btn--solid" href="/#contact">
+        Falar com a equipe <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#solutions">Produtos &amp; IA</a></li>
+          <li><a href="/#protection">Proteção de Dados</a></li>
+          <li><a href="/insights/">Insights &amp; News</a></li>
+          <li><a href="/#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/#contact">Falar com a equipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sócios &amp; Holding</h4>
+        <ul>
+          <li><a href="/#about">Mahway · California</a></li>
+          <li><a href="/#about">Avante · Brasil</a></li>
+          <li><a href="/#about">Conselheiros estratégicos</a></li>
+          <li><a href="/#about">Princípios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Ol%C3%A1%20Nicholas%2C%20vim%20pelo%20site%20da%20WIR%20Innovation.%20Gostaria%20de%20conversar%20sobre%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Falar com Nicholas no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>

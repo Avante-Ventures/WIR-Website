@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>How to automate insurance quoting with an AI layer — WIR Innovation</title>
+<meta name="description" content="A practical guide to automating insurance quoting with an external AI layer that reads submissions, scores risk, prices, and returns a broker-visible SLA. No core migration." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/automatizar-cotacao-seguros-en/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to automate insurance quoting with an AI layer" />
+<meta property="og:description" content="A practical guide to automating insurance quoting with an external AI layer that reads submissions, scores risk, prices, and returns a broker-visible SLA. No core migration." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/automatizar-cotacao-seguros-en/" />
+
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Article" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to automate insurance quoting with an AI layer" />
+<meta name="twitter:description" content="A practical guide to automating insurance quoting with an external AI layer that reads submissions, scores risk, prices, and returns a broker-visible SLA. No core migration." />
+
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to automate insurance quoting with an AI layer","description":"A practical guide to automating insurance quoting with an external AI layer that reads submissions, scores risk, prices, and returns a broker-visible SLA. No core migration.","datePublished":"02 · Jun · 2026","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Team"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/automatizar-cotacao-seguros-en/","articleSection":"Article"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"How to automate insurance quoting with an AI layer","item":"https://wirinnovation.ai/insights/automatizar-cotacao-seguros-en/"}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>Plataforma de IA para seguros</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>Em conformidade com LGPD</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/" class="nav__link">Início</a>
+      <a href="/#about" class="nav__link">Sobre</a>
+      <a href="/#solutions" class="nav__link">Produtos &amp; IA</a>
+      <a href="/#protection" class="nav__link">Proteção de Dados</a>
+      <a href="/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contato
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/insights/">
+      <span aria-hidden="true">←</span> Voltar para Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Article</div>
+      <h1 class="display blarticle__title">How to automate insurance quoting with an AI layer</h1>
+      <p class="blarticle__sub">A practical guide to automating insurance quoting with an external AI layer that reads submissions, scores risk, prices, and returns a broker-visible SLA. No core migration.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Team</div>
+          <div class="blarticle__byline-time">02 · Jun · 2026 · 9 min de leitura</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#3222E9,#7540AC); aspect-ratio: 16 / 9;">
+      
+    </figure>
+
+    <div class="blarticle__body">
+<h3>What it means to automate insurance quoting with an AI layer</h3>
+<p>How to automate insurance quoting with AI comes down to one architectural choice: place an external AI layer on top of the systems the insurer already runs, and let it read each submission, structure it, score the risk, and return a priced quote, a decline, or an escalation in real time. In Brazilian Seguros e Danos (P&amp;C), the cotação (quotation) journey is still largely a manual relay between corretor (broker) and seguradora (insurer). A submission arrives by e-mail, broker portal, or spreadsheet, an assistant re-keys it into the policy core, documents are chased, and only then does a subscritor (underwriter) assess appetite and price the prêmio (premium). Every handoff adds latency and room for inconsistent decisions.</p>
+<p>The reader who should consider this is the underwriting lead or innovation head watching capacity erode as submission volume climbs. Underwriters in Brazil spend roughly 40% of their time on administrative tasks rather than risk judgment, according to Deloitte, and corporate teams lose another 20% to 30% organizing unstructured data, according to Gartner. Automating the cotação journey means encoding the carrier&#39;s own underwriting manual and risk appetite into a calibrated engine, so the routine decisions are returned instantly and the underwriter&#39;s time is reserved for the cases that genuinely need human judgment. This is augmentation of underwriting capacity, not a change to the system of record. WIR is the AI layer of insurance built for exactly this: an external intelligence layer that automates quoting on top of existing systems, never in their place.</p>
+<h3>How end-to-end automated quoting works</h3>
+<p>The automated cotação flow turns the manual relay into a single real-time pass with six stages. First comes multichannel intake. The corretor submits through whatever channel they already use, an API for high-volume partners or a portal and upload for everyone else, and the layer accepts e-mail, PDF, image, and spreadsheet without asking the broker to change a thing. Second is intelligent document reading, where Machine Learning and document-understanding models extract structured fields from unstructured submissions: the insured object, location, coverages requested, declared values, prior claims, and broker notes. This is the step that removes the re-keying that consumes underwriter time.</p>
+<p>Third is broker enrichment and scoring. The layer cross-references external and historical context, such as CNPJ data, the corretor&#39;s conversion history, exposure, and prior relationship, and turns the broker&#39;s context into a signal rather than free text. Fourth is the risk and fraud engine, a multi-factor ML model calibrated to the insurer&#39;s loss experience and risk appetite that produces a risk score and flags anomalies such as inconsistent values, duplicate submissions, or mismatched documents before pricing. Fifth is dynamic pricing, where the prêmio is computed from the risk score and the carrier&#39;s own pricing rules rather than a generic table.</p>
+<p>The sixth stage is decision and prioritization with a full audit trail. The layer returns one of three outcomes in real time: a risk-adjusted quote, an automatic decline, or an escalation to a human underwriter for the cases that need judgment. Every decision records which data, which model version, and which rule fired, and the priced cotação is written back to the policy core. For the corretor, the visible result is a quote, decline, or in-review status returned fast, with a transparent SLA. That visible SLA is the conversion lever, because brokers choose an insurer by response speed: 60%+ place the risk with the carrier that answers first and clearly, according to Capgemini.</p>
+<h3>How to deploy the external AI layer for quoting</h3>
+<p>Deploying the layer does not require a core migration, and an insurer can roll it out in a defined sequence. The carrier first scopes one or two high-volume Danos lines where slow response loses deals, such as auto, patrimonial, or civil liability, and defines the target SLA the broker will see. Next comes integration with the existing core: the layer connects by API to read reference data and to write a structured, priced, decisioned cotação back, while the broker intake channel is added as an API or portal. The policy system keeps its source of truth, so nothing is ripped out.</p>
+<p>Calibration is the step that makes the engine the carrier&#39;s own. The insurer&#39;s rules, risk appetite, and pricing logic are encoded so the ML model is tuned to the carrier&#39;s loss experience and underwriting policy, not a generic benchmark. The layer then runs in shadow mode against historical and live submissions, and its quotes, declines, and escalations are compared to the underwriters&#39; decisions so thresholds can be tuned before anything is automated. At go-live, the carrier starts by auto-quoting the clearly-in-appetite band, auto-declining the clearly-out band, and escalating the middle, then widens the automated bands as confidence grows. In continuous operation, the team monitors hit rate, conversion, loss ratio on auto-quoted business, and SLA, and recalibrates as appetite and loss experience change. As an external layer, the implementation runs as a fixed-scope setup of 3 to 12 months with KPIs agreed before start, followed by continuous production operation, with no load placed on the insurer&#39;s IT team to run a migration.</p>
+<h3>Governance, explainability, and LGPD</h3>
+<p>Automated cotação decisions in Brazil sit under both data-protection law and insurance supervision, so governance is built into the layer rather than bolted on. Under the LGPD (Lei nº 13.709/2018), personal data used in quoting must have a lawful basis, be minimized, and be protected, and data subjects have the right to request review of decisions taken solely on automated processing. That right is directly relevant to automated declines and pricing, so the insurer must be able to explain the basis of any automated outcome. This is why every decision the layer returns records the inputs, the model version, and the rules that fired, so an underwriter, an auditor, or a regulator can reconstruct exactly why a given quote, decline, or escalation happened.</p>
+<p>Two further commitments hold the framework together. Submission data, enrichment, and decisions are encrypted in transit and at rest, at every step. And the model stays calibrated to the insurer&#39;s own risk policy, which means the underwriting lead can see and adjust the appetite the engine enforces rather than trust a black box. The regulatory backdrop reinforces this: Brazil&#39;s new insurance contract framework, Lei nº 15.040/2024, is being regulated by SUSEP through 2026 and raises the bar for clarity and good faith in the contract and quotation phase, as reported by the insurance news outlet CQCS in 2026. Transparent, auditable, explainable decisions are what make automated quoting defensible under both regimes.</p>
+<h3>How WIR automates quoting</h3>
+<p>WIR Innovation is the AI layer of insurance in Brazil, and it automates the quoting journey as an external intelligence layer on top of the insurer&#39;s existing core and policy administration systems. It is 100% external, with no core migration and no load on the insurer&#39;s IT, and it is not an insurer, a broker, or an MGA, so it never carries risk. Its Underwriter Intelligence module runs the quotation journey per the carrier&#39;s risk-acceptance policy, with real-time ML scoring calibrated to appetite, automatic routing by appetite and exposure, and predictive conversion analysis by product, risk, and broker, so underwriters spend their time on risk analysis and business development. The Smart Sales module maps the portfolio by client and product, scores upsell and next-best-action, and runs multi-channel campaigns with an attribution trail, while real-time dashboards give a proactive view of in-flight deals and pipeline.</p>
+<p>Every decision WIR returns is explainable, writes back to the policy core with a complete audit trail, and runs under the LGPD with data encrypted at every step, which is the same governance frame described above. The Seguros e Danos market grows double digits per year, yet 70% of insurers do not execute innovation because of IT limitations, according to BCG, which is precisely the constraint an external layer is designed to remove. WIR&#39;s first traction is a POC in execution with a global insurer in the Transport line, a deliberately conservative starting point rather than a broad claim. The AI layer for insurance. On top of the systems the insurer already runs, never in their place. To see how the cotação journey maps onto your lines and where the SLA gain sits, the place to start is a conversation with WIR.</p>
+<h3>Frequently asked questions</h3>
+<p><strong>How much faster does automated quoting respond to the broker?</strong></p>
+<p>Automated quoting returns a quote, decline, or in-review status in real time instead of hours or days of manual relay. The gain is decisive for distribution, because brokers choose an insurer by response speed: 60%+ place the risk with the carrier that answers first and clearly, according to Capgemini. WIR&#39;s AI layer reads the submission, scores risk, prices, and returns the outcome with a broker-visible SLA, on top of the insurer&#39;s existing systems.</p>
+<p><strong>Does quoting automation replace the insurer&#39;s core?</strong></p>
+<p>No. WIR is an external AI layer on top of the insurer&#39;s existing core and policy systems, never a replacement and never a migration. It connects by API to read reference data and to write back a structured, priced, decisioned quote, while the policy system keeps its source of truth. WIR is 100% external, places no load on the insurer&#39;s IT, and is not an insurer, broker, or MGA, so it never carries risk.</p>
+<p><strong>How does automatic quoting respect the underwriting manual?</strong></p>
+<p>The engine is calibrated to the insurer&#39;s own underwriting manual and risk appetite before any decision is automated. WIR encodes the carrier&#39;s rules and pricing logic, runs in shadow mode against historical and live submissions, and tunes thresholds against underwriters&#39; decisions. At go-live the carrier auto-quotes the clearly-in-appetite band, auto-declines the clearly-out band, and escalates the middle to a human, widening the automated bands as confidence grows.</p>
+<p><strong>Does the broker see the status and SLA of the quote?</strong></p>
+<p>Yes. The broker sees a quote, decline, or in-review status returned fast, with a transparent SLA. That visible SLA is the conversion lever, since 60%+ of brokers place the risk with the carrier that answers first and clearly, according to Capgemini. WIR returns each outcome through whatever channel the broker already uses, with real-time dashboards giving the underwriting team a proactive view of in-flight deals and pipeline.</p>
+<p><strong>Does automated quoting work with the intake channels we already use?</strong></p>
+<p>Yes. WIR accepts e-mail, PDF, image, and spreadsheet through the channels the broker already uses, an API for high-volume partners or a portal and upload for everyone else. Its intelligent document reading extracts structured fields from unstructured submissions, removing the re-keying that consumes underwriter time. Brazilian underwriters spend roughly 40% of their time on administrative tasks rather than risk judgment, according to Deloitte, the constraint this intake step is built to remove.</p>
+    </div>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/insights/">
+        <span aria-hidden="true">←</span> Outros Insights
+      </a>
+      <a class="btn btn--solid" href="/#contact">
+        Falar com a equipe <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#solutions">Produtos &amp; IA</a></li>
+          <li><a href="/#protection">Proteção de Dados</a></li>
+          <li><a href="/insights/">Insights &amp; News</a></li>
+          <li><a href="/#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/#contact">Falar com a equipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sócios &amp; Holding</h4>
+        <ul>
+          <li><a href="/#about">Mahway · California</a></li>
+          <li><a href="/#about">Avante · Brasil</a></li>
+          <li><a href="/#about">Conselheiros estratégicos</a></li>
+          <li><a href="/#about">Princípios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Ol%C3%A1%20Nicholas%2C%20vim%20pelo%20site%20da%20WIR%20Innovation.%20Gostaria%20de%20conversar%20sobre%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Falar com Nicholas no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>

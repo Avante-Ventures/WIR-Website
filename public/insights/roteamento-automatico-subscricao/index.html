@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>Roteamento automático de subscrição com uma camada de IA — WIR Innovation</title>
+<meta name="description" content="Guia para seguradoras automatizarem o roteamento de submissões por apetite e exposição, com fila do subscritor e SLA visível, sobre os sistemas atuais." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/roteamento-automatico-subscricao/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Roteamento automático de subscrição com uma camada de IA" />
+<meta property="og:description" content="Guia para seguradoras automatizarem o roteamento de submissões por apetite e exposição, com fila do subscritor e SLA visível, sobre os sistemas atuais." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/roteamento-automatico-subscricao/" />
+
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Artigo" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Roteamento automático de subscrição com uma camada de IA" />
+<meta name="twitter:description" content="Guia para seguradoras automatizarem o roteamento de submissões por apetite e exposição, com fila do subscritor e SLA visível, sobre os sistemas atuais." />
+
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Roteamento automático de subscrição com uma camada de IA","description":"Guia para seguradoras automatizarem o roteamento de submissões por apetite e exposição, com fila do subscritor e SLA visível, sobre os sistemas atuais.","datePublished":"02 · Jun · 2026","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Equipe"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/roteamento-automatico-subscricao/","articleSection":"Artigo"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"Roteamento automático de subscrição com uma camada de IA","item":"https://wirinnovation.ai/insights/roteamento-automatico-subscricao/"}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>Plataforma de IA para seguros</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>Em conformidade com LGPD</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/" class="nav__link">Início</a>
+      <a href="/#about" class="nav__link">Sobre</a>
+      <a href="/#solutions" class="nav__link">Produtos &amp; IA</a>
+      <a href="/#protection" class="nav__link">Proteção de Dados</a>
+      <a href="/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contato
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/insights/">
+      <span aria-hidden="true">←</span> Voltar para Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Artigo</div>
+      <h1 class="display blarticle__title">Roteamento automático de subscrição com uma camada de IA</h1>
+      <p class="blarticle__sub">Guia para seguradoras automatizarem o roteamento de submissões por apetite e exposição, com fila do subscritor e SLA visível, sobre os sistemas atuais.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Equipe</div>
+          <div class="blarticle__byline-time">02 · Jun · 2026 · 11 min de leitura</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#3222E9,#7540AC); aspect-ratio: 16 / 9;">
+      
+    </figure>
+
+    <div class="blarticle__body">
+<h3>O que é roteamento automático de subscrição com uma camada de IA</h3>
+<p>O roteamento automático de subscrição de seguros com IA é o estágio de decisão e priorização que recebe cada submissão de proposta, avalia se o risco está dentro do apetite e da banda de exposição da seguradora e encaminha o caso pelo caminho certo, sem que ninguém precise triar manualmente. Em Seguros e Danos (P&amp;C), toda proposta que chega pelo canal do corretor precisa ser triada antes de qualquer precificação: o risco está dentro do apetite, a qual ramo e a qual alçada de subscrição pertence, qual subscritor deve assumi-lo e qual é a urgência. Quando essa triagem é manual, casos vão para o subscritor errado, exposições grandes recebem o mesmo tratamento de uma renovação simples e o corretor não consegue prever se a cotação volta em uma hora ou em três dias.</p>
+<p>Esse texto é para a líder de subscrição, o head de produto e inovação e o corretor que querem uma triagem consistente e um SLA previsível. A camada de IA externa resolve isso encaixando-se sobre os sistemas que a seguradora já usa. Ela lê a submissão, faz o scoring de risco e apetite e produz uma recomendação de roteamento e decisão, devolvendo o resultado ao subscritor e ao sistema de registro. A WIR opera exatamente nessa posição, como a camada de IA do seguro, e calibra o roteamento ao manual de subscrição e ao apetite de risco de cada seguradora. Toda decisão é explicável, auditável, em conformidade com a LGPD e com dados criptografados em cada etapa.</p>
+<h3>Como o roteamento por apetite e exposição funciona</h3>
+<p>O roteamento automático é o sexto estágio de uma esteira de subscrição automatizada, e ele só funciona porque os cinco estágios anteriores entregam uma submissão limpa e estruturada. A esteira começa pela captura multicanal, em que as propostas entram por API, portal ou upload de PDF e e-mail, no formato que a seguradora e seus corretores já usam, cada uma registrada com um timestamp que inicia o relógio do SLA. Em seguida vem a leitura inteligente de documentos, com extração automática de campos das propostas, planilhas de valores e históricos de sinistro, o que elimina a redigitação que consome o tempo do subscritor. Depois a submissão é enriquecida e pontuada com dados externos e internos, como validação de CNPJ e CPF, histórico de apólices e exposição, e passa pelo motor de risco e fraude, um modelo de Machine Learning calibrado ao apetite que avalia o risco contra a experiência de perda da seguradora e sinaliza anomalias. Por fim, o risco é precificado dentro dos parâmetros que a seguradora define, e então chega o estágio de decisão.</p>
+<p>A decisão por apetite e exposição pontua cada submissão em dois eixos: se ela está dentro do apetite de risco definido para aquele ramo e em qual banda de exposição e alçada ela cai, considerando importância segurada, tamanho de linha e acúmulo. A combinação determina o caminho. Um risco claramente dentro do apetite e abaixo dos limites de cotação automática segue por uma via. Um risco dentro do apetite mas acima de uma banda de alçada é roteado ao subscritor sênior correto. Um risco fora do apetite vai para recusa ou referência.</p>
+<p>Disso saem três desfechos, cada um com uma justificativa registrada. A submissão limpa, dentro do apetite e da exposição e sem sinais de fraude, recebe cotação automática, uma via rápida para o corretor. A submissão claramente fora do apetite ou que bate em uma regra de recusa recebe recusa automática, devolvida com o motivo, de modo que o corretor recebe um não rápido e consistente em vez de silêncio. A submissão limítrofe, com exposição acima de uma alçada, dado faltante ou sinal de anomalia, é escalada para um humano, com todo o contexto anexado.</p>
+<p>Os casos escalados caem em uma fila priorizada do subscritor, não em uma caixa de entrada indiferenciada. A prioridade é calculada a partir de fatores como exposição, probabilidade de conversão, urgência de vencimento, valor do corretor e tempo já decorrido contra o SLA. O subscritor certo vê os casos certos no topo, com a justificativa da IA e os dados já extraídos à frente. Cada submissão carrega um relógio de SLA visível desde a captura, e cada roteamento e decisão fica registrado com seus insumos, a justificativa do modelo e a ação humana tomada, produzindo uma trilha de auditoria completa.</p>
+<h3>Como implantar o roteamento como camada externa</h3>
+<p>A implantação segue um caminho pragmático e de baixo risco para o core, porque a camada de IA integra-se aos sistemas atuais em vez de substituí-los. O primeiro passo é o escopo: escolher um ramo e um canal para começar, por exemplo patrimonial empresarial pelo portal do corretor, e definir nesse recorte as regras de apetite, as regras de recusa, as bandas de alçada e as metas de SLA. Em seguida vem a integração com o core, conectando a captura por API, portal ou upload e a escrita de volta no sistema de registro de apólices. Não há mudança no core. A camada lê e devolve, e a seguradora decide o que é escrito automaticamente e o que aguarda confirmação humana.</p>
+<p>O passo decisivo é a calibração ao manual de subscrição e ao apetite de risco. Os modelos de roteamento e scoring são calibrados ao manual, ao apetite e ao histórico de perdas da própria seguradora, não a um template genérico, e os limiares de cotar, recusar ou escalar são definidos pela política de risco da seguradora. Antes de qualquer ação automática ir para fora, a camada roda em modo sombra sobre submissões reais, comparando seu roteamento e suas decisões com as escolhas dos subscritores, e os limiares são ajustados. O go-live é escalonado: liga-se a cotação automática primeiro na banda mais segura, mantendo a escalação conservadora, e amplia-se o envelope à medida que a evidência de auditoria se acumula. Na operação contínua, monitora-se a acurácia do roteamento, a aderência ao SLA e o drift do modelo, e os overrides dos subscritores realimentam o treinamento. O setup leva de 3 a 12 meses, com escopo claro e KPIs acordados antes do início, e a operação contínua segue após o go-live com faturamento mensal.</p>
+<h3>Governança, explicabilidade e LGPD</h3>
+<p>Toda decisão de roteamento que a camada produz precisa ser explicável e auditável, e no frame brasileiro isso não é opcional. Cada cotação, recusa ou escalação carrega os insumos e a justificativa que a geraram, de forma que o time de subscrição consegue reconstruir por que qualquer caso seguiu o caminho que seguiu. Isso sustenta tanto a governança interna quanto as expectativas de supervisão da SUSEP sobre subscrição sólida e documentada, e responde à pergunta de por que um caso foi roteado ou recusado daquela maneira.</p>
+<p>As submissões de seguro carregam dados pessoais e por vezes sensíveis, então o tratamento se apoia em base legal, com minimização e limitação de finalidade. O Artigo 20 da LGPD, a Lei 13.709 de 2018, dá ao titular o direito de solicitar revisão de decisões tomadas unicamente por tratamento automatizado que afetem seus interesses, e é exatamente por isso que uma decisão automatizada de subscrição e roteamento precisa de justificativa documentada e de um caminho de revisão humana, com a ANPD como autoridade supervisora. Os dados são criptografados em trânsito e em repouso em todas as etapas, da captura à escrita de volta. O modelo não impõe uma visão de risco externa: ele codifica o apetite e o manual da seguradora, que permanece a dona do risco e a autoridade de decisão sobre os casos referidos. A escalação para um humano é, antes de tudo, uma característica de governança, porque casos limítrofes e de alta exposição sempre chegam a uma pessoa. Para entender como esse contexto se traduz em volume e pressão de capacidade no mercado, vale acompanhar a leitura de inteligência de seguros publicada pela WIR.</p>
+<h3>Como a WIR automatiza o roteamento e a fila do subscritor</h3>
+<p>A WIR é a camada de IA do seguro. Sobre os sistemas que a seguradora já usa, nunca no lugar deles. Ela não migra o core e nunca atua no lugar dele, não é seguradora, corretora ou MGA, e não carrega risco. O que ela faz é executar o estágio de decisão e priorização da esteira automatizada: o roteamento automático por apetite e exposição, a decisão de cotar, recusar automaticamente ou escalar para um humano, a fila priorizada do subscritor com SLA visível e a trilha de auditoria completa, tudo sobre o core existente e calibrado ao manual de subscrição e ao apetite de risco da seguradora.</p>
+<p>Dois módulos sustentam esse trabalho. O Underwriter Intelligence automatiza a jornada de cotação conforme a política de risco da seguradora, com scoring de risco em tempo real por Machine Learning calibrado ao apetite, roteamento automático por apetite e exposição e análise preditiva de conversão por produto, risco e corretor, liberando o subscritor para analisar risco e desenvolver negócio. O Smart Sales mapeia a carteira por cliente e produto, pontua o próximo melhor passo e roda campanhas multicanal com trilha de atribuição, de modo que penetração e retenção crescem juntas. Dashboards, analytics e relatórios em tempo real dão a visão proativa dos negócios em andamento.</p>
+<p>O contexto de mercado explica por que isso importa agora. O mercado de Seguros e Danos cresce dois dígitos ao ano, mas a estrutura das companhias não acompanha essa aceleração. Subscritores gastam 40% do tempo em tarefas administrativas, segundo a Deloitte, e 60%+ dos corretores escolhem a seguradora pela velocidade de resposta, segundo a Capgemini, o que faz do SLA na devolução da cotação uma alavanca direta sobre volume. Ao mesmo tempo, 70% das seguradoras não executam inovação por limitações de TI, segundo o BCG, e times corporativos perdem de 20-30% do tempo organizando dados não estruturados, segundo a Gartner. É por isso que a abordagem de camada externa ressoa: ela entrega a automação sem o programa de core. A tração pública atual da WIR é uma POC em execução com uma seguradora global no ramo de Transporte. Toda decisão de roteamento permanece explicável, auditável, em conformidade com a LGPD e com dados criptografados em cada etapa. Para ver o roteamento em ação, vale conversar com a WIR em wirinnovation.ai.</p>
+<h3>Perguntas frequentes</h3>
+<p><strong>Como a submissão é roteada por apetite e exposição?</strong></p>
+<p>Cada submissão é pontuada em dois eixos: se está dentro do apetite de risco do ramo e em qual banda de exposição e alçada ela cai. Essa combinação define o caminho. Um risco dentro do apetite e abaixo dos limites segue para cotação automática, um risco acima de uma banda de alçada vai ao subscritor sênior correto e um risco fora do apetite segue para recusa ou referência. A WIR calibra esse roteamento ao manual de subscrição da seguradora, com cada decisão explicável e auditável.</p>
+<p><strong>Quando o sistema cota, declina ou escala para um humano?</strong></p>
+<p>O sistema cota quando a submissão está limpa, dentro do apetite e da exposição e sem sinais de fraude. Declina automaticamente quando o caso está claramente fora do apetite ou bate em uma regra de recusa, devolvendo o motivo ao corretor. Escala para um humano os casos limítrofes, com exposição acima de uma alçada, dado faltante ou anomalia, sempre com todo o contexto anexado. Os limiares de cotar, recusar ou escalar são definidos pela política de risco da própria seguradora.</p>
+<p><strong>O subscritor enxerga a fila e o SLA de cada caso?</strong></p>
+<p>Sim. Os casos escalados caem em uma fila priorizada do subscritor, não em uma caixa de entrada indiferenciada. A prioridade considera exposição, probabilidade de conversão, urgência de vencimento, valor do corretor e tempo decorrido contra o SLA. O subscritor certo vê os casos certos no topo, com a justificativa da IA e os dados já extraídos à frente. Cada submissão carrega um relógio de SLA visível desde a captura, e a camada Underwriter Intelligence da WIR sustenta essa fila sobre o core existente.</p>
+<p><strong>O roteamento automático respeita o manual de subscrição?</strong></p>
+<p>Sim. Os modelos de roteamento e scoring são calibrados ao manual, ao apetite e ao histórico de perdas da própria seguradora, nunca a um template genérico. A WIR não impõe uma visão de risco externa: ela codifica o apetite da seguradora, que permanece a dona do risco e a autoridade de decisão sobre os casos referidos. Antes de qualquer ação automática, a camada roda em modo sombra sobre submissões reais, comparando seu roteamento com as escolhas dos subscritores, e os limiares são ajustados. Cada decisão fica explicável e auditável.</p>
+<p><strong>Em quanto tempo o roteamento entra em produção?</strong></p>
+<p>O setup leva de 3 a 12 meses, com escopo claro e KPIs acordados antes do início. A implantação começa por um ramo e um canal, integra a captura e a escrita de volta ao core sem migração, calibra os modelos ao manual e roda em modo sombra antes do go-live. Liga-se a cotação automática primeiro na banda mais segura e amplia-se o envelope conforme a evidência de auditoria se acumula. A operação contínua segue após o go-live, com faturamento mensal.</p>
+    </div>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/insights/">
+        <span aria-hidden="true">←</span> Outros Insights
+      </a>
+      <a class="btn btn--solid" href="/#contact">
+        Falar com a equipe <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#solutions">Produtos &amp; IA</a></li>
+          <li><a href="/#protection">Proteção de Dados</a></li>
+          <li><a href="/insights/">Insights &amp; News</a></li>
+          <li><a href="/#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/#contact">Falar com a equipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sócios &amp; Holding</h4>
+        <ul>
+          <li><a href="/#about">Mahway · California</a></li>
+          <li><a href="/#about">Avante · Brasil</a></li>
+          <li><a href="/#about">Conselheiros estratégicos</a></li>
+          <li><a href="/#about">Princípios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Ol%C3%A1%20Nicholas%2C%20vim%20pelo%20site%20da%20WIR%20Innovation.%20Gostaria%20de%20conversar%20sobre%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Falar com Nicholas no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>
