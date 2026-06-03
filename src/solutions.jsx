@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useReveal } from './shared.jsx';
+import { ProductTabs, Shift } from './home-shift.jsx';
 
 /* ───────── Soluções · catalog editorial ───────── */
 
