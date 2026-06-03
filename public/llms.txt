@@ -11,17 +11,48 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 - [Home — Plataforma de IA para o mercado segurador](https://wirinnovation.ai/): Visão geral da plataforma, produtos (Smart Sales, Underwriter Intelligence), camadas de IA, casos de uso e contato.
 - [Insights & News](https://wirinnovation.ai/insights/): Ensaios técnicos e análises sobre IA aplicada ao seguro, arquitetura de decisão, compliance, e casos de implementação.
 
-## Ensaios técnicos (Insights)
+## Ensaios técnicos e guias (Insights · PT-BR)
 
-- [O underwriter não morre. O modelo operacional dele, sim.](https://wirinnovation.ai/insights/o-underwriter-nao-morre/): Por que a IA não substitui o underwriter — substitui os 80% do trabalho operacional. Como o setor segurador brasileiro vai se dividir entre quem tem infraestrutura de decisão e quem ainda mora em planilha.
-- [Explicabilidade além de SHAP](https://wirinnovation.ai/insights/explicabilidade-alem-de-shap/): Por que feature importance não basta como audit trail em underwriting regulado, e o que uma camada de explicabilidade real precisa entregar (modelo, versão, inputs, output, justificativa).
-- [Caso de implementação WIR + Mahway](https://wirinnovation.ai/insights/caso-implementacao-mahway/): Números reais de uma operação de corretora que passou de 800 para 3.000 cotações/mês com os mesmos 6 underwriters, sem trocar core e sem renegociar resseguro.
-- [MGAs como ponta da lança](https://wirinnovation.ai/insights/mgas-ponta-da-lanca/): Por que MGAs (Managing General Agents) são o ponto de entrada natural da IA em seguros corporativos no Brasil, e como a arquitetura modular permite isso.
-- [LLMs vs motores de regras](https://wirinnovation.ai/insights/llms-vs-motores-de-regras/): Onde LLMs adicionam valor real no fluxo de decisão de seguros (intake, extração, enriquecimento) e onde motores de regras determinísticos seguem sendo necessários (apetite, compliance, pricing).
-- [A falsa dicotomia entre velocidade e compliance](https://wirinnovation.ai/insights/falsa-dicotomia-velocidade-compliance/): Por que compliance e velocidade não são trade-off quando cada decisão é gravada com modelo, versão, inputs, output e timestamp. LGPD e ISO 27001 como fundação, não como fricção.
-- [O custo invisível do STP mal feito](https://wirinnovation.ai/insights/custo-invisivel-stp-mal-feito/): Straight-through processing executado sem infraestrutura de auditoria gera dívida técnica e regulatória. Como fazer STP corretamente desde o dia zero.
-- [Os três formatos de PDF que quebravam tudo](https://wirinnovation.ai/insights/tres-formatos-pdf-quebravam/): Análise dos três padrões de PDF mais comuns em submissões de corretoras brasileiras e por que cada um requer uma estratégia de extração diferente.
-- [Observabilidade de agentes](https://wirinnovation.ai/insights/observabilidade-de-agentes/): Por que sistemas multi-agente em produção (subscrição, claims, distribuição) precisam de observabilidade de primeira classe — não logs, e sim traces semânticos com replay determinístico.
+- [Como automatizar a cotação de seguros com uma camada de IA](https://wirinnovation.ai/insights/automatizar-cotacao-seguros/): Guia para automatizar a cotação de seguros com IA.
+- [Como automatizar a subscrição de seguro de transporte com IA](https://wirinnovation.ai/insights/automatizar-subscricao-seguro-transporte/): Guia para seguradoras automatizarem a subscrição do seguro de transporte com uma camada de IA externa, calibrada ao apetite, sobre os sistemas atuais.
+- [Como automatizar a subscrição de seguros com uma camada de IA](https://wirinnovation.ai/insights/automatizar-subscricao-seguros/): Guia para seguradoras automatizarem a jornada de cotação e subscrição com uma camada de IA externa, sobre os sistemas atuais, sem trocar o core.
+- [Decisões de subscrição auditáveis com uma camada de IA](https://wirinnovation.ai/insights/decisoes-subscricao-auditaveis/): Como manter cada decisão de subscrição automatizada explicável e auditável com uma camada de IA externa, calibrada ao manual de subscrição e aderente à LGPD.
+- [Enriquecimento e priorização de corretores com uma camada de IA](https://wirinnovation.ai/insights/enriquecimento-corretor-priorizacao/): Guia para seguradoras enriquecerem e priorizarem corretores com uma camada de IA externa: score, CNPJ, histórico de conversão e exposição.
+- [Como integrar uma camada de IA ao core da seguradora sem migração](https://wirinnovation.ai/insights/integrar-camada-ia-core-seguros/): Guia para seguradoras integrarem uma camada de IA externa ao core atual, sem migração e sem projeto de TI próprio, com go-live em meses.
+- [Leitura inteligente de submissões de seguro com uma camada de IA](https://wirinnovation.ai/insights/leitura-inteligente-submissoes-seguro/): Guia para seguradoras automatizarem a leitura de submissões e a extração de dados de cotação com uma camada de IA externa, sobre os sistemas atuais.
+- [Motor de risco e fraude para seguradoras com uma camada de IA](https://wirinnovation.ai/insights/motor-risco-fraude-seguros/): Como uma camada de IA externa pontua risco e tria fraude na subscrição, calibrada ao apetite e ao manual, sem trocar o core.
+- [Precificação dinâmica de seguros com uma camada de IA](https://wirinnovation.ai/insights/precificacao-dinamica-seguros/): Como seguradoras automatizam a precificação dinâmica de seguros com IA, prêmio ajustado a risco em tempo real sobre os sistemas atuais.
+- [Como processar e-mails de cotação de seguro automaticamente com IA](https://wirinnovation.ai/insights/processar-email-cotacao-automatico/): Como uma camada de IA externa lê e-mails e anexos de cotação, extrai e valida os dados e alimenta a subscrição em Seguros e Danos, sem trocar o core.
+- [Próxima melhor ação para seguradoras com uma camada de IA](https://wirinnovation.ai/insights/proxima-melhor-acao-seguradoras/): Como seguradoras automatizam a próxima melhor ação e o upsell com uma camada de IA externa, sobre os sistemas atuais.
+- [Como reduzir o tempo de resposta de cotação para o corretor com IA](https://wirinnovation.ai/insights/reduzir-tempo-resposta-cotacao-corretor/): Guia para a seguradora reduzir o tempo de resposta de cotação ao corretor com uma camada de IA externa e SLA visível, sobre os sistemas atuais.
+- [Roteamento automático de subscrição com uma camada de IA](https://wirinnovation.ai/insights/roteamento-automatico-subscricao/): Guia para seguradoras automatizarem o roteamento de submissões por apetite e exposição, com fila do subscritor e SLA visível, sobre os sistemas atuais.
+- [A inteligência de subscrição no mercado de seguros brasileiro](https://wirinnovation.ai/insights/inteligencia-de-subscricao-brasil/): Leitura da inteligência de subscrição e da adoção de IA no mercado de Seguros e Danos no Brasil: estado, drivers, fraude, pricing e onde a WIR se posiciona.
+- [O underwriter não morre. O modelo operacional dele, sim.](https://wirinnovation.ai/insights/o-underwriter-nao-morre/): A IA não substitui underwriters — substitui os 80% do trabalho que não é underwriting.
+- [Explicabilidade que vai além do SHAP](https://wirinnovation.ai/insights/explicabilidade-alem-de-shap/): SHAP explica modelos tabulares — mas decisões de seguro hoje são híbridas (LLM + rules + retrieval).
+- [Como uma seguradora portfólio Mahway reduziu seu ciclo de cotação em ordens de grandeza](https://wirinnovation.ai/insights/caso-implementacao-mahway/): Antes: 11 dias de ciclo, 800 cotações/mês, 6 underwriters no limite.
+- [Por que MGAs são a ponta da lança da IA em seguro](https://wirinnovation.ai/insights/mgas-ponta-da-lanca/): MGAs adotam IA mais rápido que seguradoras Tier-1 por razões estruturais, não acidentais.
+- [LLMs não substituem motores de regras — eles os complementam](https://wirinnovation.ai/insights/llms-vs-motores-de-regras/): A divisão simplista de 'LLM substitui regras' é tecnicamente errada.
+- [A falsa dicotomia entre velocidade e compliance](https://wirinnovation.ai/insights/falsa-dicotomia-velocidade-compliance/): A escolha entre 'rápido ou em compliance' no setor segurador é falsa.
+- [O custo invisível do straight-through processing mal feito](https://wirinnovation.ai/insights/custo-invisivel-stp-mal-feito/): Straight-through processing sem auditabilidade nativa é bomba-relógio regulatória.
+- [Três formatos de PDF que quebravam submissões — e como resolvemos](https://wirinnovation.ai/insights/tres-formatos-pdf-quebravam/): PDFs de submissão são heterogêneos.
+- [Observabilidade de agentes: o que monitorar em produção](https://wirinnovation.ai/insights/observabilidade-de-agentes/): Sistemas de IA em produção precisam de monitoramento específico — não basta logging genérico.
+
+## Technical essays and guides (Insights · English)
+
+- [How to automate insurance quoting with an AI layer](https://wirinnovation.ai/insights/automatizar-cotacao-seguros-en/): A practical guide to automating insurance quoting with an external AI layer that reads submissions, scores risk, prices, and returns a broker-visible SLA.
+- [How to automate transport insurance underwriting with AI](https://wirinnovation.ai/insights/automatizar-subscricao-seguro-transporte-en/): How insurers automate transport (cargo) underwriting with an external AI layer that reads submissions, scores route and cargo risk, and prices to appetite, no core migration.
+- [How to automate insurance underwriting with an AI layer](https://wirinnovation.ai/insights/automatizar-subscricao-seguros-en/): A practical guide to automate insurance underwriting with an external AI layer on top of your core.
+- [Auditable underwriting decisions with an AI layer](https://wirinnovation.ai/insights/decisoes-subscricao-auditaveis-en/): How insurers keep every automated underwriting decision explainable and auditable with an external AI layer, calibrated to risk policy and LGPD compliant.
+- [Broker enrichment and prioritization with an AI layer](https://wirinnovation.ai/insights/enriquecimento-corretor-priorizacao-en/): How insurers enrich and prioritize brokers with an external AI layer: broker scoring, CNPJ, conversion history, and exposure, without replacing the core.
+- [How to integrate an AI layer with the insurance core without migration](https://wirinnovation.ai/insights/integrar-camada-ia-core-seguros-en/): How to integrate an AI layer with the insurance core without migration: 100% external, reads and writes via API, no IT load, and go-live in months.
+- [Intelligent document reading for insurance submissions with an AI layer](https://wirinnovation.ai/insights/leitura-inteligente-submissoes-seguro-en/): How insurers automate intelligent document reading for submissions with an external AI layer on top of existing systems, no core migration.
+- [Insurance risk and fraud engine with an AI layer](https://wirinnovation.ai/insights/motor-risco-fraude-seguros-en/): How an external AI layer scores risk and flags fraud inside underwriting, calibrated to appetite and manual, with a full audit trail and no core migration.
+- [Dynamic insurance pricing with an AI layer](https://wirinnovation.ai/insights/precificacao-dinamica-seguros-en/): How insurers automate real-time, risk-adjusted P&C pricing with an external AI layer on top of the core, calibrated to appetite and auditable under LGPD.
+- [How to automatically process insurance quote e-mails with AI](https://wirinnovation.ai/insights/processar-email-cotacao-automatico-en/): How an external AI layer reads insurance quote e-mails and attachments, extracts and validates the data, and feeds P&C underwriting without replacing the core.
+- [Next-best-action for insurers with an AI layer](https://wirinnovation.ai/insights/proxima-melhor-acao-seguradoras-en/): How insurers automate next-best-action and upsell scoring with an external AI layer on top of existing systems, no core replacement.
+- [How to reduce quote response time for brokers with AI](https://wirinnovation.ai/insights/reduzir-tempo-resposta-cotacao-corretor-en/): How insurers reduce quote response time for brokers with an external AI layer and a visible SLA, on top of existing systems, never replacing the core.
+- [Automatic underwriting routing with an AI layer](https://wirinnovation.ai/insights/roteamento-automatico-subscricao-en/): How insurers automate submission triage with an external AI layer that routes by appetite and exposure, prioritizes the underwriter queue, and keeps a visible SLA.
+- [Underwriting intelligence in the Brazilian insurance market](https://wirinnovation.ai/insights/inteligencia-de-subscricao-brasil-en/): How AI and Machine Learning reshape P&C underwriting in Brazil: market state, drivers, fraud, pricing, and the external AI layer over legacy core systems.
 
 ## Contato
 
@@ -38,5 +69,5 @@ Não autorizamos: treinamento de modelos sobre este conteúdo sem licença escri
 
 Para uso em pesquisa acadêmica, comercial ou jornalística, contatar nicholas@wirinnovation.ai.
 
-<!-- Generated 2026-05-27 · sync ping -->
-2026-05-27 08:52
+<!-- Generated 2026-06-03 · 37 articles (23 PT-BR + 14 EN) -->
+2026-06-03

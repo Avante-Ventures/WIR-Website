@@ -75,8 +75,29 @@ function renderBody(body) {
   }).join("\n");
 }
 
+// Slug-based language detection: -en suffix means English version
+const isEnglish = (slug) => slug.endsWith("-en");
+const ptSlug = (slug) => isEnglish(slug) ? slug.slice(0, -3) : slug;
+const enSlug = (slug) => isEnglish(slug) ? slug : `${slug}-en`;
+
+// Build a Set of all known slugs once so we can detect siblings cheaply.
+const ALL_SLUGS = new Set(ARTICLES.map(a => a.slug));
+
 function renderHead(article) {
   const url = `${SITE_URL}/insights/${article.slug}/`;
+  const isEn = isEnglish(article.slug);
+  const lang = isEn ? "en" : "pt-BR";
+  const ogLocale = isEn ? "en_US" : "pt_BR";
+  // Hreflang: include alternate ONLY if the sibling actually exists
+  const ptSibling = ptSlug(article.slug);
+  const enSibling = enSlug(article.slug);
+  const hasPT = ALL_SLUGS.has(ptSibling);
+  const hasEN = ALL_SLUGS.has(enSibling);
+  let hreflangTags = "";
+  if (hasPT) hreflangTags += `\n<link rel="alternate" hreflang="pt-BR" href="${SITE_URL}/insights/${ptSibling}/" />`;
+  if (hasEN) hreflangTags += `\n<link rel="alternate" hreflang="en" href="${SITE_URL}/insights/${enSibling}/" />`;
+  // x-default points to PT-BR (primary language for WIR's BR market)
+  if (hasPT) hreflangTags += `\n<link rel="alternate" hreflang="x-default" href="${SITE_URL}/insights/${ptSibling}/" />`;
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -107,14 +128,14 @@ function renderHead(article) {
 <meta name="theme-color" content="#7540AC" />
 <title>${esc(article.title)} — WIR Innovation</title>
 <meta name="description" content="${esc(article.metaDesc)}" />
-<link rel="canonical" href="${url}" />
+<link rel="canonical" href="${url}" />${hreflangTags}
 
 <meta property="og:type" content="article" />
 <meta property="og:title" content="${esc(article.title)}" />
 <meta property="og:description" content="${esc(article.metaDesc)}" />
 <meta property="og:url" content="${url}" />
 ${article.image ? `<meta property="og:image" content="${article.image}" />` : ""}
-<meta property="og:locale" content="pt_BR" />
+<meta property="og:locale" content="${ogLocale}" />
 <meta property="og:site_name" content="WIR Innovation" />
 <meta property="article:author" content="${esc(article.author)}" />
 <meta property="article:section" content="${esc(article.cat)}" />
@@ -246,9 +267,10 @@ function renderArticleHTML(article) {
   const initials = article.author.split(" ").map(w => w[0]).slice(0, 2).join("");
   const bodyHTML = renderBody(article.body);
   const head = renderHead(article);
+  const lang = isEnglish(article.slug) ? "en" : "pt-BR";
 
   return `<!doctype html>
-<html lang="pt-BR">
+<html lang="${lang}">
 <head>
 ${head}
 </head>
