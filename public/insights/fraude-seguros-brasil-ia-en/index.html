@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>Insurance fraud in Brazil and AI detection at underwriting — WIR Innovation</title>
+<meta name="description" content="How AI detects insurance fraud in Brazil at underwriting, with explainable, auditable multi-factor scoring and no core system replacement." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/fraude-seguros-brasil-ia-en/" />
+<link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/fraude-seguros-brasil-ia/" />
+<link rel="alternate" hreflang="en" href="https://wirinnovation.ai/insights/fraude-seguros-brasil-ia-en/" />
+<link rel="alternate" hreflang="x-default" href="https://wirinnovation.ai/insights/fraude-seguros-brasil-ia/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Insurance fraud in Brazil and AI detection at underwriting" />
+<meta property="og:description" content="How AI detects insurance fraud in Brazil at underwriting, with explainable, auditable multi-factor scoring and no core system replacement." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/fraude-seguros-brasil-ia-en/" />
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Article" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Insurance fraud in Brazil and AI detection at underwriting" />
+<meta name="twitter:description" content="How AI detects insurance fraud in Brazil at underwriting, with explainable, auditable multi-factor scoring and no core system replacement." />
+
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Insurance fraud in Brazil and AI detection at underwriting","description":"How AI detects insurance fraud in Brazil at underwriting, with explainable, auditable multi-factor scoring and no core system replacement.","datePublished":"08 · Jun · 2026","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Team"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/fraude-seguros-brasil-ia-en/","articleSection":"Article"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"Insurance fraud in Brazil and AI detection at underwriting","item":"https://wirinnovation.ai/insights/fraude-seguros-brasil-ia-en/"}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>Plataforma de IA para seguros</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>Em conformidade com LGPD</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/" class="nav__link">Início</a>
+      <a href="/#about" class="nav__link">Sobre</a>
+      <a href="/#solutions" class="nav__link">Produtos &amp; IA</a>
+      <a href="/#protection" class="nav__link">Proteção de Dados</a>
+      <a href="/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contato
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/insights/">
+      <span aria-hidden="true">←</span> Voltar para Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Article</div>
+      <h1 class="display blarticle__title">Insurance fraud in Brazil and AI detection at underwriting</h1>
+      <p class="blarticle__sub">How AI detects insurance fraud in Brazil at underwriting, with explainable, auditable multi-factor scoring and no core system replacement.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Team</div>
+          <div class="blarticle__byline-time">08 · Jun · 2026 · 8 min de leitura</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#3222E9,#7540AC); aspect-ratio: 16 / 9;">
+      
+    </figure>
+
+    <div class="blarticle__body">
+<h3>The market in one read</h3>
+<p>Insurance fraud detection with AI in Brazil is moving upstream, from the claims desk to the moment of underwriting (subscrição), where an anomaly costs the least to stop. The country runs the largest insurance market in Latin America, and the Seguros e Danos (P&amp;C) block grows double digits per year. That growth, paired with a controls structure that has not scaled at the same pace, is exactly the gap where fraud concentrates and where Machine Learning now earns its place at submission intake.</p>
+<h3>State of the P&amp;C insurance market</h3>
+<p>Brazil&#39;s Seguros e Danos (P&amp;C) segment has been one of the fastest-growing blocks of the country&#39;s insurance sector, with auto and property lines as the heaviest contributors. The market grows double digits per year, consistently ahead of GDP, on the back of digital distribution and a wide corretor (broker) channel. SUSEP, the federal supervisor, publishes the monthly market statistics that segment premiums, claims (sinistros) and loss ratios by ramo (line of business), and those filings remain the canonical reference for any premium or loss-ratio figure a carrier acts on.</p>
+<p>The structural tension sits underneath the premium curve. Volume and policy count have outrun the operational and anti-fraud machinery of many insurers. Distribution scaled through portals and APIs, while data integration and underwriting capacity lagged. According to Gartner, corporate teams lose 20-30% of their time organizing unstructured data, the free-form PDFs, forms and spreadsheets that carry exactly the signals a fraud check depends on. Fraud is best understood here in qualitative terms. Organized fraud and adverse selection raise claim cost and feed the loss ratio, which then distorts pricing for honest policyholders.</p>
+<h3>What is pressuring underwriting</h3>
+<p>Digital distribution widens the attack surface. As quotation and issuance move to portal and API flows, the submission journey gets faster but also easier to manipulate. Doctored documents, reused identities, staged risks and inflated declared values enter at the point of quotation, before a human underwriter ever sees the file. Speed without intelligent screening converts directly into fraud exposure.</p>
+<p>Organized fraud compounds the problem. Beyond opportunistic individual cases, the market faces rings that operate across multiple insurers, recycling identities, vehicles and properties. Because each carrier sees only its own slice of data, cross-insurer patterns stay invisible to a single insurer without strong internal anomaly detection or shared intelligence.</p>
+<p>Data fragmentation makes the signal hard to assemble. Underwriting and claims data sit in legacy core, separate document stores, broker submissions in free-form files, and external registries. The clues to fraud are spread across those silos, and no human underwriter can reconcile them at quotation speed.</p>
+<p>Then there is the pace itself. According to Deloitte, underwriters spend 40% of their time on administrative tasks, and according to BCG, 70% of insurers do not execute on innovation because of IT limitations. When volume climbs and response times tighten, manual fraud screening is the first control to be thinned, precisely when it is needed most. Distribution amplifies the stakes, since per Capgemini 60%+ of brokers choose an insurer by response speed, which pushes carriers toward faster quotes that a weak control layer cannot safely support.</p>
+<h3>Risk, fraud, and the AI shift</h3>
+<p>For most of its history, fraud control in Brazil lived at the claims (sinistros) stage. A claim arrives, an analyst reviews it, suspicious cases are escalated. That is detection after the risk has already been bound and the exposure already taken on. The shift underway pushes intelligence upstream, so anomalies surface at quotation and submission intake rather than at payout.</p>
+<p>In a modern P&amp;C journey this starts with intelligent document reading. AI and Machine Learning read broker submissions and structure them automatically, extracting the fields an underwriter needs. That same pass is the first fraud checkpoint, surfacing inconsistent documents, mismatched values and manipulated fields at intake instead of letting them be keyed in blindly. On top of that sits multi-factor anomaly scoring. Rather than a single rule, the engine combines declared values against reference values, identity and address consistency, recurrence patterns, document integrity and channel signals into one score. Multi-factor scoring catches what no single rule would.</p>
+<p>The output is the part that matters for governance. A flag is not a black-box reject. Each one carries the factors that drove it, producing an explainable and auditable trail that an underwriter can act on, override with reason, and feed back into calibration. This is also a data-protection requirement. Brazil&#39;s LGPD (Lei 13.709/2018) governs the personal data used in underwriting and claims and gives data subjects rights over automated decisions, so a fraud model has to be built for lawful basis, documented logic and a justifiable outcome from the start. SUSEP supervision reinforces the expectation that automated underwriting decisions stay governed and traceable. Detection at underwriting is also structurally cheaper than detection at claims, because a fraudulent risk stopped at quotation removes the entire downstream cost of handling, investigation and payout.</p>
+<h3>Where WIR fits</h3>
+<p>WIR is the AI layer for insurance. On top of the systems the insurer already runs, never in their place. It is an external AI intelligence layer that sits on top of the insurer&#39;s existing core, 100% external, with no core migration and no IT project for the carrier to run. WIR is not an insurer, broker or MGA, and it does not carry risk. It automates the quotation and underwriting journey according to the insurer&#39;s own risk-acceptance policy.</p>
+<p>For this topic the relevant module is the risk-and-fraud engine inside Underwriter Intelligence. It reads submissions at intake, enriches them with broker context and external sources, and runs a multi-factor Machine Learning model calibrated to the insurer&#39;s risk appetite and underwriting manual. A submission that is both anomalous and outside appetite is flagged with a clear reason, while clean, in-appetite business flows through faster. Smart Sales handles the distribution side, scoring next-best-action and retention so penetration grows without loosening risk controls. Every decision is explainable and returns a full audit trail, the data is encrypted at every step and LGPD compliant.</p>
+<p>WIR&#39;s only public traction today is a POC in execution with a global insurer in the Transport line. The positioning is deliberately narrow. The core stays where it is, and the intelligence sits on top of it.</p>
+<h3>Outlook</h3>
+<p>Adoption of AI fraud and risk intelligence in Brazilian Seguros e Danos is heading toward upstream, embedded and explainable. The center of gravity moves from post-loss investigation to point-of-underwriting screening, and fraud scoring stops being a separate handoff to become part of the same intelligence layer that reads submissions and scores risk against appetite. Because core migration is slow and costly, the practical path for most insurers is an external AI layer that integrates with the existing core rather than replacing it, which lets carriers modernize underwriting intelligence without a multi-year program.</p>
+<p>Governance will harden the bar. Driven by LGPD, ANPD guidance and SUSEP supervision, explainable and auditable output becomes a baseline expectation rather than a differentiator, and black-box scoring is unlikely to pass review for automated underwriting decisions. Expect continued movement toward shared anti-fraud data at the industry level, coordinated through bodies like CNseg, which widens the pattern base any single insurer&#39;s models can learn from. The through-line is clear. The market is shifting from detecting fraud after the loss to scoring risk and fraud at the moment of underwriting, with an explainable, auditable, appetite-calibrated AI layer on top of the existing core.</p>
+<h3>Frequently asked questions</h3>
+<p><strong>How does AI detect fraud at the underwriting stage?</strong></p>
+<p>AI detects fraud at underwriting by scoring each submission for anomalies at intake, before the risk is bound. WIR&#39;s risk-and-fraud engine reads broker submissions, structures the fields, and runs multi-factor Machine Learning against the insurer&#39;s risk appetite. A submission that is both anomalous and outside appetite is flagged with a clear reason, while clean, in-appetite business flows through faster. Detection at quotation removes the downstream cost of handling, investigation, and payout.</p>
+<p><strong>What signals does the risk-and-fraud engine analyze?</strong></p>
+<p>The engine combines declared values against reference values, identity and address consistency, recurrence patterns, document integrity, and channel signals into one multi-factor score. Rather than a single rule, WIR&#39;s risk-and-fraud engine enriches each submission with broker context and external sources, then scores it with Machine Learning calibrated to the insurer&#39;s underwriting manual. Multi-factor scoring catches inconsistencies no single rule would surface, at the moment of submission rather than at the claims desk.</p>
+<p><strong>Is AI fraud detection explainable and auditable?</strong></p>
+<p>Yes. Every flag carries the factors that drove it, producing an explainable and auditable trail, never a black-box reject. WIR&#39;s engine lets an underwriter act on the flag, override it with a documented reason, and feed that back into calibration. Each decision returns a full audit trail, data is encrypted at every step, and the process is LGPD compliant, which Brazil&#39;s data-protection law and SUSEP supervision require for automated underwriting decisions.</p>
+<p><strong>Is the fraud engine calibrated to the insurer&#39;s appetite?</strong></p>
+<p>Yes. The risk-and-fraud engine runs Machine Learning calibrated to the insurer&#39;s own risk appetite and underwriting manual. WIR does not impose a generic model. It scores each submission against the carrier&#39;s risk-acceptance policy, so a deal that is anomalous and outside appetite is flagged, while clean, in-appetite business passes faster. Underwriter overrides feed back into calibration, keeping the engine aligned with how that specific insurer prices and accepts risk.</p>
+<p><strong>Does WIR replace the core to detect fraud?</strong></p>
+<p>No. WIR does not replace the core. It is an external AI intelligence layer that sits on top of the insurer&#39;s existing systems, 100% external, with no core migration and no IT project for the carrier to run. The risk-and-fraud engine integrates with the core, reads submissions, flags anomalies, and writes back the decision with its audit trail. WIR is not an insurer, broker, or MGA, and does not carry risk.</p>
+    </div>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/insights/">
+        <span aria-hidden="true">←</span> Outros Insights
+      </a>
+      <a class="btn btn--solid" href="/#contact">
+        Falar com a equipe <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#solutions">Produtos &amp; IA</a></li>
+          <li><a href="/#protection">Proteção de Dados</a></li>
+          <li><a href="/insights/">Insights &amp; News</a></li>
+          <li><a href="/#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/#contact">Falar com a equipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sócios &amp; Holding</h4>
+        <ul>
+          <li><a href="/#about">Mahway · California</a></li>
+          <li><a href="/#about">Avante · Brasil</a></li>
+          <li><a href="/#about">Conselheiros estratégicos</a></li>
+          <li><a href="/#about">Princípios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Ol%C3%A1%20Nicholas%2C%20vim%20pelo%20site%20da%20WIR%20Innovation.%20Gostaria%20de%20conversar%20sobre%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Falar com Nicholas no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>
