@@ -13,6 +13,16 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 
 ## Ensaios técnicos e guias (Insights · PT-BR)
 
+- [Análise preditiva de conversão de cotação de seguros com uma camada de IA](https://wirinnovation.ai/insights/analise-preditiva-conversao-cotacao/): Guia para seguradoras preverem a conversão de cotações por produto, risco e corretor com uma camada de IA externa sobre os sistemas atuais.
+- [Como automatizar a renovação de seguros com uma camada de IA](https://wirinnovation.ai/insights/automatizar-renovacao-seguros-ia/): Guia para seguradoras automatizarem a renovação com uma camada de IA externa que repontua o risco e reprecifica, sobre os sistemas atuais.
+- [Como automatizar upsell e cross-sell de seguros com uma camada de IA](https://wirinnovation.ai/insights/automatizar-upsell-cross-sell-seguros/): Guia para seguradoras automatizarem upsell e cross-sell com inteligência de distribuição por uma camada de IA externa, com trilha de atribuição.
+- [Declínio automático de cotação de seguros com uma camada de IA](https://wirinnovation.ai/insights/declinio-automatico-cotacao-seguros/): Guia para seguradoras automatizarem o declínio de riscos fora do apetite com uma camada de IA externa, com motivo claro e trilha de auditoria.
+- [Escalonamento humano na subscrição automatizada de seguros com IA](https://wirinnovation.ai/insights/escalonamento-humano-subscricao-seguros/): Guia para seguradoras definirem quando a subscrição automatizada escala para um humano, com contexto, racional do modelo e trilha de auditoria.
+- [Dados não estruturados em seguros e a leitura inteligente com IA](https://wirinnovation.ai/insights/dados-nao-estruturados-seguros-ia/): Leitura do problema de dados não estruturados em seguros e da leitura inteligente com IA.
+- [Fraude em seguros no Brasil e a detecção com IA na subscrição](https://wirinnovation.ai/insights/fraude-seguros-brasil-ia/): Como a detecção de fraude em seguros com IA no Brasil entra na subscrição, com score multifator explicável e auditável, sem trocar o core da seguradora.
+- [Lacuna de proteção no seguro brasileiro e o papel da IA em fechá-la](https://wirinnovation.ai/insights/lacuna-protecao-seguros-brasil/): Por que a penetração de seguros no Brasil segue baixa apesar do crescimento de dois dígitos e como a IA acelera a subscrição para fechar a lacuna de proteção.
+- [Open Insurance Brasil e o que muda para as seguradoras](https://wirinnovation.ai/insights/open-insurance-brasil-seguradoras/): Como o Open Insurance Brasil e o compartilhamento de dados mudam a subscrição, o scoring de risco e a precificação em Seguros e Danos, com IA auditável.
+- [Regulação da IA em seguros no Brasil e a exigência de explicabilidade](https://wirinnovation.ai/insights/regulacao-ia-seguros-susep/): Leitura da regulação de IA em seguros no Brasil e da exigência de explicabilidade.
 - [Como automatizar a cotação de seguros com uma camada de IA](https://wirinnovation.ai/insights/automatizar-cotacao-seguros/): Guia para automatizar a cotação de seguros com IA.
 - [Como automatizar a subscrição de seguro de transporte com IA](https://wirinnovation.ai/insights/automatizar-subscricao-seguro-transporte/): Guia para seguradoras automatizarem a subscrição do seguro de transporte com uma camada de IA externa, calibrada ao apetite, sobre os sistemas atuais.
 - [Como automatizar a subscrição de seguros com uma camada de IA](https://wirinnovation.ai/insights/automatizar-subscricao-seguros/): Guia para seguradoras automatizarem a jornada de cotação e subscrição com uma camada de IA externa, sobre os sistemas atuais, sem trocar o core.
@@ -39,6 +49,16 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 
 ## Technical essays and guides (Insights · English)
 
+- [Predictive quote conversion analysis for insurance with an AI layer](https://wirinnovation.ai/insights/analise-preditiva-conversao-cotacao-en/): A guide for insurers predicting quote conversion by product, risk, and broker with an external AI layer on top of existing systems.
+- [How to automate insurance renewals with an AI layer](https://wirinnovation.ai/insights/automatizar-renovacao-seguros-ia-en/): A guide for insurers automating renewals with an external AI layer that re-scores risk and re-prices, on top of existing systems.
+- [How to automate insurance upsell and cross-sell with an AI layer](https://wirinnovation.ai/insights/automatizar-upsell-cross-sell-seguros-en/): A guide for insurers automating upsell and cross-sell with distribution intelligence via an external AI layer, with an attribution trail.
+- [Automatic insurance quote decline with an AI layer](https://wirinnovation.ai/insights/declinio-automatico-cotacao-seguros-en/): A guide for insurers automating the decline of out-of-appetite risks with an external AI layer, with a clear reason and audit trail.
+- [Human-in-the-loop escalation in automated insurance underwriting with AI](https://wirinnovation.ai/insights/escalonamento-humano-subscricao-seguros-en/): A guide for insurers defining when automated underwriting escalates to a human, with context, model rationale, and an audit trail.
+- [Unstructured data in insurance and intelligent reading with AI](https://wirinnovation.ai/insights/dados-nao-estruturados-seguros-ia-en/): Unstructured data in insurance and AI: intelligent document reading turns messy submissions into structured fields for faster, auditable P&C underwriting.
+- [Insurance fraud in Brazil and AI detection at underwriting](https://wirinnovation.ai/insights/fraude-seguros-brasil-ia-en/): How AI detects insurance fraud in Brazil at underwriting, with explainable, auditable multi-factor scoring and no core system replacement.
+- [The insurance protection gap in Brazil and the role of AI in closing it](https://wirinnovation.ai/insights/lacuna-protecao-seguros-brasil-en/): Why Brazil's insurance protection gap stays wide despite double-digit growth, and how AI speeds underwriting and distribution to help close it.
+- [Open Insurance Brazil and what changes for insurers](https://wirinnovation.ai/insights/open-insurance-brasil-seguradoras-en/): How Open Insurance Brazil and SUSEP-led data sharing reshape underwriting, risk scoring, fraud detection, and pricing in P&C, with explainable, auditable AI.
+- [AI regulation in Brazilian insurance and the demand for explainability](https://wirinnovation.ai/insights/regulacao-ia-seguros-susep-en/): A read on AI regulation in insurance in Brazil and the demand for explainability.
 - [How to automate insurance quoting with an AI layer](https://wirinnovation.ai/insights/automatizar-cotacao-seguros-en/): A practical guide to automating insurance quoting with an external AI layer that reads submissions, scores risk, prices, and returns a broker-visible SLA.
 - [How to automate transport insurance underwriting with AI](https://wirinnovation.ai/insights/automatizar-subscricao-seguro-transporte-en/): How insurers automate transport (cargo) underwriting with an external AI layer that reads submissions, scores route and cargo risk, and prices to appetite, no core migration.
 - [How to automate insurance underwriting with an AI layer](https://wirinnovation.ai/insights/automatizar-subscricao-seguros-en/): A practical guide to automate insurance underwriting with an external AI layer on top of your core.
@@ -69,5 +89,5 @@ Não autorizamos: treinamento de modelos sobre este conteúdo sem licença escri
 
 Para uso em pesquisa acadêmica, comercial ou jornalística, contatar nicholas@wirinnovation.ai.
 
-<!-- Generated 2026-06-03 · 37 articles (23 PT-BR + 14 EN) -->
-2026-06-03
+<!-- Generated 2026-06-09 · 57 articles (33 PT-BR + 24 EN) -->
+2026-06-09
