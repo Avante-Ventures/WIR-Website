@@ -3906,11 +3906,11 @@ Terceiro: validação importa mais que extração. O custo de uma extração err
     cat: "Técnico", grad: "linear-gradient(135deg,#3222E9,#FE8B77)",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100",
     imageAlt: "Múltiplas telas com dashboards de monitoramento",
-    title: "Observabilidade de agentes: o que monitorar em produção",
-    sub: "Latência, precisão, drift, custo por decisão, divergência humano-vs-modelo. O dashboard mínimo que toda seguradora deveria exigir antes de escalar IA.",
+    title: "Observabilidade de agentes de IA: métricas e ferramentas para produção",
+    sub: "Latência, drift, custo por decisão, divergência humano-vs-modelo — e as ferramentas (Arize, Fiddler, WhyLabs, Evidently, LangSmith) que toda seguradora deveria avaliar antes de escalar IA.",
     author: "Head of AI", role: "ML · WIR Innovation",
-    time: "9 min", date: "22 · Fev · 2026",
-    metaDesc: "Sistemas de IA em produção precisam de monitoramento específico — não basta logging genérico. As 6 métricas que separam sistema robusto de frágil.",
+    time: "10 min", date: "22 · Fev · 2026", dateISO: "2026-02-22",
+    metaDesc: "As 6 métricas e as principais ferramentas de observabilidade de agentes de IA em produção — de drift e custo por decisão a Arize, Fiddler, WhyLabs e Evidently.",
     body: `Equipes que sobem o primeiro modelo de IA para produção em uma seguradora costumam montar um dashboard inicial focado nas métricas que aprenderam a importar durante desenvolvimento: acurácia no test set, AUC, F1.
 
 Esse dashboard funciona durante o primeiro mês. Depois, ele para de ser útil.
@@ -3938,6 +3938,16 @@ Sistemas de IA têm camada adicional: comportamento estatístico. Eles podem est
 **5. Loss ratio segmentado por automação.** Book observável separado por nível de envolvimento humano: 100% automático, parcialmente automático, integralmente humano. Diferenças significativas sinalizam algo — qualidade do modelo, viés de seleção, ou diferença de produto.
 
 **6. Divergência humano-vs-modelo amostral.** Fração das decisões automáticas (1% a 5%) submetida a revisão humana cega após o fato. Calcula-se a concordância. Em sistemas saudáveis, tende a 80%-90%, com discordância concentrada em casos genuinamente ambíguos.
+
+### Ferramentas de observabilidade de agentes de IA
+
+Construir essas seis métricas do zero é possível, mas raramente vale o esforço: o ecossistema de ferramentas de observabilidade de agentes de IA já cobre a maior parte do caminho. As categorias que importam para uma seguradora:
+
+**Monitoramento de modelos e drift.** [Arize AI](https://arize.com), [Fiddler](https://www.fiddler.ai), [WhyLabs](https://whylabs.ai) e [Evidently AI](https://www.evidentlyai.com) monitoram distribuição de features, drift e performance em produção. Evidently e WhyLabs têm núcleos open-source; Arize e Fiddler entregam explicabilidade e alertas gerenciados. Para os testes estatísticos de drift (KS, PSI, Wasserstein), a documentação aberta da Evidently é o melhor ponto de partida.
+
+**Tracing de agentes LLM.** Quando o "agente" é um sistema com LLM, retrieval e chamadas de ferramentas encadeadas, o que você precisa observar muda: cada passo do raciocínio, cada prompt, cada token e seu custo. [LangSmith](https://www.langchain.com/langsmith), [Langfuse](https://langfuse.com) (open-source) e o [Arize Phoenix](https://phoenix.arize.com) (open-source) foram desenhados para esse rastreamento passo a passo — indispensável para auditar por que um agente decidiu o que decidiu.
+
+**A regra prática.** Nenhuma ferramenta entrega, pronta, a métrica que mais importa numa seguradora: a divergência humano-vs-modelo e o loss ratio segmentado por automação. Essas você instrumenta sobre os dados do seu próprio book. As ferramentas acima resolvem latência, drift e custo; o sinal de negócio é trabalho seu.
 
 ### O que NÃO basta
 
@@ -3975,8 +3985,29 @@ Construir observabilidade é caro. Não revisar a observabilidade que se constru
 - [Fiddler AI](https://www.fiddler.ai) · model monitoring + explainability
 - [WhyLabs](https://whylabs.ai) · open-source data and ML monitoring
 - [Evidently AI](https://www.evidentlyai.com) · ML monitoring open-source
+- [LangSmith](https://www.langchain.com/langsmith) · tracing e avaliação de agentes LLM
+- [Langfuse](https://langfuse.com) · observabilidade open-source para LLMs
+- [Arize Phoenix](https://phoenix.arize.com) · tracing de agentes LLM open-source
 - [Explicabilidade que vai além do SHAP](#blog/explicabilidade-alem-de-shap) · arquitetura de auditoria
 - [LLMs não substituem motores de regras](#blog/llms-vs-motores-de-regras) · arquitetura híbrida que precisa ser monitorada`,
+    faq: [
+      {
+        q: "O que é observabilidade de agentes de IA?",
+        a: "É a prática de monitorar o comportamento estatístico de sistemas de IA em produção — não apenas se o software responde, mas se as decisões continuam corretas ao longo do tempo. Diferente do monitoramento tradicional (logs, latência, throughput), ela acompanha drift de dados, custo por decisão e a divergência entre o que o modelo decide e o que um humano decidiria.",
+      },
+      {
+        q: "Quais são as principais ferramentas de observabilidade de agentes de IA?",
+        a: "Para monitoramento de modelos e drift: Arize AI, Fiddler, WhyLabs e Evidently AI — estas duas últimas com núcleos open-source. Para tracing passo a passo de agentes LLM: LangSmith, Langfuse e Arize Phoenix. Nenhuma entrega pronta a divergência humano-vs-modelo nem o loss ratio segmentado por automação; essas métricas você instrumenta sobre os dados do seu próprio book.",
+      },
+      {
+        q: "Quais métricas monitorar em agentes de IA em produção?",
+        a: "Seis métricas formam o dashboard mínimo: latência por tipo de decisão (p50, p95, p99), taxa de override humano, drift de distribuição de features, custo por decisão, loss ratio segmentado por nível de automação e divergência humano-vs-modelo amostral.",
+      },
+      {
+        q: "Observabilidade de IA é diferente do monitoramento de software tradicional?",
+        a: "Sim. Um sistema de IA pode estar perfeito em termos de software — sem erros, com latência boa — e ainda assim produzir decisões progressivamente piores por drift de dados. Essa degradação não dispara alerta no monitoramento clássico; aparece no loss ratio meses depois. Por isso exige métricas estatísticas específicas.",
+      },
+    ],
   },
 ];
 

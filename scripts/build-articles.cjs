@@ -104,7 +104,7 @@ function renderHead(article) {
     "headline": article.title,
     "description": article.metaDesc,
     ...(article.image && { "image": article.image }),
-    "datePublished": article.date,
+    "datePublished": article.dateISO || article.date,
     "author": { "@type": "Person", "name": article.author, "jobTitle": article.role },
     "publisher": {
       "@type": "Organization", "name": "WIR Innovation",
@@ -122,6 +122,22 @@ function renderHead(article) {
       { "@type": "ListItem", "position": 3, "name": article.title, "item": url },
     ],
   };
+  // FAQPage schema — only when the article declares a `faq` array.
+  // The same `faq` source renders as visible Q&A in the body, so schema
+  // and on-page content always match (Google discards mismatched FAQ markup).
+  const faqSchema = (Array.isArray(article.faq) && article.faq.length)
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": `${url}#faq`,
+        "inLanguage": isEn ? "en" : "pt-BR",
+        "mainEntity": article.faq.map(({ q, a }) => ({
+          "@type": "Question",
+          "name": q,
+          "acceptedAnswer": { "@type": "Answer", "text": a },
+        })),
+      }
+    : null;
   const fontsHref = "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";
   return `<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -158,7 +174,7 @@ ${article.image ? `<meta name="twitter:image" content="${article.image}" />` : "
 <link rel="stylesheet" href="/blog.css?${CACHE_VER}" />
 
 <script type="application/ld+json">${JSON.stringify(schema)}</script>
-<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
+<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>${faqSchema ? `\n<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>` : ""}
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
 <script>
@@ -266,6 +282,16 @@ function renderWhatsAppFAB() {
 function renderArticleHTML(article) {
   const initials = article.author.split(" ").map(w => w[0]).slice(0, 2).join("");
   const bodyHTML = renderBody(article.body);
+  // Visible FAQ block — single source with the FAQPage schema (see renderHead).
+  const faqHTML = (Array.isArray(article.faq) && article.faq.length)
+    ? `\n<section class="blarticle__faq" aria-label="Perguntas frequentes">
+<h3>Perguntas frequentes</h3>
+${article.faq.map(({ q, a }) => `<details class="blarticle__faq-item">
+  <summary>${esc(q)}</summary>
+  <p>${renderInline(a)}</p>
+</details>`).join("\n")}
+</section>`
+    : "";
   const head = renderHead(article);
   const lang = isEnglish(article.slug) ? "en" : "pt-BR";
 
@@ -304,7 +330,7 @@ ${renderNav()}
     </figure>
 
     <div class="blarticle__body">
-${bodyHTML}
+${bodyHTML}${faqHTML}
     </div>
 
     <footer class="blarticle__foot">

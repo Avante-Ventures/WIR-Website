@@ -4,15 +4,15 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#7540AC" />
-<title>Observabilidade de agentes: o que monitorar em produção — WIR Innovation</title>
-<meta name="description" content="Sistemas de IA em produção precisam de monitoramento específico — não basta logging genérico. As 6 métricas que separam sistema robusto de frágil." />
+<title>Observabilidade de agentes de IA: métricas e ferramentas para produção — WIR Innovation</title>
+<meta name="description" content="As 6 métricas e as principais ferramentas de observabilidade de agentes de IA em produção — de drift e custo por decisão a Arize, Fiddler, WhyLabs e Evidently." />
 <link rel="canonical" href="https://wirinnovation.ai/insights/observabilidade-de-agentes/" />
 <link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/observabilidade-de-agentes/" />
 <link rel="alternate" hreflang="x-default" href="https://wirinnovation.ai/insights/observabilidade-de-agentes/" />
 
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Observabilidade de agentes: o que monitorar em produção" />
-<meta property="og:description" content="Sistemas de IA em produção precisam de monitoramento específico — não basta logging genérico. As 6 métricas que separam sistema robusto de frágil." />
+<meta property="og:title" content="Observabilidade de agentes de IA: métricas e ferramentas para produção" />
+<meta property="og:description" content="As 6 métricas e as principais ferramentas de observabilidade de agentes de IA em produção — de drift e custo por decisão a Arize, Fiddler, WhyLabs e Evidently." />
 <meta property="og:url" content="https://wirinnovation.ai/insights/observabilidade-de-agentes/" />
 <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100" />
 <meta property="og:locale" content="pt_BR" />
@@ -21,8 +21,8 @@
 <meta property="article:section" content="Técnico" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Observabilidade de agentes: o que monitorar em produção" />
-<meta name="twitter:description" content="Sistemas de IA em produção precisam de monitoramento específico — não basta logging genérico. As 6 métricas que separam sistema robusto de frágil." />
+<meta name="twitter:title" content="Observabilidade de agentes de IA: métricas e ferramentas para produção" />
+<meta name="twitter:description" content="As 6 métricas e as principais ferramentas de observabilidade de agentes de IA em produção — de drift e custo por decisão a Arize, Fiddler, WhyLabs e Evidently." />
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100" />
 
 <link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
@@ -37,8 +37,9 @@
 <link rel="stylesheet" href="/home.css?v=2026052D" />
 <link rel="stylesheet" href="/blog.css?v=2026052D" />
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Observabilidade de agentes: o que monitorar em produção","description":"Sistemas de IA em produção precisam de monitoramento específico — não basta logging genérico. As 6 métricas que separam sistema robusto de frágil.","image":"https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100","datePublished":"22 · Fev · 2026","author":{"@type":"Person","name":"Head of AI","jobTitle":"ML · WIR Innovation"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/observabilidade-de-agentes/","articleSection":"Técnico"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"Observabilidade de agentes: o que monitorar em produção","item":"https://wirinnovation.ai/insights/observabilidade-de-agentes/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Observabilidade de agentes de IA: métricas e ferramentas para produção","description":"As 6 métricas e as principais ferramentas de observabilidade de agentes de IA em produção — de drift e custo por decisão a Arize, Fiddler, WhyLabs e Evidently.","image":"https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100","datePublished":"2026-02-22","author":{"@type":"Person","name":"Head of AI","jobTitle":"ML · WIR Innovation"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/observabilidade-de-agentes/","articleSection":"Técnico"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"Observabilidade de agentes de IA: métricas e ferramentas para produção","item":"https://wirinnovation.ai/insights/observabilidade-de-agentes/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://wirinnovation.ai/insights/observabilidade-de-agentes/#faq","inLanguage":"pt-BR","mainEntity":[{"@type":"Question","name":"O que é observabilidade de agentes de IA?","acceptedAnswer":{"@type":"Answer","text":"É a prática de monitorar o comportamento estatístico de sistemas de IA em produção — não apenas se o software responde, mas se as decisões continuam corretas ao longo do tempo. Diferente do monitoramento tradicional (logs, latência, throughput), ela acompanha drift de dados, custo por decisão e a divergência entre o que o modelo decide e o que um humano decidiria."}},{"@type":"Question","name":"Quais são as principais ferramentas de observabilidade de agentes de IA?","acceptedAnswer":{"@type":"Answer","text":"Para monitoramento de modelos e drift: Arize AI, Fiddler, WhyLabs e Evidently AI — estas duas últimas com núcleos open-source. Para tracing passo a passo de agentes LLM: LangSmith, Langfuse e Arize Phoenix. Nenhuma entrega pronta a divergência humano-vs-modelo nem o loss ratio segmentado por automação; essas métricas você instrumenta sobre os dados do seu próprio book."}},{"@type":"Question","name":"Quais métricas monitorar em agentes de IA em produção?","acceptedAnswer":{"@type":"Answer","text":"Seis métricas formam o dashboard mínimo: latência por tipo de decisão (p50, p95, p99), taxa de override humano, drift de distribuição de features, custo por decisão, loss ratio segmentado por nível de automação e divergência humano-vs-modelo amostral."}},{"@type":"Question","name":"Observabilidade de IA é diferente do monitoramento de software tradicional?","acceptedAnswer":{"@type":"Answer","text":"Sim. Um sistema de IA pode estar perfeito em termos de software — sem erros, com latência boa — e ainda assim produzir decisões progressivamente piores por drift de dados. Essa degradação não dispara alerta no monitoramento clássico; aparece no loss ratio meses depois. Por isso exige métricas estatísticas específicas."}}]}</script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
 <script>
@@ -91,13 +92,13 @@
 
     <header class="blarticle__head">
       <div class="eyebrow">· Técnico</div>
-      <h1 class="display blarticle__title">Observabilidade de agentes: o que monitorar em produção</h1>
-      <p class="blarticle__sub">Latência, precisão, drift, custo por decisão, divergência humano-vs-modelo. O dashboard mínimo que toda seguradora deveria exigir antes de escalar IA.</p>
+      <h1 class="display blarticle__title">Observabilidade de agentes de IA: métricas e ferramentas para produção</h1>
+      <p class="blarticle__sub">Latência, drift, custo por decisão, divergência humano-vs-modelo — e as ferramentas (Arize, Fiddler, WhyLabs, Evidently, LangSmith) que toda seguradora deveria avaliar antes de escalar IA.</p>
       <div class="blarticle__byline">
         <div class="blarticle__author-initials">Ho</div>
         <div class="blarticle__byline-meta">
           <div class="blarticle__byline-author"><b>Head of AI</b> · ML · WIR Innovation</div>
-          <div class="blarticle__byline-time">22 · Fev · 2026 · 9 min de leitura</div>
+          <div class="blarticle__byline-time">22 · Fev · 2026 · 10 min de leitura</div>
         </div>
       </div>
     </header>
@@ -121,6 +122,11 @@
 <p><strong>4. Custo por decisão.</strong> Inclui chamadas de API LLM, infraestrutura de inferência, retrieval de bases externas. Em sistemas híbridos, custo por decisão pode variar 10× entre tipos de caso. Sem essa métrica, custo total balona sem explicação.</p>
 <p><strong>5. Loss ratio segmentado por automação.</strong> Book observável separado por nível de envolvimento humano: 100% automático, parcialmente automático, integralmente humano. Diferenças significativas sinalizam algo — qualidade do modelo, viés de seleção, ou diferença de produto.</p>
 <p><strong>6. Divergência humano-vs-modelo amostral.</strong> Fração das decisões automáticas (1% a 5%) submetida a revisão humana cega após o fato. Calcula-se a concordância. Em sistemas saudáveis, tende a 80%-90%, com discordância concentrada em casos genuinamente ambíguos.</p>
+<h3>Ferramentas de observabilidade de agentes de IA</h3>
+<p>Construir essas seis métricas do zero é possível, mas raramente vale o esforço: o ecossistema de ferramentas de observabilidade de agentes de IA já cobre a maior parte do caminho. As categorias que importam para uma seguradora:</p>
+<p><strong>Monitoramento de modelos e drift.</strong> <a href="https://arize.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Arize AI</a>, <a href="https://www.fiddler.ai" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Fiddler</a>, <a href="https://whylabs.ai" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">WhyLabs</a> e <a href="https://www.evidentlyai.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Evidently AI</a> monitoram distribuição de features, drift e performance em produção. Evidently e WhyLabs têm núcleos open-source; Arize e Fiddler entregam explicabilidade e alertas gerenciados. Para os testes estatísticos de drift (KS, PSI, Wasserstein), a documentação aberta da Evidently é o melhor ponto de partida.</p>
+<p><strong>Tracing de agentes LLM.</strong> Quando o &quot;agente&quot; é um sistema com LLM, retrieval e chamadas de ferramentas encadeadas, o que você precisa observar muda: cada passo do raciocínio, cada prompt, cada token e seu custo. <a href="https://www.langchain.com/langsmith" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">LangSmith</a>, <a href="https://langfuse.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Langfuse</a> (open-source) e o <a href="https://phoenix.arize.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Arize Phoenix</a> (open-source) foram desenhados para esse rastreamento passo a passo — indispensável para auditar por que um agente decidiu o que decidiu.</p>
+<p><strong>A regra prática.</strong> Nenhuma ferramenta entrega, pronta, a métrica que mais importa numa seguradora: a divergência humano-vs-modelo e o loss ratio segmentado por automação. Essas você instrumenta sobre os dados do seu próprio book. As ferramentas acima resolvem latência, drift e custo; o sinal de negócio é trabalho seu.</p>
 <h3>O que NÃO basta</h3>
 <p><strong>Acurácia no test set.</strong> Útil durante desenvolvimento. Em produção, a única acurácia que importa é a operacional, medida pela divergência humano-vs-modelo amostral.</p>
 <p><strong>AUC, F1.</strong> Métricas de modelo, não de sistema. Importantes para troubleshooting; insuficientes para monitoramento contínuo.</p>
@@ -142,9 +148,31 @@
   <li><a href="https://www.fiddler.ai" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Fiddler AI</a> · model monitoring + explainability</li>
   <li><a href="https://whylabs.ai" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">WhyLabs</a> · open-source data and ML monitoring</li>
   <li><a href="https://www.evidentlyai.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Evidently AI</a> · ML monitoring open-source</li>
+  <li><a href="https://www.langchain.com/langsmith" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">LangSmith</a> · tracing e avaliação de agentes LLM</li>
+  <li><a href="https://langfuse.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Langfuse</a> · observabilidade open-source para LLMs</li>
+  <li><a href="https://phoenix.arize.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Arize Phoenix</a> · tracing de agentes LLM open-source</li>
   <li><a href="/insights/explicabilidade-alem-de-shap/" class="blarticle__link-int">Explicabilidade que vai além do SHAP</a> · arquitetura de auditoria</li>
   <li><a href="/insights/llms-vs-motores-de-regras/" class="blarticle__link-int">LLMs não substituem motores de regras</a> · arquitetura híbrida que precisa ser monitorada</li>
 </ul>
+<section class="blarticle__faq" aria-label="Perguntas frequentes">
+<h3>Perguntas frequentes</h3>
+<details class="blarticle__faq-item">
+  <summary>O que é observabilidade de agentes de IA?</summary>
+  <p>É a prática de monitorar o comportamento estatístico de sistemas de IA em produção — não apenas se o software responde, mas se as decisões continuam corretas ao longo do tempo. Diferente do monitoramento tradicional (logs, latência, throughput), ela acompanha drift de dados, custo por decisão e a divergência entre o que o modelo decide e o que um humano decidiria.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Quais são as principais ferramentas de observabilidade de agentes de IA?</summary>
+  <p>Para monitoramento de modelos e drift: Arize AI, Fiddler, WhyLabs e Evidently AI — estas duas últimas com núcleos open-source. Para tracing passo a passo de agentes LLM: LangSmith, Langfuse e Arize Phoenix. Nenhuma entrega pronta a divergência humano-vs-modelo nem o loss ratio segmentado por automação; essas métricas você instrumenta sobre os dados do seu próprio book.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Quais métricas monitorar em agentes de IA em produção?</summary>
+  <p>Seis métricas formam o dashboard mínimo: latência por tipo de decisão (p50, p95, p99), taxa de override humano, drift de distribuição de features, custo por decisão, loss ratio segmentado por nível de automação e divergência humano-vs-modelo amostral.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Observabilidade de IA é diferente do monitoramento de software tradicional?</summary>
+  <p>Sim. Um sistema de IA pode estar perfeito em termos de software — sem erros, com latência boa — e ainda assim produzir decisões progressivamente piores por drift de dados. Essa degradação não dispara alerta no monitoramento clássico; aparece no loss ratio meses depois. Por isso exige métricas estatísticas específicas.</p>
+</details>
+</section>
     </div>
 
     <footer class="blarticle__foot">
