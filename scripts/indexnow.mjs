@@ -11,7 +11,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const HOST = "wirinnovation.ai";
-const SITEMAP_PATH = path.join(ROOT, "sitemap.xml");
+const SITEMAP_PATH = path.join(ROOT, "public", "sitemap.xml");
 const KEY_FILE = path.join(ROOT, ".indexnow-key");
 
 if (!fs.existsSync(KEY_FILE)) {
