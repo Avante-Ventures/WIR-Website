@@ -1,6 +1,118 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { LANG } from './i18n.js';
 
 /* ───────── Movement 01 · Opening + 02 · Proof ───────── */
+
+const T = {
+  pt: {
+    dflowStages: ["COLETA", "ENRIQ.", "SCORE", "DECISÃO", "SUBSCRIÇÃO"],
+    dflowTitle: "Fluxo de decisão",
+    dflowTitleV: "wir.produtos",
+    dflowLive: "ao vivo",
+    dflowSources: ["e-mail", "anexos", "API"],
+    dflowOutputs: ["cotação", "trilha"],
+    dflowLoop: "· ciclo de aprendizado contínuo · machine learning ·",
+    dflowFoot: ["Dados", "Produtos WIR", "Decisão auditável"],
+    dflowAria: "Fluxo de decisão",
+    mastDate: "ABR 2026",
+    mastTheme: "INTELIGÊNCIA ARTIFICIAL · SEGUROS",
+    mastRoute: "SÃO PAULO ⟶ SILICON VALLEY",
+    kicker: "Plataforma em produção · decisão 24/7",
+    heroTitle: <>A nova era do seguro é<br/><em>inteligência de dados</em>,<br/>velocidade e escala.</>,
+    heroLede: "A WIR entrega uma camada de IA com analytics e dashboards real time, sem substituir os sistemas atuais.",
+    ctaTalk: "Falar com a equipe",
+    ctaSee: "Ver a plataforma",
+    heroCaption: "· Como a WIR transforma dados em decisões",
+    proofEyebrow: "· Análise de possibilidades de retorno sobre o investimento",
+    proofTitle: "6 indicadores estratégicos de resultado",
+    indicators: [
+      { sign:"+", w:"Eficiência",   l:"Escalar volume de cotações",
+        c:"Possibilidade de crescer exponencialmente o volume de cotações." },
+      { sign:"+", w:"Faturamento",  l:"Mais cotações geram mais negócios fechados",
+        c:"O retorno mais rápido aos corretores gera mais possibilidades de negócios e repiques, além do aumento do volume de cotações por mês." },
+      { sign:"−", w:"DA · Custos",  l:"Aumento de margem · Lucratividade",
+        c:"Com o aumento das cotações sem necessidade de crescer o headcount na mesma proporção, traz uma redução da Despesa Administrativa e possível aumento de margem." },
+      { sign:"+", w:"Inteligência", l:"Dashboards, Analytics e Relatórios real time",
+        c:"Analisar de forma pró-ativa os negócios em andamento e o pipeline para focar nos fechamentos." },
+      { sign:"+", w:"AI First",     l:"Pioneiros em automação com IA",
+        c:"Quem sai na frente com soluções tecnológicas consegue liderar e atrair os melhores resultados, com avaliação de risco e assertividade na precificação superiores aos concorrentes." },
+      { sign:"+", w:"Escalar",      l:"Futuro das seguradoras",
+        c:"Possibilidade de escalar os negócios devido às automações e à evolução da inteligência artificial." },
+    ],
+  },
+  en: {
+    dflowStages: ["INTAKE", "ENRICH", "SCORE", "DECISION", "UNDERWRITE"],
+    dflowTitle: "Decision flow",
+    dflowTitleV: "wir.products",
+    dflowLive: "live",
+    dflowSources: ["email", "files", "API"],
+    dflowOutputs: ["quote", "trail"],
+    dflowLoop: "· continuous learning loop · machine learning ·",
+    dflowFoot: ["Data", "WIR Products", "Auditable decision"],
+    dflowAria: "Decision flow",
+    mastDate: "APR 2026",
+    mastTheme: "ARTIFICIAL INTELLIGENCE · INSURANCE",
+    mastRoute: "SÃO PAULO ⟶ SILICON VALLEY",
+    kicker: "Platform in production · 24/7 decisioning",
+    heroTitle: <>The new era of insurance is<br/><em>data intelligence</em>,<br/>speed and scale.</>,
+    heroLede: "WIR delivers an AI layer with real-time analytics and dashboards — without replacing your current systems.",
+    ctaTalk: "Talk to the team",
+    ctaSee: "See the platform",
+    heroCaption: "· How WIR turns data into decisions",
+    proofEyebrow: "· Return-on-investment outlook",
+    proofTitle: "6 strategic outcome indicators",
+    indicators: [
+      { sign:"+", w:"Efficiency",   l:"Scale quoting volume",
+        c:"The ability to grow quoting volume exponentially." },
+      { sign:"+", w:"Revenue",      l:"More quotes turn into more closed business",
+        c:"Faster turnaround to brokers creates more business opportunities and repeat requests, on top of a higher monthly quoting volume." },
+      { sign:"−", w:"Admin · Costs", l:"Margin expansion · Profitability",
+        c:"Quoting volume grows without growing headcount at the same rate — reducing administrative expense and opening room for margin expansion." },
+      { sign:"+", w:"Intelligence", l:"Real-time dashboards, analytics and reporting",
+        c:"Proactively analyze live deals and the pipeline to focus on closings." },
+      { sign:"+", w:"AI First",     l:"Pioneers in AI-driven automation",
+        c:"Moving first with technology means leading the market — with risk assessment and pricing accuracy ahead of competitors." },
+      { sign:"+", w:"Scale",        l:"The future of insurance carriers",
+        c:"The ability to scale the business on automation and the ongoing evolution of artificial intelligence." },
+    ],
+  },
+  es: {
+    dflowStages: ["CAPTURA", "ENRIQ.", "SCORE", "DECISIÓN", "SUSCRIPCIÓN"],
+    dflowTitle: "Flujo de decisión",
+    dflowTitleV: "wir.productos",
+    dflowLive: "en vivo",
+    dflowSources: ["correo", "anexos", "API"],
+    dflowOutputs: ["cotiz.", "trazas"],
+    dflowLoop: "· ciclo de aprendizaje continuo · machine learning ·",
+    dflowFoot: ["Datos", "Productos WIR", "Decisión auditable"],
+    dflowAria: "Flujo de decisión",
+    mastDate: "ABR 2026",
+    mastTheme: "INTELIGENCIA ARTIFICIAL · SEGUROS",
+    mastRoute: "SÃO PAULO ⟶ SILICON VALLEY",
+    kicker: "Plataforma en producción · decisión 24/7",
+    heroTitle: <>La nueva era del seguro es<br/><em>inteligencia de datos</em>,<br/>velocidad y escala.</>,
+    heroLede: "WIR entrega una capa de IA con analytics y dashboards en tiempo real, sin sustituir los sistemas actuales.",
+    ctaTalk: "Hablar con el equipo",
+    ctaSee: "Ver la plataforma",
+    heroCaption: "· Cómo WIR transforma datos en decisiones",
+    proofEyebrow: "· Análisis de posibilidades de retorno sobre la inversión",
+    proofTitle: "6 indicadores estratégicos de resultado",
+    indicators: [
+      { sign:"+", w:"Eficiencia",   l:"Escalar el volumen de cotizaciones",
+        c:"Posibilidad de crecer exponencialmente el volumen de cotizaciones." },
+      { sign:"+", w:"Facturación",  l:"Más cotizaciones generan más negocios cerrados",
+        c:"Responder más rápido a los corredores genera más oportunidades de negocio y recompras, además del aumento del volumen mensual de cotizaciones." },
+      { sign:"−", w:"GA · Costos",  l:"Aumento de margen · Rentabilidad",
+        c:"Al aumentar las cotizaciones sin crecer el headcount en la misma proporción, se reduce el gasto administrativo y se abre espacio para mejorar el margen." },
+      { sign:"+", w:"Inteligencia", l:"Dashboards, analytics y reportes en tiempo real",
+        c:"Analizar de forma proactiva los negocios en curso y el pipeline para enfocarse en los cierres." },
+      { sign:"+", w:"AI First",     l:"Pioneros en automatización con IA",
+        c:"Quien se adelanta con soluciones tecnológicas logra liderar y atraer los mejores resultados, con evaluación de riesgo y precisión en la tarificación superiores a la competencia." },
+      { sign:"+", w:"Escalar",      l:"El futuro de las aseguradoras",
+        c:"Posibilidad de escalar el negocio gracias a las automatizaciones y la evolución de la inteligencia artificial." },
+    ],
+  },
+}[LANG];
 
 // DecisionFlow — network pipeline visualization showing how data becomes decisions
 function DecisionFlow() {
@@ -10,24 +122,18 @@ function DecisionFlow() {
     return () => clearInterval(id);
   }, []);
 
-  const stages = [
-    { k: "COLETA"     },
-    { k: "ENRIQ."     },
-    { k: "SCORE"      },
-    { k: "DECISÃO"    },
-    { k: "SUBSCRIÇÃO" },
-  ];
+  const stages = T.dflowStages.map(k => ({ k }));
 
   return (
-    <div className="dflow" aria-label="Fluxo de decisão">
+    <div className="dflow" aria-label={T.dflowAria}>
       <div className="dflow__head">
         <div className="dflow__title">
-          <span className="dflow__title-k">Fluxo de decisão</span>
-          <span className="dflow__title-v">wir.produtos</span>
+          <span className="dflow__title-k">{T.dflowTitle}</span>
+          <span className="dflow__title-v">{T.dflowTitleV}</span>
         </div>
         <div className="dflow__status">
           <span className="dflow__dot"/>
-          ao vivo
+          {T.dflowLive}
         </div>
       </div>
 
@@ -48,7 +154,7 @@ function DecisionFlow() {
         </defs>
 
         {/* Source nodes (left, 3 stacked) — labels with breathing room */}
-        {[{y:80,l:"e-mail"},{y:170,l:"anexos"},{y:260,l:"API"}].map((s,i) => (
+        {[{y:80,l:T.dflowSources[0]},{y:170,l:T.dflowSources[1]},{y:260,l:T.dflowSources[2]}].map((s,i) => (
           <g key={i}>
             <circle cx="60" cy={s.y} r="8" fill="#E9E3D7" stroke="#7540AC" strokeWidth="1.5"/>
             <text x="22" y={s.y + 4} fill="#6A6458" fontSize="11"
@@ -92,7 +198,7 @@ function DecisionFlow() {
         <path d="M395 170 Q 435 170, 445 80" stroke="url(#dflowPath)" strokeWidth="1.5" fill="none"/>
         <path d="M395 170 Q 435 170, 445 260" stroke="url(#dflowPath)" strokeWidth="1.5" fill="none"/>
 
-        {[{y:80,l:"cotação",c:"#F8AD39"},{y:260,l:"trilha",c:"#7540AC"}].map((o,i) => (
+        {[{y:80,l:T.dflowOutputs[0],c:"#F8AD39"},{y:260,l:T.dflowOutputs[1],c:"#7540AC"}].map((o,i) => (
           <g key={i}>
             <rect x="425" y={o.y - 12} width="48" height="24" rx="5"
               fill={o.c} fillOpacity="0.15"
@@ -111,16 +217,16 @@ function DecisionFlow() {
         <text x="250" y="310" fill="#FE8B77"
           fontSize="9" fontFamily="JetBrains Mono, monospace"
           textAnchor="middle" letterSpacing="1.5" fillOpacity="0.75">
-          · ciclo de aprendizado contínuo · machine learning ·
+          {T.dflowLoop}
         </text>
       </svg>
 
       <div className="dflow__foot">
-        <span>Dados</span>
+        <span>{T.dflowFoot[0]}</span>
         <span className="dflow__arrow">→</span>
-        <span>Produtos WIR</span>
+        <span>{T.dflowFoot[1]}</span>
         <span className="dflow__arrow">→</span>
-        <span>Decisão auditável</span>
+        <span>{T.dflowFoot[2]}</span>
       </div>
     </div>
   );
@@ -133,11 +239,11 @@ export function Opening({ go }) {
         {/* Edition masthead */}
         <div className="opening__mast">
           <div className="opening__mast-L">
-            <span>ABR 2026</span>
-            <span>INTELIGÊNCIA ARTIFICIAL · SEGUROS</span>
+            <span>{T.mastDate}</span>
+            <span>{T.mastTheme}</span>
           </div>
           <div className="opening__mast-R">
-            <span>SÃO PAULO ⟶ SILICON VALLEY</span>
+            <span>{T.mastRoute}</span>
           </div>
         </div>
 
@@ -146,27 +252,25 @@ export function Opening({ go }) {
           <div className="opening__hero-L">
             <div className="opening__kicker">
               <span className="opening__kicker-dot"/>
-              <span>Plataforma em produção · decisão 24/7</span>
+              <span>{T.kicker}</span>
             </div>
             <h1 className="display opening__title opening__title--long">
-              A nova era do seguro é<br/>
-              <em>inteligência de dados</em>,<br/>
-              velocidade e escala.
+              {T.heroTitle}
             </h1>
             <p className="opening__lede">
-              A WIR entrega uma camada de IA com analytics e dashboards real time, sem substituir os sistemas atuais.
+              {T.heroLede}
             </p>
             <div className="opening__actions">
               <button className="btn btn--solid" onClick={()=>go("contact")}>
-                Falar com a equipe <span className="btn__arrow">→</span>
+                {T.ctaTalk} <span className="btn__arrow">→</span>
               </button>
               <button className="btn btn--ghost" onClick={()=>go("solutions")}>
-                Ver a plataforma <span className="btn__arrow">→</span>
+                {T.ctaSee} <span className="btn__arrow">→</span>
               </button>
             </div>
           </div>
           <div className="opening__hero-R">
-            <div className="opening__caption">· Como a WIR transforma dados em decisões</div>
+            <div className="opening__caption">{T.heroCaption}</div>
             <DecisionFlow/>
           </div>
         </div>
@@ -177,26 +281,13 @@ export function Opening({ go }) {
 }
 
 export function Proof() {
-  const indicators = [
-    { sign:"+", w:"Eficiência",   l:"Escalar volume de cotações",
-      c:"Possibilidade de crescer exponencialmente o volume de cotações." },
-    { sign:"+", w:"Faturamento",  l:"Mais cotações geram mais negócios fechados",
-      c:"O retorno mais rápido aos corretores gera mais possibilidades de negócios e repiques, além do aumento do volume de cotações por mês." },
-    { sign:"−", w:"DA · Custos",  l:"Aumento de margem · Lucratividade",
-      c:"Com o aumento das cotações sem necessidade de crescer o headcount na mesma proporção, traz uma redução da Despesa Administrativa e possível aumento de margem." },
-    { sign:"+", w:"Inteligência", l:"Dashboards, Analytics e Relatórios real time",
-      c:"Analisar de forma pró-ativa os negócios em andamento e o pipeline para focar nos fechamentos." },
-    { sign:"+", w:"AI First",     l:"Pioneiros em automação com IA",
-      c:"Quem sai na frente com soluções tecnológicas consegue liderar e atrair os melhores resultados, com avaliação de risco e assertividade na precificação superiores aos concorrentes." },
-    { sign:"+", w:"Escalar",      l:"Futuro das seguradoras",
-      c:"Possibilidade de escalar os negócios devido às automações e à evolução da inteligência artificial." },
-  ];
+  const indicators = T.indicators;
   return (
     <section className="proof" data-reveal>
       <div className="wrap">
         <div className="proof__head">
-          <div className="eyebrow">· Análise de possibilidades de retorno sobre o investimento</div>
-          <h2 className="proof__title display">6 indicadores estratégicos de resultado</h2>
+          <div className="eyebrow">{T.proofEyebrow}</div>
+          <h2 className="proof__title display">{T.proofTitle}</h2>
         </div>
         <div className="proof__grid proof__grid--6">
           {indicators.map((x,i) => (
@@ -213,4 +304,3 @@ export function Proof() {
     </section>
   );
 }
-

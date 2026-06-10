@@ -117,8 +117,8 @@ function renderHead(article) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Início", "item": `${SITE_URL}/` },
-      { "@type": "ListItem", "position": 2, "name": "Insights & News", "item": `${SITE_URL}/insights/` },
+      { "@type": "ListItem", "position": 1, "name": isEnglish(article.slug) ? "Home" : "Início", "item": `${SITE_URL}${isEnglish(article.slug) ? "/en" : ""}/` },
+      { "@type": "ListItem", "position": 2, "name": "Insights & News", "item": `${SITE_URL}${insightsHref(isEnglish(article.slug) ? "en" : "pt-BR")}` },
       { "@type": "ListItem", "position": 3, "name": article.title, "item": url },
     ],
   };
@@ -187,46 +187,82 @@ ${article.image ? `<meta name="twitter:image" content="${article.image}" />` : "
 <script>document.documentElement.classList.add('js-ready');</script>`;
 }
 
-function renderNav() {
+// Per-language chrome strings for generated static pages (PT canonical, EN for -en articles)
+const CHROME = {
+  "pt-BR": {
+    base: "",
+    ticker: ["Decisão em minutos · auditável · explicável", "Straight-through processing como padrão", "Plataforma de IA para seguros", "Em conformidade com LGPD"],
+    navHome: "Início", navAbout: "Sobre", navSolutions: "Produtos &amp; IA", navProtection: "Proteção de Dados", navCta: "Contato",
+    footerDesc: "A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.",
+    colCompany: "Empresa", colContact: "Contato", colHolding: "Sócios &amp; Holding",
+    talkTeam: "Falar com a equipe",
+    holdMahway: "Mahway · California", holdAvante: "Avante · Brasil", holdAdvisors: "Conselheiros estratégicos", holdPrinciples: "Princípios",
+    footerBot: "wirinnovation.ai · Feito entre São Paulo e Silicon Valley",
+    waText: "Olá Nicholas, vim pelo site da WIR Innovation. Gostaria de conversar sobre…",
+    waAria: "Falar com Nicholas no WhatsApp",
+    backTo: "Voltar para Insights &amp; News", moreInsights: "Outros Insights",
+    readTime: "de leitura", faqTitle: "Perguntas frequentes",
+  },
+  en: {
+    base: "/en",
+    ticker: ["Decisions in minutes · auditable · explainable", "Straight-through processing as the default", "AI platform for insurance", "LGPD-compliant"],
+    navHome: "Home", navAbout: "About", navSolutions: "Products &amp; AI", navProtection: "Data Protection", navCta: "Contact",
+    footerDesc: "The new era of insurance is data intelligence, speed, and scale. WIR Innovation is the AI platform that delivers that structure inside the systems you already run.",
+    colCompany: "Company", colContact: "Contact", colHolding: "Partners &amp; Holding",
+    talkTeam: "Talk to the team",
+    holdMahway: "Mahway · California", holdAvante: "Avante · Brazil", holdAdvisors: "Strategic advisors", holdPrinciples: "Principles",
+    footerBot: "wirinnovation.ai · Built between São Paulo and Silicon Valley",
+    waText: "Hello Nicholas, I found you through the WIR Innovation website. I'd like to talk about…",
+    waAria: "Chat with Nicholas on WhatsApp",
+    backTo: "Back to Insights &amp; News", moreInsights: "More Insights",
+    readTime: "read", faqTitle: "Frequently asked questions",
+  },
+};
+const insightsHref = (lang) => lang === "en" ? "/en/insights/" : "/insights/";
+
+function renderNav(lang = "pt-BR") {
+  const c = CHROME[lang] || CHROME["pt-BR"];
+  const tick = (i) => c.ticker[i % c.ticker.length];
   return `<div class="ticker">
   <div class="ticker__track">
-    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>Plataforma de IA para seguros</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>Em conformidade com LGPD</span>
-    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>${tick(0)}</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>${tick(1)}</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>${tick(2)}</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>${tick(3)}</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>${tick(0)}</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>${tick(1)}</span>
   </div>
 </div>
 <nav class="nav">
   <div class="wrap nav__inner">
-    <a href="/" class="nav__brand">
+    <a href="${c.base}/" class="nav__brand">
       <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
       <span class="nav__brand-sub">Innovation · AI Stack</span>
     </a>
     <div class="nav__links">
-      <a href="/" class="nav__link">Início</a>
-      <a href="/#about" class="nav__link">Sobre</a>
-      <a href="/#solutions" class="nav__link">Produtos &amp; IA</a>
-      <a href="/#protection" class="nav__link">Proteção de Dados</a>
-      <a href="/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+      <a href="${c.base}/" class="nav__link">${c.navHome}</a>
+      <a href="${c.base}/#about" class="nav__link">${c.navAbout}</a>
+      <a href="${c.base}/#solutions" class="nav__link">${c.navSolutions}</a>
+      <a href="${c.base}/#protection" class="nav__link">${c.navProtection}</a>
+      <a href="${insightsHref(lang)}" class="nav__link nav__link--active">Insights &amp; News</a>
     </div>
-    <a href="/#contact" class="nav__cta">
+    <a href="${c.base}/#contact" class="nav__cta">
       <span class="dot"></span>
-      Contato
+      ${c.navCta}
       <span aria-hidden="true">→</span>
     </a>
   </div>
 </nav>`;
 }
 
-function renderFooter() {
+function renderFooter(lang = "pt-BR") {
+  const c = CHROME[lang] || CHROME["pt-BR"];
   return `<footer class="footer">
   <div class="wrap">
     <div class="footer__grid">
       <div>
         <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
-        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <p class="footer__brand-desc">${c.footerDesc}</p>
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
           <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
@@ -234,45 +270,46 @@ function renderFooter() {
         </div>
       </div>
       <div>
-        <h4>Empresa</h4>
+        <h4>${c.colCompany}</h4>
         <ul>
-          <li><a href="/">Início</a></li>
-          <li><a href="/#about">Sobre</a></li>
-          <li><a href="/#solutions">Produtos &amp; IA</a></li>
-          <li><a href="/#protection">Proteção de Dados</a></li>
-          <li><a href="/insights/">Insights &amp; News</a></li>
-          <li><a href="/#contact">Contato</a></li>
+          <li><a href="${c.base}/">${c.navHome}</a></li>
+          <li><a href="${c.base}/#about">${c.navAbout}</a></li>
+          <li><a href="${c.base}/#solutions">${c.navSolutions}</a></li>
+          <li><a href="${c.base}/#protection">${c.navProtection}</a></li>
+          <li><a href="${insightsHref(lang)}">Insights &amp; News</a></li>
+          <li><a href="${c.base}/#contact">${c.navCta}</a></li>
         </ul>
       </div>
       <div>
-        <h4>Contato</h4>
+        <h4>${c.colContact}</h4>
         <ul>
           <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
-          <li><a href="/#contact">Falar com a equipe</a></li>
+          <li><a href="${c.base}/#contact">${c.talkTeam}</a></li>
         </ul>
       </div>
       <div>
-        <h4>Sócios &amp; Holding</h4>
+        <h4>${c.colHolding}</h4>
         <ul>
-          <li><a href="/#about">Mahway · California</a></li>
-          <li><a href="/#about">Avante · Brasil</a></li>
-          <li><a href="/#about">Conselheiros estratégicos</a></li>
-          <li><a href="/#about">Princípios</a></li>
+          <li><a href="${c.base}/#about">${c.holdMahway}</a></li>
+          <li><a href="${c.base}/#about">${c.holdAvante}</a></li>
+          <li><a href="${c.base}/#about">${c.holdAdvisors}</a></li>
+          <li><a href="${c.base}/#about">${c.holdPrinciples}</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__bot">
       <span>© 2026 WIR Innovation</span>
-      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+      <span>${c.footerBot}</span>
     </div>
   </div>
 </footer>`;
 }
 
-function renderWhatsAppFAB() {
+function renderWhatsAppFAB(lang = "pt-BR") {
+  const c = CHROME[lang] || CHROME["pt-BR"];
   const num = "5511981757505";
-  const text = encodeURIComponent("Olá Nicholas, vim pelo site da WIR Innovation. Gostaria de conversar sobre…");
-  return `<a href="https://wa.me/${num}?text=${text}" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Falar com Nicholas no WhatsApp">
+  const text = encodeURIComponent(c.waText);
+  return `<a href="https://wa.me/${num}?text=${text}" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="${c.waAria}">
   <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
   </svg>
@@ -280,12 +317,14 @@ function renderWhatsAppFAB() {
 }
 
 function renderArticleHTML(article) {
+  const lang = isEnglish(article.slug) ? "en" : "pt-BR";
+  const c = CHROME[lang] || CHROME["pt-BR"];
   const initials = article.author.split(" ").map(w => w[0]).slice(0, 2).join("");
   const bodyHTML = renderBody(article.body);
   // Visible FAQ block — single source with the FAQPage schema (see renderHead).
   const faqHTML = (Array.isArray(article.faq) && article.faq.length)
-    ? `\n<section class="blarticle__faq" aria-label="Perguntas frequentes">
-<h3>Perguntas frequentes</h3>
+    ? `\n<section class="blarticle__faq" aria-label="${c.faqTitle}">
+<h3>${c.faqTitle}</h3>
 ${article.faq.map(({ q, a }) => `<details class="blarticle__faq-item">
   <summary>${esc(q)}</summary>
   <p>${renderInline(a)}</p>
@@ -293,7 +332,6 @@ ${article.faq.map(({ q, a }) => `<details class="blarticle__faq-item">
 </section>`
     : "";
   const head = renderHead(article);
-  const lang = isEnglish(article.slug) ? "en" : "pt-BR";
 
   return `<!doctype html>
 <html lang="${lang}">
@@ -301,13 +339,13 @@ ${article.faq.map(({ q, a }) => `<details class="blarticle__faq-item">
 ${head}
 </head>
 <body>
-${renderNav()}
+${renderNav(lang)}
 
 <main>
 <article class="blarticle">
   <div class="wrap blarticle__wrap">
-    <a class="blarticle__back" href="/insights/">
-      <span aria-hidden="true">←</span> Voltar para Insights &amp; News
+    <a class="blarticle__back" href="${insightsHref(lang)}">
+      <span aria-hidden="true">←</span> ${c.backTo}
     </a>
 
     <header class="blarticle__head">
@@ -320,7 +358,7 @@ ${renderNav()}
           : `<div class="blarticle__author-initials">${esc(initials)}</div>`}
         <div class="blarticle__byline-meta">
           <div class="blarticle__byline-author"><b>${esc(article.author)}</b> · ${esc(article.role)}</div>
-          <div class="blarticle__byline-time">${esc(article.date)} · ${esc(article.time)} de leitura</div>
+          <div class="blarticle__byline-time">${esc(article.date)} · ${esc(article.time)} ${c.readTime}</div>
         </div>
       </div>
     </header>
@@ -334,25 +372,41 @@ ${bodyHTML}${faqHTML}
     </div>
 
     <footer class="blarticle__foot">
-      <a class="btn btn--ghost" href="/insights/">
-        <span aria-hidden="true">←</span> Outros Insights
+      <a class="btn btn--ghost" href="${insightsHref(lang)}">
+        <span aria-hidden="true">←</span> ${c.moreInsights}
       </a>
-      <a class="btn btn--solid" href="/#contact">
-        Falar com a equipe <span class="btn__arrow">→</span>
+      <a class="btn btn--solid" href="${c.base}/#contact">
+        ${c.talkTeam} <span class="btn__arrow">→</span>
       </a>
     </footer>
   </div>
 </article>
 </main>
 
-${renderFooter()}
-${renderWhatsAppFAB()}
+${renderFooter(lang)}
+${renderWhatsAppFAB(lang)}
 </body>
 </html>`;
 }
 
-function renderInsightsIndex() {
-  const cards = ARTICLES.map(a => `
+function renderInsightsIndex(lang = "pt-BR") {
+  const en = lang === "en";
+  // PT index lists PT articles only; /en/insights/ lists the -en translations only.
+  const list = ARTICLES.filter(a => isEnglish(a.slug) === en);
+  const idx = {
+    title: "Insights &amp; News — WIR Innovation",
+    desc: en
+      ? "Essays, cases and technical notes from the WIR team on AI applied to the insurance market."
+      : "Ensaios, casos e notas técnicas do time da WIR sobre IA aplicada ao mercado segurador.",
+    url: `${SITE_URL}${insightsHref(lang)}`,
+    h1: en
+      ? `Insights on <em>AI, insurance</em> and decisions.`
+      : `Insights sobre <em>IA, seguro</em> e decisão.`,
+    p: en
+      ? "Essays, use cases and technical notes from the WIR team on how Artificial Intelligence is redesigning insurance operations."
+      : "Ensaios, casos de uso e notas técnicas do time da WIR sobre como Inteligência Artificial está redesenhando a operação do mercado segurador.",
+  };
+  const cards = list.map(a => `
     <a href="/insights/${a.slug}/" class="ix-card">
       <div class="ix-card__img" style="background:${a.grad};${a.image ? `background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(${a.image});background-size:cover;background-position:center;` : ""}">
         <span class="ix-card__cat">${esc(a.cat)}</span>
@@ -367,13 +421,16 @@ function renderInsightsIndex() {
 
   const head = `<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Insights &amp; News — WIR Innovation</title>
-<meta name="description" content="Ensaios, casos e notas técnicas do time da WIR sobre IA aplicada ao mercado segurador." />
-<link rel="canonical" href="${SITE_URL}/insights/" />
+<title>${idx.title}</title>
+<meta name="description" content="${idx.desc}" />
+<link rel="canonical" href="${idx.url}" />
+<link rel="alternate" hreflang="pt-BR" href="${SITE_URL}/insights/" />
+<link rel="alternate" hreflang="en" href="${SITE_URL}/en/insights/" />
+<link rel="alternate" hreflang="x-default" href="${SITE_URL}/insights/" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Insights &amp; News — WIR Innovation" />
-<meta property="og:description" content="Ensaios, casos e notas técnicas do time da WIR sobre IA aplicada ao mercado segurador." />
-<meta property="og:url" content="${SITE_URL}/insights/" />
+<meta property="og:title" content="${idx.title}" />
+<meta property="og:description" content="${idx.desc}" />
+<meta property="og:url" content="${idx.url}" />
 <link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -409,19 +466,19 @@ function renderInsightsIndex() {
 </style>`;
 
   return `<!doctype html>
-<html lang="pt-BR">
+<html lang="${lang}">
 <head>
 ${head}
 </head>
 <body>
-${renderNav()}
+${renderNav(lang)}
 <main>
 <section class="ix">
   <div class="wrap">
     <div class="ix__head">
       <div class="eyebrow">· Insights &amp; News</div>
-      <h1>Insights sobre <em>IA, seguro</em> e decisão.</h1>
-      <p>Ensaios, casos de uso e notas técnicas do time da WIR sobre como Inteligência Artificial está redesenhando a operação do mercado segurador.</p>
+      <h1>${idx.h1}</h1>
+      <p>${idx.p}</p>
     </div>
     <div class="ix__grid">
 ${cards}
@@ -429,8 +486,8 @@ ${cards}
   </div>
 </section>
 </main>
-${renderFooter()}
-${renderWhatsAppFAB()}
+${renderFooter(lang)}
+${renderWhatsAppFAB(lang)}
 </body>
 </html>`;
 }
@@ -445,7 +502,13 @@ ARTICLES.forEach(article => {
   console.log(`  ok ${OUT_DIR}/${article.slug}/index.html`);
 });
 
-fs.writeFileSync(path.join(insightsDir, "index.html"), renderInsightsIndex(), "utf8");
-console.log(`  ok ${OUT_DIR}/index.html`);
+fs.writeFileSync(path.join(insightsDir, "index.html"), renderInsightsIndex("pt-BR"), "utf8");
+console.log(`  ok ${OUT_DIR}/index.html (pt-BR)`);
 
-console.log(`\nBuilt ${ARTICLES.length} static article pages + index.\n`);
+// English archive at /en/insights/ — lists only the -en translations
+const enInsightsDir = path.join(process.cwd(), "public", "en", "insights");
+fs.mkdirSync(enInsightsDir, { recursive: true });
+fs.writeFileSync(path.join(enInsightsDir, "index.html"), renderInsightsIndex("en"), "utf8");
+console.log(`  ok public/en/insights/index.html (en)`);
+
+console.log(`\nBuilt ${ARTICLES.length} static article pages + 2 indexes (pt-BR, en).\n`);

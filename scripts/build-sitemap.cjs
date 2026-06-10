@@ -15,7 +15,10 @@ const slugs = fs.readdirSync(INSIGHTS, { withFileTypes: true })
 
 const urls = [
   { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly" },
+  { loc: `${SITE}/en/`, priority: "0.9", changefreq: "weekly" },
+  { loc: `${SITE}/es/`, priority: "0.9", changefreq: "weekly" },
   { loc: `${SITE}/insights/`, priority: "0.9", changefreq: "weekly" },
+  { loc: `${SITE}/en/insights/`, priority: "0.8", changefreq: "weekly" },
   ...slugs.map(s => ({ loc: `${SITE}/insights/${s}/`, priority: "0.8" })),
 ];
 

@@ -1,7 +1,254 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useReveal } from './shared.jsx';
+import { LANG } from './i18n.js';
 
 /* ───────── Proteção de Dados · Segurança & Compliance ───────── */
+
+const T = {
+  pt: {
+    shieldAudit: "· AUDIT TRAIL · IMUTÁVEL ·",
+    shieldLive: "ao vivo · monitorado",
+    mastDate: "ABR 2026",
+    mastTheme: "SEGURANÇA & COMPLIANCE",
+    mastPill: "LGPD-ready · auditável",
+    kicker: "Defesa em profundidade · 4 camadas",
+    heroTitle: <>Segurança e<br/><em>compliance</em><br/>como fundação.</>,
+    heroLede: "A WIR Innovation foi desenhada desde a arquitetura para operar dentro dos requisitos regulatórios do mercado segurador. Cada decisão deixa trilha auditável; cada dado é encriptado em trânsito e em repouso; cada ambiente é segregado por cliente.",
+    heroCtaIt: <>Falar com TI &amp; Compliance</>,
+    heroCtaWp: "Solicitar whitepaper",
+    wpHref: "mailto:contato@wirinnovation.ai?subject=Whitepaper%20WIR%20Innovation%20-%20Arquitetura%20de%20Seguran%C3%A7a",
+    heroCaption: "· 4 camadas de defesa em profundidade",
+    apprEyebrow: "· Princípios",
+    apprPullquote: <>"Compliance não é um <em>relatório</em>. É a <em>arquitetura</em> operando."</>,
+    apprAttrB: "Engenharia WIR",
+    apprAttrS: "Time de Plataforma · 2026",
+    apprParas: [
+      { k: "Defesa em profundidade",
+        text: "Não confiamos em uma única barreira. A plataforma opera em 4 camadas independentes — rede (TLS 1.3 + WAF), aplicação (OAuth 2.0 + rate limiting), dados (AES-256 + segregação por cliente) e auditoria (log imutável + decisão rastreável). Quebrar uma camada não compromete as outras." },
+      { k: "Auditável por design",
+        text: "Toda decisão da plataforma — score de risco, recomendação de pricing, recusa automática — carrega assinatura digital e trilha completa: modelo, versão, inputs, output, timestamp. Compliance não é um relatório que rodamos no fim do mês — é o sistema operando." },
+      { k: "Soberania de dados",
+        text: "Dados pessoais brasileiros ficam em território nacional (AWS São Paulo / GCP São Paulo). O cliente decide sobre criptografia, retenção e direito ao esquecimento. Sem cross-border data flows. Sem terceiros no caminho." },
+      { k: "Pronto para evoluir",
+        text: "LGPD em conformidade hoje. ISO 27001 com arquitetura pronta — gap analysis concluído, evolução contínua. Frameworks adicionais (HIPAA, padrões internacionais) alinhados conforme cliente. Não é um SaaS genérico que se adapta — é uma plataforma desenhada para o regulado desde a fundação." },
+    ],
+    pillEyebrow: "· Os pilares",
+    pillTitle: <>Seis pilares.<br/><em>Uma plataforma segura.</em></>,
+    pillSub: "Cada camada é projetada para operar de forma independente — quebrar uma não compromete as outras. Arquitetura defense-in-depth como padrão, não como upgrade.",
+    cards: [
+      { icon: "lock",     k: "LGPD nativa",          color: "#1C17FF",
+        d: "Conformidade com a Lei Geral de Proteção de Dados desde a arquitetura. Dados processados e armazenados em território nacional.",
+        bullets: ["DPO contratado", "ROPA atualizado", "Direitos do titular implementados", "Notificação ANPD em ≤ 48h"] },
+      { icon: "shield",   k: "Infraestrutura cloud",  color: "#7540AC",
+        d: "AWS / GCP em São Paulo, com criptografia em trânsito (TLS 1.3) e em repouso (AES-256). Ambientes segregados por cliente.",
+        bullets: ["VPC isolada por tenant", "WAF + DDoS protection", "Multi-AZ failover", "RTO ≤ 30 min"] },
+      { icon: "key",      k: "API segura",            color: "#A44F98",
+        d: "Autenticação via OAuth 2.0 / API Key. Rate limiting, logging completo e webhook com assinatura digital HMAC-SHA256.",
+        bullets: ["mTLS opcional", "Rotação de keys 90 dias", "Replay protection", "Audit log retido 5 anos"] },
+      { icon: "brain",    k: "Modelo auditável",      color: "#EE7D48",
+        d: "Cada decisão de ML registrada com inputs, score, confiança, versão do modelo e timestamp. Trail de auditoria completo e exportável.",
+        bullets: ["Model Registry versionado", "Drift detection contínuo", "Bias monitoring trimestral", "Explainability por decisão"] },
+      { icon: "people",   k: "Acesso por princípio",  color: "#F8AD39",
+        d: "Modelo least privilege com SSO corporativo. Acessos auditados, MFA obrigatório, just-in-time elevation para operações sensíveis.",
+        bullets: ["RBAC granular", "MFA obrigatório", "Session recording", "Quarterly access review"] },
+      { icon: "clock",    k: "Observabilidade",       color: "#10B981",
+        d: "DataDog + Sentry + logs centralizados. Alertas de SLA e segurança em tempo real. Incident response com SLA documentado.",
+        bullets: ["P1 ack ≤ 15 min", "Status page público", "Postmortem com RCA", "Annual pentest"] },
+    ],
+    stackK: "· Stack técnico",
+    compEyebrow: <>· Certificações &amp; alinhamentos</>,
+    compTitle: <>Construído para os <em>frameworks</em> que o mercado exige.</>,
+    compItems: [
+      { k: "LGPD",      v: "Conforme",     d: "Proteção de dados pessoais (BR) — DPO, ROPA, direitos do titular implementados.", color: "#1C17FF", state: "ok" },
+      { k: "ISO 27001", v: "Em processo",  d: "Sistema de Gestão de Segurança da Informação — gap analysis concluído Q1.",          color: "#A44F98", state: "wip" },
+      { k: "HIPAA",     v: "Alinhado",     d: "Privacidade em saúde (US) — controles equivalentes aplicáveis ao ramo saúde.",       color: "#EE7D48", state: "ok" },
+    ],
+    faqEyebrow: "· Perguntas frequentes",
+    faqTitle: <>O que <em>TI e Compliance</em> sempre perguntam.</>,
+    faqs: [
+      { q: "Onde os dados pessoais brasileiros ficam armazenados?",
+        a: "Em território nacional — AWS São Paulo (sa-east-1) ou GCP São Paulo (southamerica-east1), com criptografia AES-256 em repouso. Não há cross-border data flow. O cliente pode optar por private cloud ou on-premise no caso de requisitos regulatórios mais rígidos." },
+      { q: "Como funciona a trilha de auditoria de cada decisão?",
+        a: "Cada decisão (score, recomendação, recusa) é registrada com: modelo + versão usados, inputs completos, output, score de confiança, timestamp, identificador do usuário/sistema. O log é imutável (write-once) e exportável em formatos JSON / CSV / Parquet. Retenção padrão 5 anos, configurável." },
+      { q: "Quem tem acesso aos dados do cliente dentro da WIR?",
+        a: "Acesso por princípio least privilege — apenas operadores credenciados, com MFA, SSO corporativo e session recording. Operações sensíveis exigem just-in-time elevation com aprovação de segundo operador. Acessos auditados trimestralmente. Cliente recebe relatório de acessos sob demanda." },
+      { q: "Como funciona a notificação de incidente?",
+        a: "SLA P1: ack em ≤ 15 min, comunicação inicial ao cliente em ≤ 1h, postmortem com root cause analysis em ≤ 7 dias. Notificação ANPD/regulador em ≤ 48h conforme LGPD. Status page pública para downtime." },
+      { q: "É possível auditar o modelo de ML diretamente?",
+        a: "Sim. O Model Registry expõe versões, datasets de treino, métricas de drift e bias por trimestre. Cada decisão pode ser reproduzida pelo cliente com os mesmos inputs e versão. Explainability disponível para amostra ou conjunto. SHAP values + feature importance por decisão sob demanda." },
+      { q: "O que acontece se a WIR for adquirida ou encerrar operação?",
+        a: "Contrato inclui cláusula de continuidade: dados do cliente são retornados em formato estruturado em ≤ 30 dias, com cópia integral do código de modelos treinados sob seu apetite. Escrow opcional do código-fonte da plataforma para clientes Tier-1." },
+    ],
+    closeEyebrow: "· Próximo passo",
+    closeTitle: <>Quer revisar a <em>arquitetura</em><br/>com seu time de TI &amp;<br/><em>Compliance?</em></>,
+    closeP: "Reunião técnica de 60–90 min com nossa engenharia de plataforma. Walk-through da arquitetura, controles, modelo de ameaças e roadmap de certificações. Whitepaper enviado antes da call.",
+    closeCtaTeam: "Falar com a equipe técnica",
+    closeCtaWp: "Solicitar whitepaper",
+    closeWpHref: "mailto:contato@wirinnovation.ai?subject=Whitepaper%20WIR%20-%20Arquitetura%20de%20Seguran%C3%A7a",
+  },
+  en: {
+    shieldAudit: "· AUDIT TRAIL · IMMUTABLE ·",
+    shieldLive: "live · monitored",
+    mastDate: "APR 2026",
+    mastTheme: "SECURITY & COMPLIANCE",
+    mastPill: "LGPD-ready · auditable",
+    kicker: "Defense in depth · 4 layers",
+    heroTitle: <>Security and<br/><em>compliance</em><br/>as the foundation.</>,
+    heroLede: "WIR Innovation was designed from the architecture up to operate within the regulatory requirements of the insurance market. Every decision leaves an auditable trail; every piece of data is encrypted in transit and at rest; every environment is segregated per client.",
+    heroCtaIt: <>Talk to IT &amp; Compliance</>,
+    heroCtaWp: "Request whitepaper",
+    wpHref: "mailto:contato@wirinnovation.ai?subject=Whitepaper%20WIR%20Innovation%20-%20Security%20Architecture",
+    heroCaption: "· 4 layers of defense in depth",
+    apprEyebrow: "· Principles",
+    apprPullquote: <>"Compliance isn't a <em>report</em>. It's the <em>architecture</em> operating."</>,
+    apprAttrB: "WIR Engineering",
+    apprAttrS: "Platform Team · 2026",
+    apprParas: [
+      { k: "Defense in depth",
+        text: "We don't rely on a single barrier. The platform operates across 4 independent layers — network (TLS 1.3 + WAF), application (OAuth 2.0 + rate limiting), data (AES-256 + per-client segregation) and audit (immutable log + traceable decisions). Breaking one layer doesn't compromise the others." },
+      { k: "Auditable by design",
+        text: "Every platform decision — risk score, pricing recommendation, automatic declination — carries a digital signature and a complete trail: model, version, inputs, output, timestamp. Compliance isn't a report we run at the end of the month — it's the system operating." },
+      { k: "Data sovereignty",
+        text: "Brazilian personal data stays on national territory (AWS São Paulo / GCP São Paulo). The client decides on encryption, retention and the right to be forgotten. No cross-border data flows. No third parties in the path." },
+      { k: "Ready to evolve",
+        text: "LGPD-compliant today. ISO 27001 architecture-ready — gap analysis complete, continuous evolution. Additional frameworks (HIPAA, international standards) aligned per client. This isn't a generic SaaS adapting — it's a platform designed for regulated industries from the foundation." },
+    ],
+    pillEyebrow: "· The pillars",
+    pillTitle: <>Six pillars.<br/><em>One secure platform.</em></>,
+    pillSub: "Each layer is designed to operate independently — breaking one doesn't compromise the others. Defense-in-depth architecture as the default, not as an upgrade.",
+    cards: [
+      { icon: "lock",     k: "Native LGPD",            color: "#1C17FF",
+        d: "Compliance with Brazil's data protection law (LGPD) from the architecture up. Data processed and stored on national territory.",
+        bullets: ["DPO appointed", "ROPA up to date", "Data subject rights implemented", "ANPD notification in ≤ 48h"] },
+      { icon: "shield",   k: "Cloud infrastructure",   color: "#7540AC",
+        d: "AWS / GCP in São Paulo, with encryption in transit (TLS 1.3) and at rest (AES-256). Per-client segregated environments.",
+        bullets: ["Isolated VPC per tenant", "WAF + DDoS protection", "Multi-AZ failover", "RTO ≤ 30 min"] },
+      { icon: "key",      k: "Secure API",             color: "#A44F98",
+        d: "Authentication via OAuth 2.0 / API Key. Rate limiting, full logging and webhooks signed with HMAC-SHA256.",
+        bullets: ["Optional mTLS", "90-day key rotation", "Replay protection", "Audit log retained 5 years"] },
+      { icon: "brain",    k: "Auditable model",        color: "#EE7D48",
+        d: "Every ML decision logged with inputs, score, confidence, model version and timestamp. Complete, exportable audit trail.",
+        bullets: ["Versioned Model Registry", "Continuous drift detection", "Quarterly bias monitoring", "Per-decision explainability"] },
+      { icon: "people",   k: "Least-privilege access", color: "#F8AD39",
+        d: "Least-privilege model with corporate SSO. Audited access, mandatory MFA, just-in-time elevation for sensitive operations.",
+        bullets: ["Granular RBAC", "Mandatory MFA", "Session recording", "Quarterly access review"] },
+      { icon: "clock",    k: "Observability",          color: "#10B981",
+        d: "DataDog + Sentry + centralized logs. Real-time SLA and security alerts. Incident response with documented SLA.",
+        bullets: ["P1 ack ≤ 15 min", "Public status page", "Postmortem with RCA", "Annual pentest"] },
+    ],
+    stackK: "· Tech stack",
+    compEyebrow: <>· Certifications &amp; alignments</>,
+    compTitle: <>Built for the <em>frameworks</em> the market demands.</>,
+    compItems: [
+      { k: "LGPD",      v: "Compliant",    d: "Personal data protection (BR) — DPO, ROPA, data subject rights implemented.",      color: "#1C17FF", state: "ok" },
+      { k: "ISO 27001", v: "In progress",  d: "Information Security Management System — gap analysis completed Q1.",               color: "#A44F98", state: "wip" },
+      { k: "HIPAA",     v: "Aligned",      d: "Health privacy (US) — equivalent controls applicable to the health line.",          color: "#EE7D48", state: "ok" },
+    ],
+    faqEyebrow: "· Frequently asked questions",
+    faqTitle: <>What <em>IT and Compliance</em> always ask.</>,
+    faqs: [
+      { q: "Where is Brazilian personal data stored?",
+        a: "On national territory — AWS São Paulo (sa-east-1) or GCP São Paulo (southamerica-east1), with AES-256 encryption at rest. There is no cross-border data flow. Clients can opt for private cloud or on-premise under stricter regulatory requirements." },
+      { q: "How does the audit trail work for each decision?",
+        a: "Every decision (score, recommendation, declination) is logged with: model + version used, complete inputs, output, confidence score, timestamp, user/system identifier. The log is immutable (write-once) and exportable as JSON / CSV / Parquet. Default retention is 5 years, configurable." },
+      { q: "Who has access to client data inside WIR?",
+        a: "Least-privilege access — only credentialed operators, with MFA, corporate SSO and session recording. Sensitive operations require just-in-time elevation approved by a second operator. Access is audited quarterly. Clients receive an access report on demand." },
+      { q: "How does incident notification work?",
+        a: "P1 SLA: ack in ≤ 15 min, initial client communication in ≤ 1h, postmortem with root cause analysis in ≤ 7 days. ANPD/regulator notification in ≤ 48h per LGPD. Public status page for downtime." },
+      { q: "Can the ML model be audited directly?",
+        a: "Yes. The Model Registry exposes versions, training datasets, drift metrics and quarterly bias reports. Any decision can be reproduced by the client with the same inputs and version. Explainability available per sample or set. SHAP values + feature importance per decision on demand." },
+      { q: "What happens if WIR is acquired or shuts down?",
+        a: "The contract includes a continuity clause: client data is returned in structured format within ≤ 30 days, with a full copy of the models trained on your appetite. Optional source-code escrow of the platform for Tier-1 clients." },
+    ],
+    closeEyebrow: "· Next step",
+    closeTitle: <>Want to review the <em>architecture</em><br/>with your IT &amp;<br/><em>Compliance</em> team?</>,
+    closeP: "A 60–90 min technical session with our platform engineering. Architecture walk-through, controls, threat model and certification roadmap. Whitepaper sent before the call.",
+    closeCtaTeam: "Talk to the technical team",
+    closeCtaWp: "Request whitepaper",
+    closeWpHref: "mailto:contato@wirinnovation.ai?subject=Whitepaper%20WIR%20-%20Security%20Architecture",
+  },
+  es: {
+    shieldAudit: "· AUDIT TRAIL · INMUTABLE ·",
+    shieldLive: "en vivo · monitoreado",
+    mastDate: "ABR 2026",
+    mastTheme: "SEGURIDAD & COMPLIANCE",
+    mastPill: "LGPD-ready · auditable",
+    kicker: "Defensa en profundidad · 4 capas",
+    heroTitle: <>Seguridad y<br/><em>compliance</em><br/>como fundación.</>,
+    heroLede: "WIR Innovation fue diseñada desde la arquitectura para operar dentro de los requisitos regulatorios del mercado asegurador. Cada decisión deja una traza auditable; cada dato se encripta en tránsito y en reposo; cada ambiente está segregado por cliente.",
+    heroCtaIt: <>Hablar con TI &amp; Compliance</>,
+    heroCtaWp: "Solicitar whitepaper",
+    wpHref: "mailto:contato@wirinnovation.ai?subject=Whitepaper%20WIR%20Innovation%20-%20Arquitectura%20de%20Seguridad",
+    heroCaption: "· 4 capas de defensa en profundidad",
+    apprEyebrow: "· Principios",
+    apprPullquote: <>"Compliance no es un <em>reporte</em>. Es la <em>arquitectura</em> operando."</>,
+    apprAttrB: "Ingeniería WIR",
+    apprAttrS: "Equipo de Plataforma · 2026",
+    apprParas: [
+      { k: "Defensa en profundidad",
+        text: "No confiamos en una sola barrera. La plataforma opera en 4 capas independientes — red (TLS 1.3 + WAF), aplicación (OAuth 2.0 + rate limiting), datos (AES-256 + segregación por cliente) y auditoría (log inmutable + decisión trazable). Romper una capa no compromete las otras." },
+      { k: "Auditable por diseño",
+        text: "Toda decisión de la plataforma — score de riesgo, recomendación de pricing, declinación automática — lleva firma digital y traza completa: modelo, versión, inputs, output, timestamp. Compliance no es un reporte que corremos a fin de mes — es el sistema operando." },
+      { k: "Soberanía de datos",
+        text: "Los datos personales brasileños permanecen en territorio nacional (AWS São Paulo / GCP São Paulo). El cliente decide sobre criptografía, retención y derecho al olvido. Sin cross-border data flows. Sin terceros en el camino." },
+      { k: "Listo para evolucionar",
+        text: "LGPD en cumplimiento hoy. ISO 27001 con arquitectura lista — gap analysis concluido, evolución continua. Frameworks adicionales (HIPAA, estándares internacionales) alineados según el cliente. No es un SaaS genérico que se adapta — es una plataforma diseñada para lo regulado desde la fundación." },
+    ],
+    pillEyebrow: "· Los pilares",
+    pillTitle: <>Seis pilares.<br/><em>Una plataforma segura.</em></>,
+    pillSub: "Cada capa está diseñada para operar de forma independiente — romper una no compromete las otras. Arquitectura defense-in-depth como estándar, no como upgrade.",
+    cards: [
+      { icon: "lock",     k: "LGPD nativa",            color: "#1C17FF",
+        d: "Conformidad con la ley brasileña de protección de datos (LGPD) desde la arquitectura. Datos procesados y almacenados en territorio nacional.",
+        bullets: ["DPO contratado", "ROPA actualizado", "Derechos del titular implementados", "Notificación ANPD en ≤ 48h"] },
+      { icon: "shield",   k: "Infraestructura cloud",  color: "#7540AC",
+        d: "AWS / GCP en São Paulo, con criptografía en tránsito (TLS 1.3) y en reposo (AES-256). Ambientes segregados por cliente.",
+        bullets: ["VPC aislada por tenant", "WAF + protección DDoS", "Failover Multi-AZ", "RTO ≤ 30 min"] },
+      { icon: "key",      k: "API segura",             color: "#A44F98",
+        d: "Autenticación vía OAuth 2.0 / API Key. Rate limiting, logging completo y webhooks con firma digital HMAC-SHA256.",
+        bullets: ["mTLS opcional", "Rotación de keys cada 90 días", "Replay protection", "Audit log retenido 5 años"] },
+      { icon: "brain",    k: "Modelo auditable",       color: "#EE7D48",
+        d: "Cada decisión de ML registrada con inputs, score, confianza, versión del modelo y timestamp. Traza de auditoría completa y exportable.",
+        bullets: ["Model Registry versionado", "Drift detection continuo", "Monitoreo de sesgo trimestral", "Explainability por decisión"] },
+      { icon: "people",   k: "Acceso por principio",   color: "#F8AD39",
+        d: "Modelo least privilege con SSO corporativo. Accesos auditados, MFA obligatorio, just-in-time elevation para operaciones sensibles.",
+        bullets: ["RBAC granular", "MFA obligatorio", "Session recording", "Revisión trimestral de accesos"] },
+      { icon: "clock",    k: "Observabilidad",         color: "#10B981",
+        d: "DataDog + Sentry + logs centralizados. Alertas de SLA y seguridad en tiempo real. Incident response con SLA documentado.",
+        bullets: ["P1 ack ≤ 15 min", "Status page pública", "Postmortem con RCA", "Pentest anual"] },
+    ],
+    stackK: "· Stack técnico",
+    compEyebrow: <>· Certificaciones &amp; alineamientos</>,
+    compTitle: <>Construido para los <em>frameworks</em> que el mercado exige.</>,
+    compItems: [
+      { k: "LGPD",      v: "Conforme",     d: "Protección de datos personales (BR) — DPO, ROPA, derechos del titular implementados.", color: "#1C17FF", state: "ok" },
+      { k: "ISO 27001", v: "En proceso",   d: "Sistema de Gestión de Seguridad de la Información — gap analysis concluido Q1.",         color: "#A44F98", state: "wip" },
+      { k: "HIPAA",     v: "Alineado",     d: "Privacidad en salud (US) — controles equivalentes aplicables al ramo salud.",            color: "#EE7D48", state: "ok" },
+    ],
+    faqEyebrow: "· Preguntas frecuentes",
+    faqTitle: <>Lo que <em>TI y Compliance</em> siempre preguntan.</>,
+    faqs: [
+      { q: "¿Dónde se almacenan los datos personales brasileños?",
+        a: "En territorio nacional — AWS São Paulo (sa-east-1) o GCP São Paulo (southamerica-east1), con criptografía AES-256 en reposo. No hay cross-border data flow. El cliente puede optar por private cloud u on-premise ante requisitos regulatorios más estrictos." },
+      { q: "¿Cómo funciona la traza de auditoría de cada decisión?",
+        a: "Cada decisión (score, recomendación, declinación) se registra con: modelo + versión usados, inputs completos, output, score de confianza, timestamp, identificador del usuario/sistema. El log es inmutable (write-once) y exportable en formatos JSON / CSV / Parquet. Retención estándar de 5 años, configurable." },
+      { q: "¿Quién tiene acceso a los datos del cliente dentro de WIR?",
+        a: "Acceso por principio least privilege — solo operadores acreditados, con MFA, SSO corporativo y session recording. Las operaciones sensibles exigen just-in-time elevation con aprobación de un segundo operador. Accesos auditados trimestralmente. El cliente recibe reporte de accesos bajo demanda." },
+      { q: "¿Cómo funciona la notificación de incidentes?",
+        a: "SLA P1: ack en ≤ 15 min, comunicación inicial al cliente en ≤ 1h, postmortem con root cause analysis en ≤ 7 días. Notificación ANPD/regulador en ≤ 48h conforme a la LGPD. Status page pública para downtime." },
+      { q: "¿Es posible auditar el modelo de ML directamente?",
+        a: "Sí. El Model Registry expone versiones, datasets de entrenamiento, métricas de drift y sesgo por trimestre. Cada decisión puede ser reproducida por el cliente con los mismos inputs y versión. Explainability disponible por muestra o conjunto. SHAP values + feature importance por decisión bajo demanda." },
+      { q: "¿Qué pasa si WIR es adquirida o cierra operaciones?",
+        a: "El contrato incluye cláusula de continuidad: los datos del cliente se devuelven en formato estructurado en ≤ 30 días, con copia íntegra del código de los modelos entrenados bajo tu apetito. Escrow opcional del código fuente de la plataforma para clientes Tier-1." },
+    ],
+    closeEyebrow: "· Próximo paso",
+    closeTitle: <>¿Quieres revisar la <em>arquitectura</em><br/>con tu equipo de TI &amp;<br/><em>Compliance?</em></>,
+    closeP: "Reunión técnica de 60–90 min con nuestra ingeniería de plataforma. Walk-through de la arquitectura, controles, modelo de amenazas y roadmap de certificaciones. Whitepaper enviado antes de la call.",
+    closeCtaTeam: "Hablar con el equipo técnico",
+    closeCtaWp: "Solicitar whitepaper",
+    closeWpHref: "mailto:contato@wirinnovation.ai?subject=Whitepaper%20WIR%20-%20Arquitectura%20de%20Seguridad",
+  },
+}[LANG];
 
 // SecurityShield — visual SVG: concentric rings representing defense in depth
 function SecurityShield() {
@@ -52,7 +299,7 @@ function SecurityShield() {
 
         {/* Center label */}
         <text x="180" y="248" textAnchor="middle" fill="#EE7D48" fontSize="9.5" fontWeight="800" letterSpacing=".18em" fontFamily="JetBrains Mono, monospace">
-          · AUDIT TRAIL · IMUTÁVEL ·
+          {T.shieldAudit}
         </text>
 
         {/* Rotating tick marks (decoration) */}
@@ -69,7 +316,7 @@ function SecurityShield() {
           <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
         </circle>
         <text x="180" y="316" textAnchor="middle" fill="#10B981" fontSize="9" fontWeight="700" letterSpacing=".15em" fontFamily="JetBrains Mono, monospace">
-          ao vivo · monitorado
+          {T.shieldLive}
         </text>
       </svg>
     </div>
@@ -82,11 +329,11 @@ function DPHero({ go }) {
       <div className="wrap">
         <div className="dphero__mast">
           <div className="dphero__mast-L">
-            <span>ABR 2026</span>
-            <span>SEGURANÇA & COMPLIANCE</span>
+            <span>{T.mastDate}</span>
+            <span>{T.mastTheme}</span>
           </div>
           <div className="dphero__mast-R">
-            <span className="dphero__mast-pill"><span className="dphero__mast-dot"/> LGPD-ready · auditável</span>
+            <span className="dphero__mast-pill"><span className="dphero__mast-dot"/> {T.mastPill}</span>
           </div>
         </div>
 
@@ -94,27 +341,25 @@ function DPHero({ go }) {
           <div className="dphero__L">
             <div className="opening__kicker">
               <span className="opening__kicker-dot"/>
-              <span>Defesa em profundidade · 4 camadas</span>
+              <span>{T.kicker}</span>
             </div>
             <h1 className="display dphero__title">
-              Segurança e<br/>
-              <em>compliance</em><br/>
-              como fundação.
+              {T.heroTitle}
             </h1>
             <p className="dphero__lede">
-              A WIR Innovation foi desenhada desde a arquitetura para operar dentro dos requisitos regulatórios do mercado segurador. Cada decisão deixa trilha auditável; cada dado é encriptado em trânsito e em repouso; cada ambiente é segregado por cliente.
+              {T.heroLede}
             </p>
             <div className="dphero__actions">
               <button className="btn btn--solid" onClick={() => go("contact")}>
-                Falar com TI &amp; Compliance <span className="btn__arrow">→</span>
+                {T.heroCtaIt} <span className="btn__arrow">→</span>
               </button>
-              <a className="btn btn--ghost" href="mailto:contato@wirinnovation.ai?subject=Whitepaper%20WIR%20Innovation%20-%20Arquitetura%20de%20Seguran%C3%A7a">
-                Solicitar whitepaper <span className="btn__arrow">→</span>
+              <a className="btn btn--ghost" href={T.wpHref}>
+                {T.heroCtaWp} <span className="btn__arrow">→</span>
               </a>
             </div>
           </div>
           <div className="dphero__R">
-            <div className="dphero__caption">· 4 camadas de defesa em profundidade</div>
+            <div className="dphero__caption">{T.heroCaption}</div>
             <SecurityShield/>
           </div>
         </div>
@@ -124,28 +369,19 @@ function DPHero({ go }) {
 }
 
 function DPApproach() {
-  const paragraphs = [
-    { k: "Defesa em profundidade",
-      text: "Não confiamos em uma única barreira. A plataforma opera em 4 camadas independentes — rede (TLS 1.3 + WAF), aplicação (OAuth 2.0 + rate limiting), dados (AES-256 + segregação por cliente) e auditoria (log imutável + decisão rastreável). Quebrar uma camada não compromete as outras." },
-    { k: "Auditável por design",
-      text: "Toda decisão da plataforma — score de risco, recomendação de pricing, recusa automática — carrega assinatura digital e trilha completa: modelo, versão, inputs, output, timestamp. Compliance não é um relatório que rodamos no fim do mês — é o sistema operando." },
-    { k: "Soberania de dados",
-      text: "Dados pessoais brasileiros ficam em território nacional (AWS São Paulo / GCP São Paulo). O cliente decide sobre criptografia, retenção e direito ao esquecimento. Sem cross-border data flows. Sem terceiros no caminho." },
-    { k: "Pronto para evoluir",
-      text: "LGPD em conformidade hoje. ISO 27001 com arquitetura pronta — gap analysis concluído, evolução contínua. Frameworks adicionais (HIPAA, padrões internacionais) alinhados conforme cliente. Não é um SaaS genérico que se adapta — é uma plataforma desenhada para o regulado desde a fundação." },
-  ];
+  const paragraphs = T.apprParas;
   return (
     <section className="dpessay" data-reveal>
       <div className="wrap">
         <div className="dpessay__grid">
           <div className="dpessay__side">
-            <div className="eyebrow">· Princípios</div>
+            <div className="eyebrow">{T.apprEyebrow}</div>
             <div className="dpessay__pullquote display">
-              "Compliance não é um <em>relatório</em>. É a <em>arquitetura</em> operando."
+              {T.apprPullquote}
             </div>
             <div className="dpessay__attr">
-              <b>Engenharia WIR</b>
-              <span>Time de Plataforma · 2026</span>
+              <b>{T.apprAttrB}</b>
+              <span>{T.apprAttrS}</span>
             </div>
           </div>
           <div className="dpessay__content">
@@ -163,26 +399,7 @@ function DPApproach() {
 }
 
 function DPPillars() {
-  const cards = [
-    { icon: "lock",     k: "LGPD nativa",          color: "#1C17FF",
-      d: "Conformidade com a Lei Geral de Proteção de Dados desde a arquitetura. Dados processados e armazenados em território nacional.",
-      bullets: ["DPO contratado", "ROPA atualizado", "Direitos do titular implementados", "Notificação ANPD em ≤ 48h"] },
-    { icon: "shield",   k: "Infraestrutura cloud",  color: "#7540AC",
-      d: "AWS / GCP em São Paulo, com criptografia em trânsito (TLS 1.3) e em repouso (AES-256). Ambientes segregados por cliente.",
-      bullets: ["VPC isolada por tenant", "WAF + DDoS protection", "Multi-AZ failover", "RTO ≤ 30 min"] },
-    { icon: "key",      k: "API segura",            color: "#A44F98",
-      d: "Autenticação via OAuth 2.0 / API Key. Rate limiting, logging completo e webhook com assinatura digital HMAC-SHA256.",
-      bullets: ["mTLS opcional", "Rotação de keys 90 dias", "Replay protection", "Audit log retido 5 anos"] },
-    { icon: "brain",    k: "Modelo auditável",      color: "#EE7D48",
-      d: "Cada decisão de ML registrada com inputs, score, confiança, versão do modelo e timestamp. Trail de auditoria completo e exportável.",
-      bullets: ["Model Registry versionado", "Drift detection contínuo", "Bias monitoring trimestral", "Explainability por decisão"] },
-    { icon: "people",   k: "Acesso por princípio",  color: "#F8AD39",
-      d: "Modelo least privilege com SSO corporativo. Acessos auditados, MFA obrigatório, just-in-time elevation para operações sensíveis.",
-      bullets: ["RBAC granular", "MFA obrigatório", "Session recording", "Quarterly access review"] },
-    { icon: "clock",    k: "Observabilidade",       color: "#10B981",
-      d: "DataDog + Sentry + logs centralizados. Alertas de SLA e segurança em tempo real. Incident response com SLA documentado.",
-      bullets: ["P1 ack ≤ 15 min", "Status page público", "Postmortem com RCA", "Annual pentest"] },
-  ];
+  const cards = T.cards;
 
   const Icon = ({ name, color }) => {
     const props = { width:"24", height:"24", viewBox:"0 0 24 24", fill:"none", stroke:color, strokeWidth:"1.6", "aria-hidden":true };
@@ -198,9 +415,9 @@ function DPPillars() {
     <section className="dppillars" data-reveal>
       <div className="wrap">
         <div className="dppillars__head">
-          <div className="eyebrow">· Os pilares</div>
-          <h2 className="display dppillars__title">Seis pilares.<br/><em>Uma plataforma segura.</em></h2>
-          <p className="dppillars__sub">Cada camada é projetada para operar de forma independente — quebrar uma não compromete as outras. Arquitetura defense-in-depth como padrão, não como upgrade.</p>
+          <div className="eyebrow">{T.pillEyebrow}</div>
+          <h2 className="display dppillars__title">{T.pillTitle}</h2>
+          <p className="dppillars__sub">{T.pillSub}</p>
         </div>
         <div className="dppillars__grid">
           {cards.map((c, i) => (
@@ -215,7 +432,7 @@ function DPPillars() {
           ))}
         </div>
         <div className="dppillars__stack">
-          <span className="dppillars__stack-k">· Stack técnico</span>
+          <span className="dppillars__stack-k">{T.stackK}</span>
           <div className="dppillars__stack-row">
             <b>Docker + K8s</b>
             <span>·</span>
@@ -236,17 +453,13 @@ function DPPillars() {
 }
 
 function DPCompliance() {
-  const items = [
-    { k: "LGPD",    v: "Conforme",          d: "Proteção de dados pessoais (BR) — DPO, ROPA, direitos do titular implementados.", color: "#1C17FF", state: "ok" },
-    { k: "ISO 27001", v: "Em processo",     d: "Sistema de Gestão de Segurança da Informação — gap analysis concluído Q1.",          color: "#A44F98", state: "wip" },
-    { k: "HIPAA",   v: "Alinhado",          d: "Privacidade em saúde (US) — controles equivalentes aplicáveis ao ramo saúde.",       color: "#EE7D48", state: "ok" },
-  ];
+  const items = T.compItems;
   return (
     <section className="dpcomp" data-reveal>
       <div className="wrap">
         <div className="dpcomp__head">
-          <div className="eyebrow">· Certificações &amp; alinhamentos</div>
-          <h2 className="display dpcomp__title">Construído para os <em>frameworks</em> que o mercado exige.</h2>
+          <div className="eyebrow">{T.compEyebrow}</div>
+          <h2 className="display dpcomp__title">{T.compTitle}</h2>
         </div>
         <div className="dpcomp__grid">
           {items.map((b, i) => (
@@ -268,27 +481,14 @@ function DPCompliance() {
 }
 
 function DPFAQ() {
-  const qs = [
-    { q: "Onde os dados pessoais brasileiros ficam armazenados?",
-      a: "Em território nacional — AWS São Paulo (sa-east-1) ou GCP São Paulo (southamerica-east1), com criptografia AES-256 em repouso. Não há cross-border data flow. O cliente pode optar por private cloud ou on-premise no caso de requisitos regulatórios mais rígidos." },
-    { q: "Como funciona a trilha de auditoria de cada decisão?",
-      a: "Cada decisão (score, recomendação, recusa) é registrada com: modelo + versão usados, inputs completos, output, score de confiança, timestamp, identificador do usuário/sistema. O log é imutável (write-once) e exportável em formatos JSON / CSV / Parquet. Retenção padrão 5 anos, configurável." },
-    { q: "Quem tem acesso aos dados do cliente dentro da WIR?",
-      a: "Acesso por princípio least privilege — apenas operadores credenciados, com MFA, SSO corporativo e session recording. Operações sensíveis exigem just-in-time elevation com aprovação de segundo operador. Acessos auditados trimestralmente. Cliente recebe relatório de acessos sob demanda." },
-    { q: "Como funciona a notificação de incidente?",
-      a: "SLA P1: ack em ≤ 15 min, comunicação inicial ao cliente em ≤ 1h, postmortem com root cause analysis em ≤ 7 dias. Notificação ANPD/regulador em ≤ 48h conforme LGPD. Status page pública para downtime." },
-    { q: "É possível auditar o modelo de ML diretamente?",
-      a: "Sim. O Model Registry expõe versões, datasets de treino, métricas de drift e bias por trimestre. Cada decisão pode ser reproduzida pelo cliente com os mesmos inputs e versão. Explainability disponível para amostra ou conjunto. SHAP values + feature importance por decisão sob demanda." },
-    { q: "O que acontece se a WIR for adquirida ou encerrar operação?",
-      a: "Contrato inclui cláusula de continuidade: dados do cliente são retornados em formato estruturado em ≤ 30 dias, com cópia integral do código de modelos treinados sob seu apetite. Escrow opcional do código-fonte da plataforma para clientes Tier-1." },
-  ];
+  const qs = T.faqs;
   const [open, setOpen] = React.useState(0);
   return (
     <section className="dpfaq" data-reveal>
       <div className="wrap">
         <div className="dpfaq__head">
-          <div className="eyebrow">· Perguntas frequentes</div>
-          <h2 className="display dpfaq__title">O que <em>TI e Compliance</em> sempre perguntam.</h2>
+          <div className="eyebrow">{T.faqEyebrow}</div>
+          <h2 className="display dpfaq__title">{T.faqTitle}</h2>
         </div>
         <div className="dpfaq__list">
           {qs.map((x, idx) => {
@@ -318,21 +518,19 @@ function DPClose({ go }) {
       <div className="wrap">
         <div className="dpclose__grid">
           <div>
-            <div className="eyebrow eyebrow--onDark">· Próximo passo</div>
+            <div className="eyebrow eyebrow--onDark">{T.closeEyebrow}</div>
             <h2 className="display dpclose__title">
-              Quer revisar a <em>arquitetura</em><br/>
-              com seu time de TI &amp;<br/>
-              <em>Compliance?</em>
+              {T.closeTitle}
             </h2>
           </div>
           <div className="dpclose__r">
-            <p>Reunião técnica de 60–90 min com nossa engenharia de plataforma. Walk-through da arquitetura, controles, modelo de ameaças e roadmap de certificações. Whitepaper enviado antes da call.</p>
+            <p>{T.closeP}</p>
             <div className="dpclose__actions">
               <button className="btn btn--solid btn--onDark" onClick={() => go("contact")}>
-                Falar com a equipe técnica <span className="btn__arrow">→</span>
+                {T.closeCtaTeam} <span className="btn__arrow">→</span>
               </button>
-              <a className="btn btn--ghost btn--onDark" href="mailto:contato@wirinnovation.ai?subject=Whitepaper%20WIR%20-%20Arquitetura%20de%20Seguran%C3%A7a">
-                Solicitar whitepaper <span className="btn__arrow">→</span>
+              <a className="btn btn--ghost btn--onDark" href={T.closeWpHref}>
+                {T.closeCtaWp} <span className="btn__arrow">→</span>
               </a>
             </div>
           </div>
@@ -355,4 +553,3 @@ export function DataProtectionPage({ go }) {
     </>
   );
 }
-

@@ -1,7 +1,77 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useReveal } from './shared.jsx';
+import { LANG } from './i18n.js';
 
 /* ───────── Movement 05 · Workflow + 06 · Trust + 07 · Closing ───────── */
+
+const T = {
+  pt: {
+    archEyebrow: "· Arquitetura WIR · Fluxo ao vivo",
+    archTitle: <>Podemos <em>automatizar toda a jornada</em> de negócio<br/>com uma camada de <em>Inteligência Artificial.</em></>,
+    archLede: <>Três pipelines paralelos atravessam a arquitetura — top track (e-mail/LB/regras/score/webhook), mid track (portal/db/LLM/QC/core) e bottom track (API/workers/ML/dashboard/audit) — e um loop inferior de <em>continuous learning</em> realimenta o modelo a cada decisão auditada.</>,
+    subEmail: "anexos · PDF", subPortal: "formulários", subRules: "política risco",
+    labelCore: "Core apólice", subAudit: "LGPD · imutável",
+    archLegend: <><b>Fluxo ao vivo</b> · 3 pipelines paralelos + loop de aprendizado contínuo</>,
+    trustEyebrow: "· Desafios do mercado",
+    trustQuote: <>"Mercado de Seguros e Danos cresce <em>dois dígitos ao ano</em>. Mas a estrutura das empresas não acompanha esta aceleração."</>,
+    trustBotK: "Quatro forças que tornam o status quo insustentável",
+    trustSrc: "Fonte",
+    stats: [
+      { k:"Eficiência",            v:"40%",    l:"do tempo do underwriter gasto com tarefas administrativas.",         src:"Deloitte" },
+      { k:"Transformação Digital", v:"70%",    l:"das seguradoras não executam inovação por limitação de TI.",         src:"BCG" },
+      { k:"Velocidade",            v:"60%+",   l:"dos brokers escolhem seguradora pela velocidade de resposta.",       src:"Capgemini" },
+      { k:"Foco em Negócios",      v:"20-30%", l:"do tempo corporativo perdido organizando dados não estruturados.",   src:"Gartner" },
+    ],
+    closeEyebrow: "· Próximo passo",
+    closeTitle: <>Sua equipe tem o <em>conhecimento.</em><br/>A WIR dá a <em>plataforma de IA para escalar.</em></>,
+    closeTalk: "Falar com nossos sócios",
+    closeExplore: "Explorar soluções",
+  },
+  en: {
+    archEyebrow: "· WIR Architecture · Live flow",
+    archTitle: <>We can <em>automate the entire business journey</em><br/>with a layer of <em>Artificial Intelligence.</em></>,
+    archLede: <>Three parallel pipelines run through the architecture — top track (email/LB/rules/score/webhook), mid track (portal/db/LLM/QC/core) and bottom track (API/workers/ML/dashboard/audit) — and a bottom <em>continuous learning</em> loop feeds every audited decision back into the model.</>,
+    subEmail: "attachments · PDF", subPortal: "forms", subRules: "risk policy",
+    labelCore: "Policy core", subAudit: "LGPD · immutable",
+    archLegend: <><b>Live flow</b> · 3 parallel pipelines + continuous learning loop</>,
+    trustEyebrow: "· Market challenges",
+    trustQuote: <>"The Property & Casualty market grows <em>double digits a year</em>. But companies' structures aren't keeping up with that acceleration."</>,
+    trustBotK: "Four forces making the status quo unsustainable",
+    trustSrc: "Source",
+    stats: [
+      { k:"Efficiency",             v:"40%",    l:"of underwriter time goes to administrative tasks.",            src:"Deloitte" },
+      { k:"Digital Transformation", v:"70%",    l:"of insurers can't execute innovation due to IT constraints.",  src:"BCG" },
+      { k:"Speed",                  v:"60%+",   l:"of brokers choose an insurer based on response speed.",        src:"Capgemini" },
+      { k:"Business Focus",         v:"20-30%", l:"of corporate time is lost organizing unstructured data.",      src:"Gartner" },
+    ],
+    closeEyebrow: "· Next step",
+    closeTitle: <>Your team has the <em>knowledge.</em><br/>WIR provides the <em>AI platform to scale.</em></>,
+    closeTalk: "Talk to our partners",
+    closeExplore: "Explore solutions",
+  },
+  es: {
+    archEyebrow: "· Arquitectura WIR · Flujo en vivo",
+    archTitle: <>Podemos <em>automatizar todo el recorrido</em> del negocio<br/>con una capa de <em>Inteligencia Artificial.</em></>,
+    archLede: <>Tres pipelines paralelos atraviesan la arquitectura — top track (email/LB/reglas/score/webhook), mid track (portal/db/LLM/QC/core) y bottom track (API/workers/ML/dashboard/audit) — y un loop inferior de <em>continuous learning</em> realimenta el modelo con cada decisión auditada.</>,
+    subEmail: "adjuntos · PDF", subPortal: "formularios", subRules: "política de riesgo",
+    labelCore: "Core pólizas", subAudit: "LGPD · inmutable",
+    archLegend: <><b>Flujo en vivo</b> · 3 pipelines paralelos + loop de aprendizaje continuo</>,
+    trustEyebrow: "· Desafíos del mercado",
+    trustQuote: <>"El mercado de Seguros de Daños crece <em>dos dígitos al año</em>. Pero la estructura de las empresas no acompaña esta aceleración."</>,
+    trustBotK: "Cuatro fuerzas que vuelven insostenible el status quo",
+    trustSrc: "Fuente",
+    stats: [
+      { k:"Eficiencia",              v:"40%",    l:"del tiempo del suscriptor se gasta en tareas administrativas.",        src:"Deloitte" },
+      { k:"Transformación Digital",  v:"70%",    l:"de las aseguradoras no ejecutan innovación por limitaciones de TI.",   src:"BCG" },
+      { k:"Velocidad",               v:"60%+",   l:"de los corredores eligen aseguradora por la velocidad de respuesta.",  src:"Capgemini" },
+      { k:"Foco en Negocios",        v:"20-30%", l:"del tiempo corporativo se pierde organizando datos no estructurados.", src:"Gartner" },
+    ],
+    closeEyebrow: "· Próximo paso",
+    closeTitle: <>Tu equipo tiene el <em>conocimiento.</em><br/>WIR da la <em>plataforma de IA para escalar.</em></>,
+    closeTalk: "Hablar con nuestros socios",
+    closeExplore: "Explorar soluciones",
+  },
+}[LANG];
 
 // ArchFlow — 3 pipelines + 1 feedback loop visíveis. Cada dot percorre exatamente
 // a mesma curva renderizada no diagrama (via <mpath href="#pipe-X"/>).
@@ -45,13 +115,12 @@ export function ArchFlow() {
     <section className="archflow" data-reveal>
       <div className="wrap">
         <div className="archflow__head">
-          <div className="eyebrow">· Arquitetura WIR · Fluxo ao vivo</div>
+          <div className="eyebrow">{T.archEyebrow}</div>
           <h2 className="archflow__title display">
-            Podemos <em>automatizar toda a jornada</em> de negócio<br/>
-            com uma camada de <em>Inteligência Artificial.</em>
+            {T.archTitle}
           </h2>
           <p className="archflow__lede">
-            Três pipelines paralelos atravessam a arquitetura — top track (e-mail/LB/regras/score/webhook), mid track (portal/db/LLM/QC/core) e bottom track (API/workers/ML/dashboard/audit) — e um loop inferior de <em>continuous learning</em> realimenta o modelo a cada decisão auditada.
+            {T.archLede}
           </p>
         </div>
 
@@ -111,9 +180,9 @@ export function ArchFlow() {
             </text>
 
             {/* INTAKE column — 3 nodes (centered on each lane) */}
-            <SubNode x={75}  y={111} w={110} h={38} label="E-mail" sub="anexos · PDF"  color="#1C17FF" opaque/>
-            <SubNode x={75}  y={191} w={110} h={38} label="Portal" sub="formulários"   color="#1C17FF" opaque/>
-            <SubNode x={75}  y={271} w={110} h={38} label="API"    sub="3 endpoints"   color="#1C17FF" opaque/>
+            <SubNode x={75}  y={111} w={110} h={38} label="E-mail" sub={T.subEmail}   color="#1C17FF" opaque/>
+            <SubNode x={75}  y={191} w={110} h={38} label="Portal" sub={T.subPortal}  color="#1C17FF" opaque/>
+            <SubNode x={75}  y={271} w={110} h={38} label="API"    sub="3 endpoints"  color="#1C17FF" opaque/>
 
             {/* WIR PLATFORM column */}
             <SubNode x={275} y={111} w={110} h={38} label="Load Balancer" sub="Nginx · 2× inst"   color="#7540AC" opaque/>
@@ -130,7 +199,7 @@ export function ArchFlow() {
             <SubNode x={333} y={302} w={48} h={16} label="W-N" color="#7540AC"/>
 
             {/* AI ENGINE column */}
-            <SubNode x={565} y={111} w={120} h={38} label="Business Rules" sub="política risco" color="#A44F98" opaque/>
+            <SubNode x={565} y={111} w={120} h={38} label="Business Rules" sub={T.subRules} color="#A44F98" opaque/>
             <SubNode x={565} y={191} w={120} h={38} label="WIR LLM"        sub="NLP · Fraud · Risk"  color="#EE7D48" opaque/>
             <SubNode x={565} y={271} w={120} h={38} label="ML Model"       sub="POST /predict"       color="#EE7D48" opaque/>
 
@@ -140,9 +209,9 @@ export function ArchFlow() {
             <SubNode x={845} y={271} w={110} h={38} label="Dashboard" sub="real time"         color="#10B981" opaque/>
 
             {/* CORE column */}
-            <SubNode x={1075} y={111} w={110} h={38} label="Webhook"      sub="signed payload"    color="#10B981" opaque/>
-            <SubNode x={1075} y={191} w={110} h={38} label="Core apólice" sub="policy admin"      color="#10B981" opaque/>
-            <SubNode x={1075} y={271} w={110} h={38} label="Audit Log"    sub="LGPD · imutável"   color="#7540AC" opaque/>
+            <SubNode x={1075} y={111} w={110} h={38} label="Webhook"       sub="signed payload"    color="#10B981" opaque/>
+            <SubNode x={1075} y={191} w={110} h={38} label={T.labelCore}   sub="policy admin"      color="#10B981" opaque/>
+            <SubNode x={1075} y={271} w={110} h={38} label="Audit Log"     sub={T.subAudit}        color="#7540AC" opaque/>
 
             {/* Animated dots — RIDE THE EXACT VISIBLE PIPES via mpath */}
             {/* Halos behind */}
@@ -193,86 +262,7 @@ export function ArchFlow() {
 
         <div className="archflow__legend">
           <span className="archflow__pulse"/>
-          <b>Fluxo ao vivo</b> · 3 pipelines paralelos + loop de aprendizado contínuo
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function WorkflowSVG() {
-  const ref = React.useRef(null);
-  const [progress, setProgress] = React.useState(0);
-  React.useEffect(() => {
-    const onScroll = () => {
-      const el = ref.current;
-      if (!el) return;
-      const r = el.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const start = vh * 0.8;
-      const end = vh * 0.2;
-      const p = (start - r.top) / (start - end + r.height * 0.3);
-      setProgress(Math.max(0, Math.min(1, p)));
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  const steps = [
-    { k:"01", t:"Coleta",       d:"E-mail, anexos, API — a WIR aceita o formato que você já usa.", c:"#1C17FF" },
-    { k:"02", t:"Enriquecer",   d:"Cruza com múltiplas fontes externas: CNPJ, histórico do broker, exposição, crédito.", c:"#4D38C0" },
-    { k:"03", t:"Pontuar",      d:"Motor ML multi-fator calibrado ao seu apetite e à sua manual de subscrição.", c:"#A44F98" },
-    { k:"04", t:"Decidir",      d:"Cotação, recusa automática ou escalada para humano — sempre com explicação.", c:"#EE7D48" },
-    { k:"05", t:"Subscrever",   d:"Escreve no seu core de apólice e devolve a trilha de auditoria completa.", c:"#F9B336" },
-  ];
-  const pathLen = 1200;
-  return (
-    <section className="wf" data-reveal ref={ref}>
-      <div className="wrap wf__head">
-        <div className="eyebrow">· 05 — Como funciona</div>
-        <h2 className="wf__title display">Cinco passos.<br/><em>Um fluxo auditável.</em></h2>
-        <p className="wf__sub">Cada decisão deixa uma trilha — modelo, versão, confiança, inputs, timestamp. Nada é caixa-preta.</p>
-      </div>
-      <div className="wf__canvas">
-        <svg viewBox="0 0 1400 280" className="wf__svg" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="wfGrad" x1="0" x2="1" y1="0" y2="0">
-              <stop offset="0" stopColor="#1C17FF"/>
-              <stop offset="0.35" stopColor="#A44F98"/>
-              <stop offset="0.7" stopColor="#EE7D48"/>
-              <stop offset="1" stopColor="#F9B336"/>
-            </linearGradient>
-          </defs>
-          <path d="M 80 140 C 260 40, 420 240, 560 140 S 820 40, 980 140 S 1240 240, 1360 140"
-            stroke="rgba(0,0,0,.08)" strokeWidth="2" fill="none"/>
-          <path d="M 80 140 C 260 40, 420 240, 560 140 S 820 40, 980 140 S 1240 240, 1360 140"
-            stroke="url(#wfGrad)" strokeWidth="3" fill="none"
-            strokeDasharray={pathLen}
-            strokeDashoffset={pathLen * (1 - progress)}
-            style={{transition:"stroke-dashoffset 80ms linear"}}/>
-          {steps.map((s,i) => {
-            const x = 80 + (i * (1360-80)/4);
-            const y = 140 + (i % 2 === 0 ? -100 : 100) * Math.sin((i/4)*Math.PI);
-            const active = progress > (i / steps.length) * 0.9;
-            return (
-              <g key={i}>
-                <circle cx={x} cy={y} r={active ? 14 : 8} fill={active ? s.c : "#fff"} stroke={s.c} strokeWidth="3"
-                  style={{transition:"all .3s ease"}}/>
-              </g>
-            );
-          })}
-        </svg>
-        <div className="wf__steps">
-          {steps.map((s,i) => {
-            const active = progress > (i / steps.length) * 0.9;
-            return (
-              <div key={i} className={"wf__step" + (active ? " is-on" : "")} style={{"--c": s.c}}>
-                <div className="wf__step-k num">{s.k}</div>
-                <div className="wf__step-t">{s.t}</div>
-                <div className="wf__step-d">{s.d}</div>
-              </div>
-            );
-          })}
+          {T.archLegend}
         </div>
       </div>
     </section>
@@ -280,19 +270,14 @@ export function WorkflowSVG() {
 }
 
 export function Trust() {
-  const stats = [
-    { k:"Eficiência",            v:"40%",    l:"do tempo do underwriter gasto com tarefas administrativas.",         src:"Deloitte" },
-    { k:"Transformação Digital", v:"70%",    l:"das seguradoras não executam inovação por limitação de TI.",         src:"BCG" },
-    { k:"Velocidade",            v:"60%+",   l:"dos brokers escolhem seguradora pela velocidade de resposta.",       src:"Capgemini" },
-    { k:"Foco em Negócios",      v:"20-30%", l:"do tempo corporativo perdido organizando dados não estruturados.",   src:"Gartner" },
-  ];
+  const stats = T.stats;
   return (
     <section id="desafios" className="trust" data-reveal>
       <div className="wrap">
-        <div className="eyebrow eyebrow--onDark">· Desafios do mercado</div>
+        <div className="eyebrow eyebrow--onDark">{T.trustEyebrow}</div>
         <div className="trust__top">
           <blockquote className="trust__quote display">
-            "Mercado de Seguros e Danos cresce <em>dois dígitos ao ano</em>. Mas a estrutura das empresas não acompanha esta aceleração."
+            {T.trustQuote}
           </blockquote>
           <div className="trust__attrib">
             <div className="trust__avatar trust__avatar--photo" style={{backgroundImage:"url(/assets/team/nicholas.jpg)"}}/>
@@ -304,14 +289,14 @@ export function Trust() {
         </div>
         <div className="trust__divider"/>
         <div className="trust__bot">
-          <div className="trust__bot-k">Quatro forças que tornam o status quo insustentável</div>
+          <div className="trust__bot-k">{T.trustBotK}</div>
           <div className="trust__stats">
             {stats.map((s,i) => (
               <div key={i} className="trust__stat">
                 <div className="trust__stat-k">{s.k}</div>
                 <div className="trust__stat-v display">{s.v}</div>
                 <div className="trust__stat-l">{s.l}</div>
-                <div className="trust__stat-s">Fonte · <b>{s.src}</b></div>
+                <div className="trust__stat-s">{T.trustSrc} · <b>{s.src}</b></div>
               </div>
             ))}
           </div>
@@ -326,17 +311,16 @@ export function Closing({ go }) {
     <section className="closing" data-reveal>
       <div className="wrap">
         <div className="closing__top">
-          <div className="eyebrow">· Próximo passo</div>
+          <div className="eyebrow">{T.closeEyebrow}</div>
           <h2 className="display closing__title">
-            Sua equipe tem o <em>conhecimento.</em><br/>
-            A WIR dá a <em>plataforma de IA para escalar.</em>
+            {T.closeTitle}
           </h2>
           <div className="closing__actions">
             <button className="btn btn--solid" onClick={()=>go("contact")}>
-              Falar com nossos sócios <span className="btn__arrow">→</span>
+              {T.closeTalk} <span className="btn__arrow">→</span>
             </button>
             <button className="btn btn--ghost" onClick={()=>go("solutions")}>
-              Explorar soluções <span className="btn__arrow">→</span>
+              {T.closeExplore} <span className="btn__arrow">→</span>
             </button>
           </div>
         </div>
@@ -344,4 +328,3 @@ export function Closing({ go }) {
     </section>
   );
 }
-

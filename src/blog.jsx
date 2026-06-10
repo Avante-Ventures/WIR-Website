@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useReveal } from './shared.jsx';
+import { LANG, INSIGHTS_HREF } from './i18n.js';
 import { BlogArticle, ARTICLES } from './articles.jsx';
+
+// Match the static archives: PT tree lists PT articles, EN tree the -en ones (ES → PT set)
+const BLOG_ARTICLES = ARTICLES.filter(a => (LANG === "en") === a.slug.endsWith("-en"));
 
 /* ───────── Insights & News · publicação digital ───────── */
 
@@ -35,7 +39,7 @@ grad:"linear-gradient(135deg,#AE46C0,#F8AD39)" },
 ];
 
 function BlogHero({ go }) {
-  const articles = window.ARTICLES || [];
+  const articles = BLOG_ARTICLES;
   const hero = articles.find(p => p.hero);
   if (!hero) return null;
   const open = () => { window.location.href = `/insights/${hero.slug}/`; };
@@ -156,7 +160,7 @@ function BlogGrid({ posts, go }) {
             <div className="blside__card">
               <div className="eyebrow" style={{marginBottom: 16}}>· Em destaque</div>
               <ul className="blside__list">
-                {(window.ARTICLES || []).slice(0,4).map((p,i) => (
+                {BLOG_ARTICLES.slice(0,4).map((p,i) => (
                   <li key={p.slug} className="is-clickable" onClick={() => { window.location.href = `/insights/${p.slug}/`; }}>
                     <div className="blside__num">/0{i+1}</div>
                     <div>
@@ -264,7 +268,7 @@ export function BlogPage({ go }) {
   }, []);
 
   // Hooks must be called unconditionally — keep memos before any return
-  const articles = window.ARTICLES || [];
+  const articles = BLOG_ARTICLES;
   const posts = React.useMemo(() => {
     const list = articles.filter(p => !p.hero);
     if (active === "Todos") return list;
@@ -280,7 +284,12 @@ export function BlogPage({ go }) {
   React.useEffect(() => {
     if (slug) window.location.replace(`/insights/${slug}/`);
   }, [slug]);
+  // The legacy #blog UI is PT-only — EN/ES trees go to their static archive
+  React.useEffect(() => {
+    if (LANG !== "pt" && !slug) window.location.replace(INSIGHTS_HREF);
+  }, [slug]);
   if (slug) return null; // Brief blank while redirecting
+  if (LANG !== "pt") return null;
 
   return (
     <>
