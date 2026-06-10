@@ -91,8 +91,9 @@ function BlogHero({ go }) {
   );
 }
 
-function BlogFilter({ active, setActive, counts }) {
-  const cats = ["Todos","Ensaio","Técnico","Caso","Mercado"];
+function BlogFilter({ active, setActive, counts, query, setQuery }) {
+  // Pills derived from the data so every category present gets one
+  const cats = ["Todos", ...Object.keys(counts).filter(c => c !== "Todos").sort((a, b) => a.localeCompare(b, "pt"))];
   return (
     <div className="blfilter">
       <div className="wrap blfilter__inner">
@@ -108,7 +109,8 @@ function BlogFilter({ active, setActive, counts }) {
           ))}
         </div>
         <div className="blfilter__right">
-          <input type="text" placeholder="Buscar por título ou autor…" className="blfilter__search"/>
+          <input type="text" placeholder="Buscar por título ou autor…" className="blfilter__search"
+            value={query} onChange={(e)=>setQuery(e.target.value)} aria-label="Buscar por título ou autor"/>
         </div>
       </div>
     </div>
@@ -269,11 +271,14 @@ export function BlogPage({ go }) {
 
   // Hooks must be called unconditionally — keep memos before any return
   const articles = BLOG_ARTICLES;
+  const [query, setQuery] = React.useState("");
   const posts = React.useMemo(() => {
-    const list = articles.filter(p => !p.hero);
-    if (active === "Todos") return list;
-    return list.filter(p => p.cat === active);
-  }, [active, articles.length]);
+    let list = articles.filter(p => !p.hero);
+    if (active !== "Todos") list = list.filter(p => p.cat === active);
+    const q = query.trim().toLowerCase();
+    if (q) list = list.filter(p => `${p.title} ${p.sub || ""} ${p.author || ""}`.toLowerCase().includes(q));
+    return list;
+  }, [active, query, articles.length]);
   const counts = React.useMemo(() => {
     const c = { Todos: Math.max(0, articles.length - 1) };
     articles.filter(p => !p.hero).forEach(p => { c[p.cat] = (c[p.cat] || 0) + 1; });
@@ -294,7 +299,7 @@ export function BlogPage({ go }) {
   return (
     <>
       <BlogHero go={go}/>
-      <BlogFilter active={active} setActive={setActive} counts={counts}/>
+      <BlogFilter active={active} setActive={setActive} counts={counts} query={query} setQuery={setQuery}/>
       <BlogGrid posts={posts} go={go}/>
       <BlogClose/>
     </>
