@@ -22,3 +22,6 @@ export const LANG_BASE = LANG === "pt" ? "" : `/${LANG}`;
 // Where the insights archive lives for this language.
 // ES has no translated articles yet — it points to the PT archive.
 export const INSIGHTS_HREF = LANG === "en" ? "/en/insights/" : "/insights/";
+
+// The Manifesto cornerstone — EN has its own translated page; PT/ES use the PT one.
+export const MANIFESTO_HREF = LANG === "en" ? "/insights/manifesto-en/" : "/insights/manifesto/";

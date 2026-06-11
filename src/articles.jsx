@@ -4,6 +4,98 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 export const ARTICLES = [
   {
+    slug: "manifesto",
+    cat: "Manifesto", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    title: "A camada de IA do seguro",
+    sub: "Existe um caminho que ninguém estava nomeando: não trocar o sistema, e sim colocar uma camada de IA por cima dele. Este é o manifesto da WIR.",
+    author: "WIR Innovation", role: "Manifesto",
+    time: "4 min", date: "11 · Jun · 2026", dateISO: "2026-06-11",
+    metaDesc: "O manifesto da WIR: a camada de IA do seguro roda sobre os sistemas que a seguradora já usa, nunca no lugar deles, e automatiza o trabalho manual de subscrição, precificação e atendimento. A terceira via entre o status quo e a troca do core.",
+    body: `A camada de IA do seguro é uma camada de inteligência que roda sobre os sistemas que a seguradora já usa, nunca no lugar deles. Ela automatiza o trabalho manual de subscrição, precificação, atendimento e gestão, sem que a operação precise desmontar o seu núcleo.
+
+Essa definição importa, porque o mercado vinha sendo empurrado para uma escolha falsa.
+
+### A escolha falsa
+
+De um lado, manter tudo como está: equipes excelentes presas em trabalho manual, incapazes de escalar. De outro, a promessa de algumas insurtechs de trocar o sistema de registro inteiro por um novo. Um projeto de anos, caro e arriscado, no qual a operação aposta o próprio livro de negócios.
+
+As duas saídas custam caro. A primeira em produtividade. A segunda em risco.
+
+### A terceira saída
+
+Existe um caminho que ninguém estava nomeando: não trocar o sistema, e sim colocar uma camada de IA por cima dele.
+
+Como diz José Carlos de Paula, conselheiro da WIR: a IA consegue, através de camadas de IA, sem mexer nos sistemas, fazendo interfaces com API, fazer o trabalho que hoje é manual. A operação continua rodando. A camada assume a parte burocrática. E o resultado aparece em semanas, não em anos.
+
+Isso é o oposto de um projeto monolítico. É aditivo, reversível e seguro.
+
+### O humano no centro
+
+Há um medo legítimo quando se fala em IA no seguro: o de que a máquina substitua as pessoas. A camada de IA do seguro faz o contrário.
+
+Ela não substitui o subscritor. Ela tira dele o trabalho que a sua equipe mais odeia fazer, para que decisões voltem a ser decisões. A IA assume a carga manual. O julgamento de risco, a parte que só um humano deve fazer, continua sendo humano.
+
+O subscritor não morre. Ele finalmente subscreve.
+
+### Por que agora, por que no Brasil
+
+A primeira indústria que se digitalizou no Brasil foi a dos bancos, hoje referência mundial. Seguros e saúde são a próxima onda. O mercado tem espaço enorme para crescer, e isso só será possível com tecnologia feita por quem entende o setor.
+
+A WIR existe para liderar essa camada. Não vendemos tecnologia. Vendemos inovação, velocidade e escala, sobre os sistemas que a seguradora já usa.
+
+> Não troque o sistema de registro. Coloque um sistema de inteligência por cima dele.`,
+    faq: [
+      { q: "O que é a camada de IA do seguro?", a: "É uma camada de inteligência que roda sobre os sistemas que a seguradora já usa, nunca no lugar deles. Ela automatiza o trabalho manual de subscrição, precificação, atendimento e gestão, conectada por API, sem que a operação precise trocar o core." },
+      { q: "A camada de IA substitui o subscritor?", a: "Não. Ela tira do subscritor o trabalho manual que a equipe mais odeia fazer, para que o julgamento de risco, a parte que só um humano deve fazer, continue humano. O subscritor não morre; ele finalmente subscreve." },
+    ],
+  },
+  {
+    slug: "manifesto-en",
+    cat: "Manifesto", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    title: "The AI layer of insurance",
+    sub: "There is a path no one was naming: don't replace the system — put an AI layer on top of it. This is WIR's manifesto.",
+    author: "WIR Innovation", role: "Manifesto",
+    time: "4 min", date: "11 · Jun · 2026", dateISO: "2026-06-11",
+    metaDesc: "WIR's manifesto: the insurance AI layer runs on top of the systems an insurer already uses, never replacing them, automating the manual work of underwriting, pricing and service. The third way between the status quo and core replacement.",
+    body: `The AI layer of insurance is a layer of intelligence that runs on top of the systems an insurer already uses, never in their place. It automates the manual work of underwriting, pricing, service and management, without the operation having to dismantle its core.
+
+This definition matters, because the market was being pushed toward a false choice.
+
+### The false choice
+
+On one side, keep everything as it is: excellent teams trapped in manual work, unable to scale. On the other, the promise from some insurtechs to replace the entire system of record with a new one. A multi-year project, expensive and risky, in which the operation bets its own book of business.
+
+Both exits are costly. The first in productivity. The second in risk.
+
+### The third way
+
+There is a path no one was naming: don't replace the system, put an AI layer on top of it.
+
+As José Carlos de Paula, advisor to WIR, puts it: through AI layers, without touching the systems, interfacing via API, AI can do the work that today is manual. The operation keeps running. The layer takes on the bureaucratic part. And the result shows up in weeks, not years.
+
+This is the opposite of a monolithic project. It is additive, reversible and safe.
+
+### The human at the center
+
+There is a legitimate fear when AI in insurance comes up: that the machine will replace people. The insurance AI layer does the opposite.
+
+It does not replace the underwriter. It takes off their plate the work the team most hates doing, so that decisions can be decisions again. AI takes on the manual load. Risk judgment, the part only a human should do, stays human.
+
+The underwriter does not die. They finally underwrite.
+
+### Why now, why Brazil
+
+The first industry to digitize in Brazil was banking, today a global reference. Insurance and health are the next wave. The market has enormous room to grow, and that will only be possible with technology built by people who understand the sector.
+
+WIR exists to lead this layer. We don't sell technology. We sell innovation, speed and scale, on top of the systems the insurer already runs.
+
+> Don't replace the system of record. Put a system of intelligence on top of it.`,
+    faq: [
+      { q: "What is the insurance AI layer?", a: "It is a layer of intelligence that runs on top of the systems an insurer already uses, never in their place. It automates the manual work of underwriting, pricing, service and management, connected via API, without the operation having to replace its core." },
+      { q: "Does the AI layer replace the underwriter?", a: "No. It takes the manual work the team most hates off the underwriter's plate, so that risk judgment, the part only a human should do, stays human. The underwriter does not die; they finally underwrite." },
+    ],
+  },
+  {
     slug: "analise-preditiva-conversao-cotacao",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     title: "Análise preditiva de conversão de cotação de seguros com uma camada de IA",

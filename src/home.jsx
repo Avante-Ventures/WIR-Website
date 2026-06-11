@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useReveal } from './shared.jsx';
-import { LANG } from './i18n.js';
+import { LANG, MANIFESTO_HREF } from './i18n.js';
 import { Opening, Proof } from './home-opening.jsx';
 import { Shift, ProductTabs } from './home-shift.jsx';
 import { ArchFlow, Trust, Closing } from './home-how.jsx';
@@ -13,18 +13,27 @@ const T = {
     title: <>Décadas no setor. <em>Solidez Financeira.</em><br/><em>World Class</em> em IA.</>,
     note: "A experiência de décadas como sócios e C-Level de seguradoras e corretoras nacionais e internacionais, somada ao expertise de sócios de fundos de Private Equity e Venture Builder internacional, proporciona aos nossos clientes um conhecimento profundo do mercado segurador, solidez financeira de longo prazo e nível World Class em tecnologia e Inteligência Artificial.",
     expKicker: "· Experiência no setor",
+    mKicker: "· Manifesto · A camada de IA do seguro",
+    mText: <>Não troque o sistema de registro.<span className="manifesto__accent">Coloque um sistema de inteligência por cima dele.</span></>,
+    mLink: "Ler o manifesto completo",
   },
   en: {
     eyebrow: "· Founders, Partners & Strategic Advisors",
     title: <>Decades in the industry. <em>Financial strength.</em><br/><em>World Class</em> in AI.</>,
     note: "Decades of experience as partners and C-levels of national and international insurers and brokerages, combined with the expertise of partners from Private Equity funds and a global venture builder, gives our clients deep insurance-market knowledge, long-term financial strength and world-class technology and Artificial Intelligence.",
     expKicker: "· Industry experience",
+    mKicker: "· Manifesto · The AI layer of insurance",
+    mText: <>Don't replace the system of record.<span className="manifesto__accent">Put a system of intelligence on top of it.</span></>,
+    mLink: "Read the full manifesto",
   },
   es: {
     eyebrow: "· Fundadores, Socios & Consejeros Estratégicos",
     title: <>Décadas en el sector. <em>Solidez financiera.</em><br/><em>World Class</em> en IA.</>,
     note: "La experiencia de décadas como socios y C-Levels de aseguradoras y corredoras nacionales e internacionales, sumada al expertise de socios de fondos de Private Equity y un Venture Builder internacional, brinda a nuestros clientes un conocimiento profundo del mercado asegurador, solidez financiera de largo plazo y nivel World Class en tecnología e Inteligencia Artificial.",
     expKicker: "· Experiencia en el sector",
+    mKicker: "· Manifiesto · La capa de IA del seguro",
+    mText: <>No cambies el sistema de registro.<span className="manifesto__accent">Pon un sistema de inteligencia encima.</span></>,
+    mLink: "Leer el manifiesto completo",
   },
 }[LANG];
 
@@ -98,6 +107,21 @@ export function TrustBar() {
   );
 }
 
+// Manifesto — category-defining statement. Links to the full cornerstone in /insights.
+export function Manifesto() {
+  return (
+    <section className="manifesto" data-reveal>
+      <div className="wrap">
+        <div className="manifesto__kicker">{T.mKicker}</div>
+        <p className="manifesto__text">{T.mText}</p>
+        <a className="manifesto__cta" href={MANIFESTO_HREF}>
+          {T.mLink} <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  );
+}
+
 export function HomePage({ go }) {
   useReveal();
   return (
@@ -108,6 +132,7 @@ export function HomePage({ go }) {
       <ProductTabs go={go}/>
       <ArchFlow/>
       <Proof/>
+      <Manifesto/>
       <Closing go={go}/>
     </>
   );

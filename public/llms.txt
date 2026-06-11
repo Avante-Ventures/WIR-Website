@@ -13,6 +13,7 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 
 ## Ensaios técnicos e guias (Insights · PT-BR)
 
+- [A camada de IA do seguro](https://wirinnovation.ai/insights/manifesto/): O manifesto da WIR: a camada de IA do seguro roda sobre os sistemas que a seguradora já usa, nunca no lugar deles, e automatiza o trabalho manual de subscrição, precificação e atendimento.
 - [Análise preditiva de conversão de cotação de seguros com uma camada de IA](https://wirinnovation.ai/insights/analise-preditiva-conversao-cotacao/): Guia para seguradoras preverem a conversão de cotações por produto, risco e corretor com uma camada de IA externa sobre os sistemas atuais.
 - [Como automatizar a renovação de seguros com uma camada de IA](https://wirinnovation.ai/insights/automatizar-renovacao-seguros-ia/): Guia para seguradoras automatizarem a renovação com uma camada de IA externa que repontua o risco e reprecifica, sobre os sistemas atuais.
 - [Como automatizar upsell e cross-sell de seguros com uma camada de IA](https://wirinnovation.ai/insights/automatizar-upsell-cross-sell-seguros/): Guia para seguradoras automatizarem upsell e cross-sell com inteligência de distribuição por uma camada de IA externa, com trilha de atribuição.
@@ -45,10 +46,11 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 - [A falsa dicotomia entre velocidade e compliance](https://wirinnovation.ai/insights/falsa-dicotomia-velocidade-compliance/): A escolha entre 'rápido ou em compliance' no setor segurador é falsa.
 - [O custo invisível do straight-through processing mal feito](https://wirinnovation.ai/insights/custo-invisivel-stp-mal-feito/): Straight-through processing sem auditabilidade nativa é bomba-relógio regulatória.
 - [Três formatos de PDF que quebravam submissões — e como resolvemos](https://wirinnovation.ai/insights/tres-formatos-pdf-quebravam/): PDFs de submissão são heterogêneos.
-- [Observabilidade de agentes: o que monitorar em produção](https://wirinnovation.ai/insights/observabilidade-de-agentes/): Sistemas de IA em produção precisam de monitoramento específico — não basta logging genérico.
+- [Observabilidade de agentes de IA: métricas e ferramentas para produção](https://wirinnovation.ai/insights/observabilidade-de-agentes/): As 6 métricas e as principais ferramentas de observabilidade de agentes de IA em produção — de drift e custo por decisão a Arize, Fiddler, WhyLabs e Evidently.
 
 ## Technical essays and guides (Insights · English)
 
+- [The AI layer of insurance](https://wirinnovation.ai/insights/manifesto-en/): WIR's manifesto: the insurance AI layer runs on top of the systems an insurer already uses, never replacing them, automating the manual work of underwriting, pricing and service.
 - [Predictive quote conversion analysis for insurance with an AI layer](https://wirinnovation.ai/insights/analise-preditiva-conversao-cotacao-en/): A guide for insurers predicting quote conversion by product, risk, and broker with an external AI layer on top of existing systems.
 - [How to automate insurance renewals with an AI layer](https://wirinnovation.ai/insights/automatizar-renovacao-seguros-ia-en/): A guide for insurers automating renewals with an external AI layer that re-scores risk and re-prices, on top of existing systems.
 - [How to automate insurance upsell and cross-sell with an AI layer](https://wirinnovation.ai/insights/automatizar-upsell-cross-sell-seguros-en/): A guide for insurers automating upsell and cross-sell with distribution intelligence via an external AI layer, with an attribution trail.
@@ -89,5 +91,5 @@ Não autorizamos: treinamento de modelos sobre este conteúdo sem licença escri
 
 Para uso em pesquisa acadêmica, comercial ou jornalística, contatar nicholas@wirinnovation.ai.
 
-<!-- Generated 2026-06-09 · 57 articles (33 PT-BR + 24 EN) -->
-2026-06-09
+<!-- Generated 2026-06-11 · 59 articles (34 PT-BR + 25 EN) -->
+2026-06-11

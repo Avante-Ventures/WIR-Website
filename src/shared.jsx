@@ -3,7 +3,7 @@
    ─────────────────────────────────────────── */
 
 import React, { useEffect, useState, useRef, useMemo } from 'react';
-import { LANG, INSIGHTS_HREF } from './i18n.js';
+import { LANG, INSIGHTS_HREF, MANIFESTO_HREF } from './i18n.js';
 
 const T = {
   pt: {
@@ -16,6 +16,7 @@ const T = {
     navLinks: [
       { id: "home", label: "Início" },
       { id: "about", label: "Sobre" },
+      { id: "manifesto", label: "Manifesto", href: MANIFESTO_HREF }, // cornerstone static page
       { id: "solutions", label: "Produtos & IA" },
       { id: "protection", label: "Proteção de Dados" },
       { id: "blog", label: "Insights & News", href: INSIGHTS_HREF }, // real static page
@@ -44,6 +45,7 @@ const T = {
     navLinks: [
       { id: "home", label: "Home" },
       { id: "about", label: "About" },
+      { id: "manifesto", label: "Manifesto", href: MANIFESTO_HREF }, // cornerstone static page
       { id: "solutions", label: "Products & AI" },
       { id: "protection", label: "Data Protection" },
       { id: "blog", label: "Insights & News", href: INSIGHTS_HREF },
@@ -72,6 +74,7 @@ const T = {
     navLinks: [
       { id: "home", label: "Inicio" },
       { id: "about", label: "Nosotros" },
+      { id: "manifesto", label: "Manifiesto", href: MANIFESTO_HREF }, // cornerstone static page
       { id: "solutions", label: "Productos & IA" },
       { id: "protection", label: "Protección de Datos" },
       { id: "blog", label: "Insights & News", href: INSIGHTS_HREF },

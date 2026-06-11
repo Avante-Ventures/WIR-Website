@@ -192,7 +192,7 @@ const CHROME = {
   "pt-BR": {
     base: "",
     ticker: ["Decisão em minutos · auditável · explicável", "Straight-through processing como padrão", "Plataforma de IA para seguros", "Em conformidade com LGPD"],
-    navHome: "Início", navAbout: "Sobre", navSolutions: "Produtos &amp; IA", navProtection: "Proteção de Dados", navCta: "Contato",
+    navHome: "Início", navAbout: "Sobre", navSolutions: "Produtos &amp; IA", navProtection: "Proteção de Dados", navCta: "Contato", navManifesto: "Manifesto", manifestoHref: "/insights/manifesto/",
     footerDesc: "A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.",
     colCompany: "Empresa", colContact: "Contato", colHolding: "Sócios &amp; Holding",
     talkTeam: "Falar com a equipe",
@@ -206,7 +206,7 @@ const CHROME = {
   en: {
     base: "/en",
     ticker: ["Decisions in minutes · auditable · explainable", "Straight-through processing as the default", "AI platform for insurance", "LGPD-compliant"],
-    navHome: "Home", navAbout: "About", navSolutions: "Products &amp; AI", navProtection: "Data Protection", navCta: "Contact",
+    navHome: "Home", navAbout: "About", navSolutions: "Products &amp; AI", navProtection: "Data Protection", navCta: "Contact", navManifesto: "Manifesto", manifestoHref: "/insights/manifesto-en/",
     footerDesc: "The new era of insurance is data intelligence, speed, and scale. WIR Innovation is the AI platform that delivers that structure inside the systems you already run.",
     colCompany: "Company", colContact: "Contact", colHolding: "Partners &amp; Holding",
     talkTeam: "Talk to the team",
@@ -242,6 +242,7 @@ function renderNav(lang = "pt-BR") {
     <div class="nav__links">
       <a href="${c.base}/" class="nav__link">${c.navHome}</a>
       <a href="${c.base}/#about" class="nav__link">${c.navAbout}</a>
+      <a href="${c.manifestoHref}" class="nav__link">${c.navManifesto}</a>
       <a href="${c.base}/#solutions" class="nav__link">${c.navSolutions}</a>
       <a href="${c.base}/#protection" class="nav__link">${c.navProtection}</a>
       <a href="${insightsHref(lang)}" class="nav__link nav__link--active">Insights &amp; News</a>

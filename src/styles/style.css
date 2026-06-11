@@ -1127,6 +1127,8 @@ html.js-ready [data-reveal].in{ opacity: 1; transform: translateY(0); }
 .manifesto__text { font-size: clamp(40px, 6vw, 88px); line-height: 1.05; letter-spacing: -0.025em; color: var(--ink); max-width: 1200px; text-wrap: balance; }
 .manifesto__text em { font-style: italic; color: var(--ink-60); }
 .manifesto__accent { display: block; margin-top: 40px; background: linear-gradient(90deg, #3222E9 0%, #7540AC 40%, #FE8B77 70%, #F8AD39 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.manifesto__cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 56px; font-family: var(--mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 4px; transition: gap .2s ease; }
+.manifesto__cta:hover { gap: 16px; }
 
 /* ───────── Before / After ───────── */
 .ba { position: relative; margin-top: 80px; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; aspect-ratio: 16/9; background: var(--paper2); user-select: none; }
