@@ -23,5 +23,7 @@ export const LANG_BASE = LANG === "pt" ? "" : `/${LANG}`;
 // ES has no translated articles yet — it points to the PT archive.
 export const INSIGHTS_HREF = LANG === "en" ? "/en/insights/" : "/insights/";
 
-// The Manifesto cornerstone — EN has its own translated page; PT/ES use the PT one.
-export const MANIFESTO_HREF = LANG === "en" ? "/insights/manifesto-en/" : "/insights/manifesto/";
+// The Manifesto cornerstone — PT is canonical. EN + ES both route to the EN page
+// (no ES translation yet; EN is the non-PT international version, better than landing
+// a Spanish reader on a pt-BR page). Map es→/insights/manifesto-es/ if an ES page is added.
+export const MANIFESTO_HREF = (LANG === "en" || LANG === "es") ? "/insights/manifesto-en/" : "/insights/manifesto/";
