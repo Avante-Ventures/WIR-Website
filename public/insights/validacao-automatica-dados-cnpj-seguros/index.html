@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>Validação automática de dados de CNPJ em submissões de seguros com IA — WIR Innovation</title>
+<meta name="description" content="Guia para seguradoras validarem e enriquecerem submissões com CNPJ, exposição e crédito por uma camada de IA externa, sobre os sistemas atuais. Veja como." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros/" />
+<link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros/" />
+<link rel="alternate" hreflang="en" href="https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros-en/" />
+<link rel="alternate" hreflang="x-default" href="https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Validação automática de dados de CNPJ em submissões de seguros com IA" />
+<meta property="og:description" content="Guia para seguradoras validarem e enriquecerem submissões com CNPJ, exposição e crédito por uma camada de IA externa, sobre os sistemas atuais. Veja como." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros/" />
+
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Automação" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Validação automática de dados de CNPJ em submissões de seguros com IA" />
+<meta name="twitter:description" content="Guia para seguradoras validarem e enriquecerem submissões com CNPJ, exposição e crédito por uma camada de IA externa, sobre os sistemas atuais. Veja como." />
+
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Validação automática de dados de CNPJ em submissões de seguros com IA","description":"Guia para seguradoras validarem e enriquecerem submissões com CNPJ, exposição e crédito por uma camada de IA externa, sobre os sistemas atuais. Veja como.","datePublished":"2026-06-15","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Guia de automação"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros/","articleSection":"Automação"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"Validação automática de dados de CNPJ em submissões de seguros com IA","item":"https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros/#faq","inLanguage":"pt-BR","mainEntity":[{"@type":"Question","name":"Quais fontes externas a validação automática consulta além do CNPJ?","acceptedAnswer":{"@type":"Answer","text":"Além do registro de CNPJ, de onde lê situação cadastral, CNAE e endereço, a validação automática cruza o histórico do corretor, ou seja, conversão e sinistralidade guardados nos próprios sistemas da seguradora, a exposição e a acumulação já concentradas por ramo e região, e sinais de crédito e capacidade de pagamento quando há financiamento de prêmio ou risco de inadimplência. Cada fonte vira um sinal anexado à submissão antes de o subscritor analisar o risco."}},{"@type":"Question","name":"Como o enriquecimento melhora a precisão do score de risco?","acceptedAnswer":{"@type":"Answer","text":"Um score só é tão bom quanto os dados de entrada. Ao confirmar o CNPJ, conciliar a atividade declarada com a cobertura e o endereço, e somar exposição e histórico antes da pontuação, o enriquecimento eleva a precisão do score e reduz o retrabalho em que o subscritor descobre um problema de dados depois que a cotação já saiu. O motor de risco passa a pontuar dados confirmados e completos, calibrado ao apetite da seguradora."}},{"@type":"Question","name":"A validação automática substitui o core da seguradora?","acceptedAnswer":{"@type":"Answer","text":"Não. A validação automática é uma camada de IA externa que opera sobre os sistemas que a seguradora já usa, conectada por integração, sem migração de core. A camada lê a submissão por API, portal ou upload, valida e enriquece os dados, e escreve o resultado de volta no fluxo de cotação e apólice existente. A seguradora mantém o sistema de apólices e as regras de subscrição. A inteligência é aditiva, não um projeto de TI que a equipe precisa rodar."}},{"@type":"Question","name":"Os dados consultados são tratados conforme a LGPD e criptografados?","acceptedAnswer":{"@type":"Answer","text":"Sim. O cruzamento de CNPJ, histórico, exposição e crédito é tratamento de dados governado pela LGPD: base legal válida, minimização aos campos que a decisão precisa, e caminho de revisão humana preservado. Na WIR, os dados são criptografados em cada etapa e o acesso é controlado. Cada validação de CNPJ, conciliação de endereço, checagem de exposição e score fica registrada, de modo que a operação é explicável e retorna uma trilha de auditoria completa."}},{"@type":"Question","name":"A validação automática reduz o tempo que o subscritor gasta conferindo dados?","acceptedAnswer":{"@type":"Answer","text":"Sim, esse é o objetivo direto. A conferência manual de cada CNPJ, CNAE e endereço é justamente o tipo de tarefa que consome o tempo do subscritor. Segundo a Deloitte, o subscritor gasta 40% do tempo em tarefas administrativas em vez de análise de risco. Ao confirmar e completar o quadro do risco no intake, a camada de IA tira essa conferência do colo do subscritor, que passa a analisar risco e desenvolver negócio em vez de digitar e checar dados."}}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>Plataforma de IA para seguros</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>Em conformidade com LGPD</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/" class="nav__link">Início</a>
+      <a href="/#about" class="nav__link">Sobre</a>
+      <a href="/insights/manifesto/" class="nav__link">Manifesto</a>
+      <a href="/#solutions" class="nav__link">Produtos &amp; IA</a>
+      <a href="/#protection" class="nav__link">Proteção de Dados</a>
+      <a href="/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contato
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/insights/">
+      <span aria-hidden="true">←</span> Voltar para Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Automação</div>
+      <h1 class="display blarticle__title">Validação automática de dados de CNPJ em submissões de seguros com IA</h1>
+      <p class="blarticle__sub">A validação automática de dados de CNPJ em submissões de seguros é a etapa em que uma camada de IA externa confirma o CNPJ do segurado e completa o risco com exposição, histórico do corretor e crédito antes da subscrição, sobre os sistemas que a seguradora já usa.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Guia de automação</div>
+          <div class="blarticle__byline-time">15 · Jun · 2026 · 7 min de leitura</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#3222E9,#7540AC); aspect-ratio: 16 / 9;">
+      
+    </figure>
+
+    <div class="blarticle__body">
+<p>A validação automática de dados de CNPJ em submissões de seguros é a etapa em que uma camada de IA externa confirma e completa os dados de uma submissão contra fontes externas, como o registro de CNPJ, exposição, histórico do corretor e crédito, antes que o risco chegue ao subscritor. A seguradora que recebe propostas por e-mail, PDF e planilha, e cuja equipe confere cada dado à mão, é exatamente quem deveria considerar automatizar essa conferência. Em Seguros e Danos (P&amp;C), uma submissão corporativa raramente chega limpa. Ela chega como corpo de e-mail, proposta em PDF, documentos digitalizados e apólices anteriores. Antes de precificar, alguém precisa ler tudo, digitar os campos e validar cada um contra a verdade externa: o CNPJ está ativo e regular, o CNAE declarado bate com a cobertura pedida, o endereço do risco concilia entre os documentos. Cada checagem dessas é uma consulta manual separada, repetida em toda submissão. A camada de IA inverte isso. Ela resolve a identidade da empresa, lê a situação cadastral e o CNAE direto do registro, cruza histórico e exposição, e devolve a submissão validada e enriquecida ao fluxo que a seguradora já opera. Nada disso substitui o sistema de apólices. A inteligência é aditiva, conectada por integração, sobre os sistemas atuais.</p>
+<h3>Como funciona a validação e o enriquecimento automáticos de ponta a ponta</h3>
+<p>A validação e o enriquecimento automáticos são uma etapa dentro de uma esteira maior de subscrição. O fluxo completo tem seis estágios. Primeiro, o intake multicanal captura submissões de e-mail, portal, upload e API em um pipeline estruturado. Em seguida, a leitura inteligente de documentos usa Machine Learning para extrair e estruturar os dados do risco, eliminando a redigitação. Depois vem a validação e o enriquecimento automáticos, o foco aqui, que cruzam fontes externas para confirmar e completar o quadro. Na sequência, o motor de risco e fraude pontua o risco estruturado contra o apetite e o manual de subscrição da seguradora. O pricing dinâmico calcula o prêmio ajustado ao risco enriquecido. Por fim, a etapa de decisão e priorização cota, recusa ou encaminha a um humano, sempre com explicação e trilha de auditoria. Dentro da etapa de validação, o mecanismo responde a uma pergunta antes de o subscritor gastar tempo: esse risco é real, está dentro do apetite e está completo o bastante para precificar. A primeira camada é identidade e status. A plataforma resolve o CNPJ do segurado, confirma situação cadastral ativa e regular, e lê CNAE e endereço do registro. Uma empresa irregular ou dormente é sinalizada antes de qualquer capacidade ser comprometida. A segunda é consistência e apetite. A atividade declarada é cruzada com a cobertura pedida e com o apetite de risco, e o endereço do registro concilia com o endereço do risco na submissão. A terceira é enriquecimento. A camada anexa o histórico de conversão e sinistralidade do corretor a partir dos próprios sistemas da seguradora, a exposição já acumulada por ramo e região, e sinais de crédito quando o risco de pagamento importa. O resultado é uma submissão validada e enriquecida, com um sinal de confiança nos dados, alimentando um score mais preciso. Um score só é tão bom quanto os dados que recebe.</p>
+<h3>Como implantar a camada externa de IA na validação de dados</h3>
+<p>Adicionar a validação automática como camada externa é uma implantação contida, não um programa de core. Comece pelo escopo. Escolha os ramos e os tipos de submissão em Seguros e Danos onde a dor de validação manual e o volume são maiores, e defina quais checagens externas importam: situação cadastral e CNAE, conciliação de endereço, histórico do corretor, exposição e crédito. Integre por API, portal ou upload aos sistemas de cotação e apólice que já existem. A camada lê as submissões e devolve o contexto validado e enriquecido, sem migração. Calibre as checagens e o scoring ao manual de subscrição e ao apetite de risco por ramo e região, para que a validação respeite as regras vigentes em vez de inventar regras novas. Esse ponto é decisivo para o público de inovação, porque limitações de TI são o bloqueio mais citado: 70% das seguradoras não executam inovação por limitações de TI, segundo a BCG. Uma camada externa permite automatizar a validação sem apostar a companhia em um programa de core de vários anos. Antes do go-live, teste contra submissões históricas. Verifique se as checagens de CNPJ e CNAE pegaram os casos que deveriam ter pegado, se o enriquecimento melhorou a precisão do score e se menos submissões voltaram por problema de dados. Suba nos ramos definidos com o subscritor no circuito e cada checagem automática visível e passível de override. O modelo comercial acompanha esse desenho. O setup vai de 3 a 12 meses, com automações, integrações, testes e ajustes de go-live, e depois entra a operação contínua em produção. A partir daí, opere de forma contínua, com retreino e reajuste conforme o apetite e as fontes de dados mudam.</p>
+<h3>Governança, explicabilidade e LGPD</h3>
+<p>Cruzar CNPJ, histórico do corretor, exposição e crédito é tratamento de dados, portanto é governado. A LGPD rege o tratamento de dados pessoais, exige base legal válida e dá ao titular o direito de revisão de decisões tomadas unicamente por tratamento automatizado. Para uma camada de validação e enriquecimento, isso significa três coisas concretas. O cruzamento se apoia em base legal válida. Ele é minimizado aos campos que a decisão de subscrição de fato precisa. E um caminho de revisão humana é preservado para decisões que afetam pessoas. O dado de CNPJ é registro corporativo, mas submissões costumam carregar dados pessoais, como sócios, contatos e às vezes CPF, então o enquadramento da LGPD se aplica por inteiro. A explicabilidade e a auditabilidade são o segundo pilar. Todo resultado de validação e enriquecimento precisa ser reconstruível: qual situação cadastral foi lida e quando, por que o CNAE foi sinalizado como fora de apetite, qual sinal de exposição ou crédito moveu o score. A SUSEP supervisiona o mercado de Seguros e Danos, o registro de produtos e a conduta, e a subscrição automatizada precisa permanecer consistente com os termos do produto registrado e com o manual de subscrição. Por isso a camada registra cada checagem, cada nível de confiança e cada override humano. O dado é criptografado em trânsito e em repouso, e o acesso é controlado. Em vez de consultas manuais avulsas que não deixam rastro, cada validação de CNPJ, conciliação de endereço, checagem de exposição e score fica registrada e explicável. A camada de enriquecimento fortalece a governança, não a enfraquece.</p>
+<h3>Como a WIR valida e enriquece os dados da submissão</h3>
+<p>A WIR Innovation é a camada de IA do seguro. Uma plataforma de IA que opera sobre os sistemas que a seguradora já usa, nunca no lugar deles. Para a validação e o enriquecimento, a WIR ingere a submissão por API, portal ou upload, no formato que o corretor já manda, resolve e valida o CNPJ do segurado contra o registro da Receita Federal, enriquece o risco cruzando histórico do corretor, exposição e crédito, e escreve a submissão validada de volta no fluxo existente com o raciocínio anexado. Isso é 100% externo, sem carga no TI da seguradora e sem migração de core. O módulo Underwriter Intelligence automatiza a jornada de cotação conforme a política de aceitação de risco da própria seguradora, com scoring de Machine Learning em tempo real calibrado ao apetite e roteamento automático por apetite e exposição. O módulo Smart Sales mapeia a carteira por cliente e produto, pontua a próxima melhor ação e roda campanhas com trilha de atribuição, de modo que penetração e retenção crescem juntas. Toda decisão é explicável e retorna uma trilha de auditoria completa. Os dados são criptografados em cada etapa e a operação é compatível com a LGPD. A WIR é uma InsurTech fundada em 2025, construída com a Mahway, Venture Builder na Califórnia, e a Avante, Venture Studio no Brasil. A tração pública é uma POC em execução com uma seguradora global no ramo de Transporte. A WIR não é seguradora, corretora nem MGA, e não carrega risco. Ela automatiza a esteira de cotação e subscrição segundo o apetite de cada cliente, e ajuda a confirmar e completar o quadro do risco no intake para alimentar um score mais preciso.</p>
+<section class="blarticle__faq" aria-label="Perguntas frequentes">
+<h3>Perguntas frequentes</h3>
+<details class="blarticle__faq-item">
+  <summary>Quais fontes externas a validação automática consulta além do CNPJ?</summary>
+  <p>Além do registro de CNPJ, de onde lê situação cadastral, CNAE e endereço, a validação automática cruza o histórico do corretor, ou seja, conversão e sinistralidade guardados nos próprios sistemas da seguradora, a exposição e a acumulação já concentradas por ramo e região, e sinais de crédito e capacidade de pagamento quando há financiamento de prêmio ou risco de inadimplência. Cada fonte vira um sinal anexado à submissão antes de o subscritor analisar o risco.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Como o enriquecimento melhora a precisão do score de risco?</summary>
+  <p>Um score só é tão bom quanto os dados de entrada. Ao confirmar o CNPJ, conciliar a atividade declarada com a cobertura e o endereço, e somar exposição e histórico antes da pontuação, o enriquecimento eleva a precisão do score e reduz o retrabalho em que o subscritor descobre um problema de dados depois que a cotação já saiu. O motor de risco passa a pontuar dados confirmados e completos, calibrado ao apetite da seguradora.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>A validação automática substitui o core da seguradora?</summary>
+  <p>Não. A validação automática é uma camada de IA externa que opera sobre os sistemas que a seguradora já usa, conectada por integração, sem migração de core. A camada lê a submissão por API, portal ou upload, valida e enriquece os dados, e escreve o resultado de volta no fluxo de cotação e apólice existente. A seguradora mantém o sistema de apólices e as regras de subscrição. A inteligência é aditiva, não um projeto de TI que a equipe precisa rodar.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Os dados consultados são tratados conforme a LGPD e criptografados?</summary>
+  <p>Sim. O cruzamento de CNPJ, histórico, exposição e crédito é tratamento de dados governado pela LGPD: base legal válida, minimização aos campos que a decisão precisa, e caminho de revisão humana preservado. Na WIR, os dados são criptografados em cada etapa e o acesso é controlado. Cada validação de CNPJ, conciliação de endereço, checagem de exposição e score fica registrada, de modo que a operação é explicável e retorna uma trilha de auditoria completa.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>A validação automática reduz o tempo que o subscritor gasta conferindo dados?</summary>
+  <p>Sim, esse é o objetivo direto. A conferência manual de cada CNPJ, CNAE e endereço é justamente o tipo de tarefa que consome o tempo do subscritor. Segundo a Deloitte, o subscritor gasta 40% do tempo em tarefas administrativas em vez de análise de risco. Ao confirmar e completar o quadro do risco no intake, a camada de IA tira essa conferência do colo do subscritor, que passa a analisar risco e desenvolver negócio em vez de digitar e checar dados.</p>
+</details>
+</section>
+    </div>
+
+    <nav class="blarticle__related" aria-label="Leituras relacionadas">
+      <h3 class="blarticle__related-title">Leituras relacionadas</h3>
+      <ul class="blarticle__related-list">
+      <li class="blarticle__related-item"><a href="/insights/substituir-rpa-ocr-ia-seguros/"><span class="blarticle__related-cat">Automação</span> Como substituir RPA e OCR por uma camada de IA em seguros</a></li>
+      <li class="blarticle__related-item"><a href="/insights/reduzir-tarefas-administrativas-subscricao/"><span class="blarticle__related-cat">Automação</span> Como reduzir tarefas administrativas na subscrição de seguros com uma camada de IA</a></li>
+      <li class="blarticle__related-item"><a href="/insights/risco-climatico-seguros-brasil/"><span class="blarticle__related-cat">Mercado</span> Risco climático no seguro brasileiro e a precificação com IA</a></li>
+      <li class="blarticle__related-item"><a href="/insights/seguro-cargas-transporte-brasil/"><span class="blarticle__related-cat">Mercado</span> Seguro de transporte e cargas no Brasil e a virada da IA na subscrição</a></li>
+      </ul>
+    </nav>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/insights/">
+        <span aria-hidden="true">←</span> Outros Insights
+      </a>
+      <a class="btn btn--solid" href="/#contact">
+        Falar com a equipe <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#solutions">Produtos &amp; IA</a></li>
+          <li><a href="/#protection">Proteção de Dados</a></li>
+          <li><a href="/insights/">Insights &amp; News</a></li>
+          <li><a href="/#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/#contact">Falar com a equipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sócios &amp; Holding</h4>
+        <ul>
+          <li><a href="/#about">Mahway · California</a></li>
+          <li><a href="/#about">Avante · Brasil</a></li>
+          <li><a href="/#about">Conselheiros estratégicos</a></li>
+          <li><a href="/#about">Princípios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Ol%C3%A1%20Nicholas%2C%20vim%20pelo%20site%20da%20WIR%20Innovation.%20Gostaria%20de%20conversar%20sobre%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Falar com Nicholas no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>

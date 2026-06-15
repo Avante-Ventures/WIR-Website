@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>How to replace RPA and OCR with an AI layer in insurance — WIR Innovation</title>
+<meta name="description" content="A guide for insurers going beyond brittle RPA and OCR with an external AI layer that reads submissions, scores risk, and decides, on top of existing systems. See how." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/substituir-rpa-ocr-ia-seguros-en/" />
+<link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/substituir-rpa-ocr-ia-seguros/" />
+<link rel="alternate" hreflang="en" href="https://wirinnovation.ai/insights/substituir-rpa-ocr-ia-seguros-en/" />
+<link rel="alternate" hreflang="x-default" href="https://wirinnovation.ai/insights/substituir-rpa-ocr-ia-seguros/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to replace RPA and OCR with an AI layer in insurance" />
+<meta property="og:description" content="A guide for insurers going beyond brittle RPA and OCR with an external AI layer that reads submissions, scores risk, and decides, on top of existing systems. See how." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/substituir-rpa-ocr-ia-seguros-en/" />
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Automação" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to replace RPA and OCR with an AI layer in insurance" />
+<meta name="twitter:description" content="A guide for insurers going beyond brittle RPA and OCR with an external AI layer that reads submissions, scores risk, and decides, on top of existing systems. See how." />
+
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to replace RPA and OCR with an AI layer in insurance","description":"A guide for insurers going beyond brittle RPA and OCR with an external AI layer that reads submissions, scores risk, and decides, on top of existing systems. See how.","datePublished":"2026-06-15","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Automation guide"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/substituir-rpa-ocr-ia-seguros-en/","articleSection":"Automação"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wirinnovation.ai/en/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/en/insights/"},{"@type":"ListItem","position":3,"name":"How to replace RPA and OCR with an AI layer in insurance","item":"https://wirinnovation.ai/insights/substituir-rpa-ocr-ia-seguros-en/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://wirinnovation.ai/insights/substituir-rpa-ocr-ia-seguros-en/#faq","inLanguage":"en","mainEntity":[{"@type":"Question","name":"Why do RPA and OCR break on varied submission formats?","acceptedAnswer":{"@type":"Answer","text":"Rule-based RPA is built for stable, deterministic interfaces, and template OCR reads a known box on a known form. The moment a broker changes a field order, attaches a scanned PDF, or adds a free-text note, the script throws an exception or extraction confidence collapses, and the case drops to a human queue. They also only move characters into fields. They do not enrich context, score risk, or reach a decision, so the underwriting judgment is left untouched."}},{"@type":"Question","name":"Does the AI layer require me to remove the RPA and OCR I already run?","acceptedAnswer":{"@type":"Answer","text":"No. The AI layer is external and sits on top of the insurer's existing systems by API, portal, or upload, with no core migration and no load on the IT team. Nothing that already works has to be ripped out. The layer closes the gap RPA and OCR leave open, which is the step from extraction to a scored, priced, and routed underwriting decision, rather than competing with the typing those tools already do."}},{"@type":"Question","name":"Does the AI layer replace the insurer's core?","acceptedAnswer":{"@type":"Answer","text":"No. WIR is an external AI intelligence layer that sits on top of existing systems and never replaces the core. It is not a system migration and not an IT project the insurer's team has to run, and WIR is not an insurer, broker, or MGA, so it does not carry risk. The layer reads submissions, scores risk against the underwriting manual, decides, and then writes the result back to the policy core the insurer already operates."}},{"@type":"Question","name":"How does AI reading reach the underwriting decision, not just extraction?","acceptedAnswer":{"@type":"Answer","text":"After intelligent document reading, the journey continues through three stages that extraction tools never reach. Broker enrichment cross-references sources such as CNPJ, history, exposure, and credit. A multi-factor Machine Learning engine calibrated to appetite and the underwriting manual returns a risk score and an automated decision. Dynamic pricing calculates the premium. The final stage quotes, declines, or escalates with an explanation, writes back to the core, and returns the audit trail. Scoring, pricing, and routing are what carry reading to the decision."}},{"@type":"Question","name":"Are the AI extraction and decision explainable and auditable?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every automated decision is explainable and returns a full audit trail showing why the layer quoted, declined, or escalated, because a broker, an internal auditor, or the regulator can review it. The model is calibrated to the insurer's own risk-acceptance policy and underwriting manual, so it encodes that insurer's appetite rather than a generic ruleset. Data stays encrypted at every step and is handled under LGPD. WIR states this mechanism rather than claiming risk-free or infallible underwriting."}}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisions in minutes · auditable · explainable</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing as the default</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>AI platform for insurance</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>LGPD-compliant</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisions in minutes · auditable · explainable</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing as the default</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/en/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/en/" class="nav__link">Home</a>
+      <a href="/en/#about" class="nav__link">About</a>
+      <a href="/insights/manifesto-en/" class="nav__link">Manifesto</a>
+      <a href="/en/#solutions" class="nav__link">Products &amp; AI</a>
+      <a href="/en/#protection" class="nav__link">Data Protection</a>
+      <a href="/en/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/en/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contact
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/en/insights/">
+      <span aria-hidden="true">←</span> Back to Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Automação</div>
+      <h1 class="display blarticle__title">How to replace RPA and OCR with an AI layer in insurance</h1>
+      <p class="blarticle__sub">Replacing RPA and OCR with an AI layer in insurance means swapping brittle scripts and template extraction for an external AI platform that reads varied submissions, enriches broker context, scores risk against the underwriting manual, and routes a decision.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Automation guide</div>
+          <div class="blarticle__byline-time">15 · Jun · 2026 · 5 min read</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#7540AC,#FE8B77); aspect-ratio: 16 / 9;">
+      
+    </figure>
+
+    <div class="blarticle__body">
+<p>Replacing RPA and OCR with an AI layer in insurance means moving from scripts that only move characters into fields to an external AI platform that reads any submission, enriches it, scores the risk against the underwriting manual, and routes a decision. Rule-based RPA and template OCR were never built for this. They handle a known box on a known form, and they break the moment a broker changes a field order, attaches a scanned PDF, or adds a free-text note. The case drops to a human queue and the SLA barely moves.</p>
+<p>This matters because the cost of slow, manual triage is measurable. Deloitte estimates underwriters spend 40% of their time on administrative tasks rather than risk analysis. Gartner estimates corporates lose 20-30% of working time organizing unstructured data. Capgemini finds that more than 60% of brokers choose an insurer based on response speed, so every hour a submission sits in an exception queue is a conversion risk. Each figure is cited from its named source as market context, not as any vendor&#39;s result.</p>
+<p>The reader who should consider this is an underwriting or product and innovation lead at a Brazilian Seguros e Danos (P&amp;C) insurer who has already run an RPA or OCR pilot that stalled before production. The answer is not a better extraction tool. It is a calibrated AI layer of insurance that carries reading all the way through to the underwriting decision, on top of the core the insurer already runs.</p>
+<h3>How the AI layer beyond RPA and OCR works end to end</h3>
+<p>The decisive difference from RPA and OCR is that the AI layer does not stop at extraction. It runs the full quotation and underwriting journey in six stages, calibrated to the insurer&#39;s own risk-acceptance policy. The first stage is multichannel intake with automatic validation, accepting submissions through the formats the insurer already uses, by API, broker portal, or upload, across e-mail and attachments. The second is intelligent document reading, where the AI extracts fields from varied submissions with high precision instead of relying on a fixed template that collapses when the layout changes.</p>
+<p>From there the journey reaches the work that RPA and OCR never touch. The third stage is broker enrichment and context, cross-referencing external sources such as CNPJ, broker history, exposure, and credit to build a score, a conversion history, and a prioritization signal. The fourth is the risk and fraud engine, a multi-factor Machine Learning model calibrated to appetite and the underwriting manual that returns a risk score, a probability, and an automated decision. The fifth is dynamic pricing, a risk-adjusted premium calculated instantly.</p>
+<p>The sixth stage closes the loop. The platform quotes, declines automatically, or escalates to a human, always with an explanation. It writes the result back to the policy core and returns the full audit trail, with a visible SLA and an underwriter queue. Stages four through six, scoring, pricing, and a routed decision, are precisely what extraction tools leave undone, which is why so many automation pilots automate the typing but never the judgment. For the market signal behind this approach, see WIR&#39;s market intelligence on Seguros e Danos.</p>
+<h3>How to deploy the external AI layer on top of existing systems</h3>
+<p>The honest answer to the objection that a past RPA pilot broke is that the AI layer deploys differently. It is 100% external. It sits on top of the existing core by API, portal, or upload, with no core migration and no load on the insurer&#39;s IT team. Nothing that already works gets ripped out, and the policy system the insurer relies on stays exactly where it is.</p>
+<p>The rollout is scoped, not open-ended. WIR&#39;s commercial model has two parts. The first is a one-time setup that runs 3 to 12 months, covering platform implementation, automations, integrations, testing, and go-live adjustments, at a fixed price with a clear scope and KPIs agreed before the work starts. The implementation sequence is straightforward in practice. The layer integrates with the core, the Machine Learning is calibrated to the underwriting manual and the insurer&#39;s risk appetite, the model is tested against historical submissions, and then it goes live.</p>
+<p>After go-live, the second part of the model is continuous operation in production, with a billing model adjusted per client and billed monthly. The model keeps improving on the insurer&#39;s own data rather than on a generic ruleset. This is the structural contrast with bolting more bots or a better OCR engine onto a legacy stack. The gap an insurer is trying to close sits between extraction and decision, not between two extraction tools, so adding throughput on typing alone does not relieve the squeeze. To map where your own journey stalls, the WIR team can walk through it directly.</p>
+<h3>Governance, explainability, and LGPD</h3>
+<p>Every automated decision in P&amp;C underwriting has to be explainable and reproducible, because a broker can challenge it, an internal team can audit it, and the regulator can review it. The AI layer is built around that requirement rather than around a promise of accuracy. The model is calibrated to the insurer&#39;s own risk-acceptance policy and underwriting manual, so the layer encodes that specific insurer&#39;s appetite instead of a generic ruleset, and each decision returns a full audit trail showing why it quoted, declined, or escalated.</p>
+<p>This is also the clearest contrast with a rule-based script. When RPA silently fails or OCR extracts a wrong field, it leaves no reasoning trail, so a downstream reviewer cannot see what happened or why. A calibrated, explainable layer does the opposite. It records the factors behind the score and the routing, which is what makes the decision defensible in an audit or a regulatory query.</p>
+<p>Data handling follows the same discipline. Information stays encrypted at every step and is processed under LGPD, Brazil&#39;s data protection law. The posture here is deliberate. WIR does not claim risk-free or infallible underwriting, because that would be the wrong claim in insurance. It states the mechanism instead. The intelligence is calibrated to appetite, the decision is explainable, the trail is complete, and the data is protected. Governance is not a layer added after the fact. It is how the AI layer of insurance is designed to operate from the first submission it reads.</p>
+<h3>How WIR goes beyond RPA and OCR in insurance</h3>
+<p>WIR Innovation is the AI layer of insurance, an AI platform for insurers and brokers that sits on top of existing systems and never replaces the core. Where RPA and OCR stop at extraction, WIR carries the submission through reading, enrichment, scoring, pricing, and a routed decision, with Machine Learning calibrated to each insurer&#39;s risk appetite and underwriting manual. The Seguros e Danos market grows double digits per year, while company structure does not keep pace with that acceleration, and that is exactly the squeeze an external AI layer is built to relieve.</p>
+<p>Two products do the work. Underwriter Intelligence automates the quotation journey per the insurer&#39;s risk policy, with real-time scoring calibrated to appetite, automatic routing by appetite and exposure, and predictive conversion analysis by product, risk, and broker, so underwriters spend their time on risk analysis and business development. Smart Sales is the distribution side, mapping the portfolio by client and product, scoring upsell and next-best-action, and running multi-channel campaigns with an attribution trail. Real-time dashboards and analytics give a proactive view of in-flight deals and pipeline.</p>
+<p>WIR was built with Mahway, a Venture Builder in California, and Avante, a Venture Studio in Brazil, and it was born from accumulated operational experience rather than as an experiment. Its first public traction is a POC in execution with a global insurer in the Transport line. The framing to keep in mind is the one WIR leads with. The AI layer for insurance. On top of the systems the insurer already runs, never in their place. To see where RPA and OCR stall at your insurer and where the AI layer takes reading through to the decision, the WIR team can map it with you.</p>
+<section class="blarticle__faq" aria-label="Frequently asked questions">
+<h3>Frequently asked questions</h3>
+<details class="blarticle__faq-item">
+  <summary>Why do RPA and OCR break on varied submission formats?</summary>
+  <p>Rule-based RPA is built for stable, deterministic interfaces, and template OCR reads a known box on a known form. The moment a broker changes a field order, attaches a scanned PDF, or adds a free-text note, the script throws an exception or extraction confidence collapses, and the case drops to a human queue. They also only move characters into fields. They do not enrich context, score risk, or reach a decision, so the underwriting judgment is left untouched.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Does the AI layer require me to remove the RPA and OCR I already run?</summary>
+  <p>No. The AI layer is external and sits on top of the insurer&#39;s existing systems by API, portal, or upload, with no core migration and no load on the IT team. Nothing that already works has to be ripped out. The layer closes the gap RPA and OCR leave open, which is the step from extraction to a scored, priced, and routed underwriting decision, rather than competing with the typing those tools already do.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Does the AI layer replace the insurer&#39;s core?</summary>
+  <p>No. WIR is an external AI intelligence layer that sits on top of existing systems and never replaces the core. It is not a system migration and not an IT project the insurer&#39;s team has to run, and WIR is not an insurer, broker, or MGA, so it does not carry risk. The layer reads submissions, scores risk against the underwriting manual, decides, and then writes the result back to the policy core the insurer already operates.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>How does AI reading reach the underwriting decision, not just extraction?</summary>
+  <p>After intelligent document reading, the journey continues through three stages that extraction tools never reach. Broker enrichment cross-references sources such as CNPJ, history, exposure, and credit. A multi-factor Machine Learning engine calibrated to appetite and the underwriting manual returns a risk score and an automated decision. Dynamic pricing calculates the premium. The final stage quotes, declines, or escalates with an explanation, writes back to the core, and returns the audit trail. Scoring, pricing, and routing are what carry reading to the decision.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Are the AI extraction and decision explainable and auditable?</summary>
+  <p>Yes. Every automated decision is explainable and returns a full audit trail showing why the layer quoted, declined, or escalated, because a broker, an internal auditor, or the regulator can review it. The model is calibrated to the insurer&#39;s own risk-acceptance policy and underwriting manual, so it encodes that insurer&#39;s appetite rather than a generic ruleset. Data stays encrypted at every step and is handled under LGPD. WIR states this mechanism rather than claiming risk-free or infallible underwriting.</p>
+</details>
+</section>
+    </div>
+
+    <nav class="blarticle__related" aria-label="Related insights">
+      <h3 class="blarticle__related-title">Related insights</h3>
+      <ul class="blarticle__related-list">
+      <li class="blarticle__related-item"><a href="/insights/reduzir-tarefas-administrativas-subscricao-en/"><span class="blarticle__related-cat">Automação</span> How to reduce administrative tasks in insurance underwriting with an AI layer</a></li>
+      <li class="blarticle__related-item"><a href="/insights/risco-climatico-seguros-brasil-en/"><span class="blarticle__related-cat">Mercado</span> Climate risk in Brazilian insurance and AI-driven pricing</a></li>
+      <li class="blarticle__related-item"><a href="/insights/seguro-cargas-transporte-brasil-en/"><span class="blarticle__related-cat">Mercado</span> Cargo and transport insurance in Brazil and the AI shift in underwriting</a></li>
+      <li class="blarticle__related-item"><a href="/insights/seguro-cibernetico-brasil-en/"><span class="blarticle__related-cat">Mercado</span> Cyber insurance in Brazil and the challenge of underwriting digital risk</a></li>
+      </ul>
+    </nav>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/en/insights/">
+        <span aria-hidden="true">←</span> More Insights
+      </a>
+      <a class="btn btn--solid" href="/en/#contact">
+        Talk to the team <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">The new era of insurance is data intelligence, speed, and scale. WIR Innovation is the AI platform that delivers that structure inside the systems you already run.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/en/">Home</a></li>
+          <li><a href="/en/#about">About</a></li>
+          <li><a href="/en/#solutions">Products &amp; AI</a></li>
+          <li><a href="/en/#protection">Data Protection</a></li>
+          <li><a href="/en/insights/">Insights &amp; News</a></li>
+          <li><a href="/en/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/en/#contact">Talk to the team</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partners &amp; Holding</h4>
+        <ul>
+          <li><a href="/en/#about">Mahway · California</a></li>
+          <li><a href="/en/#about">Avante · Brazil</a></li>
+          <li><a href="/en/#about">Strategic advisors</a></li>
+          <li><a href="/en/#about">Principles</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Built between São Paulo and Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Hello%20Nicholas%2C%20I%20found%20you%20through%20the%20WIR%20Innovation%20website.%20I'd%20like%20to%20talk%20about%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Chat with Nicholas on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>

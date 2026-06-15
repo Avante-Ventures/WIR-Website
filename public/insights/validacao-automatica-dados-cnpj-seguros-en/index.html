@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>Automatic external data validation for insurance submissions with AI — WIR Innovation</title>
+<meta name="description" content="A guide for insurers validating and enriching submissions with CNPJ, exposure, and credit via an external AI layer on top of existing systems. See how." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros-en/" />
+<link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros/" />
+<link rel="alternate" hreflang="en" href="https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros-en/" />
+<link rel="alternate" hreflang="x-default" href="https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Automatic external data validation for insurance submissions with AI" />
+<meta property="og:description" content="A guide for insurers validating and enriching submissions with CNPJ, exposure, and credit via an external AI layer on top of existing systems. See how." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros-en/" />
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Automação" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Automatic external data validation for insurance submissions with AI" />
+<meta name="twitter:description" content="A guide for insurers validating and enriching submissions with CNPJ, exposure, and credit via an external AI layer on top of existing systems. See how." />
+
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Automatic external data validation for insurance submissions with AI","description":"A guide for insurers validating and enriching submissions with CNPJ, exposure, and credit via an external AI layer on top of existing systems. See how.","datePublished":"2026-06-15","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Automation guide"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros-en/","articleSection":"Automação"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wirinnovation.ai/en/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/en/insights/"},{"@type":"ListItem","position":3,"name":"Automatic external data validation for insurance submissions with AI","item":"https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros-en/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros-en/#faq","inLanguage":"en","mainEntity":[{"@type":"Question","name":"Which external sources does automatic validation check beyond the CNPJ registry?","acceptedAnswer":{"@type":"Answer","text":"Beyond the CNPJ registry, automatic validation cross-references the broker history held in the insurer own systems, meaning conversion and loss track record. It checks exposure and accumulation already concentrated by line and region, and it pulls credit and financial-standing signals where premium financing or payment risk matters. The CNPJ itself supplies registration status, the economic activity classification, the address, and company size. WIR runs these checks as an external AI layer, calibrated to the insurer risk appetite, and writes the enriched result back into the existing flow."}},{"@type":"Question","name":"How does enrichment improve the accuracy of the risk score?","acceptedAnswer":{"@type":"Answer","text":"A risk score is only as good as its inputs. Manual intake often scores whatever the broker typed, including an unconfirmed CNPJ or an activity that does not match the coverage. Enrichment fixes the inputs before scoring. It confirms the insured is real and regular, reconciles the declared activity and address, and attaches exposure, broker history, and credit. Feeding the risk and fraud ML engine confirmed data raises the precision of the score and reduces the rework loop where an underwriter finds a data problem after the quote is out."}},{"@type":"Question","name":"Does automatic validation replace the insurer's core?","acceptedAnswer":{"@type":"Answer","text":"No. WIR is an external AI layer that sits on top of the insurer existing policy and quotation systems and never replaces the core. It is 100% external, with no load on the insurer IT and no core migration. The layer connects by API, portal, or upload, reads the submission, validates and enriches it, and writes the result back into the existing flow. The insurer keeps its policy core and its underwriting rules, and the intelligence is added by integration, calibrated to the insurer own risk appetite."}},{"@type":"Question","name":"Is the queried data handled under LGPD and encrypted?","acceptedAnswer":{"@type":"Answer","text":"Yes. WIR is LGPD compliant and encrypts data at every step. Cross-referencing CNPJ, broker history, exposure, and credit is data processing, so it rests on a valid legal basis, is minimized to the fields the decision needs, and preserves a human-review path for decisions that affect individuals. Every validation outcome is explainable and the platform returns a complete audit trail, logging which CNPJ status was read, why an activity was flagged, and which signal moved the score, so each check is reconstructable."}},{"@type":"Question","name":"Does automatic validation cut the time underwriters spend checking data?","acceptedAnswer":{"@type":"Answer","text":"That is the point of automating it. Underwriters spend 40% of their time on administrative tasks rather than risk judgment, according to Deloitte, and corporate teams lose 20-30% of their time organizing unstructured data, according to Gartner. Manual cross-checking of a CNPJ, an activity code, or a broker track record is exactly that non-core work. An external AI layer runs those checks automatically at intake, so the underwriter receives a validated, enriched submission and spends time on risk judgment."}}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisions in minutes · auditable · explainable</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing as the default</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>AI platform for insurance</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>LGPD-compliant</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisions in minutes · auditable · explainable</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing as the default</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/en/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/en/" class="nav__link">Home</a>
+      <a href="/en/#about" class="nav__link">About</a>
+      <a href="/insights/manifesto-en/" class="nav__link">Manifesto</a>
+      <a href="/en/#solutions" class="nav__link">Products &amp; AI</a>
+      <a href="/en/#protection" class="nav__link">Data Protection</a>
+      <a href="/en/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/en/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contact
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/en/insights/">
+      <span aria-hidden="true">←</span> Back to Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Automação</div>
+      <h1 class="display blarticle__title">Automatic external data validation for insurance submissions with AI</h1>
+      <p class="blarticle__sub">Automatic external data validation for insurance submissions is the stage where an external AI layer confirms and enriches the risk data before underwriting.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Automation guide</div>
+          <div class="blarticle__byline-time">15 · Jun · 2026 · 8 min read</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#3222E9,#7540AC); aspect-ratio: 16 / 9;">
+      
+    </figure>
+
+    <div class="blarticle__body">
+<p>Automatic external data validation for insurance submissions is the stage where an external AI layer resolves and confirms the risk data on an incoming submission against authoritative outside sources, before any underwriter spends time on it. In Brazilian Seguros e Danos (P&amp;C), a corporate submission rarely arrives clean. It comes as an e-mail body, a PDF proposal, scanned documents, a broker cover note, and prior policy schedules. Someone has to read it, key the fields, and then check them by hand: is the insured CNPJ active and regular, does the declared activity match the coverage, does the risk address reconcile, what is the broker history, is there a credit signal. Each check is a separate manual lookup, repeated on every submission. An AI layer does this automatically. It sits on top of the insurer policy and quotation systems and reads, validates, and enriches the submission without replacing the core and without a migration. For the validation stage specifically, the layer resolves the insured CNPJ against the Receita Federal registry, cross-references broker history, exposure, and credit, and writes the validated, enriched submission back into the existing flow with the reasoning attached. The reader who should consider it is an underwriting (subscrição) lead or innovation head who watches intake stall on manual checks. The volume is rising. The Seguros e Danos market grows double digits per year, while company structure does not keep pace with that acceleration. Manual validation does not scale with that growth, and it is inconsistent: one underwriter confirms CNPJ status and the economic activity classification, another skips it under queue pressure. The result is blind spots that surface later as mispriced risk. WIR is the AI layer for insurance, on top of the systems the insurer already runs, never in their place.</p>
+<h3>How end-to-end automatic validation and enrichment works</h3>
+<p>Automatic validation and enrichment is one stage of the broader automated underwriting journey, and it only works because the external sources in Brazil are authoritative and machine-readable. The full sequence runs in six stages. Multichannel intake captures submissions from e-mail, portal, upload, and API into one structured pipeline. Intelligent document reading uses Machine Learning to extract and structure the risk data, removing re-keying. Automatic validation and enrichment, the focus here, cross-references external sources to confirm and complete the picture. A risk and fraud ML engine then scores the structured, validated risk against the insurer appetite and underwriting manual. Dynamic pricing prices the premium to the enriched risk, and a decision stage quotes, declines, or escalates to a human with an explanation and an audit trail. Inside the validation stage, the mechanics answer one question before the underwriter spends time: is this risk real, in appetite, and complete enough to price. First comes identity and status validation. The CNPJ is the national registry of legal entities maintained by the Receita Federal, and it is public, so the layer resolves the insured CNPJ, confirms an active and regular registration status, and reads the economic activity classification and the address from the registry. An irregular entity is flagged before any capacity is committed. Second come consistency and appetite checks. The declared activity is cross-referenced against the requested coverage and the risk appetite, and the registry address is reconciled against the risk address in the submission. Mismatches become intake-time signals instead of post-bind surprises. Third comes enrichment, which attaches the broker conversion and loss history from the insurer own systems, the exposure already concentrated by line and region, and credit signals where payment risk matters. The output is a validated, enriched submission object plus a data-confidence signal, fed into the risk score. A score is only as good as its inputs, so confirming the CNPJ and adding exposure before scoring raises precision.</p>
+<h3>How to deploy the external AI layer for data validation</h3>
+<p>Adding automatic validation and enrichment as an external AI layer is a contained rollout, not a core program. That distinction matters most to this audience, because IT and core-system limits are the most cited blocker to innovation: 70% of insurers do not execute innovation due to IT limitations, according to BCG. An overlay model lets an insurer automate validation without betting the company on a multi-year core rebuild. The path starts with scope. The insurer picks the lines and submission types in Seguros e Danos where manual validation pain and volume are highest, and defines which external checks matter, namely CNPJ status and the economic activity classification, address reconciliation, broker history, exposure, and credit. Next is integration. The layer connects by API, portal, or upload to the existing quotation and policy systems, reads submissions, and writes back the validated, enriched context, with no migration. Then comes calibration. The checks and the scoring are tuned to the insurer underwriting manual (manual de subscrição) and risk appetite by line and region, so the validation respects existing rules rather than inventing new ones. Testing follows against historical submissions: did the CNPJ and activity checks catch the cases that should have been caught, did enrichment improve score accuracy, did fewer submissions bounce back for data problems. The insurer then goes live on the scoped lines with the underwriter in the loop and every automated check visible and overridable. From there the layer operates continuously, retraining and re-tuning as appetite and data sources change. On the commercial side, WIR structures this as a one-time setup that runs 3 to 12 months, covering automations, integrations, tests, and go-live adjustments, followed by continuous operation in production after go-live, billed monthly. The scope and the KPIs are agreed before the work starts, which keeps an automation initiative from drifting into an open-ended IT project the insurer team has to run.</p>
+<h3>Governance, explainability, and LGPD</h3>
+<p>Cross-referencing CNPJ, broker history, exposure, and credit is data processing, so it is governed. LGPD, Brazil general data protection law, governs the processing of personal data, requires a valid legal basis, and gives data subjects the right to request review of decisions taken solely on automated processing. CNPJ data is corporate registry data, but submissions routinely carry personal data too, such as partners, contacts, and sometimes a CPF, so the LGPD frame applies in full. For an automatic validation and enrichment layer that means three things. The cross-referencing rests on a valid legal basis. It is minimized to the fields the underwriting decision actually needs. And a human-review path is preserved for decisions that affect individuals. Explainability and auditability are the second pillar. Every validation outcome and every enrichment must be reconstructable: which CNPJ status was read and when, why the activity was flagged as out of appetite, which exposure or credit signal moved the score. SUSEP supervises the P&amp;C market, product registration, and conduct, and automated underwriting must stay consistent with the registered product terms and the underwriting manual. Good governance expects automated decisions to be auditable, so the layer logs every check, every confidence level, and every human override. The point worth stressing is that an enrichment layer strengthens governance rather than weakening it. Instead of ad-hoc manual lookups that leave no record, every CNPJ validation, address reconciliation, exposure check, and score is logged and explainable. This is how WIR is built. The platform is LGPD compliant, data is encrypted at every step, and every decision is explainable and returns a complete audit trail. The intelligence stays calibrated to the insurer own risk appetite and underwriting manual, so the automated checks enforce the insurer policy rather than a generic ruleset, and a human can always see the reasoning and override it.</p>
+<h3>How WIR validates and enriches submission data</h3>
+<p>WIR Innovation is the AI layer for insurance, an AI platform that sits on top of the systems an insurer already runs and never replaces the core. It is 100% external, with no load on the insurer IT and no core migration, which is the practical answer to the 70% of insurers that BCG finds cannot execute innovation because of IT limitations. For automatic validation and enrichment, the relevant module is Underwriter Intelligence. It automates the quotation journey according to the insurer own risk-acceptance policy, with real-time ML scoring calibrated to appetite, automatic routing by appetite and exposure, and predictive conversion analysis by product, risk, and broker. The validation stage feeds that engine. By resolving the insured CNPJ, reconciling the activity and address, and adding broker history, exposure, and credit before scoring, it gives Underwriter Intelligence confirmed and complete inputs instead of whatever the broker typed. The companion module, Smart Sales, is distribution intelligence: it maps the portfolio by client and product, scores upsell and next-best-action, and runs multi-channel campaigns with an attribution trail, so penetration and retention grow together. Both rest on the same external layer, so the insurer keeps its policy core and its underwriting rules while the intelligence is added by integration. On traction, WIR is deliberately precise. The company has a first POC in execution with a global insurer in the Transport line. That is the only client claim WIR makes, and it does not name signed clients, revenue, or other customers beyond it. WIR was built with Mahway, a Venture Builder in California, and Avante, a Venture Studio in Brazil, and was born from accumulated operational experience rather than as an experiment. For an insurer deciding whether to automate validation, the model is straightforward: an external AI layer, calibrated to its risk appetite and underwriting manual, that confirms the risk picture at intake and keeps a full, auditable trail.</p>
+<section class="blarticle__faq" aria-label="Frequently asked questions">
+<h3>Frequently asked questions</h3>
+<details class="blarticle__faq-item">
+  <summary>Which external sources does automatic validation check beyond the CNPJ registry?</summary>
+  <p>Beyond the CNPJ registry, automatic validation cross-references the broker history held in the insurer own systems, meaning conversion and loss track record. It checks exposure and accumulation already concentrated by line and region, and it pulls credit and financial-standing signals where premium financing or payment risk matters. The CNPJ itself supplies registration status, the economic activity classification, the address, and company size. WIR runs these checks as an external AI layer, calibrated to the insurer risk appetite, and writes the enriched result back into the existing flow.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>How does enrichment improve the accuracy of the risk score?</summary>
+  <p>A risk score is only as good as its inputs. Manual intake often scores whatever the broker typed, including an unconfirmed CNPJ or an activity that does not match the coverage. Enrichment fixes the inputs before scoring. It confirms the insured is real and regular, reconciles the declared activity and address, and attaches exposure, broker history, and credit. Feeding the risk and fraud ML engine confirmed data raises the precision of the score and reduces the rework loop where an underwriter finds a data problem after the quote is out.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Does automatic validation replace the insurer&#39;s core?</summary>
+  <p>No. WIR is an external AI layer that sits on top of the insurer existing policy and quotation systems and never replaces the core. It is 100% external, with no load on the insurer IT and no core migration. The layer connects by API, portal, or upload, reads the submission, validates and enriches it, and writes the result back into the existing flow. The insurer keeps its policy core and its underwriting rules, and the intelligence is added by integration, calibrated to the insurer own risk appetite.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Is the queried data handled under LGPD and encrypted?</summary>
+  <p>Yes. WIR is LGPD compliant and encrypts data at every step. Cross-referencing CNPJ, broker history, exposure, and credit is data processing, so it rests on a valid legal basis, is minimized to the fields the decision needs, and preserves a human-review path for decisions that affect individuals. Every validation outcome is explainable and the platform returns a complete audit trail, logging which CNPJ status was read, why an activity was flagged, and which signal moved the score, so each check is reconstructable.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Does automatic validation cut the time underwriters spend checking data?</summary>
+  <p>That is the point of automating it. Underwriters spend 40% of their time on administrative tasks rather than risk judgment, according to Deloitte, and corporate teams lose 20-30% of their time organizing unstructured data, according to Gartner. Manual cross-checking of a CNPJ, an activity code, or a broker track record is exactly that non-core work. An external AI layer runs those checks automatically at intake, so the underwriter receives a validated, enriched submission and spends time on risk judgment.</p>
+</details>
+</section>
+    </div>
+
+    <nav class="blarticle__related" aria-label="Related insights">
+      <h3 class="blarticle__related-title">Related insights</h3>
+      <ul class="blarticle__related-list">
+      <li class="blarticle__related-item"><a href="/insights/substituir-rpa-ocr-ia-seguros-en/"><span class="blarticle__related-cat">Automação</span> How to replace RPA and OCR with an AI layer in insurance</a></li>
+      <li class="blarticle__related-item"><a href="/insights/reduzir-tarefas-administrativas-subscricao-en/"><span class="blarticle__related-cat">Automação</span> How to reduce administrative tasks in insurance underwriting with an AI layer</a></li>
+      <li class="blarticle__related-item"><a href="/insights/risco-climatico-seguros-brasil-en/"><span class="blarticle__related-cat">Mercado</span> Climate risk in Brazilian insurance and AI-driven pricing</a></li>
+      <li class="blarticle__related-item"><a href="/insights/seguro-cargas-transporte-brasil-en/"><span class="blarticle__related-cat">Mercado</span> Cargo and transport insurance in Brazil and the AI shift in underwriting</a></li>
+      </ul>
+    </nav>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/en/insights/">
+        <span aria-hidden="true">←</span> More Insights
+      </a>
+      <a class="btn btn--solid" href="/en/#contact">
+        Talk to the team <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">The new era of insurance is data intelligence, speed, and scale. WIR Innovation is the AI platform that delivers that structure inside the systems you already run.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/en/">Home</a></li>
+          <li><a href="/en/#about">About</a></li>
+          <li><a href="/en/#solutions">Products &amp; AI</a></li>
+          <li><a href="/en/#protection">Data Protection</a></li>
+          <li><a href="/en/insights/">Insights &amp; News</a></li>
+          <li><a href="/en/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/en/#contact">Talk to the team</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partners &amp; Holding</h4>
+        <ul>
+          <li><a href="/en/#about">Mahway · California</a></li>
+          <li><a href="/en/#about">Avante · Brazil</a></li>
+          <li><a href="/en/#about">Strategic advisors</a></li>
+          <li><a href="/en/#about">Principles</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Built between São Paulo and Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Hello%20Nicholas%2C%20I%20found%20you%20through%20the%20WIR%20Innovation%20website.%20I'd%20like%20to%20talk%20about%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Chat with Nicholas on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>
