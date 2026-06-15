@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>Touchless underwriting pipeline for insurance with an AI layer — WIR Innovation</title>
+<meta name="description" content="A guide for insurers building a touchless underwriting pipeline with an external AI layer on top of existing systems, with human escalation. See the stages." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/esteira-subscricao-sem-toque-seguros-en/" />
+<link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/esteira-subscricao-sem-toque-seguros/" />
+<link rel="alternate" hreflang="en" href="https://wirinnovation.ai/insights/esteira-subscricao-sem-toque-seguros-en/" />
+<link rel="alternate" hreflang="x-default" href="https://wirinnovation.ai/insights/esteira-subscricao-sem-toque-seguros/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Touchless underwriting pipeline for insurance with an AI layer" />
+<meta property="og:description" content="A guide for insurers building a touchless underwriting pipeline with an external AI layer on top of existing systems, with human escalation. See the stages." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/esteira-subscricao-sem-toque-seguros-en/" />
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Subscrição" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Touchless underwriting pipeline for insurance with an AI layer" />
+<meta name="twitter:description" content="A guide for insurers building a touchless underwriting pipeline with an external AI layer on top of existing systems, with human escalation. See the stages." />
+
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Touchless underwriting pipeline for insurance with an AI layer","description":"A guide for insurers building a touchless underwriting pipeline with an external AI layer on top of existing systems, with human escalation. See the stages.","datePublished":"2026-06-15","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Automation guide"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/esteira-subscricao-sem-toque-seguros-en/","articleSection":"Subscrição"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wirinnovation.ai/en/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/en/insights/"},{"@type":"ListItem","position":3,"name":"Touchless underwriting pipeline for insurance with an AI layer","item":"https://wirinnovation.ai/insights/esteira-subscricao-sem-toque-seguros-en/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://wirinnovation.ai/insights/esteira-subscricao-sem-toque-seguros-en/#faq","inLanguage":"en","mainEntity":[{"@type":"Question","name":"Which risks can flow touchless and which escalate to a human?","acceptedAnswer":{"@type":"Answer","text":"A risk flows touchless only when it meets every eligibility condition at once. It must sit inside the insurer's risk appetite, inside the exposure and authority band, arrive complete and read at high extraction confidence, and stay clean of fraud signals. When all of those hold, the pipeline quotes, prices, and binds with no manual step. The moment any single condition fails, the case leaves the automated track and routes to a human underwriter. The insurer sets every threshold."}},{"@type":"Question","name":"Does a touchless pipeline replace the insurer's core?","acceptedAnswer":{"@type":"Answer","text":"No. WIR is an external AI layer that runs on top of the systems the insurer already operates, never in their place. It is 100% external, so there is no core migration and no load on the insurer's IT. The pipeline reads submissions in through existing interfaces and writes the decision and the audit trail back to the policy core. The core stays the system of record. The AI layer adds the intelligence around it."}},{"@type":"Question","name":"How does the touchless pipeline respect the underwriting manual and appetite?","acceptedAnswer":{"@type":"Answer","text":"The ML model at the center of the pipeline is calibrated to the insurer's own underwriting manual, risk appetite, and loss history, not a generic ruleset. Every automated decision to quote, decline, or escalate reflects the policy the team already follows. The eligibility gate that decides whether a risk stays touchless uses thresholds the insurer defines, by appetite, exposure, and authority band. The carrier can tighten or widen those thresholds at any time, which keeps the policy in control of the automation."}},{"@type":"Question","name":"Does each automated decision produce an audit trail?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every decision the platform makes is explainable and returns a full audit trail, so the insurer can reconstruct why any risk was quoted, declined, or escalated. This matters most where no human is in the loop, because under the LGPD a data subject can request review of solely automated decisions. The complete record makes that review possible. Data is encrypted at every step, and the result is written back to the policy core alongside the trail."}},{"@type":"Question","name":"How much does a touchless pipeline help scale premium without growing the team?","acceptedAnswer":{"@type":"Answer","text":"The pipeline handles the clean, in-appetite volume automatically, so the insurer absorbs growth without adding underwriters in proportion. That directly addresses a real constraint. The Brazilian Seguros e Danos (P&C) market grows double digits per year while operating structure lags, and underwriters spend 40% of their time on administrative tasks, a figure attributed to Deloitte. By automating straight-through cases and reserving people for complex judgment, capacity scales with premium rather than with headcount. WIR does not publish a specific throughput guarantee."}}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisions in minutes · auditable · explainable</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing as the default</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>AI platform for insurance</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>LGPD-compliant</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisions in minutes · auditable · explainable</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing as the default</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/en/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/en/" class="nav__link">Home</a>
+      <a href="/en/#about" class="nav__link">About</a>
+      <a href="/insights/manifesto-en/" class="nav__link">Manifesto</a>
+      <a href="/en/#solutions" class="nav__link">Products &amp; AI</a>
+      <a href="/en/#protection" class="nav__link">Data Protection</a>
+      <a href="/en/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/en/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contact
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/en/insights/">
+      <span aria-hidden="true">←</span> Back to Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Subscrição</div>
+      <h1 class="display blarticle__title">Touchless underwriting pipeline for insurance with an AI layer</h1>
+      <p class="blarticle__sub">A touchless underwriting pipeline for insurance with AI is a straight-through flow where in-appetite, low-complexity risks move from intake to a bound decision with no manual step, while complex risks escalate to a human.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Automation guide</div>
+          <div class="blarticle__byline-time">15 · Jun · 2026 · 6 min read</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#3222E9,#7540AC); aspect-ratio: 16 / 9;">
+      
+    </figure>
+
+    <div class="blarticle__body">
+<p>A touchless underwriting pipeline for insurance with AI is a straight-through processing flow where low-complexity risks that sit inside the insurer&#39;s appetite move from intake to a bound decision with no manual step, while complex or borderline risks escalate to a human underwriter. WIR delivers this as an external AI layer that runs on top of the systems the insurer already operates. It never replaces the core. For an underwriting or innovation lead, the goal is plain. Grow premium without growing headcount, and reserve scarce underwriter attention for the cases that genuinely need judgment. The pipeline reads each submission, scores the risk against the underwriting manual, prices it, and either issues a quote, declines, or routes the case to a person. Brazilian insurers feel the pressure behind this. The Seguros e Danos (P&amp;C) market grows double digits per year, but the operating structure does not keep pace with that acceleration. Underwriters still spend 40% of their time on administrative tasks, a figure attributed to Deloitte. A pipeline that handles the clean, in-appetite volume automatically is how an insurer absorbs growth without a proportional increase in staff, and the AI layer makes that possible without touching the policy core.</p>
+<h3>How the end-to-end touchless pipeline works</h3>
+<p>The end-to-end touchless pipeline is the chaining of six stages so that a clean, in-appetite risk flows from first contact to a bound decision with no human in the loop. It begins with multichannel intake and automatic validation. The submission arrives in the format the broker already uses, by API, portal, or upload, including e-mail and attachments, and the layer validates completeness on receipt. Next comes intelligent document reading, where machine learning extracts the relevant fields from the submission with high precision, turning unstructured paper into structured data the engine can act on. The third stage is broker enrichment and context. The layer cross-references external sources such as CNPJ records, broker history, exposure, and credit, and attaches a broker score and conversion history to the case. The fourth stage is the risk and fraud engine, a multi-factor ML model calibrated to the insurer&#39;s appetite and underwriting manual that returns a risk score, a probability, and an automated decision. The fifth stage is dynamic pricing, a risk-adjusted premium calculated and returned instantly. The sixth stage is decision and prioritization, where the case becomes a quote, an automatic decline, or an escalation to a human, always with an explanation. The platform writes the result back to the policy core and returns the audit trail, with a visible SLA and an underwriter queue. What makes the flow touchless is the eligibility gate applied at each stage. A risk continues automatically only while it stays inside appetite, inside the exposure and authority band, complete and read at high extraction confidence, and clean of fraud signals. The moment any one condition fails, the case leaves the automated track and routes to an underwriter. The insurer sets every threshold.</p>
+<h3>How to deploy the external AI layer for a touchless pipeline</h3>
+<p>Deploying the external AI layer for a touchless pipeline is a calibration and integration exercise, not a system migration. WIR is 100% external, so there is no load on the insurer&#39;s IT and no core to rip out. The practical path starts narrow. Scope one line of business and one channel where the volume of clean, repetitive risk is highest, because that is where straight-through processing pays back fastest. The layer then integrates with the existing core through the interfaces already in place, reading submissions in and writing decisions back, without a data migration. Calibration is the heart of the work. The ML model is tuned to the insurer&#39;s own underwriting manual, risk appetite, and loss history, so the automated decisions mirror the policy the team already follows rather than a generic ruleset. Before anything goes live, the pipeline runs in shadow mode against real cases, so the insurer can compare the layer&#39;s decisions to the underwriters&#39; own and confirm the eligibility thresholds are set correctly. Go-live is staged. The touchless band starts conservative, covering only the safest in-appetite segment, then widens as confidence grows and the data accumulates. After go-live the work shifts to continuous operation, monitoring the straight-through rate, watching for model drift, and adjusting thresholds as the portfolio and the market move. This is the commercial shape WIR uses, a setup phase that runs 3 to 12 months with a fixed price and KPIs agreed before the start, followed by continuous operation billed monthly after go-live.</p>
+<h3>Governance, explainability, and LGPD</h3>
+<p>Governance is not a layer bolted on after the fact. It is built into how a touchless pipeline decides. Every automated decision the platform makes is explainable and returns a full audit trail, so the insurer can reconstruct why any given risk was quoted, declined, or escalated. That matters most precisely where there is no human in the loop. Under the LGPD, a data subject has the right to request review of decisions taken solely on automated processing, which makes a complete, inspectable record of each automated call a requirement, not a nicety. Data is encrypted at every step, and the ANPD is the authority that oversees how personal data is handled. The control mechanism that keeps the pipeline safe is calibration to the insurer&#39;s own policy. Because the ML model is tuned to the underwriting manual and the risk appetite, the automated decisions stay inside the boundaries the insurer already defined and defends. Human escalation is itself a governance feature, not a failure mode. By design, any risk that falls outside appetite, outside the authority band, or below the extraction-confidence threshold leaves the automated track and reaches an underwriter, so judgment is applied exactly where the policy says a person must decide. The insurer owns every threshold and can tighten or widen the touchless band at any time, which keeps accountability with the carrier rather than the technology.</p>
+<h3>How WIR builds the touchless underwriting pipeline</h3>
+<p>WIR runs the whole touchless underwriting pipeline as an external AI layer, the AI layer of insurance, on top of the systems the insurer already operates and never in their place. The intelligence is delivered through two products. Underwriter Intelligence automates the quotation journey according to the insurer&#39;s risk-acceptance policy, with real-time ML scoring calibrated to appetite, automatic routing by appetite and exposure, and predictive conversion analysis by product, risk, and broker, so underwriters spend their time analyzing risk and developing business rather than re-keying submissions. Smart Sales adds distribution intelligence on the same layer, mapping the portfolio by client and product, scoring upsell and next-best-action, and running multi-channel campaigns with an attribution trail, so penetration and retention grow together. Real-time dashboards and analytics give a proactive view of in-flight deals and the pipeline. WIR was built with Mahway, a Venture Builder in California, and Avante, a Venture Studio in Brazil, and it was born from accumulated operational experience rather than as an experiment. On traction, WIR is deliberately conservative. The only public fact is a first POC in execution with a global insurer in the Transport line. The model behind the pipeline is calibrated to each insurer&#39;s appetite and underwriting manual, every decision is explainable and auditable, and data is LGPD compliant and encrypted at every step. The AI layer for insurance, on top of the systems the insurer already runs, never in their place.</p>
+<section class="blarticle__faq" aria-label="Frequently asked questions">
+<h3>Frequently asked questions</h3>
+<details class="blarticle__faq-item">
+  <summary>Which risks can flow touchless and which escalate to a human?</summary>
+  <p>A risk flows touchless only when it meets every eligibility condition at once. It must sit inside the insurer&#39;s risk appetite, inside the exposure and authority band, arrive complete and read at high extraction confidence, and stay clean of fraud signals. When all of those hold, the pipeline quotes, prices, and binds with no manual step. The moment any single condition fails, the case leaves the automated track and routes to a human underwriter. The insurer sets every threshold.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Does a touchless pipeline replace the insurer&#39;s core?</summary>
+  <p>No. WIR is an external AI layer that runs on top of the systems the insurer already operates, never in their place. It is 100% external, so there is no core migration and no load on the insurer&#39;s IT. The pipeline reads submissions in through existing interfaces and writes the decision and the audit trail back to the policy core. The core stays the system of record. The AI layer adds the intelligence around it.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>How does the touchless pipeline respect the underwriting manual and appetite?</summary>
+  <p>The ML model at the center of the pipeline is calibrated to the insurer&#39;s own underwriting manual, risk appetite, and loss history, not a generic ruleset. Every automated decision to quote, decline, or escalate reflects the policy the team already follows. The eligibility gate that decides whether a risk stays touchless uses thresholds the insurer defines, by appetite, exposure, and authority band. The carrier can tighten or widen those thresholds at any time, which keeps the policy in control of the automation.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Does each automated decision produce an audit trail?</summary>
+  <p>Yes. Every decision the platform makes is explainable and returns a full audit trail, so the insurer can reconstruct why any risk was quoted, declined, or escalated. This matters most where no human is in the loop, because under the LGPD a data subject can request review of solely automated decisions. The complete record makes that review possible. Data is encrypted at every step, and the result is written back to the policy core alongside the trail.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>How much does a touchless pipeline help scale premium without growing the team?</summary>
+  <p>The pipeline handles the clean, in-appetite volume automatically, so the insurer absorbs growth without adding underwriters in proportion. That directly addresses a real constraint. The Brazilian Seguros e Danos (P&amp;C) market grows double digits per year while operating structure lags, and underwriters spend 40% of their time on administrative tasks, a figure attributed to Deloitte. By automating straight-through cases and reserving people for complex judgment, capacity scales with premium rather than with headcount. WIR does not publish a specific throughput guarantee.</p>
+</details>
+</section>
+    </div>
+
+    <nav class="blarticle__related" aria-label="Related insights">
+      <h3 class="blarticle__related-title">Related insights</h3>
+      <ul class="blarticle__related-list">
+      <li class="blarticle__related-item"><a href="/insights/triagem-automatica-submissoes-seguro-en/"><span class="blarticle__related-cat">Automação</span> Automatic insurance submission triage with an AI layer</a></li>
+      <li class="blarticle__related-item"><a href="/insights/manifesto-en/"><span class="blarticle__related-cat">Manifesto</span> The AI layer of insurance</a></li>
+      <li class="blarticle__related-item"><a href="/insights/analise-preditiva-conversao-cotacao-en/"><span class="blarticle__related-cat">Article</span> Predictive quote conversion analysis for insurance with an AI layer</a></li>
+      <li class="blarticle__related-item"><a href="/insights/automatizar-renovacao-seguros-ia-en/"><span class="blarticle__related-cat">Article</span> How to automate insurance renewals with an AI layer</a></li>
+      </ul>
+    </nav>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/en/insights/">
+        <span aria-hidden="true">←</span> More Insights
+      </a>
+      <a class="btn btn--solid" href="/en/#contact">
+        Talk to the team <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">The new era of insurance is data intelligence, speed, and scale. WIR Innovation is the AI platform that delivers that structure inside the systems you already run.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/en/">Home</a></li>
+          <li><a href="/en/#about">About</a></li>
+          <li><a href="/en/#solutions">Products &amp; AI</a></li>
+          <li><a href="/en/#protection">Data Protection</a></li>
+          <li><a href="/en/insights/">Insights &amp; News</a></li>
+          <li><a href="/en/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/en/#contact">Talk to the team</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partners &amp; Holding</h4>
+        <ul>
+          <li><a href="/en/#about">Mahway · California</a></li>
+          <li><a href="/en/#about">Avante · Brazil</a></li>
+          <li><a href="/en/#about">Strategic advisors</a></li>
+          <li><a href="/en/#about">Principles</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Built between São Paulo and Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Hello%20Nicholas%2C%20I%20found%20you%20through%20the%20WIR%20Innovation%20website.%20I'd%20like%20to%20talk%20about%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Chat with Nicholas on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>

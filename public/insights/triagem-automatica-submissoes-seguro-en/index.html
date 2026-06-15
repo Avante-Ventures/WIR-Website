@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>Automatic insurance submission triage with an AI layer — WIR Innovation</title>
+<meta name="description" content="A guide for insurers automating submission triage with an external AI layer on top of existing systems, prioritizing by appetite and exposure. See the stages." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/triagem-automatica-submissoes-seguro-en/" />
+<link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/triagem-automatica-submissoes-seguro/" />
+<link rel="alternate" hreflang="en" href="https://wirinnovation.ai/insights/triagem-automatica-submissoes-seguro-en/" />
+<link rel="alternate" hreflang="x-default" href="https://wirinnovation.ai/insights/triagem-automatica-submissoes-seguro/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Automatic insurance submission triage with an AI layer" />
+<meta property="og:description" content="A guide for insurers automating submission triage with an external AI layer on top of existing systems, prioritizing by appetite and exposure. See the stages." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/triagem-automatica-submissoes-seguro-en/" />
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Automação" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Automatic insurance submission triage with an AI layer" />
+<meta name="twitter:description" content="A guide for insurers automating submission triage with an external AI layer on top of existing systems, prioritizing by appetite and exposure. See the stages." />
+
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Automatic insurance submission triage with an AI layer","description":"A guide for insurers automating submission triage with an external AI layer on top of existing systems, prioritizing by appetite and exposure. See the stages.","datePublished":"2026-06-15","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Automation guide"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/triagem-automatica-submissoes-seguro-en/","articleSection":"Automação"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wirinnovation.ai/en/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/en/insights/"},{"@type":"ListItem","position":3,"name":"Automatic insurance submission triage with an AI layer","item":"https://wirinnovation.ai/insights/triagem-automatica-submissoes-seguro-en/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://wirinnovation.ai/insights/triagem-automatica-submissoes-seguro-en/#faq","inLanguage":"en","mainEntity":[{"@type":"Question","name":"How does automatic triage prioritize submissions by appetite and exposure?","acceptedAnswer":{"@type":"Answer","text":"Each submission is scored on two axes. The first is whether it falls inside the defined risk appetite for its line of business. The second is its exposure and authority band, meaning sum insured, line size, and accumulation against limits already on the book. The combination sets queue priority. A complete case inside appetite from a high-value broker rises to the top, one outside appetite is surfaced early for a fast decline, and one above an authority band is marked for the senior queue."}},{"@type":"Question","name":"Does automated triage replace the insurer's core?","acceptedAnswer":{"@type":"Answer","text":"No. The triage intelligence is an external AI layer that sits on top of the existing core and policy administration systems. It ingests submissions from the channels the insurer and its brokers already use, classifies and prioritizes them, and writes the classification, priority, and queue position back through APIs or files. The policy system of record, the rating engine, and the books stay exactly where they are. There is no core migration and no IT project the insurer's team has to run."}},{"@type":"Question","name":"What is the difference between automatic triage and underwriting routing?","acceptedAnswer":{"@type":"Answer","text":"Triage is the intake step that sorts, classifies, and prioritizes the inbox. It answers what a submission is, whether it is complete, whether it fits appetite, and how urgent it is. Underwriting routing is the later decision step that produces a quote, a decline, or an escalation and sends the case to a specific underwriter. Triage feeds routing a queue that is already ordered by what matters, so routing acts on a sorted queue instead of a raw one."}},{"@type":"Question","name":"Does triage work with submissions that arrive by e-mail and attachments?","acceptedAnswer":{"@type":"Answer","text":"Yes. In P&C, submissions rarely arrive as clean structured data through one door. They come as e-mail bodies, PDF proposal forms, scanned documents, spreadsheets, and broker cover notes across several channels. Multichannel intake captures them on arrival, and intelligent document reading extracts the fields into structured data. Triage then consumes that structured data to classify each submission by line, product, and broker and to prioritize it by appetite and exposure."}},{"@type":"Question","name":"Does the underwriting team see the queue and the priority order?","acceptedAnswer":{"@type":"Answer","text":"Yes. The output of triage is a prioritized, classified work queue with a visible SLA, not an undifferentiated inbox. Each submission is captured and timestamped on arrival, which starts the SLA clock, and each case is placed in the right lane with its classification and reasoning attached. Real-time dashboards give the team the right cases at the top, so the underwriter sees a desk ordered by priority and the broker gets a predictable response."}}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisions in minutes · auditable · explainable</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing as the default</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>AI platform for insurance</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>LGPD-compliant</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisions in minutes · auditable · explainable</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing as the default</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/en/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/en/" class="nav__link">Home</a>
+      <a href="/en/#about" class="nav__link">About</a>
+      <a href="/insights/manifesto-en/" class="nav__link">Manifesto</a>
+      <a href="/en/#solutions" class="nav__link">Products &amp; AI</a>
+      <a href="/en/#protection" class="nav__link">Data Protection</a>
+      <a href="/en/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/en/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contact
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/en/insights/">
+      <span aria-hidden="true">←</span> Back to Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Automação</div>
+      <h1 class="display blarticle__title">Automatic insurance submission triage with an AI layer</h1>
+      <p class="blarticle__sub">Automatic insurance submission triage with AI is the sorting step that runs the instant a submission arrives and before underwriting.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Automation guide</div>
+          <div class="blarticle__byline-time">15 · Jun · 2026 · 5 min read</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#7540AC,#FE8B77); aspect-ratio: 16 / 9;">
+      
+    </figure>
+
+    <div class="blarticle__body">
+<p>Automatic insurance submission triage with AI is the sorting step that happens the instant a submission lands and before an underwriter touches it. The triage question is not what a document says and not what the final decision should be. It is simpler and earlier: what is this, is it complete, does it belong to us, and how urgent is it. An external AI layer reads the structured data already pulled from the submission, classifies it by line of business (ramo), product, and broker (corretor), checks whether it is complete enough to work, and then orders the queue by the insurer&#39;s risk appetite and by exposure.</p>
+<p>This stage is often confused with the two it sits between. Intelligent document reading is the extraction step that opens the e-mail and the attachments and turns unstructured files into structured fields. Underwriting routing is the later decision step that produces a quote, a decline, or an escalation and sends the case to a specific underwriter. Triage is the connective tissue between them. It consumes what reading extracted and hands routing a queue that is already sorted by what matters.</p>
+<p>The reader who should care is the head of underwriting or operations watching a shared inbox fill faster than the team can sort it. Automating reading alone still leaves a person to manually rank and route each case. Automating triage removes that manual sorting, and it does so as a scoped layer on top of the systems the insurer already runs.</p>
+<h3>How end-to-end automated triage works</h3>
+<p>Triage is one stage of a larger automated underwriting (subscrição) journey, and it depends on the stage before it. The full flow runs in six stages. First, multichannel intake with automatic validation captures every submission from API, portal, or upload, in the format the insurer and its brokers already use. Second, intelligent document reading extracts the fields from e-mails, PDFs, spreadsheets, and scanned files. Third, broker enrichment and context resolves the broker, scores it, and adds conversion history. Fourth, a risk and fraud engine scores the case with multi-factor ML calibrated to the underwriting manual. Fifth, dynamic pricing produces a risk-adjusted premium. Sixth, decision and prioritization returns a quote, an automatic decline, or an escalation to a human, writes back to the core, and returns the audit trail.</p>
+<p>Within that flow, the triage work itself is concrete. Each submission is captured and timestamped on arrival, which starts the SLA clock and makes the queue visible. The layer then classifies the submission by ramo, product, and broker, which decides the team, authority level, and rule set it belongs to. It checks the extracted data against what that specific line requires, so a missing sum insured, risk address, or loss history is flagged for broker enrichment before the case ever reaches pricing, instead of stalling on a desk.</p>
+<p>Prioritization runs on two axes. Is the submission inside the defined risk appetite for its ramo, and what is its exposure and authority band, meaning sum insured, line size, and accumulation against limits already on the book. The combination sets priority. A complete submission, inside appetite, from a high-value broker, with an exposure that fits, rises to the top. One outside appetite is surfaced early for a fast decline. One above an authority band is marked for the senior queue. The output is a prioritized, classified work queue with the reasoning attached, not an undifferentiated inbox. The net effect is consistency, because one logic sorts every submission, and speed, because clean high-value business is surfaced immediately.</p>
+<h3>How to deploy the external AI layer for triage</h3>
+<p>The triage intelligence is an external layer that sits on top of the existing core and policy administration systems and connects through integration, not replacement. It ingests submissions from whatever channels the insurer and its brokers already use, classifies and prioritizes them, and writes the classification, the priority, and the queue position back into the existing workflow through APIs or files. The policy system of record, the rating engine, and the books stay exactly where they are.</p>
+<p>This matters because legacy-system limitation is the most cited blocker to underwriting modernization. According to BCG, 70% of insurers cannot execute innovation because of IT constraints. An external triage layer sidesteps that blocker. It is scoped, it reuses the existing stack, and it can go live on a defined slice, for example one ramo and one channel first, without a multi-year core program. A core replacement is a long, high-risk effort. An external AI layer is incremental and carries no core risk.</p>
+<p>Deployment runs in two commercial phases. Setup is a one-time engagement of 3 to 12 months covering the automations, the integrations with the core, the tests, and the go-live adjustments, with a fixed price and KPIs agreed before work starts. Continuous operation follows go-live, billed monthly and adjusted per client. The decisive step inside setup is calibration. The classification and prioritization logic is tuned to the insurer&#39;s own underwriting manual and risk appetite, not to a generic template, so the insurer remains the risk owner and the priority order reflects its actual acceptance policy.</p>
+<h3>Governance, explainability, and LGPD</h3>
+<p>Triage classifies and prioritizes using personal and corporate data, so it is governed, and in the Brazilian frame that is not optional. Every triage outcome must be reconstructable: which ramo and product the layer assigned and why, which factors raised or lowered the priority, and why a submission was flagged incomplete or out of appetite. Each step is logged with its inputs and its rationale, which produces a full audit trail per submission and supports both internal governance and SUSEP supervision expectations around sound, documented underwriting.</p>
+<p>LGPD governs the processing of the personal data inside submissions. Brazil&#39;s Lei Geral de Proteção de Dados (Lei 13.709/2018) requires a lawful basis and mandates data minimization and security, and its Article 20 gives the data subject the right to request review of decisions taken solely on automated processing. That is exactly why automated triage keeps a documented rationale and a human-review path rather than acting as a black box. The supervisory authority is the ANPD.</p>
+<p>Data is encrypted in transit and at rest across capture, classification, and write-back, and the layer pulls only the fields the triage decision needs. The point worth stressing for an insurer audience is that this strengthens governance rather than weakening it. Manual sorting leaves no record of why one submission jumped the queue and another waited. An AI triage layer logs every classification and priority decision and can explain each one, so the queue is auditable by design. The model stays calibrated to the insurer&#39;s risk policy, and the insurer, not the layer, remains accountable for every acceptance decision.</p>
+<h3>How WIR automates submission triage</h3>
+<p>WIR Innovation is the AI layer for insurance. It is an AI platform that automates the quotation and underwriting journey on top of the systems the insurer already runs, never in their place. For triage specifically, WIR captures submissions through multichannel intake, applies intelligent document reading to turn them into structured data, and then classifies and prioritizes each case by line, product, and broker, with Machine Learning calibrated to the insurer&#39;s risk appetite and underwriting manual. The classification, the priority, and the queue position write back to the existing core, and every decision returns a full audit trail.</p>
+<p>Two modules carry the work. Underwriter Intelligence automates the quotation journey per the insurer&#39;s risk policy, scoring in real time, routing by appetite and exposure, and freeing underwriters to analyze risk instead of sorting an inbox. Smart Sales maps the portfolio of client and product, scores next-best-action, and runs broker-facing campaigns with an attribution trail, so the same broker signal that raises a submission&#39;s triage priority also feeds distribution. Real-time dashboards give the team a visible queue and a visible SLA.</p>
+<p>The context behind this is structural. The Seguros e Danos market grows double digits per year while company structure does not keep pace, underwriters lose 40% of their time to administrative tasks according to Deloitte, and Gartner puts the corporate time lost organizing unstructured data at 20-30%. Capgemini reports that more than 60% of brokers choose an insurer by response speed, which makes the order of the triage queue a direct lever on premium. WIR&#39;s current public traction is conservative and specific: a first POC in execution with a global insurer in the Transport line. The model is calibrated to each insurer, LGPD compliant, and encrypted at every step. The AI layer for insurance, on top of the systems the insurer already runs, never in their place.</p>
+<section class="blarticle__faq" aria-label="Frequently asked questions">
+<h3>Frequently asked questions</h3>
+<details class="blarticle__faq-item">
+  <summary>How does automatic triage prioritize submissions by appetite and exposure?</summary>
+  <p>Each submission is scored on two axes. The first is whether it falls inside the defined risk appetite for its line of business. The second is its exposure and authority band, meaning sum insured, line size, and accumulation against limits already on the book. The combination sets queue priority. A complete case inside appetite from a high-value broker rises to the top, one outside appetite is surfaced early for a fast decline, and one above an authority band is marked for the senior queue.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Does automated triage replace the insurer&#39;s core?</summary>
+  <p>No. The triage intelligence is an external AI layer that sits on top of the existing core and policy administration systems. It ingests submissions from the channels the insurer and its brokers already use, classifies and prioritizes them, and writes the classification, priority, and queue position back through APIs or files. The policy system of record, the rating engine, and the books stay exactly where they are. There is no core migration and no IT project the insurer&#39;s team has to run.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>What is the difference between automatic triage and underwriting routing?</summary>
+  <p>Triage is the intake step that sorts, classifies, and prioritizes the inbox. It answers what a submission is, whether it is complete, whether it fits appetite, and how urgent it is. Underwriting routing is the later decision step that produces a quote, a decline, or an escalation and sends the case to a specific underwriter. Triage feeds routing a queue that is already ordered by what matters, so routing acts on a sorted queue instead of a raw one.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Does triage work with submissions that arrive by e-mail and attachments?</summary>
+  <p>Yes. In P&amp;C, submissions rarely arrive as clean structured data through one door. They come as e-mail bodies, PDF proposal forms, scanned documents, spreadsheets, and broker cover notes across several channels. Multichannel intake captures them on arrival, and intelligent document reading extracts the fields into structured data. Triage then consumes that structured data to classify each submission by line, product, and broker and to prioritize it by appetite and exposure.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Does the underwriting team see the queue and the priority order?</summary>
+  <p>Yes. The output of triage is a prioritized, classified work queue with a visible SLA, not an undifferentiated inbox. Each submission is captured and timestamped on arrival, which starts the SLA clock, and each case is placed in the right lane with its classification and reasoning attached. Real-time dashboards give the team the right cases at the top, so the underwriter sees a desk ordered by priority and the broker gets a predictable response.</p>
+</details>
+</section>
+    </div>
+
+    <nav class="blarticle__related" aria-label="Related insights">
+      <h3 class="blarticle__related-title">Related insights</h3>
+      <ul class="blarticle__related-list">
+      <li class="blarticle__related-item"><a href="/insights/manifesto-en/"><span class="blarticle__related-cat">Manifesto</span> The AI layer of insurance</a></li>
+      <li class="blarticle__related-item"><a href="/insights/analise-preditiva-conversao-cotacao-en/"><span class="blarticle__related-cat">Article</span> Predictive quote conversion analysis for insurance with an AI layer</a></li>
+      <li class="blarticle__related-item"><a href="/insights/automatizar-renovacao-seguros-ia-en/"><span class="blarticle__related-cat">Article</span> How to automate insurance renewals with an AI layer</a></li>
+      <li class="blarticle__related-item"><a href="/insights/automatizar-upsell-cross-sell-seguros-en/"><span class="blarticle__related-cat">Article</span> How to automate insurance upsell and cross-sell with an AI layer</a></li>
+      </ul>
+    </nav>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/en/insights/">
+        <span aria-hidden="true">←</span> More Insights
+      </a>
+      <a class="btn btn--solid" href="/en/#contact">
+        Talk to the team <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">The new era of insurance is data intelligence, speed, and scale. WIR Innovation is the AI platform that delivers that structure inside the systems you already run.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/en/">Home</a></li>
+          <li><a href="/en/#about">About</a></li>
+          <li><a href="/en/#solutions">Products &amp; AI</a></li>
+          <li><a href="/en/#protection">Data Protection</a></li>
+          <li><a href="/en/insights/">Insights &amp; News</a></li>
+          <li><a href="/en/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/en/#contact">Talk to the team</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partners &amp; Holding</h4>
+        <ul>
+          <li><a href="/en/#about">Mahway · California</a></li>
+          <li><a href="/en/#about">Avante · Brazil</a></li>
+          <li><a href="/en/#about">Strategic advisors</a></li>
+          <li><a href="/en/#about">Principles</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Built between São Paulo and Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Hello%20Nicholas%2C%20I%20found%20you%20through%20the%20WIR%20Innovation%20website.%20I'd%20like%20to%20talk%20about%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Chat with Nicholas on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>
