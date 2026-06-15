@@ -317,11 +317,39 @@ function renderWhatsAppFAB(lang = "pt-BR") {
 </a>`;
 }
 
+// Related insights — automated internal links so every article links (and is
+// linked by) 4 siblings. Without this, deep articles only had the hub link +
+// any manual body links, leaving low-authority pages "crawled: Never".
+// Cyclic next-4 over the same-language list guarantees even coverage (no orphans).
+function renderRelated(article) {
+  const lang = isEnglish(article.slug) ? "en" : "pt-BR";
+  const heading = lang === "en" ? "Related insights" : "Leituras relacionadas";
+  const sameLang = ARTICLES.filter(a => isEnglish(a.slug) === isEnglish(article.slug));
+  if (sameLang.length < 2) return "";
+  const idx = sameLang.findIndex(a => a.slug === article.slug);
+  const picks = [];
+  for (let k = 1; k <= 4 && picks.length < sameLang.length - 1; k++) {
+    picks.push(sameLang[(idx + k) % sameLang.length]);
+  }
+  const items = picks.map(a =>
+    `      <li class="blarticle__related-item"><a href="/insights/${a.slug}/"><span class="blarticle__related-cat">${esc(a.cat)}</span> ${esc(a.title)}</a></li>`
+  ).join("\n");
+  return `
+    <nav class="blarticle__related" aria-label="${heading}">
+      <h3 class="blarticle__related-title">${heading}</h3>
+      <ul class="blarticle__related-list">
+${items}
+      </ul>
+    </nav>
+`;
+}
+
 function renderArticleHTML(article) {
   const lang = isEnglish(article.slug) ? "en" : "pt-BR";
   const c = CHROME[lang] || CHROME["pt-BR"];
   const initials = article.author.split(" ").map(w => w[0]).slice(0, 2).join("");
   const bodyHTML = renderBody(article.body);
+  const relatedHTML = renderRelated(article);
   // Visible FAQ block — single source with the FAQPage schema (see renderHead).
   const faqHTML = (Array.isArray(article.faq) && article.faq.length)
     ? `\n<section class="blarticle__faq" aria-label="${c.faqTitle}">
@@ -371,7 +399,7 @@ ${renderNav(lang)}
     <div class="blarticle__body">
 ${bodyHTML}${faqHTML}
     </div>
-
+${relatedHTML}
     <footer class="blarticle__foot">
       <a class="btn btn--ghost" href="${insightsHref(lang)}">
         <span aria-hidden="true">←</span> ${c.moreInsights}

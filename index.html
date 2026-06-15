@@ -147,6 +147,7 @@
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "WIR Innovation",
+  "alternateName": "WIR",
   "url": "https://wirinnovation.ai/",
   "inLanguage": "pt-BR",
   "publisher": { "@type": "Organization", "name": "WIR Innovation" }
@@ -207,6 +208,32 @@
 </head>
 <body>
   <div id="app"></div>
+
+  <!-- Crawlable fallback for non-JS agents (AI answer-engine crawlers + link graph).
+       Mirrors the live nav so Google/Bing/GPTBot/ClaudeBot/PerplexityBot reach the
+       content cluster without executing JS. Googlebot renders the React app above. -->
+  <noscript>
+    <header class="ns-home">
+      <a href="/"><img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" width="120" height="60" /></a>
+      <h1>WIR Innovation — Plataforma de IA para o mercado segurador</h1>
+      <p>A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation entrega uma camada de IA com analytics e dashboards em tempo real para distribuição, subscrição e sinistros — sem substituir os sistemas que a seguradora já opera.</p>
+      <nav aria-label="Navegação principal">
+        <a href="/#about">Sobre</a> ·
+        <a href="/#solutions">Produtos &amp; IA</a> ·
+        <a href="/#protection">Proteção de Dados</a> ·
+        <a href="/insights/">Insights &amp; News</a> ·
+        <a href="/#contact">Contato</a> ·
+        <a href="/en/">English</a> · <a href="/es/">Español</a>
+      </nav>
+      <p>Leituras em destaque:
+        <a href="/insights/manifesto/">Manifesto WIR</a>,
+        <a href="/insights/inteligencia-de-subscricao-brasil/">Inteligência de subscrição no Brasil</a>,
+        <a href="/insights/fraude-seguros-brasil-ia/">Fraude em seguros com IA</a>,
+        <a href="/insights/open-insurance-brasil-seguradoras/">Open Insurance no Brasil</a>,
+        <a href="/insights/custo-invisivel-stp-mal-feito/">O custo invisível do STP mal feito</a>.
+      </p>
+    </header>
+  </noscript>
 
   <!-- Tweakable brand tokens -->
   <script>
