@@ -4,15 +4,15 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#7540AC" />
-<title>Observabilidade de agentes de IA: métricas e ferramentas para produção — WIR Innovation</title>
-<meta name="description" content="As 6 métricas e as principais ferramentas de observabilidade de agentes de IA em produção — de drift e custo por decisão a Arize, Fiddler, WhyLabs e Evidently." />
+<title>Observabilidade de decisões de IA no seguro: como auditar a subscrição automatizada — WIR Innovation</title>
+<meta name="description" content="Toda decisão de IA na subscrição automatizada precisa de uma trilha de auditoria. Veja como observar e explicar o que o modelo decide." />
 <link rel="canonical" href="https://wirinnovation.ai/insights/observabilidade-de-agentes/" />
 <link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/observabilidade-de-agentes/" />
 <link rel="alternate" hreflang="x-default" href="https://wirinnovation.ai/insights/observabilidade-de-agentes/" />
 
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Observabilidade de agentes de IA: métricas e ferramentas para produção" />
-<meta property="og:description" content="As 6 métricas e as principais ferramentas de observabilidade de agentes de IA em produção — de drift e custo por decisão a Arize, Fiddler, WhyLabs e Evidently." />
+<meta property="og:title" content="Observabilidade de decisões de IA no seguro: como auditar a subscrição automatizada" />
+<meta property="og:description" content="Toda decisão de IA na subscrição automatizada precisa de uma trilha de auditoria. Veja como observar e explicar o que o modelo decide." />
 <meta property="og:url" content="https://wirinnovation.ai/insights/observabilidade-de-agentes/" />
 <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100" />
 <meta property="og:locale" content="pt_BR" />
@@ -21,8 +21,8 @@
 <meta property="article:section" content="Técnico" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Observabilidade de agentes de IA: métricas e ferramentas para produção" />
-<meta name="twitter:description" content="As 6 métricas e as principais ferramentas de observabilidade de agentes de IA em produção — de drift e custo por decisão a Arize, Fiddler, WhyLabs e Evidently." />
+<meta name="twitter:title" content="Observabilidade de decisões de IA no seguro: como auditar a subscrição automatizada" />
+<meta name="twitter:description" content="Toda decisão de IA na subscrição automatizada precisa de uma trilha de auditoria. Veja como observar e explicar o que o modelo decide." />
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100" />
 
 <link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
@@ -37,8 +37,8 @@
 <link rel="stylesheet" href="/home.css?v=2026052D" />
 <link rel="stylesheet" href="/blog.css?v=2026052D" />
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Observabilidade de agentes de IA: métricas e ferramentas para produção","description":"As 6 métricas e as principais ferramentas de observabilidade de agentes de IA em produção — de drift e custo por decisão a Arize, Fiddler, WhyLabs e Evidently.","image":"https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100","datePublished":"2026-02-22","author":{"@type":"Person","name":"Head of AI","jobTitle":"ML · WIR Innovation"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/observabilidade-de-agentes/","articleSection":"Técnico"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"Observabilidade de agentes de IA: métricas e ferramentas para produção","item":"https://wirinnovation.ai/insights/observabilidade-de-agentes/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Observabilidade de decisões de IA no seguro: como auditar a subscrição automatizada","description":"Toda decisão de IA na subscrição automatizada precisa de uma trilha de auditoria. Veja como observar e explicar o que o modelo decide.","image":"https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100","datePublished":"2026-02-22","author":{"@type":"Person","name":"Head of AI","jobTitle":"ML · WIR Innovation"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/observabilidade-de-agentes/","articleSection":"Técnico"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"Observabilidade de decisões de IA no seguro: como auditar a subscrição automatizada","item":"https://wirinnovation.ai/insights/observabilidade-de-agentes/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://wirinnovation.ai/insights/observabilidade-de-agentes/#faq","inLanguage":"pt-BR","mainEntity":[{"@type":"Question","name":"O que é observabilidade de agentes de IA?","acceptedAnswer":{"@type":"Answer","text":"É a prática de monitorar o comportamento estatístico de sistemas de IA em produção — não apenas se o software responde, mas se as decisões continuam corretas ao longo do tempo. Diferente do monitoramento tradicional (logs, latência, throughput), ela acompanha drift de dados, custo por decisão e a divergência entre o que o modelo decide e o que um humano decidiria."}},{"@type":"Question","name":"Quais são as principais ferramentas de observabilidade de agentes de IA?","acceptedAnswer":{"@type":"Answer","text":"Para monitoramento de modelos e drift: Arize AI, Fiddler, WhyLabs e Evidently AI — estas duas últimas com núcleos open-source. Para tracing passo a passo de agentes LLM: LangSmith, Langfuse e Arize Phoenix. Nenhuma entrega pronta a divergência humano-vs-modelo nem o loss ratio segmentado por automação; essas métricas você instrumenta sobre os dados do seu próprio book."}},{"@type":"Question","name":"Quais métricas monitorar em agentes de IA em produção?","acceptedAnswer":{"@type":"Answer","text":"Seis métricas formam o dashboard mínimo: latência por tipo de decisão (p50, p95, p99), taxa de override humano, drift de distribuição de features, custo por decisão, loss ratio segmentado por nível de automação e divergência humano-vs-modelo amostral."}},{"@type":"Question","name":"Observabilidade de IA é diferente do monitoramento de software tradicional?","acceptedAnswer":{"@type":"Answer","text":"Sim. Um sistema de IA pode estar perfeito em termos de software — sem erros, com latência boa — e ainda assim produzir decisões progressivamente piores por drift de dados. Essa degradação não dispara alerta no monitoramento clássico; aparece no loss ratio meses depois. Por isso exige métricas estatísticas específicas."}}]}</script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
@@ -93,8 +93,8 @@
 
     <header class="blarticle__head">
       <div class="eyebrow">· Técnico</div>
-      <h1 class="display blarticle__title">Observabilidade de agentes de IA: métricas e ferramentas para produção</h1>
-      <p class="blarticle__sub">Latência, drift, custo por decisão, divergência humano-vs-modelo — e as ferramentas (Arize, Fiddler, WhyLabs, Evidently, LangSmith) que toda seguradora deveria avaliar antes de escalar IA.</p>
+      <h1 class="display blarticle__title">Observabilidade de decisões de IA no seguro: como auditar a subscrição automatizada</h1>
+      <p class="blarticle__sub">Toda decisão de IA na subscrição automatizada precisa de uma trilha de auditoria. Veja como observar e explicar o que o modelo decide.</p>
       <div class="blarticle__byline">
         <div class="blarticle__author-initials">Ho</div>
         <div class="blarticle__byline-meta">
@@ -109,7 +109,7 @@
     </figure>
 
     <div class="blarticle__body">
-<p>Equipes que sobem o primeiro modelo de IA para produção em uma seguradora costumam montar um dashboard inicial focado nas métricas que aprenderam a importar durante desenvolvimento: acurácia no test set, AUC, F1.</p>
+<p>Quando uma seguradora automatiza a subscrição, cada cotação, recusa e roteamento passa a ser decidido por um modelo, e a pergunta do regulador, do ressegurador e do próprio comitê de risco muda de &quot;o modelo acerta?&quot; para &quot;consigo explicar e auditar o que ele decidiu?&quot;. Observabilidade de decisões de IA no seguro é a resposta a essa segunda pergunta. Não se trata de acompanhar acurácia em um painel, e sim de saber, para cada caso, por que o score saiu como saiu, qual política de aceitação foi aplicada e onde a decisão divergiu do apetite de risco definido pela seguradora. A WIR Innovation trata isso como requisito, não como recurso opcional: a plataforma é uma camada de IA externa, sobre os sistemas que a seguradora já usa, e devolve para o core uma trilha de auditoria completa a cada decisão, com o Machine Learning calibrado ao apetite de risco e ao manual de subscrição. É assim que a auditabilidade da subscrição automatizada deixa de ser uma promessa e vira um registro que o subscritor, o auditor e o regulador conseguem inspecionar.</p>
 <p>Esse dashboard funciona durante o primeiro mês. Depois, ele para de ser útil.</p>
 <p>As perguntas que importam quando você tem IA decidindo riscos reais não são &quot;qual a acurácia no test set&quot;. São perguntas operacionais sobre comportamento ao longo do tempo, sobre divergência entre o que o modelo decide e o que humano decidiria, e sobre custo por unidade de valor entregue. É exatamente o tipo de problema que ferramentas como <a href="https://arize.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Arize AI</a>, <a href="https://www.fiddler.ai" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Fiddler</a>, <a href="https://whylabs.ai" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">WhyLabs</a> e <a href="https://www.evidentlyai.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Evidently AI</a> atacam — cada uma com ângulos um pouco diferentes.</p>
 <blockquote>Construir observabilidade é caro. Não revisar a observabilidade que se construiu é mais caro.</blockquote>
@@ -179,10 +179,10 @@
     <nav class="blarticle__related" aria-label="Leituras relacionadas">
       <h3 class="blarticle__related-title">Leituras relacionadas</h3>
       <ul class="blarticle__related-list">
+      <li class="blarticle__related-item"><a href="/insights/camada-ia-vs-core-rpa-seguros/"><span class="blarticle__related-cat">Artigo</span> Camada de IA, RPA ou substituir o core: como integrar IA em seguros</a></li>
       <li class="blarticle__related-item"><a href="/insights/o-que-e-stp-seguros/"><span class="blarticle__related-cat">Automação</span> O que é straight-through processing (STP) em seguros e o que é uma boa taxa de STP</a></li>
       <li class="blarticle__related-item"><a href="/insights/validacao-automatica-dados-cnpj-seguros/"><span class="blarticle__related-cat">Automação</span> Validação automática de dados de CNPJ em submissões de seguros com IA</a></li>
       <li class="blarticle__related-item"><a href="/insights/substituir-rpa-ocr-ia-seguros/"><span class="blarticle__related-cat">Automação</span> Como substituir RPA e OCR por uma camada de IA em seguros</a></li>
-      <li class="blarticle__related-item"><a href="/insights/reduzir-tarefas-administrativas-subscricao/"><span class="blarticle__related-cat">Automação</span> Como reduzir tarefas administrativas na subscrição de seguros com uma camada de IA</a></li>
       </ul>
     </nav>
 
