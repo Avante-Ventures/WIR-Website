@@ -5169,99 +5169,68 @@ Terceiro: validação importa mais que extração. O custo de uma extração err
     metaDesc: "Toda decisão de IA na subscrição automatizada precisa de uma trilha de auditoria. Veja como observar e explicar o que o modelo decide.",
     body: `Quando uma seguradora automatiza a subscrição, cada cotação, recusa e roteamento passa a ser decidido por um modelo, e a pergunta do regulador, do ressegurador e do próprio comitê de risco muda de "o modelo acerta?" para "consigo explicar e auditar o que ele decidiu?". Observabilidade de decisões de IA no seguro é a resposta a essa segunda pergunta. Não se trata de acompanhar acurácia em um painel, e sim de saber, para cada caso, por que o score saiu como saiu, qual política de aceitação foi aplicada e onde a decisão divergiu do apetite de risco definido pela seguradora. A WIR Innovation trata isso como requisito, não como recurso opcional: a plataforma é uma camada de IA externa, sobre os sistemas que a seguradora já usa, e devolve para o core uma trilha de auditoria completa a cada decisão, com o Machine Learning calibrado ao apetite de risco e ao manual de subscrição. É assim que a auditabilidade da subscrição automatizada deixa de ser uma promessa e vira um registro que o subscritor, o auditor e o regulador conseguem inspecionar.
 
-Esse dashboard funciona durante o primeiro mês. Depois, ele para de ser útil.
+A subscrição automatizada responde a uma conta concreta. Segundo a Deloitte, os subscritores gastam 40% do tempo em tarefas administrativas, tempo que sai da análise de risco. Quando a IA assume a triagem das submissões e o score inicial, esse tempo volta para a decisão de risco. O efeito colateral é que a decisão deixa de ter um autor humano óbvio. Antes, havia um nome no parecer. Agora há um modelo, uma versão e uma política de aceitação. Auditar passa a depender de a plataforma registrar tudo isso por conta própria, em cada caso, e não de alguém reconstruir a decisão de memória semanas depois.
 
-As perguntas que importam quando você tem IA decidindo riscos reais não são "qual a acurácia no test set". São perguntas operacionais sobre comportamento ao longo do tempo, sobre divergência entre o que o modelo decide e o que humano decidiria, e sobre custo por unidade de valor entregue. É exatamente o tipo de problema que ferramentas como [Arize AI](https://arize.com), [Fiddler](https://www.fiddler.ai), [WhyLabs](https://whylabs.ai) e [Evidently AI](https://www.evidentlyai.com) atacam — cada uma com ângulos um pouco diferentes.
+> Uma trilha de auditoria que ninguém consegue ler na hora certa não é governança. É custo de armazenamento.
 
-> Construir observabilidade é caro. Não revisar a observabilidade que se construiu é mais caro.
+### Acurácia média não audita um caso
 
-### Por que observabilidade de IA é diferente
+O hábito herdado da ciência de dados é olhar a qualidade do modelo no agregado: acurácia, AUC, a média do book. Esses números dizem se o modelo é bom em média. Não respondem à pergunta que chega à mesa do subscritor. Quando um corretor questiona uma recusa, ninguém quer a AUC da carteira. Quer saber por que aquela submissão foi recusada, qual regra de apetite pesou e se a decisão seguiu a política vigente naquele dia. Observabilidade de decisão começa no caso individual e reconstrói a cadeia que levou ao resultado. É o oposto do painel que só mostra a média.
 
-Sistemas tradicionais têm comportamento determinístico — quando funcionam, funcionam igual; quando quebram, quebram de jeito reproduzível. Observabilidade clássica (logs, métricas, traces) lida bem com isso.
+### A trilha de auditoria por decisão
 
-Sistemas de IA têm camada adicional: comportamento estatístico. Eles podem estar funcionando perfeitamente em termos de software — sem erros, latência boa, throughput estável — e ainda estar produzindo decisões progressivamente piores ao longo do tempo. Essa degradação não dispara alerta em monitoramento clássico. Aparece em loss ratio meses depois.
+Para cada cotação, recusa, roteamento ou escalonamento, a trilha registra o que permite reabrir a decisão sem ambiguidade. Quais campos foram lidos da submissão e de quais fontes vieram o enriquecimento e a checagem de CNPJ. Qual versão do modelo decidiu e qual manual de subscrição estava ativo. Que score saiu, com que probabilidade, e qual faixa de apetite ele tocou. Qual ação a plataforma tomou, cotar, declinar ou escalar para um humano, e por quê. E o retorno para o core, com o registro escrito de volta no sistema de apólices.
 
-### As 6 métricas do dashboard mínimo
+Esse conjunto é o artefato sobre o qual todo o resto se apoia. Sem ele, explicar uma decisão vira reconstrução de memória. A arquitetura dessa trilha e como ela se conecta ao sistema que a seguradora já opera estão em [decisões de subscrição auditáveis](#blog/decisoes-subscricao-auditaveis) e em [como integrar a camada de IA ao core](#blog/integrar-camada-ia-core-seguros).
 
-**1. Latência por tipo de decisão (p50, p95, p99).** Não basta latência média. Para decisões automatizadas que afetam experiência de canal, p99 importa tanto quanto p50 — porque é o caso de uma submissão em 100 que demora 12 segundos que vira complaint do corretor. Quebra por tipo: extração, classificação, scoring, geração.
+### Explicabilidade do score: o que o subscritor precisa ver
 
-**2. Taxa de override humano.** A fração de decisões automáticas alteradas pelo underwriter. É o termômetro mais direto de qualidade do modelo em produção. Override tendendo para baixo significa concordância crescente. Tendendo para cima significa que algo está mudando — drift de dados, drift de política, ou modelo errando onde antes acertava.
+Registrar a decisão não basta se a explicação só faz sentido para quem treinou o modelo. O subscritor precisa ver, na linguagem do manual, quais fatores moveram o score para cima ou para baixo. Sinistralidade do segmento, exposição declarada, histórico do corretor, divergências na documentação. Com isso na tela, ele concorda, ajusta ou sobrepõe a decisão com um motivo registrado. Explicabilidade aqui vai além de um gráfico de importância de variáveis. Significa que o humano responsável consegue defender aquela decisão diante de um auditor, com as mesmas informações que o modelo usou. Como ir além de uma única técnica de atribuição está em [explicabilidade que vai além do SHAP](#blog/explicabilidade-alem-de-shap).
 
-**3. Distribuição de features e drift detection.** Para cada feature relevante, monitore distribuição (média, std, percentis) ao longo do tempo. Compare com a distribuição de treino. Quando diverge significativamente, o modelo está operando fora do que viu — ainda funciona, mas com confiança decrescente. [Evidently AI](https://www.evidentlyai.com) tem boa documentação aberta sobre os testes estatísticos típicos (KS, PSI, Wasserstein).
+### Divergência entre a decisão e o apetite de risco
 
-**4. Custo por decisão.** Inclui chamadas de API LLM, infraestrutura de inferência, retrieval de bases externas. Em sistemas híbridos, custo por decisão pode variar 10× entre tipos de caso. Sem essa métrica, custo total balona sem explicação.
+O sinal decisivo para uma seguradora é a distância entre o que a máquina decidiu e o apetite de risco que ela definiu. Drift estatístico em abstrato importa menos do que esse desvio concreto. Toda vez que uma aceitação automática fica fora da política, ou que o preço sai abaixo da faixa do manual, isso precisa aparecer, segmentado por produto, por canal e por faixa de exposição. Esse acompanhamento mantém a automação dentro do mandato dado pelo comitê de risco, em vez de descobrir o desvio no loss ratio meses depois.
 
-**5. Loss ratio segmentado por automação.** Book observável separado por nível de envolvimento humano: 100% automático, parcialmente automático, integralmente humano. Diferenças significativas sinalizam algo — qualidade do modelo, viés de seleção, ou diferença de produto.
+A taxa de sobreposição do subscritor é o termômetro mais direto. Quando ela sobe num segmento, algo mudou, no perfil das submissões, na política ou no próprio modelo. Manter uma fração das decisões sob revisão humana cega e medir a concordância serve ao mesmo fim. Esses dois sinais, divergência contra apetite e concordância humana, são instrumentação que nenhuma ferramenta genérica entrega pronta, porque dependem do book e da política de cada seguradora.
 
-**6. Divergência humano-vs-modelo amostral.** Fração das decisões automáticas (1% a 5%) submetida a revisão humana cega após o fato. Calcula-se a concordância. Em sistemas saudáveis, tende a 80%-90%, com discordância concentrada em casos genuinamente ambíguos.
+### O que o auditor, o regulador e o ressegurador conseguem inspecionar
 
-### Ferramentas de observabilidade de agentes de IA
+A mesma trilha serve a três leitores com perguntas diferentes. O auditor, interno ou externo, amostra decisões e pede a cadeia completa de cada uma, input, versão, política e motivo. O que ele certifica é a consistência entre o que foi decidido e o que a política mandava. O regulador olha a governança da decisão automatizada. Se há rastreabilidade, se o tratamento de dados respeita a LGPD, se o critério não introduz discriminação indevida. O tema de regulação de IA no seguro está tratado em [regulação de IA no seguro e a SUSEP](#blog/regulacao-ia-seguros-susep). O ressegurador quer saber como o risco foi selecionado e precificado ao longo da carteira, e se a seleção bate com o apetite declarado no contrato. Um registro por decisão responde aos três sem parar a operação para montar relatório a cada pedido.
 
-Construir essas seis métricas do zero é possível, mas raramente vale o esforço: o ecossistema de ferramentas de observabilidade de agentes de IA já cobre a maior parte do caminho. As categorias que importam para uma seguradora:
+### Governança de dados e decisão automatizada
 
-**Monitoramento de modelos e drift.** [Arize AI](https://arize.com), [Fiddler](https://www.fiddler.ai), [WhyLabs](https://whylabs.ai) e [Evidently AI](https://www.evidentlyai.com) monitoram distribuição de features, drift e performance em produção. Evidently e WhyLabs têm núcleos open-source; Arize e Fiddler entregam explicabilidade e alertas gerenciados. Para os testes estatísticos de drift (KS, PSI, Wasserstein), a documentação aberta da Evidently é o melhor ponto de partida.
-
-**Tracing de agentes LLM.** Quando o "agente" é um sistema com LLM, retrieval e chamadas de ferramentas encadeadas, o que você precisa observar muda: cada passo do raciocínio, cada prompt, cada token e seu custo. [LangSmith](https://www.langchain.com/langsmith), [Langfuse](https://langfuse.com) (open-source) e o [Arize Phoenix](https://phoenix.arize.com) (open-source) foram desenhados para esse rastreamento passo a passo — indispensável para auditar por que um agente decidiu o que decidiu.
-
-**A regra prática.** Nenhuma ferramenta entrega, pronta, a métrica que mais importa numa seguradora: a divergência humano-vs-modelo e o loss ratio segmentado por automação. Essas você instrumenta sobre os dados do seu próprio book. As ferramentas acima resolvem latência, drift e custo; o sinal de negócio é trabalho seu.
-
-### O que NÃO basta
-
-**Acurácia no test set.** Útil durante desenvolvimento. Em produção, a única acurácia que importa é a operacional, medida pela divergência humano-vs-modelo amostral.
-
-**AUC, F1.** Métricas de modelo, não de sistema. Importantes para troubleshooting; insuficientes para monitoramento contínuo.
-
-**Volume e throughput.** Importante para capacity planning. Não diz nada sobre qualidade.
-
-**Confidence score isolado.** Útil para roteamento, não como métrica de saúde. Modelo overconfident ou underconfident tem distribuição enviesada.
-
-### Cadência de revisão
-
-Diário, alerta-driven: latência, custo, drift de features.
-
-Semanal, equipe técnica: taxa de override, divergência humano-vs-modelo.
-
-Mensal, executivo: loss ratio segmentado, custo total, comparação modelo-vs-humano agregada.
-
-Trimestral, auditoria estendida: simulações contrafactuais, revisão de overrides com motivo livre, análise de viés por segmento.
+Auditabilidade e proteção de dados são a mesma disciplina vista de dois ângulos. Cada decisão registrada carrega dados sensíveis de risco, e a trilha só é defensável se esses dados forem cifrados em cada etapa e tratados conforme a LGPD. A camada de IA da WIR opera sobre os sistemas atuais sem migrar o core, o que também importa para governança. O dado não é copiado para um ambiente paralelo opaco. A decisão é escrita de volta no sistema de apólices com o seu registro. Isso pesa porque, segundo o BCG, 70% das seguradoras não executam inovação por limitação de TI. Uma camada externa, que não exige reescrever o core, é o que torna a auditabilidade viável sem um projeto de migração que a área de tecnologia não tem como absorver.
 
 ### Onde a maioria trava
 
-O ponto de trava mais comum não é técnico — é organizacional. O dashboard existe ou pode ser construído com esforço razoável. O que falta é dono claro e cadência.
+O ponto de trava raramente é técnico. A trilha existe, ou pode ser construída com esforço razoável. O que falta é dono e cadência. Uma operação em que alguém da tecnologia abre o registro só quando há reclamação não captura divergência de apetite a tempo. Captura quem coloca subscrição, risco e compliance olhando as divergências juntos, num ritmo definido. Diário para os alertas de desvio e de custo. Semanal para a taxa de sobreposição e a concordância humana. Mensal para o loss ratio segmentado por nível de automação. Trimestral para a auditoria estendida, com revisão de sobreposições por motivo e análise de viés por segmento. A trilha que ninguém revisa não protege a seguradora. Vira um arquivo que só fala quando o prejuízo já apareceu.
 
-Operações onde "alguém da TI olha o dashboard quando há queixa" não capturam drift. Operações onde a equipe de subscrição vê o dashboard junto com a equipe de modelo, semanalmente, em reunião curta, capturam.
-
-A trilha completa que alimenta esse dashboard é a mesma descrita em [Explicabilidade que vai além do SHAP](#blog/explicabilidade-alem-de-shap), e a divisão entre LLM e regras que precisa ser monitorada em separado está em [LLMs não substituem motores de regras](#blog/llms-vs-motores-de-regras).
-
-Construir observabilidade é caro. Não revisar a observabilidade que se construiu é mais caro — é pagar pela infraestrutura sem extrair o sinal.
+Observabilidade de decisões de IA é, no fundo, o que separa a operação que automatiza e consegue defender cada decisão da que automatiza e torce para que ninguém pergunte. A divisão entre modelo estatístico e motor de regras, que precisa ser monitorada em separado, está em [LLMs não substituem motores de regras](#blog/llms-vs-motores-de-regras). Construir a trilha custa. Não extrair sinal dela custa mais, porque é pagar pela auditoria e ficar sem a defesa.
 
 ### Referências e leituras
 
-- [Arize AI](https://arize.com) · ML observability platform
-- [Fiddler AI](https://www.fiddler.ai) · model monitoring + explainability
-- [WhyLabs](https://whylabs.ai) · open-source data and ML monitoring
-- [Evidently AI](https://www.evidentlyai.com) · ML monitoring open-source
-- [LangSmith](https://www.langchain.com/langsmith) · tracing e avaliação de agentes LLM
-- [Langfuse](https://langfuse.com) · observabilidade open-source para LLMs
-- [Arize Phoenix](https://phoenix.arize.com) · tracing de agentes LLM open-source
-- [Explicabilidade que vai além do SHAP](#blog/explicabilidade-alem-de-shap) · arquitetura de auditoria
-- [LLMs não substituem motores de regras](#blog/llms-vs-motores-de-regras) · arquitetura híbrida que precisa ser monitorada`,
+- [Lei Geral de Proteção de Dados (LGPD)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm) · base legal do tratamento de dados no Brasil
+- [SUSEP, regulador de seguros no Brasil](https://www.gov.br/susep) · supervisão do mercado segurador
+- [Decisões de subscrição auditáveis](#blog/decisoes-subscricao-auditaveis) · a arquitetura da trilha por decisão
+- [Explicabilidade que vai além do SHAP](#blog/explicabilidade-alem-de-shap) · como tornar o score defensável
+- [Regulação de IA no seguro e a SUSEP](#blog/regulacao-ia-seguros-susep) · governança da decisão automatizada
+- [LLMs não substituem motores de regras](#blog/llms-vs-motores-de-regras) · a arquitetura híbrida que precisa ser monitorada`,
     faq: [
       {
-        q: "O que é observabilidade de agentes de IA?",
-        a: "É a prática de monitorar o comportamento estatístico de sistemas de IA em produção — não apenas se o software responde, mas se as decisões continuam corretas ao longo do tempo. Diferente do monitoramento tradicional (logs, latência, throughput), ela acompanha drift de dados, custo por decisão e a divergência entre o que o modelo decide e o que um humano decidiria.",
+        q: "O que é observabilidade de decisões de IA na subscrição de seguros?",
+        a: "É a capacidade de auditar cada decisão automatizada de cotação, recusa ou roteamento, e não apenas de acompanhar a acurácia média do modelo num painel. Para cada caso, fica registrado por que o score saiu como saiu, qual política de apetite foi aplicada e onde a decisão divergiu do que a seguradora definiu. É isso que torna a subscrição automatizada defensável diante do subscritor, do auditor e do regulador.",
       },
       {
-        q: "Quais são as principais ferramentas de observabilidade de agentes de IA?",
-        a: "Para monitoramento de modelos e drift: Arize AI, Fiddler, WhyLabs e Evidently AI — estas duas últimas com núcleos open-source. Para tracing passo a passo de agentes LLM: LangSmith, Langfuse e Arize Phoenix. Nenhuma entrega pronta a divergência humano-vs-modelo nem o loss ratio segmentado por automação; essas métricas você instrumenta sobre os dados do seu próprio book.",
+        q: "Como auditar uma decisão de subscrição feita por IA?",
+        a: "Pela trilha de auditoria que a plataforma registra em cada decisão. Ela guarda os campos lidos da submissão, as fontes de enriquecimento, a versão do modelo, o manual de subscrição ativo, o score e a faixa de apetite que ele tocou, a ação tomada e o registro escrito de volta no core. Com esse conjunto, qualquer decisão pode ser reaberta sem depender de reconstrução de memória.",
       },
       {
-        q: "Quais métricas monitorar em agentes de IA em produção?",
-        a: "Seis métricas formam o dashboard mínimo: latência por tipo de decisão (p50, p95, p99), taxa de override humano, drift de distribuição de features, custo por decisão, loss ratio segmentado por nível de automação e divergência humano-vs-modelo amostral.",
+        q: "O que o regulador, o auditor e o ressegurador conseguem inspecionar?",
+        a: "A mesma trilha responde aos três. O auditor amostra decisões e confere se cada uma seguiu a política vigente. O regulador verifica a governança da decisão automatizada, a rastreabilidade e a conformidade com a LGPD. O ressegurador analisa como o risco foi selecionado e precificado ao longo da carteira e se a seleção bate com o apetite declarado em contrato.",
       },
       {
-        q: "Observabilidade de IA é diferente do monitoramento de software tradicional?",
-        a: "Sim. Um sistema de IA pode estar perfeito em termos de software — sem erros, com latência boa — e ainda assim produzir decisões progressivamente piores por drift de dados. Essa degradação não dispara alerta no monitoramento clássico; aparece no loss ratio meses depois. Por isso exige métricas estatísticas específicas.",
+        q: "A camada de IA da WIR substitui o subscritor ou o core da seguradora?",
+        a: "Não. A WIR é uma camada de IA externa, sobre os sistemas que a seguradora já opera, sem migrar o core. O Machine Learning é calibrado ao apetite de risco e ao manual da seguradora, e cada decisão volta para o sistema de apólices com a trilha de auditoria. O subscritor segue no comando das exceções e dos casos escalados, com explicação para concordar ou sobrepor.",
       },
     ],
   },
