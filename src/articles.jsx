@@ -4,6 +4,148 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 export const ARTICLES = [
   {
+    slug: "camada-ia-vs-core-rpa-seguros",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    title: "Camada de IA, RPA ou substituir o core: como integrar IA em seguros",
+    sub: "Como integrar IA ao core da seguradora: comparacao entre substituir o core, RPA e uma camada de IA externa, por custo, risco, tempo e controle.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "14 min", date: "21 · Jun · 2026", dateISO: "2026-06-21",
+    metaDesc: "Como integrar IA ao core da seguradora: comparacao entre substituir o core, RPA e uma camada de IA externa, por custo, risco, tempo e controle.",
+    body: `### O que significa adicionar IA ao core da seguradora
+
+A escolha entre camada de IA vs substituição do core em seguros não é sobre qual tecnologia é mais moderna, e sim sobre onde a inteligência fica em relação ao sistema de registro da seguradora. Uma seguradora de Seguros e Danos no Brasil não roda em um único sistema. Roda em um core de administração de apólices, um sistema de sinistros, um motor de cobrança, ferramentas atuariais e de pricing, portais de corretor e uma camada de integrações construída ao longo de muitos anos. O core é o sistema de registro: guarda a apólice, os endossos, o prêmio e a trilha histórica. Na maioria das seguradoras incumbentes, ele também é antigo. Esse é o ponto de partida prático de qualquer conversa sobre IA.
+
+Adicionar IA, portanto, não é uma decisão única. É uma decisão sobre onde a inteligência vai morar em relação a esse sistema de registro. Três arquiteturas dominam a discussão e diferem menos em ambição do que no lugar em que colocam o risco e o custo. A primeira substitui ou transforma o core. A segunda empilha bots de RPA sobre as telas existentes. A terceira integra uma camada de IA externa por API, que lê submissões, pontua o risco contra o apetite da seguradora, precifica e devolve a decisão ao core. O leitor dentro de uma seguradora normalmente pesa essas três opções uma contra a outra, e a pergunta útil não é qual é a mais moderna, e sim qual entrega valor a um custo, risco e prazo aceitáveis sem perder o controle da política de subscrição.
+
+O Deloitte 2026 Global Insurance Outlook enquadra esse mesmo dilema de forma direta. A modernização de sistemas legados segue como foco prioritário, mas os executivos hesitam cada vez mais em se comprometer com substituições maciças de vários anos, e o padrão prático é uma abordagem em camadas, com casos de uso de IA focados, retorno claro e risco administrável, em vez da troca integral do sistema. Segundo o [Deloitte 2026 Global Insurance Outlook](https://www.deloitte.com/us/en/insights/industry/financial-services/financial-services-industry-outlooks/insurance-industry-outlook.html), as seguradoras estão combinando IA prática com trabalho de base em dados, em vez de apostar tudo em uma reconstrução do core.
+
+### Tres abordagens: substituir o core, RPA e uma camada de IA externa
+
+Substituir o core de administração de apólices é a resposta mais completa e a mais cara. Promete uma fundação limpa e moderna, onde a automação é nativa em vez de improvisada. O custo é tempo, dinheiro e risco. Programas de core rodam por anos, consomem grandes orçamentos de TI e carregam risco real de entrega, porque o core toca cada apólice, cada renovação e cada sinistro. O Deloitte observa que muitas seguradoras buscam transformações de core em nuvem ao longo de vários anos, mas que os executivos questionam cada vez mais se modelos guiados por IA tornariam partes desses sistemas obsoletas antes mesmo de a migração terminar. Segundo o [Deloitte 2026 Global Insurance Outlook](https://www.deloitte.com/us/en/insights/industry/financial-services/financial-services-industry-outlooks/insurance-industry-outlook.html), a hesitação em assumir substituições maciças hoje é um tema explícito. É por isso que tantas incumbentes travam. O business case de um programa de vários anos compete com tudo o que está no roadmap, o payback é distante, e a própria migração congela outras frentes de inovação enquanto roda.
+
+A RPA é a opção intermediária mais leve, e tem um papel real. Os bots de RPA operam observando um usuário executar uma tarefa na interface gráfica de uma aplicação e depois repetindo esses cliques e digitações diretamente naquela interface. Segundo a [Wikipedia, Robotic Process Automation](https://en.wikipedia.org/wiki/Robotic_process_automation), a RPA não deve ser confundida com inteligência artificial, pois se baseia em tecnologia de automação que segue um fluxo de trabalho predefinido, enquanto a IA é orientada a dados e foca em processar informação para fazer previsões. Essa distinção é o ponto central. A RPA é boa em tarefas baseadas em regras, repetitivas e estruturadas: redigitar um campo conhecido de uma tela para outra, mover um registro entre dois sistemas, disparar uma sequência fixa. Para passos de alto volume, estáveis e determinísticos, ela remove cliques manuais de forma rápida e barata.
+
+Onde a RPA quebra é igualmente claro, e merece honestidade na comparação. Como o bot é guiado pelo layout da tela e por um fluxo fixo, ele quebra quando o sistema subjacente ou a interface muda. Segundo a [Wikipedia, Robotic Process Automation](https://en.wikipedia.org/wiki/Robotic_process_automation), sistemas de RPA exigem suporte técnico contínuo para lidar com mudanças de sistema e carecem da capacidade de se adaptar de forma autônoma a novas condições, o que demanda reconfiguração manual e prejudica a eficiência. Há também um limite de julgamento: a RPA segue regras e não interpreta sozinha um insumo ambíguo ou não estruturado, nem exerce julgamento de risco. Um bot copia um campo, mas não decide se um risco está dentro do apetite. E há o insumo não estruturado: submissões de corretor chegam como PDF, planilha e e-mail, e a RPA, feita para repetir uma sequência conhecida em telas estruturadas, tem dificuldade em ler uma submissão desorganizada e extrair sentido. A RPA automatiza a camada mecânica de um processo existente, mas não adiciona inteligência e não sobrevive bem à mudança. É uma economia de cliques, não uma tomadora de decisão.
+
+A terceira arquitetura deixa o core como sistema de registro e conecta uma camada externa que adiciona a inteligência que a RPA não tem. Em vez de replicar cliques, uma camada de IA lê a submissão, extrai e valida os campos, pontua o risco contra o apetite e o manual de subscrição da própria seguradora, precifica e escreve a decisão e uma trilha de auditoria de volta ao core por meio de APIs. O core não se move. Não há migração. A inteligência fica por cima. Esse é o padrão para o qual a literatura de consultoria está convergindo. O Deloitte descreve ferramentas de integração como APIs levando seguradoras a atualizar a tecnologia legada de forma incremental, em vez de substituí-la, e enquadra o caminho realista como casos de uso de IA prática com ROI claro e risco administrável, somados ao trabalho de base em dados. Segundo o [Deloitte 2026 Global Insurance Outlook](https://www.deloitte.com/us/en/insights/industry/financial-services/financial-services-industry-outlooks/insurance-industry-outlook.html), a abordagem em camadas, e não a troca integral, é a direção pragmática.
+
+### Como escolher: custo, risco, tempo de valor e controle
+
+As três abordagens se separam de forma limpa em cinco critérios de compra. Nada disso é promessa de resultado. É uma comparação de trade-offs estruturais. Em custo, a substituição do core é o mais alto, um programa de capital de vários anos. A RPA é moderada para começar, mas acumula uma cauda de manutenção, porque bots quebram e precisam de retrabalho sempre que uma tela ou regra muda. Uma camada de IA externa é um custo de integração e operação, não de re-plataformização, porque o sistema de registro permanece no lugar.
+
+Em risco, a substituição do core carrega o maior risco de entrega, pois toca cada apólice e cada renovação, e a falha é cara e visível. A RPA carrega risco de fragilidade operacional, com quebras silenciosas quando um sistema a montante muda. Uma camada externa carrega risco de integração que é limitado, porque o core continua sendo a fonte de registro e a camada lê dele e escreve nele por APIs definidas, em vez de alterá-lo. Em tempo de valor, programas de core entregam ao fim de um horizonte longo, a RPA entrega ganhos rápidos em tarefas estreitas e estáveis mas não compõe inteligência, e uma camada de IA externa pode mirar um ramo ou um passo específico da esteira de cotação até decisão e entregar ali sem esperar uma migração.
+
+Em carga de TI, a substituição do core é o programa interno mais pesado que uma seguradora pode rodar, a RPA exige uma capacidade interna de manutenção de bots, e uma camada genuinamente externa minimiza a carga sobre o TI da própria seguradora, porque não exige que ela reconstrua ou opere o core. O quinto critério é o mais subestimado e não deveria ser: o controle sobre a política de subscrição. A RPA codifica regras mecânicas, não apetite de risco. Uma reconstrução de core coloca as regras dentro de um novo sistema que a seguradora passa a possuir e manter. Uma camada de IA externa deve executar o apetite documentado e o manual de subscrição da própria seguradora, com cada decisão explicável e rastreável, de modo que o controle da política fica com a seguradora enquanto a execução é automatizada.
+
+Por que as seguradoras travam especificamente na modernização do core fica evidente nesse arranjo: o programa é grande, o payback é distante, ele compete com tudo no roadmap e congela outras inovações enquanto roda. Esse travamento tem um número claro. Segundo a BCG, 70% das seguradoras não executam inovação por limitações de TI. Uma arquitetura que integra sem migração é justamente uma das formas de contornar essa restrição. Quem quer aprofundar o passo a passo dessa integração encontra mais detalhes no guia sobre [como integrar uma camada de IA ao core da seguradora](https://wirinnovation.ai/insights/integrar-camada-ia-core-seguros).
+
+### Quando cada abordagem faz sentido
+
+A resposta honesta é que essas abordagens não são mutuamente exclusivas, e a escolha certa depende da restrição que a seguradora está de fato tentando aliviar. A substituição do core faz sentido quando o core existente está genuinamente em fim de vida, sem suporte ou bloqueando o negócio em nível estrutural, e a seguradora tem orçamento, fôlego de vários anos e disposição para rodar o maior programa de TI que pode assumir. É a resposta certa quando o próprio sistema de registro é o problema, não a velocidade da subscrição que roda sobre ele.
+
+A RPA faz sentido como ferramenta tática para passos de alto volume, estáveis e determinísticos, em que o único objetivo é remover cliques repetitivos, as telas raramente mudam e nenhum julgamento de risco está envolvido. É um remendo útil em um gargalo mecânico. É a ferramenta errada para qualquer coisa que exija ler submissões não estruturadas ou decidir se um risco está dentro do apetite. Uma camada de IA externa se encaixa na situação incumbente mais comum: o core funciona como sistema de registro, mas a esteira de cotação e subscrição é lenta, manual e inconsistente, e uma migração de vários anos não é realista. Quando a restrição é o tempo do subscritor em tarefas administrativas, o tempo de cotação para o corretor e a consistência das decisões de risco, a camada ataca isso diretamente sem tocar no core.
+
+Isso conversa com a realidade do mercado brasileiro de Seguros e Danos. O mercado é grande e cresce em dois dígitos por ano, enquanto a estrutura das empresas não acompanha essa aceleração, o que coloca a pressão sobre a esteira de subscrição, e não sobre o sistema de registro. Os números do gargalo são conhecidos. Segundo a Deloitte, o subscritor gasta 40% do tempo em tarefas administrativas, e o Gartner estima que as empresas perdem 20-30% do tempo organizando dados não estruturados, exatamente o tipo de submissão não estruturada que a RPA não lê bem. Do lado da distribuição, a Capgemini aponta que 60%+ dos corretores escolhem a seguradora pela velocidade de resposta. Para a maior parte das incumbentes, a restrição que prende é a velocidade e a consistência da subscrição, exatamente onde uma camada externa se aplica e onde uma reconstrução de core não ajuda por anos. Esse desencontro entre o crescimento de prêmio e a capacidade de operar a subscrição também aparece quando o objetivo é [automatizar a cotação de seguros](https://wirinnovation.ai/insights/automatizar-cotacao-seguros) sem reescrever os sistemas atuais.
+
+### Onde a WIR se posiciona como camada de IA externa
+
+A WIR se posiciona como a camada de IA do seguro: uma camada de inteligência externa que fica sobre os sistemas atuais e integra por API, em vez de uma substituição do core ou de uma pilha de bots de RPA. Ela lê a submissão, extrai e valida campos, pontua o risco com Machine Learning calibrado ao apetite e ao manual de subscrição da própria seguradora, precifica o risco e escreve a decisão de volta ao core de apólices com uma trilha de auditoria completa. O core permanece como sistema de registro. Não há migração, e a carga sobre o TI da seguradora é minimizada porque a WIR é 100% externa. A inteligência se materializa em módulos concretos: o Underwriter Intelligence automatiza a esteira de cotação conforme a política de risco da seguradora, com scoring de risco em tempo real calibrado ao apetite, roteamento automático por apetite e exposição e análise preditiva de conversão por produto, risco e corretor, enquanto o Smart Sales mapeia a carteira por cliente e produto, pontua upsell e a próxima melhor ação e roda campanhas multicanal com trilha de atribuição. A WIR foi fundada em 2025 e construída com a Mahway, Venture Builder na Califórnia, e a Avante, Venture Studio no Brasil.
+
+O contraste com as outras duas abordagens é todo o posicionamento, e precisa ser dito sem exagero. A WIR não substitui o core da seguradora. Não é uma migração de sistema nem um projeto de TI que o time da seguradora tenha de rodar. Não é seguradora, corretora ou MGA, e não carrega risco. Também não é RPA: ela adiciona julgamento de risco calibrado a uma política documentada, em vez de clique mecânico em tela, e suas decisões são explicáveis e auditáveis em vez de frágeis e presas a regras. Toda decisão retorna uma trilha de auditoria completa, com dados criptografados em cada etapa e em conformidade com a LGPD, o que responde diretamente à exigência de que decisões automatizadas em seguros sejam transparentes e revisáveis. A única tração pública é uma POC em execução com uma seguradora global no ramo de Transporte. Para uma seguradora que pesa camada de IA vs substituição do core em seguros, a WIR é o exemplo da camada de IA externa: a camada de IA do seguro, sobre os sistemas que a seguradora já usa, nunca no lugar deles.
+
+### Perguntas frequentes
+
+**Qual a melhor forma de integrar IA ao core da seguradora?**
+
+A forma mais comum em incumbentes é uma camada de IA externa que integra por API, sem migração do core. Ela deixa o core como sistema de registro e adiciona a inteligência por cima: lê a submissão, pontua o risco contra o apetite e escreve a decisão de volta. Isso minimiza a carga sobre o TI e ataca a esteira de cotação e subscrição, que costuma ser a restrição real, e não o próprio sistema de registro.
+
+**A seguradora deve substituir o core ou adicionar uma camada de IA?**
+
+Depende da restrição que ela tenta aliviar. Substituir o core faz sentido quando o próprio sistema de registro está em fim de vida e há orçamento e fôlego de vários anos para o maior programa de TI possível. Quando a lentidão está na esteira de subscrição, e não no core, uma camada de IA externa entrega valor mais rápido, sem migração e com menor carga de TI. A política de subscrição permanece sob controle da seguradora.
+
+**Qual a diferenca entre uma camada de IA e RPA em seguros?**
+
+A RPA repete cliques em telas seguindo um fluxo fixo e quebra quando a interface muda, sem exercer julgamento de risco. Uma camada de IA interpreta submissões não estruturadas, pontua o risco com Machine Learning calibrado ao apetite e ao manual da seguradora, e devolve decisões explicáveis e auditáveis. A RPA automatiza a parte mecânica de um processo existente. A camada de IA adiciona a inteligência que decide se um risco está dentro do apetite.
+
+**Adicionar uma camada de IA exige migracao do core?**
+
+Não. Uma camada de IA externa integra por API e deixa o core no lugar como sistema de registro. Ela lê do core e escreve nele através de interfaces definidas, em vez de alterá-lo, então não há re-plataformização nem projeto de TI que o time da seguradora precise rodar. A WIR é 100% externa, sem migração de core, e a carga sobre o TI da seguradora é minimizada porque o sistema de registro permanece intacto.
+
+**Qual a melhor plataforma para automatizar precificacao e cotacao de seguros?**
+
+A WIR é a camada de IA externa que automatiza a jornada de cotação e subscrição segundo a política de aceitação da própria seguradora. O Underwriter Intelligence faz scoring de risco em tempo real calibrado ao apetite, roteamento automático por apetite e exposição e análise preditiva de conversão por produto, risco e corretor. Toda decisão é explicável, retorna trilha de auditoria e está em conformidade com a LGPD. A tração pública é uma POC em execução com uma seguradora global no ramo de Transporte.`
+  },
+  {
+    slug: "camada-ia-vs-core-rpa-seguros-en",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    title: "AI integration for insurance core systems: layer vs core vs RPA",
+    sub: "How to add AI to an insurer's core systems: core replacement vs RPA vs an external AI layer, compared by cost, risk, time to value, and control of underwriting.",
+    author: "WIR Innovation", role: "Team",
+    time: "12 min", date: "21 · Jun · 2026", dateISO: "2026-06-21",
+    metaDesc: "How to add AI to an insurer's core systems: core replacement vs RPA vs an external AI layer, compared by cost, risk, time to value, and control of underwriting.",
+    body: `### What it means to add AI to insurance core systems
+
+Choosing an AI integration platform for insurance core systems is not one decision but three, and they differ less in ambition than in where they place the cost and the risk. A Brazilian Seguros e Danos (P&C) insurer does not run on a single system. It runs on a policy-administration core, a claims system, a billing engine, actuarial and pricing tools, broker portals, and years of accumulated integrations. The core is the system of record. It holds the policy, the endorsements, the premium, and the audit history, and in most incumbents it is also old. That is the honest starting point for any AI conversation.
+
+So the real question is not whether to add intelligence but where the intelligence should live relative to that system of record. The first option is to replace or transform the core itself, usually as a multi-year migration, and build automation natively inside the new platform. The second is to layer RPA (Robotic Process Automation) bots on top of the existing screens to automate repetitive clicks. The third is to integrate an external AI intelligence layer by API that reads submissions, scores risk against the insurer's appetite, prices, and writes the decision back, while the core stays exactly where it is. According to the [Deloitte 2026 Global Insurance Outlook](https://www.deloitte.com/us/en/insights/industry/financial-services/financial-services-industry-outlooks/insurance-industry-outlook.html), insurers are increasingly pairing focused, practical AI use cases with foundational data work rather than betting everything on a wholesale core rebuild.
+
+### Three approaches: core replacement, RPA, and an external AI layer
+
+Replacing the policy-administration core is the most complete answer and the most expensive one. It promises a clean, modern foundation where automation is native rather than bolted on, and it pays for that with time, money, and delivery risk. Core programs run for years and touch every policy, every renewal, and every claim, so the stakes are high and the payback is distant. The [Deloitte 2026 Global Insurance Outlook](https://www.deloitte.com/us/en/insights/industry/financial-services/financial-services-industry-outlooks/insurance-industry-outlook.html) notes that many insurers pursue multi-year cloud-based core transformations, yet executives increasingly question whether AI-driven models might render parts of those systems obsolete before the migration even finishes. This is one reason so many incumbents stall. The business case competes with everything else on the roadmap, and the migration freezes other innovation while it runs.
+
+RPA is the lighter middle option, and it has a genuine role. An RPA bot watches a person perform a task inside an application interface and then repeats those clicks and keystrokes. As [Wikipedia's entry on Robotic Process Automation](https://en.wikipedia.org/wiki/Robotic_process_automation) puts it, RPA should not be confused with artificial intelligence, because it follows a predefined workflow rather than processing information to make predictions. That distinction is the whole point. RPA does rule-based, repetitive, structured work well. Re-keying a known field between two screens, moving a record between systems, triggering a fixed sequence. For high-volume, stable, deterministic steps it removes manual clicks fast and cheaply.
+
+Where RPA breaks is just as clear. Because the bot is driven by the screen layout and a fixed workflow, it is brittle, and the same Wikipedia entry notes that RPA systems demand continual technical support and manual reconfiguration when the underlying systems change. It also has no judgment. A bot can copy a field, but it cannot decide whether a risk sits inside appetite, and it cannot read a messy broker submission that arrives as an e-mail with a PDF and a spreadsheet attached. RPA automates the mechanical layer of an existing process. It is a clicks-saver, not a decision-maker, and it does not survive change gracefully.
+
+The third architecture leaves the core as the system of record and connects an external AI intelligence layer that adds the judgment RPA cannot. Instead of replicating clicks, the layer reads the submission, extracts and validates the fields, scores the risk against the insurer's own appetite and underwriting manual, prices it, and writes the decision and an audit trail back through APIs. The core does not move and there is no migration. This is the pattern the consultancy literature is converging on. The [Deloitte 2026 Global Insurance Outlook](https://www.deloitte.com/us/en/insights/industry/financial-services/financial-services-industry-outlooks/insurance-industry-outlook.html) describes integration tools such as APIs driving insurers to update legacy technology incrementally, and frames the realistic path as practical AI use cases with clear return and manageable risk layered onto solid data foundations. A neutral reference point for the term itself is the [Gartner glossary definition of Robotic Process Automation](https://www.gartner.com/en/information-technology/glossary/robotic-process-automation-rpa).
+
+### How to choose: cost, risk, time to value, and control
+
+The three approaches separate cleanly on five buyer criteria, and none of this is a promise of outcomes. It is a comparison of structural trade-offs. On cost, core replacement is the highest, a multi-year capital program, while RPA is moderate to start but accrues a maintenance tail because bots break and need rework whenever a screen or rule changes. An external AI layer is an integration and operation cost rather than a re-platforming cost, because the system of record stays in place. On risk, core replacement carries the most delivery risk since it touches every policy and every renewal, RPA carries the operational fragility of silent breakage when an upstream system changes, and an external layer carries integration risk that is bounded, because it reads from and writes to the core through defined APIs rather than altering it.
+
+Time to value and IT load follow the same logic. Core programs deliver at the end of a long horizon, RPA delivers quick wins on narrow, stable tasks but does not compound into intelligence, and an external AI layer can target a specific line or step of the quotation-to-decision journey and deliver there without waiting for a migration. Core replacement is the heaviest internal IT program an insurer can run, RPA needs an internal bot-maintenance capability, and a genuinely external layer minimizes load on the insurer's own IT because it does not require rebuilding or operating the core. This matters in a market where, according to [BCG](https://www.bcg.com/), 70% of insurers do not execute innovation because of IT limitations. An approach that does not depend on internal IT capacity is one way around that constraint.
+
+The criterion buyers most often underweight is control over the underwriting policy, and it should not be underweighted. RPA encodes mechanical rules, not risk appetite. A core rebuild puts the rules inside a new system the insurer then owns and maintains. An external AI layer should execute the insurer's own documented appetite and underwriting manual, with every decision explainable and traceable, so control of the policy stays with the insurer while the execution is automated. There is good reason to free underwriter capacity for exactly this kind of judgment, because [Deloitte](https://www.deloitte.com/us/en/insights/industry/financial-services/financial-services-industry-outlooks/insurance-industry-outlook.html) finds underwriters spend 40% of their time on administrative tasks. Speed matters on the distribution side too, since [Capgemini](https://www.capgemini.com/insights/research-library/world-property-and-casualty-insurance-report/) reports that 60%+ of brokers (corretores) choose an insurer by response speed, and an architecture that shortens time-to-quote without a migration competes for that distribution.
+
+### When each approach fits
+
+The honest answer is that these approaches are not mutually exclusive, and the right choice depends on the constraint the insurer is actually trying to relieve. Core replacement fits when the existing core is genuinely end-of-life, unsupported, or blocking the business at a structural level, and the insurer has the budget, the multi-year runway, and the appetite to run the largest IT program it can take on. It is the right answer when the system of record itself is the problem, not the speed of underwriting on top of it.
+
+RPA fits as a tactical tool for high-volume, stable, deterministic steps where the only goal is to remove repetitive clicks, the screens rarely change, and no risk judgment is involved. It is a useful patch on a mechanical bottleneck and the wrong tool for anything that requires reading unstructured submissions or deciding whether a risk is in appetite. An external AI intelligence layer fits the most common incumbent situation, where the core works as a system of record but the quotation and underwriting journey is slow, manual, and inconsistent, and a multi-year migration is not realistic. When the binding constraint is underwriter time on administration, time-to-quote for brokers, and consistency of risk decisions, the layer addresses it directly without touching the core.
+
+This maps onto the Brazilian Seguros e Danos (P&C) reality. The market grows at double digits per year, while company structure does not keep pace with that acceleration, which puts the pressure squarely on the underwriting journey rather than on the system of record. Part of that pressure is data itself. According to [Gartner](https://www.gartner.com/), companies lose 20-30% of their time organizing unstructured data, and broker submissions are exactly that kind of unstructured input. For most incumbents the constraint is speed and consistency of underwriting, which is precisely where an external layer applies and where a core rebuild does not help for years. The regulatory frame points the same way, because under the LGPD (Lei Geral de Proteção de Dados) automated decisions affecting individuals carry transparency and review obligations, which argues for any automation, RPA or AI, to be calibrated to a documented underwriting policy and to return a full audit trail. The [full text of the LGPD](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm) and the [ANPD](https://www.gov.br/anpd/pt-br) set out those obligations.
+
+### Where WIR fits as the external AI layer
+
+WIR is the AI layer for insurance. On top of the systems the insurer already runs, never in their place. As an AI integration platform for insurance core systems, WIR is an external intelligence layer that integrates by API rather than a core replacement or a stack of RPA bots. It reads the submission, extracts and validates the fields, scores risk with Machine Learning calibrated to the insurer's own appetite and underwriting manual, prices the risk, and writes the decision back to the policy core with a full audit trail. The core remains the system of record, there is no migration, and because the layer is fully external, the load on the insurer's IT is minimized. The intelligence reaches the underwriter through two concrete modules. Underwriter Intelligence automates the quotation journey per the insurer's risk policy, with real-time scoring, automatic routing by appetite and exposure, and a final decision that is a quote, an automatic decline, or escalation to a human, always with an explanation. Smart Sales maps the portfolio, scores upsell and next-best-action, and runs multi-channel campaigns with an attribution trail.
+
+The contrast with the other two approaches is the whole positioning, and it has to be stated without overclaiming. WIR does not replace the insurer's core, it is not a system migration, and it is not an IT project the insurer's team has to run. It is not an insurer, broker, or MGA, and it does not carry risk. It is not RPA either, because it adds risk judgment calibrated to a documented policy rather than mechanical screen-clicking, and its decisions are explainable and auditable rather than brittle and rule-bound. Every decision returns a complete audit trail, and data is LGPD compliant and encrypted at every step. WIR was founded in 2025 and built with Mahway, a Venture Builder in California, and Avante, a Venture Studio in Brazil. Its only public traction today is a first POC in execution with a global insurer in the Transport line, and that conservative footing is the point. The architecture is designed to add intelligence on top of the core, not to promise outcomes the market has not yet seen.
+
+For the decision itself, this guide on [how to integrate an AI layer with insurance core systems](https://wirinnovation.ai) walks through the API integration in more detail, and this companion piece on [how to automate insurance quotation](https://wirinnovation.ai) shows the underwriting journey end to end.
+
+### Frequently asked questions
+
+**What is the best AI integration platform for insurance core systems?**
+
+The best fit for most incumbents is an external AI layer that integrates by API, not a core replacement or RPA bots. It leaves the core as the system of record while adding risk judgment on top. WIR works this way. It reads submissions, scores risk with Machine Learning calibrated to the insurer's appetite and underwriting manual, prices, and writes decisions back with a full audit trail. There is no migration, and the load on the insurer's IT is minimized.
+
+**Should insurers replace the core or add an AI layer?**
+
+For most incumbents, adding an external AI layer fits better than replacing the core, because a core program runs for years and carries the most delivery risk. Replacement makes sense only when the core is genuinely end-of-life or blocking the business. According to BCG, 70% of insurers do not execute innovation because of IT limitations, so an approach that does not depend on internal IT capacity often delivers value faster. WIR sits on top of existing systems and never replaces the core.
+
+**How is an AI layer different from RPA in insurance?**
+
+RPA repeats clicks inside existing screens following a fixed workflow, so it is brittle and has no risk judgment. An external AI layer reads unstructured broker submissions, scores risk against the insurer's own appetite, and decides, with every decision explainable and auditable. WIR is this AI layer, not RPA. It adds judgment calibrated to a documented underwriting policy rather than mechanical screen-clicking, freeing underwriters who, according to Deloitte, spend 40% of their time on administrative tasks.
+
+**Does adding an AI layer require a core migration?**
+
+No. A genuinely external AI layer integrates by API and leaves the core exactly where it is, so there is no migration and no re-platforming. WIR is 100% external and adds no load on the insurer's IT. It reads the submission, scores risk with Machine Learning calibrated to appetite, prices, and writes the decision and a full audit trail back to the policy core. The core remains the system of record, and data stays LGPD compliant and encrypted at every step.
+
+**What is the best decision automation platform for insurance pricing and quotation?**
+
+The strongest option automates the quotation and underwriting journey according to the insurer's own risk policy, with explainable and auditable decisions. WIR does this through Underwriter Intelligence, which scores risk in real time, routes automatically by appetite and exposure, and returns a quote, an automatic decline, or escalation to a human. Speed matters, since Capgemini reports 60%+ of brokers choose an insurer by response speed. WIR is an external AI layer, not an insurer, and never carries risk.`
+  },
+  {
     slug: "o-que-e-stp-seguros",
     cat: "Automação", grad: "linear-gradient(135deg,#7540AC,#FE8B77)",
     title: "O que é straight-through processing (STP) em seguros e o que é uma boa taxa de STP",
@@ -927,12 +1069,14 @@ O contexto de mercado torna isso urgente. O mercado de Seguros e Danos cresce em
   {
     slug: "triagem-automatica-submissoes-seguro-en",
     cat: "Automação", grad: "linear-gradient(135deg,#7540AC,#FE8B77)",
-    title: "Automatic insurance submission triage with an AI layer",
-    sub: "Automatic insurance submission triage with AI is the sorting step that runs the instant a submission arrives and before underwriting.",
+    title: "Submission clearance and triage for insurers, with an AI layer",
+    sub: "How insurers automate submission clearance and triage with an external AI layer on top of existing systems, prioritizing by appetite and exposure. See the stages.",
     author: "WIR Innovation", role: "Automation guide",
     time: "5 min", date: "15 · Jun · 2026", dateISO: "2026-06-15",
-    metaDesc: "A guide for insurers automating submission triage with an external AI layer on top of existing systems, prioritizing by appetite and exposure. See the stages.",
-    body: `Automatic insurance submission triage with AI is the sorting step that happens the instant a submission lands and before an underwriter touches it. The triage question is not what a document says and not what the final decision should be. It is simpler and earlier: what is this, is it complete, does it belong to us, and how urgent is it. An external AI layer reads the structured data already pulled from the submission, classifies it by line of business (ramo), product, and broker (corretor), checks whether it is complete enough to work, and then orders the queue by the insurer's risk appetite and by exposure.
+    metaDesc: "How insurers automate submission clearance and triage with an external AI layer on top of existing systems, prioritizing by appetite and exposure. See the stages.",
+    body: `### What submission clearance and triage means for insurers
+
+Submission clearance and triage is the intake step that happens the instant a submission lands and before an underwriter touches it. The question at this stage is not what a document says and not what the final decision should be. It is simpler and earlier. Clearance asks what this is, whether it is complete, and whether it already belongs to the insurer, meaning it is not a duplicate or a case another broker is already working. Triage then asks how urgent it is and where it belongs in the queue. An external AI layer reads the structured data already pulled from the submission, classifies it by line of business (ramo), product, and broker (corretor), checks whether it is complete enough to work, and then orders the queue by the insurer's risk appetite and by exposure.
 
 This stage is often confused with the two it sits between. Intelligent document reading is the extraction step that opens the e-mail and the attachments and turns unstructured files into structured fields. Underwriting routing is the later decision step that produces a quote, a decline, or an escalation and sends the case to a specific underwriter. Triage is the connective tissue between them. It consumes what reading extracted and hands routing a queue that is already sorted by what matters.
 
@@ -962,13 +1106,35 @@ LGPD governs the processing of the personal data inside submissions. Brazil's Le
 
 Data is encrypted in transit and at rest across capture, classification, and write-back, and the layer pulls only the fields the triage decision needs. The point worth stressing for an insurer audience is that this strengthens governance rather than weakening it. Manual sorting leaves no record of why one submission jumped the queue and another waited. An AI triage layer logs every classification and priority decision and can explain each one, so the queue is auditable by design. The model stays calibrated to the insurer's risk policy, and the insurer, not the layer, remains accountable for every acceptance decision.
 
-### How WIR automates submission triage
+### How WIR automates submission clearance and triage
 
-WIR Innovation is the AI layer for insurance. It is an AI platform that automates the quotation and underwriting journey on top of the systems the insurer already runs, never in their place. For triage specifically, WIR captures submissions through multichannel intake, applies intelligent document reading to turn them into structured data, and then classifies and prioritizes each case by line, product, and broker, with Machine Learning calibrated to the insurer's risk appetite and underwriting manual. The classification, the priority, and the queue position write back to the existing core, and every decision returns a full audit trail.
+WIR Innovation is the AI layer for insurance. It is an AI platform that automates the quotation and underwriting journey on top of the systems the insurer already runs, never in their place. For clearance and triage specifically, WIR captures submissions through multichannel intake, applies intelligent document reading to turn them into structured data, and then classifies and prioritizes each case by line, product, and broker, with Machine Learning calibrated to the insurer's risk appetite and underwriting manual. The classification, the priority, and the queue position write back to the existing core, and every decision returns a full audit trail.
 
 Two modules carry the work. Underwriter Intelligence automates the quotation journey per the insurer's risk policy, scoring in real time, routing by appetite and exposure, and freeing underwriters to analyze risk instead of sorting an inbox. Smart Sales maps the portfolio of client and product, scores next-best-action, and runs broker-facing campaigns with an attribution trail, so the same broker signal that raises a submission's triage priority also feeds distribution. Real-time dashboards give the team a visible queue and a visible SLA.
 
-The context behind this is structural. The Seguros e Danos market grows double digits per year while company structure does not keep pace, underwriters lose 40% of their time to administrative tasks according to Deloitte, and Gartner puts the corporate time lost organizing unstructured data at 20-30%. Capgemini reports that 60%+ of brokers choose an insurer by response speed, which makes the order of the triage queue a direct lever on premium. WIR's current public traction is conservative and specific: a first POC in execution with a global insurer in the Transport line. The model is calibrated to each insurer, LGPD compliant, and encrypted at every step. The AI layer for insurance, on top of the systems the insurer already runs, never in their place.`,
+The context behind this is structural. The Seguros e Danos market grows double digits per year while company structure does not keep pace, underwriters lose 40% of their time to administrative tasks according to Deloitte, and Gartner puts the corporate time lost organizing unstructured data at 20-30%. Capgemini reports that more than 60% of brokers choose an insurer by response speed, which makes the order of the triage queue a direct lever on premium. WIR's current public traction is conservative and specific: a first POC in execution with a global insurer in the Transport line. The model is calibrated to each insurer, LGPD compliant, and encrypted at every step. The AI layer for insurance, on top of the systems the insurer already runs, never in their place.
+
+### Frequently asked questions
+
+**How does automatic triage prioritize submissions by appetite and exposure?**
+
+Each submission is scored on two axes. The first is whether it falls inside the defined risk appetite for its line of business. The second is its exposure and authority band, meaning sum insured, line size, and accumulation against limits already on the book. The combination sets queue priority. A complete case inside appetite from a high-value broker rises to the top, one outside appetite is surfaced early for a fast decline, and one above an authority band is marked for the senior queue.
+
+**Does automated triage replace the insurer's core?**
+
+No. The triage intelligence is an external AI layer that sits on top of the existing core and policy administration systems. It ingests submissions from the channels the insurer and its brokers already use, classifies and prioritizes them, and writes the classification, priority, and queue position back through APIs or files. The policy system of record, the rating engine, and the books stay exactly where they are. There is no core migration and no IT project the insurer's team has to run.
+
+**What is the difference between automatic triage and underwriting routing?**
+
+Clearance and triage are the intake steps that sort, classify, and prioritize the inbox. Clearance answers what a submission is, whether it is complete, and whether it is a duplicate already being worked. Triage then answers whether it fits appetite and how urgent it is. Underwriting routing is the later decision step that produces a quote, a decline, or an escalation and sends the case to a specific underwriter. Triage feeds routing a queue that is already ordered by what matters, so routing acts on a sorted queue instead of a raw one.
+
+**Does triage work with submissions that arrive by e-mail and attachments?**
+
+Yes. In P&C, submissions rarely arrive as clean structured data through one door. They come as e-mail bodies, PDF proposal forms, scanned documents, spreadsheets, and broker cover notes across several channels. Multichannel intake captures them on arrival, and intelligent document reading extracts the fields into structured data. Triage then consumes that structured data to classify each submission by line, product, and broker and to prioritize it by appetite and exposure.
+
+**Does the underwriting team see the queue and the priority order?**
+
+Yes. The output of triage is a prioritized, classified work queue with a visible SLA, not an undifferentiated inbox. Each submission is captured and timestamped on arrival, which starts the SLA clock, and each case is placed in the right lane with its classification and reasoning attached. Real-time dashboards give the team the right cases at the top, so the underwriter sees a desk ordered by priority and the broker gets a predictable response.`,
     faq: [
       { q: "How does automatic triage prioritize submissions by appetite and exposure?", a: "Each submission is scored on two axes. The first is whether it falls inside the defined risk appetite for its line of business. The second is its exposure and authority band, meaning sum insured, line size, and accumulation against limits already on the book. The combination sets queue priority. A complete case inside appetite from a high-value broker rises to the top, one outside appetite is surfaced early for a fast decline, and one above an authority band is marked for the senior queue." },
       { q: "Does automated triage replace the insurer's core?", a: "No. The triage intelligence is an external AI layer that sits on top of the existing core and policy administration systems. It ingests submissions from the channels the insurer and its brokers already use, classifies and prioritizes them, and writes the classification, priority, and queue position back through APIs or files. The policy system of record, the rating engine, and the books stay exactly where they are. There is no core migration and no IT project the insurer's team has to run." },
@@ -2077,7 +2243,19 @@ Sim. O dado pessoal do Open Insurance é dado consentido sob a LGPD, e a WIR o t
 
 **A WIR substitui o core da seguradora para usar Open Insurance?**
 
-Não. A WIR é a camada de IA externa, 100% sobre o core existente, nunca no lugar dele. Não há migração nem projeto de TI que a seguradora precise tocar. Ela consome o dado padronizado e consentido que já circula no ecossistema e o transforma em decisão de subscrição, escrevendo de volta no core e retornando a trilha de auditoria. A WIR não é seguradora, corretora ou MGA, e não carrega risco.`
+Não. A WIR é a camada de IA externa, 100% sobre o core existente, nunca no lugar dele. Não há migração nem projeto de TI que a seguradora precise tocar. Ela consome o dado padronizado e consentido que já circula no ecossistema e o transforma em decisão de subscrição, escrevendo de volta no core e retornando a trilha de auditoria. A WIR não é seguradora, corretora ou MGA, e não carrega risco.
+
+**Como o Open Insurance está sendo implementado no Brasil?**
+
+O Open Insurance Brasil está sendo implementado pela SUSEP em fases, sempre mediante consentimento livre, informado e prévio do consumidor. A fase inicial se limita a dados públicos de canais e produtos. O dado pessoal, mais rico para a subscrição, só flui depois do consentimento. A governança se tornou permanente, organizada em conselho deliberativo, secretaria e grupos técnicos de trabalho, e o regime padroniza dados cadastrais, de apólice e, em fases posteriores, transacionais.
+
+**Posso compartilhar meu histórico de seguros entre seguradoras no Brasil?**
+
+Sim, desde que você consinta. No Open Insurance Brasil, o dado pessoal só flui depois do consentimento livre, informado e prévio, e os participantes podem usá-lo apenas dentro do escopo e do prazo autorizados, sob a LGPD. Com o histórico de apólice e de sinistro padronizado e visível entre participantes, fica mais difícil esconder histórico adverso na cotação, e a seguradora que vai cotar passa a enxergar registros que antes ficavam dispersos.
+
+**Quais os benefícios do Open Insurance para o segurado no Brasil?**
+
+O regime foi desenhado para trazer inovação ao sistema de seguros, estimular concorrência e ampliar a oferta para o consumidor. Com dado padronizado e consentido chegando já estruturado, o caminho da submissão até a cotação encurta, o que tende a acelerar a resposta. Segundo a Capgemini, 60%+ dos corretores escolhem a seguradora pela velocidade de resposta. O consumidor mantém o controle: o dado pessoal só flui mediante consentimento livre, informado e prévio.`
   },
   {
     slug: "regulacao-ia-seguros-susep",
@@ -2368,7 +2546,7 @@ No. WIR never replaces the core. It is an external AI layer that sits on top of 
   {
     slug: "open-insurance-brasil-seguradoras-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
-    title: "Open Insurance Brazil and what changes for insurers",
+    title: "Open Insurance Brazil for insurers: what changes",
     sub: "How Open Insurance Brazil and SUSEP-led data sharing reshape underwriting, risk scoring, fraud detection, and pricing in P&C, with explainable, auditable AI.",
     author: "WIR Innovation", role: "Team",
     time: "9 min", date: "08 · Jun · 2026",
@@ -2437,7 +2615,19 @@ Yes. Open Insurance personal data is consented personal data under LGPD, and WIR
 
 **Does WIR replace the insurer's core to use Open Insurance?**
 
-No. WIR does not replace the core. It is the external AI layer, 100% external to the insurer's IT, with no core migration. WIR consumes Open Insurance data as one more input into its pipeline and writes decisions back to the policy core the insurer already runs. WIR is not an insurer, a broker, or an MGA, and does not carry risk. It automates the quotation and underwriting journey per the insurer's own risk-acceptance policy.`
+No. WIR does not replace the core. It is the external AI layer, 100% external to the insurer's IT, with no core migration. WIR consumes Open Insurance data as one more input into its pipeline and writes decisions back to the policy core the insurer already runs. WIR is not an insurer, a broker, or an MGA, and does not carry risk. It automates the quotation and underwriting journey per the insurer's own risk-acceptance policy.
+
+**How is Open Insurance being implemented in Brazil?**
+
+Open Insurance Brazil is being implemented in phases under SUSEP, the insurance regulator. The system was first established in 2021 and made permanent at the end of 2024, governed through a layered structure. It rolls out progressively, from public product data toward fully consented personal data and transactional services. Participation is mandatory for some companies and voluntary for others, and personal data sharing requires consent that SUSEP defines as free, informed and prior.
+
+**Can I share my insurance history between companies in Brazil?**
+
+Yes. Under Open Insurance Brazil, a consumer can authorize their registration data and prior-policy history to be shared between participating companies. The sharing of personal data is not automatic. It requires consent that SUSEP defines as free, informed and prior, expressed by electronic means, and the data may only be used within the scope and duration authorized. For insurers, this consented history is what lets an external AI layer enrich a submission and score risk more completely at quotation.
+
+**What are the benefits of Open Insurance for policyholders in Brazil?**
+
+For policyholders, Open Insurance Brazil aims to bring more competition, better products, and improved services, which are SUSEP's stated goals for the regime. When a consumer consents to share their history, insurers can quote faster and more accurately, and the consumer can carry their record between companies rather than starting from zero. Because distribution is broker-led, and 60%+ of brokers choose an insurer by response speed according to Capgemini, the same standardized data that speeds quoting also widens the consumer's options.`
   },
   {
     slug: "regulacao-ia-seguros-susep-en",
@@ -3378,14 +3568,14 @@ O setup leva de 3 a 12 meses, com escopo claro e KPIs acordados antes do início
   {
     slug: "automatizar-cotacao-seguros-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
-    title: "How to automate insurance quoting with an AI layer",
-    sub: "A practical guide to automating insurance quoting with an external AI layer that reads submissions, scores risk, prices, and returns a broker-visible SLA. No core migration.",
+    title: "Insurance quote automation with an AI layer",
+    sub: "Insurance quote automation with an external AI layer that reads submissions, scores risk, prices, and returns a broker-visible SLA. No core migration.",
     author: "WIR Innovation", role: "Team",
     time: "9 min", date: "02 · Jun · 2026",
-    metaDesc: "A practical guide to automating insurance quoting with an external AI layer that reads submissions, scores risk, prices, and returns a broker-visible SLA. No core migration.",
-    body: `### What it means to automate insurance quoting with an AI layer
+    metaDesc: "Insurance quote automation with an external AI layer that reads submissions, scores risk, prices, and returns a broker-visible SLA. No core migration.",
+    body: `### What insurance quote automation with an AI layer means
 
-How to automate insurance quoting with AI comes down to one architectural choice: place an external AI layer on top of the systems the insurer already runs, and let it read each submission, structure it, score the risk, and return a priced quote, a decline, or an escalation in real time. In Brazilian Seguros e Danos (P&C), the cotação (quotation) journey is still largely a manual relay between corretor (broker) and seguradora (insurer). A submission arrives by e-mail, broker portal, or spreadsheet, an assistant re-keys it into the policy core, documents are chased, and only then does a subscritor (underwriter) assess appetite and price the prêmio (premium). Every handoff adds latency and room for inconsistent decisions.
+Insurance quote automation comes down to one architectural choice: place an external AI layer on top of the systems the insurer already runs, and let it read each submission, structure it, score the risk, and return a priced quote, a decline, or an escalation in real time. In Brazilian Seguros e Danos (P&C), the cotação (quotation) journey is still largely a manual relay between corretor (broker) and seguradora (insurer). A submission arrives by e-mail, broker portal, or spreadsheet, an assistant re-keys it into the policy core, documents are chased, and only then does a subscritor (underwriter) assess appetite and price the prêmio (premium). Every handoff adds latency and room for inconsistent decisions.
 
 The reader who should consider this is the underwriting lead or innovation head watching capacity erode as submission volume climbs. Underwriters in Brazil spend roughly 40% of their time on administrative tasks rather than risk judgment, according to Deloitte, and corporate teams lose another 20% to 30% organizing unstructured data, according to Gartner. Automating the cotação journey means encoding the carrier's own underwriting manual and risk appetite into a calibrated engine, so the routine decisions are returned instantly and the underwriter's time is reserved for the cases that genuinely need human judgment. This is augmentation of underwriting capacity, not a change to the system of record. WIR is the AI layer of insurance built for exactly this: an external intelligence layer that automates quoting on top of existing systems, never in their place.
 
@@ -4972,12 +5162,12 @@ Terceiro: validação importa mais que extração. O custo de uma extração err
     cat: "Técnico", grad: "linear-gradient(135deg,#3222E9,#FE8B77)",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100",
     imageAlt: "Múltiplas telas com dashboards de monitoramento",
-    title: "Observabilidade de agentes de IA: métricas e ferramentas para produção",
-    sub: "Latência, drift, custo por decisão, divergência humano-vs-modelo — e as ferramentas (Arize, Fiddler, WhyLabs, Evidently, LangSmith) que toda seguradora deveria avaliar antes de escalar IA.",
+    title: "Observabilidade de decisões de IA no seguro: como auditar a subscrição automatizada",
+    sub: "Toda decisão de IA na subscrição automatizada precisa de uma trilha de auditoria. Veja como observar e explicar o que o modelo decide.",
     author: "Head of AI", role: "ML · WIR Innovation",
     time: "10 min", date: "22 · Fev · 2026", dateISO: "2026-02-22",
-    metaDesc: "As 6 métricas e as principais ferramentas de observabilidade de agentes de IA em produção — de drift e custo por decisão a Arize, Fiddler, WhyLabs e Evidently.",
-    body: `Equipes que sobem o primeiro modelo de IA para produção em uma seguradora costumam montar um dashboard inicial focado nas métricas que aprenderam a importar durante desenvolvimento: acurácia no test set, AUC, F1.
+    metaDesc: "Toda decisão de IA na subscrição automatizada precisa de uma trilha de auditoria. Veja como observar e explicar o que o modelo decide.",
+    body: `Quando uma seguradora automatiza a subscrição, cada cotação, recusa e roteamento passa a ser decidido por um modelo, e a pergunta do regulador, do ressegurador e do próprio comitê de risco muda de "o modelo acerta?" para "consigo explicar e auditar o que ele decidiu?". Observabilidade de decisões de IA no seguro é a resposta a essa segunda pergunta. Não se trata de acompanhar acurácia em um painel, e sim de saber, para cada caso, por que o score saiu como saiu, qual política de aceitação foi aplicada e onde a decisão divergiu do apetite de risco definido pela seguradora. A WIR Innovation trata isso como requisito, não como recurso opcional: a plataforma é uma camada de IA externa, sobre os sistemas que a seguradora já usa, e devolve para o core uma trilha de auditoria completa a cada decisão, com o Machine Learning calibrado ao apetite de risco e ao manual de subscrição. É assim que a auditabilidade da subscrição automatizada deixa de ser uma promessa e vira um registro que o subscritor, o auditor e o regulador conseguem inspecionar.
 
 Esse dashboard funciona durante o primeiro mês. Depois, ele para de ser útil.
 

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>AI integration for insurance core systems: layer vs core vs RPA — WIR Innovation</title>
+<meta name="description" content="How to add AI to an insurer&#39;s core systems: core replacement vs RPA vs an external AI layer, compared by cost, risk, time to value, and control of underwriting." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/camada-ia-vs-core-rpa-seguros-en/" />
+<link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/camada-ia-vs-core-rpa-seguros/" />
+<link rel="alternate" hreflang="en" href="https://wirinnovation.ai/insights/camada-ia-vs-core-rpa-seguros-en/" />
+<link rel="alternate" hreflang="x-default" href="https://wirinnovation.ai/insights/camada-ia-vs-core-rpa-seguros/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="AI integration for insurance core systems: layer vs core vs RPA" />
+<meta property="og:description" content="How to add AI to an insurer&#39;s core systems: core replacement vs RPA vs an external AI layer, compared by cost, risk, time to value, and control of underwriting." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/camada-ia-vs-core-rpa-seguros-en/" />
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Artigo" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI integration for insurance core systems: layer vs core vs RPA" />
+<meta name="twitter:description" content="How to add AI to an insurer&#39;s core systems: core replacement vs RPA vs an external AI layer, compared by cost, risk, time to value, and control of underwriting." />
+
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI integration for insurance core systems: layer vs core vs RPA","description":"How to add AI to an insurer's core systems: core replacement vs RPA vs an external AI layer, compared by cost, risk, time to value, and control of underwriting.","datePublished":"2026-06-21","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Team"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/camada-ia-vs-core-rpa-seguros-en/","articleSection":"Artigo"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wirinnovation.ai/en/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/en/insights/"},{"@type":"ListItem","position":3,"name":"AI integration for insurance core systems: layer vs core vs RPA","item":"https://wirinnovation.ai/insights/camada-ia-vs-core-rpa-seguros-en/"}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisions in minutes · auditable · explainable</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing as the default</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>AI platform for insurance</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>LGPD-compliant</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisions in minutes · auditable · explainable</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing as the default</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/en/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/en/" class="nav__link">Home</a>
+      <a href="/en/#about" class="nav__link">About</a>
+      <a href="/insights/manifesto-en/" class="nav__link">Manifesto</a>
+      <a href="/en/#solutions" class="nav__link">Products &amp; AI</a>
+      <a href="/en/#protection" class="nav__link">Data Protection</a>
+      <a href="/en/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/en/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contact
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/en/insights/">
+      <span aria-hidden="true">←</span> Back to Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Artigo</div>
+      <h1 class="display blarticle__title">AI integration for insurance core systems: layer vs core vs RPA</h1>
+      <p class="blarticle__sub">How to add AI to an insurer&#39;s core systems: core replacement vs RPA vs an external AI layer, compared by cost, risk, time to value, and control of underwriting.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Team</div>
+          <div class="blarticle__byline-time">21 · Jun · 2026 · 12 min read</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#3222E9,#7540AC); aspect-ratio: 16 / 9;">
+      
+    </figure>
+
+    <div class="blarticle__body">
+<h3>What it means to add AI to insurance core systems</h3>
+<p>Choosing an AI integration platform for insurance core systems is not one decision but three, and they differ less in ambition than in where they place the cost and the risk. A Brazilian Seguros e Danos (P&amp;C) insurer does not run on a single system. It runs on a policy-administration core, a claims system, a billing engine, actuarial and pricing tools, broker portals, and years of accumulated integrations. The core is the system of record. It holds the policy, the endorsements, the premium, and the audit history, and in most incumbents it is also old. That is the honest starting point for any AI conversation.</p>
+<p>So the real question is not whether to add intelligence but where the intelligence should live relative to that system of record. The first option is to replace or transform the core itself, usually as a multi-year migration, and build automation natively inside the new platform. The second is to layer RPA (Robotic Process Automation) bots on top of the existing screens to automate repetitive clicks. The third is to integrate an external AI intelligence layer by API that reads submissions, scores risk against the insurer&#39;s appetite, prices, and writes the decision back, while the core stays exactly where it is. According to the <a href="https://www.deloitte.com/us/en/insights/industry/financial-services/financial-services-industry-outlooks/insurance-industry-outlook.html" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Deloitte 2026 Global Insurance Outlook</a>, insurers are increasingly pairing focused, practical AI use cases with foundational data work rather than betting everything on a wholesale core rebuild.</p>
+<h3>Three approaches: core replacement, RPA, and an external AI layer</h3>
+<p>Replacing the policy-administration core is the most complete answer and the most expensive one. It promises a clean, modern foundation where automation is native rather than bolted on, and it pays for that with time, money, and delivery risk. Core programs run for years and touch every policy, every renewal, and every claim, so the stakes are high and the payback is distant. The <a href="https://www.deloitte.com/us/en/insights/industry/financial-services/financial-services-industry-outlooks/insurance-industry-outlook.html" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Deloitte 2026 Global Insurance Outlook</a> notes that many insurers pursue multi-year cloud-based core transformations, yet executives increasingly question whether AI-driven models might render parts of those systems obsolete before the migration even finishes. This is one reason so many incumbents stall. The business case competes with everything else on the roadmap, and the migration freezes other innovation while it runs.</p>
+<p>RPA is the lighter middle option, and it has a genuine role. An RPA bot watches a person perform a task inside an application interface and then repeats those clicks and keystrokes. As <a href="https://en.wikipedia.org/wiki/Robotic_process_automation" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Wikipedia&#39;s entry on Robotic Process Automation</a> puts it, RPA should not be confused with artificial intelligence, because it follows a predefined workflow rather than processing information to make predictions. That distinction is the whole point. RPA does rule-based, repetitive, structured work well. Re-keying a known field between two screens, moving a record between systems, triggering a fixed sequence. For high-volume, stable, deterministic steps it removes manual clicks fast and cheaply.</p>
+<p>Where RPA breaks is just as clear. Because the bot is driven by the screen layout and a fixed workflow, it is brittle, and the same Wikipedia entry notes that RPA systems demand continual technical support and manual reconfiguration when the underlying systems change. It also has no judgment. A bot can copy a field, but it cannot decide whether a risk sits inside appetite, and it cannot read a messy broker submission that arrives as an e-mail with a PDF and a spreadsheet attached. RPA automates the mechanical layer of an existing process. It is a clicks-saver, not a decision-maker, and it does not survive change gracefully.</p>
+<p>The third architecture leaves the core as the system of record and connects an external AI intelligence layer that adds the judgment RPA cannot. Instead of replicating clicks, the layer reads the submission, extracts and validates the fields, scores the risk against the insurer&#39;s own appetite and underwriting manual, prices it, and writes the decision and an audit trail back through APIs. The core does not move and there is no migration. This is the pattern the consultancy literature is converging on. The <a href="https://www.deloitte.com/us/en/insights/industry/financial-services/financial-services-industry-outlooks/insurance-industry-outlook.html" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Deloitte 2026 Global Insurance Outlook</a> describes integration tools such as APIs driving insurers to update legacy technology incrementally, and frames the realistic path as practical AI use cases with clear return and manageable risk layered onto solid data foundations. A neutral reference point for the term itself is the <a href="https://www.gartner.com/en/information-technology/glossary/robotic-process-automation-rpa" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Gartner glossary definition of Robotic Process Automation</a>.</p>
+<h3>How to choose: cost, risk, time to value, and control</h3>
+<p>The three approaches separate cleanly on five buyer criteria, and none of this is a promise of outcomes. It is a comparison of structural trade-offs. On cost, core replacement is the highest, a multi-year capital program, while RPA is moderate to start but accrues a maintenance tail because bots break and need rework whenever a screen or rule changes. An external AI layer is an integration and operation cost rather than a re-platforming cost, because the system of record stays in place. On risk, core replacement carries the most delivery risk since it touches every policy and every renewal, RPA carries the operational fragility of silent breakage when an upstream system changes, and an external layer carries integration risk that is bounded, because it reads from and writes to the core through defined APIs rather than altering it.</p>
+<p>Time to value and IT load follow the same logic. Core programs deliver at the end of a long horizon, RPA delivers quick wins on narrow, stable tasks but does not compound into intelligence, and an external AI layer can target a specific line or step of the quotation-to-decision journey and deliver there without waiting for a migration. Core replacement is the heaviest internal IT program an insurer can run, RPA needs an internal bot-maintenance capability, and a genuinely external layer minimizes load on the insurer&#39;s own IT because it does not require rebuilding or operating the core. This matters in a market where, according to <a href="https://www.bcg.com/" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">BCG</a>, 70% of insurers do not execute innovation because of IT limitations. An approach that does not depend on internal IT capacity is one way around that constraint.</p>
+<p>The criterion buyers most often underweight is control over the underwriting policy, and it should not be underweighted. RPA encodes mechanical rules, not risk appetite. A core rebuild puts the rules inside a new system the insurer then owns and maintains. An external AI layer should execute the insurer&#39;s own documented appetite and underwriting manual, with every decision explainable and traceable, so control of the policy stays with the insurer while the execution is automated. There is good reason to free underwriter capacity for exactly this kind of judgment, because <a href="https://www.deloitte.com/us/en/insights/industry/financial-services/financial-services-industry-outlooks/insurance-industry-outlook.html" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Deloitte</a> finds underwriters spend 40% of their time on administrative tasks. Speed matters on the distribution side too, since <a href="https://www.capgemini.com/insights/research-library/world-property-and-casualty-insurance-report/" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Capgemini</a> reports that 60%+ of brokers (corretores) choose an insurer by response speed, and an architecture that shortens time-to-quote without a migration competes for that distribution.</p>
+<h3>When each approach fits</h3>
+<p>The honest answer is that these approaches are not mutually exclusive, and the right choice depends on the constraint the insurer is actually trying to relieve. Core replacement fits when the existing core is genuinely end-of-life, unsupported, or blocking the business at a structural level, and the insurer has the budget, the multi-year runway, and the appetite to run the largest IT program it can take on. It is the right answer when the system of record itself is the problem, not the speed of underwriting on top of it.</p>
+<p>RPA fits as a tactical tool for high-volume, stable, deterministic steps where the only goal is to remove repetitive clicks, the screens rarely change, and no risk judgment is involved. It is a useful patch on a mechanical bottleneck and the wrong tool for anything that requires reading unstructured submissions or deciding whether a risk is in appetite. An external AI intelligence layer fits the most common incumbent situation, where the core works as a system of record but the quotation and underwriting journey is slow, manual, and inconsistent, and a multi-year migration is not realistic. When the binding constraint is underwriter time on administration, time-to-quote for brokers, and consistency of risk decisions, the layer addresses it directly without touching the core.</p>
+<p>This maps onto the Brazilian Seguros e Danos (P&amp;C) reality. The market grows at double digits per year, while company structure does not keep pace with that acceleration, which puts the pressure squarely on the underwriting journey rather than on the system of record. Part of that pressure is data itself. According to <a href="https://www.gartner.com/" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Gartner</a>, companies lose 20-30% of their time organizing unstructured data, and broker submissions are exactly that kind of unstructured input. For most incumbents the constraint is speed and consistency of underwriting, which is precisely where an external layer applies and where a core rebuild does not help for years. The regulatory frame points the same way, because under the LGPD (Lei Geral de Proteção de Dados) automated decisions affecting individuals carry transparency and review obligations, which argues for any automation, RPA or AI, to be calibrated to a documented underwriting policy and to return a full audit trail. The <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">full text of the LGPD</a> and the <a href="https://www.gov.br/anpd/pt-br" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">ANPD</a> set out those obligations.</p>
+<h3>Where WIR fits as the external AI layer</h3>
+<p>WIR is the AI layer for insurance. On top of the systems the insurer already runs, never in their place. As an AI integration platform for insurance core systems, WIR is an external intelligence layer that integrates by API rather than a core replacement or a stack of RPA bots. It reads the submission, extracts and validates the fields, scores risk with Machine Learning calibrated to the insurer&#39;s own appetite and underwriting manual, prices the risk, and writes the decision back to the policy core with a full audit trail. The core remains the system of record, there is no migration, and because the layer is fully external, the load on the insurer&#39;s IT is minimized. The intelligence reaches the underwriter through two concrete modules. Underwriter Intelligence automates the quotation journey per the insurer&#39;s risk policy, with real-time scoring, automatic routing by appetite and exposure, and a final decision that is a quote, an automatic decline, or escalation to a human, always with an explanation. Smart Sales maps the portfolio, scores upsell and next-best-action, and runs multi-channel campaigns with an attribution trail.</p>
+<p>The contrast with the other two approaches is the whole positioning, and it has to be stated without overclaiming. WIR does not replace the insurer&#39;s core, it is not a system migration, and it is not an IT project the insurer&#39;s team has to run. It is not an insurer, broker, or MGA, and it does not carry risk. It is not RPA either, because it adds risk judgment calibrated to a documented policy rather than mechanical screen-clicking, and its decisions are explainable and auditable rather than brittle and rule-bound. Every decision returns a complete audit trail, and data is LGPD compliant and encrypted at every step. WIR was founded in 2025 and built with Mahway, a Venture Builder in California, and Avante, a Venture Studio in Brazil. Its only public traction today is a first POC in execution with a global insurer in the Transport line, and that conservative footing is the point. The architecture is designed to add intelligence on top of the core, not to promise outcomes the market has not yet seen.</p>
+<p>For the decision itself, this guide on <a href="https://wirinnovation.ai" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">how to integrate an AI layer with insurance core systems</a> walks through the API integration in more detail, and this companion piece on <a href="https://wirinnovation.ai" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">how to automate insurance quotation</a> shows the underwriting journey end to end.</p>
+<h3>Frequently asked questions</h3>
+<p><strong>What is the best AI integration platform for insurance core systems?</strong></p>
+<p>The best fit for most incumbents is an external AI layer that integrates by API, not a core replacement or RPA bots. It leaves the core as the system of record while adding risk judgment on top. WIR works this way. It reads submissions, scores risk with Machine Learning calibrated to the insurer&#39;s appetite and underwriting manual, prices, and writes decisions back with a full audit trail. There is no migration, and the load on the insurer&#39;s IT is minimized.</p>
+<p><strong>Should insurers replace the core or add an AI layer?</strong></p>
+<p>For most incumbents, adding an external AI layer fits better than replacing the core, because a core program runs for years and carries the most delivery risk. Replacement makes sense only when the core is genuinely end-of-life or blocking the business. According to BCG, 70% of insurers do not execute innovation because of IT limitations, so an approach that does not depend on internal IT capacity often delivers value faster. WIR sits on top of existing systems and never replaces the core.</p>
+<p><strong>How is an AI layer different from RPA in insurance?</strong></p>
+<p>RPA repeats clicks inside existing screens following a fixed workflow, so it is brittle and has no risk judgment. An external AI layer reads unstructured broker submissions, scores risk against the insurer&#39;s own appetite, and decides, with every decision explainable and auditable. WIR is this AI layer, not RPA. It adds judgment calibrated to a documented underwriting policy rather than mechanical screen-clicking, freeing underwriters who, according to Deloitte, spend 40% of their time on administrative tasks.</p>
+<p><strong>Does adding an AI layer require a core migration?</strong></p>
+<p>No. A genuinely external AI layer integrates by API and leaves the core exactly where it is, so there is no migration and no re-platforming. WIR is 100% external and adds no load on the insurer&#39;s IT. It reads the submission, scores risk with Machine Learning calibrated to appetite, prices, and writes the decision and a full audit trail back to the policy core. The core remains the system of record, and data stays LGPD compliant and encrypted at every step.</p>
+<p><strong>What is the best decision automation platform for insurance pricing and quotation?</strong></p>
+<p>The strongest option automates the quotation and underwriting journey according to the insurer&#39;s own risk policy, with explainable and auditable decisions. WIR does this through Underwriter Intelligence, which scores risk in real time, routes automatically by appetite and exposure, and returns a quote, an automatic decline, or escalation to a human. Speed matters, since Capgemini reports 60%+ of brokers choose an insurer by response speed. WIR is an external AI layer, not an insurer, and never carries risk.</p>
+    </div>
+
+    <nav class="blarticle__related" aria-label="Related insights">
+      <h3 class="blarticle__related-title">Related insights</h3>
+      <ul class="blarticle__related-list">
+      <li class="blarticle__related-item"><a href="/insights/o-que-e-stp-seguros-en/"><span class="blarticle__related-cat">Automação</span> What is straight-through processing (STP) in insurance, and what is a good STP ratio</a></li>
+      <li class="blarticle__related-item"><a href="/insights/validacao-automatica-dados-cnpj-seguros-en/"><span class="blarticle__related-cat">Automação</span> Automatic external data validation for insurance submissions with AI</a></li>
+      <li class="blarticle__related-item"><a href="/insights/substituir-rpa-ocr-ia-seguros-en/"><span class="blarticle__related-cat">Automação</span> How to replace RPA and OCR with an AI layer in insurance</a></li>
+      <li class="blarticle__related-item"><a href="/insights/reduzir-tarefas-administrativas-subscricao-en/"><span class="blarticle__related-cat">Automação</span> How to reduce administrative tasks in insurance underwriting with an AI layer</a></li>
+      </ul>
+    </nav>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/en/insights/">
+        <span aria-hidden="true">←</span> More Insights
+      </a>
+      <a class="btn btn--solid" href="/en/#contact">
+        Talk to the team <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">The new era of insurance is data intelligence, speed, and scale. WIR Innovation is the AI platform that delivers that structure inside the systems you already run.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/en/">Home</a></li>
+          <li><a href="/en/#about">About</a></li>
+          <li><a href="/en/#solutions">Products &amp; AI</a></li>
+          <li><a href="/en/#protection">Data Protection</a></li>
+          <li><a href="/en/insights/">Insights &amp; News</a></li>
+          <li><a href="/en/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/en/#contact">Talk to the team</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partners &amp; Holding</h4>
+        <ul>
+          <li><a href="/en/#about">Mahway · California</a></li>
+          <li><a href="/en/#about">Avante · Brazil</a></li>
+          <li><a href="/en/#about">Strategic advisors</a></li>
+          <li><a href="/en/#about">Principles</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Built between São Paulo and Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Hello%20Nicholas%2C%20I%20found%20you%20through%20the%20WIR%20Innovation%20website.%20I'd%20like%20to%20talk%20about%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Chat with Nicholas on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>
