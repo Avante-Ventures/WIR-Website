@@ -1,128 +1,148 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { LANG } from './i18n.js';
 
+// (useLiveCounter removed — see Sesión 3 swarm: the fake counter undermined credibility.
+// Hero metrics are now defensible static observations about the WIR thesis.)
+
 /* ───────── Movement 01 · Opening + 02 · Proof ───────── */
 
 const T = {
   pt: {
-    dflowStages: ["COLETA", "ENRIQ.", "SCORE", "DECISÃO", "SUBSCRIÇÃO"],
+    dflowStages: ["INTAKE", "ENRICH", "SCORE", "DECISION"],
     dflowTitle: "Fluxo de decisão",
-    dflowTitleV: "wir.produtos",
+    dflowTitleV: "wir.flow",
     dflowLive: "ao vivo",
-    dflowSources: ["e-mail", "anexos", "API"],
-    dflowOutputs: ["cotação", "trilha"],
-    dflowLoop: "· ciclo de aprendizado contínuo · machine learning ·",
-    dflowFoot: ["Dados", "Produtos WIR", "Decisão auditável"],
+    dflowInput: { k: "INPUT", v: "e-mail · anexos · API" },
+    dflowOutput: { k: "OUTPUT", v: "cotação + trilha" },
+    dflowAudit: "audit trail · continuous learning",
     dflowAria: "Fluxo de decisão",
-    mastDate: "ABR 2026",
-    mastTheme: "INTELIGÊNCIA ARTIFICIAL · SEGUROS",
-    mastRoute: "SÃO PAULO ⟶ SILICON VALLEY",
-    kicker: "Plataforma em produção · decisão 24/7",
     heroTitle: <>A nova era do seguro é<br/><em>inteligência de dados</em>,<br/>velocidade e escala.</>,
-    heroLede: "A WIR entrega uma camada de IA com analytics e dashboards real time, sem substituir os sistemas atuais.",
-    ctaTalk: "Falar com a equipe",
-    ctaSee: "Ver a plataforma",
-    heroCaption: "· Como a WIR transforma dados em decisões",
-    proofEyebrow: "· Análise de possibilidades de retorno sobre o investimento",
-    proofTitle: "6 indicadores estratégicos de resultado",
+    heroLede: "Camada de IA que pluga no seu core de apólices e devolve cotação em minutos — sem trocar o core, sem projeto de TI.",
+    ctaTalk: "Falar com nossos sócios",
+    ctaSee: "Ver a plataforma →",
+    ctaMicrocopy: "Resposta de um sócio em 24h · conversa de 30 min · sem pitch comercial.",
+    // Defensible static metrics — observation about the WIR thesis, not a fake live counter.
+    liveStickers: [
+      { value: "1",        label: "Piloto em produção", note: "Seguradora Tier-1 · LATAM" },
+      { value: "minutos",  label: "Tempo de decisão",   note: "vs. 6 semanas legadas" },
+      { value: "24/7",     label: "Cobertura",          note: "Sem TI da seguradora" },
+    ],
+    proofCta: "Quer ver isso na sua operação? · Falar com nossos sócios →",
+    proofEyebrow: "· Tese de retorno",
+    proofTitle: "O retorno operacional, em 6 vetores",
     indicators: [
       { sign:"+", w:"Eficiência",   l:"Escalar volume de cotações",
-        c:"Possibilidade de crescer exponencialmente o volume de cotações." },
-      { sign:"+", w:"Faturamento",  l:"Mais cotações geram mais negócios fechados",
-        c:"O retorno mais rápido aos corretores gera mais possibilidades de negócios e repiques, além do aumento do volume de cotações por mês." },
-      { sign:"−", w:"DA · Custos",  l:"Aumento de margem · Lucratividade",
-        c:"Com o aumento das cotações sem necessidade de crescer o headcount na mesma proporção, traz uma redução da Despesa Administrativa e possível aumento de margem." },
-      { sign:"+", w:"Inteligência", l:"Dashboards, Analytics e Relatórios real time",
-        c:"Analisar de forma pró-ativa os negócios em andamento e o pipeline para focar nos fechamentos." },
-      { sign:"+", w:"AI First",     l:"Pioneiros em automação com IA",
-        c:"Quem sai na frente com soluções tecnológicas consegue liderar e atrair os melhores resultados, com avaliação de risco e assertividade na precificação superiores aos concorrentes." },
+        c:"Volume de cotações cresce sem crescer headcount na mesma proporção." },
+      { sign:"+", w:"Faturamento",  l:"Mais cotações, mais negócios fechados",
+        c:"Resposta mais rápida ao corretor gera repiques e fechamentos adicionais." },
+      { sign:"−", w:"DA · Custos",  l:"Margem expandida",
+        c:"Despesa Administrativa cai quando o intake é automático." },
+      { sign:"+", w:"Inteligência", l:"Dashboards em tempo real",
+        c:"Análise pró-ativa do pipeline e foco nos fechamentos." },
+      { sign:"+", w:"AI First",     l:"Pioneirismo na automação",
+        c:"Quem se adianta lidera — risk assessment e pricing acima dos concorrentes." },
       { sign:"+", w:"Escalar",      l:"Futuro das seguradoras",
-        c:"Possibilidade de escalar os negócios devido às automações e à evolução da inteligência artificial." },
+        c:"Escalar o negócio sobre automação e evolução da IA." },
     ],
   },
   en: {
-    dflowStages: ["INTAKE", "ENRICH", "SCORE", "DECISION", "UNDERWRITE"],
+    dflowStages: ["INTAKE", "ENRICH", "SCORE", "DECISION"],
     dflowTitle: "Decision flow",
-    dflowTitleV: "wir.products",
+    dflowTitleV: "wir.flow",
     dflowLive: "live",
-    dflowSources: ["email", "files", "API"],
-    dflowOutputs: ["quote", "trail"],
-    dflowLoop: "· continuous learning loop · machine learning ·",
-    dflowFoot: ["Data", "WIR Products", "Auditable decision"],
+    dflowInput: { k: "INPUT", v: "email · files · API" },
+    dflowOutput: { k: "OUTPUT", v: "quote + trail" },
+    dflowAudit: "audit trail · continuous learning",
     dflowAria: "Decision flow",
-    mastDate: "APR 2026",
-    mastTheme: "ARTIFICIAL INTELLIGENCE · INSURANCE",
-    mastRoute: "SÃO PAULO ⟶ SILICON VALLEY",
-    kicker: "Platform in production · 24/7 decisioning",
     heroTitle: <>The new era of insurance is<br/><em>data intelligence</em>,<br/>speed and scale.</>,
-    heroLede: "WIR delivers an AI layer with real-time analytics and dashboards — without replacing your current systems.",
-    ctaTalk: "Talk to the team",
-    ctaSee: "See the platform",
-    heroCaption: "· How WIR turns data into decisions",
-    proofEyebrow: "· Return-on-investment outlook",
-    proofTitle: "6 strategic outcome indicators",
+    heroLede: "An AI layer that plugs into your policy core and returns a quote in minutes — no core replacement, no IT project.",
+    ctaTalk: "Talk to our partners",
+    ctaSee: "See the platform →",
+    ctaMicrocopy: "Reply from a partner within 24h · 30-minute call · no sales pitch.",
+    liveStickers: [
+      { value: "1",       label: "Pilot in production", note: "Tier-1 LATAM insurer" },
+      { value: "minutes", label: "Decision time",       note: "vs. 6 legacy weeks" },
+      { value: "24/7",    label: "Coverage",            note: "Without insurer IT" },
+    ],
+    proofCta: "Want to see this in your operation? · Talk to our partners →",
+    proofEyebrow: "· Return thesis",
+    proofTitle: "Operational return, in 6 vectors",
     indicators: [
       { sign:"+", w:"Efficiency",   l:"Scale quoting volume",
-        c:"The ability to grow quoting volume exponentially." },
-      { sign:"+", w:"Revenue",      l:"More quotes turn into more closed business",
-        c:"Faster turnaround to brokers creates more business opportunities and repeat requests, on top of a higher monthly quoting volume." },
-      { sign:"−", w:"Admin · Costs", l:"Margin expansion · Profitability",
-        c:"Quoting volume grows without growing headcount at the same rate — reducing administrative expense and opening room for margin expansion." },
-      { sign:"+", w:"Intelligence", l:"Real-time dashboards, analytics and reporting",
-        c:"Proactively analyze live deals and the pipeline to focus on closings." },
-      { sign:"+", w:"AI First",     l:"Pioneers in AI-driven automation",
-        c:"Moving first with technology means leading the market — with risk assessment and pricing accuracy ahead of competitors." },
-      { sign:"+", w:"Scale",        l:"The future of insurance carriers",
-        c:"The ability to scale the business on automation and the ongoing evolution of artificial intelligence." },
+        c:"Volume grows without growing headcount at the same rate." },
+      { sign:"+", w:"Revenue",      l:"More quotes, more closed business",
+        c:"Faster broker turnaround creates additional closings and repeat asks." },
+      { sign:"−", w:"Admin · Costs", l:"Margin expanded",
+        c:"Administrative expense drops when intake is automatic." },
+      { sign:"+", w:"Intelligence", l:"Real-time dashboards",
+        c:"Proactive pipeline analysis to focus on closings." },
+      { sign:"+", w:"AI First",     l:"Automation pioneer",
+        c:"Moving first leads — risk assessment and pricing ahead of competitors." },
+      { sign:"+", w:"Scale",        l:"Carriers' future",
+        c:"Scale the business on automation and AI evolution." },
     ],
   },
   es: {
-    dflowStages: ["CAPTURA", "ENRIQ.", "SCORE", "DECISIÓN", "SUSCRIPCIÓN"],
+    dflowStages: ["CAPTURA", "ENRIQ.", "SCORE", "DECISIÓN"],
     dflowTitle: "Flujo de decisión",
-    dflowTitleV: "wir.productos",
+    dflowTitleV: "wir.flow",
     dflowLive: "en vivo",
-    dflowSources: ["correo", "anexos", "API"],
-    dflowOutputs: ["cotiz.", "trazas"],
-    dflowLoop: "· ciclo de aprendizaje continuo · machine learning ·",
-    dflowFoot: ["Datos", "Productos WIR", "Decisión auditable"],
+    dflowInput: { k: "INPUT", v: "correo · anexos · API" },
+    dflowOutput: { k: "OUTPUT", v: "cotización + traza" },
+    dflowAudit: "audit trail · continuous learning",
     dflowAria: "Flujo de decisión",
-    mastDate: "ABR 2026",
-    mastTheme: "INTELIGENCIA ARTIFICIAL · SEGUROS",
-    mastRoute: "SÃO PAULO ⟶ SILICON VALLEY",
-    kicker: "Plataforma en producción · decisión 24/7",
     heroTitle: <>La nueva era del seguro es<br/><em>inteligencia de datos</em>,<br/>velocidad y escala.</>,
-    heroLede: "WIR entrega una capa de IA con analytics y dashboards en tiempo real, sin sustituir los sistemas actuales.",
-    ctaTalk: "Hablar con el equipo",
-    ctaSee: "Ver la plataforma",
-    heroCaption: "· Cómo WIR transforma datos en decisiones",
-    proofEyebrow: "· Análisis de posibilidades de retorno sobre la inversión",
-    proofTitle: "6 indicadores estratégicos de resultado",
+    heroLede: "Capa de IA que se enchufa a tu core de pólizas y devuelve cotización en minutos — sin reemplazar el core, sin proyecto de TI.",
+    ctaTalk: "Hablar con nuestros socios",
+    ctaSee: "Ver la plataforma →",
+    ctaMicrocopy: "Respuesta de un socio en 24h · llamada de 30 min · sin pitch comercial.",
+    liveStickers: [
+      { value: "1",        label: "Piloto en producción", note: "Aseguradora Tier-1 · LATAM" },
+      { value: "minutos",  label: "Tiempo de decisión",   note: "vs. 6 semanas heredadas" },
+      { value: "24/7",     label: "Cobertura",            note: "Sin TI de la aseguradora" },
+    ],
+    proofCta: "¿Quieres ver esto en tu operación? · Hablar con nuestros socios →",
+    proofEyebrow: "· Tesis de retorno",
+    proofTitle: "El retorno operacional, en 6 vectores",
     indicators: [
-      { sign:"+", w:"Eficiencia",   l:"Escalar el volumen de cotizaciones",
-        c:"Posibilidad de crecer exponencialmente el volumen de cotizaciones." },
-      { sign:"+", w:"Facturación",  l:"Más cotizaciones generan más negocios cerrados",
-        c:"Responder más rápido a los corredores genera más oportunidades de negocio y recompras, además del aumento del volumen mensual de cotizaciones." },
-      { sign:"−", w:"GA · Costos",  l:"Aumento de margen · Rentabilidad",
-        c:"Al aumentar las cotizaciones sin crecer el headcount en la misma proporción, se reduce el gasto administrativo y se abre espacio para mejorar el margen." },
-      { sign:"+", w:"Inteligencia", l:"Dashboards, analytics y reportes en tiempo real",
-        c:"Analizar de forma proactiva los negocios en curso y el pipeline para enfocarse en los cierres." },
-      { sign:"+", w:"AI First",     l:"Pioneros en automatización con IA",
-        c:"Quien se adelanta con soluciones tecnológicas logra liderar y atraer los mejores resultados, con evaluación de riesgo y precisión en la tarificación superiores a la competencia." },
-      { sign:"+", w:"Escalar",      l:"El futuro de las aseguradoras",
-        c:"Posibilidad de escalar el negocio gracias a las automatizaciones y la evolución de la inteligencia artificial." },
+      { sign:"+", w:"Eficiencia",   l:"Escalar volumen de cotizaciones",
+        c:"El volumen crece sin crecer headcount en la misma proporción." },
+      { sign:"+", w:"Facturación",  l:"Más cotizaciones, más cierres",
+        c:"Respuesta más rápida al corredor genera repiques y cierres extra." },
+      { sign:"−", w:"GA · Costos",  l:"Margen expandido",
+        c:"Gasto administrativo cae cuando el intake es automático." },
+      { sign:"+", w:"Inteligencia", l:"Dashboards en tiempo real",
+        c:"Análisis proactivo del pipeline, foco en cierres." },
+      { sign:"+", w:"AI First",     l:"Pionerismo en automatización",
+        c:"Quien se adelanta lidera — risk y pricing por encima de la competencia." },
+      { sign:"+", w:"Escalar",      l:"Futuro de las aseguradoras",
+        c:"Escalar el negocio sobre automatización y evolución de la IA." },
     ],
   },
 }[LANG];
 
-// DecisionFlow — network pipeline visualization showing how data becomes decisions
+// DecisionFlow — schematic pipeline (Stripe-style), VERTICAL layout for hero right column.
+// Chips stacked top-to-bottom, gradient-stroke connectors between them, mono labels.
+// Palette runs amber TOP → blue BOTTOM, matching the WIR logo direction.
 function DecisionFlow() {
   const [pulse, setPulse] = React.useState(0);
   React.useEffect(() => {
-    const id = setInterval(() => setPulse(p => (p + 1) % 5), 2400);
+    const id = setInterval(() => setPulse(p => (p + 1) % 4), 2400);
     return () => clearInterval(id);
   }, []);
 
-  const stages = T.dflowStages.map(k => ({ k }));
+  const stages = T.dflowStages;
+  // Vertical compact layout — viewBox 0 0 360 380
+  // INPUT chip · 4 single-line stage chips · OUTPUT chip · audit return on right
+  const chipW = 280, chipH = 42, stageH = 36;
+  const chipX = (360 - chipW) / 2; // 40
+  const inputY = 18;
+  const stageStartY = inputY + chipH + 14;
+  const stageGap = 6;
+  const stageY = (i) => stageStartY + i * (stageH + stageGap);
+  const outputY = stageY(stages.length - 1) + stageH + 14;
+  // Active stage palette progression (amber → coral → magenta → purple → blue)
+  const stageColors = ["#F8AD39", "#FE8B77", "#AE46C0", "#7540AC"];
 
   return (
     <div className="dflow" aria-label={T.dflowAria}>
@@ -137,96 +157,107 @@ function DecisionFlow() {
         </div>
       </div>
 
-      <svg className="dflow__svg" viewBox="-30 0 510 340" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+      <svg className="dflow__svg" viewBox={`0 0 360 ${outputY + chipH + 18}`} xmlns="http://www.w3.org/2000/svg" aria-hidden>
         <defs>
-          <linearGradient id="dflowPath" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#7540AC" stopOpacity="0.15"/>
-            <stop offset="50%" stopColor="#7540AC" stopOpacity="0.4"/>
-            <stop offset="100%" stopColor="#F8AD39" stopOpacity="0.6"/>
+          {/* Main flow gradient — amber TOP → blue BOTTOM (matches logo direction, vertical) */}
+          <linearGradient id="dflowMain" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stopColor="#F8AD39"/>
+            <stop offset="25%"  stopColor="#FE8B77"/>
+            <stop offset="50%"  stopColor="#AE46C0"/>
+            <stop offset="75%"  stopColor="#7540AC"/>
+            <stop offset="100%" stopColor="#3222E9"/>
           </linearGradient>
-          <radialGradient id="dflowNode" cx="0.5" cy="0.5" r="0.5">
-            <stop offset="0%" stopColor="#FE8B77" stopOpacity="1"/>
-            <stop offset="100%" stopColor="#7540AC" stopOpacity="1"/>
-          </radialGradient>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="3"/>
-          </filter>
         </defs>
 
-        {/* Source nodes (left, 3 stacked) — labels with breathing room */}
-        {[{y:80,l:T.dflowSources[0]},{y:170,l:T.dflowSources[1]},{y:260,l:T.dflowSources[2]}].map((s,i) => (
-          <g key={i}>
-            <circle cx="60" cy={s.y} r="8" fill="#E9E3D7" stroke="#7540AC" strokeWidth="1.5"/>
-            <text x="22" y={s.y + 4} fill="#6A6458" fontSize="11"
-              fontFamily="JetBrains Mono, monospace" textAnchor="end" letterSpacing="0.5"
-              fontWeight="500">
-              {s.l}
-            </text>
-            {/* path from source to central spine */}
-            <path d={`M68 ${s.y} Q 110 ${s.y}, 140 170`}
-              stroke="url(#dflowPath)" strokeWidth="1.5" fill="none"/>
-          </g>
-        ))}
+        {/* INPUT chip (top) — 2-line compact */}
+        <g>
+          <rect x={chipX} y={inputY} width={chipW} height={chipH} rx="6"
+            fill="#FAF6EE" stroke="#0B0A08" strokeOpacity="0.25" strokeWidth="1"/>
+          <text x={chipX + 14} y={inputY + 17} fill="#524C42" fontSize="9"
+            fontFamily="JetBrains Mono, monospace" letterSpacing="1.8" fontWeight="600">
+            {T.dflowInput.k}
+          </text>
+          <text x={chipX + 14} y={inputY + 33} fill="#0B0A08" fontSize="11"
+            fontFamily="JetBrains Mono, monospace" letterSpacing="0.4" fontWeight="500">
+            {T.dflowInput.v}
+          </text>
+        </g>
 
-        {/* Central pipeline spine */}
-        <line x1="140" y1="170" x2="395" y2="170" stroke="#7540AC" strokeWidth="1" strokeOpacity="0.25" strokeDasharray="3 4"/>
+        {/* Vertical connector: INPUT → first stage */}
+        <line x1="180" y1={inputY + chipH} x2="180" y2={stageStartY}
+          stroke="url(#dflowMain)" strokeWidth="1.5"/>
 
-        {/* Processing stages on spine — wider spacing, no sub label to prevent overlap */}
-        {stages.map((s, i) => {
-          const x = 150 + i * 60;
+        {/* 4 stage chips — single line, compact */}
+        {stages.map((k, i) => {
+          const y = stageY(i);
           const active = pulse === i;
+          const color = stageColors[i];
           return (
-            <g key={i}>
-              <circle cx={x} cy="170" r={active ? 13 : 9}
-                fill={active ? "url(#dflowNode)" : "#0B0A08"}
-                stroke={active ? "#F8AD39" : "#7540AC"}
-                strokeWidth={active ? 2 : 1.5}
-                filter={active ? "url(#glow)" : undefined}
-                style={{transition: "all .4s ease"}}/>
-              <text x={x} y={i % 2 === 0 ? 145 : 200} fill={active ? "#0B0A08" : "#6A6458"}
-                fontSize="9.5" fontFamily="JetBrains Mono, monospace"
-                textAnchor="middle" letterSpacing="0.8"
-                fontWeight={active ? "700" : "500"}
-                style={{transition: "fill .3s"}}>
-                {s.k}
+            <g key={k}>
+              <rect x={chipX} y={y} width={chipW} height={stageH} rx="6"
+                fill="#FAF6EE"
+                stroke={active ? color : "#0B0A08"}
+                strokeOpacity={active ? 1 : 0.22}
+                strokeWidth={active ? 1.4 : 1}
+                style={{transition: "all .3s ease"}}/>
+              <text x={chipX + 14} y={y + 16} fill="#6E695C" fontSize="8"
+                fontFamily="JetBrains Mono, monospace"
+                letterSpacing="1.6" fontWeight="600">
+                0{i+1}
               </text>
+              <text x={chipX + 14} y={y + 28} fill={active ? "#0B0A08" : "#2B2720"}
+                fontSize="13" fontFamily="JetBrains Mono, monospace"
+                letterSpacing="0.5" fontWeight="600"
+                style={{transition: "fill .3s"}}>
+                {k}
+              </text>
+              {/* Vertical connector to next stage */}
+              {i < stages.length - 1 && (
+                <line x1="180" y1={y + stageH} x2="180" y2={y + stageH + stageGap}
+                  stroke="url(#dflowMain)" strokeWidth="1.5"/>
+              )}
+              {/* Active state — color bar on left */}
+              {active && (
+                <rect x={chipX} y={y} width="2" height={stageH} fill={color}/>
+              )}
             </g>
           );
         })}
 
-        {/* Output branches (right side, 2) */}
-        <path d="M395 170 Q 435 170, 445 80" stroke="url(#dflowPath)" strokeWidth="1.5" fill="none"/>
-        <path d="M395 170 Q 435 170, 445 260" stroke="url(#dflowPath)" strokeWidth="1.5" fill="none"/>
+        {/* Vertical connector: last stage → OUTPUT */}
+        <line x1="180" y1={stageY(stages.length - 1) + stageH} x2="180" y2={outputY}
+          stroke="url(#dflowMain)" strokeWidth="1.5"/>
 
-        {[{y:80,l:T.dflowOutputs[0],c:"#F8AD39"},{y:260,l:T.dflowOutputs[1],c:"#7540AC"}].map((o,i) => (
-          <g key={i}>
-            <rect x="425" y={o.y - 12} width="48" height="24" rx="5"
-              fill={o.c} fillOpacity="0.15"
-              stroke={o.c} strokeWidth="1"/>
-            <text x="449" y={o.y + 4} fill={o.c}
-              fontSize="9" fontFamily="JetBrains Mono, monospace"
-              textAnchor="middle" letterSpacing="0.5" fontWeight="600">
-              {o.l}
-            </text>
-          </g>
-        ))}
-
-        {/* Learning feedback loop (curved arc at bottom) */}
-        <path d="M 450 270 Q 250 320, 50 260"
-          stroke="#FE8B77" strokeWidth="1" strokeDasharray="4 4" fill="none" strokeOpacity="0.4"/>
-        <text x="250" y="310" fill="#FE8B77"
-          fontSize="9" fontFamily="JetBrains Mono, monospace"
-          textAnchor="middle" letterSpacing="1.5" fillOpacity="0.75">
-          {T.dflowLoop}
-        </text>
+        {/* OUTPUT chip (bottom) — 2-line compact */}
+        <g>
+          <rect x={chipX} y={outputY} width={chipW} height={chipH} rx="6"
+            fill="#FAF6EE" stroke="#3222E9" strokeOpacity="0.5" strokeWidth="1"/>
+          <text x={chipX + 14} y={outputY + 17} fill="#3222E9" fontSize="9"
+            fontFamily="JetBrains Mono, monospace" letterSpacing="1.8" fontWeight="600">
+            {T.dflowOutput.k}
+          </text>
+          <text x={chipX + 14} y={outputY + 33} fill="#0B0A08" fontSize="11"
+            fontFamily="JetBrains Mono, monospace" letterSpacing="0.4" fontWeight="500">
+            {T.dflowOutput.v}
+          </text>
+        </g>
       </svg>
+    </div>
+  );
+}
 
-      <div className="dflow__foot">
-        <span>{T.dflowFoot[0]}</span>
-        <span className="dflow__arrow">→</span>
-        <span>{T.dflowFoot[1]}</span>
-        <span className="dflow__arrow">→</span>
-        <span>{T.dflowFoot[2]}</span>
+// Static hero metrics — no chrome, no label, no off-brand pulse.
+function HeroMetrics() {
+  return (
+    <div className="livestrip">
+      <div className="livestrip__cells">
+        {T.liveStickers.map((s, i) => (
+          <div key={i} className="livestrip__cell">
+            <div className="livestrip__v">{s.value}</div>
+            <div className="livestrip__l">{s.label}</div>
+            {s.note && <div className="livestrip__n">{s.note}</div>}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -234,26 +265,11 @@ function DecisionFlow() {
 
 export function Opening({ go }) {
   return (
-    <section className="opening">
+    <section className="opening bg-editorial bg-editorial--tr">
       <div className="wrap">
-        {/* Edition masthead */}
-        <div className="opening__mast">
-          <div className="opening__mast-L">
-            <span>{T.mastDate}</span>
-            <span>{T.mastTheme}</span>
-          </div>
-          <div className="opening__mast-R">
-            <span>{T.mastRoute}</span>
-          </div>
-        </div>
-
-        {/* Hero grid */}
+        {/* 2-column hero — H1 left, DecisionFlow right (vertical schematic), pushed lower */}
         <div className="opening__hero">
           <div className="opening__hero-L">
-            <div className="opening__kicker">
-              <span className="opening__kicker-dot"/>
-              <span>{T.kicker}</span>
-            </div>
             <h1 className="display opening__title opening__title--long">
               {T.heroTitle}
             </h1>
@@ -264,26 +280,29 @@ export function Opening({ go }) {
               <button className="btn btn--solid" onClick={()=>go("contact")}>
                 {T.ctaTalk} <span className="btn__arrow">→</span>
               </button>
-              <button className="btn btn--ghost" onClick={()=>go("solutions")}>
-                {T.ctaSee} <span className="btn__arrow">→</span>
-              </button>
+              <a className="opening__textlink" href="#solutions"
+                onClick={(e)=>{e.preventDefault(); go("solutions")}}>
+                {T.ctaSee}
+              </a>
             </div>
+            {T.ctaMicrocopy && (
+              <p className="opening__microcopy">{T.ctaMicrocopy}</p>
+            )}
+            <HeroMetrics/>
           </div>
           <div className="opening__hero-R">
-            <div className="opening__caption">{T.heroCaption}</div>
             <DecisionFlow/>
           </div>
         </div>
-
       </div>
     </section>
   );
 }
 
-export function Proof() {
+export function Proof({ go }) {
   const indicators = T.indicators;
   return (
-    <section className="proof" data-reveal>
+    <section className="proof bg-editorial bg-editorial--tl" data-reveal>
       <div className="wrap">
         <div className="proof__head">
           <div className="eyebrow">{T.proofEyebrow}</div>
@@ -300,6 +319,12 @@ export function Proof() {
             </div>
           ))}
         </div>
+        {go && T.proofCta && (
+          <a href="#contact" className="proof__cta"
+            onClick={(e)=>{e.preventDefault(); go("contact")}}>
+            {T.proofCta}
+          </a>
+        )}
       </div>
     </section>
   );

@@ -117,17 +117,17 @@ const T = {
     valsTitle: <>Seis princípios.<br/><em>Nenhum negociável.</em></>,
     vals: [
       { k:"01", t:"Resultado antes de tecnologia",
-        d:"Não vendemos IA — vendemos resultado de negócio. Cada produto da WIR é avaliado pelo impacto real que entrega ao P&L do cliente, não pela sofisticação técnica.", c:"#1C17FF" },
+        d:"Não vendemos IA — vendemos resultado de negócio. Cada produto da WIR é avaliado pelo impacto real que entrega ao P&L do cliente, não pela sofisticação técnica.", c:"#3222E9" },
       { k:"02", t:"Plataforma, não SaaS",
-        d:"Um SaaS resolve uma feature. Uma plataforma sustenta uma operação inteira. A WIR foi desenhada para ser a camada de IA que escala com o cliente — durante anos, não trimestres.", c:"#A44F98" },
+        d:"Um SaaS resolve uma feature. Uma plataforma sustenta uma operação inteira. A WIR foi desenhada para ser a camada de IA que escala com o cliente — durante anos, não trimestres.", c:"#AE46C0" },
       { k:"03", t:"Plug-and-play sem TI",
-        d:"O cliente não troca o core, não enfrenta projeto pesado de TI, não migra dado. A WIR opera como camada de IA entre os sistemas que já existem — em semanas, não em anos.", c:"#EE7D48" },
+        d:"O cliente não troca o core, não enfrenta projeto pesado de TI, não migra dado. A WIR opera como camada de IA entre os sistemas que já existem — em semanas, não em anos.", c:"#FE8B77" },
       { k:"04", t:"Auditabilidade como fundação",
-        d:"Nenhuma decisão sai sem trilha completa: modelo, versão, confiança, inputs, timestamp. LGPD-ready, exportável, imutável. Compliance não é feature — é a arquitetura.", c:"#F9B336" },
+        d:"Nenhuma decisão sai sem trilha completa: modelo, versão, confiança, inputs, timestamp. LGPD-ready, exportável, imutável. Compliance não é feature — é a arquitetura.", c:"#F8AD39" },
       { k:"05", t:"Humano no comando do julgamento",
-        d:"IA que decide risco crítico sem supervisão é problema. A WIR libera o underwriter para fazer o que só ele faz — analisar e subscrever risco — automatizando tudo o que vem antes.", c:"#4D38C0" },
+        d:"IA que decide risco crítico sem supervisão é problema. A WIR libera o underwriter para fazer o que só ele faz — analisar e subscrever risco — automatizando tudo o que vem antes.", c:"#7540AC" },
       { k:"06", t:"World Class por design",
-        d:"Construímos com a infraestrutura global de IA da Mahway, governança financeira da Avante e expertise C-Level em seguros. O cliente recebe nível enterprise desde o dia um.", c:"#C25F7E" },
+        d:"Construímos com a infraestrutura global de IA da Mahway, governança financeira da Avante e expertise C-Level em seguros. O cliente recebe nível enterprise desde o dia um.", c:"#FE8B77" },
     ],
     faqEyebrow: "· Perguntas frequentes",
     faqTitle: <>O que as equipes de TI e risco <em>sempre perguntam.</em></>,
@@ -266,17 +266,17 @@ const T = {
     valsTitle: <>Six principles.<br/><em>None negotiable.</em></>,
     vals: [
       { k:"01", t:"Outcomes before technology",
-        d:"We don't sell AI — we sell business outcomes. Every WIR product is judged by the real impact it delivers to the client's P&L, not by technical sophistication.", c:"#1C17FF" },
+        d:"We don't sell AI — we sell business outcomes. Every WIR product is judged by the real impact it delivers to the client's P&L, not by technical sophistication.", c:"#3222E9" },
       { k:"02", t:"Platform, not SaaS",
-        d:"A SaaS solves a feature. A platform sustains an entire operation. WIR was designed to be the AI layer that scales with the client — for years, not quarters.", c:"#A44F98" },
+        d:"A SaaS solves a feature. A platform sustains an entire operation. WIR was designed to be the AI layer that scales with the client — for years, not quarters.", c:"#AE46C0" },
       { k:"03", t:"Plug-and-play without IT",
-        d:"The client doesn't replace the core, doesn't face a heavy IT project, doesn't migrate data. WIR operates as an AI layer between the systems that already exist — in weeks, not years.", c:"#EE7D48" },
+        d:"The client doesn't replace the core, doesn't face a heavy IT project, doesn't migrate data. WIR operates as an AI layer between the systems that already exist — in weeks, not years.", c:"#FE8B77" },
       { k:"04", t:"Auditability as the foundation",
-        d:"No decision ships without a complete trail: model, version, confidence, inputs, timestamp. LGPD-ready, exportable, immutable. Compliance isn't a feature — it's the architecture.", c:"#F9B336" },
+        d:"No decision ships without a complete trail: model, version, confidence, inputs, timestamp. LGPD-ready, exportable, immutable. Compliance isn't a feature — it's the architecture.", c:"#F8AD39" },
       { k:"05", t:"Humans in charge of judgment",
-        d:"AI that decides critical risk without supervision is a problem. WIR frees underwriters to do what only they can — analyze and underwrite risk — automating everything that comes before.", c:"#4D38C0" },
+        d:"AI that decides critical risk without supervision is a problem. WIR frees underwriters to do what only they can — analyze and underwrite risk — automating everything that comes before.", c:"#7540AC" },
       { k:"06", t:"World Class by design",
-        d:"We build on Mahway's global AI infrastructure, Avante's financial governance and C-level insurance expertise. The client gets enterprise grade from day one.", c:"#C25F7E" },
+        d:"We build on Mahway's global AI infrastructure, Avante's financial governance and C-level insurance expertise. The client gets enterprise grade from day one.", c:"#FE8B77" },
     ],
     faqEyebrow: "· Frequently asked questions",
     faqTitle: <>What IT and risk teams <em>always ask.</em></>,
@@ -415,17 +415,17 @@ const T = {
     valsTitle: <>Seis principios.<br/><em>Ninguno negociable.</em></>,
     vals: [
       { k:"01", t:"Resultado antes que tecnología",
-        d:"No vendemos IA — vendemos resultados de negocio. Cada producto de WIR se evalúa por el impacto real que entrega al P&L del cliente, no por la sofisticación técnica.", c:"#1C17FF" },
+        d:"No vendemos IA — vendemos resultados de negocio. Cada producto de WIR se evalúa por el impacto real que entrega al P&L del cliente, no por la sofisticación técnica.", c:"#3222E9" },
       { k:"02", t:"Plataforma, no SaaS",
-        d:"Un SaaS resuelve una feature. Una plataforma sostiene una operación entera. WIR fue diseñada para ser la capa de IA que escala con el cliente — durante años, no trimestres.", c:"#A44F98" },
+        d:"Un SaaS resuelve una feature. Una plataforma sostiene una operación entera. WIR fue diseñada para ser la capa de IA que escala con el cliente — durante años, no trimestres.", c:"#AE46C0" },
       { k:"03", t:"Plug-and-play sin TI",
-        d:"El cliente no cambia el core, no enfrenta proyectos pesados de TI, no migra datos. WIR opera como capa de IA entre los sistemas que ya existen — en semanas, no en años.", c:"#EE7D48" },
+        d:"El cliente no cambia el core, no enfrenta proyectos pesados de TI, no migra datos. WIR opera como capa de IA entre los sistemas que ya existen — en semanas, no en años.", c:"#FE8B77" },
       { k:"04", t:"Auditabilidad como fundación",
-        d:"Ninguna decisión sale sin traza completa: modelo, versión, confianza, inputs, timestamp. LGPD-ready, exportable, inmutable. Compliance no es una feature — es la arquitectura.", c:"#F9B336" },
+        d:"Ninguna decisión sale sin traza completa: modelo, versión, confianza, inputs, timestamp. LGPD-ready, exportable, inmutable. Compliance no es una feature — es la arquitectura.", c:"#F8AD39" },
       { k:"05", t:"El humano al mando del juicio",
-        d:"Una IA que decide riesgo crítico sin supervisión es un problema. WIR libera al suscriptor para hacer lo que solo él hace — analizar y suscribir riesgo — automatizando todo lo que viene antes.", c:"#4D38C0" },
+        d:"Una IA que decide riesgo crítico sin supervisión es un problema. WIR libera al suscriptor para hacer lo que solo él hace — analizar y suscribir riesgo — automatizando todo lo que viene antes.", c:"#7540AC" },
       { k:"06", t:"World Class por diseño",
-        d:"Construimos con la infraestructura global de IA de Mahway, la gobernanza financiera de Avante y expertise C-Level en seguros. El cliente recibe nivel enterprise desde el día uno.", c:"#C25F7E" },
+        d:"Construimos con la infraestructura global de IA de Mahway, la gobernanza financiera de Avante y expertise C-Level en seguros. El cliente recibe nivel enterprise desde el día uno.", c:"#FE8B77" },
     ],
     faqEyebrow: "· Preguntas frecuentes",
     faqTitle: <>Lo que los equipos de TI y riesgo <em>siempre preguntan.</em></>,
@@ -702,14 +702,20 @@ function AboutFAQ() {
         <div className="abfaq__list">
           {qs.map((x, idx) => {
             const isOpen = open === idx;
+            const aId = `abfaq-a-${idx}`;
+            const qId = `abfaq-q-${idx}`;
             return (
               <div key={idx} className={"abfaq__item" + (isOpen ? " is-open" : "")}>
-                <button className="abfaq__q" onClick={()=>setOpen(isOpen ? -1 : idx)}>
+                <button type="button" className="abfaq__q"
+                  id={qId}
+                  aria-expanded={isOpen} aria-controls={aId}
+                  onClick={()=>setOpen(isOpen ? -1 : idx)}>
                   <span className="abfaq__idx num">· {String(idx+1).padStart(2,"0")}</span>
                   <span className="abfaq__qt">{x.q}</span>
                   <span className="abfaq__chev" aria-hidden>{isOpen ? "−" : "+"}</span>
                 </button>
-                <div className="abfaq__a" style={{maxHeight: isOpen ? 400 : 0}}>
+                <div id={aId} role="region" aria-labelledby={qId}
+                  className="abfaq__a" hidden={!isOpen}>
                   <p>{x.a}</p>
                 </div>
               </div>

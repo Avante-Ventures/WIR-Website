@@ -6,6 +6,32 @@ import { BlogArticle, ARTICLES } from './articles.jsx';
 // Match the static archives: PT tree lists PT articles, EN tree the -en ones (ES → PT set)
 const BLOG_ARTICLES = ARTICLES.filter(a => (LANG === "en") === a.slug.endsWith("-en"));
 
+// One brand color per category — reviewer feedback: "assign a specific brand color shade per content category"
+// Both PT/EN variants map to the same color, so the visual identity holds across language trees.
+const CAT_GRAD = {
+  // Foundational / framing pieces
+  "Manifesto":   "linear-gradient(135deg,#0A0A2E,#7540AC)",
+  "Ensaio":      "linear-gradient(135deg,#7540AC,#FE8B77)",
+  "Essay":       "linear-gradient(135deg,#7540AC,#FE8B77)",
+  // Technical depth
+  "Técnico":     "linear-gradient(135deg,#3222E9,#AE46C0)",
+  "Technical":   "linear-gradient(135deg,#3222E9,#AE46C0)",
+  "Artigo":      "linear-gradient(135deg,#3222E9,#7540AC)",
+  "Article":     "linear-gradient(135deg,#3222E9,#7540AC)",
+  // Case studies
+  "Caso":        "linear-gradient(135deg,#F8AD39,#FE8B77)",
+  "Case":        "linear-gradient(135deg,#F8AD39,#FE8B77)",
+  // Market analysis
+  "Mercado":     "linear-gradient(135deg,#FE8B77,#AE46C0)",
+  "Market":      "linear-gradient(135deg,#FE8B77,#AE46C0)",
+  // Automation / underwriting
+  "Automação":   "linear-gradient(135deg,#AE46C0,#F024ED)",
+  "Automation":  "linear-gradient(135deg,#AE46C0,#F024ED)",
+  "Subscrição":  "linear-gradient(135deg,#3222E9,#AE46C0)",
+  "Underwriting":"linear-gradient(135deg,#3222E9,#AE46C0)",
+};
+const gradFor = (cat) => CAT_GRAD[cat] || "linear-gradient(135deg,#3222E9,#7540AC)";
+
 /* ───────── Insights & News · publicação digital ───────── */
 
 const POSTS = [
@@ -38,11 +64,78 @@ grad:"linear-gradient(135deg,#AE46C0,#F8AD39)" },
     grad:"linear-gradient(135deg,#3222E9,#FE8B77)" },
 ];
 
+// Translated newsletter copy + inline state (replaces native alert())
+const N = {
+  pt: {
+    placeholder: "seu@email.com", submit: "Assinar",
+    sending: "Enviando…", done: "Inscrição recebida — chegará no e-mail informado.",
+    error: "Não foi possível enviar agora. Tente novamente em alguns minutos.",
+  },
+  en: {
+    placeholder: "you@email.com", submit: "Subscribe",
+    sending: "Sending…", done: "Subscription received — confirmation will arrive in your inbox.",
+    error: "Couldn't send right now. Please try again in a moment.",
+  },
+  es: {
+    placeholder: "tu@email.com", submit: "Suscribirme",
+    sending: "Enviando…", done: "Suscripción recibida — la confirmación llegará al correo indicado.",
+    error: "No pudimos enviar ahora. Intenta de nuevo en unos minutos.",
+  },
+}[LANG];
+
+function NewsletterForm() {
+  const [email, setEmail] = React.useState("");
+  const [state, setState] = React.useState("idle"); // idle | sending | done | error
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+    setState("sending");
+    const payload = { email: email.trim(), source: "newsletter", page: "/blog" };
+    const cfg = window.WIR_CONFIG || {};
+    let ok = false;
+    if (cfg.supabaseUrl && cfg.supabaseAnonKey) {
+      try {
+        const res = await fetch(`${cfg.supabaseUrl}/rest/v1/${cfg.newsletterTable || "newsletter_signups"}`, {
+          method: "POST",
+          headers: {
+            "Content-Type":  "application/json",
+            "apikey":        cfg.supabaseAnonKey,
+            "Authorization": `Bearer ${cfg.supabaseAnonKey}`,
+            "Prefer":        "return=minimal",
+          },
+          body: JSON.stringify(payload),
+        });
+        ok = res.ok;
+      } catch (err) { console.warn("newsletter insert failed", err); }
+    }
+    if (cfg.notifyWebhook) {
+      fetch(cfg.notifyWebhook, { method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify({ ...payload, type: "newsletter_signup" }), mode: "no-cors" }).catch(()=>{});
+    }
+    if (ok) { setState("done"); setEmail(""); }
+    else    { setState("error"); }
+  };
+  if (state === "done") {
+    return <div className="blside__news-done" role="status">{N.done}</div>;
+  }
+  return (
+    <form className="blside__news-form" onSubmit={onSubmit}>
+      <input type="email" required
+        autoComplete="email" inputMode="email"
+        placeholder={N.placeholder}
+        value={email} onChange={(e)=>setEmail(e.target.value)}
+        aria-label="Email"/>
+      <button type="submit" disabled={state === "sending"}>
+        {state === "sending" ? N.sending : N.submit} <span aria-hidden>→</span>
+      </button>
+      {state === "error" && <div role="alert" className="blside__news-err">{N.error}</div>}
+    </form>
+  );
+}
+
 function BlogHero({ go }) {
   const articles = BLOG_ARTICLES;
   const hero = articles.find(p => p.hero);
   if (!hero) return null;
-  const open = () => { window.location.href = `/insights/${hero.slug}/`; };
   return (
     <section className="blhero">
       <div className="wrap">
@@ -60,12 +153,11 @@ function BlogHero({ go }) {
           </h1>
           <p className="blhero__sub">Ensaios, casos de uso e notas técnicas do time da WIR sobre como Inteligência Artificial está redesenhando a operação do mercado segurador.</p>
         </div>
-        <article className="blhero__feature is-clickable" onClick={open} role="link" tabIndex={0}
-          onKeyDown={(e)=>{ if(e.key==="Enter") open(); }}>
+        <a className="blhero__feature is-clickable" href={`/insights/${hero.slug}/`}>
           <div className="blhero__feature-img"
             style={hero.image
               ? { backgroundImage: `linear-gradient(180deg, rgba(11,10,8,0.15), rgba(11,10,8,0.65)), url(${hero.image})`, backgroundSize: "cover", backgroundPosition: "center" }
-              : { background: hero.grad }}>
+              : { background: gradFor(hero.cat) }}>
             <span className="blhero__feature-label">· {hero.cat.toLowerCase()} · editorial</span>
           </div>
           <div className="blhero__feature-body">
@@ -85,7 +177,7 @@ function BlogHero({ go }) {
               <span className="blhero__feature-cta">Ler artigo <span aria-hidden>→</span></span>
             </div>
           </div>
-        </article>
+        </a>
       </div>
     </section>
   );
@@ -118,7 +210,6 @@ function BlogFilter({ active, setActive, counts, query, setQuery }) {
 }
 
 function BlogGrid({ posts, go }) {
-  const open = (slug) => { window.location.href = `/insights/${slug}/`; };
   return (
     <section className="blgrid" data-reveal>
       <div className="wrap">
@@ -127,13 +218,12 @@ function BlogGrid({ posts, go }) {
             <div className="eyebrow" style={{marginBottom: 24}}>· {posts.length} artigos</div>
             <div className="blgrid__list">
               {posts.map((p,i) => (
-                <article key={p.slug} className={"blpost is-clickable" + (i === 0 ? " blpost--big" : "")}
-                  onClick={() => open(p.slug)} role="link" tabIndex={0}
-                  onKeyDown={(e)=>{ if(e.key==="Enter") open(p.slug); }}>
+                <a key={p.slug} href={`/insights/${p.slug}/`}
+                  className={"blpost is-clickable" + (i === 0 ? " blpost--big" : "")}>
                   <div className="blpost__img"
                     style={p.image
                       ? { backgroundImage: `linear-gradient(180deg, rgba(11,10,8,0.2), rgba(11,10,8,0.7)), url(${p.image})`, backgroundSize: "cover", backgroundPosition: "center" }
-                      : { background: p.grad }}>
+                      : { background: gradFor(p.cat) }}>
                     <span className="blpost__img-label">{p.cat}</span>
                     <span className="blpost__img-meta">· {p.time}</span>
                   </div>
@@ -154,7 +244,7 @@ function BlogGrid({ posts, go }) {
                       <span className="blpost__cta">Ler artigo →</span>
                     </div>
                   </div>
-                </article>
+                </a>
               ))}
             </div>
           </div>
@@ -163,12 +253,14 @@ function BlogGrid({ posts, go }) {
               <div className="eyebrow" style={{marginBottom: 16}}>· Em destaque</div>
               <ul className="blside__list">
                 {BLOG_ARTICLES.slice(0,4).map((p,i) => (
-                  <li key={p.slug} className="is-clickable" onClick={() => { window.location.href = `/insights/${p.slug}/`; }}>
-                    <div className="blside__num">/0{i+1}</div>
-                    <div>
-                      <div className="blside__title">{p.title}</div>
-                      <div className="blside__meta">· {p.cat} · {p.time}</div>
-                    </div>
+                  <li key={p.slug}>
+                    <a href={`/insights/${p.slug}/`} className="blside__link">
+                      <div className="blside__num">/0{i+1}</div>
+                      <div>
+                        <div className="blside__title">{p.title}</div>
+                        <div className="blside__meta">· {p.cat} · {p.time}</div>
+                      </div>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -177,44 +269,7 @@ function BlogGrid({ posts, go }) {
               <div className="eyebrow eyebrow--onDark" style={{marginBottom: 20}}>· Newsletter</div>
               <h3 className="display blside__news-title">Insights & News,<br/><em>quinzenalmente.</em></h3>
               <p className="blside__news-sub">Ensaios curtos, 1 caso prático e leituras recomendadas. Sem marketing.</p>
-              <form className="blside__news-form" onSubmit={async (e)=>{
-                e.preventDefault();
-                const email = e.target.elements[0].value.trim();
-                if (!email) return;
-                const payload = { email, source: "newsletter", page: "/blog", submitted_at: new Date().toISOString() };
-                const cfg = window.WIR_CONFIG || {};
-                let ok = false;
-                if (cfg.supabaseUrl && cfg.supabaseAnonKey) {
-                  try {
-                    const res = await fetch(`${cfg.supabaseUrl}/rest/v1/${cfg.newsletterTable || "newsletter_signups"}`, {
-                      method: "POST",
-                      headers: {
-                        "Content-Type":  "application/json",
-                        "apikey":        cfg.supabaseAnonKey,
-                        "Authorization": `Bearer ${cfg.supabaseAnonKey}`,
-                        "Prefer":        "return=minimal",
-                      },
-                      body: JSON.stringify(payload),
-                    });
-                    ok = res.ok;
-                  } catch (err) { console.warn("newsletter insert failed", err); }
-                }
-                if (cfg.notifyWebhook) {
-                  fetch(cfg.notifyWebhook, { method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify({ ...payload, type: "newsletter_signup" }), mode: "no-cors" }).catch(()=>{});
-                }
-                if (ok) {
-                  e.target.elements[0].value = "";
-                  alert("Inscrição recebida! Você receberá os próximos Insights & News no e-mail informado.");
-                } else {
-                  // Fallback mailto
-                  const subject = "Inscrição newsletter Insights & News";
-                  const body = `Quero me inscrever na newsletter da WIR Innovation.%0A%0AE-mail: ${encodeURIComponent(email)}`;
-                  window.location.href = `mailto:contato@wirinnovation.ai?subject=${encodeURIComponent(subject)}&body=${body}`;
-                }
-              }}>
-                <input type="email" placeholder="seu@email.com" required/>
-                <button type="submit">Assinar <span aria-hidden>→</span></button>
-              </form>
+              <NewsletterForm/>
               <div className="blside__news-meta">· Comunidade de operadores do setor · sem spam</div>
             </div>
             <div className="blside__tags">

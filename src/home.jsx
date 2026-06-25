@@ -3,7 +3,7 @@ import { useReveal } from './shared.jsx';
 import { LANG, MANIFESTO_HREF } from './i18n.js';
 import { Opening, Proof } from './home-opening.jsx';
 import { Shift, ProductTabs } from './home-shift.jsx';
-import { ArchFlow, Trust, Closing } from './home-how.jsx';
+import { ArchFlow, Closing } from './home-how.jsx';
 
 /* ───────── Home · assembler ───────── */
 
@@ -12,33 +12,45 @@ const T = {
     eyebrow: "· Fundadores, Sócios & Conselheiros Estratégicos",
     title: <>Décadas no setor. <em>Solidez Financeira.</em><br/><em>World Class</em> em IA.</>,
     note: "A experiência de décadas como sócios e C-Level de seguradoras e corretoras nacionais e internacionais, somada ao expertise de sócios de fundos de Private Equity e Venture Builder internacional, proporciona aos nossos clientes um conhecimento profundo do mercado segurador, solidez financeira de longo prazo e nível World Class em tecnologia e Inteligência Artificial.",
-    expKicker: "· Experiência no setor",
+    expKicker: "· Onde nossos sócios passaram",
+    teamCta: "Conheça os fundadores e o histórico →",
     mKicker: "· Manifesto · A camada de IA do seguro",
     mText: <>Não troque o sistema de registro.<span className="manifesto__accent">Coloque um sistema de inteligência por cima dele.</span></>,
     mLink: "Ler o manifesto completo",
+    mLink2: "Conversar sobre isso →",
+    midCtaText: "Quer ver isso na sua operação?",
+    midCtaBtn: "Falar com nossos sócios",
   },
   en: {
     eyebrow: "· Founders, Partners & Strategic Advisors",
     title: <>Decades in the industry. <em>Financial strength.</em><br/><em>World Class</em> in AI.</>,
     note: "Decades of experience as partners and C-levels of national and international insurers and brokerages, combined with the expertise of partners from Private Equity funds and a global venture builder, gives our clients deep insurance-market knowledge, long-term financial strength and world-class technology and Artificial Intelligence.",
-    expKicker: "· Industry experience",
+    expKicker: "· Where our partners came from",
+    teamCta: "Meet the founders and the track record →",
     mKicker: "· Manifesto · The AI layer of insurance",
     mText: <>Don't replace the system of record.<span className="manifesto__accent">Put a system of intelligence on top of it.</span></>,
     mLink: "Read the full manifesto",
+    mLink2: "Talk to us about it →",
+    midCtaText: "Want to see this in your operation?",
+    midCtaBtn: "Talk to our partners",
   },
   es: {
     eyebrow: "· Fundadores, Socios & Consejeros Estratégicos",
     title: <>Décadas en el sector. <em>Solidez financiera.</em><br/><em>World Class</em> en IA.</>,
     note: "La experiencia de décadas como socios y C-Levels de aseguradoras y corredoras nacionales e internacionales, sumada al expertise de socios de fondos de Private Equity y un Venture Builder internacional, brinda a nuestros clientes un conocimiento profundo del mercado asegurador, solidez financiera de largo plazo y nivel World Class en tecnología e Inteligencia Artificial.",
-    expKicker: "· Experiencia en el sector",
+    expKicker: "· Por dónde pasaron nuestros socios",
+    teamCta: "Conoce a los fundadores y el track record →",
     mKicker: "· Manifiesto · La capa de IA del seguro",
     mText: <>No cambies el sistema de registro.<span className="manifesto__accent">Pon un sistema de inteligencia encima.</span></>,
     mLink: "Leer el manifiesto completo",
+    mLink2: "Conversar sobre esto →",
+    midCtaText: "¿Quieres ver esto en tu operación?",
+    midCtaBtn: "Hablar con nuestros socios",
   },
 }[LANG];
 
 // Sócios & Conselheiros + Experiência no setor
-export function TrustBar() {
+export function TrustBar({ go }) {
   // 5×2 grid with composite top-cells in cols 1 & 2:
   //   Col 1 top: Bain Capital + Notredame Intermédica (both in same cell)
   //   Col 2 top: Pátria + Athena Saúde (both in same cell)
@@ -72,7 +84,7 @@ export function TrustBar() {
     </span>
   );
   return (
-    <section className="trustbar" data-reveal>
+    <section className="trustbar bg-editorial bg-editorial--bl" data-reveal>
       <div className="wrap">
         <div className="trustbar__head">
           <div>
@@ -88,9 +100,9 @@ export function TrustBar() {
 
         <div className="trustbar__experience">
           <div className="eyebrow trustbar__experience-kicker">{T.expKicker}</div>
+          {/* Marquee restored (Sesión 4 per Cristian) — eyebrow makes provenance explicit so logos don't read as clients */}
           <div className="trustbar__grid">
             <div className="trustbar__track">
-              {/* Duplicate cells for seamless infinite marquee */}
               {[...cells, ...cells].map((c, i) => (
                 <div key={i} className={"trustbar__cell" + (c.composite ? " trustbar__cell--composite" : "")}
                   aria-hidden={i >= cells.length ? "true" : undefined}>
@@ -101,22 +113,51 @@ export function TrustBar() {
               ))}
             </div>
           </div>
+          {go && (
+            <a href="#about" className="trustbar__cta"
+              onClick={(e)=>{e.preventDefault(); go("about")}}>
+              {T.teamCta}
+            </a>
+          )}
         </div>
       </div>
     </section>
   );
 }
 
-// Manifesto — category-defining statement. Links to the full cornerstone in /insights.
-export function Manifesto() {
+// Mid-funnel CTA ribbon — restores the missing "now what?" beat between Proof and Manifesto
+export function MidCta({ go }) {
   return (
-    <section className="manifesto" data-reveal>
+    <section className="midcta bg-editorial bg-editorial--c" data-reveal>
+      <div className="wrap midcta__inner">
+        <div className="midcta__text">{T.midCtaText}</div>
+        <button className="btn btn--solid" onClick={()=>go("contact")}>
+          {T.midCtaBtn} <span className="btn__arrow">→</span>
+        </button>
+      </div>
+    </section>
+  );
+}
+
+// Manifesto — category-defining statement. Links to the full cornerstone in /insights.
+export function Manifesto({ go }) {
+  return (
+    <section className="manifesto bg-editorial bg-editorial--br" data-reveal>
       <div className="wrap">
+        <div className="manifesto__ornament" aria-hidden>* * *</div>
         <div className="manifesto__kicker">{T.mKicker}</div>
         <p className="manifesto__text">{T.mText}</p>
-        <a className="manifesto__cta" href={MANIFESTO_HREF}>
-          {T.mLink} <span aria-hidden="true">→</span>
-        </a>
+        <div className="manifesto__actions">
+          <a className="manifesto__cta" href={MANIFESTO_HREF}>
+            {T.mLink} <span aria-hidden="true">→</span>
+          </a>
+          {go && (
+            <a className="manifesto__cta manifesto__cta--alt" href="#contact"
+              onClick={(e)=>{e.preventDefault(); go("contact")}}>
+              {T.mLink2}
+            </a>
+          )}
+        </div>
       </div>
     </section>
   );
@@ -127,12 +168,13 @@ export function HomePage({ go }) {
   return (
     <>
       <Opening go={go}/>
-      <TrustBar/>
-      <Trust/>
+      <TrustBar go={go}/>
+      <Shift/>
       <ProductTabs go={go}/>
       <ArchFlow/>
-      <Proof/>
-      <Manifesto/>
+      <Proof go={go}/>
+      <MidCta go={go}/>
+      <Manifesto go={go}/>
       <Closing go={go}/>
     </>
   );
