@@ -1,7 +1,7 @@
 /* ───────── App shell & routing ───────── */
 
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { Nav, Footer, WhatsappFab } from './shared.jsx';
+import { Nav, Footer, WhatsappFab, SkipLink } from './shared.jsx';
 import { HomePage } from './home.jsx'; // Home loads eagerly — it's the LCP path
 
 // Secondary routes lazy-loaded — separated into their own JS chunks.
@@ -70,12 +70,13 @@ export function App() {
 
   return (
     <>
+      <SkipLink/>
       <Nav route={route} go={go}/>
-      <main key={route}>
+      <main id="main" tabIndex={-1} key={route}>
         <Suspense fallback={<div style={{minHeight: '60vh'}}/>}>{Page}</Suspense>
       </main>
       <Footer go={go}/>
-      <WhatsappFab/>
+      <WhatsappFab route={route}/>
     </>
   );
 }

@@ -6,7 +6,10 @@ import { LANG } from './i18n.js';
 
 const T = {
   pt: {
-    shieldAudit: "· AUDIT TRAIL · IMUTÁVEL ·",
+    shieldNetwork: "NETWORK · TLS 1.3 · WAF",
+    shieldApp:     "APPLICATION · OAuth 2.0 · MFA",
+    shieldData:    "DATA · AES-256 · BYOK",
+    shieldAuditR:  "AUDIT · LGPD · IMUTÁVEL",
     shieldLive: "ao vivo · monitorado",
     mastDate: "ABR 2026",
     mastTheme: "SEGURANÇA & COMPLIANCE",
@@ -36,16 +39,16 @@ const T = {
     pillTitle: <>Seis pilares.<br/><em>Uma plataforma segura.</em></>,
     pillSub: "Cada camada é projetada para operar de forma independente — quebrar uma não compromete as outras. Arquitetura defense-in-depth como padrão, não como upgrade.",
     cards: [
-      { icon: "lock",     k: "LGPD nativa",          color: "#1C17FF",
+      { icon: "lock",     k: "LGPD nativa",          color: "#3222E9",
         d: "Conformidade com a Lei Geral de Proteção de Dados desde a arquitetura. Dados processados e armazenados em território nacional.",
         bullets: ["DPO contratado", "ROPA atualizado", "Direitos do titular implementados", "Notificação ANPD em ≤ 48h"] },
       { icon: "shield",   k: "Infraestrutura cloud",  color: "#7540AC",
         d: "AWS / GCP em São Paulo, com criptografia em trânsito (TLS 1.3) e em repouso (AES-256). Ambientes segregados por cliente.",
         bullets: ["VPC isolada por tenant", "WAF + DDoS protection", "Multi-AZ failover", "RTO ≤ 30 min"] },
-      { icon: "key",      k: "API segura",            color: "#A44F98",
+      { icon: "key",      k: "API segura",            color: "#AE46C0",
         d: "Autenticação via OAuth 2.0 / API Key. Rate limiting, logging completo e webhook com assinatura digital HMAC-SHA256.",
         bullets: ["mTLS opcional", "Rotação de keys 90 dias", "Replay protection", "Audit log retido 5 anos"] },
-      { icon: "brain",    k: "Modelo auditável",      color: "#EE7D48",
+      { icon: "brain",    k: "Modelo auditável",      color: "#FE8B77",
         d: "Cada decisão de ML registrada com inputs, score, confiança, versão do modelo e timestamp. Trail de auditoria completo e exportável.",
         bullets: ["Model Registry versionado", "Drift detection contínuo", "Bias monitoring trimestral", "Explainability por decisão"] },
       { icon: "people",   k: "Acesso por princípio",  color: "#F8AD39",
@@ -59,9 +62,9 @@ const T = {
     compEyebrow: <>· Certificações &amp; alinhamentos</>,
     compTitle: <>Construído para os <em>frameworks</em> que o mercado exige.</>,
     compItems: [
-      { k: "LGPD",      v: "Conforme",     d: "Proteção de dados pessoais (BR) — DPO, ROPA, direitos do titular implementados.", color: "#1C17FF", state: "ok" },
-      { k: "ISO 27001", v: "Em processo",  d: "Sistema de Gestão de Segurança da Informação — gap analysis concluído Q1.",          color: "#A44F98", state: "wip" },
-      { k: "HIPAA",     v: "Alinhado",     d: "Privacidade em saúde (US) — controles equivalentes aplicáveis ao ramo saúde.",       color: "#EE7D48", state: "ok" },
+      { k: "LGPD",      v: "Conforme",     d: "Proteção de dados pessoais (BR) — DPO, ROPA, direitos do titular implementados.", color: "#3222E9", state: "ok" },
+      { k: "ISO 27001", v: "Em processo",  d: "Sistema de Gestão de Segurança da Informação — gap analysis concluído Q1.",          color: "#AE46C0", state: "wip" },
+      { k: "HIPAA",     v: "Alinhado",     d: "Privacidade em saúde (US) — controles equivalentes aplicáveis ao ramo saúde.",       color: "#FE8B77", state: "ok" },
     ],
     faqEyebrow: "· Perguntas frequentes",
     faqTitle: <>O que <em>TI e Compliance</em> sempre perguntam.</>,
@@ -87,7 +90,10 @@ const T = {
     closeWpHref: "mailto:contato@wirinnovation.ai?subject=Whitepaper%20WIR%20-%20Arquitetura%20de%20Seguran%C3%A7a",
   },
   en: {
-    shieldAudit: "· AUDIT TRAIL · IMMUTABLE ·",
+    shieldNetwork: "NETWORK · TLS 1.3 · WAF",
+    shieldApp:     "APPLICATION · OAuth 2.0 · MFA",
+    shieldData:    "DATA · AES-256 · BYOK",
+    shieldAuditR:  "AUDIT · LGPD · IMMUTABLE",
     shieldLive: "live · monitored",
     mastDate: "APR 2026",
     mastTheme: "SECURITY & COMPLIANCE",
@@ -117,16 +123,16 @@ const T = {
     pillTitle: <>Six pillars.<br/><em>One secure platform.</em></>,
     pillSub: "Each layer is designed to operate independently — breaking one doesn't compromise the others. Defense-in-depth architecture as the default, not as an upgrade.",
     cards: [
-      { icon: "lock",     k: "Native LGPD",            color: "#1C17FF",
+      { icon: "lock",     k: "Native LGPD",            color: "#3222E9",
         d: "Compliance with Brazil's data protection law (LGPD) from the architecture up. Data processed and stored on national territory.",
         bullets: ["DPO appointed", "ROPA up to date", "Data subject rights implemented", "ANPD notification in ≤ 48h"] },
       { icon: "shield",   k: "Cloud infrastructure",   color: "#7540AC",
         d: "AWS / GCP in São Paulo, with encryption in transit (TLS 1.3) and at rest (AES-256). Per-client segregated environments.",
         bullets: ["Isolated VPC per tenant", "WAF + DDoS protection", "Multi-AZ failover", "RTO ≤ 30 min"] },
-      { icon: "key",      k: "Secure API",             color: "#A44F98",
+      { icon: "key",      k: "Secure API",             color: "#AE46C0",
         d: "Authentication via OAuth 2.0 / API Key. Rate limiting, full logging and webhooks signed with HMAC-SHA256.",
         bullets: ["Optional mTLS", "90-day key rotation", "Replay protection", "Audit log retained 5 years"] },
-      { icon: "brain",    k: "Auditable model",        color: "#EE7D48",
+      { icon: "brain",    k: "Auditable model",        color: "#FE8B77",
         d: "Every ML decision logged with inputs, score, confidence, model version and timestamp. Complete, exportable audit trail.",
         bullets: ["Versioned Model Registry", "Continuous drift detection", "Quarterly bias monitoring", "Per-decision explainability"] },
       { icon: "people",   k: "Least-privilege access", color: "#F8AD39",
@@ -140,9 +146,9 @@ const T = {
     compEyebrow: <>· Certifications &amp; alignments</>,
     compTitle: <>Built for the <em>frameworks</em> the market demands.</>,
     compItems: [
-      { k: "LGPD",      v: "Compliant",    d: "Personal data protection (BR) — DPO, ROPA, data subject rights implemented.",      color: "#1C17FF", state: "ok" },
-      { k: "ISO 27001", v: "In progress",  d: "Information Security Management System — gap analysis completed Q1.",               color: "#A44F98", state: "wip" },
-      { k: "HIPAA",     v: "Aligned",      d: "Health privacy (US) — equivalent controls applicable to the health line.",          color: "#EE7D48", state: "ok" },
+      { k: "LGPD",      v: "Compliant",    d: "Personal data protection (BR) — DPO, ROPA, data subject rights implemented.",      color: "#3222E9", state: "ok" },
+      { k: "ISO 27001", v: "In progress",  d: "Information Security Management System — gap analysis completed Q1.",               color: "#AE46C0", state: "wip" },
+      { k: "HIPAA",     v: "Aligned",      d: "Health privacy (US) — equivalent controls applicable to the health line.",          color: "#FE8B77", state: "ok" },
     ],
     faqEyebrow: "· Frequently asked questions",
     faqTitle: <>What <em>IT and Compliance</em> always ask.</>,
@@ -168,7 +174,10 @@ const T = {
     closeWpHref: "mailto:contato@wirinnovation.ai?subject=Whitepaper%20WIR%20-%20Security%20Architecture",
   },
   es: {
-    shieldAudit: "· AUDIT TRAIL · INMUTABLE ·",
+    shieldNetwork: "NETWORK · TLS 1.3 · WAF",
+    shieldApp:     "APPLICATION · OAuth 2.0 · MFA",
+    shieldData:    "DATA · AES-256 · BYOK",
+    shieldAuditR:  "AUDIT · LGPD · INMUTABLE",
     shieldLive: "en vivo · monitoreado",
     mastDate: "ABR 2026",
     mastTheme: "SEGURIDAD & COMPLIANCE",
@@ -198,16 +207,16 @@ const T = {
     pillTitle: <>Seis pilares.<br/><em>Una plataforma segura.</em></>,
     pillSub: "Cada capa está diseñada para operar de forma independiente — romper una no compromete las otras. Arquitectura defense-in-depth como estándar, no como upgrade.",
     cards: [
-      { icon: "lock",     k: "LGPD nativa",            color: "#1C17FF",
+      { icon: "lock",     k: "LGPD nativa",            color: "#3222E9",
         d: "Conformidad con la ley brasileña de protección de datos (LGPD) desde la arquitectura. Datos procesados y almacenados en territorio nacional.",
         bullets: ["DPO contratado", "ROPA actualizado", "Derechos del titular implementados", "Notificación ANPD en ≤ 48h"] },
       { icon: "shield",   k: "Infraestructura cloud",  color: "#7540AC",
         d: "AWS / GCP en São Paulo, con criptografía en tránsito (TLS 1.3) y en reposo (AES-256). Ambientes segregados por cliente.",
         bullets: ["VPC aislada por tenant", "WAF + protección DDoS", "Failover Multi-AZ", "RTO ≤ 30 min"] },
-      { icon: "key",      k: "API segura",             color: "#A44F98",
+      { icon: "key",      k: "API segura",             color: "#AE46C0",
         d: "Autenticación vía OAuth 2.0 / API Key. Rate limiting, logging completo y webhooks con firma digital HMAC-SHA256.",
         bullets: ["mTLS opcional", "Rotación de keys cada 90 días", "Replay protection", "Audit log retenido 5 años"] },
-      { icon: "brain",    k: "Modelo auditable",       color: "#EE7D48",
+      { icon: "brain",    k: "Modelo auditable",       color: "#FE8B77",
         d: "Cada decisión de ML registrada con inputs, score, confianza, versión del modelo y timestamp. Traza de auditoría completa y exportable.",
         bullets: ["Model Registry versionado", "Drift detection continuo", "Monitoreo de sesgo trimestral", "Explainability por decisión"] },
       { icon: "people",   k: "Acceso por principio",   color: "#F8AD39",
@@ -221,9 +230,9 @@ const T = {
     compEyebrow: <>· Certificaciones &amp; alineamientos</>,
     compTitle: <>Construido para los <em>frameworks</em> que el mercado exige.</>,
     compItems: [
-      { k: "LGPD",      v: "Conforme",     d: "Protección de datos personales (BR) — DPO, ROPA, derechos del titular implementados.", color: "#1C17FF", state: "ok" },
-      { k: "ISO 27001", v: "En proceso",   d: "Sistema de Gestión de Seguridad de la Información — gap analysis concluido Q1.",         color: "#A44F98", state: "wip" },
-      { k: "HIPAA",     v: "Alineado",     d: "Privacidad en salud (US) — controles equivalentes aplicables al ramo salud.",            color: "#EE7D48", state: "ok" },
+      { k: "LGPD",      v: "Conforme",     d: "Protección de datos personales (BR) — DPO, ROPA, derechos del titular implementados.", color: "#3222E9", state: "ok" },
+      { k: "ISO 27001", v: "En proceso",   d: "Sistema de Gestión de Seguridad de la Información — gap analysis concluido Q1.",         color: "#AE46C0", state: "wip" },
+      { k: "HIPAA",     v: "Alineado",     d: "Privacidad en salud (US) — controles equivalentes aplicables al ramo salud.",            color: "#FE8B77", state: "ok" },
     ],
     faqEyebrow: "· Preguntas frecuentes",
     faqTitle: <>Lo que <em>TI y Compliance</em> siempre preguntan.</>,
@@ -250,72 +259,137 @@ const T = {
   },
 }[LANG];
 
-// SecurityShield — visual SVG: concentric rings representing defense in depth
+// SecurityShield — defense-in-depth atom diagram. Smaller central WIR core (hex)
+// with 4 orbital security layers that ROTATE at different speeds + directions.
+// Curved textPath labels stay anchored to static paths (legible). Live core dot pulses.
 function SecurityShield() {
+  const CX = 200, CY = 200;
+  // 4 layer radii (outer → inner) + rotation config per layer
+  const LAYERS = [
+    { r: 180, label: T.shieldNetwork || "NETWORK · TLS 1.3 · WAF",       color: "#3222E9", spinDur: 80, spinDir: 1  },
+    { r: 145, label: T.shieldApp     || "APPLICATION · OAuth 2.0 · MFA", color: "#7540AC", spinDur: 60, spinDir: -1 },
+    { r: 110, label: T.shieldData    || "DATA · AES-256 · BYOK",         color: "#AE46C0", spinDur: 45, spinDir: 1  },
+    { r:  75, label: T.shieldAuditR  || "AUDIT · LGPD · IMMUTABLE",      color: "#FE8B77", spinDur: 30, spinDir: -1 },
+  ];
+
+  // Cardinal data-point dots per layer (N, E, S, W) — these ROTATE with the ring group
+  const ringDots = (r, color, offset = 0) =>
+    [0, 90, 180, 270].map((deg, i) => {
+      const a = ((deg + offset) * Math.PI) / 180;
+      return (
+        <circle key={i}
+          cx={CX + r * Math.cos(a)}
+          cy={CY + r * Math.sin(a)}
+          r="3.5"
+          fill={color}
+          stroke="#FAF6EE"
+          strokeWidth="1.5"/>
+      );
+    });
+
   return (
     <div className="dphero__shield">
-      <svg viewBox="0 0 360 360" className="dphero__shield-svg" aria-hidden>
+      <svg viewBox="0 0 400 400" className="dphero__shield-svg" aria-hidden>
         <defs>
           <linearGradient id="shieldGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#7540AC"/>
-            <stop offset="100%" stopColor="#F8AD39"/>
+            <stop offset="0%"   stopColor="#F8AD39"/>
+            <stop offset="50%"  stopColor="#AE46C0"/>
+            <stop offset="100%" stopColor="#3222E9"/>
           </linearGradient>
-          <radialGradient id="shieldFill" cx="0.5" cy="0.5" r="0.5">
-            <stop offset="0%" stopColor="rgba(117,64,172,0.06)"/>
+          <radialGradient id="shieldBg" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0%"   stopColor="rgba(117,64,172,0.08)"/>
+            <stop offset="60%"  stopColor="rgba(117,64,172,0.02)"/>
             <stop offset="100%" stopColor="rgba(117,64,172,0)"/>
           </radialGradient>
+          <filter id="shieldShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="3" stdDeviation="4" floodOpacity="0.18"/>
+          </filter>
+          {/* Static text-anchor paths — labels follow the ring TOP arc, never rotate */}
+          {LAYERS.map((L, i) => (
+            <path key={i} id={`ring-${i}`}
+              d={`M ${CX - L.r} ${CY} A ${L.r} ${L.r} 0 0 1 ${CX + L.r} ${CY}`}/>
+          ))}
         </defs>
 
-        {/* Background fill */}
-        <circle cx="180" cy="180" r="170" fill="url(#shieldFill)"/>
+        {/* Soft radial background fill */}
+        <circle cx={CX} cy={CY} r="195" fill="url(#shieldBg)"/>
 
-        {/* Outer ring — Network layer */}
-        <circle cx="180" cy="180" r="160" fill="none" stroke="#1C17FF" strokeWidth="1" strokeOpacity="0.35" strokeDasharray="2 6"/>
-        <text x="180" y="34" textAnchor="middle" fill="#1C17FF" fontSize="9.5" fontWeight="700" letterSpacing=".18em" fontFamily="JetBrains Mono, monospace">
-          · NETWORK · TLS 1.3 ·
-        </text>
+        {/* 4 concentric layer rings — each <g> rotates around center independently */}
+        {LAYERS.map((L, i) => (
+          <g key={i}>
+            <animateTransform attributeName="transform" attributeType="XML"
+              type="rotate"
+              from={`0 ${CX} ${CY}`}
+              to={`${360 * L.spinDir} ${CX} ${CY}`}
+              dur={`${L.spinDur}s`}
+              repeatCount="indefinite"/>
+            {/* Ring stroke */}
+            <circle cx={CX} cy={CY} r={L.r}
+              fill="none" stroke={L.color}
+              strokeWidth={1 + i * 0.2}
+              strokeOpacity={0.3 + i * 0.12}
+              strokeDasharray={i === LAYERS.length - 1 ? "0" : `${3 + i} ${5 + i}`}/>
+            {/* Cardinal data dots — rotate with the ring */}
+            {ringDots(L.r, L.color, i * 22)}
+          </g>
+        ))}
 
-        {/* Application layer */}
-        <circle cx="180" cy="180" r="125" fill="none" stroke="#7540AC" strokeWidth="1.2" strokeOpacity="0.4" strokeDasharray="3 5"/>
-        <text x="180" y="68" textAnchor="middle" fill="#7540AC" fontSize="9" fontWeight="700" letterSpacing=".18em" fontFamily="JetBrains Mono, monospace">
-          · APPLICATION · OAuth 2.0 ·
-        </text>
+        {/* Curved labels — STATIC (sit outside rotating groups, anchored to defs paths) */}
+        {LAYERS.map((L, i) => (
+          <text key={`lbl-${i}`} fill={L.color} fontSize="9.5" fontWeight="700"
+            fontFamily="JetBrains Mono, monospace" letterSpacing=".22em">
+            <textPath href={`#ring-${i}`} startOffset="50%" textAnchor="middle">
+              · {L.label} ·
+            </textPath>
+          </text>
+        ))}
 
-        {/* Data layer */}
-        <circle cx="180" cy="180" r="90" fill="none" stroke="#A44F98" strokeWidth="1.4" strokeOpacity="0.5" strokeDasharray="4 4"/>
-        <text x="180" y="103" textAnchor="middle" fill="#A44F98" fontSize="9" fontWeight="700" letterSpacing=".18em" fontFamily="JetBrains Mono, monospace">
-          · DATA · AES-256 ·
-        </text>
-
-        {/* Audit core */}
-        <circle cx="180" cy="180" r="55" fill="rgba(238,125,72,0.06)" stroke="#EE7D48" strokeWidth="1.6" strokeOpacity="0.7"/>
-
-        {/* Center shield icon */}
-        <g transform="translate(180, 180)">
-          <path d="M 0 -28 L -22 -16 L -22 8 C -22 22, -12 32, 0 38 C 12 32, 22 22, 22 8 L 22 -16 Z"
-            fill="url(#shieldGrad)" fillOpacity="0.9" stroke="#FAF6EE" strokeWidth="1.5"/>
-          <path d="M -10 0 L -3 8 L 12 -8" fill="none" stroke="#FAF6EE" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-        </g>
-
-        {/* Center label */}
-        <text x="180" y="248" textAnchor="middle" fill="#EE7D48" fontSize="9.5" fontWeight="800" letterSpacing=".18em" fontFamily="JetBrains Mono, monospace">
-          {T.shieldAudit}
-        </text>
-
-        {/* Rotating tick marks (decoration) */}
-        {[0, 60, 120, 180, 240, 300].map((deg, i) => {
-          const x1 = 180 + Math.cos(deg * Math.PI / 180) * 158;
-          const y1 = 180 + Math.sin(deg * Math.PI / 180) * 158;
-          const x2 = 180 + Math.cos(deg * Math.PI / 180) * 168;
-          const y2 = 180 + Math.sin(deg * Math.PI / 180) * 168;
-          return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#7540AC" strokeWidth="1.5" opacity=".5"/>;
+        {/* Connecting hairlines from core to outer ring — static */}
+        {[45, 135, 225, 315].map((deg, i) => {
+          const a = (deg * Math.PI) / 180;
+          const innerR = 28, outerR = LAYERS[0].r - 8;
+          return (
+            <line key={i}
+              x1={CX + innerR * Math.cos(a)} y1={CY + innerR * Math.sin(a)}
+              x2={CX + outerR * Math.cos(a)} y2={CY + outerR * Math.sin(a)}
+              stroke="#7540AC" strokeWidth="0.8" strokeDasharray="2 4" opacity="0.15"/>
+          );
         })}
 
-        {/* Pulsing dot in audit core (live indicator) */}
-        <circle cx="180" cy="296" r="4" fill="#10B981">
-          <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
-        </circle>
-        <text x="180" y="316" textAnchor="middle" fill="#10B981" fontSize="9" fontWeight="700" letterSpacing=".15em" fontFamily="JetBrains Mono, monospace">
+        {/* Central WIR core hex — SMALLER (radius 36 → 26), still branded */}
+        <g transform={`translate(${CX} ${CY})`}>
+          {/* Hex outer — radius reduced from 36 to 26 */}
+          <path d="M0,-26 L22.5,-13 L22.5,13 L0,26 L-22.5,13 L-22.5,-13 Z"
+            fill="url(#shieldGrad)" stroke="#FAF6EE" strokeWidth="1.6"
+            filter="url(#shieldShadow)"/>
+          {/* Inner shield glyph — reduced proportionally */}
+          <path d="M0,-13 L-10,-7 L-10,3 C-10,10 -6,15 0,18 C6,15 10,10 10,3 L10,-7 Z"
+            fill="#FAF6EE" fillOpacity="0.94"/>
+          {/* Check mark — smaller */}
+          <path d="M-4.5,0 L-1,5 L5,-4" fill="none" stroke="#0B0A08"
+            strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        </g>
+
+        {/* Center label below core */}
+        <text x={CX} y={CY + 44} textAnchor="middle" fill="#0B0A08"
+          fontSize="10" fontWeight="700" letterSpacing=".24em"
+          fontFamily="JetBrains Mono, monospace">
+          WIR · CORE
+        </text>
+
+        {/* Live indicator — pulsing dot with halo */}
+        <g transform={`translate(${CX} ${CY + 62})`}>
+          <circle r="9" fill="#10B981" opacity="0.15">
+            <animate attributeName="r" values="5;12;5" dur="2.4s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.25;0.05;0.25" dur="2.4s" repeatCount="indefinite"/>
+          </circle>
+          <circle r="3.5" fill="#10B981">
+            <animate attributeName="opacity" values="0.65;1;0.65" dur="2s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+        <text x={CX} y={CY + 82} textAnchor="middle" fill="#0B0A08"
+          fontSize="9" fontWeight="600" letterSpacing=".22em"
+          fontFamily="JetBrains Mono, monospace">
           {T.shieldLive}
         </text>
       </svg>

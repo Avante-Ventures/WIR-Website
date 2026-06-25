@@ -5,8 +5,7 @@
    --f-display, --f-sans, --f-mono
    ═══════════════════════════════════════════════════ */
 
-html.js-ready [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s ease; }
-html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
+/* Reveal base rule lives in style.css — duplicate removed */
 
 /* ───────────────── HERO ───────────────── */
 .cthero {
@@ -43,7 +42,7 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
 }
 .cthero__title {
   font-family: var(--f-display); font-weight: 400;
-  font-size: clamp(64px, 8vw, 128px);
+  font-size: var(--fs-hero);
   line-height: .94; letter-spacing: -0.03em;
   margin: 24px 0 28px; color: var(--ink); text-wrap: balance;
 }
@@ -151,7 +150,7 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
 .ctform__panel { min-height: 320px; }
 .ctform__panel-title {
   font-family: var(--f-display); font-weight: 400;
-  font-size: clamp(36px, 4.5vw, 60px);
+  font-size: var(--fs-h3);
   line-height: 1.05; letter-spacing: -0.02em;
   color: var(--ink); margin-bottom: 40px; text-wrap: balance;
 }
@@ -161,9 +160,9 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
 
-/* step 0 — interest options */
+/* step 0 — interest options (3 cards: SS, UI, explore-both per swarm rec) */
 .ctform__options {
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
 }
 .ctform__opt {
   background: var(--paper); border: 1px solid rgba(11,10,8,.1);
@@ -312,7 +311,8 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
   box-shadow: 0 12px 32px rgba(11,10,8,.08);
   border-color: rgba(11,10,8,.16);
 }
-.ctquick__card--wa { border-left: 3px solid #25D366; }
+/* WA card on-palette — green reserved for the actual WA icon only */
+.ctquick__card--wa { border-left: 3px solid var(--wir-purple); }
 .ctquick__card--news { border-left: 3px solid var(--wir-purple); }
 .ctquick__k {
   font-family: var(--f-mono); font-size: 11px;
@@ -322,14 +322,14 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
   font-size: 28px; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em;
 }
 .ctquick__t em { font-style: italic; color: var(--wir-purple); }
-.ctquick__card--wa .ctquick__t em { color: #1F8F4B; }
+.ctquick__card--wa .ctquick__t em { color: var(--wir-purple); }
 .ctquick__d {
   font-size: 14px; line-height: 1.5; color: var(--ink-2);
 }
 .ctquick__cta {
   margin-top: auto; font-family: var(--f-mono); font-size: 12px;
   letter-spacing: .08em; text-transform: uppercase;
-  color: #1F8F4B; display: inline-flex; align-items: center; gap: 8px;
+  color: #7540AC; display: inline-flex; align-items: center; gap: 8px;
 }
 .ctquick__form {
   margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap;
@@ -353,7 +353,7 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
   transition: background .18s ease, transform .18s ease;
 }
 .ctquick__news-btn:hover:not(:disabled) {
-  background: #5e3490; transform: translateY(-1px);
+  background: var(--wir-purple); transform: translateY(-1px);
 }
 .ctquick__news-btn:disabled {
   background: rgba(11,10,8,.16); color: var(--ink-3); cursor: not-allowed;
@@ -361,7 +361,7 @@ html.js-ready [data-reveal].is-revealed { opacity: 1; transform: none; }
 .ctquick__news-done {
   margin-top: auto;
   padding: 14px 16px; border-radius: 8px;
-  background: rgba(31,143,75,.1); color: #1F8F4B;
+  background: rgba(31,143,75,.1); color: #7540AC;
   font-family: var(--f-mono); font-size: 13px; letter-spacing: .02em;
   border: 1px solid rgba(31,143,75,.25);
 }

@@ -258,7 +258,7 @@
   transition: color .18s ease;
 }
 .blarticle__body a:hover, .blarticle__link-ext:hover, .blarticle__link-int:hover {
-  color: #5e3490;
+  color: var(--wir-purple);
 }
 .blarticle__link-ext::after {
   content: " ↗";

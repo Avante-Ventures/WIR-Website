@@ -46,7 +46,7 @@
 }
 .dphero__title {
   font-family: var(--f-display); font-weight: 400;
-  font-size: clamp(60px, 8.4vw, 132px); line-height: .92;
+  font-size: var(--fs-hero); line-height: .92;
   letter-spacing: -0.028em; color: var(--ink); margin: 28px 0 32px;
 }
 .dphero__title em {
@@ -68,28 +68,16 @@
 }
 .dphero__shield {
   display: flex; justify-content: center; align-items: center;
-  width: 100%; max-width: 480px; margin: 0 auto;
-  padding: 24px;
+  width: 100%; max-width: 520px; margin: 0 auto;
+  padding: 32px;
   background: var(--paper-2);
   border: 1px solid rgba(11,10,8,.08);
-  border-radius: 16px;
+  border-radius: 20px;
+  box-shadow: 0 1px 0 color-mix(in oklab, var(--ink) 6%, transparent),
+              0 24px 60px -32px rgba(11,10,8,.08);
 }
 .dphero__shield-svg {
   width: 100%; height: auto; display: block;
-  animation: dphero-shield-spin 60s linear infinite;
-}
-@keyframes dphero-shield-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-.dphero__shield-svg > g, .dphero__shield-svg > text {
-  /* Don't rotate text inside */
-  animation: dphero-shield-counterspin 60s linear infinite;
-  transform-origin: center;
-}
-@keyframes dphero-shield-counterspin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(-360deg); }
 }
 
 @media (max-width: 900px) {
@@ -147,7 +135,7 @@
 .dppillars__head { max-width: 760px; margin-bottom: 64px; }
 .dppillars__title {
   font-family: var(--f-display); font-weight: 400;
-  font-size: clamp(44px, 5.4vw, 80px); line-height: 1.0;
+  font-size: var(--fs-h2); line-height: 1.0;
   letter-spacing: -0.025em; color: var(--ink); margin: 12px 0 24px;
 }
 .dppillars__title em {
@@ -278,10 +266,10 @@
   font-size: 14px; font-weight: 800;
 }
 .dpcomp__state--ok  { background: rgba(16,185,129,.15); color: #10B981; }
-.dpcomp__state--wip { background: rgba(248,173,57,.18); color: #B07410; }
+.dpcomp__state--wip { background: rgba(248,173,57,.18); color: #F8AD39; }
 .dpcomp__v {
   font-family: var(--f-display); font-weight: 400;
-  font-size: clamp(28px, 3vw, 42px); line-height: 1.05; color: var(--ink);
+  font-size: var(--fs-h3); line-height: 1.05; color: var(--ink);
 }
 .dpcomp__v em {
   font-style: italic;
@@ -305,7 +293,7 @@
 .dpfaq__head { max-width: 700px; margin-bottom: 56px; }
 .dpfaq__title {
   font-family: var(--f-display); font-weight: 400;
-  font-size: clamp(36px, 4.4vw, 60px); line-height: 1.05;
+  font-size: var(--fs-h3); line-height: 1.05;
   letter-spacing: -0.022em; color: var(--ink); margin: 12px 0 0;
 }
 .dpfaq__title em {
@@ -357,7 +345,7 @@
 }
 .dpclose__title {
   font-family: var(--f-display); font-weight: 400;
-  font-size: clamp(44px, 5.4vw, 88px); line-height: 1.0;
+  font-size: var(--fs-h2); line-height: 1.0;
   letter-spacing: -0.025em; color: #fff; margin: 16px 0 0;
 }
 .dpclose__title em {

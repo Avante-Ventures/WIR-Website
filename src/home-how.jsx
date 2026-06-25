@@ -6,12 +6,21 @@ import { LANG } from './i18n.js';
 
 const T = {
   pt: {
-    archEyebrow: "· Arquitetura WIR · Fluxo ao vivo",
-    archTitle: <>Podemos <em>automatizar toda a jornada</em> de negócio<br/>com uma camada de <em>Inteligência Artificial.</em></>,
-    archLede: <>Três pipelines paralelos atravessam a arquitetura — top track (e-mail/LB/regras/score/webhook), mid track (portal/db/LLM/QC/core) e bottom track (API/workers/ML/dashboard/audit) — e um loop inferior de <em>continuous learning</em> realimenta o modelo a cada decisão auditada.</>,
-    subEmail: "anexos · PDF", subPortal: "formulários", subRules: "política risco",
-    labelCore: "Core apólice", subAudit: "LGPD · imutável",
-    archLegend: <><b>Fluxo ao vivo</b> · 3 pipelines paralelos + loop de aprendizado contínuo</>,
+    archEyebrow: "· Arquitetura WIR",
+    archTitle: <>Automatizamos toda a jornada<br/>com uma camada de <em>Inteligência Artificial.</em></>,
+    archLede: <>Cinco agentes em cadeia · um fluxo único · <em>continuous learning</em> realimentando o modelo a cada decisão auditada.</>,
+    archInput:  { k: "INPUT",  v: "Submissão de risco",   sub: "e-mail · portal · API · OCR" },
+    archOutput: { k: "OUTPUT", v: "Decisão auditável",    sub: "cotação · bind · refer" },
+    archMemory: "MEMORY",
+    archAudit:  { name: "Audit Agent", fn: "Trilha LGPD · feedback ao modelo" },
+    archAgents: [
+      { name: "Intake",   fn: "Lê submissão",       toolUp: "OCR · NER",       toolDown: "Email parser" },
+      { name: "Enrich",   fn: "Adiciona contexto",  toolUp: "Broker DB",       toolDown: "CNAE · CNPJ" },
+      { name: "Risk",     fn: "Score risco × preço", toolUp: "LLM · WIR",      toolDown: "ML model" },
+      { name: "Decision", fn: "Bind · refer · recusa", toolUp: "Policy engine", toolDown: "Sandbox" },
+    ],
+    archAuditLabel: "↻ AUDIT LOG · CONTINUOUS LEARNING",
+    archLegend: <><b>Pipeline ao vivo</b> · 4 agentes + audit · loop contínuo</>,
     trustEyebrow: "· Desafios do mercado",
     trustQuote: <>"Mercado de Seguros e Danos cresce <em>dois dígitos ao ano</em>. Mas a estrutura das empresas não acompanha esta aceleração."</>,
     trustBotK: "Quatro forças que tornam o status quo insustentável",
@@ -24,16 +33,25 @@ const T = {
     ],
     closeEyebrow: "· Próximo passo",
     closeTitle: <>Sua equipe tem o <em>conhecimento.</em><br/>A WIR dá a <em>plataforma de IA para escalar.</em></>,
-    closeTalk: "Falar com nossos sócios",
+    closeTalk: "Iniciar agora",
     closeExplore: "Explorar soluções",
   },
   en: {
-    archEyebrow: "· WIR Architecture · Live flow",
-    archTitle: <>We can <em>automate the entire business journey</em><br/>with a layer of <em>Artificial Intelligence.</em></>,
-    archLede: <>Three parallel pipelines run through the architecture — top track (email/LB/rules/score/webhook), mid track (portal/db/LLM/QC/core) and bottom track (API/workers/ML/dashboard/audit) — and a bottom <em>continuous learning</em> loop feeds every audited decision back into the model.</>,
-    subEmail: "attachments · PDF", subPortal: "forms", subRules: "risk policy",
-    labelCore: "Policy core", subAudit: "LGPD · immutable",
-    archLegend: <><b>Live flow</b> · 3 parallel pipelines + continuous learning loop</>,
+    archEyebrow: "· WIR Architecture",
+    archTitle: <>We automate the entire journey<br/>with a layer of <em>Artificial Intelligence.</em></>,
+    archLede: <>Five agents in a chain · one unified flow · <em>continuous learning</em> feeding every audited decision back into the model.</>,
+    archInput:  { k: "INPUT",  v: "Risk submission",      sub: "email · portal · API · OCR" },
+    archOutput: { k: "OUTPUT", v: "Auditable decision",   sub: "quote · bind · refer" },
+    archMemory: "MEMORY",
+    archAudit:  { name: "Audit Agent", fn: "LGPD trail · model feedback" },
+    archAgents: [
+      { name: "Intake",   fn: "Reads submission",   toolUp: "OCR · NER",       toolDown: "Email parser" },
+      { name: "Enrich",   fn: "Adds context",       toolUp: "Broker DB",       toolDown: "CNAE · CNPJ" },
+      { name: "Risk",     fn: "Risk × price score", toolUp: "LLM · WIR",       toolDown: "ML model" },
+      { name: "Decision", fn: "Bind · refer · decline", toolUp: "Policy engine", toolDown: "Sandbox" },
+    ],
+    archAuditLabel: "↻ AUDIT LOG · CONTINUOUS LEARNING",
+    archLegend: <><b>Live pipeline</b> · 4 agents + audit · continuous loop</>,
     trustEyebrow: "· Market challenges",
     trustQuote: <>"The Property & Casualty market grows <em>double digits a year</em>. But companies' structures aren't keeping up with that acceleration."</>,
     trustBotK: "Four forces making the status quo unsustainable",
@@ -46,16 +64,25 @@ const T = {
     ],
     closeEyebrow: "· Next step",
     closeTitle: <>Your team has the <em>knowledge.</em><br/>WIR provides the <em>AI platform to scale.</em></>,
-    closeTalk: "Talk to our partners",
+    closeTalk: "Start now",
     closeExplore: "Explore solutions",
   },
   es: {
-    archEyebrow: "· Arquitectura WIR · Flujo en vivo",
-    archTitle: <>Podemos <em>automatizar todo el recorrido</em> del negocio<br/>con una capa de <em>Inteligencia Artificial.</em></>,
-    archLede: <>Tres pipelines paralelos atraviesan la arquitectura — top track (email/LB/reglas/score/webhook), mid track (portal/db/LLM/QC/core) y bottom track (API/workers/ML/dashboard/audit) — y un loop inferior de <em>continuous learning</em> realimenta el modelo con cada decisión auditada.</>,
-    subEmail: "adjuntos · PDF", subPortal: "formularios", subRules: "política de riesgo",
-    labelCore: "Core pólizas", subAudit: "LGPD · inmutable",
-    archLegend: <><b>Flujo en vivo</b> · 3 pipelines paralelos + loop de aprendizaje continuo</>,
+    archEyebrow: "· Arquitectura WIR",
+    archTitle: <>Automatizamos todo el recorrido<br/>con una capa de <em>Inteligencia Artificial.</em></>,
+    archLede: <>Cinco agentes en cadena · un flujo único · <em>continuous learning</em> realimenta el modelo con cada decisión auditada.</>,
+    archInput:  { k: "INPUT",  v: "Submission de riesgo", sub: "correo · portal · API · OCR" },
+    archOutput: { k: "OUTPUT", v: "Decisión auditable",   sub: "cotización · bind · refer" },
+    archMemory: "MEMORY",
+    archAudit:  { name: "Audit Agent", fn: "Traza LGPD · feedback al modelo" },
+    archAgents: [
+      { name: "Intake",   fn: "Lee submission",     toolUp: "OCR · NER",       toolDown: "Email parser" },
+      { name: "Enrich",   fn: "Agrega contexto",    toolUp: "Broker DB",       toolDown: "CNAE · CNPJ" },
+      { name: "Risk",     fn: "Score riesgo × precio", toolUp: "LLM · WIR",   toolDown: "ML model" },
+      { name: "Decision", fn: "Bind · refer · declinar", toolUp: "Policy engine", toolDown: "Sandbox" },
+    ],
+    archAuditLabel: "↻ AUDIT LOG · CONTINUOUS LEARNING",
+    archLegend: <><b>Pipeline en vivo</b> · 4 agentes + audit · loop continuo</>,
     trustEyebrow: "· Desafíos del mercado",
     trustQuote: <>"El mercado de Seguros de Daños crece <em>dos dígitos al año</em>. Pero la estructura de las empresas no acompaña esta aceleración."</>,
     trustBotK: "Cuatro fuerzas que vuelven insostenible el status quo",
@@ -68,51 +95,51 @@ const T = {
     ],
     closeEyebrow: "· Próximo paso",
     closeTitle: <>Tu equipo tiene el <em>conocimiento.</em><br/>WIR da la <em>plataforma de IA para escalar.</em></>,
-    closeTalk: "Hablar con nuestros socios",
+    closeTalk: "Empezar ahora",
     closeExplore: "Explorar soluciones",
   },
 }[LANG];
 
-// ArchFlow — 3 pipelines + 1 feedback loop visíveis. Cada dot percorre exatamente
-// a mesma curva renderizada no diagrama (via <mpath href="#pipe-X"/>).
+// ArchFlow — schematic architecture (Stripe-style). 5 zones × 3 subnodes stacked,
+// single horizontal main flow through zone centers, straight continuous-learning return below.
+// Palette: amber LEFT → blue RIGHT (matches logo direction).
 export function ArchFlow() {
-  // Coordenadas das zonas (centro vertical de cada lane)
-  // 5 zonas: INTAKE / WIR PLATFORM / AI ENGINE / OUTPUT / CORE
-  // 3 lanes: TOP (y=130) / MID (y=210) / BOT (y=290)
+  // Agent orchestration graph — INPUT → 4 hexagonal agents (each with tools above & below)
+  // → OUTPUT. Memory hub at top feeds context; Audit Agent at bottom receives feedback
+  // from every agent (continuous learning loop). Arrowheads explicit on every connection.
+  const PALETTE = ["#F8AD39", "#FE8B77", "#AE46C0", "#7540AC"];
+  const agents = T.archAgents;
 
-  // 4 paths visíveis e idênticos aos dos dots:
-  // pipe-top: E-mail → Load Balancer → Business Rules → Score → Webhook
-  // pipe-mid: Portal → Postgres → WIR LLM → QC → Core de apólice
-  // pipe-bot: API → Worker Pool → ML Model → Dashboard → Audit Log
-  // pipe-feedback: Audit Log → curve down → INTAKE (continuous learning)
-  const pipes = {
-    top: "M 130,130 C 220,140 270,140 330,130 C 460,115 540,115 625,130 C 750,145 805,145 865,130 C 1000,115 1075,115 1130,130",
-    mid: "M 130,210 C 220,210 280,210 330,210 C 480,210 545,210 625,210 C 760,210 815,210 865,210 C 985,210 1080,210 1130,210",
-    bot: "M 130,290 C 220,280 270,280 330,290 C 460,305 540,305 625,290 C 750,275 805,275 865,290 C 1000,305 1075,305 1130,290",
-    feedback: "M 1130,310 C 1000,355 600,375 300,360 C 150,348 80,295 130,210",
+  // ── Layout (viewBox 1280 × 580) ─────────────────────────────────────────
+  const VB_W = 1280, VB_H = 580;
+  const HUB_W = 160, HUB_H = 88;
+  const HUB_L_X = 20, HUB_R_X = VB_W - 20 - HUB_W;
+  const MAIN_Y = 290;
+  const AGENT_R = 44;
+  const TOOL_W = 110, TOOL_H = 32;
+  const TOOL_UP_Y = 140, TOOL_DOWN_Y = 410;
+  // 4 agents evenly spread between hubs
+  const START = HUB_L_X + HUB_W + 70;
+  const END   = HUB_R_X - 70;
+  const GAP   = (END - START) / 3;
+  const agentX = (i) => START + i * GAP;
+  // Memory hub (top center)
+  const MEM_CX = VB_W / 2, MEM_CY = 50, MEM_R = 30;
+  // Audit hub (bottom center)
+  const AUDIT_CX = VB_W / 2, AUDIT_CY = 510, AUDIT_R = 40;
+
+  // Hex path centered at (cx,cy) with radius r — flat-top
+  const hex = (cx, cy, r) => {
+    const pts = [];
+    for (let i = 0; i < 6; i++) {
+      const a = (Math.PI / 3) * i - Math.PI / 2;
+      pts.push(`${cx + r * Math.cos(a)},${cy + r * Math.sin(a)}`);
+    }
+    return `M${pts[0]} L${pts.slice(1).join(" L")} Z`;
   };
 
-  // Sub-node helper
-  const SubNode = ({ x, y, w, h, label, sub, color, fill, opaque }) => (
-    <g>
-      <rect x={x} y={y} width={w} height={h} rx="8"
-        fill={opaque ? "#FAF6EE" : (fill || `${color}10`)}
-        stroke={color} strokeWidth="1.4" strokeOpacity="0.55"/>
-      <text x={x + w/2} y={y + (sub ? h/2 - 2 : h/2 + 4)} fill={color}
-        fontSize="10.5" fontWeight="700" fontFamily="Inter, sans-serif" textAnchor="middle">
-        {label}
-      </text>
-      {sub && (
-        <text x={x + w/2} y={y + h/2 + 12} fill="#6A6458"
-          fontSize="8" fontFamily="JetBrains Mono, monospace" textAnchor="middle">
-          {sub}
-        </text>
-      )}
-    </g>
-  );
-
   return (
-    <section className="archflow" data-reveal>
+    <section className="archflow bg-editorial bg-editorial--cr" data-reveal>
       <div className="wrap">
         <div className="archflow__head">
           <div className="eyebrow">{T.archEyebrow}</div>
@@ -125,136 +152,213 @@ export function ArchFlow() {
         </div>
 
         <div className="archflow__canvas">
-          <svg viewBox="0 0 1240 400" className="archflow__svg" preserveAspectRatio="xMidYMid meet">
+          <svg viewBox={`0 0 ${VB_W} ${VB_H}`} className="archflow__svg" preserveAspectRatio="xMidYMid meet" aria-label="WIR agent orchestration graph">
             <defs>
-              <linearGradient id="archGrad" x1="0" x2="1">
-                <stop offset="0%" stopColor="#1C17FF"/>
-                <stop offset="25%" stopColor="#7540AC"/>
-                <stop offset="55%" stopColor="#A44F98"/>
-                <stop offset="80%" stopColor="#EE7D48"/>
-                <stop offset="100%" stopColor="#10B981"/>
+              <linearGradient id="agentFlow" x1="0" x2="1">
+                <stop offset="0%"   stopColor="#F8AD39"/>
+                <stop offset="33%"  stopColor="#FE8B77"/>
+                <stop offset="66%"  stopColor="#AE46C0"/>
+                <stop offset="100%" stopColor="#3222E9"/>
               </linearGradient>
-              <filter id="archGlow"><feGaussianBlur stdDeviation="6"/></filter>
-              <filter id="archDotShadow"><feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.3"/></filter>
-
-              {/* Os mesmos paths usados pelo render visível e pelos animateMotion */}
-              <path id="pipe-top"      d={pipes.top}/>
-              <path id="pipe-mid"      d={pipes.mid}/>
-              <path id="pipe-bot"      d={pipes.bot}/>
-              <path id="pipe-feedback" d={pipes.feedback}/>
+              <filter id="agentShadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.16"/>
+              </filter>
+              {/* Arrowhead markers — inherit stroke color via context-stroke */}
+              <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5"
+                markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,1 L9,5 L0,9 Z" fill="context-stroke"/>
+              </marker>
+              <marker id="arrSmall" viewBox="0 0 10 10" refX="8" refY="5"
+                markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                <path d="M0,2 L8,5 L0,8 Z" fill="context-stroke"/>
+              </marker>
+              {/* Main forward path: INPUT → agents → OUTPUT */}
+              <path id="agentPipe" d={`M ${HUB_L_X + HUB_W} ${MAIN_Y} L ${HUB_R_X} ${MAIN_Y}`}/>
+              {/* Audit return curve: AUDIT_CX, AUDIT_CY → memory (curves left then up) */}
+              <path id="auditReturn"
+                d={`M ${AUDIT_CX - AUDIT_R - 10} ${AUDIT_CY} C 200 ${AUDIT_CY}, 80 300, ${HUB_L_X + HUB_W/2} ${MAIN_Y + HUB_H/2 + 10}`}/>
             </defs>
 
-            {/* Zone separators */}
-            {[230, 490, 770, 1030].map((x, i) => (
-              <line key={i} x1={x} y1="20" x2={x} y2="395" stroke="rgba(11,10,8,.06)" strokeWidth="1" strokeDasharray="4 5"/>
+            {/* ════ FORWARD CONNECTIONS ════ */}
+            {/* INPUT → first agent */}
+            <line x1={HUB_L_X + HUB_W} y1={MAIN_Y} x2={agentX(0) - AGENT_R} y2={MAIN_Y}
+              stroke="url(#agentFlow)" strokeWidth="2" markerEnd="url(#arr)"/>
+            {/* Between agents */}
+            {agents.slice(0, -1).map((_, i) => (
+              <line key={i}
+                x1={agentX(i) + AGENT_R} y1={MAIN_Y}
+                x2={agentX(i+1) - AGENT_R} y2={MAIN_Y}
+                stroke="url(#agentFlow)" strokeWidth="2" markerEnd="url(#arr)"/>
+            ))}
+            {/* Last agent → OUTPUT */}
+            <line x1={agentX(3) + AGENT_R} y1={MAIN_Y} x2={HUB_R_X} y2={MAIN_Y}
+              stroke="url(#agentFlow)" strokeWidth="2" markerEnd="url(#arr)"/>
+
+            {/* ════ INPUT hub — 3-line: label / what / how ════ */}
+            <rect x={HUB_L_X} y={MAIN_Y - HUB_H/2} width={HUB_W} height={HUB_H} rx="12"
+              fill="#FAF6EE" stroke="#0B0A08" strokeOpacity="0.22" strokeWidth="1.3"
+              filter="url(#agentShadow)"/>
+            {/* Top accent bar */}
+            <rect x={HUB_L_X} y={MAIN_Y - HUB_H/2} width={HUB_W} height="3" rx="3"
+              fill="#0B0A08" opacity="0.7"/>
+            {/* Line 1 — mono uppercase label */}
+            <text x={HUB_L_X + HUB_W/2} y={MAIN_Y - HUB_H/2 + 20} fill="#524C42" fontSize="9"
+              fontFamily="JetBrains Mono, monospace" textAnchor="middle"
+              letterSpacing="2.4" fontWeight="700">{T.archInput.k}</text>
+            {/* Line 2 — sans bold "what" */}
+            <text x={HUB_L_X + HUB_W/2} y={MAIN_Y + 4} fill="#0B0A08" fontSize="13"
+              fontFamily="Space Grotesk, Inter Tight, sans-serif" textAnchor="middle"
+              fontWeight="600" letterSpacing="-0.005em">{T.archInput.v}</text>
+            {/* Line 3 — mono small "how" (channels) */}
+            <text x={HUB_L_X + HUB_W/2} y={MAIN_Y + HUB_H/2 - 12} fill="#6E695C" fontSize="9"
+              fontFamily="JetBrains Mono, monospace" textAnchor="middle"
+              letterSpacing="0.3" fontWeight="500">{T.archInput.sub}</text>
+
+            {/* ════ OUTPUT hub — 3-line: label / what / how ════ */}
+            <rect x={HUB_R_X} y={MAIN_Y - HUB_H/2} width={HUB_W} height={HUB_H} rx="12"
+              fill="#FAF6EE" stroke="#3222E9" strokeOpacity="0.55" strokeWidth="1.3"
+              filter="url(#agentShadow)"/>
+            {/* Top accent bar in brand blue */}
+            <rect x={HUB_R_X} y={MAIN_Y - HUB_H/2} width={HUB_W} height="3" rx="3"
+              fill="#3222E9" opacity="0.9"/>
+            <text x={HUB_R_X + HUB_W/2} y={MAIN_Y - HUB_H/2 + 20} fill="#3222E9" fontSize="9"
+              fontFamily="JetBrains Mono, monospace" textAnchor="middle"
+              letterSpacing="2.4" fontWeight="700">{T.archOutput.k}</text>
+            <text x={HUB_R_X + HUB_W/2} y={MAIN_Y + 4} fill="#0B0A08" fontSize="13"
+              fontFamily="Space Grotesk, Inter Tight, sans-serif" textAnchor="middle"
+              fontWeight="600" letterSpacing="-0.005em">{T.archOutput.v}</text>
+            <text x={HUB_R_X + HUB_W/2} y={MAIN_Y + HUB_H/2 - 12} fill="#6E695C" fontSize="9"
+              fontFamily="JetBrains Mono, monospace" textAnchor="middle"
+              letterSpacing="0.3" fontWeight="500">{T.archOutput.sub}</text>
+
+            {/* ════ MEMORY hub (top center, smaller, neutral) ════ */}
+            <circle cx={MEM_CX} cy={MEM_CY} r={MEM_R} fill="#FAF6EE" stroke="#7540AC"
+              strokeWidth="1.5" strokeOpacity="0.55" filter="url(#agentShadow)"/>
+            <text x={MEM_CX} y={MEM_CY + 4} fill="#7540AC" fontSize="10"
+              fontFamily="JetBrains Mono, monospace" textAnchor="middle"
+              letterSpacing="1.8" fontWeight="700">{T.archMemory}</text>
+            {/* Memory → each agent (curved purple lines down) */}
+            {agents.map((_, i) => (
+              <path key={`mem${i}`}
+                d={`M ${MEM_CX} ${MEM_CY + MEM_R}
+                    C ${MEM_CX} ${MEM_CY + 90},
+                      ${agentX(i)} ${TOOL_UP_Y - 40},
+                      ${agentX(i)} ${TOOL_UP_Y - 8}`}
+                stroke="#7540AC" strokeWidth="1" strokeOpacity="0.25" fill="none"
+                strokeDasharray="3 5"/>
             ))}
 
-            {/* Zone labels (top) */}
-            {[
-              {x:130, l:"INTAKE",       c:"#1C17FF"},
-              {x:360, l:"WIR PLATFORM", c:"#7540AC"},
-              {x:620, l:"AI ENGINE",    c:"#A44F98"},
-              {x:900, l:"OUTPUT",       c:"#EE7D48"},
-              {x:1130,l:"CORE",         c:"#10B981"},
-            ].map((z, i) => (
-              <text key={i} x={z.x} y="16" fill={z.c} fontSize="11" fontWeight="800"
-                fontFamily="Inter, sans-serif" textAnchor="middle" letterSpacing=".18em">
-                {z.l}
-              </text>
-            ))}
+            {/* ════ AGENTS + their tools ════ */}
+            {agents.map((a, i) => {
+              const cx = agentX(i);
+              const color = PALETTE[i];
+              const upX = cx - TOOL_W/2, upY = TOOL_UP_Y - TOOL_H/2;
+              const downX = cx - TOOL_W/2, downY = TOOL_DOWN_Y - TOOL_H/2;
+              return (
+                <g key={a.name}>
+                  {/* Tool UP rect */}
+                  <rect x={upX} y={upY} width={TOOL_W} height={TOOL_H} rx="6"
+                    fill="#FAF6EE" stroke={color} strokeOpacity="0.35" strokeWidth="1"/>
+                  <text x={cx} y={upY + TOOL_H/2 + 4} fill="#0B0A08" fontSize="10"
+                    fontFamily="JetBrains Mono, monospace" textAnchor="middle"
+                    letterSpacing="0.3" fontWeight="500">{a.toolUp}</text>
+                  {/* Tool UP → agent line (down arrow) */}
+                  <line x1={cx} y1={upY + TOOL_H} x2={cx} y2={MAIN_Y - AGENT_R}
+                    stroke={color} strokeWidth="1.2" strokeOpacity="0.55"
+                    markerEnd="url(#arrSmall)"/>
 
-            {/* Pipes visibles — render BEFORE nodes so nodes mask them */}
-            <use href="#pipe-top"      stroke="url(#archGrad)" strokeWidth="2.5" fill="none"
-              strokeDasharray="2 6" opacity="0.55"/>
-            <use href="#pipe-mid"      stroke="url(#archGrad)" strokeWidth="2.5" fill="none"
-              strokeDasharray="2 6" opacity="0.55"/>
-            <use href="#pipe-bot"      stroke="url(#archGrad)" strokeWidth="2.5" fill="none"
-              strokeDasharray="2 6" opacity="0.55"/>
-            <use href="#pipe-feedback" stroke="#FE8B77" strokeWidth="2" fill="none"
-              strokeDasharray="5 5" opacity="0.5"/>
-            <text fill="#FE8B77" fontSize="9.5" fontWeight="700"
-              fontFamily="JetBrains Mono, monospace" letterSpacing=".15em" opacity=".75">
-              <textPath href="#pipe-feedback" startOffset="50%" textAnchor="middle">
-                · CONTINUOUS LEARNING · MODEL FEEDBACK ·
+                  {/* Tool DOWN rect */}
+                  <rect x={downX} y={downY} width={TOOL_W} height={TOOL_H} rx="6"
+                    fill="#FAF6EE" stroke={color} strokeOpacity="0.35" strokeWidth="1"/>
+                  <text x={cx} y={downY + TOOL_H/2 + 4} fill="#0B0A08" fontSize="10"
+                    fontFamily="JetBrains Mono, monospace" textAnchor="middle"
+                    letterSpacing="0.3" fontWeight="500">{a.toolDown}</text>
+                  {/* Agent → tool DOWN line (down arrow) */}
+                  <line x1={cx} y1={MAIN_Y + AGENT_R} x2={cx} y2={downY}
+                    stroke={color} strokeWidth="1.2" strokeOpacity="0.55"
+                    markerEnd="url(#arrSmall)"/>
+
+                  {/* Agent hex — soft inner fill + brand stroke + drop shadow */}
+                  <path d={hex(cx, MAIN_Y, AGENT_R)} fill={color} fillOpacity="0.08"/>
+                  <path d={hex(cx, MAIN_Y, AGENT_R)} fill="#FAF6EE" stroke={color}
+                    strokeWidth="2" strokeOpacity="0.9" filter="url(#agentShadow)"/>
+                  {/* Agent code A01-A04 */}
+                  <text x={cx} y={MAIN_Y - 10} fill={color} fontSize="9"
+                    fontFamily="JetBrains Mono, monospace" textAnchor="middle"
+                    letterSpacing="2" fontWeight="700">A0{i+1}</text>
+                  {/* Agent icon glyph */}
+                  <text x={cx} y={MAIN_Y + 6} fill={color} fontSize="18"
+                    textAnchor="middle" style={{userSelect:"none"}}>⬢</text>
+                  {/* Agent name */}
+                  <text x={cx} y={MAIN_Y + 20} fill="#0B0A08" fontSize="11"
+                    fontFamily="JetBrains Mono, monospace" textAnchor="middle"
+                    fontWeight="700" letterSpacing="0.4">{a.name}</text>
+
+                  {/* Feedback connector from agent → Audit Agent (curved coral dashed with arrow) */}
+                  <path
+                    d={`M ${cx} ${TOOL_DOWN_Y + TOOL_H/2 + 4}
+                        C ${cx} ${AUDIT_CY - 60},
+                          ${AUDIT_CX} ${AUDIT_CY - 30},
+                          ${AUDIT_CX + (cx < AUDIT_CX ? -AUDIT_R : AUDIT_R) * 0.7} ${AUDIT_CY - AUDIT_R + 8}`}
+                    stroke="#FE8B77" strokeWidth="1" strokeDasharray="3 5" opacity="0.35"
+                    fill="none" markerEnd="url(#arrSmall)"/>
+
+                  {/* Agent caption (function description, below the hex) */}
+                  <text x={cx} y={MAIN_Y + AGENT_R + 18} fill="#524C42" fontSize="10"
+                    fontFamily="JetBrains Mono, monospace" textAnchor="middle"
+                    letterSpacing="0.2">{a.fn}</text>
+                </g>
+              );
+            })}
+
+            {/* ════ AUDIT AGENT (bottom center, coral) ════ */}
+            <g>
+              <path d={hex(AUDIT_CX, AUDIT_CY, AUDIT_R)} fill="#FE8B77" fillOpacity="0.1"/>
+              <path d={hex(AUDIT_CX, AUDIT_CY, AUDIT_R)} fill="#FAF6EE" stroke="#FE8B77"
+                strokeWidth="2" strokeOpacity="0.9" filter="url(#agentShadow)"/>
+              <text x={AUDIT_CX} y={AUDIT_CY - 8} fill="#FE8B77" fontSize="9"
+                fontFamily="JetBrains Mono, monospace" textAnchor="middle"
+                letterSpacing="2" fontWeight="700">A05</text>
+              <text x={AUDIT_CX} y={AUDIT_CY + 10} fill="#FE8B77" fontSize="18"
+                textAnchor="middle">⬢</text>
+              <text x={AUDIT_CX} y={AUDIT_CY + AUDIT_R + 18} fill="#0B0A08" fontSize="11"
+                fontFamily="JetBrains Mono, monospace" textAnchor="middle"
+                fontWeight="700" letterSpacing="0.4">{T.archAudit.name}</text>
+              <text x={AUDIT_CX} y={AUDIT_CY + AUDIT_R + 34} fill="#524C42" fontSize="10"
+                fontFamily="JetBrains Mono, monospace" textAnchor="middle"
+                letterSpacing="0.2">{T.archAudit.fn}</text>
+            </g>
+
+            {/* ════ AUDIT return loop → curve up-left back to memory/input area ════ */}
+            <use href="#auditReturn" stroke="#FE8B77" strokeWidth="1.2"
+              strokeDasharray="4 6" opacity="0.4" fill="none" markerEnd="url(#arr)"/>
+            <text fill="#6E695C" fontSize="9"
+              fontFamily="JetBrains Mono, monospace" letterSpacing="2.2" fontWeight="500">
+              <textPath href="#auditReturn" startOffset="40%" textAnchor="middle">
+                {T.archAuditLabel}
               </textPath>
             </text>
 
-            {/* INTAKE column — 3 nodes (centered on each lane) */}
-            <SubNode x={75}  y={111} w={110} h={38} label="E-mail" sub={T.subEmail}   color="#1C17FF" opaque/>
-            <SubNode x={75}  y={191} w={110} h={38} label="Portal" sub={T.subPortal}  color="#1C17FF" opaque/>
-            <SubNode x={75}  y={271} w={110} h={38} label="API"    sub="3 endpoints"  color="#1C17FF" opaque/>
-
-            {/* WIR PLATFORM column */}
-            <SubNode x={275} y={111} w={110} h={38} label="Load Balancer" sub="Nginx · 2× inst"   color="#7540AC" opaque/>
-            <SubNode x={275} y={191} w={110} h={38} label="Postgres"      sub="Primary · Replica" color="#7540AC" opaque/>
-
-            {/* Worker Pool (cluster, replaces single bottom node — dots ride through center) */}
-            <rect x="275" y="262" width="110" height="58" rx="10" fill="#FAF6EE"
-              stroke="rgba(117,64,172,.5)" strokeWidth="1.4" strokeDasharray="4 4"/>
-            <text x="330" y="276" fill="rgba(117,64,172,.7)" fontSize="8" fontWeight="800"
-              fontFamily="Inter, sans-serif" textAnchor="middle" letterSpacing=".14em">WORKER POOL</text>
-            <SubNode x={279} y={282} w={48} h={16} label="W-1" color="#7540AC"/>
-            <SubNode x={333} y={282} w={48} h={16} label="W-2" color="#7540AC"/>
-            <SubNode x={279} y={302} w={48} h={16} label="W-3" color="#7540AC"/>
-            <SubNode x={333} y={302} w={48} h={16} label="W-N" color="#7540AC"/>
-
-            {/* AI ENGINE column */}
-            <SubNode x={565} y={111} w={120} h={38} label="Business Rules" sub={T.subRules} color="#A44F98" opaque/>
-            <SubNode x={565} y={191} w={120} h={38} label="WIR LLM"        sub="NLP · Fraud · Risk"  color="#EE7D48" opaque/>
-            <SubNode x={565} y={271} w={120} h={38} label="ML Model"       sub="POST /predict"       color="#EE7D48" opaque/>
-
-            {/* OUTPUT column */}
-            <SubNode x={845} y={111} w={110} h={38} label="Score"     sub="risk + price"      color="#F8AD39" opaque/>
-            <SubNode x={845} y={191} w={110} h={38} label="QC"        sub="quality check"     color="#10B981" opaque/>
-            <SubNode x={845} y={271} w={110} h={38} label="Dashboard" sub="real time"         color="#10B981" opaque/>
-
-            {/* CORE column */}
-            <SubNode x={1075} y={111} w={110} h={38} label="Webhook"       sub="signed payload"    color="#10B981" opaque/>
-            <SubNode x={1075} y={191} w={110} h={38} label={T.labelCore}   sub="policy admin"      color="#10B981" opaque/>
-            <SubNode x={1075} y={271} w={110} h={38} label="Audit Log"     sub={T.subAudit}        color="#7540AC" opaque/>
-
-            {/* Animated dots — RIDE THE EXACT VISIBLE PIPES via mpath */}
-            {/* Halos behind */}
-            <circle r="18" fill="#F8AD39" opacity="0.22" filter="url(#archGlow)">
-              <animateMotion dur="18s" repeatCount="indefinite" begin="0s">
-                <mpath href="#pipe-top"/>
+            {/* ════ Animated data packets travelling forward through the pipeline ════ */}
+            <circle r="5" fill="#F8AD39" stroke="#FAF6EE" strokeWidth="1.5" filter="url(#agentShadow)">
+              <animateMotion dur="14s" repeatCount="indefinite" begin="0s">
+                <mpath href="#agentPipe"/>
               </animateMotion>
             </circle>
-            <circle r="18" fill="#A44F98" opacity="0.22" filter="url(#archGlow)">
-              <animateMotion dur="16s" repeatCount="indefinite" begin="-4s">
-                <mpath href="#pipe-mid"/>
+            <circle r="5" fill="#AE46C0" stroke="#FAF6EE" strokeWidth="1.5" filter="url(#agentShadow)">
+              <animateMotion dur="14s" repeatCount="indefinite" begin="-4.7s">
+                <mpath href="#agentPipe"/>
               </animateMotion>
             </circle>
-            <circle r="18" fill="#10B981" opacity="0.22" filter="url(#archGlow)">
-              <animateMotion dur="19s" repeatCount="indefinite" begin="-8s">
-                <mpath href="#pipe-bot"/>
+            <circle r="5" fill="#3222E9" stroke="#FAF6EE" strokeWidth="1.5" filter="url(#agentShadow)">
+              <animateMotion dur="14s" repeatCount="indefinite" begin="-9.3s">
+                <mpath href="#agentPipe"/>
               </animateMotion>
             </circle>
-            <circle r="18" fill="#FE8B77" opacity="0.22" filter="url(#archGlow)">
-              <animateMotion dur="22s" repeatCount="indefinite" begin="-10s">
-                <mpath href="#pipe-feedback"/>
-              </animateMotion>
-            </circle>
-
-            {/* Solid dots front */}
-            <circle r="8" fill="#F8AD39" stroke="#FAF6EE" strokeWidth="2" filter="url(#archDotShadow)">
-              <animateMotion dur="18s" repeatCount="indefinite" begin="0s">
-                <mpath href="#pipe-top"/>
-              </animateMotion>
-            </circle>
-            <circle r="8" fill="#A44F98" stroke="#FAF6EE" strokeWidth="2" filter="url(#archDotShadow)">
-              <animateMotion dur="16s" repeatCount="indefinite" begin="-4s">
-                <mpath href="#pipe-mid"/>
-              </animateMotion>
-            </circle>
-            <circle r="8" fill="#10B981" stroke="#FAF6EE" strokeWidth="2" filter="url(#archDotShadow)">
-              <animateMotion dur="19s" repeatCount="indefinite" begin="-8s">
-                <mpath href="#pipe-bot"/>
-              </animateMotion>
-            </circle>
-            <circle r="8" fill="#FE8B77" stroke="#FAF6EE" strokeWidth="2" filter="url(#archDotShadow)">
-              <animateMotion dur="22s" repeatCount="indefinite" begin="-10s">
-                <mpath href="#pipe-feedback"/>
+            {/* Return packet travelling the audit feedback curve */}
+            <circle r="4" fill="#FE8B77" stroke="#FAF6EE" strokeWidth="1.2" opacity="0.85">
+              <animateMotion dur="20s" repeatCount="indefinite" begin="-8s">
+                <mpath href="#auditReturn"/>
               </animateMotion>
             </circle>
           </svg>
@@ -320,7 +424,7 @@ export function Closing({ go }) {
               {T.closeTalk} <span className="btn__arrow">→</span>
             </button>
             <button className="btn btn--ghost" onClick={()=>go("solutions")}>
-              {T.closeExplore} <span className="btn__arrow">→</span>
+              {T.closeExplore}
             </button>
           </div>
         </div>

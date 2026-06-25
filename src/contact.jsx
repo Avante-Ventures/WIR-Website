@@ -13,8 +13,9 @@ const T = {
     heroLede: "Cada seguradora opera diferente. Em uma conversa de 30 min com nossos sócios, calibramos o que faz sentido para a sua realidade — volume, custo atual, apetite e estrutura — e desenhamos juntos se um projeto de implementação se justifica.",
     foundersNote: "Você vai falar com um de nós.",
     interests: [
-      { k:"SS", t:"Smart Sales",               d:"Distribuição + lead scoring",  c:"#1C17FF" },
-      { k:"UI", t:"Underwriter Intelligence",  d:"Subscrição inteligente",       c:"#A44F98" },
+      { k:"SS", t:"Smart Sales",               d:"Distribuição + lead scoring",  c:"#3222E9" },
+      { k:"UI", t:"Underwriter Intelligence",  d:"Subscrição inteligente",       c:"#AE46C0" },
+      { k:"explore", t:"Os dois / ainda explorando", d:"Quero entender o que cabe", c:"#7540AC" },
     ],
     roles: ["C-level (CEO / COO / CIO)","Head de Subscrição","Head de TI / Arquitetura","Head de Distribuição","Gerente de produto","Consultor / advisory","Outro"],
     sizes: ["MGA (até R$ 200M prêmio)","Seguradora média (R$ 200M – R$ 2B)","Tier-1 (R$ 2B+)","Resseguradora","Corretora corporativa","Outro"],
@@ -86,8 +87,9 @@ Enviado pelo formulário do site wirinnovation.ai`,
     heroLede: "Every insurer operates differently. In a 30-minute conversation with our partners, we calibrate what makes sense for your reality — volume, current cost, appetite and structure — and design together whether an implementation project is justified.",
     foundersNote: "You'll talk to one of us.",
     interests: [
-      { k:"SS", t:"Smart Sales",              d:"Distribution + lead scoring",  c:"#1C17FF" },
-      { k:"UI", t:"Underwriter Intelligence", d:"Intelligent underwriting",     c:"#A44F98" },
+      { k:"SS", t:"Smart Sales",              d:"Distribution + lead scoring",  c:"#3222E9" },
+      { k:"UI", t:"Underwriter Intelligence", d:"Intelligent underwriting",     c:"#AE46C0" },
+      { k:"explore", t:"Both / still exploring", d:"I want to understand the fit", c:"#7540AC" },
     ],
     roles: ["C-level (CEO / COO / CIO)","Head of Underwriting","Head of IT / Architecture","Head of Distribution","Product manager","Consultant / advisory","Other"],
     sizes: ["MGA (up to R$ 200M premium)","Mid-size insurer (R$ 200M – R$ 2B)","Tier-1 (R$ 2B+)","Reinsurer","Corporate brokerage","Other"],
@@ -159,8 +161,9 @@ Sent from the wirinnovation.ai website form`,
     heroLede: "Cada aseguradora opera diferente. En una conversación de 30 min con nuestros socios, calibramos qué tiene sentido para tu realidad — volumen, costo actual, apetito y estructura — y diseñamos juntos si un proyecto de implementación se justifica.",
     foundersNote: "Vas a hablar con uno de nosotros.",
     interests: [
-      { k:"SS", t:"Smart Sales",              d:"Distribución + lead scoring",  c:"#1C17FF" },
-      { k:"UI", t:"Underwriter Intelligence", d:"Suscripción inteligente",      c:"#A44F98" },
+      { k:"SS", t:"Smart Sales",              d:"Distribución + lead scoring",  c:"#3222E9" },
+      { k:"UI", t:"Underwriter Intelligence", d:"Suscripción inteligente",      c:"#AE46C0" },
+      { k:"explore", t:"Ambos / aún explorando", d:"Quiero entender qué encaja", c:"#7540AC" },
     ],
     roles: ["C-level (CEO / COO / CIO)","Head de Suscripción","Head de TI / Arquitectura","Head de Distribución","Gerente de producto","Consultor / advisory","Otro"],
     sizes: ["MGA (hasta R$ 200M de prima)","Aseguradora mediana (R$ 200M – R$ 2B)","Tier-1 (R$ 2B+)","Reaseguradora","Corredora corporativa","Otro"],
@@ -317,6 +320,8 @@ function ContactHero() {
 
 function ContactForm() {
   const [step, setStep] = React.useState(0);
+  const [furthest, setFurthest] = React.useState(0);
+  React.useEffect(() => { if (step > furthest) setFurthest(step); }, [step, furthest]);
   const [data, setData] = React.useState({
     interest: "", role: "", company: "", size: "",
     name: "", email: "", phone: "", notes: "",
@@ -482,19 +487,25 @@ function ContactForm() {
   return (
     <section className="ctform" data-reveal>
       <div className="wrap">
-        {/* Honeypot — humans never see/fill this; bots auto-fill all inputs */}
-        <input type="text" name="company_url" tabIndex="-1" autoComplete="off"
+        {/* Honeypot — name avoids "company_url" which password managers autofill */}
+        <input type="text" name="hp_field" tabIndex="-1" autoComplete="off"
           value={honey} onChange={(e) => setHoney(e.target.value)}
           aria-hidden="true"
           style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", opacity: 0, pointerEvents: "none" }}/>
         <div className="ctform__head">
           <div className="eyebrow">{T.formEyebrow}</div>
-          <div className="ctform__steps">
+          {/* Step pills are clickable buttons — users can jump back, and forward up to furthest visited */}
+          <div className="ctform__steps" role="list">
             {T.steps.map((s,i) => (
-              <div key={i} className={"ctform__step" + (i === step ? " is-active" : "") + (i < step ? " is-done" : "")}>
+              <button key={i} type="button"
+                role="listitem"
+                aria-current={i === step ? "step" : undefined}
+                disabled={i > furthest}
+                onClick={() => i <= furthest && setStep(i)}
+                className={"ctform__step" + (i === step ? " is-active" : "") + (i < step ? " is-done" : "")}>
                 <span className="num">0{i+1}</span>
                 <span>{s}</span>
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -530,7 +541,8 @@ function ContactForm() {
               </label>
               <label className="ctform__field">
                 <span>{T.fCompany}</span>
-                <input type="text" value={data.company} onChange={(e)=>update("company", e.target.value)} placeholder={T.fCompanyPh}/>
+                <input type="text" value={data.company} onChange={(e)=>update("company", e.target.value)} placeholder={T.fCompanyPh}
+                  required aria-required="true" autoComplete="organization"/>
               </label>
               <label className="ctform__field ctform__field--full">
                 <span>{T.fSize}</span>
@@ -552,15 +564,18 @@ function ContactForm() {
             <div className="ctform__fields">
               <label className="ctform__field">
                 <span>{T.fName}</span>
-                <input type="text" value={data.name} onChange={(e)=>update("name", e.target.value)} placeholder={T.fNamePh}/>
+                <input type="text" value={data.name} onChange={(e)=>update("name", e.target.value)} placeholder={T.fNamePh}
+                  required aria-required="true" autoComplete="name"/>
               </label>
               <label className="ctform__field">
                 <span>{T.fEmail}</span>
-                <input type="email" value={data.email} onChange={(e)=>update("email", e.target.value)} placeholder={T.fEmailPh}/>
+                <input type="email" value={data.email} onChange={(e)=>update("email", e.target.value)} placeholder={T.fEmailPh}
+                  required aria-required="true" autoComplete="email" inputMode="email"/>
               </label>
               <label className="ctform__field">
                 <span>{T.fPhone}</span>
-                <input type="tel" value={data.phone} onChange={(e)=>update("phone", e.target.value)} placeholder={T.fPhonePh}/>
+                <input type="tel" value={data.phone} onChange={(e)=>update("phone", e.target.value)} placeholder={T.fPhonePh}
+                  autoComplete="tel" inputMode="tel"/>
               </label>
               <label className="ctform__field ctform__field--full">
                 <span>{T.fNotes}</span>
