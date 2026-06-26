@@ -6,6 +6,7 @@ export const ARTICLES = [
   {
     slug: "camada-ia-vs-core-rpa-seguros",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/camada-ia-vs-core-rpa-seguros.jpg",
     title: "Camada de IA, RPA ou substituir o core: como integrar IA em seguros",
     sub: "Como integrar IA ao core da seguradora: comparacao entre substituir o core, RPA e uma camada de IA externa, por custo, risco, tempo e controle.",
     author: "WIR Innovation", role: "Equipe",
@@ -78,6 +79,7 @@ A WIR é a camada de IA externa que automatiza a jornada de cotação e subscri�
   {
     slug: "camada-ia-vs-core-rpa-seguros-en",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/camada-ia-vs-core-rpa-seguros-en.jpg",
     title: "AI integration for insurance core systems: layer vs core vs RPA",
     sub: "How to add AI to an insurer's core systems: core replacement vs RPA vs an external AI layer, compared by cost, risk, time to value, and control of underwriting.",
     author: "WIR Innovation", role: "Team",
@@ -148,6 +150,7 @@ The strongest option automates the quotation and underwriting journey according 
   {
     slug: "o-que-e-stp-seguros",
     cat: "Automação", grad: "linear-gradient(135deg,#7540AC,#FE8B77)",
+    image: "/assets/articles/o-que-e-stp-seguros.jpg",
     title: "O que é straight-through processing (STP) em seguros e o que é uma boa taxa de STP",
     sub: "Straight-through processing (STP) em seguros é processar uma submissão, da entrada à decisão vinculante, sem nenhum toque manual de um subscritor. Uma boa taxa de STP depende do ramo e da complexidade do risco, e uma camada de IA externa eleva esse índice sem migração de core.",
     author: "WIR Innovation", role: "Guia de automação",
@@ -203,6 +206,7 @@ A implantação não vira tudo para automático no primeiro dia. O setup roda de
   {
     slug: "o-que-e-stp-seguros-en",
     cat: "Automação", grad: "linear-gradient(135deg,#7540AC,#FE8B77)",
+    image: "/assets/articles/o-que-e-stp-seguros-en.jpg",
     title: "What is straight-through processing (STP) in insurance, and what is a good STP ratio",
     sub: "Straight-through processing (STP) in insurance is handling a submission, from intake to a bound decision, with no manual underwriter touch. A good STP ratio depends on the line and risk complexity, and an external AI layer raises it with no core migration.",
     author: "WIR Innovation", role: "Automation guide",
@@ -258,6 +262,7 @@ Deployment does not flip everything to automatic on day one. Setup runs 3 to 12 
   {
     slug: "validacao-automatica-dados-cnpj-seguros",
     cat: "Automação", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/validacao-automatica-dados-cnpj-seguros.jpg",
     title: "Validação automática de dados de CNPJ em submissões de seguros com IA",
     sub: "A validação automática de dados de CNPJ em submissões de seguros é a etapa em que uma camada de IA externa confirma o CNPJ do segurado e completa o risco com exposição, histórico do corretor e crédito antes da subscrição, sobre os sistemas que a seguradora já usa.",
     author: "WIR Innovation", role: "Guia de automação",
@@ -291,6 +296,7 @@ A WIR Innovation é a camada de IA do seguro. Uma plataforma de IA que opera sob
   {
     slug: "validacao-automatica-dados-cnpj-seguros-en",
     cat: "Automação", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/validacao-automatica-dados-cnpj-seguros-en.jpg",
     title: "Automatic external data validation for insurance submissions with AI",
     sub: "Automatic external data validation for insurance submissions is the stage where an external AI layer confirms and enriches the risk data before underwriting.",
     author: "WIR Innovation", role: "Automation guide",
@@ -324,6 +330,7 @@ WIR Innovation is the AI layer for insurance, an AI platform that sits on top of
   {
     slug: "substituir-rpa-ocr-ia-seguros",
     cat: "Automação", grad: "linear-gradient(135deg,#7540AC,#FE8B77)",
+    image: "/assets/articles/substituir-rpa-ocr-ia-seguros.jpg",
     title: "Como substituir RPA e OCR por uma camada de IA em seguros",
     sub: "Substituir RPA e OCR por uma camada de IA em seguros é trocar scripts frágeis e OCR de template por uma camada de IA externa que lê submissões em qualquer formato, enriquece o contexto do corretor, pontua risco e leva a leitura até a decisão de cotar, recusar ou escalar.",
     author: "WIR Innovation", role: "Guia de automação",
@@ -367,6 +374,7 @@ Os módulos da WIR sustentam essa esteira de ponta a ponta. O Underwriter Intell
   {
     slug: "substituir-rpa-ocr-ia-seguros-en",
     cat: "Automação", grad: "linear-gradient(135deg,#7540AC,#FE8B77)",
+    image: "/assets/articles/substituir-rpa-ocr-ia-seguros-en.jpg",
     title: "How to replace RPA and OCR with an AI layer in insurance",
     sub: "Replacing RPA and OCR with an AI layer in insurance means swapping brittle scripts and template extraction for an external AI platform that reads varied submissions, enriches broker context, scores risk against the underwriting manual, and routes a decision.",
     author: "WIR Innovation", role: "Automation guide",
@@ -420,6 +428,7 @@ WIR was built with Mahway, a Venture Builder in California, and Avante, a Ventur
   {
     slug: "reduzir-tarefas-administrativas-subscricao",
     cat: "Automação", grad: "linear-gradient(135deg,#FE8B77,#F8AD39)",
+    image: "/assets/articles/reduzir-tarefas-administrativas-subscricao.jpg",
     title: "Como reduzir tarefas administrativas na subscrição de seguros com uma camada de IA",
     sub: "Reduzir tarefas administrativas na subscrição de seguros com IA é transferir para uma camada de inteligência externa o trabalho operacional ao redor da decisão de risco, como triagem, leitura de documentos, validação, enriquecimento, roteamento e redação de justificativa, para que o subscritor foque na análise de risco.",
     author: "WIR Innovation", role: "Guia de automação",
@@ -471,6 +480,7 @@ O efeito sobre o tempo do subscritor liga aos números do painel de mercado da W
   {
     slug: "reduzir-tarefas-administrativas-subscricao-en",
     cat: "Automação", grad: "linear-gradient(135deg,#FE8B77,#F8AD39)",
+    image: "/assets/articles/reduzir-tarefas-administrativas-subscricao-en.jpg",
     title: "How to reduce administrative tasks in insurance underwriting with an AI layer",
     sub: "To reduce administrative tasks in insurance underwriting with AI, insurers add an external AI layer on top of their existing core.",
     author: "WIR Innovation", role: "Automation guide",
@@ -522,6 +532,7 @@ WIR was born from accumulated operational experience and is built with Mahway, a
   {
     slug: "risco-climatico-seguros-brasil",
     cat: "Mercado", grad: "linear-gradient(135deg,#F8AD39,#3222E9)",
+    image: "/assets/articles/risco-climatico-seguros-brasil.jpg",
     title: "Risco climático no seguro brasileiro e a precificação com IA",
     sub: "O risco climático no seguro no Brasil deixou de ser hipótese depois das enchentes do Rio Grande do Sul em maio de 2024, com perdas econômicas acima de R$9 bilhões.",
     author: "WIR Innovation", role: "Inteligência de mercado",
@@ -559,6 +570,7 @@ A direção do mercado é dada por pressões verificadas, não por otimismo de p
   {
     slug: "risco-climatico-seguros-brasil-en",
     cat: "Mercado", grad: "linear-gradient(135deg,#F8AD39,#3222E9)",
+    image: "/assets/articles/risco-climatico-seguros-brasil-en.jpg",
     title: "Climate risk in Brazilian insurance and AI-driven pricing",
     sub: "Climate risk in insurance in Brazil is the growing exposure of property, agro and infrastructure lines to extreme weather, which makes static historical-average pricing fragile for the hardest perils such as flood.",
     author: "WIR Innovation", role: "Market intelligence",
@@ -596,6 +608,7 @@ The direction of travel is set by pressure, not by forecast optimism. Extreme-we
   {
     slug: "seguro-cargas-transporte-brasil",
     cat: "Mercado", grad: "linear-gradient(135deg,#AE46C0,#F8AD39)",
+    image: "/assets/articles/seguro-cargas-transporte-brasil.jpg",
     title: "Seguro de transporte e cargas no Brasil e a virada da IA na subscrição",
     sub: "O seguro de transporte e cargas no Brasil é a linha de Seguros e Danos que cobre a carga em trânsito por rodovia, ferrovia, água e ar, e tem no roubo de carga o seu principal direcionador de sinistro.",
     author: "WIR Innovation", role: "Inteligência de mercado",
@@ -633,6 +646,7 @@ A direção da inteligência de subscrição no seguro brasileiro pode ser descr
   {
     slug: "seguro-cargas-transporte-brasil-en",
     cat: "Mercado", grad: "linear-gradient(135deg,#AE46C0,#F8AD39)",
+    image: "/assets/articles/seguro-cargas-transporte-brasil-en.jpg",
     title: "Cargo and transport insurance in Brazil and the AI shift in underwriting",
     sub: "Cargo and transport insurance in Brazil is a Seguros e Danos (P&C) line defined by cargo theft (roubo de carga), which makes route, cargo value, fleet, and gerenciamento de risco core rating factors.",
     author: "WIR Innovation", role: "Market intelligence",
@@ -684,6 +698,7 @@ The model inputs should improve over time. As tracking, telemetry, and route dat
   {
     slug: "seguro-cibernetico-brasil",
     cat: "Mercado", grad: "linear-gradient(135deg,#7540AC,#3222E9)",
+    image: "/assets/articles/seguro-cibernetico-brasil.jpg",
     title: "Seguro cibernético no Brasil e o desafio de subscrever risco digital",
     sub: "O seguro cibernético no Brasil é a linha que mais cresce em Seguros e Danos e, ao mesmo tempo, a mais difícil de precificar.",
     author: "WIR Innovation", role: "Inteligência de mercado",
@@ -721,6 +736,7 @@ O seguro cibernético no Brasil amadurece de uma linha boutique para um mercado 
   {
     slug: "seguro-cibernetico-brasil-en",
     cat: "Mercado", grad: "linear-gradient(135deg,#7540AC,#3222E9)",
+    image: "/assets/articles/seguro-cibernetico-brasil-en.jpg",
     title: "Cyber insurance in Brazil and the challenge of underwriting digital risk",
     sub: "Cyber insurance in Brazil is the fastest-growing line in Seguros e Danos (P&C), with premiums rising roughly 11x in five years per Guy Carpenter, yet it is the hardest line to price.",
     author: "WIR Innovation", role: "Market intelligence",
@@ -758,6 +774,7 @@ Brazilian cyber insurance is maturing from a boutique line into a structured mar
   {
     slug: "seguro-parametrico-brasil",
     cat: "Mercado", grad: "linear-gradient(135deg,#F8AD39,#FE8B77)",
+    image: "/assets/articles/seguro-parametrico-brasil.jpg",
     title: "Seguro paramétrico no Brasil e a inteligência por trás dos gatilhos",
     sub: "O seguro paramétrico no Brasil paga um valor fixo pré-acordado quando um índice mensurável, como chuva, vento ou nível de rio, cruza um limite definido em contrato, sem regulação de sinistro e com liquidação em dias.",
     author: "WIR Innovation", role: "Inteligência de mercado",
@@ -795,6 +812,7 @@ A leitura para quem decide é direta. Os drivers do paramétrico no Brasil são 
   {
     slug: "seguro-parametrico-brasil-en",
     cat: "Mercado", grad: "linear-gradient(135deg,#F8AD39,#FE8B77)",
+    image: "/assets/articles/seguro-parametrico-brasil-en.jpg",
     title: "Parametric insurance in Brazil and the intelligence behind triggers",
     sub: "Parametric insurance in Brazil pays a fixed, pre-agreed amount the moment a measured trigger crosses a defined threshold, such as rainfall, wind speed, river level, earthquake magnitude, or a satellite vegetation index, with no loss adjuster and settlement in days.",
     author: "WIR Innovation", role: "Market intelligence",
@@ -832,6 +850,7 @@ Parametric insurance in Brazil looks set to keep rising, and the constraint is o
   {
     slug: "telematica-seguro-auto-brasil",
     cat: "Mercado", grad: "linear-gradient(135deg,#3222E9,#FE8B77)",
+    image: "/assets/articles/telematica-seguro-auto-brasil.jpg",
     title: "Telemática no seguro de automóvel no Brasil",
     sub: "A telemática no seguro de automóvel no Brasil usa dados de comportamento de direção, captados por dispositivo ou aplicativo, para precificar e subscrever pelo risco observado, e não pelo perfil declarado.",
     author: "WIR Innovation", role: "Inteligência de mercado",
@@ -883,6 +902,7 @@ Em paralelo, a governança amadurece. Explicabilidade, auditabilidade e controle
   {
     slug: "telematica-seguro-auto-brasil-en",
     cat: "Mercado", grad: "linear-gradient(135deg,#3222E9,#FE8B77)",
+    image: "/assets/articles/telematica-seguro-auto-brasil-en.jpg",
     title: "Telematics in auto insurance in Brazil",
     sub: "Telematics in auto insurance in Brazil is the use of connected-vehicle and driving-behavior data, mileage, harsh braking, and time of day, to price and underwrite motor risk on observed behavior instead of static proxies.",
     author: "WIR Innovation", role: "Market intelligence",
@@ -934,6 +954,7 @@ Two forces will shape the next few years. As SUSEP's Open Insurance framework ma
   {
     slug: "esteira-subscricao-sem-toque-seguros",
     cat: "Subscrição", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/esteira-subscricao-sem-toque-seguros.jpg",
     title: "Esteira de subscrição sem toque para seguros com uma camada de IA",
     sub: "Uma esteira de subscrição sem toque para seguros com IA é um fluxo em que riscos de baixa complexidade dentro do apetite vão do intake à decisão sem intervenção manual, enquanto casos complexos escalam para o subscritor.",
     author: "WIR Innovation", role: "Guia de automação",
@@ -985,6 +1006,7 @@ A WIR nasceu de experiência operacional acumulada, construída com a Mahway, Ve
   {
     slug: "esteira-subscricao-sem-toque-seguros-en",
     cat: "Subscrição", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/esteira-subscricao-sem-toque-seguros-en.jpg",
     title: "Touchless underwriting pipeline for insurance with an AI layer",
     sub: "A touchless underwriting pipeline for insurance with AI is a straight-through flow where in-appetite, low-complexity risks move from intake to a bound decision with no manual step, while complex risks escalate to a human.",
     author: "WIR Innovation", role: "Automation guide",
@@ -1018,6 +1040,7 @@ WIR runs the whole touchless underwriting pipeline as an external AI layer, the 
   {
     slug: "triagem-automatica-submissoes-seguro",
     cat: "Automação", grad: "linear-gradient(135deg,#7540AC,#FE8B77)",
+    image: "/assets/articles/triagem-automatica-submissoes-seguro.jpg",
     title: "Triagem automática de submissões de seguros com uma camada de IA",
     sub: "A triagem automática de submissões de seguros com IA é a etapa que classifica e prioriza cada submissão no momento em que ela chega, antes da subscrição.",
     author: "WIR Innovation", role: "Guia de automação",
@@ -1069,6 +1092,7 @@ O contexto de mercado torna isso urgente. O mercado de Seguros e Danos cresce em
   {
     slug: "triagem-automatica-submissoes-seguro-en",
     cat: "Automação", grad: "linear-gradient(135deg,#7540AC,#FE8B77)",
+    image: "/assets/articles/triagem-automatica-submissoes-seguro-en.jpg",
     title: "Submission clearance and triage for insurers, with an AI layer",
     sub: "How insurers automate submission clearance and triage with an external AI layer on top of existing systems, prioritizing by appetite and exposure. See the stages.",
     author: "WIR Innovation", role: "Automation guide",
@@ -1146,6 +1170,7 @@ Yes. The output of triage is a prioritized, classified work queue with a visible
   {
     slug: "manifesto",
     cat: "Manifesto", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/manifesto.jpg",
     title: "A camada de IA do seguro",
     sub: "Existe um caminho que ninguém estava nomeando: não trocar o sistema, e sim colocar uma camada de IA por cima dele. Este é o manifesto da WIR.",
     author: "WIR Innovation", role: "Manifesto",
@@ -1192,6 +1217,7 @@ A WIR existe para liderar essa camada. Não vendemos tecnologia. Vendemos inova�
   {
     slug: "manifesto-en",
     cat: "Manifesto", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/manifesto-en.jpg",
     title: "The AI layer of insurance",
     sub: "There is a path no one was naming: don't replace the system — put an AI layer on top of it. This is WIR's manifesto.",
     author: "WIR Innovation", role: "Manifesto",
@@ -1238,6 +1264,7 @@ WIR exists to lead this layer. We don't sell technology. We sell innovation, spe
   {
     slug: "analise-preditiva-conversao-cotacao",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/analise-preditiva-conversao-cotacao.jpg",
     title: "Análise preditiva de conversão de cotação de seguros com uma camada de IA",
     sub: "Guia para seguradoras preverem a conversão de cotações por produto, risco e corretor com uma camada de IA externa sobre os sistemas atuais. Veja como priorizar.",
     author: "WIR Innovation", role: "Equipe",
@@ -1314,6 +1341,7 @@ Sim. Cada score de conversão expõe os fatores por trás dele, como histórico 
   {
     slug: "automatizar-renovacao-seguros-ia",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/automatizar-renovacao-seguros-ia.jpg",
     title: "Como automatizar a renovação de seguros com uma camada de IA",
     sub: "Guia para seguradoras automatizarem a renovação com uma camada de IA externa que repontua o risco e reprecifica, sobre os sistemas atuais. Veja as etapas.",
     author: "WIR Innovation", role: "Equipe",
@@ -1384,6 +1412,7 @@ Sim. A camada renova automaticamente os casos limpos e dentro do apetite, declin
   {
     slug: "automatizar-upsell-cross-sell-seguros",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/automatizar-upsell-cross-sell-seguros.jpg",
     title: "Como automatizar upsell e cross-sell de seguros com uma camada de IA",
     sub: "Guia para seguradoras automatizarem upsell e cross-sell com inteligência de distribuição por uma camada de IA externa, com trilha de atribuição. Veja como.",
     author: "WIR Innovation", role: "Equipe",
@@ -1456,6 +1485,7 @@ O mesmo motor que aumenta produtos por cliente também defende a carteira, porqu
   {
     slug: "declinio-automatico-cotacao-seguros",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/declinio-automatico-cotacao-seguros.jpg",
     title: "Declínio automático de cotação de seguros com uma camada de IA",
     sub: "Guia para seguradoras automatizarem o declínio de riscos fora do apetite com uma camada de IA externa, com motivo claro e trilha de auditoria. Veja como.",
     author: "WIR Innovation", role: "Equipe",
@@ -1528,6 +1558,7 @@ O corretor recebe uma decisão em tempo real, devolvida em segundos, em vez de d
   {
     slug: "escalonamento-humano-subscricao-seguros",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/escalonamento-humano-subscricao-seguros.jpg",
     title: "Escalonamento humano na subscrição automatizada de seguros com IA",
     sub: "Guia para seguradoras definirem quando a subscrição automatizada escala para um humano, com contexto, racional do modelo e trilha de auditoria. Veja como.",
     author: "WIR Innovation", role: "Equipe",
@@ -1600,6 +1631,7 @@ Sim. Os gatilhos são configuráveis por ramo, produto e nível de exposição. 
   {
     slug: "analise-preditiva-conversao-cotacao-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/analise-preditiva-conversao-cotacao-en.jpg",
     title: "Predictive quote conversion analysis for insurance with an AI layer",
     sub: "A guide for insurers predicting quote conversion by product, risk, and broker with an external AI layer on top of existing systems. See how to prioritize.",
     author: "WIR Innovation", role: "Team",
@@ -1670,6 +1702,7 @@ Yes. Every conversion score exposes the drivers behind it, for example broker hi
   {
     slug: "automatizar-renovacao-seguros-ia-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/automatizar-renovacao-seguros-ia-en.jpg",
     title: "How to automate insurance renewals with an AI layer",
     sub: "A guide for insurers automating renewals with an external AI layer that re-scores risk and re-prices, on top of existing systems. See the stages.",
     author: "WIR Innovation", role: "Team",
@@ -1742,6 +1775,7 @@ Yes. WIR auto-renews clean, in-appetite cases and refers the rest to a human und
   {
     slug: "automatizar-upsell-cross-sell-seguros-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/automatizar-upsell-cross-sell-seguros-en.jpg",
     title: "How to automate insurance upsell and cross-sell with an AI layer",
     sub: "A guide for insurers automating upsell and cross-sell with distribution intelligence via an external AI layer, with an attribution trail. See how.",
     author: "WIR Innovation", role: "Team",
@@ -1810,6 +1844,7 @@ Penetration, measured as products per client, and retention rise together becaus
   {
     slug: "declinio-automatico-cotacao-seguros-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/declinio-automatico-cotacao-seguros-en.jpg",
     title: "Automatic insurance quote decline with an AI layer",
     sub: "A guide for insurers automating the decline of out-of-appetite risks with an external AI layer, with a clear reason and audit trail. See how.",
     author: "WIR Innovation", role: "Team",
@@ -1876,6 +1911,7 @@ The broker gets a real-time reasoned answer instead of multi-day silence. WIR re
   {
     slug: "escalonamento-humano-subscricao-seguros-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/escalonamento-humano-subscricao-seguros-en.jpg",
     title: "Human-in-the-loop escalation in automated insurance underwriting with AI",
     sub: "A guide for insurers defining when automated underwriting escalates to a human, with context, model rationale, and an audit trail. See how.",
     author: "WIR Innovation", role: "Team",
@@ -1948,6 +1984,7 @@ Yes. Triggers are configurable by line, product, and exposure. Each line defines
   {
     slug: "dados-nao-estruturados-seguros-ia",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/dados-nao-estruturados-seguros-ia.jpg",
     title: "Dados não estruturados em seguros e a leitura inteligente com IA",
     sub: "Leitura do problema de dados não estruturados em seguros e da leitura inteligente com IA. Estado, drivers, risco, fraude e onde a WIR se posiciona.",
     author: "WIR Innovation", role: "Equipe",
@@ -2024,6 +2061,7 @@ Não. A WIR é uma camada de IA 100% externa, que se acopla aos sistemas atuais 
   {
     slug: "fraude-seguros-brasil-ia",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/fraude-seguros-brasil-ia.jpg",
     title: "Fraude em seguros no Brasil e a detecção com IA na subscrição",
     sub: "Como a detecção de fraude em seguros com IA no Brasil entra na subscrição, com score multifator explicável e auditável, sem trocar o core da seguradora.",
     author: "WIR Innovation", role: "Equipe",
@@ -2102,6 +2140,7 @@ Não. A WIR é a camada de IA do seguro, uma camada de inteligência 100% extern
   {
     slug: "lacuna-protecao-seguros-brasil",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/lacuna-protecao-seguros-brasil.jpg",
     title: "Lacuna de proteção no seguro brasileiro e o papel da IA em fechá-la",
     sub: "Por que a penetração de seguros no Brasil segue baixa apesar do crescimento de dois dígitos e como a IA acelera a subscrição para fechar a lacuna de proteção.",
     author: "WIR Innovation", role: "Equipe",
@@ -2178,6 +2217,7 @@ Não. A WIR é a camada de IA externa que opera sobre os sistemas atuais da segu
   {
     slug: "open-insurance-brasil-seguradoras",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/open-insurance-brasil-seguradoras.jpg",
     title: "Open Insurance Brasil e o que muda para as seguradoras",
     sub: "Como o Open Insurance Brasil e o compartilhamento de dados mudam a subscrição, o scoring de risco e a precificação em Seguros e Danos, com IA auditável.",
     author: "WIR Innovation", role: "Equipe",
@@ -2260,6 +2300,7 @@ O regime foi desenhado para trazer inovação ao sistema de seguros, estimular c
   {
     slug: "regulacao-ia-seguros-susep",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/regulacao-ia-seguros-susep.jpg",
     title: "Regulação da IA em seguros no Brasil e a exigência de explicabilidade",
     sub: "Leitura da regulação de IA em seguros no Brasil e da exigência de explicabilidade. Estado, drivers, risco e fraude, e onde a WIR se posiciona.",
     author: "WIR Innovation", role: "Equipe",
@@ -2330,6 +2371,7 @@ Não. A WIR não substitui o core. É a camada de IA externa que se assenta sobr
   {
     slug: "dados-nao-estruturados-seguros-ia-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/dados-nao-estruturados-seguros-ia-en.jpg",
     title: "Unstructured data in insurance and intelligent reading with AI",
     sub: "Unstructured data in insurance and AI: intelligent document reading turns messy submissions into structured fields for faster, auditable P&C underwriting.",
     author: "WIR Innovation", role: "Team",
@@ -2404,6 +2446,7 @@ No, WIR does not replace the core to structure the data. WIR is the external AI 
   {
     slug: "fraude-seguros-brasil-ia-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/fraude-seguros-brasil-ia-en.jpg",
     title: "Insurance fraud in Brazil and AI detection at underwriting",
     sub: "How AI detects insurance fraud in Brazil at underwriting, with explainable, auditable multi-factor scoring and no core system replacement.",
     author: "WIR Innovation", role: "Team",
@@ -2476,6 +2519,7 @@ No. WIR does not replace the core. It is an external AI intelligence layer that 
   {
     slug: "lacuna-protecao-seguros-brasil-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/lacuna-protecao-seguros-brasil-en.jpg",
     title: "The insurance protection gap in Brazil and the role of AI in closing it",
     sub: "Why Brazil's insurance protection gap stays wide despite double-digit growth, and how AI speeds underwriting and distribution to help close it.",
     author: "WIR Innovation", role: "Team",
@@ -2546,6 +2590,7 @@ No. WIR never replaces the core. It is an external AI layer that sits on top of 
   {
     slug: "open-insurance-brasil-seguradoras-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/open-insurance-brasil-seguradoras-en.jpg",
     title: "Open Insurance Brazil for insurers: what changes",
     sub: "How Open Insurance Brazil and SUSEP-led data sharing reshape underwriting, risk scoring, fraud detection, and pricing in P&C, with explainable, auditable AI.",
     author: "WIR Innovation", role: "Team",
@@ -2632,6 +2677,7 @@ For policyholders, Open Insurance Brazil aims to bring more competition, better 
   {
     slug: "regulacao-ia-seguros-susep-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/regulacao-ia-seguros-susep-en.jpg",
     title: "AI regulation in Brazilian insurance and the demand for explainability",
     sub: "A read on AI regulation in insurance in Brazil and the demand for explainability. SUSEP, the LGPD, and how WIR keeps underwriting AI auditable.",
     author: "WIR Innovation", role: "Team",
@@ -2700,6 +2746,7 @@ No. WIR does not replace the insurer's core. It is the external AI layer that si
   {
     slug: "automatizar-cotacao-seguros",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/automatizar-cotacao-seguros.jpg",
     title: "Como automatizar a cotação de seguros com uma camada de IA",
     sub: "Guia para automatizar a cotação de seguros com IA. Leitura de submissões, scoring de risco, precificação e SLA visível ao corretor, sobre o core atual.",
     author: "WIR Innovation", role: "Equipe",
@@ -2770,6 +2817,7 @@ Sim. A entrada é multicanal com validação automática, aceitando e-mail, anex
   {
     slug: "automatizar-subscricao-seguro-transporte",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/automatizar-subscricao-seguro-transporte.jpg",
     title: "Como automatizar a subscrição de seguro de transporte com IA",
     sub: "Guia para seguradoras automatizarem a subscrição do seguro de transporte com uma camada de IA externa, calibrada ao apetite, sobre os sistemas atuais. Fale com a WIR.",
     author: "WIR Innovation", role: "Equipe",
@@ -2840,6 +2888,7 @@ A tração pública da WIR no ramo é uma POC em execução com uma seguradora g
   {
     slug: "automatizar-subscricao-seguros",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/automatizar-subscricao-seguros.jpg",
     title: "Como automatizar a subscrição de seguros com uma camada de IA",
     sub: "Guia para seguradoras automatizarem a jornada de cotação e subscrição com uma camada de IA externa, sobre os sistemas atuais, sem trocar o core. Veja as etapas.",
     author: "WIR Innovation", role: "Equipe",
@@ -2908,6 +2957,7 @@ Não. A WIR é 100% externa e não impõe carga ao TI da seguradora, porque não
   {
     slug: "decisoes-subscricao-auditaveis",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/decisoes-subscricao-auditaveis.jpg",
     title: "Decisões de subscrição auditáveis com uma camada de IA",
     sub: "Como manter cada decisão de subscrição automatizada explicável e auditável com uma camada de IA externa, calibrada ao manual de subscrição e aderente à LGPD.",
     author: "WIR Innovation", role: "Equipe",
@@ -2976,6 +3026,7 @@ Sim. A sexta etapa da esteira decide cotar, recusar de forma automática ou esca
   {
     slug: "enriquecimento-corretor-priorizacao",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/enriquecimento-corretor-priorizacao.jpg",
     title: "Enriquecimento e priorização de corretores com uma camada de IA",
     sub: "Guia para seguradoras enriquecerem e priorizarem corretores com uma camada de IA externa: score, CNPJ, histórico de conversão e exposição. Veja como, sem trocar o core.",
     author: "WIR Innovation", role: "Equipe",
@@ -3046,6 +3097,7 @@ A priorização transforma a triagem por ordem de chegada em atenção dirigida 
   {
     slug: "integrar-camada-ia-core-seguros",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/integrar-camada-ia-core-seguros.jpg",
     title: "Como integrar uma camada de IA ao core da seguradora sem migração",
     sub: "Guia para seguradoras integrarem uma camada de IA externa ao core atual, sem migração e sem projeto de TI próprio, com go-live em meses. Veja como.",
     author: "WIR Innovation", role: "Equipe",
@@ -3110,6 +3162,7 @@ Depois do go-live, a operação contínua mantém a camada rodando como serviço
   {
     slug: "leitura-inteligente-submissoes-seguro",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/leitura-inteligente-submissoes-seguro.jpg",
     title: "Leitura inteligente de submissões de seguro com uma camada de IA",
     sub: "Guia para seguradoras automatizarem a leitura de submissões e a extração de dados de cotação com uma camada de IA externa, sobre os sistemas atuais. Veja como.",
     author: "WIR Innovation", role: "Equipe",
@@ -3172,6 +3225,7 @@ Não. A WIR entra como camada de IA externa, sobre os sistemas que a seguradora 
   {
     slug: "motor-risco-fraude-seguros",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/motor-risco-fraude-seguros.jpg",
     title: "Motor de risco e fraude para seguradoras com uma camada de IA",
     sub: "Como uma camada de IA externa pontua risco e tria fraude na subscrição, calibrada ao apetite e ao manual, sem trocar o core. Fale com a WIR.",
     author: "WIR Innovation", role: "Equipe",
@@ -3234,6 +3288,7 @@ O setup roda de 3 a 12 meses, com escopo claro e KPIs acordados antes do início
   {
     slug: "precificacao-dinamica-seguros",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/precificacao-dinamica-seguros.jpg",
     title: "Precificação dinâmica de seguros com uma camada de IA",
     sub: "Como seguradoras automatizam a precificação dinâmica de seguros com IA, prêmio ajustado a risco em tempo real sobre os sistemas atuais. Veja como funciona.",
     author: "WIR Innovation", role: "Equipe",
@@ -3302,6 +3357,7 @@ O setup da plataforma roda em 3 a 12 meses, com escopo claro e KPIs acordados an
   {
     slug: "processar-email-cotacao-automatico",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/processar-email-cotacao-automatico.jpg",
     title: "Como processar e-mails de cotação de seguro automaticamente com IA",
     sub: "Como uma camada de IA externa lê e-mails e anexos de cotação, extrai e valida os dados e alimenta a subscrição em Seguros e Danos, sem trocar o core.",
     author: "WIR Innovation", role: "Equipe",
@@ -3362,6 +3418,7 @@ Sim. Com a WIR, o processamento é aderente à LGPD, a Lei nº 13.709 de 2018, e
   {
     slug: "proxima-melhor-acao-seguradoras",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/proxima-melhor-acao-seguradoras.jpg",
     title: "Próxima melhor ação para seguradoras com uma camada de IA",
     sub: "Como seguradoras automatizam a próxima melhor ação e o upsell com uma camada de IA externa, sobre os sistemas atuais. Mapeie a carteira e prove atribuição.",
     author: "WIR Innovation", role: "Equipe",
@@ -3432,6 +3489,7 @@ Na prática da WIR, o setup roda de 3 a 12 meses, com escopo claro e KPIs acorda
   {
     slug: "reduzir-tempo-resposta-cotacao-corretor",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/reduzir-tempo-resposta-cotacao-corretor.jpg",
     title: "Como reduzir o tempo de resposta de cotação para o corretor com IA",
     sub: "Guia para a seguradora reduzir o tempo de resposta de cotação ao corretor com uma camada de IA externa e SLA visível, sobre os sistemas atuais. Veja como.",
     author: "WIR Innovation", role: "Equipe",
@@ -3502,6 +3560,7 @@ Sim. Toda cotação, recusa ou escalonamento automatizado carrega as razões e o
   {
     slug: "roteamento-automatico-subscricao",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/roteamento-automatico-subscricao.jpg",
     title: "Roteamento automático de subscrição com uma camada de IA",
     sub: "Guia para seguradoras automatizarem o roteamento de submissões por apetite e exposição, com fila do subscritor e SLA visível, sobre os sistemas atuais.",
     author: "WIR Innovation", role: "Equipe",
@@ -3568,6 +3627,7 @@ O setup leva de 3 a 12 meses, com escopo claro e KPIs acordados antes do início
   {
     slug: "automatizar-cotacao-seguros-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/automatizar-cotacao-seguros-en.jpg",
     title: "Insurance quote automation with an AI layer",
     sub: "Insurance quote automation with an external AI layer that reads submissions, scores risk, prices, and returns a broker-visible SLA. No core migration.",
     author: "WIR Innovation", role: "Team",
@@ -3630,6 +3690,7 @@ Yes. WIR accepts e-mail, PDF, image, and spreadsheet through the channels the br
   {
     slug: "automatizar-subscricao-seguro-transporte-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/automatizar-subscricao-seguro-transporte-en.jpg",
     title: "How to automate transport insurance underwriting with AI",
     sub: "How insurers automate transport (cargo) underwriting with an external AI layer that reads submissions, scores route and cargo risk, and prices to appetite, no core migration.",
     author: "WIR Innovation", role: "Team",
@@ -3690,6 +3751,7 @@ WIR's relevant public traction for this line is a first POC in execution with a 
   {
     slug: "automatizar-subscricao-seguros-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/automatizar-subscricao-seguros-en.jpg",
     title: "How to automate insurance underwriting with an AI layer",
     sub: "A practical guide to automate insurance underwriting with an external AI layer on top of your core. The 6-stage flow, deployment path, governance, and LGPD.",
     author: "WIR Innovation", role: "Team",
@@ -3762,6 +3824,7 @@ No. WIR is an external AI layer, not a system migration and not an IT project th
   {
     slug: "decisoes-subscricao-auditaveis-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/decisoes-subscricao-auditaveis-en.jpg",
     title: "Auditable underwriting decisions with an AI layer",
     sub: "How insurers keep every automated underwriting decision explainable and auditable with an external AI layer, calibrated to risk policy and LGPD compliant.",
     author: "WIR Innovation", role: "Team",
@@ -3836,6 +3899,7 @@ Yes. Borderline or out-of-appetite risks escalate to a human underwriter rather 
   {
     slug: "enriquecimento-corretor-priorizacao-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/enriquecimento-corretor-priorizacao-en.jpg",
     title: "Broker enrichment and prioritization with an AI layer",
     sub: "How insurers enrich and prioritize brokers with an external AI layer: broker scoring, CNPJ, conversion history, and exposure, without replacing the core. See how.",
     author: "WIR Innovation", role: "Team",
@@ -3904,6 +3968,7 @@ Prioritization scores and ranks each submission at intake, so underwriters start
   {
     slug: "integrar-camada-ia-core-seguros-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/integrar-camada-ia-core-seguros-en.jpg",
     title: "How to integrate an AI layer with the insurance core without migration",
     sub: "How to integrate an AI layer with the insurance core without migration: 100% external, reads and writes via API, no IT load, and go-live in months.",
     author: "WIR Innovation", role: "Team",
@@ -3976,6 +4041,7 @@ After go-live the layer keeps running as continuous operation, an external servi
   {
     slug: "leitura-inteligente-submissoes-seguro-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/leitura-inteligente-submissoes-seguro-en.jpg",
     title: "Intelligent document reading for insurance submissions with an AI layer",
     sub: "How insurers automate intelligent document reading for submissions with an external AI layer on top of existing systems, no core migration. See how it works.",
     author: "WIR Innovation", role: "Team",
@@ -4038,6 +4104,7 @@ No. WIR is an external AI layer that sits on top of existing systems, with no co
   {
     slug: "motor-risco-fraude-seguros-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/motor-risco-fraude-seguros-en.jpg",
     title: "Insurance risk and fraud engine with an AI layer",
     sub: "How an external AI layer scores risk and flags fraud inside underwriting, calibrated to appetite and manual, with a full audit trail and no core migration. Talk to WIR.",
     author: "WIR Innovation", role: "Team",
@@ -4102,6 +4169,7 @@ WIR structures deployment as a one-time setup that runs 3 to 12 months, with a f
   {
     slug: "precificacao-dinamica-seguros-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/precificacao-dinamica-seguros-en.jpg",
     title: "Dynamic insurance pricing with an AI layer",
     sub: "How insurers automate real-time, risk-adjusted P&C pricing with an external AI layer on top of the core, calibrated to appetite and auditable under LGPD. See how.",
     author: "WIR Innovation", role: "Team",
@@ -4174,6 +4242,7 @@ Setup runs 3 to 12 months as a fixed-scope implementation, with KPIs agreed befo
   {
     slug: "processar-email-cotacao-automatico-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/processar-email-cotacao-automatico-en.jpg",
     title: "How to automatically process insurance quote e-mails with AI",
     sub: "How an external AI layer reads insurance quote e-mails and attachments, extracts and validates the data, and feeds P&C underwriting without replacing the core.",
     author: "WIR Innovation", role: "Team",
@@ -4238,6 +4307,7 @@ Yes. Processing is governed by Brazil's Lei Geral de Proteção de Dados and res
   {
     slug: "proxima-melhor-acao-seguradoras-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/proxima-melhor-acao-seguradoras-en.jpg",
     title: "Next-best-action for insurers with an AI layer",
     sub: "How insurers automate next-best-action and upsell scoring with an external AI layer on top of existing systems, no core replacement. See how Smart Sales works.",
     author: "WIR Innovation", role: "Team",
@@ -4300,6 +4370,7 @@ With WIR, setup runs 3 to 12 months as a fixed-scope engagement with KPIs agreed
   {
     slug: "reduzir-tempo-resposta-cotacao-corretor-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/reduzir-tempo-resposta-cotacao-corretor-en.jpg",
     title: "How to reduce quote response time for brokers with AI",
     sub: "How insurers reduce quote response time for brokers with an external AI layer and a visible SLA, on top of existing systems, never replacing the core.",
     author: "WIR Innovation", role: "Team",
@@ -4368,6 +4439,7 @@ Yes. Faster decisions do not mean opaque ones. Every automated quote, decline, o
   {
     slug: "roteamento-automatico-subscricao-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/roteamento-automatico-subscricao-en.jpg",
     title: "Automatic underwriting routing with an AI layer",
     sub: "How insurers automate submission triage with an external AI layer that routes by appetite and exposure, prioritizes the underwriter queue, and keeps a visible SLA.",
     author: "WIR Innovation", role: "Team",
@@ -4440,6 +4512,7 @@ With WIR, setup runs 3 to 12 months as a one-time implementation with fixed pric
   {
     slug: "inteligencia-de-subscricao-brasil",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/inteligencia-de-subscricao-brasil.jpg",
     title: "A inteligência de subscrição no mercado de seguros brasileiro",
     sub: "Leitura da inteligência de subscrição e da adoção de IA no mercado de Seguros e Danos no Brasil: estado, drivers, fraude, pricing e onde a WIR se posiciona.",
     author: "WIR Innovation", role: "Equipe",
@@ -4516,6 +4589,7 @@ Nenhuma das duas. A WIR é a camada de IA externa para seguradoras e corretores,
   {
     slug: "inteligencia-de-subscricao-brasil-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/inteligencia-de-subscricao-brasil-en.jpg",
     title: "Underwriting intelligence in the Brazilian insurance market",
     sub: "How AI and Machine Learning reshape P&C underwriting in Brazil: market state, drivers, fraud, pricing, and the external AI layer over legacy core systems.",
     author: "WIR Innovation", role: "Team",
@@ -4584,7 +4658,7 @@ WIR is neither an insurer nor a broker, and it is not an MGA. WIR is the externa
   {
     slug: "o-underwriter-nao-morre",
     cat: "Ensaio", hero: true, grad: "linear-gradient(135deg,#3222E9,#7540AC)",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80&auto=format&fit=crop",
+    image: "/assets/articles/o-underwriter-nao-morre.jpg",
     imageAlt: "Underwriter analisando documentos em mesa de trabalho",
     title: "O underwriter não morre. O modelo operacional dele, sim.",
     sub: "Por que a próxima década do seguro vai ser definida pela divisão entre quem tem infraestrutura de decisão e quem ainda mora em planilha.",
@@ -4685,7 +4759,7 @@ O modelo operacional dele, sim.
   {
     slug: "explicabilidade-alem-de-shap",
     cat: "Técnico", grad: "linear-gradient(135deg,#7540AC,#FE8B77)",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop",
+    image: "/assets/articles/explicabilidade-alem-de-shap.jpg",
     imageAlt: "Visualização abstrata de camadas de dados e analytics",
     title: "Explicabilidade que vai além do SHAP",
     sub: "Por que a ferramenta favorita de explicabilidade do data scientist não chega para responder ao regulador. As 4 camadas que tornam uma decisão de seguro defensável.",
@@ -4762,7 +4836,7 @@ SHAP fica. Mas como uma das ferramentas, não como a resposta. A discussão comp
   {
     slug: "caso-implementacao-mahway",
     cat: "Caso", grad: "linear-gradient(135deg,#FE8B77,#F8AD39)",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80&auto=format&fit=crop",
+    image: "/assets/articles/caso-implementacao-mahway.jpg",
     imageAlt: "Gráficos de crescimento e métricas de negócio",
     title: "Como uma seguradora portfólio Mahway reduziu seu ciclo de cotação em ordens de grandeza",
     sub: "Estudo de caso da primeira implementação completa da stack WIR. O que funcionou, o que não funcionou, e os números reais.",
@@ -4830,7 +4904,7 @@ Para qualquer operação considerando o caminho similar: o primeiro investimento
   {
     slug: "mgas-ponta-da-lanca",
     cat: "Mercado", grad: "linear-gradient(135deg,#F8AD39,#3222E9)",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1600&q=80&auto=format&fit=crop",
+    image: "/assets/articles/mgas-ponta-da-lanca.jpg",
     imageAlt: "Equipe de startup trabalhando em escritório moderno",
     title: "Por que MGAs são a ponta da lança da IA em seguro",
     sub: "Estrutura enxuta, apetite próprio e fome de capacidade. A combinação que faz MGAs adotarem IA mais rápido que Tier-1 — e por que essa vantagem é estrutural.",
@@ -4892,7 +4966,7 @@ A vantagem competitiva da MGA não está no produto — está na arquitetura org
   {
     slug: "llms-vs-motores-de-regras",
     cat: "Técnico", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80&auto=format&fit=crop",
+    image: "/assets/articles/llms-vs-motores-de-regras.jpg",
     imageAlt: "Circuitos e arquitetura computacional abstrata",
     title: "LLMs não substituem motores de regras — eles os complementam",
     sub: "A arquitetura híbrida da WIR. Quando LLM decide, quando rule engine decide, e como os dois conversam em decisões críticas.",
@@ -4963,7 +5037,7 @@ LLMs interpretam. Regras enforçam. Modelos tabulares scoream. A decisão críti
   {
     slug: "falsa-dicotomia-velocidade-compliance",
     cat: "Ensaio", grad: "linear-gradient(135deg,#AE46C0,#F8AD39)",
-    image: "https://images.unsplash.com/photo-1454165205744-3b78555e5572?w=1600&q=80&auto=format&fit=crop",
+    image: "/assets/articles/falsa-dicotomia-velocidade-compliance.jpg",
     imageAlt: "Arquitetura moderna em equilíbrio simétrico",
     title: "A falsa dicotomia entre velocidade e compliance",
     sub: "A indústria insiste em \"ou rápido OU em compliance\". Isso é arquitetura ruim, não trade-off real. Como auditabilidade nativa elimina a escolha.",
@@ -5027,7 +5101,7 @@ A escolha verdadeira não é entre velocidade e compliance. É entre arquitetura
   {
     slug: "custo-invisivel-stp-mal-feito",
     cat: "Mercado", grad: "linear-gradient(135deg,#7540AC,#3222E9)",
-    image: "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=1600&q=80&auto=format&fit=crop",
+    image: "/assets/articles/custo-invisivel-stp-mal-feito.jpg",
     imageAlt: "Iceberg com porção oculta sob a água — risco invisível",
     title: "O custo invisível do straight-through processing mal feito",
     sub: "STP sem auditabilidade cria risco regulatório, reputacional e de carteira. Checklist de 9 itens para verificar antes de escalar.",
@@ -5093,7 +5167,7 @@ STP feito direito é vantagem competitiva durável. STP feito mal é dívida ope
   {
     slug: "tres-formatos-pdf-quebravam",
     cat: "Caso", grad: "linear-gradient(135deg,#F8AD39,#FE8B77)",
-    image: "https://images.unsplash.com/photo-1568667256549-094345857637?w=1600&q=80&auto=format&fit=crop",
+    image: "/assets/articles/tres-formatos-pdf-quebravam.jpg",
     imageAlt: "Pilha de documentos e papelada de seguros",
     title: "Três formatos de PDF que quebravam submissões — e como resolvemos",
     sub: "Do OCR ingênuo ao parsing semântico. Os PDFs específicos que destruíam extrações até a virada técnica.",
@@ -5160,7 +5234,7 @@ Terceiro: validação importa mais que extração. O custo de uma extração err
   {
     slug: "observabilidade-de-agentes",
     cat: "Técnico", grad: "linear-gradient(135deg,#3222E9,#FE8B77)",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop&sat=-100",
+    image: "/assets/articles/observabilidade-de-agentes.jpg",
     imageAlt: "Múltiplas telas com dashboards de monitoramento",
     title: "Observabilidade de decisões de IA no seguro: como auditar a subscrição automatizada",
     sub: "Toda decisão de IA na subscrição automatizada precisa de uma trilha de auditoria. Veja como observar e explicar o que o modelo decide.",
