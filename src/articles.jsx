@@ -2747,11 +2747,11 @@ No. WIR does not replace the insurer's core. It is the external AI layer that si
     slug: "automatizar-cotacao-seguros",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/automatizar-cotacao-seguros.jpg",
-    title: "Como automatizar a cotação de seguros com uma camada de IA",
-    sub: "Guia para automatizar a cotação de seguros com IA. Leitura de submissões, scoring de risco, precificação e SLA visível ao corretor, sobre o core atual.",
+    title: "Automação de cotação de seguros com plataforma de IA",
+    sub: "Automação de cotação de seguros: uma plataforma de IA externa lê a submissão, pontua o risco e devolve cotação com SLA visível ao corretor, sobre o core atual.",
     author: "WIR Innovation", role: "Equipe",
     time: "9 min", date: "02 · Jun · 2026",
-    metaDesc: "Guia para automatizar a cotação de seguros com IA. Leitura de submissões, scoring de risco, precificação e SLA visível ao corretor, sobre o core atual.",
+    metaDesc: "Automação de cotação de seguros: uma plataforma de IA externa lê a submissão, pontua o risco e devolve cotação com SLA visível ao corretor, sobre o core atual.",
     body: `### O que é automatizar a cotação de seguros com uma camada de IA
 
 Saber como automatizar a cotação de seguros com IA significa colocar uma camada de inteligência sobre os sistemas que a seguradora já usa, para receber a submissão do corretor, ler e estruturar os dados, pontuar o risco e devolver uma cotação ajustada ao apetite, uma recusa ou um encaminhamento para o subscritor, tudo em tempo real. Essa camada não troca o core nem exige migração. Ela lê e escreve no sistema de apólices por API, então a seguradora mantém sua fonte de verdade e ganha velocidade na resposta.
