@@ -163,6 +163,54 @@ export function Manifesto({ go }) {
   );
 }
 
+// Na mídia — earned-media credibility band. Borrows third-party press authority
+// onto our own domain. PRESS_ITEMS is an array so new coverage drops straight in.
+const PRESS = {
+  pt: { eyebrow: "· Na mídia", title: <>O mercado <em>já está falando</em> sobre a WIR.</>, read: "Ler a matéria" },
+  en: { eyebrow: "· In the press", title: <>The market <em>is already talking</em> about WIR.</>, read: "Read the article" },
+  es: { eyebrow: "· En los medios", title: <>El mercado <em>ya está hablando</em> de WIR.</>, read: "Leer la nota" },
+}[LANG];
+
+const PRESS_ITEMS = [
+  {
+    outlet: "Sonho Seguro",
+    author: "Denise Bueno",
+    date: "Jul 2026",
+    headline: "WIR Innovation quer acelerar uso de IA no mercado de seguros",
+    href: "https://www.sonhoseguro.com.br/2026/07/wir-innovation-quer-acelerar-uso-de-ia-no-mercado-de-seguros/",
+  },
+];
+
+export function Press() {
+  return (
+    <section className="press bg-editorial bg-editorial--c" data-reveal>
+      <div className="wrap">
+        <div className="press__head">
+          <div className="eyebrow">{PRESS.eyebrow}</div>
+          <h2 className="press__title display">{PRESS.title}</h2>
+        </div>
+        <ul className="press__list">
+          {PRESS_ITEMS.map((it, i) => (
+            <li key={i} className="press__item">
+              <a className="press__link-wrap" href={it.href} target="_blank" rel="noopener">
+                <div className="press__meta">
+                  <span className="press__outlet">{it.outlet}</span>
+                  <span className="press__dot" aria-hidden="true">·</span>
+                  <span className="press__by">{it.author}</span>
+                  <span className="press__dot" aria-hidden="true">·</span>
+                  <span className="press__date">{it.date}</span>
+                </div>
+                <p className="press__quote">“{it.headline}”</p>
+                <span className="press__cta">{PRESS.read} <span aria-hidden="true">↗</span></span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 export function HomePage({ go }) {
   useReveal();
   return (
@@ -173,6 +221,7 @@ export function HomePage({ go }) {
       <ProductTabs go={go}/>
       <ArchFlow/>
       <Proof go={go}/>
+      <Press/>
       <MidCta go={go}/>
       <Manifesto go={go}/>
       <Closing go={go}/>

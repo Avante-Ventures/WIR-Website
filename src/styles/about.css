@@ -267,3 +267,7 @@
   .abfaq__q { grid-template-columns: 40px 1fr 32px; gap: 12px; }
   .abfaq__a p { padding-left: 52px; padding-right: 0; }
 }
+
+/* h3 semantic upgrade for founder names — neutralize UA h3 margin/weight so
+   the .abteam__name class fully controls appearance (SEO: names as headings). */
+h3.abteam__name { margin-top: 0; font-weight: 400; }

@@ -1778,3 +1778,54 @@
   .calc__split { grid-template-columns: 1fr; }
   .calc__col--manual { border-right: none; border-bottom: 1px solid rgba(255,255,255,.06); }
 }
+
+/* ─────────────────────────────────────────
+   06.6 · NA MÍDIA / IN THE PRESS
+   Earned-media band — third-party press authority on our own domain.
+   ───────────────────────────────────────── */
+.press {
+  padding: 72px 0;
+  background: var(--paper);
+  border-bottom: 1px solid rgba(11,10,8,.08);
+}
+.press__head { margin-bottom: 36px; max-width: 720px; }
+.press__title {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.1; letter-spacing: -0.01em;
+  color: var(--ink); margin-top: 12px;
+}
+.press__title em { font-style: italic; color: var(--wir-purple); }
+.press__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.press__item { border-top: 1px solid rgba(11,10,8,.10); }
+.press__item:last-child { border-bottom: 1px solid rgba(11,10,8,.10); }
+.press__link-wrap {
+  display: block; padding: 28px 0 26px;
+  text-decoration: none; color: inherit;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+.press__link-wrap:hover { opacity: .82; }
+.press__meta {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.press__outlet { color: var(--wir-purple); font-weight: 600; }
+.press__dot { color: var(--ink-4); }
+.press__quote {
+  font-family: var(--f-display); font-style: italic;
+  font-size: clamp(22px, 2.6vw, 32px); line-height: 1.18;
+  color: var(--ink); letter-spacing: -0.01em;
+  margin: 14px 0 18px; max-width: 900px;
+}
+.press__cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--f-mono); font-size: 13px; font-weight: 600;
+  letter-spacing: .04em; color: var(--ink);
+  border-bottom: 1px solid var(--ink); padding-bottom: 4px;
+  transition: color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+.press__link-wrap:hover .press__cta { color: var(--wir-purple); border-bottom-color: var(--wir-purple); }
+@media (max-width: 600px) {
+  .press__meta { flex-wrap: wrap; gap: 6px; }
+}

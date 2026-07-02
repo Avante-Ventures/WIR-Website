@@ -550,7 +550,7 @@ function AboutTeam() {
                 <span className="abteam__photo-overlay"/>
               </div>
               <div className="abteam__body">
-                <div className="abteam__name display">{f.name}</div>
+                <h3 className="abteam__name display">{f.name}</h3>
                 <div className="abteam__role">{f.role}</div>
                 <ul className="abteam__bullets">
                   {f.bullets.map((b,j) => <li key={j}><span className="abteam__bu"/>{b}</li>)}
