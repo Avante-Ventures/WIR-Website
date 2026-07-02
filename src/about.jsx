@@ -648,7 +648,7 @@ function AboutPartners() {
             </div>
           </div>
           <div className="abpart__card">
-            <div className="abpart__logo display"><em>Avante</em></div>
+            <div className="abpart__logo display"><a href="https://avanteventures.com/" target="_blank" rel="noopener"><em>Avante</em></a></div>
             <div className="abpart__tag">{T.avanteTag}</div>
             <p>
               {T.avanteP}
