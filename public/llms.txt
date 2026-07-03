@@ -13,6 +13,7 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 
 ## Ensaios técnicos e guias (Insights · PT-BR)
 
+- [A nova era do mercado de seguros com IA: como as seguradoras podem se preparar](https://wirinnovation.ai/insights/nova-era-seguros-ia-como-se-preparar/): Como se preparar para a nova era do mercado de seguros com IA: camada de IA sobre o core, o subscritor que decide e a velocidade que cresce o mercado.
 - [Camada de IA, RPA ou substituir o core: como integrar IA em seguros](https://wirinnovation.ai/insights/camada-ia-vs-core-rpa-seguros/): Como integrar IA ao core da seguradora: comparacao entre substituir o core, RPA e uma camada de IA externa, por custo, risco, tempo e controle.
 - [O que é straight-through processing (STP) em seguros e o que é uma boa taxa de STP](https://wirinnovation.ai/insights/o-que-e-stp-seguros/): Entenda o que é straight-through processing (STP) em seguros, o que é uma boa taxa de STP e como uma camada de IA externa eleva esse índice.
 - [Validação automática de dados de CNPJ em submissões de seguros com IA](https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros/): Guia para seguradoras validarem e enriquecerem submissões com CNPJ, exposição e crédito por uma camada de IA externa, sobre os sistemas atuais.
@@ -36,7 +37,7 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 - [Lacuna de proteção no seguro brasileiro e o papel da IA em fechá-la](https://wirinnovation.ai/insights/lacuna-protecao-seguros-brasil/): Por que a penetração de seguros no Brasil segue baixa apesar do crescimento de dois dígitos e como a IA acelera a subscrição para fechar a lacuna de proteção.
 - [Open Insurance Brasil e o que muda para as seguradoras](https://wirinnovation.ai/insights/open-insurance-brasil-seguradoras/): Como o Open Insurance Brasil e o compartilhamento de dados mudam a subscrição, o scoring de risco e a precificação em Seguros e Danos, com IA auditável.
 - [Regulação da IA em seguros no Brasil e a exigência de explicabilidade](https://wirinnovation.ai/insights/regulacao-ia-seguros-susep/): Leitura da regulação de IA em seguros no Brasil e da exigência de explicabilidade.
-- [Como automatizar a cotação de seguros com uma camada de IA](https://wirinnovation.ai/insights/automatizar-cotacao-seguros/): Guia para automatizar a cotação de seguros com IA.
+- [Automação de cotação de seguros com plataforma de IA](https://wirinnovation.ai/insights/automatizar-cotacao-seguros/): Automação de cotação de seguros: uma plataforma de IA externa lê a submissão, pontua o risco e devolve cotação com SLA visível ao corretor, sobre o core atual.
 - [Como automatizar a subscrição de seguro de transporte com IA](https://wirinnovation.ai/insights/automatizar-subscricao-seguro-transporte/): Guia para seguradoras automatizarem a subscrição do seguro de transporte com uma camada de IA externa, calibrada ao apetite, sobre os sistemas atuais.
 - [Como automatizar a subscrição de seguros com uma camada de IA](https://wirinnovation.ai/insights/automatizar-subscricao-seguros/): Guia para seguradoras automatizarem a jornada de cotação e subscrição com uma camada de IA externa, sobre os sistemas atuais, sem trocar o core.
 - [Decisões de subscrição auditáveis com uma camada de IA](https://wirinnovation.ai/insights/decisoes-subscricao-auditaveis/): Como manter cada decisão de subscrição automatizada explicável e auditável com uma camada de IA externa, calibrada ao manual de subscrição e aderente à LGPD.
@@ -115,5 +116,5 @@ Não autorizamos: treinamento de modelos sobre este conteúdo sem licença escri
 
 Para uso em pesquisa acadêmica, comercial ou jornalística, contatar nicholas@wirinnovation.ai.
 
-<!-- Generated 2026-06-21 · 83 articles (46 PT-BR + 37 EN) -->
-2026-06-21
+<!-- Generated 2026-07-03 · 84 articles (47 PT-BR + 37 EN) -->
+2026-07-03

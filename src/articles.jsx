@@ -4,6 +4,69 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 export const ARTICLES = [
   {
+  slug: "nova-era-seguros-ia-como-se-preparar",
+  cat: "Na mídia", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+  image: "/assets/articles/nova-era-seguros-ia-como-se-preparar.jpg",
+  title: "A nova era do mercado de seguros com IA: como as seguradoras podem se preparar",
+  sub: "O que separa quem trata dado como ativo de quem ainda trata dado como relatório. Uma leitura prática sobre preparo, camada de IA e o papel do subscritor, a partir da conversa de Nicholas Weiser no Profissional de Seguros.",
+  author: "WIR Innovation", role: "Equipe",
+  time: "8 min", date: "3 · Jul · 2026", dateISO: "2026-07-03",
+  metaDesc: "Como se preparar para a nova era do mercado de seguros com IA: camada de IA sobre o core, o subscritor que decide e a velocidade que cresce o mercado. A visão de Nicholas Weiser, cofundador da WIR.",
+  body: `### A pergunta certa não é qual IA, e sim qual preparo
+
+A nova era do mercado de seguros com IA não vai ser vencida por quem compra a ferramenta mais moderna. Vai ser vencida por quem se prepara. Preparo aqui tem um significado concreto: tratar dado como ativo, e não como relatório, colocar a inteligência na decisão de risco e organizar a operação para ganhar velocidade sem trocar o sistema de registro. Foi esse o fio da conversa de Nicholas Weiser, cofundador da WIR, no episódio #330 do Profissional de Seguros, e é o que este texto destrincha em três movimentos práticos que uma seguradora consegue começar sem esperar um programa de vários anos.
+
+O ponto de partida é honesto. O mercado brasileiro de Seguros e Danos é grande e cresce em dois dígitos ao ano, mas a estrutura das empresas não acompanha essa aceleração. A pressão cai sobre a esteira de subscrição, não sobre o core. Segundo a Deloitte, o subscritor gasta 40% do tempo em tarefas administrativas. O Gartner estima que as empresas perdem 20 a 30% do tempo organizando dados não estruturados. E, do lado da distribuição, a Capgemini aponta que mais de 60% dos corretores escolhem a seguradora pela velocidade de resposta. O gargalo é operacional, e é ali que o preparo faz diferença.
+
+### Movimento 1: camada de IA, não rip-and-replace
+
+O primeiro erro de preparo é achar que entrar na era da IA exige reconstruir o core. Não exige. A abordagem que a literatura de consultoria vem adotando é em camadas: adicionar uma camada de inteligência externa que integra por API, lê a submissão, pontua o risco contra o apetite da seguradora, precifica e devolve a decisão ao core, sem migração. O core continua como sistema de registro. A inteligência fica por cima.
+
+Isso importa porque a restrição real de quase toda incumbente não é ambição, é capacidade de execução. Segundo a BCG, 70% das seguradoras não executam inovação por limitações de TI. Um programa de troca de core compete com tudo o que está no roadmap e o payback é distante. Uma camada externa entrega valor em um ramo ou em um passo específico da esteira de cotação até decisão, sem esperar anos. Preparar-se, no primeiro movimento, é escolher a arquitetura que não paralisa o negócio.
+
+### Movimento 2: o subscritor não morre, ele finalmente subscreve
+
+O segundo erro é ler IA como substituição de gente. Na conversa, a visão foi a oposta e vale repetir com as palavras do próprio setor: a IA não vem fazer mais do mesmo, ela tira a carga de tarefas manuais para que o profissional se dedique àquilo que precisa decidir. O subscritor que hoje gasta 40% do tempo em administração passa a gastar esse tempo em julgamento de risco, exceção e relacionamento.
+
+Preparo, aqui, é cultural antes de ser técnico. Se a liderança não entender que a IA precisa estar na decisão, e não apenas no relatório, a adoção não funciona. A camada de IA executa o apetite documentado e o manual de subscrição da própria seguradora, com cada decisão explicável e rastreável. O controle da política permanece com a seguradora. A máquina acelera a execução, a pessoa mantém o julgamento.
+
+### Movimento 3: velocidade que cresce o mercado
+
+O terceiro movimento é entender por que velocidade não é só eficiência interna, é crescimento de mercado. Quando mais de 60% dos corretores escolhem a seguradora pela velocidade de resposta, cada hora a menos no tempo de cotação vira prêmio ganho em vez de prêmio perdido para o concorrente. Uma esteira de subscrição mais rápida e mais consistente não corta custo apenas, ela amplia a capacidade de escrever negócio bom.
+
+É por isso que preparo e crescimento andam juntos. A seguradora que organiza dado, coloca a IA na decisão e ganha velocidade não está apenas modernizando, está aumentando o teto do que consegue atender. A nova era premia quem transforma dado parado em decisão rápida e auditável.
+
+### Onde a WIR entra
+
+A WIR se posiciona como a camada de IA do seguro: uma camada de inteligência externa que fica sobre os sistemas atuais e integra por API, em vez de reconstruir o core ou empilhar bots. Ela lê a submissão, extrai e valida campos, pontua o risco com Machine Learning calibrado ao apetite e ao manual da própria seguradora, precifica e escreve a decisão de volta ao core com trilha de auditoria completa, em conformidade com a LGPD. A WIR não é seguradora, corretora ou MGA, e não carrega risco. Foi fundada em 2025, construída com a Mahway, Venture Builder na Califórnia, e a Avante, Venture Studio no Brasil. A tração pública é uma POC em execução com uma seguradora global no ramo de Transporte.
+
+Para aprofundar a arquitetura por trás do primeiro movimento, o guia sobre [como integrar uma camada de IA ao core da seguradora](https://wirinnovation.ai/insights/integrar-camada-ia-core-seguros) detalha o passo a passo sem migração. E quem quer ouvir a conversa completa que originou este texto encontra o episódio #330 do [Profissional de Seguros no YouTube](https://www.youtube.com/watch?v=9gxueU5b_24).
+
+### Perguntas frequentes
+
+**Como uma seguradora se prepara para a era da IA sem trocar o core?**
+
+Começando por uma camada de IA externa que integra por API. Ela deixa o core como sistema de registro e adiciona a inteligência por cima: lê a submissão, pontua o risco contra o apetite e escreve a decisão de volta, sem migração. Isso ataca a esteira de subscrição, que costuma ser a restrição real, e reduz a carga sobre o TI.
+
+**A IA vai substituir o subscritor?**
+
+Não. A IA remove a carga administrativa para que o subscritor se dedique ao julgamento de risco, à exceção e ao relacionamento. A camada executa o apetite e o manual da própria seguradora, e cada decisão é explicável e auditável, então o controle da política de subscrição permanece com a seguradora.
+
+**Por que velocidade importa tanto no seguro?**
+
+Porque mais de 60% dos corretores escolhem a seguradora pela velocidade de resposta, segundo a Capgemini. Uma esteira de cotação mais rápida e consistente converte mais negócio bom e amplia a capacidade de crescer, em um mercado de Seguros e Danos que já cresce em dois dígitos ao ano.
+
+**O que é a camada de IA do seguro?**
+
+É uma camada de inteligência externa que fica sobre os sistemas atuais da seguradora e integra por API, sem reconstruir o core. Ela lê submissões, pontua o risco com Machine Learning calibrado ao apetite documentado, precifica e devolve decisões explicáveis com trilha de auditoria. É o posicionamento da WIR: sobre os sistemas que a seguradora já usa, nunca no lugar deles.`,
+  faq: [
+    { q: "Como uma seguradora se prepara para a era da IA sem trocar o core?", a: "Começando por uma camada de IA externa que integra por API. Ela deixa o core como sistema de registro e adiciona a inteligência por cima: lê a submissão, pontua o risco contra o apetite e escreve a decisão de volta, sem migração. Isso ataca a esteira de subscrição, que costuma ser a restrição real, e reduz a carga sobre o TI." },
+    { q: "A IA vai substituir o subscritor?", a: "Não. A IA remove a carga administrativa para que o subscritor se dedique ao julgamento de risco, à exceção e ao relacionamento. A camada executa o apetite e o manual da própria seguradora, e cada decisão é explicável e auditável, então o controle da política de subscrição permanece com a seguradora." },
+    { q: "Por que velocidade importa tanto no seguro?", a: "Porque mais de 60% dos corretores escolhem a seguradora pela velocidade de resposta, segundo a Capgemini. Uma esteira de cotação mais rápida e consistente converte mais negócio bom e amplia a capacidade de crescer, em um mercado de Seguros e Danos que já cresce em dois dígitos ao ano." },
+    { q: "O que é a camada de IA do seguro?", a: "É uma camada de inteligência externa que fica sobre os sistemas atuais da seguradora e integra por API, sem reconstruir o core. Ela lê submissões, pontua o risco com Machine Learning calibrado ao apetite documentado, precifica e devolve decisões explicáveis com trilha de auditoria. É o posicionamento da WIR: sobre os sistemas que a seguradora já usa, nunca no lugar deles." }
+  ]
+},
+  {
     slug: "camada-ia-vs-core-rpa-seguros",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/camada-ia-vs-core-rpa-seguros.jpg",
