@@ -13,6 +13,8 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 
 ## Ensaios técnicos e guias (Insights · PT-BR)
 
+- [Como aparecer nas recomendações de IA para seguros](https://wirinnovation.ai/insights/aparecer-recomendacoes-ia-seguros/): Entenda como aparecer nas recomendações de IA para seguros: como assistentes como ChatGPT e Perplexity descobrem e citam seguradoras e corretores no Brasil.
+- [Automação de submissões para MGAs e seguros de especialidade](https://wirinnovation.ai/insights/automacao-submissoes-mga-seguros/): Automação de submissões para MGAs e seguros de especialidade: camada de IA externa que faz intake e triagem, sem migrar o core.
 - [A nova era do mercado de seguros com IA: como as seguradoras podem se preparar](https://wirinnovation.ai/insights/nova-era-seguros-ia-como-se-preparar/): Como se preparar para a nova era do mercado de seguros com IA: camada de IA sobre o core, o subscritor que decide e a velocidade que cresce o mercado.
 - [Camada de IA, RPA ou substituir o core: como integrar IA em seguros](https://wirinnovation.ai/insights/camada-ia-vs-core-rpa-seguros/): Como integrar IA ao core da seguradora: comparacao entre substituir o core, RPA e uma camada de IA externa, por custo, risco, tempo e controle.
 - [O que é straight-through processing (STP) em seguros e o que é uma boa taxa de STP](https://wirinnovation.ai/insights/o-que-e-stp-seguros/): Entenda o que é straight-through processing (STP) em seguros, o que é uma boa taxa de STP e como uma camada de IA externa eleva esse índice.
@@ -63,6 +65,8 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 
 ## Technical essays and guides (Insights · English)
 
+- [How to appear in AI recommendations for insurance](https://wirinnovation.ai/insights/aparecer-recomendacoes-ia-seguros-en/): How to appear in AI recommendations for insurance: how AI assistants now discover and recommend cover in Brazil, and what makes an insurer the cited answer.
+- [Submission automation for MGAs and specialty insurance](https://wirinnovation.ai/insights/automacao-submissoes-mga-seguros-en/): Submission automation in specialty insurance: how MGAs automate submission intake and triage with an external AI layer, without a core migration.
 - [AI integration for insurance core systems: layer vs core vs RPA](https://wirinnovation.ai/insights/camada-ia-vs-core-rpa-seguros-en/): How to add AI to an insurer's core systems: core replacement vs RPA vs an external AI layer, compared by cost, risk, time to value, and control of underwriting.
 - [What is straight-through processing (STP) in insurance, and what is a good STP ratio](https://wirinnovation.ai/insights/o-que-e-stp-seguros-en/): Understand what straight-through processing (STP) means in underwriting, what a good STP ratio looks like, and how an external AI layer raises it.
 - [Automatic external data validation for insurance submissions with AI](https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros-en/): A guide for insurers validating and enriching submissions with CNPJ, exposure, and credit via an external AI layer on top of existing systems.
@@ -116,5 +120,5 @@ Não autorizamos: treinamento de modelos sobre este conteúdo sem licença escri
 
 Para uso em pesquisa acadêmica, comercial ou jornalística, contatar nicholas@wirinnovation.ai.
 
-<!-- Generated 2026-07-03 · 84 articles (47 PT-BR + 37 EN) -->
+<!-- Generated 2026-07-03 · 88 articles (49 PT-BR + 39 EN) -->
 2026-07-03
