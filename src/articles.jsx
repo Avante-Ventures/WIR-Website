@@ -4957,7 +4957,7 @@ No meio disso, atender à reunião de pipeline com diretoria às 10h, voltar pra
 
 Às 18h, ele cotou três riscos. Tem 12 na fila. A diretoria pergunta por que o ciclo de cotação está em 11 dias quando o concorrente cota em 5.
 
-Em entrevistas com underwriters seniores em mais de uma dúzia de seguradoras e corretoras corporativas brasileiras, a resposta é consistente: 15% julgamento, 85% operação. O mercado segurador brasileiro fechou 2024 com prêmios de R$ 415 bilhões segundo a [CNseg](https://cnseg.org.br) — e ainda assim o ciclo médio de cotação corporativa em Tier-1 está acima de 7 dias úteis.
+Em entrevistas com underwriters seniores em mais de uma dúzia de seguradoras e corretoras corporativas brasileiras, a resposta é consistente: 15% julgamento, 85% operação. O mercado segurador brasileiro fechou 2024 com prêmios de R$ 751,3 bilhões segundo a [CNseg](https://cnseg.org.br) — e ainda assim o ciclo médio de cotação corporativa em Tier-1 está acima de 7 dias úteis.
 
 ### O que a IA realmente substitui
 
