@@ -994,11 +994,11 @@ O seguro cibernético no Brasil amadurece de uma linha boutique para um mercado 
     slug: "seguro-cibernetico-brasil-en",
     cat: "Mercado", grad: "linear-gradient(135deg,#7540AC,#3222E9)",
     image: "/assets/articles/seguro-cibernetico-brasil-en.jpg",
-    title: "Cyber insurance in Brazil and the challenge of underwriting digital risk",
-    sub: "Cyber insurance in Brazil is the fastest-growing line in Seguros e Danos (P&C), with premiums rising roughly 11x in five years per Guy Carpenter, yet it is the hardest line to price.",
+    title: "Brazil cyber insurance market and AI underwriting",
+    sub: "A read on the Brazil cyber insurance market and the challenge of underwriting digital risk with AI: state, drivers, risk dynamics, and where WIR fits.",
     author: "WIR Innovation", role: "Market intelligence",
     time: "5 min", date: "15 · Jun · 2026", dateISO: "2026-06-15",
-    metaDesc: "A read on cyber insurance in Brazil and the challenge of underwriting digital risk with AI. State, drivers, risk dynamics, and where WIR fits.",
+    metaDesc: "A read on the Brazil cyber insurance market and the challenge of underwriting digital risk with AI: state, drivers, risk dynamics, and where WIR fits.",
     body: `Cyber insurance in Brazil is the fastest-growing niche in Seguros e Danos (P&C), and at the same time the hardest line to price. According to reinsurance broker Guy Carpenter, cyber premiums rose from R$21.4 million in 2019 to R$237.5 million in 2024, an eleven-fold increase off a tiny base, with R$66.3 million accumulated in the first quarter of 2025. Demand is driven by the threat environment, but the underwriting machinery that should price it consistently is still immature. The reason is structural. A breach, a ransomware event, or an LGPD liability claim is non-stationary, correlated across the whole portfolio, and informed mostly by data that lives outside the insurer's core. A single shared cloud provider or a common software supply chain can trigger many claims at once, so portfolio-level scoring matters as much as the individual risk. The signals that actually price a cyber submission, exposed attack surface, security posture, sector, breach history, and CNPJ context, were never something a policy core was built to ingest or structure. That is the gap this article works through, and it is the most acute version of the unstructured-data problem the rest of this collection documents. It is also the clearest case for an external AI intelligence layer that reads cyber submissions, enriches them with outside signals, and scores risk against the carrier's own appetite, without touching the core system underneath.
 
 ### State of the P&C insurance market
@@ -1350,11 +1350,11 @@ O contexto de mercado torna isso urgente. O mercado de Seguros e Danos cresce em
     slug: "triagem-automatica-submissoes-seguro-en",
     cat: "Automação", grad: "linear-gradient(135deg,#7540AC,#FE8B77)",
     image: "/assets/articles/triagem-automatica-submissoes-seguro-en.jpg",
-    title: "Submission clearance and triage for insurers, with an AI layer",
-    sub: "How insurers automate submission clearance and triage with an external AI layer on top of existing systems, prioritizing by appetite and exposure. See the stages.",
+    title: "Submission triage automation for insurers, with an AI layer",
+    sub: "Submission triage automation with an external AI layer that clears and prioritizes each submission by appetite and exposure, before an underwriter opens it.",
     author: "WIR Innovation", role: "Automation guide",
     time: "5 min", date: "15 · Jun · 2026", dateISO: "2026-06-15",
-    metaDesc: "How insurers automate submission clearance and triage with an external AI layer on top of existing systems, prioritizing by appetite and exposure. See the stages.",
+    metaDesc: "Submission triage automation with an external AI layer that clears and prioritizes each submission by appetite and exposure, before an underwriter opens it.",
     body: `### What submission clearance and triage means for insurers
 
 Submission clearance and triage is the intake step that happens the instant a submission lands and before an underwriter touches it. The question at this stage is not what a document says and not what the final decision should be. It is simpler and earlier. Clearance asks what this is, whether it is complete, and whether it already belongs to the insurer, meaning it is not a duplicate or a case another broker is already working. Triage then asks how urgent it is and where it belongs in the queue. An external AI layer reads the structured data already pulled from the submission, classifies it by line of business (ramo), product, and broker (corretor), checks whether it is complete enough to work, and then orders the queue by the insurer's risk appetite and by exposure.
@@ -1960,11 +1960,11 @@ Yes. Every conversion score exposes the drivers behind it, for example broker hi
     slug: "automatizar-renovacao-seguros-ia-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/automatizar-renovacao-seguros-ia-en.jpg",
-    title: "How to automate insurance renewals with an AI layer",
-    sub: "A guide for insurers automating renewals with an external AI layer that re-scores risk and re-prices, on top of existing systems. See the stages.",
+    title: "Policy renewal automation with an AI layer",
+    sub: "How insurers approach policy renewal automation with an external AI layer that re-scores risk and re-prices at renewal, on top of existing systems.",
     author: "WIR Innovation", role: "Team",
     time: "9 min", date: "08 · Jun · 2026",
-    metaDesc: "A guide for insurers automating renewals with an external AI layer that re-scores risk and re-prices, on top of existing systems. See the stages.",
+    metaDesc: "How insurers approach policy renewal automation with an external AI layer that re-scores risk and re-prices at renewal, on top of existing systems.",
     body: `### What automating insurance renewals with an AI layer means
 
 To automate insurance renewals with AI is to put an external AI intelligence layer on top of the insurer's existing core, policy, and pricing systems, so each policy up for renewal is re-read, re-scored against current risk appetite, and re-priced without manual re-keying. This matters in Brazilian Seguros e Danos (P&C, property and casualty), where renewal is the most manual stage of the underwriting (subscrição) journey yet the moment retention is won or lost. The reader who should consider it is the insurer C-level, the underwriting lead, or the innovation head deciding whether the renewal cycle still has to run by hand.
@@ -2704,11 +2704,11 @@ No, WIR does not replace the core to structure the data. WIR is the external AI 
     slug: "fraude-seguros-brasil-ia-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/fraude-seguros-brasil-ia-en.jpg",
-    title: "Insurance fraud in Brazil and AI detection at underwriting",
-    sub: "How AI detects insurance fraud in Brazil at underwriting, with explainable, auditable multi-factor scoring and no core system replacement.",
+    title: "Underwriting fraud detection with AI in Brazil",
+    sub: "How AI powers underwriting fraud detection in Brazil, with explainable, auditable multi-factor scoring calibrated to appetite. No core replacement.",
     author: "WIR Innovation", role: "Team",
     time: "8 min", date: "08 · Jun · 2026",
-    metaDesc: "How AI detects insurance fraud in Brazil at underwriting, with explainable, auditable multi-factor scoring and no core system replacement.",
+    metaDesc: "How AI powers underwriting fraud detection in Brazil, with explainable, auditable multi-factor scoring calibrated to appetite. No core replacement.",
     body: `### The market in one read
 
 Insurance fraud detection with AI in Brazil is moving upstream, from the claims desk to the moment of underwriting (subscrição), where an anomaly costs the least to stop. The country runs one of the largest insurance markets in Latin America, and the Seguros e Danos (P&C) block grows double digits per year. That growth, paired with a controls structure that has not scaled at the same pace, is exactly the gap where fraud concentrates and where Machine Learning now earns its place at submission intake.
@@ -2848,11 +2848,11 @@ No. WIR never replaces the core. It is an external AI layer that sits on top of 
     slug: "open-insurance-brasil-seguradoras-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/open-insurance-brasil-seguradoras-en.jpg",
-    title: "Open Insurance Brazil for insurers: what changes",
-    sub: "How Open Insurance Brazil and SUSEP-led data sharing reshape underwriting, risk scoring, fraud detection, and pricing in P&C, with explainable, auditable AI.",
+    title: "Open Insurance in Brazil: how it is being implemented",
+    sub: "How Open Insurance is being implemented in Brazil, and how SUSEP-led data sharing reshapes underwriting, risk scoring, and pricing in P&C.",
     author: "WIR Innovation", role: "Team",
     time: "9 min", date: "08 · Jun · 2026",
-    metaDesc: "How Open Insurance Brazil and SUSEP-led data sharing reshape underwriting, risk scoring, fraud detection, and pricing in P&C, with explainable, auditable AI.",
+    metaDesc: "How Open Insurance is being implemented in Brazil, and how SUSEP-led data sharing reshapes underwriting, risk scoring, and pricing in P&C.",
     body: `### The market in one read
 
 Open Insurance Brazil for insurers is, in one read, a shift from gathering data to interpreting it. The SUSEP-led open insurance regime standardizes how consumer insurance data is shared, with free, informed and prior consent, across participating companies, and the moment that standardized data arrives, the bottleneck stops being access and becomes the ability to turn shared data into a decision. That is the strategic line for any carrier in Seguros e Danos (P&C): the rails are being built by the regulator, and the advantage moves to the intelligence layer that sits on top of them.
@@ -3004,11 +3004,11 @@ No. WIR does not replace the insurer's core. It is the external AI layer that si
     slug: "automatizar-cotacao-seguros",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/automatizar-cotacao-seguros.jpg",
-    title: "Automação de cotação de seguros com plataforma de IA",
-    sub: "Automação de cotação de seguros: uma plataforma de IA externa lê a submissão, pontua o risco e devolve cotação com SLA visível ao corretor, sobre o core atual.",
+    title: "Automação de cotação de seguros com IA, sem trocar o core",
+    sub: "Como automatizar a cotação de seguros com uma camada de IA que lê a submissão, pontua o risco e devolve a cotação em minutos, sem trocar o core.",
     author: "WIR Innovation", role: "Equipe",
     time: "9 min", date: "02 · Jun · 2026",
-    metaDesc: "Automação de cotação de seguros: uma plataforma de IA externa lê a submissão, pontua o risco e devolve cotação com SLA visível ao corretor, sobre o core atual.",
+    metaDesc: "Como automatizar a cotação de seguros com uma camada de IA que lê a submissão, pontua o risco e devolve a cotação em minutos, sem trocar o core.",
     body: `### O que é automatizar a cotação de seguros com uma camada de IA
 
 Saber como automatizar a cotação de seguros com IA significa colocar uma camada de inteligência sobre os sistemas que a seguradora já usa, para receber a submissão do corretor, ler e estruturar os dados, pontuar o risco e devolver uma cotação ajustada ao apetite, uma recusa ou um encaminhamento para o subscritor, tudo em tempo real. Essa camada não troca o core nem exige migração. Ela lê e escreve no sistema de apólices por API, então a seguradora mantém sua fonte de verdade e ganha velocidade na resposta.
@@ -3885,11 +3885,11 @@ O setup leva de 3 a 12 meses, com escopo claro e KPIs acordados antes do início
     slug: "automatizar-cotacao-seguros-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/automatizar-cotacao-seguros-en.jpg",
-    title: "Insurance quote automation with an AI layer",
-    sub: "Insurance quote automation with an external AI layer that reads submissions, scores risk, prices, and returns a broker-visible SLA. No core migration.",
+    title: "Insurance quote automation: how an AI layer does it",
+    sub: "Insurance quote automation with an AI layer that reads submissions, scores risk, prices, and returns a broker-visible quote in minutes. No core migration.",
     author: "WIR Innovation", role: "Team",
     time: "9 min", date: "02 · Jun · 2026",
-    metaDesc: "Insurance quote automation with an external AI layer that reads submissions, scores risk, prices, and returns a broker-visible SLA. No core migration.",
+    metaDesc: "Insurance quote automation with an AI layer that reads submissions, scores risk, prices, and returns a broker-visible quote in minutes. No core migration.",
     body: `### What insurance quote automation with an AI layer means
 
 Insurance quote automation comes down to one architectural choice: place an external AI layer on top of the systems the insurer already runs, and let it read each submission, structure it, score the risk, and return a priced quote, a decline, or an escalation in real time. In Brazilian Seguros e Danos (P&C), the cotação (quotation) journey is still largely a manual relay between corretor (broker) and seguradora (insurer). A submission arrives by e-mail, broker portal, or spreadsheet, an assistant re-keys it into the policy core, documents are chased, and only then does a subscritor (underwriter) assess appetite and price the prêmio (premium). Every handoff adds latency and room for inconsistent decisions.
@@ -4226,11 +4226,11 @@ Prioritization scores and ranks each submission at intake, so underwriters start
     slug: "integrar-camada-ia-core-seguros-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/integrar-camada-ia-core-seguros-en.jpg",
-    title: "How to integrate an AI layer with the insurance core without migration",
-    sub: "How to integrate an AI layer with the insurance core without migration: 100% external, reads and writes via API, no IT load, and go-live in months.",
+    title: "AI integration platform for insurance core systems",
+    sub: "How an external AI integration platform adds intelligence to insurance core systems without a migration: 100% API, no IT load, and live in months.",
     author: "WIR Innovation", role: "Team",
     time: "10 min", date: "02 · Jun · 2026",
-    metaDesc: "How to integrate an AI layer with the insurance core without migration: 100% external, reads and writes via API, no IT load, and go-live in months.",
+    metaDesc: "How an external AI integration platform adds intelligence to insurance core systems without a migration: 100% API, no IT load, and live in months.",
     body: `### What integrating an external AI layer with the core means
 
 To integrate an AI layer with the insurance core without migration is to add an intelligence layer on top of the policy systems the insurer already runs, connecting through an API so the layer reads submissions and writes results back, with no migration of the legacy core. This is the model WIR operates as the AI layer of insurance in Brazil. It is built for insurer C-level, underwriting (subscrição) leads, and product or innovation heads who want to automate the quotation and underwriting journey without launching a multi-year core program.
