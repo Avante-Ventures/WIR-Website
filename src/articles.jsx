@@ -636,7 +636,7 @@ Os módulos da WIR sustentam essa esteira de ponta a ponta. O Underwriter Intell
     sub: "Replacing RPA and OCR with an AI layer in insurance means swapping brittle scripts and template extraction for an external AI platform that reads varied submissions, enriches broker context, scores risk against the underwriting manual, and routes a decision.",
     author: "WIR Innovation", role: "Automation guide",
     time: "5 min", date: "15 · Jun · 2026", dateISO: "2026-06-15",
-    metaDesc: "A guide for insurers going beyond brittle RPA and OCR with an external AI layer that reads submissions, scores risk, and decides, on top of existing systems. See how.",
+    metaDesc: "RPA and OCR extract fields but decide nothing. See how an external AI layer reads submissions, scores risk, and decides, on top of existing systems.",
     body: `Replacing RPA and OCR with an AI layer in insurance means moving from scripts that only move characters into fields to an external AI platform that reads any submission, enriches it, scores the risk against the underwriting manual, and routes a decision. Rule-based RPA and template OCR were never built for this. They handle a known box on a known form, and they break the moment a broker changes a field order, attaches a scanned PDF, or adds a free-text note. The case drops to a human queue and the SLA barely moves.
 
 This matters because the cost of slow, manual triage is measurable. Deloitte estimates underwriters spend 40% of their time on administrative tasks rather than risk analysis. Gartner estimates corporates lose 20-30% of working time organizing unstructured data. Capgemini finds that 60%+ of brokers choose an insurer based on response speed, so every hour a submission sits in an exception queue is a conversion risk. Each figure is cited from its named source as market context, not as any vendor's result.
@@ -742,7 +742,7 @@ O efeito sobre o tempo do subscritor liga aos números do painel de mercado da W
     sub: "To reduce administrative tasks in insurance underwriting with AI, insurers add an external AI layer on top of their existing core.",
     author: "WIR Innovation", role: "Automation guide",
     time: "6 min", date: "15 · Jun · 2026", dateISO: "2026-06-15",
-    metaDesc: "A guide for insurers reducing administrative underwriting tasks with an external AI layer, freeing underwriters for risk analysis. See how to start.",
+    metaDesc: "Underwriters lose 40% of their time to admin work. See how an external AI layer absorbs the routine so they focus on risk, on top of existing systems.",
     body: `To reduce administrative tasks in insurance underwriting with AI means adding an external AI layer on top of the systems the insurer already runs, so the work that surrounds the risk decision is handled by software instead of by the underwriter. The layer sorts incoming submissions, reads documents, validates and enriches data, routes each risk, and drafts the decision rationale, then hands a clean, scored file to the right person. The underwriter (subscritor) stops re-keying and chasing paperwork and spends the recovered hours on risk analysis and on winning business.
 
 This is an operating-model question, not a software-shopping one. The reader here is usually a head of underwriting, a subscrição lead, or a C-level focused on capacity and productivity, and the constraint is real. Underwriters spend around 40% of their time on administrative tasks (Deloitte), which is qualified judgment spent on work that needs no judgment. Reducing that load is how an insurer scales premium without scaling headcount, and it does not require touching the core. WIR is the AI layer for insurance in Brazil. On top of the systems the insurer already runs, never in their place, it absorbs the administrative envelope around the underwriting decision in the Seguros e Danos (P&C) market.
@@ -1268,7 +1268,7 @@ A WIR nasceu de experiência operacional acumulada, construída com a Mahway, Ve
     sub: "A touchless underwriting pipeline for insurance with AI is a straight-through flow where in-appetite, low-complexity risks move from intake to a bound decision with no manual step, while complex risks escalate to a human.",
     author: "WIR Innovation", role: "Automation guide",
     time: "6 min", date: "15 · Jun · 2026", dateISO: "2026-06-15",
-    metaDesc: "A guide for insurers building a touchless underwriting pipeline with an external AI layer on top of existing systems, with human escalation. See the stages.",
+    metaDesc: "How a touchless underwriting pipeline moves eligible risks from intake to decision without manual touch, escalating the complex ones to an underwriter.",
     body: `A touchless underwriting pipeline for insurance with AI is a straight-through processing flow where low-complexity risks that sit inside the insurer's appetite move from intake to a bound decision with no manual step, while complex or borderline risks escalate to a human underwriter. WIR delivers this as an external AI layer that runs on top of the systems the insurer already operates. It never replaces the core. For an underwriting or innovation lead, the goal is plain. Grow premium without growing headcount, and reserve scarce underwriter attention for the cases that genuinely need judgment. The pipeline reads each submission, scores the risk against the underwriting manual, prices it, and either issues a quote, declines, or routes the case to a person. Brazilian insurers feel the pressure behind this. The Seguros e Danos (P&C) market grows double digits per year, but the operating structure does not keep pace with that acceleration. Underwriters still spend 40% of their time on administrative tasks, a figure attributed to Deloitte. A pipeline that handles the clean, in-appetite volume automatically is how an insurer absorbs growth without a proportional increase in staff, and the AI layer makes that possible without touching the policy core.
 
 ### How the end-to-end touchless pipeline works
@@ -1890,10 +1890,10 @@ Sim. Os gatilhos são configuráveis por ramo, produto e nível de exposição. 
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/analise-preditiva-conversao-cotacao-en.jpg",
     title: "Predictive quote conversion analysis for insurance with an AI layer",
-    sub: "A guide for insurers predicting quote conversion by product, risk, and broker with an external AI layer on top of existing systems. See how to prioritize.",
+    sub: "Not every submission is worth the same underwriter minute. See how an AI layer predicts which quotes will convert, by product, risk, and broker.",
     author: "WIR Innovation", role: "Team",
     time: "9 min", date: "08 · Jun · 2026",
-    metaDesc: "A guide for insurers predicting quote conversion by product, risk, and broker with an external AI layer on top of existing systems. See how to prioritize.",
+    metaDesc: "Not every submission is worth the same underwriter minute. See how an AI layer predicts which quotes will convert, by product, risk, and broker.",
     body: `### What predictive quote conversion analysis with an AI layer means
 
 Predictive quote conversion analysis for insurance with AI is the practice of scoring, at intake, the probability that a given quote will bind into a placed policy, segmented by product, risk profile, and broker, so the insurer can prioritize underwriter effort and response speed toward the submissions most likely to close. It turns an invisible quotation pipeline into a ranked one. The insurer stops treating every submission with the same priority and starts answering the winnable ones first.
@@ -2034,10 +2034,10 @@ Yes. WIR auto-renews clean, in-appetite cases and refers the rest to a human und
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/automatizar-upsell-cross-sell-seguros-en.jpg",
     title: "How to automate insurance upsell and cross-sell with an AI layer",
-    sub: "A guide for insurers automating upsell and cross-sell with distribution intelligence via an external AI layer, with an attribution trail. See how.",
+    sub: "Growth hides in the book you already have. How an AI distribution layer scores the next best upsell and cross-sell, with an attribution trail.",
     author: "WIR Innovation", role: "Team",
     time: "9 min", date: "08 · Jun · 2026",
-    metaDesc: "A guide for insurers automating upsell and cross-sell with distribution intelligence via an external AI layer, with an attribution trail. See how.",
+    metaDesc: "Growth hides in the book you already have. How an AI distribution layer scores the next best upsell and cross-sell, with an attribution trail.",
     body: `### What automating insurance upsell and cross-sell with an AI layer means
 
 To automate insurance upsell and cross-sell with AI is to place an external AI layer on top of the insurer's existing core, policy, and CRM systems, so the portfolio is mapped by client and product, opportunities are scored by propensity and value, and campaigns run across channels with a measurable attribution trail. This is distribution intelligence for Seguros e Danos (P&C), and it is built for insurer C-level, subscrição (underwriting) leads, product and innovation heads, and the corretores (brokers) who close the sale. The layer never touches the core. It reads from the systems already in place and adds the cross-system view those silos cannot produce on their own.
@@ -2103,10 +2103,10 @@ Penetration, measured as products per client, and retention rise together becaus
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/declinio-automatico-cotacao-seguros-en.jpg",
     title: "Automatic insurance quote decline with an AI layer",
-    sub: "A guide for insurers automating the decline of out-of-appetite risks with an external AI layer, with a clear reason and audit trail. See how.",
+    sub: "Declining a risk cleanly is as valuable as quoting it. How an AI layer auto-declines out-of-appetite submissions with a clear reason and audit trail.",
     author: "WIR Innovation", role: "Team",
     time: "9 min", date: "08 · Jun · 2026",
-    metaDesc: "A guide for insurers automating the decline of out-of-appetite risks with an external AI layer, with a clear reason and audit trail. See how.",
+    metaDesc: "Declining a risk cleanly is as valuable as quoting it. How an AI layer auto-declines out-of-appetite submissions with a clear reason and audit trail.",
     body: `### What automatic insurance quote decline with an AI layer means
 
 Automatic insurance quote decline with AI is the practice of letting an external intelligence layer compare each incoming submission against the insurer's underwriting manual and risk appetite, then decline clearly out-of-appetite risk in real time with a specific reason and a full audit trail. It is built for underwriting (subscrição) and innovation leaders inside Brazilian P&C (property and casualty, Seguros e Danos) insurers, and for the brokers (corretores) who depend on a fast answer. The core idea is narrow and useful. Stop spending underwriter time formally rejecting business the insurer was never going to write.
@@ -2169,11 +2169,11 @@ The broker gets a real-time reasoned answer instead of multi-day silence. WIR re
     slug: "escalonamento-humano-subscricao-seguros-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/escalonamento-humano-subscricao-seguros-en.jpg",
-    title: "Human-in-the-loop escalation in automated insurance underwriting with AI",
-    sub: "A guide for insurers defining when automated underwriting escalates to a human, with context, model rationale, and an audit trail. See how.",
+    title: "Human escalation in automated insurance underwriting",
+    sub: "Automation should not decide everything. See when an AI underwriting layer escalates a case to a human, with context, model rationale, and an audit trail.",
     author: "WIR Innovation", role: "Team",
     time: "10 min", date: "08 · Jun · 2026",
-    metaDesc: "A guide for insurers defining when automated underwriting escalates to a human, with context, model rationale, and an audit trail. See how.",
+    metaDesc: "Automation should not decide everything. See when an AI underwriting layer escalates a case to a human, with context, model rationale, and an audit trail.",
     body: `### What human-in-the-loop escalation in automated underwriting with an AI layer means
 
 Human-in-the-loop escalation in automated insurance underwriting is the mechanism that routes the cases a machine should not decide alone to a human subscritor (underwriter), instead of forcing every submission into a binary auto-decision. In a well-run automated subscrição (underwriting) journey, most submissions can be auto-quoted or auto-declined in seconds. The cases that matter are the minority the model is not confident enough to close on its own, and escalation is the control surface that hands those cases to a person.
