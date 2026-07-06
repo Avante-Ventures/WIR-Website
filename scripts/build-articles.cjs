@@ -142,7 +142,7 @@ function renderHead(article) {
   return `<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#7540AC" />
-<title>${esc(article.title)} — WIR Innovation</title>
+<title>${esc(article.title)} · WIR Innovation</title>
 <meta name="description" content="${esc(article.metaDesc)}" />
 <link rel="canonical" href="${url}" />${hreflangTags}
 
@@ -423,7 +423,7 @@ function renderInsightsIndex(lang = "pt-BR") {
   // PT index lists PT articles only; /en/insights/ lists the -en translations only.
   const list = ARTICLES.filter(a => isEnglish(a.slug) === en);
   const idx = {
-    title: "Insights &amp; News — WIR Innovation",
+    title: "Insights &amp; News · WIR Innovation",
     desc: en
       ? "Essays, cases and technical notes from the WIR team on AI applied to the insurance market."
       : "Ensaios, casos e notas técnicas do time da WIR sobre IA aplicada ao mercado segurador.",

@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#7540AC" />
-<title>O custo invisível do straight-through processing mal feito — WIR Innovation</title>
+<title>O custo invisível do straight-through processing mal feito · WIR Innovation</title>
 <meta name="description" content="Straight-through processing sem auditabilidade nativa é bomba-relógio regulatória. Checklist de 9 itens para validar antes de escalar volume." />
 <link rel="canonical" href="https://wirinnovation.ai/insights/custo-invisivel-stp-mal-feito/" />
 <link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/custo-invisivel-stp-mal-feito/" />
@@ -104,22 +104,22 @@
     </header>
 
     <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#7540AC,#3222E9); aspect-ratio: 16 / 9;">
-      <img src="/assets/articles/custo-invisivel-stp-mal-feito.jpg" alt="Iceberg com porção oculta sob a água — risco invisível" width="1600" height="900" loading="eager" fetchpriority="high" />
+      <img src="/assets/articles/custo-invisivel-stp-mal-feito.jpg" alt="Iceberg com porção oculta sob a água, risco invisível" width="1600" height="900" loading="eager" fetchpriority="high" />
     </figure>
 
     <div class="blarticle__body">
-<p>Straight-through processing — STP — virou termo de venda no setor. Toda apresentação promete STP. Toda diretoria coloca STP em deck de transformação digital.</p>
-<p>Muito do que se chama de STP no mercado brasileiro hoje é, tecnicamente, automação parcial sem trilha de auditoria. Funciona. Escala um pouco. E acumula risco invisível ao longo do tempo, até que o risco aparece — em fiscalização, em sinistro inesperado, em RFP de resseguro perdido.</p>
+<p>Straight-through processing (STP) virou termo de venda no setor. Toda apresentação promete STP. Toda diretoria coloca STP em deck de transformação digital.</p>
+<p>Muito do que se chama de STP no mercado brasileiro hoje é, tecnicamente, automação parcial sem trilha de auditoria. Funciona. Escala um pouco. E acumula risco invisível ao longo do tempo, até que o risco aparece, em fiscalização, em sinistro inesperado, em RFP de resseguro perdido.</p>
 <blockquote>STP feito direito é vantagem competitiva durável. STP feito mal é dívida operacional acumulando juros silenciosos.</blockquote>
 <h3>O que STP exige de verdade</h3>
 <p>STP significa que uma transação atravessa o pipeline do início ao fim sem intervenção humana. Para que esse fluxo seja sustentável em produção, ele precisa cumprir três condições silenciosas que costumam ser ignoradas no projeto inicial.</p>
 <p>A primeira: cada decisão automática precisa ser rastreável até o input específico que a determinou. Não basta saber que o modelo aceitou. É preciso saber qual versão, com quais features, com qual confiança, contra qual política, em qual timestamp.</p>
 <p>A segunda: o limite entre &quot;decisão automática&quot; e &quot;decisão escalada&quot; precisa ser explícito, versionado e justificado.</p>
-<p>A terceira: os outputs do STP precisam ser comparáveis ao que decisão humana teria produzido — pelo menos amostralmente. Sem essa calibração contínua, drift do modelo aparece em loss ratio antes de aparecer em qualquer indicador operacional.</p>
+<p>A terceira: os outputs do STP precisam ser comparáveis ao que decisão humana teria produzido, pelo menos amostralmente. Sem essa calibração contínua, drift do modelo aparece em loss ratio antes de aparecer em qualquer indicador operacional.</p>
 <h3>Os custos invisíveis</h3>
 <p><strong>Custo regulatório.</strong> Quando SUSEP pede explicação sobre uma decisão automatizada de 8 meses atrás, a operação sem trilha entrega resposta vaga ou pede prazo. Em ambos os casos, queima credibilidade.</p>
 <p><strong>Custo reputacional com canal.</strong> Recusas automáticas sem explicação clara causam atrito. A queixa #1 sobre seguradoras automatizadas é &quot;não consigo explicar para meu cliente por que foi recusado&quot;.</p>
-<p><strong>Custo de loss ratio invisível.</strong> Drift de modelo em STP sem monitoramento aparece em sinistralidade — com lag. Sem trilha completa, a análise causal é praticamente impossível.</p>
+<p><strong>Custo de loss ratio invisível.</strong> Drift de modelo em STP sem monitoramento aparece em sinistralidade, com lag. Sem trilha completa, a análise causal é praticamente impossível.</p>
 <p><strong>Custo de resseguro.</strong> Resseguradoras europeias e norte-americanas como <a href="https://www.munichre.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Munich Re</a> e <a href="https://www.swissre.com/institute" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Swiss Re</a> começaram a pedir documentação detalhada sobre auditabilidade de pricing automatizado. Operações sem entregar enfrentam: reset do tratado em condições piores, exclusão de segmentos, ou substituição por estruturas mais caras.</p>
 <h3>Checklist: 9 itens antes de escalar</h3>
 <ol>
@@ -129,9 +129,9 @@
   <li>Override humano está habilitado e registrado. Quando humano altera ou rejeita, sistema registra: o quê, por quem, com qual motivo (campo obrigatório), em qual timestamp.</li>
   <li>Drift detection está em produção. Sistema monitora distribuição das features, dos outputs, e divergência entre auto e validação humana.</li>
   <li>Loss ratio segmentado por automação. Book mensurável separado por nível de envolvimento humano: 100% automático, parcial, integralmente humano.</li>
-  <li>Recusa automática gera copy aceitável. Justificativa em linguagem comercial — não código de erro.</li>
+  <li>Recusa automática gera copy aceitável. Justificativa em linguagem comercial, não código de erro.</li>
   <li>Existe revisão amostral periódica. Fração das decisões automáticas (1% a 5%) revisada por humano após o fato, para validar concordância.</li>
-  <li>Plano de rollback está documentado e testado. Reverter a versão anterior em horas — não em dias.</li>
+  <li>Plano de rollback está documentado e testado. Reverter a versão anterior em horas, não em dias.</li>
 </ol>
 <h3>O que isso significa para diretoria</h3>
 <p>A pergunta executiva não é &quot;vamos fazer STP?&quot;. É &quot;o STP que estamos construindo cumpre os 9 itens?&quot;. Se sim, escalar é caminho de receita. Se não, escalar é caminho de risco invisível que aparece tarde.</p>
@@ -139,9 +139,9 @@
 <p>STP feito direito é vantagem competitiva durável. STP feito mal é dívida operacional acumulando juros silenciosos.</p>
 <h3>Referências e leituras</h3>
 <ul>
-  <li><a href="https://www.munichre.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Munich Re — publicações sobre IA e resseguro</a></li>
-  <li><a href="https://www.swissre.com/institute" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Swiss Re Institute — research sobre InsurTech</a></li>
-  <li><a href="https://www.gov.br/susep" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">SUSEP — comunicações regulatórias</a></li>
+  <li><a href="https://www.munichre.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Munich Re: publicações sobre IA e resseguro</a></li>
+  <li><a href="https://www.swissre.com/institute" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Swiss Re Institute: research sobre InsurTech</a></li>
+  <li><a href="https://www.gov.br/susep" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">SUSEP: comunicações regulatórias</a></li>
   <li><a href="/insights/falsa-dicotomia-velocidade-compliance/" class="blarticle__link-int">A falsa dicotomia entre velocidade e compliance</a></li>
   <li><a href="/insights/observabilidade-de-agentes/" class="blarticle__link-int">Observabilidade de agentes em produção</a></li>
 </ul>
@@ -150,7 +150,7 @@
     <nav class="blarticle__related" aria-label="Leituras relacionadas">
       <h3 class="blarticle__related-title">Leituras relacionadas</h3>
       <ul class="blarticle__related-list">
-      <li class="blarticle__related-item"><a href="/insights/tres-formatos-pdf-quebravam/"><span class="blarticle__related-cat">Caso</span> Três formatos de PDF que quebravam submissões — e como resolvemos</a></li>
+      <li class="blarticle__related-item"><a href="/insights/tres-formatos-pdf-quebravam/"><span class="blarticle__related-cat">Caso</span> Três formatos de PDF que quebravam submissões, e como resolvemos</a></li>
       <li class="blarticle__related-item"><a href="/insights/observabilidade-de-agentes/"><span class="blarticle__related-cat">Técnico</span> Observabilidade de decisões de IA no seguro: como auditar a subscrição automatizada</a></li>
       <li class="blarticle__related-item"><a href="/insights/aparecer-recomendacoes-ia-seguros/"><span class="blarticle__related-cat">Artigo</span> Como aparecer nas recomendações de IA para seguros</a></li>
       <li class="blarticle__related-item"><a href="/insights/automacao-submissoes-mga-seguros/"><span class="blarticle__related-cat">Automação</span> Automação de submissões para MGAs e seguros de especialidade</a></li>

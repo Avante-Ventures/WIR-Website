@@ -4,15 +4,15 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#7540AC" />
-<title>Explicabilidade que vai além do SHAP — WIR Innovation</title>
-<meta name="description" content="SHAP explica modelos tabulares — mas decisões de seguro hoje são híbridas (LLM + rules + retrieval). Por que SHAP não basta e o que substitui." />
+<title>Explicabilidade que vai além do SHAP · WIR Innovation</title>
+<meta name="description" content="SHAP explica modelos tabulares, mas decisões de seguro hoje são híbridas (LLM + rules + retrieval). Por que SHAP não basta e o que substitui." />
 <link rel="canonical" href="https://wirinnovation.ai/insights/explicabilidade-alem-de-shap/" />
 <link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/explicabilidade-alem-de-shap/" />
 <link rel="alternate" hreflang="x-default" href="https://wirinnovation.ai/insights/explicabilidade-alem-de-shap/" />
 
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Explicabilidade que vai além do SHAP" />
-<meta property="og:description" content="SHAP explica modelos tabulares — mas decisões de seguro hoje são híbridas (LLM + rules + retrieval). Por que SHAP não basta e o que substitui." />
+<meta property="og:description" content="SHAP explica modelos tabulares, mas decisões de seguro hoje são híbridas (LLM + rules + retrieval). Por que SHAP não basta e o que substitui." />
 <meta property="og:url" content="https://wirinnovation.ai/insights/explicabilidade-alem-de-shap/" />
 <meta property="og:image" content="/assets/articles/explicabilidade-alem-de-shap.jpg" />
 <meta property="og:locale" content="pt_BR" />
@@ -22,7 +22,7 @@
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Explicabilidade que vai além do SHAP" />
-<meta name="twitter:description" content="SHAP explica modelos tabulares — mas decisões de seguro hoje são híbridas (LLM + rules + retrieval). Por que SHAP não basta e o que substitui." />
+<meta name="twitter:description" content="SHAP explica modelos tabulares, mas decisões de seguro hoje são híbridas (LLM + rules + retrieval). Por que SHAP não basta e o que substitui." />
 <meta name="twitter:image" content="/assets/articles/explicabilidade-alem-de-shap.jpg" />
 
 <link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
@@ -37,7 +37,7 @@
 <link rel="stylesheet" href="/home.css?v=2026052D" />
 <link rel="stylesheet" href="/blog.css?v=2026052D" />
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Explicabilidade que vai além do SHAP","description":"SHAP explica modelos tabulares — mas decisões de seguro hoje são híbridas (LLM + rules + retrieval). Por que SHAP não basta e o que substitui.","image":"/assets/articles/explicabilidade-alem-de-shap.jpg","datePublished":"12 · Abr · 2026","author":{"@type":"Person","name":"Head of AI","jobTitle":"ML · WIR Innovation"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/explicabilidade-alem-de-shap/","articleSection":"Técnico"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Explicabilidade que vai além do SHAP","description":"SHAP explica modelos tabulares, mas decisões de seguro hoje são híbridas (LLM + rules + retrieval). Por que SHAP não basta e o que substitui.","image":"/assets/articles/explicabilidade-alem-de-shap.jpg","datePublished":"12 · Abr · 2026","author":{"@type":"Person","name":"Head of AI","jobTitle":"ML · WIR Innovation"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/explicabilidade-alem-de-shap/","articleSection":"Técnico"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"Explicabilidade que vai além do SHAP","item":"https://wirinnovation.ai/insights/explicabilidade-alem-de-shap/"}]}</script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
@@ -114,36 +114,36 @@
 <h3>O que SHAP realmente explica</h3>
 <p>SHAP (proposto por <a href="https://arxiv.org/abs/1705.07874" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Lundberg &amp; Lee em 2017</a>, e LIME por <a href="https://arxiv.org/abs/1602.04938" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Ribeiro et al em 2016</a>) responde uma pergunta específica: dado um modelo de machine learning treinado em dados tabulares, qual foi a contribuição de cada feature para o output de uma predição individual?</p>
 <p>É uma pergunta excelente para o cenário em que SHAP foi desenhado: você tem um random forest, um XGBoost, ou uma rede neural, alimentados por uma tabela de features estruturadas, produzindo um score numérico. SHAP te diz: &quot;o CNPJ ativo contribuiu +0.12 para o score, a sinistralidade declarada contribuiu -0.08&quot;.</p>
-<p>Para uma decisão de crédito tabular, isso resolve. Para uma decisão de seguro corporativo em 2026, é insuficiente — porque a decisão deixou de ser tabular.</p>
+<p>Para uma decisão de crédito tabular, isso resolve. Para uma decisão de seguro corporativo em 2026, é insuficiente, porque a decisão deixou de ser tabular.</p>
 <h3>Por que decisão de seguro deixou de ser tabular</h3>
 <p>Uma submissão de risco corporativo hoje passa por uma cadeia de transformações antes de chegar ao modelo final.</p>
 <p>Primeiro, o input chega como PDF, e-mail ou planilha. Um sistema de extração precisa converter isso em campos. SHAP não cobre essa etapa.</p>
-<p>Depois, esses campos são enriquecidos com retrieval — busca semântica em bases internas e externas. SHAP não cobre essa etapa.</p>
-<p>Em seguida, o caso é classificado por apetite — frequentemente com uma combinação de regras hard-coded e modelo ML. SHAP cobre o ML, mas não as regras nem a lógica de combinação.</p>
-<p>Finalmente, um pricing engine produz output — às vezes um número, às vezes uma frase explicativa para o subscritor. Quando o explicativo é gerado por LLM, SHAP não cobre.</p>
+<p>Depois, esses campos são enriquecidos com retrieval: busca semântica em bases internas e externas. SHAP não cobre essa etapa.</p>
+<p>Em seguida, o caso é classificado por apetite, frequentemente com uma combinação de regras hard-coded e modelo ML. SHAP cobre o ML, mas não as regras nem a lógica de combinação.</p>
+<p>Finalmente, um pricing engine produz output: às vezes um número, às vezes uma frase explicativa para o subscritor. Quando o explicativo é gerado por LLM, SHAP não cobre.</p>
 <p>A consequência: você pode ter SHAP perfeito no modelo de scoring final e ainda assim ser incapaz de explicar ao regulador <em>por que</em> essa submissão específica recebeu essa decisão específica.</p>
-<blockquote>Auditabilidade nativa é arquitetura. Não é feature. Você não a adiciona depois — você a constrói antes.</blockquote>
+<blockquote>Auditabilidade nativa é arquitetura. Não é feature. Você não a adiciona depois. Você a constrói antes.</blockquote>
 <h3>As 4 camadas de explicabilidade real</h3>
 <p>A arquitetura que adotamos na WIR tem quatro camadas. SHAP, quando aplicável, vive na camada 3.</p>
 <p><strong>Camada 1: Input logging com versionamento.</strong> Toda submissão entra no sistema com um snapshot imutável: arquivos originais, hashes, timestamps, canal de origem, identidade do remetente. Antes de qualquer transformação. Esse snapshot é o ponto de partida da trilha.</p>
 <p><strong>Camada 2: Provenance da extração e enriquecimento.</strong> Cada campo extraído carrega metadata: qual ferramenta extraiu, qual versão, qual confiança. Cada enriquecimento carrega: qual fonte foi consultada, qual versão da resposta, qual timestamp.</p>
-<p><strong>Camada 3: Decisão modelo + regras com SHAP onde couber.</strong> Aqui SHAP pode entrar — mas só para a parte do pipeline que é ML tabular. Para regras hard-coded, registramos a regra disparada, sua versão, e os campos que a satisfizeram. Para LLM-as-judge, registramos o prompt, modelo, versão, temperatura, e a justificativa textual.</p>
-<p><strong>Camada 4: Decision Q&amp;A.</strong> A camada que falta na maioria das implementações: a interface que permite a um auditor fazer uma pergunta em linguagem natural sobre uma decisão específica e receber resposta apoiada nas três camadas anteriores. &quot;Por que esse caso foi recusado?&quot; — resposta: &quot;Porque a regra R-014 disparou. A regra foi atualizada em 12/03/2026. O CNAE foi extraído com confiança 0.97 a partir da página 2.&quot;</p>
+<p><strong>Camada 3: Decisão modelo + regras com SHAP onde couber.</strong> Aqui SHAP pode entrar, mas só para a parte do pipeline que é ML tabular. Para regras hard-coded, registramos a regra disparada, sua versão, e os campos que a satisfizeram. Para LLM-as-judge, registramos o prompt, modelo, versão, temperatura, e a justificativa textual.</p>
+<p><strong>Camada 4: Decision Q&amp;A.</strong> A camada que falta na maioria das implementações: a interface que permite a um auditor fazer uma pergunta em linguagem natural sobre uma decisão específica e receber resposta apoiada nas três camadas anteriores. &quot;Por que esse caso foi recusado?&quot;, resposta: &quot;Porque a regra R-014 disparou. A regra foi atualizada em 12/03/2026. O CNAE foi extraído com confiança 0.97 a partir da página 2.&quot;</p>
 <h3>Por que isso importa fora da sala de TI</h3>
 <p><strong>Resseguro.</strong> Resseguradoras europeias e norte-americanas já estão exigindo trilha completa para subscrição automatizada acima de certos limites. SHAP isolado não atende.</p>
 <p><strong>Susep e LGPD.</strong> A <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">LGPD (Lei 13.709/2018)</a> garante ao titular do dado o direito de obter explicação sobre decisões automatizadas que o afetam. As <a href="https://www.gov.br/susep" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">comunicações da SUSEP</a> sobre IA em subscrição estão evoluindo na mesma direção. Operações que dependem de SHAP isolado vão precisar refazer arquitetura quando a fiscalização chegar.</p>
 <p><strong>Diretoria.</strong> Quando o CFO pergunta por que a sinistralidade aumentou 1.2 pontos no trimestre, a resposta com auditabilidade nativa é uma query, não uma investigação de semanas.</p>
 <h3>O que isso muda no roadmap</h3>
-<p>Auditabilidade nativa é arquitetura. Não é feature. Você não a adiciona depois — você a constrói antes, e ela vira o ambiente em que tudo o mais opera. Tentar adicionar trilha completa a um sistema que foi construído sem ela é, em geral, mais caro do que reescrever.</p>
+<p>Auditabilidade nativa é arquitetura. Não é feature. Você não a adiciona depois. Você a constrói antes, e ela vira o ambiente em que tudo o mais opera. Tentar adicionar trilha completa a um sistema que foi construído sem ela é, em geral, mais caro do que reescrever.</p>
 <p>SHAP fica. Mas como uma das ferramentas, não como a resposta. A discussão completa sobre como LLMs e motores de regras se complementam está em <a href="/insights/llms-vs-motores-de-regras/" class="blarticle__link-int">LLMs não substituem motores de regras</a>, e o monitoramento contínuo desses sistemas em produção em <a href="/insights/observabilidade-de-agentes/" class="blarticle__link-int">Observabilidade de agentes</a>.</p>
 <h3>Referências e leituras</h3>
 <ul>
-  <li><a href="https://arxiv.org/abs/1705.07874" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Lundberg &amp; Lee 2017 — A Unified Approach to Interpreting Model Predictions (SHAP)</a></li>
-  <li><a href="https://arxiv.org/abs/1602.04938" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Ribeiro et al 2016 — &quot;Why Should I Trust You?&quot; (LIME)</a></li>
-  <li><a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">LGPD — Lei 13.709/2018</a></li>
-  <li><a href="https://www.gov.br/susep" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">SUSEP — comunicações regulatórias</a></li>
-  <li><a href="https://www.iso.org/standard/27001" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">ISO/IEC 27001 — Sistema de Gestão de Segurança da Informação</a></li>
-  <li><a href="/insights/llms-vs-motores-de-regras/" class="blarticle__link-int">LLMs vs motores de regras — arquitetura híbrida</a></li>
+  <li><a href="https://arxiv.org/abs/1705.07874" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Lundberg &amp; Lee 2017: A Unified Approach to Interpreting Model Predictions (SHAP)</a></li>
+  <li><a href="https://arxiv.org/abs/1602.04938" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Ribeiro et al 2016: &quot;Why Should I Trust You?&quot; (LIME)</a></li>
+  <li><a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">LGPD: Lei 13.709/2018</a></li>
+  <li><a href="https://www.gov.br/susep" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">SUSEP: comunicações regulatórias</a></li>
+  <li><a href="https://www.iso.org/standard/27001" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">ISO/IEC 27001: Sistema de Gestão de Segurança da Informação</a></li>
+  <li><a href="/insights/llms-vs-motores-de-regras/" class="blarticle__link-int">LLMs vs motores de regras: arquitetura híbrida</a></li>
   <li><a href="/insights/observabilidade-de-agentes/" class="blarticle__link-int">Observabilidade de agentes em produção</a></li>
 </ul>
     </div>
@@ -153,7 +153,7 @@
       <ul class="blarticle__related-list">
       <li class="blarticle__related-item"><a href="/insights/caso-implementacao-mahway/"><span class="blarticle__related-cat">Caso</span> Como uma seguradora portfólio Mahway reduziu seu ciclo de cotação em ordens de grandeza</a></li>
       <li class="blarticle__related-item"><a href="/insights/mgas-ponta-da-lanca/"><span class="blarticle__related-cat">Mercado</span> Por que MGAs são a ponta da lança da IA em seguro</a></li>
-      <li class="blarticle__related-item"><a href="/insights/llms-vs-motores-de-regras/"><span class="blarticle__related-cat">Técnico</span> LLMs não substituem motores de regras — eles os complementam</a></li>
+      <li class="blarticle__related-item"><a href="/insights/llms-vs-motores-de-regras/"><span class="blarticle__related-cat">Técnico</span> LLMs não substituem motores de regras: eles os complementam</a></li>
       <li class="blarticle__related-item"><a href="/insights/falsa-dicotomia-velocidade-compliance/"><span class="blarticle__related-cat">Ensaio</span> A falsa dicotomia entre velocidade e compliance</a></li>
       </ul>
     </nav>

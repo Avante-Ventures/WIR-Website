@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#7540AC" />
-<title>Como uma seguradora portfólio Mahway reduziu seu ciclo de cotação em ordens de grandeza — WIR Innovation</title>
+<title>Como uma seguradora portfólio Mahway reduziu seu ciclo de cotação em ordens de grandeza · WIR Innovation</title>
 <meta name="description" content="Antes: 11 dias de ciclo, 800 cotações/mês, 6 underwriters no limite. Depois: 2h, 3.000 cotações/mês, mesmos 6. O que aconteceu no meio." />
 <link rel="canonical" href="https://wirinnovation.ai/insights/caso-implementacao-mahway/" />
 <link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/caso-implementacao-mahway/" />
@@ -109,35 +109,35 @@
 
     <div class="blarticle__body">
 <p>Casos de uso publicados no setor de seguros costumam ser desonestos. Os números são apresentados sem contexto, o &quot;antes&quot; é caricaturado, e os problemas que apareceram no meio do projeto somem do narrativo final.</p>
-<p>Esse texto é o oposto disso. É uma descrição honesta do primeiro caso de implementação completa da stack WIR em uma operação portfólio <a href="https://mahway.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Mahway</a> — incluindo as três coisas que não funcionaram de primeira e as duas que tivemos que abandonar.</p>
+<p>Esse texto é o oposto disso. É uma descrição honesta do primeiro caso de implementação completa da stack WIR em uma operação portfólio <a href="https://mahway.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Mahway</a>, incluindo as três coisas que não funcionaram de primeira e as duas que tivemos que abandonar.</p>
 <h3>O ponto de partida</h3>
 <p>A operação tinha 6 underwriters seniores cobrindo Transportes, Riscos de Engenharia e P&amp;C corporativo médio. Ciclo de cotação médio: 11 dias. Volume mensal: ~800 submissões. Conversão: 19%.</p>
-<p>A queixa interna não era falta de competência técnica. Era throughput. O time recusava casos no apetite porque não tinha tempo de cotar — e o que cotava, cotava tarde demais para concorrer com seguradoras que haviam começado a investir em automação dois anos antes.</p>
+<p>A queixa interna não era falta de competência técnica. Era throughput. O time recusava casos no apetite porque não tinha tempo de cotar. E o que cotava, cotava tarde demais para concorrer com seguradoras que haviam começado a investir em automação dois anos antes.</p>
 <p>A diretoria havia tentado três coisas antes: contratar mais um underwriter (bottleneck virou onboarding), implementar um portal (corretoras não usaram), comprar uma ferramenta de OCR (extraiu campos, não decidiu nada).</p>
 <p>Nenhuma resolveu, porque nenhuma atacou o que era um problema de modelo operacional, não de capacidade. O contexto desse problema estrutural é a tese central de <a href="/insights/o-underwriter-nao-morre/" class="blarticle__link-int">O underwriter não morre</a>.</p>
 <h3>A intervenção</h3>
-<p><strong>Fase 1 (semanas 1-6): Intake estruturado.</strong> O primeiro módulo recebeu submissões pelos canais existentes, descompactou anexos, extraiu campos com camada híbrida de OCR + LLM e estruturou em schema normalizado. Sem decidir nada — só preparou. Resultado: o tempo de &quot;submissão chega&quot; → &quot;underwriter tem dados estruturados na mesa&quot; caiu de 4 horas para 6 minutos.</p>
+<p><strong>Fase 1 (semanas 1-6): Intake estruturado.</strong> O primeiro módulo recebeu submissões pelos canais existentes, descompactou anexos, extraiu campos com camada híbrida de OCR + LLM e estruturou em schema normalizado. Sem decidir nada, só preparou. Resultado: o tempo de &quot;submissão chega&quot; → &quot;underwriter tem dados estruturados na mesa&quot; caiu de 4 horas para 6 minutos.</p>
 <p><strong>Fase 2 (semanas 5-12): Enriquecimento e classificação por apetite.</strong> Em paralelo, ligamos o motor de regras de apetite e o módulo de enriquecimento. Cada submissão passou a chegar pré-classificada em três fluxos: dentro do apetite, borda, ou fora.</p>
-<p><strong>Fase 3 (semanas 11-18): Pricing assistido e auditoria.</strong> Sugestão de pricing calibrada ao livro histórico, e a infraestrutura de logging que registra cada decisão com modelo, versão, inputs, output, timestamp e justificativa — exatamente a arquitetura descrita em <a href="/insights/explicabilidade-alem-de-shap/" class="blarticle__link-int">Explicabilidade que vai além do SHAP</a>.</p>
+<p><strong>Fase 3 (semanas 11-18): Pricing assistido e auditoria.</strong> Sugestão de pricing calibrada ao livro histórico, e a infraestrutura de logging que registra cada decisão com modelo, versão, inputs, output, timestamp e justificativa, exatamente a arquitetura descrita em <a href="/insights/explicabilidade-alem-de-shap/" class="blarticle__link-int">Explicabilidade que vai além do SHAP</a>.</p>
 <h3>O que funcionou</h3>
 <p>Resultados na semana 18, comparados à baseline. Ciclo de cotação: 11 dias → 2 horas. Volume processado: 800 → 3.000/mês. Headcount: 6 (mesmo time). Conversão: 19% → 26%. Loss ratio: 64% → 61%. NPS dos corretores: 31 → 67.</p>
-<blockquote>A IA isolada não teria movido a agulha — porque o gargalo não era extração de PDF, era operação fragmentada.</blockquote>
+<blockquote>A IA isolada não teria movido a agulha, porque o gargalo não era extração de PDF, era operação fragmentada.</blockquote>
 <p>O número mais subestimado é o NPS de corretores. A operação não comunicou tecnologia para fora. O que corretores perceberam foi: a seguradora respondia rápido, em formato útil, com explicação quando recusava. Em 6 meses, três corretoras top-30 realocaram volume para frente da fila.</p>
 <h3>O que não funcionou de primeira</h3>
-<p><strong>Sugestão de pricing virou &quot;preço final&quot; para UWs juniores.</strong> Cotações saíam no número exato sugerido pelo motor — sem ajuste. Os UWs tratavam o número como autoridade. Correção: UX (mais explícito que era sugestão) + treinamento + processo (forçar registro de &quot;ajuste ou aceite&quot; antes do submit).</p>
-<p><strong>Recusa automática gerou complaint do canal.</strong> Recusas vinham com justificativa técnica precisa, em linguagem que soava fria para corretora. Tivemos que adicionar camada de geração de copy — mesma justificativa, em português comercial.</p>
-<p><strong>Override sem registro de motivo.</strong> Versão inicial deixava UW pular a sugestão sem registrar por quê. Em 6 semanas, perdemos sinal sobre quando o modelo estava certo e sendo ignorado vs quando estava errado e sendo corrigido. Forçar campo obrigatório de &quot;motivo do override&quot; resolveu — e virou base para retreinar.</p>
+<p><strong>Sugestão de pricing virou &quot;preço final&quot; para UWs juniores.</strong> Cotações saíam no número exato sugerido pelo motor, sem ajuste. Os UWs tratavam o número como autoridade. Correção: UX (mais explícito que era sugestão) + treinamento + processo (forçar registro de &quot;ajuste ou aceite&quot; antes do submit).</p>
+<p><strong>Recusa automática gerou complaint do canal.</strong> Recusas vinham com justificativa técnica precisa, em linguagem que soava fria para corretora. Tivemos que adicionar camada de geração de copy: mesma justificativa, em português comercial.</p>
+<p><strong>Override sem registro de motivo.</strong> Versão inicial deixava UW pular a sugestão sem registrar por quê. Em 6 semanas, perdemos sinal sobre quando o modelo estava certo e sendo ignorado vs quando estava errado e sendo corrigido. Forçar campo obrigatório de &quot;motivo do override&quot; resolveu, e virou base para retreinar.</p>
 <h3>O que tivemos que abandonar</h3>
 <p><strong>Chat com o corretor para completar dados faltantes.</strong> Tecnicamente funcionou. Operacionalmente, corretores acharam invasivo. Voltamos para fluxo humano de cobrança.</p>
 <p><strong>Sugestão de cross-sell na cotação.</strong> Conversão real: 0.4%. Cross-sell em seguro corporativo é construído na relação corretor-cliente, não no momento da cotação. Removemos.</p>
 <h3>O que importa para quem está pensando</h3>
-<p>A leitura clássica desse caso seria &quot;implementar IA = ganhar 4× throughput&quot;. Está errada. A leitura correta é: redesenhar o modelo operacional, com IA como infraestrutura, ganhou 4× throughput. A IA isolada não teria movido a agulha — porque o gargalo não era extração de PDF, era operação fragmentada.</p>
+<p>A leitura clássica desse caso seria &quot;implementar IA = ganhar 4× throughput&quot;. Está errada. A leitura correta é: redesenhar o modelo operacional, com IA como infraestrutura, ganhou 4× throughput. A IA isolada não teria movido a agulha, porque o gargalo não era extração de PDF, era operação fragmentada.</p>
 <p>Para qualquer operação considerando o caminho similar: o primeiro investimento não é em modelo. É em logging, schema unificado e política de aceitação versionada.</p>
 <h3>Referências e leituras</h3>
 <ul>
   <li><a href="https://mahway.com" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">Mahway</a> · venture builder Tech &amp; IA (California, EUA)</li>
-  <li><a href="/insights/o-underwriter-nao-morre/" class="blarticle__link-int">O underwriter não morre — a tese estrutural</a></li>
-  <li><a href="/insights/explicabilidade-alem-de-shap/" class="blarticle__link-int">Explicabilidade que vai além do SHAP — a arquitetura de auditoria usada nesta implementação</a></li>
+  <li><a href="/insights/o-underwriter-nao-morre/" class="blarticle__link-int">O underwriter não morre: a tese estrutural</a></li>
+  <li><a href="/insights/explicabilidade-alem-de-shap/" class="blarticle__link-int">Explicabilidade que vai além do SHAP: a arquitetura de auditoria usada nesta implementação</a></li>
   <li><a href="/insights/mgas-ponta-da-lanca/" class="blarticle__link-int">Por que MGAs são a ponta da lança da IA em seguro</a></li>
 </ul>
     </div>
@@ -146,7 +146,7 @@
       <h3 class="blarticle__related-title">Leituras relacionadas</h3>
       <ul class="blarticle__related-list">
       <li class="blarticle__related-item"><a href="/insights/mgas-ponta-da-lanca/"><span class="blarticle__related-cat">Mercado</span> Por que MGAs são a ponta da lança da IA em seguro</a></li>
-      <li class="blarticle__related-item"><a href="/insights/llms-vs-motores-de-regras/"><span class="blarticle__related-cat">Técnico</span> LLMs não substituem motores de regras — eles os complementam</a></li>
+      <li class="blarticle__related-item"><a href="/insights/llms-vs-motores-de-regras/"><span class="blarticle__related-cat">Técnico</span> LLMs não substituem motores de regras: eles os complementam</a></li>
       <li class="blarticle__related-item"><a href="/insights/falsa-dicotomia-velocidade-compliance/"><span class="blarticle__related-cat">Ensaio</span> A falsa dicotomia entre velocidade e compliance</a></li>
       <li class="blarticle__related-item"><a href="/insights/custo-invisivel-stp-mal-feito/"><span class="blarticle__related-cat">Mercado</span> O custo invisível do straight-through processing mal feito</a></li>
       </ul>
