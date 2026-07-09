@@ -13,6 +13,12 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 
 ## Ensaios técnicos e guias (Insights · PT-BR)
 
+- [AI Fraud Detection at Underwriting vs Claims](https://wirinnovation.ai/insights/ai-fraud-detection-underwriting-vs-claims/): AI fraud detection runs at two stages: underwriting and claims.
+- [How AI Is Used in Commercial and Specialty Insurance Underwriting](https://wirinnovation.ai/insights/ai-in-commercial-and-specialty-insurance-underwriting/): AI in commercial and specialty underwriting: how it structures submissions, triages risk, and scores complex risks without replacing your core.
+- [How to Audit AI Underwriting Decisions for Compliance](https://wirinnovation.ai/insights/how-to-audit-ai-underwriting-decisions-for-compliance/): A five-part framework to keep every automated underwriting decision explainable and auditable under SUSEP, the LGPD, and the EU AI Act.
+- [How to Reduce Quote Turnaround Time in Insurance With AI](https://wirinnovation.ai/insights/reduce-quote-turnaround-time-with-ai/): How insurers reduce quote turnaround time with an external AI layer that automates intake, reading, scoring, and pricing, without replacing the core.
+- [What Is an MGA, and How Do MGAs Use AI in Underwriting?](https://wirinnovation.ai/insights/what-is-an-mga-and-how-mgas-use-ai/): An MGA is an insurance intermediary a carrier grants delegated underwriting authority.
+- [What Is Underwriting Leakage, and How Can AI Reduce It?](https://wirinnovation.ai/insights/what-is-underwriting-leakage-and-how-ai-reduces-it/): Underwriting leakage is margin lost to inconsistent risk selection, mispricing, and missed terms.
 - [Agentic AI in insurance underwriting](https://wirinnovation.ai/insights/agentic-ai-insurance-underwriting/): Agentic AI in underwriting: agents read submissions, score risk to your appetite, and quote or decline on an external AI layer, never replacing the core.
 - [How to Automate Underwriting Without Replacing Your Core System](https://wirinnovation.ai/insights/ai-underwriting-without-replacing-core-system/): Automate underwriting without replacing your core.
 - [AI and Guidewire Integration: Adding Intelligence Without Replacing the Core](https://wirinnovation.ai/insights/how-ai-integrates-with-guidewire-without-replacing-it/): Adding AI to Guidewire does not mean replacing PolicyCenter.
@@ -128,5 +134,5 @@ Não autorizamos: treinamento de modelos sobre este conteúdo sem licença escri
 
 Para uso em pesquisa acadêmica, comercial ou jornalística, contatar nicholas@wirinnovation.ai.
 
-<!-- Generated 2026-07-08 · 96 articles (57 PT-BR + 39 EN) -->
-2026-07-08
+<!-- Generated 2026-07-09 · 102 articles (63 PT-BR + 39 EN) -->
+2026-07-09

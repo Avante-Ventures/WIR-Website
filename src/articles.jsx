@@ -4,6 +4,352 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 export const ARTICLES = [
   {
+    slug: "ai-fraud-detection-underwriting-vs-claims",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/ai-fraud-detection-underwriting-vs-claims.jpg",
+    title: "AI Fraud Detection at Underwriting vs Claims",
+    sub: "AI fraud detection operates at two points in the insurance lifecycle. At underwriting, it scores fraud signals while a risk is being quoted, so bad risk is priced correctly or declined before it enters the book. At claims, it flags suspicious losses after they are reported, once the exposure already exists. An external AI layer can run these checks on top of the core an insurer already operates, never in its place, and return an explainable score with a full audit trail.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "AI fraud detection runs at two stages: underwriting and claims. An external AI layer scores fraud signals at both, on top of the core the insurer already runs.",
+    body: `By the time most insurers go looking for fraud, the policy is already written. A claim comes in, an adjuster gets suspicious, and a special investigations unit starts working backward from a loss that is already on the books. That is fraud detection at the claims stage, and it is where the industry has spent most of its money and most of its technology. It is also the most expensive place to find the problem, because the risk was accepted, priced, and bound long before anyone asked whether it was genuine.
+
+There is an earlier place to look. Fraud detection at underwriting scores the same signals while the risk is still being quoted, before a single policy is bound. The two are not rivals so much as two points on one timeline, and the difference between them is mostly a question of when the insurer pays for the miss. This article compares them, and shows where an external AI layer fits: on top of the systems an insurer already runs, never in their place.
+
+### Fraud detection at claims: finding it after the loss
+
+Claims-stage fraud detection is the traditional model. The insurer writes the policy, the policyholder reports a loss, and the claim is examined for signs that it is exaggerated, staged, or entirely invented. Special investigations units, red-flag rules, and increasingly machine-learning models score each claim and route the suspicious ones for human review.
+
+It works, and it is necessary. But it is reactive by design. The exposure is already on the book, the reserve is already set, and the investigation becomes a race to avoid paying a claim that should never have been priced in the first place. Detection at this stage limits the damage. It does not prevent it. An external AI layer here can score and flag a claim for the insurer's own investigators, but it does not settle claims or run the claims process end to end. That decision stays with the insurer.
+
+### Fraud detection at underwriting: finding it before the bind
+
+Underwriting-stage fraud detection moves the same question upstream. As a submission arrives, the system reads it, enriches it against internal and external sources, and scores it for both risk and fraud signals before the insurer commits to a price. Misrepresented exposures, inconsistent histories, and identities that do not reconcile are caught while the insurer can still decline, refer, or reprice, rather than after it has taken the risk. This is why [automating submission intake](/insurance-submission-intake-automation) is usually where the earliest fraud signal appears.
+
+This is the point in the lifecycle where an external AI layer is strongest, because reading and scoring the submission is exactly what the layer already does for underwriting. The fraud check is not a separate product bolted on at claims time. It is one output of [the same risk engine that scores the submission](/what-is-ai-underwriting-workbench) against the insurer's appetite and underwriting manual. The enriched record and the audit trail it produces also carry forward, so if a claim does arrive later, the insurer's own investigators inherit a documented history instead of starting from a blank file.
+
+### Why the underwriting stage changes the economics
+
+Fraud is not a rounding error in insurance. The Coalition Against Insurance Fraud estimated in 2022 that fraud costs the United States about $308.6 billion a year across all lines. The FBI estimates that non-health insurance fraud alone costs more than $40 billion a year. Separately, the FBI estimates that fraud adds $400 to $700 to the average U.S. family's annual insurance premiums, a general framing across insurance rather than a figure scoped to any one segment.
+
+These are United States estimates, and they describe a problem that does not stop at a border. They also explain why the stage matters. Fraud that is not caught at underwriting does not disappear. It is priced into the book at a premium that assumed the risk was clean, and it resurfaces later as a paid or contested claim. In that sense it compounds on the loss ratio: the insurer collects too little premium for the true risk, then pays out more than the pricing assumed. Catching the same fraud at underwriting keeps it out of the book entirely, which is why the earlier check is the cheaper one.
+
+### Where an external AI layer sits
+
+[An external AI layer](/ai-underwriting-without-replacing-core-system) is software that sits on top of the insurer's existing core, reads and enriches each submission, scores it for risk and fraud against the insurer's own appetite, and returns an explainable decision through APIs. It is not the system of record and it does not replace the core. The policy administration system still issues the policy and holds the truth. The layer simply makes the risk and fraud judgment before the policy is bound, then writes the result back with a full audit trail.
+
+For WIR, fraud detection is one function of the risk and fraud engine inside the underwriting journey, the same engine that scores each submission against the insurer's underwriting manual. Because the layer is external, there is no core migration and no load on the insurer's IT. Because every score is explainable and logged, a person can review why a submission was flagged, which matters as much for a declined applicant as it does for an auditor. WIR is not an insurer, a broker, or an MGA, and it does not carry risk. It automates the quotation and underwriting journey according to the insurer's own risk-acceptance policy.
+
+### What this means in Brazil: SUSEP and LGPD
+
+WIR was born in Brazil, and two constraints shape any fraud automation there. The first is the Superintendência de Seguros Privados (SUSEP), the insurance regulator, which expects insurers to own and justify their pricing and acceptance decisions rather than defer them to a black box. The second is the LGPD, Brazil's general data protection law (Law 13.709 of 2018), whose Article 20 gives a person the right to request a review of decisions made solely by automated processing that affect their interests.
+
+Both point to the same design rule. A fraud flag that changes whether someone is quoted, declined, or investigated has to be explainable and reviewable, traceable to the data and the logic behind it. That is why a well-built layer is designed to explain, to log, and to keep a person in the loop, not only to score. The Brazilian market treats fraud as a shared cost that honest policyholders ultimately pay for through higher premiums, and the industry, through bodies such as CNseg, coordinates prevention across carriers. The dollar figures above are United States estimates, but the underlying dynamic, fraud that is mispriced at underwriting and resurfaces as loss at claims, is the same in any market. Moving the check upstream, with an audit trail that a SUSEP review and an LGPD review can both stand behind, is what makes the automation defensible in Brazil.
+
+### The bottom line
+
+Fraud detection at claims will always be part of insurance, because not every bad risk shows its hand at underwriting. But treating the claims stage as the only line of defense means paying to catch what better pricing could have kept out. Scoring fraud at underwriting, as one output of the same risk engine that already reads and prices the submission, moves the check to the cheapest point in the lifecycle. An external AI layer makes that practical, on top of the core the insurer already runs, never in its place, and with an explanation for every decision it returns.`,
+    faq: [
+      { q: "What is the difference between AI fraud detection at underwriting and at claims?", a: "At underwriting, AI scores fraud signals while a risk is being quoted, so misrepresented or fabricated exposures can be declined or repriced before a policy is bound. At claims, AI flags suspicious losses after they are reported, when the exposure already exists. Underwriting-stage detection keeps bad risk out of the book. Claims-stage detection limits the payout once the risk is already there." },
+      { q: "Does an external AI layer replace the insurer's core system to detect fraud?", a: "No. An external AI layer sits on top of the existing core and connects through APIs. It reads each submission, scores it for risk and fraud against the insurer's own appetite, and writes an explainable decision back to the policy system, which stays the system of record. There is no core migration, and the layer does not settle claims or carry risk." },
+      { q: "Why is catching fraud at underwriting cheaper than catching it at claims?", a: "Fraud that is not caught at underwriting is priced into the book as if the risk were clean, then resurfaces later as a paid or contested claim. It compounds on the loss ratio: too little premium collected for the true risk, and more paid out than the pricing assumed. Catching the same fraud at underwriting keeps it out of the book, so the earlier check avoids the loss instead of chasing it." },
+      { q: "Is automated fraud scoring compatible with SUSEP and the LGPD in Brazil?", a: "Yes, provided each decision is explainable and reviewable. Brazil's LGPD (Law 13.709 of 2018) gives individuals the right to request review of decisions made solely by automated processing, and SUSEP expects insurers to justify their acceptance and pricing. An external layer that logs its reasoning, returns an audit trail, and keeps a person in the loop is designed to meet both." }
+    ],
+  },
+  {
+    slug: "ai-in-commercial-and-specialty-insurance-underwriting",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/ai-in-commercial-and-specialty-insurance-underwriting.jpg",
+    title: "How AI Is Used in Commercial and Specialty Insurance Underwriting",
+    sub: "In commercial and specialty insurance, AI is used to automate the work that surrounds an underwriting decision, not to make the decision itself. It reads and structures messy submissions, checks them against appetite, enriches them with third-party data, and scores complex risks so underwriters spend their time on judgment instead of re-keying. The most durable deployments run as an external layer on top of the core policy administration system, not as a replacement for it.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "7 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "AI in commercial and specialty underwriting: how it structures submissions, triages risk, and scores complex risks without replacing your core.",
+    body: `Walk a commercial or specialty submission from the broker's email to a bound quote, and you will find AI doing almost every step except the final judgment. It structures the paperwork, tests the risk against the carrier's appetite, pulls in the outside data the broker left out, and scores the exposure consistently against the rest of the book, so an underwriter's scarce attention lands on the calls that genuinely need an expert. The versions of this that survive contact with a real insurance stack run as an external layer on top of the core policy administration system, rather than trying to replace it.
+
+### How is AI used in commercial and specialty insurance underwriting?
+
+AI is applied along a pipeline that runs from submission intake to decision, and each stage does a distinct job. Ingestion turns unstructured documents into structured data. Triage matches the risk to appetite and routes it to the right desk. Enrichment adds external context the broker did not send. Scoring measures the risk consistently against the book. Decisioning recommends a quote, a referral, or a decline, with the reasoning attached. Put plainly, AI in commercial and specialty underwriting is the automation of everything that happens before the decision, so the underwriter spends time on judgment rather than on data entry.
+
+That distinction matters more here than in personal lines. A motor or home policy can be rated from a short, standardized form. A marine cargo, cyber, energy, or political risk submission arrives as a bundle of emails, broker slips, spreadsheets, loss runs, and engineering reports, often running to hundreds of pages and rarely in the same format twice. The judgment is genuinely hard, and it is expensive to staff. Underwriters can spend a large share of their time on administrative and non-core activities, such as rekeying data between systems, rather than on the risk analysis itself. In specialty, where every risk is bespoke, that overhead compounds.
+
+Specialty is also a large and genuinely global market. Lloyd's of London, the world's leading insurance and reinsurance marketplace, traces its origins to marine risk written in Edward Lloyd's coffee house in the 1680s, and marine and transport remain among the most document-heavy lines an underwriter can touch. Aviation, energy, cyber, political risk, and directors and officers cover sit alongside them, each with its own submission format, its own data sources, and its own failure modes. There is no single form to standardize, which is exactly why generic automation has struggled here and why document-level AI has become useful.
+
+### Stage one: submission intake and ingestion
+
+The pipeline starts by reading what the broker sent. Commercial and specialty submissions are unstructured by nature: a cover note, a completed application, a Statement of Values, prior loss runs, ACORD forms, and survey or engineering reports. Document AI extracts the fields that matter, such as insured name, occupancy, limits, deductibles, locations, values, and loss history, and normalizes them into a structured record the rest of the pipeline can use. Done well, this is the highest-leverage stage, because every downstream step depends on clean data. Older template-based capture broke every time a broker changed a spreadsheet layout, whereas modern document AI reads for meaning rather than position, which is what finally made intake automation workable across so many formats. This is the core of [insurance submission intake automation](#blog/insurance-submission-intake-automation), and it is where most manual re-keying disappears.
+
+### Stage two: triage and appetite matching
+
+Not every submission deserves an underwriter's time. Once the data is structured, AI checks the risk against the carrier's appetite: class of business, geography, occupancy, limit and attachment point, and excluded activities. In-appetite risks are prioritized and routed to the right underwriter or team, while clearly out-of-appetite risks can be declined quickly and courteously, freeing capacity for the risks worth quoting. In a market where brokers reward the carrier that responds first, disciplined triage is often where quote turnaround is won or lost, and it protects underwriters from drowning in submissions they were never going to write.
+
+### Stage three: enrichment
+
+Brokers rarely send everything an underwriter needs. Enrichment fills the gaps automatically by pulling external data and attaching it to the submission: company firmographics and financial health, sanctions and adverse-media screening, catastrophe and geospatial exposure for a set of locations, or fleet and route data for a transport risk. Instead of an underwriter opening ten browser tabs and copying figures by hand, the layer assembles the context and flags what is still missing before the file moves on.
+
+### Stage four: risk scoring and pricing support
+
+With a clean, enriched submission, machine learning models score the risk consistently against the portfolio, surface anomalies, and highlight the drivers behind the score. For a transport risk, that might mean weighing fleet age, routes, cargo type, and accumulation at a single port, while for a property risk it means construction, occupancy, and catastrophe exposure. This is where AI attacks inconsistency directly. When two similar risks are priced differently because they landed on two different desks on two different days, the carrier loses money quietly, a problem the industry calls underwriting leakage. Consistent, explainable scoring narrows that gap and gives pricing committees something they can inspect. Crucially, in specialty the model informs the underwriter; it does not overrule the technical rating held in the core system.
+
+### Stage five: decisioning and referral
+
+The final stage turns analysis into a recommendation: quote, refer, or decline, with the data trail and rationale attached. Simple, in-appetite risks can move straight through to a drafted quote. Complex or high-value risks are referred upward, now with the file already assembled so a senior underwriter starts from context rather than a blank page. Specialty underwriting keeps a human in the loop by design, and the goal is a faster, better-informed decision, not an unattended one. The share of risks that clear this path without manual intervention, the straight-through processing rate, becomes a clean measure of how much the layer is actually carrying.
+
+### The external-layer model: AI without replacing the core
+
+The pattern that survives contact with a real insurance stack is the one that leaves the core alone. Policy administration, rating, and bind still live in the system of record, whether that is a modern platform or decades of accumulated configuration. AI sits in front of it as an external layer, handling intake, triage, enrichment, scoring, and quote preparation, then handing a clean, structured, decision-ready file to the core. This is the premise behind [AI underwriting without replacing the core system](#blog/ai-underwriting-without-replacing-core-system): the fastest path to value is not a multi-year core migration, it is a layer that makes the existing core faster.
+
+This is also the shape of the work WIR has done in practice. WIR has run a proof of concept with a global insurer in the Transport line, applying its external layer to structure inbound submissions and score risk at the point of intake, without touching the underlying policy system.
+
+### Governance: explainability, SUSEP, and LGPD
+
+Commercial and specialty carriers cannot adopt AI they cannot explain. Every automated step, from extraction and triage to enrichment and scoring, should be logged, versioned, and reviewable, so a decision can be reconstructed months later. In Brazil, that means operating within SUSEP's oversight of insurers and treating any personal data under an LGPD legal basis, with the transparency and human-review expectations that follow. The same discipline, an auditable record of how each decision was reached, is what regulators elsewhere are converging on, and it is far cheaper to design in from the start than to retrofit. For a deeper treatment, see [how to audit AI underwriting decisions for compliance](#blog/how-to-audit-ai-underwriting-decisions-for-compliance).
+
+### The takeaway
+
+In commercial and specialty insurance, AI earns its place by removing the friction between a submission landing and a decision going out. It reads the documents, matches appetite, enriches the file, scores the risk, and prepares the recommendation, leaving the judgment and the core system where they belong: with the underwriter and the system of record. The carriers that pull ahead are not the ones that replace the most technology; they are the ones that automate the intake-to-decision path and free their underwriters to underwrite.`,
+    faq: [
+      { q: "How is AI used in commercial and specialty insurance underwriting?", a: "AI automates the work around the decision rather than the decision itself. It reads and structures submissions, matches each risk to the carrier's appetite, enriches the file with external data, and scores complex risks consistently against the book, then prepares a quote, referral, or decline with the reasoning attached. The underwriter still owns the judgment. The most durable setups run this as an external layer on top of the core policy system, not as a replacement for it." },
+      { q: "Does AI replace underwriters in commercial and specialty insurance?", a: "No. In specialty lines the risks are bespoke and the judgment is genuinely hard, so the model informs the underwriter instead of overruling them. AI clears the administrative work, assembles the file, and scores the risk, while complex or high-value submissions are referred to a senior underwriter who starts from context rather than a blank page. The design keeps a human in the loop, aiming for a faster and better-informed decision, not an unattended one." },
+      { q: "Can AI underwriting work without replacing the core policy administration system?", a: "Yes, and that is usually the point. Policy administration, rating, and bind stay in the system of record, while AI sits in front of it as an external layer that handles intake, triage, enrichment, scoring, and quote preparation. The two connect through APIs, so the core keeps ownership of the record. This avoids a multi-year core migration and delivers value faster, because the existing core runs against cleaner, decision-ready files." },
+      { q: "Why is commercial and specialty underwriting harder to automate than personal lines?", a: "A motor or home policy can be rated from a short, standardized form. A marine cargo, cyber, energy, or political risk submission arrives as emails, broker slips, spreadsheets, loss runs, and engineering reports, often hundreds of pages and rarely in the same format twice. There is no single form to standardize, which is why template-based automation struggled here. Document AI that reads for meaning rather than fixed position is what finally made intake automation workable across these formats." },
+      { q: "Is AI underwriting compliant with SUSEP and LGPD in Brazil?", a: "It can be, provided the layer is auditable by design. Every automated step, from extraction and triage to enrichment and scoring, should be logged, versioned, and reviewable, so a decision can be reconstructed later. In Brazil that means operating within SUSEP's oversight of insurers and handling personal data under an LGPD legal basis, with transparency and human review. Regulators elsewhere are converging on the same expectation, so an auditable record is cheaper to design in from the start." }
+    ],
+  },
+  {
+    slug: "how-to-audit-ai-underwriting-decisions-for-compliance",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/how-to-audit-ai-underwriting-decisions-for-compliance.jpg",
+    title: "How to Audit AI Underwriting Decisions for Compliance",
+    sub: "To audit AI underwriting decisions for compliance, hold every automated quote, decline, or referral to five tests: is it logged with a complete record, explained in plain language, open to human review and override, watched for drift and bias over time, and mapped to the specific rule it must satisfy? Built that way, one evidence base answers a SUSEP conduct review, an LGPD request to review an automated decision, and the high-risk duties in the EU AI Act, all while the AI stays an external layer that never replaces the insurer's core system.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "5 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "A five-part framework to keep every automated underwriting decision explainable and auditable under SUSEP, the LGPD, and the EU AI Act.",
+    body: `Start from a simple test. For any automated quote, decline, or referral your system issued last quarter, could you sit across from a regulator and show why it happened, who was accountable for it, and which rule it followed? If the honest answer is "not easily," the gap is rarely the model. It is that the decision was never captured in a form anyone can inspect after the fact. The work here is less about proving a model is right and more about proving every decision is accountable.
+
+That distinction matters because an [AI decisioning system](/insights/what-is-insurance-decisioning/) reads a submission, scores the risk, and issues an outcome in seconds, faster than any human file note. If the reasoning is not recorded as the decision is made, it is gone. The fix is to design the audit trail into the decision itself, and to run the whole thing as an [external layer that never replaces the core policy system](/insights/ai-underwriting-without-replacing-core-system/).
+
+### The five capabilities an AI underwriting audit must prove
+
+A defensible audit trail is not a report you generate at year end. It is five properties that have to hold for every single decision the system makes.
+
+1. **A complete decision log.** Every automated quote, decline, or referral records its inputs, the data sources and enrichment used, the model version that ran, the output, and the reason, all time-stamped and tamper-evident. If you cannot reconstruct a decision months later, you cannot defend it.
+2. **A plain-language explanation.** For each outcome, a person should be able to read why it happened in business terms, not a raw feature vector. A decline a broker or an ombudsman cannot understand is a decline you cannot stand behind.
+3. **Human oversight with real authority.** A named role can review any decision, override it, and is accountable for the outcome. Cases that fall outside the rules the system was given escalate to a person with the reasoning attached, rather than being forced to a machine verdict.
+4. **Continuous monitoring for drift and bias.** Model performance and outcome distributions are watched over time, so that data drift or a disparate effect on a group of applicants is caught by the system rather than by a complaint.
+5. **A map from each control to the rule it satisfies.** Every log, explanation, and oversight step is traced to the specific obligation it meets, so an auditor sees not just that controls exist but which requirement each one answers.
+
+These five are not arbitrary. They mirror the duties the EU AI Act places on high-risk systems: record-keeping, transparency, human oversight, accuracy and monitoring, and risk-management documentation. Build to them once and you have a single evidence base for every regulator who asks.
+
+### Auditability is not the same as accuracy
+
+A model can be accurate and still fail a review. Accuracy is a property of the model. Auditability is a property of the decision. A regulator looking at a disputed decline does not ask whether your model scores well on a validation set. They ask why this applicant, on this day, received this outcome, and whether a person could have caught an error. A correct decision you cannot explain is, for compliance purposes, a decision you cannot defend. That is why most of this work is capturing and explaining decisions, not tuning models.
+
+### What the rules actually require
+
+In Brazil, two regimes bind an insurer's book today, across every line. Under the LGPD, a person has the right to request a review of decisions made solely by automated processing that affect their interests, and to receive clear information about the criteria behind them. In practice, an automated decline cannot be a black box. Under SUSEP conduct and governance expectations, the insurer has to show that its acceptance decisions follow a consistent, documented policy, applied the same way to every comparable case. The five capabilities above produce exactly the evidence both regimes ask for, and every [auditable decision record](/insights/decisoes-subscricao-auditaveis-en/) should be encrypted at each step.
+
+The EU AI Act is the third reference, and it is worth building to even from Brazil. It classifies AI used for risk assessment and pricing in life and health insurance for natural persons as high-risk under Annex III, which triggers duties on logging, transparency, human oversight, and monitoring, the same five capabilities again. Non-compliance with those high-risk obligations can reach EUR 15 million or 3% of worldwide annual turnover under Article 99. Those obligations were set to apply from August 2, 2026 under the enacted regulation, though the European Commission's November 2025 Digital Omnibus proposal floated adjusting that timeline, so the final date is worth tracking against the published text. The takeaway does not rest on the calendar. For a global insurer, the EU standard is already the strictest one on the horizon, and building to it clears SUSEP and the LGPD by default.
+
+### Why the core system is never touched
+
+An audit layer is worthless if standing it up means migrating the policy system. It should not. WIR runs as an external AI layer on top of the existing core: it reads the submission, makes the decision, and writes that decision and its full audit trail back to the system of record, which stays the book of authority. Nothing is ripped out, and the insurer keeps its authority limits and the final say.
+
+This is also what makes the project shippable. BCG has found that roughly 70% of insurers do not carry their innovation initiatives through, largely because of IT limitations. An audit-ready [agentic layer](/insights/agentic-ai-insurance-underwriting/) that needs no core migration and adds no load to the IT roadmap is often the only version of the project that survives contact with reality.
+
+### Where to start
+
+Sequence it. Logging and explainability come first, because every other control assumes a decision you already captured and can read back. Wire human review into referrals next, then stand up monitoring, then produce the control-to-rule map your auditors will actually open. WIR is proving this approach in a live proof of concept with a global insurer in the Transport line, where each decision returns to the core with its audit trail attached. The goal is not an AI that is never wrong. No one in insurance should promise that. The goal is a decision you can always explain, calibrated to a policy you approved, with a person in the loop wherever the risk deserves one.`,
+    faq: [
+      { q: "What does it mean to audit an AI underwriting decision?", a: "It means being able to show, for any automated quote, decline, or referral, why it was made, who was accountable, and which rule it followed. The decision has to be recorded and explainable after the fact, not reconstructed from memory. Auditing is about accountability for each decision, which is a separate question from whether the underlying model is accurate." },
+      { q: "Does the EU AI Act apply to insurers in Brazil?", a: "The EU AI Act binds AI placed on the EU market, so it reaches a Brazilian insurer mainly as part of a multinational group with European operations. Even where it does not bind directly, its high-risk requirements for logging, transparency, human oversight, and monitoring have become the reference template that other supervisors echo. Inside Brazil, the binding rules are the LGPD and SUSEP conduct and governance expectations." },
+      { q: "Do you have to replace the core policy system to make AI decisions auditable?", a: "No. A well-designed audit layer sits on top of the existing core as an external AI layer. It reads submissions, makes decisions, and writes each decision and its audit trail back to the system of record, with no core migration and no added load on the IT team. That is usually what lets the project ship at all, given the IT constraints most insurers face." },
+      { q: "What does the LGPD require for automated underwriting decisions?", a: "Under Article 20 of the LGPD, a person can request a review of a decision made solely by automated processing that affects their interests, and can ask for clear information about the criteria behind it, subject to trade secret. For an insurer, that means an automated decline has to be explainable and open to human review, not a black box." },
+      { q: "Is an accurate model enough to pass a compliance audit?", a: "No. Accuracy is a property of the model; auditability is a property of the decision. A regulator reviewing a disputed outcome asks why a specific applicant received a specific decision and whether a person could have caught an error, not how the model scores on a test set. A correct decision you cannot explain still fails the review." }
+    ],
+  },
+  {
+    slug: "reduce-quote-turnaround-time-with-ai",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/reduce-quote-turnaround-time-with-ai.jpg",
+    title: "How to Reduce Quote Turnaround Time in Insurance With AI",
+    sub: "Insurers reduce quote turnaround time by adding an external AI layer over the systems they already run, not by rebuilding the core. The layer automates the submission-to-decision journey, intake, document reading, enrichment, risk scoring, and pricing, so the answer reaches the broker while the risk is still live. Because it sits on top of existing systems, it removes the manual handoffs where days are lost, without a core migration.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "4 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "How insurers reduce quote turnaround time with an external AI layer that automates intake, reading, scoring, and pricing, without replacing the core.",
+    body: `In Brazilian P&C (Seguros e Danos), the broker controls distribution and routinely shops the same risk to several carriers. The insurer that returns a clean, consistent quote first tends to win on attention, before price even enters the conversation. That makes quote turnaround time a commercial lever, not a back-office metric. According to Capgemini's World Insurance Report, more than 60% of brokers choose an insurer by response speed, so every hour a submission sits in a queue is a measurable disadvantage.
+
+### Where quote turnaround time is actually lost
+
+The delay is rarely in the pricing calculation. It accumulates in the manual handoffs around it. A submission arrives by email or broker portal, waits for someone to triage it, gets re-keyed from PDFs and inspection reports, then stalls again while an underwriter chases missing fields and cross-references exposure and history by hand. Much of that friction is the unstructured-document problem: submissions land as PDFs, vistoria reports, and spreadsheets, and Gartner estimates corporate teams lose 20% to 30% of their time organizing unstructured data before they can act on it. On top of that, Deloitte finds underwriters spend roughly 40% of their time on administrative tasks, time pulled away from the risk judgment that actually needs their expertise. The clock the broker experiences is mostly the sum of these queues. Cutting turnaround means removing the handoffs, starting at [submission intake](/insights/insurance-submission-intake-automation), not asking underwriters to work faster.
+
+### How an external AI layer compresses the intake-to-quote path
+
+An external AI layer sits on top of the systems the insurer already runs and automates the journey end to end, in six stages. Multichannel intake with automatic validation captures submissions from email, portal, API, or upload into one structured queue, so no human has to start the clock. Intelligent document reading uses Machine Learning to extract structured fields from PDFs, inspection (vistoria) reports, and asset schedules, which removes the slow re-keying step. Broker enrichment cross-references external and historical sources, CNPJ, broker history, exposure, and credit, then scores the submission so the underwriter sees a complete picture instead of chasing gaps. A risk and fraud engine, calibrated to the insurer's appetite and underwriting manual, returns a risk score and an automated recommendation. Dynamic pricing produces a risk-adjusted premium with instant output. The final stage returns a quote, an automatic decline, or an escalation to a human, always with an explanation and a visible SLA on the response window. That stated window compounds the gain, because when a broker knows an insurer reliably answers inside it, more submissions route there by default. Raising the share of cases that flow through without manual touch, the [straight-through processing rate](/insights/how-to-increase-straight-through-processing-rate-insurance), is what compresses the path from days toward hours. This is the direction McKinsey describes in [Insurance 2030: The impact of AI on the future of insurance](https://www.mckinsey.com/industries/financial-services/our-insights/insurance-2030-the-impact-of-ai-on-the-future-of-insurance), a future in which underwriting for many personal and small-commercial products becomes largely automated and decisions that once took days move toward near real time.
+
+### Faster quotes without giving up the core, or control
+
+Speed does not require a core migration. The layer is external and additive, which matters because BCG finds 70% of insurers do not execute the innovation they want because of IT limitations. Rebuilding a policy or core system to chase turnaround puts the roadmap behind a multi-year program, so an approach that connects by API and asks nothing of the core usually delivers value sooner. Because the model is calibrated to the insurer's own risk appetite and underwriting manual, a faster answer is not a looser one. Every decision stays explainable and returns a full audit trail, data is encrypted at every step and handled under LGPD, and the SUSEP expectation that an acceptance or a decline can be justified is met by design. An insurer can [add the AI layer without replacing the core system](/insights/ai-underwriting-without-replacing-core-system) and keep the governance the regulator already requires.
+
+### How WIR reduces quote turnaround time
+
+WIR is the AI layer for insurance. Its Underwriter Intelligence module automates the quotation journey per the insurer's risk-acceptance policy, with real-time scoring calibrated to appetite, automatic routing by appetite and exposure, and a visible underwriter queue, so the answer reaches the broker while the risk is still live. Smart Sales adds distribution intelligence on top, scoring next-best-action and upsell so the fastest response also reaches the highest-value submissions. WIR runs fully externally, with no load on the insurer's IT and no core migration, and its first traction is a proof-of-concept in execution with a global insurer in the Transport line. To see where your quoting journey loses time and how an external layer gives it back, book a conversation at [wirinnovation.ai](https://wirinnovation.ai). WIR is the AI layer for insurance. On top of the systems the insurer already runs, never in their place.`,
+    faq: [
+      { q: "How can insurers reduce quote turnaround time with AI?", a: "By adding an external AI layer on top of the core they already run, rather than rebuilding it. The layer automates the submission-to-decision journey: multichannel intake, intelligent document reading, broker enrichment, risk scoring calibrated to appetite, and dynamic pricing. Removing the manual handoffs where cases queue is what compresses the path from days toward hours, so the broker gets a clean answer while the risk is still live." },
+      { q: "Where do insurers lose the most time in the quoting journey?", a: "In the manual handoffs around the decision, not in the pricing itself. Submissions wait for triage, get re-keyed from PDFs and inspection reports, and stall while underwriters chase missing fields. Deloitte puts about 40% of an underwriter's time on administrative work rather than risk analysis, so the turnaround a broker feels is mostly the sum of those queues. Automating intake and reading removes them first." },
+      { q: "Does reducing quote turnaround time require replacing the core system?", a: "No. An external AI layer connects by API and sits on top of the policy and core systems the insurer already runs, so there is no migration. This matters because BCG finds 70% of insurers do not execute the innovation they want because of IT limitations. An additive layer sidesteps that constraint and usually delivers faster quotes sooner than a multi-year core rebuild would." },
+      { q: "How does faster quoting stay auditable under SUSEP and LGPD?", a: "The model is calibrated to the insurer's own risk appetite and underwriting manual, so a faster answer follows the same acceptance policy a human would. Every quote, decline, or escalation returns an explanation and a full audit trail, which meets the SUSEP expectation that a decision can be justified. Data is encrypted at every step and handled under LGPD, so speed does not come at the cost of governance." },
+      { q: "What is a good straight-through processing (STP) rate for faster quotes?", a: "There is no single universal benchmark. A good STP rate is the highest share of submissions your risk appetite lets you decide without manual touch for a given line of business. The point is not to hit a fixed number but to raise that share safely with automation calibrated to your underwriting manual, since a higher STP rate is what pulls average quote turnaround time down." }
+    ],
+  },
+  {
+    slug: "what-is-an-mga-and-how-mgas-use-ai",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/what-is-an-mga-and-how-mgas-use-ai.jpg",
+    title: "What Is an MGA, and How Do MGAs Use AI in Underwriting?",
+    sub: "A managing general agent (MGA) is an insurance intermediary that a carrier grants delegated underwriting authority: the power to select risks, price them, bind coverage, and sometimes handle claims on the insurer's behalf. In market shorthand, the carrier hands the MGA its pen. That one fact, delegated authority, is what separates an MGA from an ordinary broker, and it is what makes AI so useful to MGAs that want to grow without building heavy technology of their own.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "7 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "An MGA is an insurance intermediary a carrier grants delegated underwriting authority. See how MGAs work and use AI for intake, triage, and faster quotes.",
+    body: `A managing general agent (MGA) is an insurance intermediary that a carrier grants delegated underwriting authority: the power to select risks, price them, bind coverage, and in some cases administer policies or handle claims on the insurer's behalf. In market shorthand, the carrier hands the MGA its "pen." That single fact, delegated authority, is what separates an MGA from an ordinary broker, and it is also what makes modern AI so useful to the many MGAs that want to grow without building heavy technology of their own.
+
+### What is an MGA managing general agent?
+
+In one line, a managing general agent (MGA) is a firm that underwrites on behalf of one or more insurers under a binding authority agreement. The insurer, often called the carrier or the capacity provider, keeps the balance-sheet risk and the regulatory license. The MGA does the frontline work the carrier would otherwise do itself: defining appetite, reviewing submissions, rating and pricing, issuing quotes, binding policies, and frequently managing the book once it is on risk. In the United States this arrangement is recognized in the National Association of Insurance Commissioners (NAIC) Managing General Agents Act (Model #225), a model law adopted, in varying forms, by many states. At Lloyd's of London, the same delegated model runs through firms called coverholders.
+
+The line to remember is simple: if a carrier has given you authority to bind its paper, you are acting as an MGA, not merely reselling someone else's product.
+
+MGAs tend to concentrate where standard carriers move slowly: specialty and niche lines, program business, hard-to-place risks, new or volatile classes, and narrow verticals where deep expertise beats broad coverage. The carrier gains distribution and specialized underwriting talent without staffing it internally. The MGA gains the ability to write business without holding its own capital. It is a model built for focus and speed, and it has become a large part of the market. Conning, a widely cited reference for the segment, reported in its 2024 Managing General Agents study that US managing general agent premium surpassed $100 billion, with the MGA channel growing faster than the overall property and casualty market.
+
+### How an MGA differs from a broker and a carrier
+
+A retail broker represents the client and shops the market, but it cannot commit an insurer to a risk. A carrier holds the capital, the license, and the ultimate liability. The MGA sits between them with something neither a pure broker nor a pure distributor has: the authority to say yes on the carrier's behalf, within agreed limits. Those limits, appetite, line sizes, pricing bands, and referral triggers, are written into the delegated authority contract, and staying inside them is the core discipline of running an MGA. A related term, managing general underwriter (MGU), is often used for MGAs whose work is weighted heavily toward technical underwriting.
+
+### Why MGAs run lean on technology
+
+Most MGAs are built to be nimble. They are frequently founded by underwriters rather than engineers, and they win on speed, specialization, and service rather than on infrastructure. That means the typical MGA runs "thin-IT": a small technology footprint, a policy-admin or issuance system provided by the carrier or a third party, and a great deal of work still moving through email, spreadsheets, and PDF documents. Submissions arrive as broker emails with attachments, ACORD forms, loss runs, and schedules of values. Someone has to read them, key the data, check them against appetite, and turn them into a quote fast enough to win the deal before a competitor does.
+
+This is exactly the pressure point where AI earns its place, which is why the external-layer model has become attractive for MGAs.
+
+### How MGAs use AI in underwriting
+
+MGAs use AI to automate the highest-volume, most repetitive parts of the underwriting funnel: reading submissions, triaging them, and getting to a quote. The goal is not to remove the underwriter's judgment. It is to remove the clerical drag that surrounds it. Three uses matter most.
+
+### Submission intake
+
+Every MGA lives or dies on submission flow, and most of that flow is unstructured. Document AI and large language models can now read a broker email, open the attached ACORD form or spreadsheet, extract the fields that matter, and drop clean, structured data into the workflow without an underwriter rekeying anything. Done well, [submission intake automation](#blog/insurance-submission-intake-automation) turns a pile of inconsistent PDFs into a normalized, ready-to-underwrite record in minutes, and it captures data the team would otherwise miss under time pressure.
+
+### Triage and appetite matching
+
+Not every submission deserves the same attention. AI can score each incoming risk against the MGA's defined appetite and the carrier's guidelines, flag the ones that fit, and route or decline the rest before an underwriter spends an hour on a risk that was never going to bind. Faster, more consistent triage means underwriters spend their time on the submissions most likely to convert and most likely to be priced correctly, which protects both the loss ratio and the relationship with the carrier.
+
+### Speed-to-quote and decisioning
+
+Once the data is structured and the risk is confirmed in appetite, the same layer can enrich it with third-party data, run a consistent risk score, and draft a quote for the underwriter to review and release. Because MGAs compete heavily on turnaround, the ability to [reduce quote turnaround time with AI](#blog/reduce-quote-turnaround-time-with-ai) is often the difference between winning and losing a piece of business. Speed here is an automation problem, not a headcount problem, and treating it that way is what lets a lean team punch above its weight.
+
+### Why the external-layer model fits MGAs
+
+Here is the part that matters most for a thin-IT MGA: none of this requires ripping out or rebuilding a core system. The most practical way to add AI to an MGA is as an external layer that sits on top of whatever policy-admin or issuance system the carrier already mandates. It automates intake, triage, enrichment, scoring, and quote drafting, then writes the results back into that system of record. This is the model WIR is built on. It is [AI underwriting without replacing the core system](#blog/ai-underwriting-without-replacing-core-system), an approach that keeps the carrier's system of record intact, the delegated-authority controls in place, and the integration burden low.
+
+That external-layer approach suits MGAs for three reasons. It respects the carrier relationship, because the carrier's core stays the system of record. It matches how MGAs are staffed, because it automates the clerical layer instead of demanding an in-house engineering team. And it preserves the delegated-authority guardrails, because appetite rules, line sizes, and referral triggers can be encoded and enforced consistently rather than living only in a senior underwriter's head.
+
+### Brazil, SUSEP, and LGPD
+
+WIR was born in Brazil, where the MGA model is younger and less codified than in the United States or at Lloyd's, though delegated underwriting and program-style arrangements are growing under the oversight of SUSEP, the Superintendência de Seguros Privados. Two rules shape how any AI layer should behave in that market. First, underwriting decisions have to stay explainable and auditable, so that a regulator or a carrier can see why a risk was accepted, priced, or declined. Second, because submissions are full of personal and business data, every step has to comply with the LGPD, Brazil's general data protection law. An external AI layer that logs its inputs, its scores, and its outputs is well suited to both requirements, which is why auditability belongs in the design from the start rather than bolted on later.
+
+### The takeaway
+
+An MGA is a carrier's delegated underwriter, trusted to hold the pen but rarely built like a technology company. AI closes that gap by automating the submission intake, triage, and speed-to-quote work that used to demand more people, and the cleanest way to adopt it is as an external layer that leaves the core system exactly where it is. For an MGA, that is how you underwrite faster and more consistently without turning into an IT shop.`,
+    faq: [
+      { q: "What is an MGA managing general agent?", a: "An MGA, or managing general agent, is an insurance intermediary that a carrier grants delegated underwriting authority under a binding agreement. It can select risks, price them, bind coverage, and sometimes administer policies or handle claims on the insurer's behalf, while the carrier keeps the capital, the license, and the ultimate risk." },
+      { q: "What is the difference between an MGA and an insurance broker?", a: "A broker represents the client and shops the market but cannot commit an insurer to a risk. An MGA holds delegated authority to bind coverage on the carrier's behalf, within agreed limits on appetite, line size, pricing, and referral triggers. In short, the broker asks, and the MGA can answer for the carrier." },
+      { q: "How do MGAs use AI in underwriting?", a: "MGAs use AI to automate the repetitive parts of the funnel: reading and structuring submissions, triaging them against appetite, enriching and scoring the risk, and drafting quotes. The underwriter still makes the call, but reaches it faster and more consistently." },
+      { q: "Do MGAs need to replace their core system to use AI?", a: "No. The practical approach for a thin-IT MGA is an external AI layer that sits on top of the existing policy-admin or issuance system, automates intake, triage, and quoting, and writes results back into that system of record. In Brazil, that layer should also keep decisions auditable for SUSEP and handle data under the LGPD." }
+    ],
+  },
+  {
+    slug: "what-is-underwriting-leakage-and-how-ai-reduces-it",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/what-is-underwriting-leakage-and-how-ai-reduces-it.jpg",
+    title: "What Is Underwriting Leakage, and How Can AI Reduce It?",
+    sub: "Underwriting leakage is the margin an insurer loses at the point of decision: premium left on the table, risks bound that should have been re-priced or declined, and terms or conditions missed before the policy goes live. It is the front-of-funnel twin of the better-known claims leakage, except it hides inside the loss ratio instead of a claims file, which makes it quieter and more expensive over the life of a book. AI reduces underwriting leakage by scoring every submission against consistent, explainable rules, so the same risk gets the same answer no matter who reviews it or how full the queue is.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "7 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "Underwriting leakage is margin lost to inconsistent risk selection, mispricing, and missed terms. See how explainable AI scoring reduces it.",
+    body: `Underwriting leakage is the margin an insurer loses at the point of decision: premium left on the table, risks bound that should have been re-priced or declined, and terms or conditions missed before the policy goes live. It is the front-of-funnel twin of the better-known claims leakage, except it hides inside the loss ratio instead of a claims file, which makes it quieter and more expensive over the life of a book. AI reduces underwriting leakage by scoring every submission against consistent, explainable rules, so the same risk gets the same answer no matter who reviews it or how full the queue is.
+
+For a carrier or an MGA, this is not an abstract efficiency problem. It is real margin, owned by a real budget holder, lost a few basis points at a time in a way that rarely trips a single alarm.
+
+### What is underwriting leakage?
+
+Underwriting leakage is the cumulative value an insurer or managing general agent loses when risk selection, pricing, and policy terms are applied inconsistently across a book of business. It concentrates in three places:
+
+- **Mispricing**, where the premium charged sits below the rate the risk actually warranted.
+- **Adverse risk selection**, where submissions are bound that should have been declined, referred, or re-priced.
+- **Terms leakage**, where deductibles, warranties, sub-limits, or conditions are missed or applied unevenly at bind.
+
+In one sentence: **underwriting leakage is the margin lost at the point of decision, when the same risk would be selected, priced, or bound differently depending on who reviews it and when.**
+
+Unlike claims leakage, which the industry has measured for decades because it surfaces inside individual claim files, underwriting leakage is diffuse. No single policy looks wrong. The cost only becomes visible in aggregate, often several quarters later, as a loss ratio that runs a few points above plan with no obvious place to point.
+
+### Underwriting leakage vs claims leakage
+
+Both are value lost to process failure, but they sit at opposite ends of the policy lifecycle. Claims leakage is money overpaid or mishandled after a loss, and the industry has tooled up to measure it for years. Underwriting leakage is value lost before any loss occurs, at selection and pricing, and it is harder to quantify because it never leaves a discrete, reviewable artifact the way an overpaid claim does. The two also compound: a risk that was mis-selected or under-priced at underwriting is exactly the kind that tends to produce an outsized, harder-to-control claim later.
+
+### Where underwriting leakage comes from
+
+### Inconsistent risk selection
+
+Two underwriters, or the same underwriter early in the month versus buried under a Friday backlog, can read comparable submissions and land on different accept, decline, or refer decisions. Each call is defensible on its own. Aggregated across thousands of submissions, those small differences pull the book away from the appetite the pricing actuaries assumed, and that drift is the leak.
+
+### Mispricing and rate adequacy
+
+Rate adequacy depends on the underwriter catching every risk signal in a submission and reflecting it in the price. When exposure data arrives as unstructured email, PDFs, and spreadsheets, signals get skimmed or missed under time pressure. A missed prior loss, an understated schedule of values, or an overlooked hazard grade each translate directly into premium that never matched the risk.
+
+### Missed conditions and terms
+
+Even a correctly priced risk leaks value if it binds without the right conditions: a required survey warranty, a protective safeguard clause, a sub-limit on a high-hazard location. These are easy to drop when they live in guidelines a busy desk has to remember rather than in a system that enforces them at the moment of bind.
+
+### How much does underwriting leakage cost?
+
+Property and casualty insurers frequently run combined ratios close to 100%, which means the underwriting margin on a book is thin to begin with. Against that backdrop, leakage does not have to be large to matter. A handful of loss-ratio points quietly shaved off by inconsistent selection and missed terms can be the difference between an underwriting profit and an underwriting loss on the very same premium base. That is what makes leakage a budget-owner problem rather than a back-office one, and why it deserves attention long before it shows up in the annual result.
+
+### Why underwriting leakage is so hard to see
+
+Leakage resists detection because the metrics that would reveal it are lagging and blended. Loss ratio and combined ratio only tell you something went wrong after losses develop, and by then the leak is mixed with catastrophe activity, reserve movements, and plain bad luck. There is rarely a smoking gun.
+
+The problem compounds because underwriters lose a large share of their day to administrative and non-core work, such as rekeying data between systems, rather than to the risk judgment that prevents leakage in the first place. Every hour spent moving values between systems is an hour not spent interrogating the risk, and rushed judgment is precisely where inconsistency and missed conditions creep in.
+
+### How AI reduces underwriting leakage
+
+The remedy for a consistency problem is consistency, delivered at the speed and volume the desk actually runs at. This is where machine learning earns its place, as long as it is pointed at the decision and not just the paperwork.
+
+**It scores every submission the same way.** A model trained on the carrier's own appetite and historical outcomes evaluates each risk against the same features every time, so the Friday-afternoon submission is graded exactly like the Monday-morning one. Consistent, machine-assisted [insurance decisioning](#blog/what-is-insurance-decisioning) is the single biggest lever against selection and pricing drift, because it removes the human variance that leakage feeds on.
+
+**It makes every decision explainable.** Reducing leakage cannot mean swapping a black box of human inconsistency for a black box of model inconsistency. Each score should carry the reasons behind it: the features that drove it, the guideline it maps to, and the threshold it cleared or missed. That transparency is also what lets you [audit AI underwriting decisions for compliance](#blog/how-to-audit-ai-underwriting-decisions-for-compliance), and it is non-negotiable in any regulated market.
+
+**It enforces terms and conditions at intake.** When the same logic that scores the risk also flags the missing survey warranty or the required sub-limit before bind, terms leakage stops being a memory test. The condition surfaces while the decision is still open, instead of being discovered at claim time when it is too late to add.
+
+Crucially, none of this requires ripping out the systems you already run on. The highest-leverage way to attack leakage is to add [AI underwriting without replacing the core system](#blog/ai-underwriting-without-replacing-core-system), layering scoring and enforcement on top of the policy administration platform rather than betting on a multi-year core migration that stalls long before it ever touches a loss ratio.
+
+### Where WIR fits
+
+WIR Innovation is built as exactly that external layer. It sits on top of the insurer's or MGA's existing core, ingests submissions, scores and triages risk, and drafts decisions, without becoming the system of record and without replacing the policy-admin platform underneath. The aim is narrow and deliberate: close the leakage gap at the decision, where it opens, while the carrier keeps the core it already trusts.
+
+Born in Brazil and built for a SUSEP-regulated market, the layer is designed around LGPD data-protection obligations from the start, and the same architecture applies to insurers and MGAs elsewhere. Consistent scoring, explainable reasons, and enforced conditions travel well: the regulator's name changes by jurisdiction, but the leak, and the discipline that closes it, does not.
+
+### The bottom line
+
+Underwriting leakage is the quiet tax an insurer pays for inconsistency at the point of decision, and it persists precisely because no single policy ever looks wrong. The way to reduce it is not more pressure on underwriters who already lose a large share of their time to administrative work, but a consistent, explainable scoring layer that gives the same risk the same answer, enforces the terms that protect the book, and does it all on top of the core the carrier already runs.`,
+    faq: [
+      { q: "What is underwriting leakage?", a: "Underwriting leakage is the margin an insurer or MGA loses when risks are selected, priced, or bound inconsistently: premium charged below the rate a risk warranted, submissions accepted that should have been declined or referred, and terms or conditions missed at bind. Unlike claims leakage, it happens before any loss and hides inside the loss ratio, which makes it hard to see policy by policy." },
+      { q: "What is the difference between underwriting leakage and claims leakage?", a: "Claims leakage is value lost after a loss, through overpaid or mishandled claims. Underwriting leakage is value lost before any loss, at risk selection and pricing. Claims leakage leaves a reviewable artifact in each claim file, while underwriting leakage only shows up in aggregate, so it is harder to measure and easier to ignore." },
+      { q: "How does AI reduce underwriting leakage?", a: "AI reduces underwriting leakage by scoring every submission against the same explainable rules, so identical risks get identical answers regardless of who reviews them or how busy the queue is. Consistent scoring curbs selection and pricing drift, explainable outputs keep the decisions auditable, and enforcing required conditions at intake prevents terms from being missed at bind." },
+      { q: "Can AI reduce underwriting leakage without replacing our core policy system?", a: "Yes. The most practical approach is an external AI layer that sits on top of the existing policy-admin platform, ingesting submissions and scoring, triaging, and drafting decisions without becoming the system of record. This is how WIR is designed, so carriers close the leakage gap at the decision without a multi-year core replacement." }
+    ],
+  },
+
+  {
     slug: "agentic-ai-insurance-underwriting",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/agentic-ai-insurance-underwriting.jpg",

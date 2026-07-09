@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>What Is Underwriting Leakage, and How Can AI Reduce It? · WIR Innovation</title>
+<meta name="description" content="Underwriting leakage is margin lost to inconsistent risk selection, mispricing, and missed terms. See how explainable AI scoring reduces it." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/what-is-underwriting-leakage-and-how-ai-reduces-it/" />
+<link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/what-is-underwriting-leakage-and-how-ai-reduces-it/" />
+<link rel="alternate" hreflang="x-default" href="https://wirinnovation.ai/insights/what-is-underwriting-leakage-and-how-ai-reduces-it/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="What Is Underwriting Leakage, and How Can AI Reduce It?" />
+<meta property="og:description" content="Underwriting leakage is margin lost to inconsistent risk selection, mispricing, and missed terms. See how explainable AI scoring reduces it." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/what-is-underwriting-leakage-and-how-ai-reduces-it/" />
+<meta property="og:image" content="/assets/articles/what-is-underwriting-leakage-and-how-ai-reduces-it.jpg" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Artigo" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What Is Underwriting Leakage, and How Can AI Reduce It?" />
+<meta name="twitter:description" content="Underwriting leakage is margin lost to inconsistent risk selection, mispricing, and missed terms. See how explainable AI scoring reduces it." />
+<meta name="twitter:image" content="/assets/articles/what-is-underwriting-leakage-and-how-ai-reduces-it.jpg" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What Is Underwriting Leakage, and How Can AI Reduce It?","description":"Underwriting leakage is margin lost to inconsistent risk selection, mispricing, and missed terms. See how explainable AI scoring reduces it.","image":"/assets/articles/what-is-underwriting-leakage-and-how-ai-reduces-it.jpg","datePublished":"2026-07-08","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Equipe"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/what-is-underwriting-leakage-and-how-ai-reduces-it/","articleSection":"Artigo"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"What Is Underwriting Leakage, and How Can AI Reduce It?","item":"https://wirinnovation.ai/insights/what-is-underwriting-leakage-and-how-ai-reduces-it/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://wirinnovation.ai/insights/what-is-underwriting-leakage-and-how-ai-reduces-it/#faq","inLanguage":"pt-BR","mainEntity":[{"@type":"Question","name":"What is underwriting leakage?","acceptedAnswer":{"@type":"Answer","text":"Underwriting leakage is the margin an insurer or MGA loses when risks are selected, priced, or bound inconsistently: premium charged below the rate a risk warranted, submissions accepted that should have been declined or referred, and terms or conditions missed at bind. Unlike claims leakage, it happens before any loss and hides inside the loss ratio, which makes it hard to see policy by policy."}},{"@type":"Question","name":"What is the difference between underwriting leakage and claims leakage?","acceptedAnswer":{"@type":"Answer","text":"Claims leakage is value lost after a loss, through overpaid or mishandled claims. Underwriting leakage is value lost before any loss, at risk selection and pricing. Claims leakage leaves a reviewable artifact in each claim file, while underwriting leakage only shows up in aggregate, so it is harder to measure and easier to ignore."}},{"@type":"Question","name":"How does AI reduce underwriting leakage?","acceptedAnswer":{"@type":"Answer","text":"AI reduces underwriting leakage by scoring every submission against the same explainable rules, so identical risks get identical answers regardless of who reviews them or how busy the queue is. Consistent scoring curbs selection and pricing drift, explainable outputs keep the decisions auditable, and enforcing required conditions at intake prevents terms from being missed at bind."}},{"@type":"Question","name":"Can AI reduce underwriting leakage without replacing our core policy system?","acceptedAnswer":{"@type":"Answer","text":"Yes. The most practical approach is an external AI layer that sits on top of the existing policy-admin platform, ingesting submissions and scoring, triaging, and drafting decisions without becoming the system of record. This is how WIR is designed, so carriers close the leakage gap at the decision without a multi-year core replacement."}}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>Plataforma de IA para seguros</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>Em conformidade com LGPD</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/" class="nav__link">Início</a>
+      <a href="/#about" class="nav__link">Sobre</a>
+      <a href="/insights/manifesto/" class="nav__link">Manifesto</a>
+      <a href="/#solutions" class="nav__link">Produtos &amp; IA</a>
+      <a href="/#protection" class="nav__link">Proteção de Dados</a>
+      <a href="/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contato
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/insights/">
+      <span aria-hidden="true">←</span> Voltar para Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Artigo</div>
+      <h1 class="display blarticle__title">What Is Underwriting Leakage, and How Can AI Reduce It?</h1>
+      <p class="blarticle__sub">Underwriting leakage is the margin an insurer loses at the point of decision: premium left on the table, risks bound that should have been re-priced or declined, and terms or conditions missed before the policy goes live. It is the front-of-funnel twin of the better-known claims leakage, except it hides inside the loss ratio instead of a claims file, which makes it quieter and more expensive over the life of a book. AI reduces underwriting leakage by scoring every submission against consistent, explainable rules, so the same risk gets the same answer no matter who reviews it or how full the queue is.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Equipe</div>
+          <div class="blarticle__byline-time">08 · Jul · 2026 · 7 min de leitura</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#3222E9,#7540AC); aspect-ratio: 16 / 9;">
+      <img src="/assets/articles/what-is-underwriting-leakage-and-how-ai-reduces-it.jpg" alt="What Is Underwriting Leakage, and How Can AI Reduce It?" width="1600" height="900" loading="eager" fetchpriority="high" />
+    </figure>
+
+    <div class="blarticle__body">
+<p>Underwriting leakage is the margin an insurer loses at the point of decision: premium left on the table, risks bound that should have been re-priced or declined, and terms or conditions missed before the policy goes live. It is the front-of-funnel twin of the better-known claims leakage, except it hides inside the loss ratio instead of a claims file, which makes it quieter and more expensive over the life of a book. AI reduces underwriting leakage by scoring every submission against consistent, explainable rules, so the same risk gets the same answer no matter who reviews it or how full the queue is.</p>
+<p>For a carrier or an MGA, this is not an abstract efficiency problem. It is real margin, owned by a real budget holder, lost a few basis points at a time in a way that rarely trips a single alarm.</p>
+<h3>What is underwriting leakage?</h3>
+<p>Underwriting leakage is the cumulative value an insurer or managing general agent loses when risk selection, pricing, and policy terms are applied inconsistently across a book of business. It concentrates in three places:</p>
+<ul>
+  <li><strong>Mispricing</strong>, where the premium charged sits below the rate the risk actually warranted.</li>
+  <li><strong>Adverse risk selection</strong>, where submissions are bound that should have been declined, referred, or re-priced.</li>
+  <li><strong>Terms leakage</strong>, where deductibles, warranties, sub-limits, or conditions are missed or applied unevenly at bind.</li>
+</ul>
+<p>In one sentence: <strong>underwriting leakage is the margin lost at the point of decision, when the same risk would be selected, priced, or bound differently depending on who reviews it and when.</strong></p>
+<p>Unlike claims leakage, which the industry has measured for decades because it surfaces inside individual claim files, underwriting leakage is diffuse. No single policy looks wrong. The cost only becomes visible in aggregate, often several quarters later, as a loss ratio that runs a few points above plan with no obvious place to point.</p>
+<h3>Underwriting leakage vs claims leakage</h3>
+<p>Both are value lost to process failure, but they sit at opposite ends of the policy lifecycle. Claims leakage is money overpaid or mishandled after a loss, and the industry has tooled up to measure it for years. Underwriting leakage is value lost before any loss occurs, at selection and pricing, and it is harder to quantify because it never leaves a discrete, reviewable artifact the way an overpaid claim does. The two also compound: a risk that was mis-selected or under-priced at underwriting is exactly the kind that tends to produce an outsized, harder-to-control claim later.</p>
+<h3>Where underwriting leakage comes from</h3>
+<h3>Inconsistent risk selection</h3>
+<p>Two underwriters, or the same underwriter early in the month versus buried under a Friday backlog, can read comparable submissions and land on different accept, decline, or refer decisions. Each call is defensible on its own. Aggregated across thousands of submissions, those small differences pull the book away from the appetite the pricing actuaries assumed, and that drift is the leak.</p>
+<h3>Mispricing and rate adequacy</h3>
+<p>Rate adequacy depends on the underwriter catching every risk signal in a submission and reflecting it in the price. When exposure data arrives as unstructured email, PDFs, and spreadsheets, signals get skimmed or missed under time pressure. A missed prior loss, an understated schedule of values, or an overlooked hazard grade each translate directly into premium that never matched the risk.</p>
+<h3>Missed conditions and terms</h3>
+<p>Even a correctly priced risk leaks value if it binds without the right conditions: a required survey warranty, a protective safeguard clause, a sub-limit on a high-hazard location. These are easy to drop when they live in guidelines a busy desk has to remember rather than in a system that enforces them at the moment of bind.</p>
+<h3>How much does underwriting leakage cost?</h3>
+<p>Property and casualty insurers frequently run combined ratios close to 100%, which means the underwriting margin on a book is thin to begin with. Against that backdrop, leakage does not have to be large to matter. A handful of loss-ratio points quietly shaved off by inconsistent selection and missed terms can be the difference between an underwriting profit and an underwriting loss on the very same premium base. That is what makes leakage a budget-owner problem rather than a back-office one, and why it deserves attention long before it shows up in the annual result.</p>
+<h3>Why underwriting leakage is so hard to see</h3>
+<p>Leakage resists detection because the metrics that would reveal it are lagging and blended. Loss ratio and combined ratio only tell you something went wrong after losses develop, and by then the leak is mixed with catastrophe activity, reserve movements, and plain bad luck. There is rarely a smoking gun.</p>
+<p>The problem compounds because underwriters lose a large share of their day to administrative and non-core work, such as rekeying data between systems, rather than to the risk judgment that prevents leakage in the first place. Every hour spent moving values between systems is an hour not spent interrogating the risk, and rushed judgment is precisely where inconsistency and missed conditions creep in.</p>
+<h3>How AI reduces underwriting leakage</h3>
+<p>The remedy for a consistency problem is consistency, delivered at the speed and volume the desk actually runs at. This is where machine learning earns its place, as long as it is pointed at the decision and not just the paperwork.</p>
+<p><strong>It scores every submission the same way.</strong> A model trained on the carrier&#39;s own appetite and historical outcomes evaluates each risk against the same features every time, so the Friday-afternoon submission is graded exactly like the Monday-morning one. Consistent, machine-assisted <a href="/insights/what-is-insurance-decisioning/" class="blarticle__link-int">insurance decisioning</a> is the single biggest lever against selection and pricing drift, because it removes the human variance that leakage feeds on.</p>
+<p><strong>It makes every decision explainable.</strong> Reducing leakage cannot mean swapping a black box of human inconsistency for a black box of model inconsistency. Each score should carry the reasons behind it: the features that drove it, the guideline it maps to, and the threshold it cleared or missed. That transparency is also what lets you <a href="/insights/how-to-audit-ai-underwriting-decisions-for-compliance/" class="blarticle__link-int">audit AI underwriting decisions for compliance</a>, and it is non-negotiable in any regulated market.</p>
+<p><strong>It enforces terms and conditions at intake.</strong> When the same logic that scores the risk also flags the missing survey warranty or the required sub-limit before bind, terms leakage stops being a memory test. The condition surfaces while the decision is still open, instead of being discovered at claim time when it is too late to add.</p>
+<p>Crucially, none of this requires ripping out the systems you already run on. The highest-leverage way to attack leakage is to add <a href="/insights/ai-underwriting-without-replacing-core-system/" class="blarticle__link-int">AI underwriting without replacing the core system</a>, layering scoring and enforcement on top of the policy administration platform rather than betting on a multi-year core migration that stalls long before it ever touches a loss ratio.</p>
+<h3>Where WIR fits</h3>
+<p>WIR Innovation is built as exactly that external layer. It sits on top of the insurer&#39;s or MGA&#39;s existing core, ingests submissions, scores and triages risk, and drafts decisions, without becoming the system of record and without replacing the policy-admin platform underneath. The aim is narrow and deliberate: close the leakage gap at the decision, where it opens, while the carrier keeps the core it already trusts.</p>
+<p>Born in Brazil and built for a SUSEP-regulated market, the layer is designed around LGPD data-protection obligations from the start, and the same architecture applies to insurers and MGAs elsewhere. Consistent scoring, explainable reasons, and enforced conditions travel well: the regulator&#39;s name changes by jurisdiction, but the leak, and the discipline that closes it, does not.</p>
+<h3>The bottom line</h3>
+<p>Underwriting leakage is the quiet tax an insurer pays for inconsistency at the point of decision, and it persists precisely because no single policy ever looks wrong. The way to reduce it is not more pressure on underwriters who already lose a large share of their time to administrative work, but a consistent, explainable scoring layer that gives the same risk the same answer, enforces the terms that protect the book, and does it all on top of the core the carrier already runs.</p>
+<section class="blarticle__faq" aria-label="Perguntas frequentes">
+<h3>Perguntas frequentes</h3>
+<details class="blarticle__faq-item">
+  <summary>What is underwriting leakage?</summary>
+  <p>Underwriting leakage is the margin an insurer or MGA loses when risks are selected, priced, or bound inconsistently: premium charged below the rate a risk warranted, submissions accepted that should have been declined or referred, and terms or conditions missed at bind. Unlike claims leakage, it happens before any loss and hides inside the loss ratio, which makes it hard to see policy by policy.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>What is the difference between underwriting leakage and claims leakage?</summary>
+  <p>Claims leakage is value lost after a loss, through overpaid or mishandled claims. Underwriting leakage is value lost before any loss, at risk selection and pricing. Claims leakage leaves a reviewable artifact in each claim file, while underwriting leakage only shows up in aggregate, so it is harder to measure and easier to ignore.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>How does AI reduce underwriting leakage?</summary>
+  <p>AI reduces underwriting leakage by scoring every submission against the same explainable rules, so identical risks get identical answers regardless of who reviews them or how busy the queue is. Consistent scoring curbs selection and pricing drift, explainable outputs keep the decisions auditable, and enforcing required conditions at intake prevents terms from being missed at bind.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Can AI reduce underwriting leakage without replacing our core policy system?</summary>
+  <p>Yes. The most practical approach is an external AI layer that sits on top of the existing policy-admin platform, ingesting submissions and scoring, triaging, and drafting decisions without becoming the system of record. This is how WIR is designed, so carriers close the leakage gap at the decision without a multi-year core replacement.</p>
+</details>
+</section>
+    </div>
+
+    <nav class="blarticle__related" aria-label="Leituras relacionadas">
+      <h3 class="blarticle__related-title">Leituras relacionadas</h3>
+      <ul class="blarticle__related-list">
+      <li class="blarticle__related-item"><a href="/insights/agentic-ai-insurance-underwriting/"><span class="blarticle__related-cat">Artigo</span> Agentic AI in insurance underwriting</a></li>
+      <li class="blarticle__related-item"><a href="/insights/ai-underwriting-without-replacing-core-system/"><span class="blarticle__related-cat">Artigo</span> How to Automate Underwriting Without Replacing Your Core System</a></li>
+      <li class="blarticle__related-item"><a href="/insights/how-ai-integrates-with-guidewire-without-replacing-it/"><span class="blarticle__related-cat">Artigo</span> AI and Guidewire Integration: Adding Intelligence Without Replacing the Core</a></li>
+      <li class="blarticle__related-item"><a href="/insights/how-to-increase-straight-through-processing-rate-insurance/"><span class="blarticle__related-cat">Artigo</span> How to Increase Your Straight-Through Processing Rate in Insurance</a></li>
+      </ul>
+    </nav>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/insights/">
+        <span aria-hidden="true">←</span> Outros Insights
+      </a>
+      <a class="btn btn--solid" href="/#contact">
+        Falar com a equipe <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#solutions">Produtos &amp; IA</a></li>
+          <li><a href="/#protection">Proteção de Dados</a></li>
+          <li><a href="/insights/">Insights &amp; News</a></li>
+          <li><a href="/#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/#contact">Falar com a equipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sócios &amp; Holding</h4>
+        <ul>
+          <li><a href="/#about">Mahway · California</a></li>
+          <li><a href="/#about">Avante · Brasil</a></li>
+          <li><a href="/#about">Conselheiros estratégicos</a></li>
+          <li><a href="/#about">Princípios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Ol%C3%A1%20Nicholas%2C%20vim%20pelo%20site%20da%20WIR%20Innovation.%20Gostaria%20de%20conversar%20sobre%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Falar com Nicholas no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>
