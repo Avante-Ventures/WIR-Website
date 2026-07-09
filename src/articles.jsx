@@ -4,6 +4,483 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 export const ARTICLES = [
   {
+    slug: "agentic-ai-insurance-underwriting",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/agentic-ai-insurance-underwriting.jpg",
+    title: "Agentic AI in insurance underwriting",
+    sub: "Agentic AI in insurance underwriting is software that does not just score a risk, it runs the whole submission. The agent reads the submission, enriches it, scores the risk against the insurer's own appetite, prices it, and then quotes, declines, or escalates to a human, writing a full audit trail back to the core system. It works as an external AI layer calibrated to the underwriting manual, so the insurer keeps its policy system, its authority limits, and the final say.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "5 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "Agentic AI in underwriting: agents read submissions, score risk to your appetite, and quote or decline on an external AI layer, never replacing the core.",
+    body: `Most underwriting automation stops at a score. It reads a submission, returns a number, and hands the case back to a person to do everything else. Agentic AI changes the unit of work. Instead of automating a single step, an agent takes ownership of the whole quotation journey and pulls in a human only when the case genuinely needs judgment. For insurers in Brazil's Seguros e Danos (P&C) market, where underwriters lose roughly 40% of their time to administrative tasks according to Deloitte, that shift is the difference between software that assists and software that actually clears the queue.
+
+### What agentic AI in insurance underwriting means
+
+An agent is software that can perceive, decide, and act with enough authority to finish a task, not just advise on it. In underwriting, that means it reads the incoming submission, scores the risk against the insurer's policy, prices it, and then quotes, declines, or escalates the case, writing the outcome back to the system of record. A plain model only outputs a score and waits. A rules bot only moves data between screens. An agent reasons over the messy input a broker actually sends and carries the decision to a conclusion.
+
+The part that makes underwriters comfortable is control. The agent is calibrated to your risk appetite and your underwriting manual, not to a generic template. It does not set your appetite. You do, and the agent enforces it, on every case, exactly as the manual defines it. Anything outside the rules it is given goes to a human with the reasoning attached.
+
+### How an agentic underwriting workflow runs
+
+A working agent runs the same sequence a good underwriting desk runs, only faster and without the manual handoffs. It starts with multichannel intake and automatic validation, accepting the submission in whatever format the broker already uses, whether that is e-mail, an attachment, or an API call. Intelligent document reading then extracts the fields from unstructured paperwork, the part of the job where Gartner estimates companies lose 20% to 30% of their time. Next comes broker enrichment and prioritization, cross-referencing history and exposure so the best business surfaces first. This is the same discipline a dedicated [submission triage layer](/insights/triagem-automatica-submissoes-seguro-en/) brings to the front of the funnel.
+
+From there the risk and fraud engine scores the case with machine learning calibrated to appetite, dynamic pricing produces a risk-adjusted premium, and the decision stage issues a quote, an automatic decline, or an escalation to a human. Every outcome is written back to the core and returned with a full audit trail. The underwriter stops being a data clerk and goes back to pricing complex risk and winning business.
+
+### Agentic AI versus rules engines and RPA
+
+Rules engines and RPA were the last generation's answer to the same problem, and they are brittle. A rules engine breaks the moment a submission arrives in a new format, and an RPA bot fails when a screen it depends on moves. Neither can reason about a risk it has not seen before. An agent reads unstructured input, adapts, and applies judgment inside the boundaries you set, which is why it can handle the long tail of real submissions instead of only the clean ones.
+
+Just as important is where the agent sits. It is designed to [work as an external layer on top of the existing core rather than replace it](/insights/integrar-camada-ia-core-seguros-en/). That is not a technicality. BCG has found that about 70% of insurers do not carry their innovation initiatives through because of IT limitations, so an approach that needs no core migration and puts no load on the insurer's IT team is often the only version of the project that actually ships.
+
+### Keeping agentic decisions auditable under SUSEP and LGPD
+
+An agent that makes decisions on regulated business has to be able to explain each one. In Brazil that means two things at once. Under the LGPD, a data subject has the right to review decisions taken by automated processing, so the reasoning behind a decline cannot be a black box. Under SUSEP conduct and governance expectations, the insurer has to show that its acceptance decisions follow a consistent, documented policy. Both point to the same design. Every quote, decline, or escalation should leave [an auditable decision record](/insights/decisoes-subscricao-auditaveis-en/) that a regulator, an internal auditor, or an ombudsman can query, with the data encrypted at every step.
+
+The goal is not a model that is never wrong. No one in insurance should promise that. The goal is a decision you can always explain, calibrated to a manual you approved, with a human in the loop wherever the risk warrants it.
+
+### Where agentic underwriting is heading
+
+The direction of travel is not subtle. McKinsey's widely cited Insurance 2030 scenario envisions manual underwriting ceasing to exist for most personal and small-business products by 2030. That is a scenario rather than a schedule, but the momentum behind it is real. Gartner named agentic AI its top strategic technology trend for 2025 and projects that by 2028 roughly a third of enterprise software applications will include agentic AI, up from less than 1% in 2024.
+
+The competitive pressure is just as concrete on the distribution side. Capgemini reports that more than 60% of brokers choose an insurer based on response speed. In a Seguros e Danos market that grows double digits a year, the carriers that let an agent clear standard business in minutes build a service advantage the slower ones cannot easily close.
+
+### How WIR applies agentic AI to underwriting
+
+WIR Innovation is built as exactly this kind of external AI layer for insurers and brokers. It runs the full quotation and underwriting journey, from multichannel intake through intelligent reading, enrichment, a risk and fraud engine calibrated to the insurer's appetite, dynamic pricing, and a final decision that is quoted, declined, or escalated to a human. Each decision is explainable, written back to the core, and returned with an audit trail, with data encrypted at every step and handled in line with the LGPD. Because the platform is 100% external, there is no core migration and no load on the insurer's IT team, and implementation runs as a defined setup of three to twelve months before continuous operation.
+
+The approach is being proven in practice. WIR is currently running a proof of concept with a global insurer in the Transport line. The point of the platform is not to remove underwriters from the decision. It is to let the agent handle the standard, high-volume flow to policy, so the people keep their judgment for the risk that deserves it.`,
+    faq: [
+      { q: "What is agentic AI in insurance underwriting?", a: "It is software that runs the underwriting task end to end instead of only scoring it. An agent reads the submission, enriches it, scores the risk against the insurer's appetite, prices it, and then quotes, declines, or escalates to a human, writing a full audit trail back to the core system. It acts with authority inside the rules the insurer sets, rather than only advising an underwriter." },
+      { q: "How is agentic AI different from RPA or a rules engine in underwriting?", a: "RPA moves data between screens and a rules engine applies fixed if-then logic, so both break when a submission arrives in a new format or presents a risk they were not programmed for. An agent reasons over unstructured input, adapts to cases it has not seen, and carries the decision to a conclusion inside the boundaries the insurer defines." },
+      { q: "Does agentic AI replace the underwriter?", a: "No. The agent handles the high-volume standard flow so underwriters spend their time on complex risk and business development. Anything outside the rules it is given is escalated to a person, with the reasoning attached, and the insurer keeps the final say on appetite and authority." },
+      { q: "Does an agentic underwriting system replace the core policy system?", a: "No. A well-designed agent works as an external AI layer that sits on top of the existing core, reads submissions, and writes decisions back to it. There is no core migration and no load on the insurer's IT team, which is what lets these projects ship despite the IT constraints most carriers face." },
+      { q: "How are agentic underwriting decisions kept compliant with SUSEP and LGPD?", a: "Every decision is explainable and leaves a complete audit trail that a regulator, auditor, or ombudsman can query, with data encrypted at every step. That supports the LGPD right to review automated decisions and the SUSEP expectation that acceptance decisions follow a consistent, documented policy. The system escalates borderline cases to a human rather than promising a model that is never wrong." }
+    ],
+  },
+  {
+    slug: "ai-underwriting-without-replacing-core-system",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/ai-underwriting-without-replacing-core-system.jpg",
+    title: "How to Automate Underwriting Without Replacing Your Core System",
+    sub: "To automate insurance underwriting without replacing your core system, add an external AI layer on top of it. That layer reads and enriches every submission, scores the risk against your own appetite, and returns an explainable decision, then writes the result back to your policy administration system through APIs. Your core stays the system of record, so there is no data migration, no rip-and-replace, and no multi-year modernization program.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "7 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "Automate underwriting without replacing your core. An external AI layer scores submissions against your appetite and returns explainable decisions.",
+    body: `To automate insurance underwriting without replacing your core system, add an external AI layer on top of it. That layer reads and enriches every submission, scores the risk against your own appetite, and returns an explainable decision, then writes the result back to your policy administration system through APIs. Your core stays the system of record, so there is no data migration, no rip-and-replace, and no multi-year modernization program.
+
+This is the architecture WIR was built around: an external intelligence layer for insurers and managing general agents (MGAs) that automates the underwriting workflow without touching the core.
+
+### How to automate insurance underwriting without replacing your core system
+
+The method is to separate the work of underwriting from the record of underwriting. Your core system (Guidewire, Duck Creek, Sapiens, or a homegrown platform) stays the record. A dedicated AI layer does the work: intake, enrichment, triage, scoring, and a first-pass decision. The two connect through APIs, so nothing the core is meant to own ever leaves it. The steps below walk through the sequence.
+
+### Step 1: Treat the core as the system of record, not the workbench
+
+Core policy administration systems are excellent at what they were built for: storing policies, calculating premiums against filed rates, handling billing, and managing claims. They were not built to read a broker's email, parse a loss run buried in a PDF, or reason about whether a risk fits your appetite this quarter. Forcing that intelligence into the core is exactly what makes modernization projects so long and so costly. Leave the core where it is and add the intelligence beside it.
+
+### Step 2: Automate submission intake and enrichment
+
+Most underwriting delay happens before any judgment is made. Submissions arrive as email attachments, spreadsheets, ACORD forms, and scanned PDFs, and someone has to rekey them. Accenture's research on underwriting productivity has found that underwriters can spend as much as 40 percent of their time on non-core and administrative activities rather than on evaluating risk. An external layer ingests those formats automatically, extracts the structured data, and enriches it with internal and third-party sources before a human ever looks at it. [Automating submission intake](/insurance-submission-intake-automation) is usually the fastest place to see results, because it removes the manual data gathering that consumes the largest share of an underwriter's day.
+
+### Step 3: Triage against your own appetite
+
+Not every submission deserves the same attention. The AI layer scores each one against your written appetite and rules, then routes it: clear out-of-appetite risks are declined or referred immediately, clean in-appetite risks are fast-tracked toward a quote, and genuinely complex risks are escalated to a senior underwriter with the context already assembled. This is where straight-through processing rates begin to climb, because easy business stops waiting in line behind hard business.
+
+### Step 4: Score risk and return an explainable decision
+
+For each submission that clears triage, the [AI underwriting workbench](/what-is-ai-underwriting-workbench) scores the risk against your guidelines and produces a recommended decision: accept, decline, refer, or price with conditions. The recommendation arrives with its reasoning attached: which data points drove it, which rules fired, and where the model was uncertain. The underwriter reviews a proposal instead of building one from scratch. The output is an input for a human, not an unaccountable verdict.
+
+### Step 5: Write results back to the core through APIs
+
+Once a decision is made, the layer pushes the quote, the enriched data, and the decision record back into the core through its integration APIs, so the system of record stays authoritative and complete. Modern AI can [integrate with a core like Guidewire without replacing it](/how-ai-integrates-with-guidewire-without-replacing-it), using the platform's own APIs and event framework rather than a parallel database that drifts out of sync. The core still issues the policy. The layer just made getting there faster.
+
+### Why an external layer beats a rip-and-replace
+
+The direction of the industry is not in doubt. McKinsey's 2018 analysis, Insurance 2030: The Impact of AI on the Future of Insurance, projects that manual underwriting will largely cease to exist for most personal and small-commercial lines as carriers move to automated, data-driven risk assessment. The open question is how you get there without betting the company on a core migration.
+
+Replacing a core system is one of the largest and riskiest programs an insurer can undertake. These are multi-year efforts with real failure rates, and every month spent migrating is a month not spent improving the underwriting itself. An external AI layer inverts that risk. You keep the system that already works, you deploy the intelligence in weeks rather than years, and when a model or a rule needs to change, you change it in the layer without waiting for a core release.
+
+> An external AI underwriting layer is software that sits on top of your existing core system, automating submission intake, triage, risk scoring, and decisioning through APIs, without ever becoming the system of record.
+
+### What "explainable" has to mean, especially in Brazil
+
+Automating a decision is not the same as being able to defend it. WIR was born in Brazil, where two constraints shape any underwriting automation. The first is SUSEP, the insurance regulator, which expects insurers to own and justify their pricing and acceptance practices. The second is the LGPD, Brazil's general data protection law (Law 13.709 of 2018), whose Article 20 gives a person the right to request a review of decisions made solely by automated processing that affect their interests.
+
+Both point to the same design rule. Every automated decision has to be traceable to the data and the logic behind it, and a person should be able to review it. Keeping a human in the loop is a deliberate WIR design choice rather than a literal requirement the law spells out, and it is how WIR honors the spirit of Article 20 in practice. That is why a well-built layer is designed to explain, to log, and to defer, not only to decide. Explainability is not a compliance afterthought here. It is the feature that makes automation usable in a regulated market.
+
+### Where this fits: carriers and MGAs
+
+The pattern is not only for large carriers. MGAs often run on lighter infrastructure, sometimes little more than email and spreadsheets, which makes a heavy core overkill and a rip-and-replace irrelevant. An external AI layer gives an MGA carrier-grade intake, triage, and decisioning without asking it to buy and operate a core it does not need. Whether the record ultimately lives in Guidewire or in a delegated-authority workbook, the intelligence sits on top of it the same way.
+
+### A note on proof
+
+WIR has run this architecture in a proof of concept with a global insurer in the transport line, applying the full intake-to-decision workflow on top of the insurer's existing environment. We reference it deliberately and sparingly, because the value of an anchor pattern is that it reproduces across lines and systems, not that it rests on a single case.
+
+### The bottom line
+
+You do not need to replace your core to modernize underwriting. You need to stop asking the core to do the part it was never designed for. Put an external AI layer in front of it, automate the path from submission to explainable decision, and let the core keep doing what it already does well.`,
+    faq: [
+      { q: "How to automate insurance underwriting without replacing your core system?", a: "You add an external AI layer on top of the core. The layer handles intake, enrichment, triage, risk scoring, and a first-pass decision, then writes the result back to the core through APIs. The core remains the system of record for policies, billing, and claims, so there is no migration and no rip-and-replace." },
+      { q: "Will an external AI layer conflict with Guidewire, Duck Creek, or a homegrown core?", a: "No. A well-designed layer integrates through the core's own APIs and event framework rather than duplicating its database. It reads submissions and writes decisions back, leaving the core as the single source of truth. This is why it can be deployed alongside Guidewire and comparable platforms without a replacement project." },
+      { q: "Is automated underwriting allowed under LGPD and SUSEP?", a: "Yes, provided the decisions are explainable and reviewable. Brazil's LGPD (Law 13.709 of 2018) gives individuals the right to request review of decisions made solely by automated processing, and SUSEP expects insurers to justify their pricing and acceptance practices. An external layer that logs its reasoning and keeps a human in the loop is designed to meet both." },
+      { q: "How long does it take compared with replacing the core?", a: "An external AI layer is typically measured in weeks to a few months, because it integrates with the systems you already run instead of replacing them. Core replacements, by contrast, are usually multi-year programs. Keeping the core is what makes the fast timeline possible." }
+    ],
+  },
+  {
+    slug: "how-ai-integrates-with-guidewire-without-replacing-it",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/how-ai-integrates-with-guidewire-without-replacing-it.jpg",
+    title: "AI and Guidewire Integration: Adding Intelligence Without Replacing the Core",
+    sub: "Adding AI to a Guidewire environment does not require replacing PolicyCenter or migrating the core. WIR runs as an external AI layer on top of Guidewire. It reads the submission, enriches it, scores risk against the insurer's own appetite, prices it, and returns a decision with a full audit trail, then writes that recommendation back into PolicyCenter through Guidewire's APIs. Guidewire stays the system of record. It records the policy and binds coverage. The underwriter keeps final authority. Nothing is torn out, and no core migration is involved.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "Adding AI to Guidewire does not mean replacing PolicyCenter. See how an external AI layer scores risk and writes decisions back to the core, with no migration.",
+    body: `### Why "AI plus Guidewire" sounds like a migration, and why it is not
+
+For most carriers, Guidewire is the environment the business runs on. Guidewire reports more than 570 insurers in 40 countries and over 1,700 successful implementations, so the instinct when a team hears "add AI" is to brace for another multi-year core program. That instinct is the real objection. The question underneath it is not "do we want intelligence." It is "does intelligence mean we rebuild PolicyCenter again."
+
+The answer is no. An AI underwriting layer does not have to touch the core to change how underwriting runs. Guidewire is API-first, with a documented integration framework and REST endpoints. That is exactly the surface an external layer connects to. WIR consumes submissions in the format the insurer already uses, and it returns decisions to the same PolicyCenter that recorded them. The intelligence sits on top. The core stays where it is.
+
+### How AI integrates with Guidewire without replacing it
+
+The mechanics are narrow on purpose. A submission arrives through the channel the carrier already runs, whether API, portal, or upload. WIR reads the documents, extracts the fields, and enriches the risk with external context. Its machine learning scores that risk against the insurer's own appetite and underwriting manual, calculates a risk-adjusted price, and produces a decision, which is a quote, an automatic decline, or an escalation to a human. Every step returns an explanation and a complete audit trail.
+
+That decision then flows back into PolicyCenter through Guidewire's APIs. WIR proposes. PolicyCenter records and binds. The layer does not bind coverage or overwrite the policy record. Those actions stay with Guidewire and the underwriter. Nothing about the data model changes, no tables are migrated, and the carrier's IT team does not run a project to make it work. WIR is 100% external, which means no load on core infrastructure and no core replacement.
+
+### What stays with Guidewire, and what the AI layer adds
+
+The division of labor is clean. Guidewire remains the record. WIR supplies the intelligence and the speed in front of it.
+
+| Guidewire (PolicyCenter) | WIR (external AI layer) |
+| --- | --- |
+| System of record for the policy | Reads and enriches the submission |
+| Records the policy and binds coverage | Scores risk against the insurer's appetite |
+| Holds the underwriter's authority and workflow | Prices and returns a decision with an audit trail |
+| Owns the data model and compliance of record | Writes the recommendation back through the API |
+| Stays in place, with no migration | Sits on top, fully external |
+
+Read down either column and the boundary holds. Binding, the policy record, and final authority never leave Guidewire and the underwriter. Reading, enrichment, scoring, and pricing are where the AI layer does its work, and it hands the result back rather than keeping it.
+
+### Why this matters for carriers in Brazil
+
+The pressure to automate underwriting is not abstract. Deloitte finds that underwriters spend around 40% of their time on administrative tasks. McKinsey has projected that by 2030 manual underwriting will cease to exist for most personal and small-business products, with the underwriter's role shifting toward judgment on complex risk. At the same time, BCG reports that 70% of insurers do not execute innovation because of IT limitations. That last figure is the trap. The appetite to modernize is real, but the fear of another core program stalls it.
+
+An external layer removes that blocker, and it does so without loosening governance. In Brazil, carriers operate under SUSEP oversight and the LGPD data-protection regime. WIR's decisions are explainable and return a full audit trail, which is what a SUSEP-regulated carrier needs to defend an underwriting decision. Data is encrypted at every step and handled in line with the LGPD. The audit trail is not a byproduct. It is how the layer earns the right to sit in front of the core.
+
+### What integration looks like in practice
+
+In practice the layer follows one path. It moves from multichannel intake and automatic validation, through intelligent document reading, broker enrichment, and the risk and fraud engine, to dynamic pricing and a decision that is written back to the core with its audit trail. The underwriter sees a queue, a visible SLA, and the reasoning behind every recommendation, rather than a black box.
+
+WIR is currently running its first proof of concept with a global insurer in the Transport line. That is the extent of the public track record, and it is deliberately narrow. The point of the design is not scale claims. It is that the intelligence is calibrated to one insurer's risk policy and returns control to that insurer's core. AI and Guidewire coexist because the AI never tries to be the core.`,
+    faq: [
+      { q: "Does adding AI to Guidewire mean replacing the core?", a: "No. WIR runs as an external AI layer on top of Guidewire. It reads and scores the submission and returns a decision through Guidewire's APIs, while PolicyCenter stays the record that binds the policy. There is no core migration and nothing torn out. The carrier's IT team does not run an implementation project to turn it on." },
+      { q: "How does AI integrate with Guidewire without replacing it?", a: "Through Guidewire's APIs and integration framework. A submission enters the channel the carrier already uses. WIR reads it, enriches it, scores the risk against the insurer's appetite, prices it, and writes the recommendation back into PolicyCenter. WIR proposes. PolicyCenter records and binds. The policy record and final authority never leave Guidewire." },
+      { q: "Does the underwriter lose control of the decision?", a: "No. Every recommendation is explainable and carries a full audit trail, and the underwriter keeps final authority to accept, decline, or adjust. The layer scores and prices against the insurer's own underwriting manual. It does not bind coverage. Binding stays with Guidewire and the underwriter." },
+      { q: "Is an external AI layer compliant with SUSEP and LGPD?", a: "WIR is built for that context. Decisions are auditable and return a complete trail, which supports the governance a SUSEP-regulated carrier must show. Data is encrypted at every step and handled in line with the LGPD. The layer adds intelligence without weakening the controls the core already enforces." },
+      { q: "How long does it take to add the AI layer to Guidewire?", a: "Because nothing in the core is replaced, the work is an integration rather than a migration. WIR connects to the submission channel and to Guidewire's APIs, and setup runs as a scoped, fixed-price project with KPIs agreed before it starts. The core keeps running the whole time." }
+    ],
+  },
+  {
+    slug: "how-to-increase-straight-through-processing-rate-insurance",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/how-to-increase-straight-through-processing-rate-insurance.jpg",
+    title: "How to Increase Your Straight-Through Processing Rate in Insurance",
+    sub: "To increase your straight-through processing (STP) rate in insurance, measure the real baseline per line of business first, then work four levers: structure the submission at intake, route each risk by complexity, calibrate the acceptance thresholds to your underwriting manual, and write every decision back to the core with its reasons. Measurement is Step 0, the four levers are the work, and an external AI layer can run all of it without replacing the core.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "7 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "Increase your straight-through processing (STP) rate in insurance. Measure the baseline, then work four levers with an AI layer that sits on top of the core.",
+    body: `To increase your straight-through processing (STP) rate in insurance, measure the rate you actually have first, then work four levers in order. Measurement is Step 0. The four levers are the work:
+
+- Structure the submission at intake so the file arrives machine-readable.
+- Route each risk by complexity, auto-deciding the clean ones and escalating the rest.
+- Calibrate the acceptance thresholds to your underwriting manual, and keep calibrating.
+- Write every decision back to the core with its reasons attached.
+
+None of this requires a core migration or a new policy administration system. The highest-leverage work runs as an external AI layer on top of the systems the insurer already operates.
+
+### Measure the rate you actually have first
+
+You cannot raise a number you have not defined honestly, so the first move is a clean baseline measured per line of business. A single blended company-wide STP figure hides where the touchless flow actually breaks.
+
+Be strict about the definition. A quote that a human silently rubber-stamps is not straight-through. If an underwriter opens the file, glances at it, and clicks approve, that decision touched a human and should not count. Measure the share of eligible risks that reach a quote, an automatic decline, or a bound policy with no manual intervention at all.
+
+Then look at where the rate is lost. It is rarely lost at the decision itself. It sits upstream, in submissions that arrive as unstructured email and attachments a person has to rekey before any engine can act. Gartner estimates that companies lose 20% to 30% of working time organizing unstructured data, and in underwriting that loss lands squarely between intake and the first automated check. The cost compounds downstream. Deloitte has put the share of underwriter time spent on administrative tasks at roughly 40%, time that is neither risk judgment nor new business.
+
+The rate is a commercial metric before it is an operational one. Capgemini has found that more than 60% of brokers choose an insurer based on response speed, so every submission that stalls in a manual queue is a quote the broker may place elsewhere before the insurer answers. A higher STP rate is a faster answer, and a faster answer wins more of the business the insurer already wants to write. That is the number the board cares about, not the automation percentage on its own.
+
+A realistic target depends on the line. High-volume [personal lines with structured data](#blog/o-que-e-stp-seguros-en) such as auto and home can run largely touchless. Complex commercial and specialty lines sit far lower, because each risk genuinely needs human judgment, and forcing a high STP rate there is how leakage enters the book. Set the target per line, not as one company-wide vanity number.
+
+### The STP levers, in the order that moves the rate
+
+With a baseline in hand, four levers move the rate. Work them in order, because each one makes the next safer.
+
+1. **Structure the submission at intake.** Intelligent document reading extracts the fields from email bodies, PDFs, and spreadsheets so the file is machine-readable before any decision runs. This is the single largest lever, because it attacks the upstream loss most STP programs overlook. It also feeds every step after it, so a clean intake raises the ceiling on everything downstream. See how a [touchless underwriting pipeline](#blog/esteira-subscricao-sem-toque-seguros-en) handles this end to end.
+
+2. **Route by complexity, not by queue.** Send the low-complexity risks that sit squarely inside appetite straight to an automated decision, and escalate the ambiguous or out-of-appetite ones to a human with the context already assembled. [Routing by risk](#blog/roteamento-automatico-subscricao-en) rather than by whoever is free is what lets the clean cases flow and keeps underwriters on the files that deserve their attention.
+
+3. **Calibrate the thresholds, and keep calibrating.** Set the acceptance thresholds too wide and bad risks slip through as leakage. Set them too narrow and almost everything escalates to a human, which crushes the rate you were trying to raise. The thresholds are not a one-time configuration. Calibration is a loop you re-tune as claims experience and conversion data come back, tightening where losses appear and loosening where the model has earned confidence.
+
+4. **Close the loop with a decision that writes itself back.** A decision that reaches a quote but then waits in a queue for someone to key it into the policy system is not straight-through. The rate only counts when the outcome, the price, and the reasoning post back to the system of record automatically. This is the difference between an STP rate that looks good in a pilot and one that holds up once real volume runs through it every day.
+
+### Keep the AI layer on top of the core, never in its place
+
+The instinct to raise the STP rate by rebuilding the core is what stalls most programs. BCG has found that about 70% of insurers cannot execute the innovation they want because of IT limitations. A multi-year core migration puts the STP roadmap behind the exact constraint that blocked it in the first place.
+
+The faster path is an external intelligence layer. It reads the submission, enriches it, scores the risk against appetite, prices it, and returns a decision, then writes that decision back to the system of record. The AI layer sits on top of the core and never replaces it. Nothing in the policy administration stack has to move, and the insurer's IT team does not have to run a migration to watch the rate climb. This is the practical difference between [an AI layer and a core or RPA rebuild](#blog/camada-ia-vs-core-rpa-seguros-en).
+
+### Governance is what makes a high STP rate defensible
+
+A high STP rate that no one can explain is a liability, not a win. Every automated decision has to carry the reason it was made, the data it used, and the appetite rule it matched. Explainability and a full audit trail are not compliance theater in this practice. They are what lets a regulator, a reinsurer, or an internal auditor sign off on an automated book.
+
+In Brazil this is concrete. SUSEP expects insurers to govern and justify automated underwriting decisions, and the LGPD governs the personal data those decisions touch. An STP flow built to raise the rate has to be built to be audited at the same time, with data encrypted at every step and a decision trail a human can read. Speed and compliance are not opposites here. The same [auditable decision trail](#blog/decisoes-subscricao-auditaveis-en) that satisfies the regulator is what lets the insurer widen the auto-decidable band with confidence.
+
+### How WIR raises the STP rate
+
+WIR is the AI layer for insurance, an external platform that automates the quotation and underwriting journey according to the insurer's own risk-acceptance policy. It is 100% external, with no load on the insurer's IT and no core migration.
+
+The platform runs the full flow. Multichannel intake with automatic validation, intelligent document reading, broker enrichment and context, a risk and fraud engine with Machine Learning calibrated to the insurer's appetite and underwriting manual, dynamic pricing, and a final decision that quotes, declines, or escalates to a human, always with an explanation and always written back to the core with its audit trail. Underwriter Intelligence handles routing by appetite and exposure so the clean risks flow and the complex ones reach a person with the context ready.
+
+Each stage maps to one of the four levers. Intelligent document reading structures the submission at intake, routing by appetite and exposure sends the clean risks to an automated decision, the risk engine holds the thresholds calibrated to the underwriting manual, and the write-back closes the loop into the core with the reasoning intact. The insurer keeps its policy system and its underwriting authority. The AI layer adds the intelligence and the speed on top.
+
+WIR is currently in a proof-of-concept with a global insurer in the Transport line. The AI layer for insurance sits on top of the systems the insurer already runs, never in their place. To see how the layer connects without a migration, read how WIR [integrates an AI layer with the insurer's core](#blog/integrar-camada-ia-core-seguros-en).`,
+    faq: [
+      { q: "How do you increase the straight-through processing rate in insurance?", a: "Start by measuring the real rate per line of business, then work four levers. First, structure the submission at intake so the file arrives machine-readable. Second, route each risk by complexity, auto-deciding the clean ones and escalating the rest. Third, calibrate the acceptance thresholds to your underwriting manual and keep re-tuning them. Fourth, write every decision back to the core with its reasons. An external AI layer can run all four without replacing the core." },
+      { q: "What is a good STP rate in insurance?", a: "There is no single good number, because a fair target depends on the line of business. High-volume personal lines with structured data, such as auto and home, can run largely touchless. Complex commercial and specialty lines sit much lower, because each risk needs human judgment. Measure the rate per line and count only decisions with no manual touch. A quote a human silently approves is not straight-through and should not inflate the figure." },
+      { q: "Does raising the STP rate mean replacing the core system?", a: "No. The highest-leverage work happens as an external AI layer on top of the systems the insurer already runs. It reads the submission, scores the risk against appetite, prices it, and writes the decision back to the system of record, with no core migration. BCG has found that about 70% of insurers cannot execute innovation because of IT limitations, so tying the STP roadmap to a multi-year core rebuild usually stalls it." },
+      { q: "Where is the STP rate usually lost?", a: "Upstream, at intake, not at the decision engine. Most submissions arrive as unstructured email and attachments that a person has to rekey before any automated check can run. Gartner estimates that companies lose 20% to 30% of working time organizing unstructured data. Structuring the submission at intake with intelligent document reading is the single largest lever on the rate, which is why it comes before threshold tuning." },
+      { q: "How do you keep automated STP decisions compliant in Brazil?", a: "Build governance into the flow from the start. Every automated decision should carry the data it used, the appetite rule it matched, and a reason a human can read. SUSEP expects insurers to govern and justify automated underwriting, and the LGPD governs the personal data involved. Keep data encrypted at every step and return a full audit trail, so a regulator, reinsurer, or internal auditor can review any decision after the fact." }
+    ],
+  },
+  {
+    slug: "insurance-submission-intake-automation",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/insurance-submission-intake-automation.jpg",
+    title: "Insurance submission intake automation for underwriting teams",
+    sub: "Insurance submission intake automation is the use of an external AI layer to turn every incoming submission, arriving by email, PDF, spreadsheet, portal, or API, into a clean, validated, scored file that is ready for an underwriting decision. The layer captures the submission, reads the documents, validates the data, enriches it with broker and risk context, and triages it by appetite and priority. WIR delivers this on top of the systems the insurer already runs, never replacing the core, and every step stays explainable, auditable, and LGPD compliant.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "How insurers automate submission intake with an external AI layer that reads, validates, enriches, and triages every submission, without replacing the core.",
+    body: `### Why submission intake decides underwriting throughput
+
+Insurance submission intake automation is what happens when an external AI layer takes over the first mile of underwriting, the capture, reading, validation, enrichment, and triage of every submission that arrives before a human ever prices the risk. In commercial and specialty lines, that first mile is where most of the delay lives. Submissions land as emails with a slip attached, a PDF schedule, a broker spreadsheet, sometimes a portal form or an API call, and someone has to open each one, figure out what it is, key the fields into the core, check that nothing is missing, and decide whether it is even worth an underwriter's time.
+
+That work is quiet, constant, and expensive. Deloitte puts the share of underwriter time lost to administrative tasks at about 40 percent, which is qualified judgment spent on data entry and chasing paperwork rather than on risk selection. It matters commercially because speed wins business. More than 60 percent of brokers choose an insurer by response speed, according to Capgemini, so a submission that sits in a queue for two days is often a submission lost to whoever quoted first. When intake is manual, capacity, not appetite, becomes the ceiling on growth.
+
+Automating submission intake removes that ceiling without asking the underwriting team to work faster. The AI layer does the non-judgment work at machine speed and hands each underwriter a file that is already read, validated, enriched, and ranked, so the human starts at the decision instead of at the inbox.
+
+### How submission intake automation works, step by step
+
+Underwriting submission automation is a sequence, not a single model. Each stage narrows what reaches a person and raises the quality of what does. The insurer sets the rules at every step.
+
+1. Capture from every channel. The layer ingests submissions however the broker sends them, by email, PDF, spreadsheet, portal upload, or API, and registers each one with an ID, a timestamp, and the source broker. The clock starts here, so nothing sits unseen in a shared mailbox.
+
+2. Read the documents. Intelligent document reading extracts the fields from the slip, the schedule, and the financials, and normalizes them into the insurer's data dictionary. Submissions are unstructured data by nature, and Gartner estimates corporate teams lose 20 to 30 percent of their time organizing unstructured data. This is the step that ends manual re-keying, the single biggest time sink in intake, so submission ingestion at volume stops depending on how many people are free to type.
+
+3. Validate the data. Before a case moves on, the layer checks that it holds together. Is the total insured value present? Do the deductibles parse into numbers the rating engine can use? Is the effective date in the future? When a mandatory field is missing or malformed, the layer issues an automated request back to the broker instead of a person noticing three days later.
+
+4. Enrich with context. The layer validates the CNPJ, pulls prior policy and claims history, and attaches a broker score and an exposure view, so the underwriter opens one enriched file rather than five browser tabs.
+
+5. Triage and prioritize. With a clean, enriched file in hand, the layer answers the questions a person would ask first. Is it in appetite? Is it complete enough to quote? How does it rank against the rest of this morning's queue? In-appetite, low-complexity risks are lined up for a fast quote or straight-through processing, while complex or borderline cases are routed to the right underwriter with the reasons attached.
+
+### Where the AI layer sits, on top of the core and never in its place
+
+Submission intake automation does not require a new policy system, and it is not a core migration. WIR is an external AI intelligence layer that runs on top of the systems the insurer already operates. It does not matter whether the system of record is Guidewire, another packaged core, or a platform the insurer built in-house. The layer reads submissions in through the interfaces already in place and writes structured, scored results back to that core, which stays the system of record for binding, issuance, and regulatory reporting. Nothing is ripped out, and there is no historical-policy migration to begin.
+
+That external shape is deliberate. It means the intake layer can go live on one line and one channel without an IT project the insurer's team has to run, and it means every automated step stays under the insurer's own governance. Each extracted field, each validation, each enrichment, and each triage decision carries the inputs and the rationale that produced it, so underwriters and auditors can reconstruct any automated step after the fact. Under Brazil's LGPD (Lei Geral de Proteção de Dados), submissions carry personal and sometimes sensitive data, so the layer processes only what is necessary, keeps data encrypted at every step, and preserves the escalation-to-a-human path that Article 20 makes a requirement for solely automated decisions.
+
+### What good submission intake automation delivers
+
+Done well, automating intake changes four things the underwriting leader can measure.
+
+Quote turnaround drops, because a submission is read, validated, and ranked within minutes of arriving rather than waiting for someone to open it. Straight-through processing rises, since clean, in-appetite risks can move to a quote with no manual handling while only the genuinely complex cases consume an underwriter's attention. Capacity comes back, because the administrative share Deloitte puts at about 40 percent of underwriter time, spent today on sorting, keying, and chasing, is exactly the work the layer absorbs, so that time returns to risk selection and to the broker relationships that grow the book. And underwriting leakage falls, because validation and appetite checks run on every submission the same way, instead of depending on how careful a tired analyst was at the end of the day.
+
+None of this is a promise of a specific number. It is the mechanical result of moving the first mile of underwriting from people to a calibrated layer, and then measuring the shift.
+
+### How WIR automates submission intake
+
+WIR is the AI layer for insurance, an external platform that automates the quotation and underwriting journey according to the insurer's own risk-acceptance policy. Its Machine Learning is calibrated to the insurer's risk appetite and underwriting manual, not to a generic benchmark, which is what makes the triage decisions the insurer's own decisions expressed at machine speed. Two modules carry the intake work. Underwriter Intelligence reads, validates, enriches, scores, and routes each submission, with automatic routing by appetite and exposure and predictive conversion analysis by product, risk, and broker. Real-time dashboards and analytics make the queue and the recovered time visible to the team and the board.
+
+WIR was built with Mahway, a Venture Builder in California, and Avante, a Venture Studio in Brazil, and it was born from accumulated operational experience rather than as an experiment. On traction it stays conservative. The only public fact is a POC in execution with a global insurer in the Transport line. Every decision is explainable and returns a full audit trail, and data is LGPD compliant and encrypted at every step. The AI layer for insurance. On top of the systems the insurer already runs, never in their place.`,
+    faq: [
+      { q: "What is insurance submission intake automation?", a: "Insurance submission intake automation is the use of an external AI layer to handle the first mile of underwriting. It captures each submission however it arrives, by email, PDF, spreadsheet, portal, or API, reads the documents, validates the data, enriches it with broker and risk context, and triages it by appetite and priority. The underwriter receives a clean, scored file and starts at the decision instead of at the inbox. The core system stays in place and remains the system of record." },
+      { q: "Does automating submission intake mean replacing the insurer's core?", a: "No. WIR is an external AI layer that runs on top of the systems the insurer already operates, never in their place. It is 100 percent external, so there is no core migration and no load on the insurer's IT. The layer reads submissions in through existing interfaces and writes structured, scored results back to the policy core, whether that core is Guidewire, another packaged system, or one built in-house. The core stays the system of record for binding and issuance." },
+      { q: "Which submission formats can the AI layer read?", a: "The layer ingests submissions in the formats brokers already use: email and attachments, PDF slips and schedules, spreadsheets, portal uploads, and API feeds. Intelligent document reading extracts the fields from each and normalizes them into the insurer's data dictionary, so unstructured submissions become structured data the rating and risk engines can act on. When a field is missing or malformed, the layer triggers an automated request back to the broker rather than a manual chase." },
+      { q: "How much underwriter time does submission intake actually consume?", a: "A large share. Deloitte puts underwriter time spent on administrative tasks at about 40 percent, and much of that is intake work: sorting submissions, re-keying data, validating fields, and chasing missing documents. Because more than 60 percent of brokers choose an insurer by response speed (Capgemini), slow intake also costs business. Automating the intake step returns that time to risk selection and lets a quote come back fast enough to win the broker." },
+      { q: "How does the automated triage respect the insurer's appetite?", a: "The Machine Learning that scores and triages each submission is calibrated to the insurer's own underwriting manual, risk appetite, and loss history, not a generic ruleset. A submission stays on the fast, straight-through track only while it is in appetite, complete, read at high confidence, and inside the exposure and authority band the insurer defines. The moment any condition fails, the case routes to an underwriter with the reasons attached. Every automated step is explainable, auditable, and LGPD compliant." }
+    ],
+  },
+  {
+    slug: "insurance-submission-triage-automation",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/insurance-submission-triage-automation.jpg",
+    title: "Insurance submission triage automation: rank the queue before underwriting",
+    sub: "Insurance submission triage automation is the intake step that classifies each new submission and ranks the queue by risk appetite and exposure before an underwriter opens it. An external AI layer does this on top of the systems the insurer already runs, so a shared inbox becomes an ordered, explainable work queue: clean high-value business surfaces first, incomplete cases go back for enrichment, and out-of-appetite risks are declined fast.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "How insurers automate submission triage with an external AI layer that ranks each case by appetite and exposure before underwriting, never replacing the core.",
+    body: `A commercial submission inbox rarely fails loudly. It fails quietly, one delayed quote at a time. Broker e-mails, PDF proposal forms, spreadsheets, and scanned cover notes pile into a shared queue, and someone has to open each one, work out which line it belongs to, check whether it is complete, and decide what to look at next. While that manual sorting happens, the clean, in-appetite business that should have been quoted within the hour waits behind cases that were never going to bind. In a market where brokers place with whoever answers first, the cost of an unsorted queue is measured in lost premium, not just lost minutes.
+
+### What triage does before an underwriter opens the file
+
+Submission triage automation is the step that runs the instant a submission arrives and before underwriting begins. It answers three early questions, in order. Clearance asks what this submission is, whether it is complete, and whether it already belongs to the insurer rather than being a duplicate another broker is already working. Triage then asks how urgent it is and where it belongs in the queue. The output is not a decision to quote or decline. It is a classified, prioritized queue that a person, or the next automated stage, can act on with confidence.
+
+It helps to place triage next to the two steps it sits between. [Intelligent document reading](#blog/leitura-inteligente-submissoes-seguro-en) is the extraction step that opens the e-mail and its attachments and turns unstructured files into structured fields. Underwriting routing is the later decision step that produces a quote, a decline, or an escalation and sends the case to a named underwriter. Triage is the connective tissue: it consumes what reading extracted and hands routing a queue that is already sorted by what matters.
+
+### How automated triage ranks the queue
+
+The reason this step earns its place is that the manual version is expensive. In large commercial lines, McKinsey found that underwriters can spend 30 to 40 percent of their time on administrative tasks such as rekeying data and manually executing analyses, rather than on judging risk. Triage automation removes the sorting layer of that work, so underwriting capacity goes to the decisions only a human should make.
+
+Triage is one stage of a larger automated underwriting journey, and it depends on the extraction stage before it. Once the fields are structured, the layer classifies each submission by line of business, product, and broker, which decides the team, the authority level, and the rule set it belongs to. It checks the extracted data against what that specific line requires, so a missing sum insured, risk address, or loss history is flagged for broker enrichment before the case reaches pricing, instead of stalling on a desk.
+
+Prioritization then runs on two axes. The first is appetite: whether the submission is inside the defined risk appetite for its line. The second is exposure and authority: sum insured, line size, and accumulation against limits already on the book. The combination sets priority. A complete submission, inside appetite, from a high-value broker, with an exposure that fits, rises to the top. One outside appetite is surfaced early for a fast decline. One above an authority band is marked for the senior queue. The queue arrives with its reasoning attached, which is what separates an ordered work list from an undifferentiated inbox. Consistency comes from one logic sorting every submission, and speed comes from clean, high-value business surfacing immediately, which lifts the [straight-through processing rate](#blog/o-que-e-stp-seguros-en) downstream.
+
+### An external AI layer, not a core replacement
+
+The triage intelligence runs as an external layer on top of the insurer's existing core and policy administration systems, and it connects through integration, never replacement. It ingests submissions from whatever channels the insurer and its brokers already use, classifies and prioritizes them, and writes the classification, the priority, and the queue position back into the existing workflow through APIs or files. The policy system of record, the rating engine, and the books stay exactly where they are.
+
+This matters because legacy technology is the most cited blocker to underwriting modernization. Boston Consulting Group reports that 70 percent of insurers cannot execute the innovation they want because of IT constraints. An external triage layer sidesteps that blocker. It is scoped, it reuses the existing stack, and it can go live on a defined slice, for example one line and one channel first, without a multi-year core program. A core replacement is a long, high-risk effort. An external layer is incremental and carries no core risk. It also feeds the wider [touchless underwriting pipeline](#blog/esteira-subscricao-sem-toque-seguros-en), since a sorted queue is the precondition for straight-through decisions.
+
+### Governance, explainability, LGPD and GDPR
+
+Triage classifies and prioritizes using personal and corporate data, so it has to be governed, and in a regulated market that is not optional. Every triage outcome should be reconstructable: which line and product the layer assigned and why, which factors raised or lowered priority, and why a submission was flagged incomplete or outside appetite. Logging each step with its inputs and its rationale produces a full audit trail per submission, which supports internal governance and, in Brazil, the sound and documented underwriting that SUSEP supervision expects.
+
+Data protection law shapes the design directly. Brazil's LGPD (Lei 13.709/2018), in Article 20, gives the data subject the right to request review of decisions taken solely on automated processing. The EU GDPR, in Article 22, gives the individual the right not to be subject to a decision based solely on automated processing, with safeguards that include a right to human review. Both point the same way for triage: keep a documented rationale and a human-review path rather than acting as a black box. In practice, an automated triage layer strengthens governance rather than weakening it, because manual sorting leaves no record of why one submission jumped the queue and another waited, while the layer logs every classification and priority decision and can explain each one. The model stays calibrated to the insurer's risk policy, and the insurer, not the layer, remains accountable for every acceptance decision.
+
+### How WIR automates submission triage
+
+WIR Innovation is the AI layer for insurance. It runs as an external AI layer over the systems the insurer already uses, never in their place. For triage specifically, WIR is designed to read each submission through multichannel intake, classify and prioritize it by line, product, and broker with Machine Learning calibrated to the insurer's risk appetite and underwriting manual, and write the classification, the priority, and the queue position back to the existing core through APIs. Each decision is designed to return a full audit trail, so the queue is explainable by design.
+
+Two modules carry the work. Underwriter Intelligence scores in real time and routes by appetite and exposure, so underwriters analyze risk instead of sorting an inbox. Smart Sales maps the portfolio by client and product and scores next-best-action, so the same broker signal that raises a submission's triage priority also feeds distribution. The commercial logic behind the queue order is concrete: Capgemini reports that more than 60 percent of brokers choose an insurer based on response speed, which makes the order of the triage queue a direct lever on which submissions convert. WIR's public traction here is deliberately narrow, a first proof-of-concept in execution with a global insurer in the Transport line. The model is calibrated to each insurer, LGPD compliant, and encrypted at every step. The AI layer for insurance, on top of the systems the insurer already runs, never in their place.`,
+    faq: [
+      { q: "What is insurance submission triage automation?", a: "Insurance submission triage automation is the intake step that classifies each new submission and ranks the queue before underwriting. Clearance checks what the submission is, whether it is complete, and whether it is a duplicate. Triage then prioritizes by risk appetite and exposure. An external AI layer does this on top of the insurer's existing systems, turning a raw inbox into an ordered, explainable work queue with the reasoning attached to each case." },
+      { q: "Does automated triage replace the insurer's core system?", a: "No. The triage intelligence is an external AI layer that sits on top of the existing core and policy administration systems, never in their place. It ingests submissions from the channels the insurer and its brokers already use, classifies and prioritizes them, and writes the classification, priority, and queue position back through APIs or files. The policy system of record, the rating engine, and the books stay exactly where they are, so there is no core migration." },
+      { q: "How does triage prioritize submissions by appetite and exposure?", a: "Each submission is scored on two axes. The first is whether it falls inside the defined risk appetite for its line of business. The second is its exposure and authority band, meaning sum insured, line size, and accumulation against limits already on the book. The combination sets queue priority. A complete case inside appetite from a high-value broker rises to the top, one outside appetite is surfaced early for a fast decline, and one above an authority band goes to the senior queue." },
+      { q: "Is automated triage compliant with LGPD and GDPR?", a: "It is designed to be. Brazil's LGPD, in Article 20, gives the data subject the right to request review of decisions taken solely on automated processing. The EU GDPR, in Article 22, gives the right not to be subject to a decision based solely on automated processing, with a right to human review. Automated triage meets both by keeping a documented rationale and a human-review path, logging every classification and priority decision, and leaving the insurer accountable for each acceptance." },
+      { q: "What is the difference between triage automation and underwriting routing?", a: "Triage is the intake step that classifies and prioritizes the inbox by what a submission is, whether it is complete, and how well it fits appetite. Underwriting routing is the later decision step that produces a quote, a decline, or an escalation and sends the case to a named underwriter. Triage feeds routing a queue that is already ordered by appetite and exposure, so routing acts on a sorted queue instead of a raw one." }
+    ],
+  },
+  {
+    slug: "what-is-ai-underwriting-workbench",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/what-is-ai-underwriting-workbench.jpg",
+    title: "What Is an AI Underwriting Workbench?",
+    sub: "An AI underwriting workbench is an external intelligence layer that reads each insurance submission, enriches it, scores the risk against the carrier's own appetite, and drafts a quote, decline, or referral with a full audit trail. It accelerates the quotation and underwriting journey on top of the systems an insurer already runs, and it never replaces the policy core underneath.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "An AI underwriting workbench is an external AI layer that reads, enriches, scores, and prices each submission on top of the insurer's core. Here is how it works.",
+    body: `Ask an underwriting leader what actually slows the team down and the answer is rarely the risk itself. It is the hour before the risk. Submissions arrive as email attachments, PDFs, and spreadsheets, and a skilled underwriter spends that hour keying data, chasing missing fields, and checking a broker's history instead of judging exposure. An AI underwriting workbench is the software category built to remove that first hour. It is an external intelligence layer that sits on top of the insurer's existing core, turns a messy submission into structured, scored, decision-ready data, and hands the underwriter a recommendation with the reasoning attached.
+
+### What is an AI underwriting workbench?
+
+An AI underwriting workbench is a workspace where the routine parts of underwriting are automated and the judgment stays with the underwriter. It ingests a submission through whatever channel the insurer already uses, whether that is email, a broker portal, an upload, or an API. It reads the documents, extracts the fields, enriches the case with external context, and runs the risk against a machine learning model calibrated to the carrier's underwriting manual and risk appetite. What reaches the underwriter is no longer a raw packet. It is a triaged case with a risk score, a suggested premium, and a clear next action, which the underwriter accepts, adjusts, or overrides.
+
+The word workbench carries the whole idea. It signals a tool the underwriter works at, not an autopilot that works in their place. The workbench clears the administrative load so the human spends time on the risks that actually need a human, and on the broker relationships that win business.
+
+### What an AI underwriting workbench does across the journey
+
+A useful way to understand the category is to follow one submission through it. WIR describes this as a six-stage flow, and most credible workbenches cover the same ground.
+
+The case enters through multichannel intake and is validated automatically at the door. Intelligent document reading extracts the fields from the attachments, so nobody rekeys them. Broker and account enrichment adds context the submission does not carry on its own, cross-referencing sources such as the company registry, broker conversion history, exposure, and credit. A risk and fraud engine, a multi-factor model tuned to appetite and the underwriting manual, returns a risk score and a probability. Dynamic pricing produces a risk-adjusted premium. Finally the case reaches a decision, a quote, an automatic decline, or an escalation to a human, always with the explanation attached, written back to the policy core with a complete audit trail.
+
+The point of the flow is speed with control. Capgemini reports that more than 60 percent of brokers choose an insurer by response speed, so shortening the path from submission to quote is not a convenience. It is distribution.
+
+### An AI underwriting workbench is a layer, not a new core
+
+The most common confusion is between an AI underwriting workbench and the policy administration system, the core. They are not the same thing, and the difference is the whole point. The core is the system of record where policies, endorsements, and claims live. A workbench is a layer of intelligence that sits on top of it, reads the same submissions, and writes decisions back. Replacing a core is a multi-year migration most insurers cannot absorb. BCG has found that 70 percent of insurers do not execute the innovation they want because of IT limitations, which is exactly the wall a full core-replacement project runs into.
+
+It is also worth separating a workbench from a traditional underwriting rules engine. A rules engine encodes fixed if-then logic inside the core. It is rigid, and every change to appetite becomes an IT ticket and a release cycle. An AI underwriting workbench sits outside the core and learns the appetite as a calibrated model, so it can weigh many factors at once and adapt without a core deployment. Robotic process automation sits in a similar bucket. It clicks through screens on a fixed script and breaks when the screen changes, and it never forms a risk judgment. A workbench reads unstructured submissions and scores risk, which is a different class of problem.
+
+### Do you need an AI underwriting workbench?
+
+The category earns its place when the administrative load is real and measurable. Deloitte puts the share of an underwriter's time spent on administrative tasks at 40 percent, which is time not spent on risk selection or on brokers. A few signals suggest a workbench will pay off:
+
+- Underwriters spend more time preparing submissions than analyzing risk.
+- Submission volume is growing faster than the team can hire.
+- Quote turnaround is losing business to faster competitors.
+- Pricing discipline drifts because decisions are not consistently scored against appetite.
+- A full core replacement has been ruled out as too slow, too costly, or too risky.
+
+If several of those are true, the constraint is not underwriting talent. It is everything piled on top of that talent before it can be used.
+
+### What it means for MGAs and specialty lines
+
+Managing general agents feel this most sharply. MGAs run on their carriers' systems and their own delegated appetite. A workbench that sits on top of those systems lets a small team underwrite like a much larger one, holding the discipline the carrier's audit demands while handling more submissions per person.
+
+The same logic reaches specialty and commercial lines, where each risk carries more documents and more context than a simple personal-lines policy. WIR's first proof of concept is in execution with a global insurer in the Transport line, and that single line is the concrete proof point today. The architecture, though, is designed to extend to other commercial and specialty lines, because the workbench is calibrated to whatever underwriting manual and appetite the carrier configures rather than to one fixed product.
+
+### Governance, explainability, and compliance
+
+An underwriting decision an insurer cannot explain is a liability, not an efficiency. A credible AI underwriting workbench treats explainability as a requirement rather than a feature. Every automated decision returns the reasoning and a full audit trail, so an underwriter, an auditor, or a regulator can see why a risk was priced, declined, or referred.
+
+In Brazil this maps directly to the environment insurers already operate in. SUSEP supervises the market and expects decisions to be traceable, and the LGPD governs how personal data is processed, which means data has to be encrypted at every step and handled lawfully. Supervisors in other markets are moving the same way, toward automated decisions a human can inspect and defend. A workbench built around an audit trail meets that expectation by design, rather than bolting it on afterward.
+
+### How WIR fits
+
+WIR Innovation builds this layer for the Brazilian P&C market, framed plainly as the AI layer for insurance, on top of the systems the insurer already runs, never in their place. It is fully external, so there is no load on the insurer's IT and no core migration. Its modules cover the journey the workbench automates. Underwriter Intelligence automates the quotation journey per the carrier's risk policy, Smart Sales scores distribution and next-best-action, and real-time dashboards keep the pipeline visible. The intelligence is calibrated to each insurer's appetite and underwriting manual, and every decision is explainable, auditable, and LGPD compliant.
+
+For an insurer or MGA weighing how to modernize underwriting without a core replacement, the AI underwriting workbench is the pragmatic answer. Keep the core, add the intelligence, and give the underwriter back the hour before the risk.`,
+    faq: [
+      { q: "What is an AI underwriting workbench?", a: "An AI underwriting workbench is an external intelligence layer that automates the routine parts of underwriting. It reads a submission, extracts and enriches the data, scores the risk against the carrier's own appetite, and drafts a quote, decline, or referral with a full audit trail. The underwriter keeps the judgment and the final decision. The workbench sits on top of the existing core rather than replacing it." },
+      { q: "How is an AI underwriting workbench different from a core or policy administration system?", a: "They solve different problems. The core, or policy administration system, is the system of record where policies and claims live. An AI underwriting workbench is a layer on top of the core that reads incoming submissions, scores risk, and writes decisions back with an audit trail. Replacing a core is a multi-year migration. Adding a workbench is an external integration that leaves the core in place and running." },
+      { q: "Does an AI underwriting workbench replace the underwriter?", a: "No. The workbench automates the administrative work around underwriting, such as reading submissions, extracting fields, enriching context, and scoring risk against appetite. The underwriter still owns the judgment, accepts or overrides the recommendation, and handles the risks that need human attention. The goal is to free underwriter time for risk selection and broker relationships, not to remove the underwriter from the decision." },
+      { q: "Is an AI underwriting workbench the same as an underwriting rules engine?", a: "Not quite. A rules engine is one component of underwriting automation, running fixed if-then logic inside the core. An AI underwriting workbench is broader and sits outside the core. It reads unstructured submissions, enriches them, and scores risk with a model calibrated to the carrier's appetite, adapting without a core release. A rules engine can be part of the picture, but the workbench covers the whole submission-to-decision journey." },
+      { q: "Is an AI underwriting workbench compliant with SUSEP and LGPD in Brazil?", a: "It can be, and that is the point of an external, auditable layer. In Brazil, SUSEP supervises the insurance market and the LGPD governs personal data. A workbench that returns an explanation and a full audit trail for every decision supports the expectation that decisions stay traceable, and encrypting data at every step and processing it lawfully supports the LGPD. Because the layer is external, the insurer keeps control of its underwriting policy and its compliance posture." }
+    ],
+  },
+  {
+    slug: "what-is-insurance-decisioning",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/what-is-insurance-decisioning.jpg",
+    title: "What is insurance decisioning, and how does it differ from scoring",
+    sub: "Insurance decisioning is the step where an insurer turns a scored, priced submission into an action: quote it, decline it, or route it to an underwriter. Scoring analyzes the risk. Decisioning acts on it, under the insurer's own risk-acceptance policy, with an explanation attached to every outcome.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "5 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "Insurance decisioning turns a scored submission into a quote, decline, or escalation. See how an external AI layer automates it without replacing the core.",
+    body: `### What insurance decisioning means
+
+Every submission an insurer receives eventually reaches a moment of resolution. Insurance decisioning is that moment. It is the step where a risk that has already been read, enriched, and scored becomes a concrete outcome: an automatic quote, an automatic decline, or an escalation to a human underwriter. In the Brazilian Seguros e Danos market (P&C, property and casualty), decisioning is where the insurer's risk-acceptance policy stops being a document and becomes an action on a live case. The defining feature is not the model. It is that a decision is made, recorded, and explainable on every submission, whether a machine or a person makes the call.
+
+Decisioning is often confused with the steps around it. Reading extracts the data. Enrichment completes it. Scoring measures the risk and the likelihood it converts. Pricing sets the premium. Decisioning is the act that follows, comparing what those steps produced against the insurer's appetite and underwriting manual, and returning a verdict. An insurer can score every submission accurately and still lose time, because scores sit in a queue waiting for a human to decide what to do with them. Decisioning is the bottleneck that scoring alone never clears.
+
+### Decisioning versus scoring in underwriting
+
+This distinction matters because the two are built and governed differently. Underwriting decisioning is a policy question before it is a technical one. A score is a number. A decision is a commitment, to quote at a price, to decline, or to spend an underwriter's time on a case.
+
+Scoring answers how risky and how likely to convert a submission is. Decisioning answers what to do about it, given that score and given the insurer's appetite. The same score can produce different decisions at two insurers, because appetite, capacity, and the underwriting manual differ. That is why a decisioning layer has to be calibrated to each insurer's own policy rather than to a generic rulebook. Underwriters spend about 40% of their time on administrative tasks rather than risk judgment, according to Deloitte. Decisioning is where that time is either lost to manual handoffs or given back.
+
+### How an automated insurance decisioning flow works
+
+An automated insurance decisioning flow runs as a sequence of linked stages, each leaving an audit trail. A submission arrives through the channel the insurer already uses, by API, portal, or upload, and is validated on intake. Intelligent document reading extracts the fields from the submission. Enrichment adds broker context and cross-references external sources such as company registration (CNPJ), broker history, exposure, and credit. A risk and fraud engine, a multi-factor machine learning model calibrated to appetite and the underwriting manual, produces a risk score and a probability.
+
+Only then does decisioning act. The flow compares the scored, priced risk against the insurer's risk-acceptance policy and returns one of three outcomes: a quote, an automatic decline, or an escalation to a human underwriter for judgment. Low-complexity risks that sit inside appetite can be quoted, declined, or issued with no manual touch, which is what straight-through processing measures. Out-of-appetite or high-complexity risk, or a fraud signal, is routed to the right person. Speed here is not cosmetic. More than 60% of brokers choose an insurer by response speed, according to Capgemini, so a slow decision is often a lost submission.
+
+### What a decisioning engine does inside the insurer's stack
+
+A decisioning engine is the component that turns scored risk into a recorded outcome and writes that outcome back where the business already lives. The important design question is where it sits. WIR is an external AI layer that operates on top of the systems the insurer already runs and connects by API, never in their place. The core stays the system of record. The decisioning layer reads from it, decides, and writes the decision back into it with a full audit trail.
+
+This external posture is the point. About 70% of insurers do not execute the innovation they want because of IT limitations, according to BCG. A decisioning engine that demands a core migration inherits that constraint. One that runs as a layer on top does not. The insurer modernizes the front end of underwriting with no rip and replace, no core migration, and no new load on its IT team, while the decisions that come out are explainable and auditable by design.
+
+### Governance, explainability, and LGPD in decisioning
+
+An automated decision is only usable if it can be defended. In Brazil, underwriting operates inside a regulated environment supervised by SUSEP, the Superintendência de Seguros Privados, and personal data is governed by the LGPD, the Lei Geral de Proteção de Dados (Law 13.709/2018). A decisioning layer therefore cannot be a black box.
+
+Every decision WIR returns is explainable and carries a full audit trail, so an underwriter, an auditor, or a regulator can see why a submission was quoted, declined, or escalated. Data is encrypted at every step and handled in line with the LGPD. Automation does not remove the human from accountability. It routes the cases that need judgment to a person and documents the ones it decides, which is what makes a decision auditable rather than merely fast.
+
+### How WIR enables insurance decisioning
+
+WIR is the AI layer for insurance, on top of the systems the insurer already runs, never in their place. Its Underwriter Intelligence module automates the quotation and underwriting journey according to the insurer's own risk-acceptance policy, with real-time scoring calibrated to appetite, automatic routing by appetite and exposure, and predictive conversion analysis by product, risk, and broker. The decisioning step writes back to the policy core and returns the audit trail, with a visible SLA and an underwriter queue for the cases that escalate.
+
+WIR has validated this external-layer model in a proof of concept with a global insurer in the Transport line, applying its automated layer to real submissions while leaving the core systems untouched. The goal is not to replace the underwriter. It is to give the underwriter back the time that administrative decisioning consumes, and to make every automated outcome one the insurer can explain and audit.`,
+    faq: [
+      { q: "What is insurance decisioning?", a: "Insurance decisioning is the step where an insurer turns a scored and priced submission into an action: an automatic quote, an automatic decline, or an escalation to a human underwriter. It is distinct from scoring, which measures the risk, and from pricing, which sets the premium. Decisioning applies the insurer's own risk-acceptance policy to a live case and records an explainable outcome for every submission." },
+      { q: "What is the difference between insurance decisioning and risk scoring?", a: "Scoring and decisioning are different stages of the same flow. Scoring is analysis. Decisioning is action. A risk score estimates how risky a submission is and how likely it is to convert. Decisioning takes that score, compares it against the insurer's appetite and underwriting manual, and returns an outcome, an automatic quote, an automatic decline, or a routing to a human underwriter, always with an explanation." },
+      { q: "What is a decisioning engine in insurance?", a: "A decisioning engine is the component that turns a scored risk into a recorded outcome and writes it back into the insurer's core system. In WIR's model it runs as an external AI layer on top of existing systems, calibrated to the insurer's appetite and underwriting manual. It decides, then returns a full audit trail, so the core stays the system of record and no migration is required." },
+      { q: "How does automated insurance decisioning work without replacing the core?", a: "Automated insurance decisioning reads a submission through the channel the insurer already uses, extracts and enriches the data, scores the risk, and then decides, quote, decline, or escalate, under the insurer's policy. WIR runs this as a layer on top of the existing core, connected by API. It writes the decision back into the core with an audit trail, so the insurer modernizes underwriting with no rip and replace and no new load on IT." },
+      { q: "Is automated underwriting decisioning compliant in Brazil?", a: "Yes, when it is explainable and auditable. In Brazil, underwriting is supervised by SUSEP and personal data is governed by the LGPD, the Lei Geral de Proteção de Dados. WIR returns an explanation and a full audit trail for every decision, and encrypts data at every step, so an underwriter, auditor, or regulator can see why a submission was quoted, declined, or escalated. Automation documents accountability rather than removing it." }
+    ],
+  },
+
+  {
     slug: "aparecer-recomendacoes-ia-seguros",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/aparecer-recomendacoes-ia-seguros.jpg",

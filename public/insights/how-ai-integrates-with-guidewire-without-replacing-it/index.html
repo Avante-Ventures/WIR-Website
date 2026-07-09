@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>AI and Guidewire Integration: Adding Intelligence Without Replacing the Core · WIR Innovation</title>
+<meta name="description" content="Adding AI to Guidewire does not mean replacing PolicyCenter. See how an external AI layer scores risk and writes decisions back to the core, with no migration." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/how-ai-integrates-with-guidewire-without-replacing-it/" />
+<link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/how-ai-integrates-with-guidewire-without-replacing-it/" />
+<link rel="alternate" hreflang="x-default" href="https://wirinnovation.ai/insights/how-ai-integrates-with-guidewire-without-replacing-it/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="AI and Guidewire Integration: Adding Intelligence Without Replacing the Core" />
+<meta property="og:description" content="Adding AI to Guidewire does not mean replacing PolicyCenter. See how an external AI layer scores risk and writes decisions back to the core, with no migration." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/how-ai-integrates-with-guidewire-without-replacing-it/" />
+<meta property="og:image" content="/assets/articles/how-ai-integrates-with-guidewire-without-replacing-it.jpg" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Artigo" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI and Guidewire Integration: Adding Intelligence Without Replacing the Core" />
+<meta name="twitter:description" content="Adding AI to Guidewire does not mean replacing PolicyCenter. See how an external AI layer scores risk and writes decisions back to the core, with no migration." />
+<meta name="twitter:image" content="/assets/articles/how-ai-integrates-with-guidewire-without-replacing-it.jpg" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI and Guidewire Integration: Adding Intelligence Without Replacing the Core","description":"Adding AI to Guidewire does not mean replacing PolicyCenter. See how an external AI layer scores risk and writes decisions back to the core, with no migration.","image":"/assets/articles/how-ai-integrates-with-guidewire-without-replacing-it.jpg","datePublished":"2026-07-08","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Equipe"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/how-ai-integrates-with-guidewire-without-replacing-it/","articleSection":"Artigo"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"AI and Guidewire Integration: Adding Intelligence Without Replacing the Core","item":"https://wirinnovation.ai/insights/how-ai-integrates-with-guidewire-without-replacing-it/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://wirinnovation.ai/insights/how-ai-integrates-with-guidewire-without-replacing-it/#faq","inLanguage":"pt-BR","mainEntity":[{"@type":"Question","name":"Does adding AI to Guidewire mean replacing the core?","acceptedAnswer":{"@type":"Answer","text":"No. WIR runs as an external AI layer on top of Guidewire. It reads and scores the submission and returns a decision through Guidewire's APIs, while PolicyCenter stays the record that binds the policy. There is no core migration and nothing torn out. The carrier's IT team does not run an implementation project to turn it on."}},{"@type":"Question","name":"How does AI integrate with Guidewire without replacing it?","acceptedAnswer":{"@type":"Answer","text":"Through Guidewire's APIs and integration framework. A submission enters the channel the carrier already uses. WIR reads it, enriches it, scores the risk against the insurer's appetite, prices it, and writes the recommendation back into PolicyCenter. WIR proposes. PolicyCenter records and binds. The policy record and final authority never leave Guidewire."}},{"@type":"Question","name":"Does the underwriter lose control of the decision?","acceptedAnswer":{"@type":"Answer","text":"No. Every recommendation is explainable and carries a full audit trail, and the underwriter keeps final authority to accept, decline, or adjust. The layer scores and prices against the insurer's own underwriting manual. It does not bind coverage. Binding stays with Guidewire and the underwriter."}},{"@type":"Question","name":"Is an external AI layer compliant with SUSEP and LGPD?","acceptedAnswer":{"@type":"Answer","text":"WIR is built for that context. Decisions are auditable and return a complete trail, which supports the governance a SUSEP-regulated carrier must show. Data is encrypted at every step and handled in line with the LGPD. The layer adds intelligence without weakening the controls the core already enforces."}},{"@type":"Question","name":"How long does it take to add the AI layer to Guidewire?","acceptedAnswer":{"@type":"Answer","text":"Because nothing in the core is replaced, the work is an integration rather than a migration. WIR connects to the submission channel and to Guidewire's APIs, and setup runs as a scoped, fixed-price project with KPIs agreed before it starts. The core keeps running the whole time."}}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>Plataforma de IA para seguros</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>Em conformidade com LGPD</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/" class="nav__link">Início</a>
+      <a href="/#about" class="nav__link">Sobre</a>
+      <a href="/insights/manifesto/" class="nav__link">Manifesto</a>
+      <a href="/#solutions" class="nav__link">Produtos &amp; IA</a>
+      <a href="/#protection" class="nav__link">Proteção de Dados</a>
+      <a href="/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contato
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/insights/">
+      <span aria-hidden="true">←</span> Voltar para Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Artigo</div>
+      <h1 class="display blarticle__title">AI and Guidewire Integration: Adding Intelligence Without Replacing the Core</h1>
+      <p class="blarticle__sub">Adding AI to a Guidewire environment does not require replacing PolicyCenter or migrating the core. WIR runs as an external AI layer on top of Guidewire. It reads the submission, enriches it, scores risk against the insurer&#39;s own appetite, prices it, and returns a decision with a full audit trail, then writes that recommendation back into PolicyCenter through Guidewire&#39;s APIs. Guidewire stays the system of record. It records the policy and binds coverage. The underwriter keeps final authority. Nothing is torn out, and no core migration is involved.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Equipe</div>
+          <div class="blarticle__byline-time">08 · Jul · 2026 · 6 min de leitura</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#3222E9,#7540AC); aspect-ratio: 16 / 9;">
+      <img src="/assets/articles/how-ai-integrates-with-guidewire-without-replacing-it.jpg" alt="AI and Guidewire Integration: Adding Intelligence Without Replacing the Core" width="1600" height="900" loading="eager" fetchpriority="high" />
+    </figure>
+
+    <div class="blarticle__body">
+<h3>Why &quot;AI plus Guidewire&quot; sounds like a migration, and why it is not</h3>
+<p>For most carriers, Guidewire is the environment the business runs on. Guidewire reports more than 570 insurers in 40 countries and over 1,700 successful implementations, so the instinct when a team hears &quot;add AI&quot; is to brace for another multi-year core program. That instinct is the real objection. The question underneath it is not &quot;do we want intelligence.&quot; It is &quot;does intelligence mean we rebuild PolicyCenter again.&quot;</p>
+<p>The answer is no. An AI underwriting layer does not have to touch the core to change how underwriting runs. Guidewire is API-first, with a documented integration framework and REST endpoints. That is exactly the surface an external layer connects to. WIR consumes submissions in the format the insurer already uses, and it returns decisions to the same PolicyCenter that recorded them. The intelligence sits on top. The core stays where it is.</p>
+<h3>How AI integrates with Guidewire without replacing it</h3>
+<p>The mechanics are narrow on purpose. A submission arrives through the channel the carrier already runs, whether API, portal, or upload. WIR reads the documents, extracts the fields, and enriches the risk with external context. Its machine learning scores that risk against the insurer&#39;s own appetite and underwriting manual, calculates a risk-adjusted price, and produces a decision, which is a quote, an automatic decline, or an escalation to a human. Every step returns an explanation and a complete audit trail.</p>
+<p>That decision then flows back into PolicyCenter through Guidewire&#39;s APIs. WIR proposes. PolicyCenter records and binds. The layer does not bind coverage or overwrite the policy record. Those actions stay with Guidewire and the underwriter. Nothing about the data model changes, no tables are migrated, and the carrier&#39;s IT team does not run a project to make it work. WIR is 100% external, which means no load on core infrastructure and no core replacement.</p>
+<h3>What stays with Guidewire, and what the AI layer adds</h3>
+<p>The division of labor is clean. Guidewire remains the record. WIR supplies the intelligence and the speed in front of it.</p>
+<p>| Guidewire (PolicyCenter) | WIR (external AI layer) |
+| --- | --- |
+| System of record for the policy | Reads and enriches the submission |
+| Records the policy and binds coverage | Scores risk against the insurer&#39;s appetite |
+| Holds the underwriter&#39;s authority and workflow | Prices and returns a decision with an audit trail |
+| Owns the data model and compliance of record | Writes the recommendation back through the API |
+| Stays in place, with no migration | Sits on top, fully external |</p>
+<p>Read down either column and the boundary holds. Binding, the policy record, and final authority never leave Guidewire and the underwriter. Reading, enrichment, scoring, and pricing are where the AI layer does its work, and it hands the result back rather than keeping it.</p>
+<h3>Why this matters for carriers in Brazil</h3>
+<p>The pressure to automate underwriting is not abstract. Deloitte finds that underwriters spend around 40% of their time on administrative tasks. McKinsey has projected that by 2030 manual underwriting will cease to exist for most personal and small-business products, with the underwriter&#39;s role shifting toward judgment on complex risk. At the same time, BCG reports that 70% of insurers do not execute innovation because of IT limitations. That last figure is the trap. The appetite to modernize is real, but the fear of another core program stalls it.</p>
+<p>An external layer removes that blocker, and it does so without loosening governance. In Brazil, carriers operate under SUSEP oversight and the LGPD data-protection regime. WIR&#39;s decisions are explainable and return a full audit trail, which is what a SUSEP-regulated carrier needs to defend an underwriting decision. Data is encrypted at every step and handled in line with the LGPD. The audit trail is not a byproduct. It is how the layer earns the right to sit in front of the core.</p>
+<h3>What integration looks like in practice</h3>
+<p>In practice the layer follows one path. It moves from multichannel intake and automatic validation, through intelligent document reading, broker enrichment, and the risk and fraud engine, to dynamic pricing and a decision that is written back to the core with its audit trail. The underwriter sees a queue, a visible SLA, and the reasoning behind every recommendation, rather than a black box.</p>
+<p>WIR is currently running its first proof of concept with a global insurer in the Transport line. That is the extent of the public track record, and it is deliberately narrow. The point of the design is not scale claims. It is that the intelligence is calibrated to one insurer&#39;s risk policy and returns control to that insurer&#39;s core. AI and Guidewire coexist because the AI never tries to be the core.</p>
+<section class="blarticle__faq" aria-label="Perguntas frequentes">
+<h3>Perguntas frequentes</h3>
+<details class="blarticle__faq-item">
+  <summary>Does adding AI to Guidewire mean replacing the core?</summary>
+  <p>No. WIR runs as an external AI layer on top of Guidewire. It reads and scores the submission and returns a decision through Guidewire&#39;s APIs, while PolicyCenter stays the record that binds the policy. There is no core migration and nothing torn out. The carrier&#39;s IT team does not run an implementation project to turn it on.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>How does AI integrate with Guidewire without replacing it?</summary>
+  <p>Through Guidewire&#39;s APIs and integration framework. A submission enters the channel the carrier already uses. WIR reads it, enriches it, scores the risk against the insurer&#39;s appetite, prices it, and writes the recommendation back into PolicyCenter. WIR proposes. PolicyCenter records and binds. The policy record and final authority never leave Guidewire.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Does the underwriter lose control of the decision?</summary>
+  <p>No. Every recommendation is explainable and carries a full audit trail, and the underwriter keeps final authority to accept, decline, or adjust. The layer scores and prices against the insurer&#39;s own underwriting manual. It does not bind coverage. Binding stays with Guidewire and the underwriter.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Is an external AI layer compliant with SUSEP and LGPD?</summary>
+  <p>WIR is built for that context. Decisions are auditable and return a complete trail, which supports the governance a SUSEP-regulated carrier must show. Data is encrypted at every step and handled in line with the LGPD. The layer adds intelligence without weakening the controls the core already enforces.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>How long does it take to add the AI layer to Guidewire?</summary>
+  <p>Because nothing in the core is replaced, the work is an integration rather than a migration. WIR connects to the submission channel and to Guidewire&#39;s APIs, and setup runs as a scoped, fixed-price project with KPIs agreed before it starts. The core keeps running the whole time.</p>
+</details>
+</section>
+    </div>
+
+    <nav class="blarticle__related" aria-label="Leituras relacionadas">
+      <h3 class="blarticle__related-title">Leituras relacionadas</h3>
+      <ul class="blarticle__related-list">
+      <li class="blarticle__related-item"><a href="/insights/how-to-increase-straight-through-processing-rate-insurance/"><span class="blarticle__related-cat">Artigo</span> How to Increase Your Straight-Through Processing Rate in Insurance</a></li>
+      <li class="blarticle__related-item"><a href="/insights/insurance-submission-intake-automation/"><span class="blarticle__related-cat">Artigo</span> Insurance submission intake automation for underwriting teams</a></li>
+      <li class="blarticle__related-item"><a href="/insights/insurance-submission-triage-automation/"><span class="blarticle__related-cat">Artigo</span> Insurance submission triage automation: rank the queue before underwriting</a></li>
+      <li class="blarticle__related-item"><a href="/insights/what-is-ai-underwriting-workbench/"><span class="blarticle__related-cat">Artigo</span> What Is an AI Underwriting Workbench?</a></li>
+      </ul>
+    </nav>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/insights/">
+        <span aria-hidden="true">←</span> Outros Insights
+      </a>
+      <a class="btn btn--solid" href="/#contact">
+        Falar com a equipe <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#solutions">Produtos &amp; IA</a></li>
+          <li><a href="/#protection">Proteção de Dados</a></li>
+          <li><a href="/insights/">Insights &amp; News</a></li>
+          <li><a href="/#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/#contact">Falar com a equipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sócios &amp; Holding</h4>
+        <ul>
+          <li><a href="/#about">Mahway · California</a></li>
+          <li><a href="/#about">Avante · Brasil</a></li>
+          <li><a href="/#about">Conselheiros estratégicos</a></li>
+          <li><a href="/#about">Princípios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Ol%C3%A1%20Nicholas%2C%20vim%20pelo%20site%20da%20WIR%20Innovation.%20Gostaria%20de%20conversar%20sobre%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Falar com Nicholas no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>
