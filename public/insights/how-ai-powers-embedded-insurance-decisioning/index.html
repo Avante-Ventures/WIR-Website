@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#7540AC" />
+<title>How AI Powers Embedded Insurance Decisioning · WIR Innovation</title>
+<meta name="description" content="How AI runs eligibility, pricing signals, and bind in one real-time API call at the point of sale, layered over the insurer core, with an LGPD note." />
+<link rel="canonical" href="https://wirinnovation.ai/insights/how-ai-powers-embedded-insurance-decisioning/" />
+<link rel="alternate" hreflang="pt-BR" href="https://wirinnovation.ai/insights/how-ai-powers-embedded-insurance-decisioning/" />
+<link rel="alternate" hreflang="x-default" href="https://wirinnovation.ai/insights/how-ai-powers-embedded-insurance-decisioning/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How AI Powers Embedded Insurance Decisioning" />
+<meta property="og:description" content="How AI runs eligibility, pricing signals, and bind in one real-time API call at the point of sale, layered over the insurer core, with an LGPD note." />
+<meta property="og:url" content="https://wirinnovation.ai/insights/how-ai-powers-embedded-insurance-decisioning/" />
+<meta property="og:image" content="/assets/articles/how-ai-powers-embedded-insurance-decisioning.jpg" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="WIR Innovation" />
+<meta property="article:author" content="WIR Innovation" />
+<meta property="article:section" content="Artigo" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How AI Powers Embedded Insurance Decisioning" />
+<meta name="twitter:description" content="How AI runs eligibility, pricing signals, and bind in one real-time API call at the point of sale, layered over the insurer core, with an LGPD note." />
+<meta name="twitter:image" content="/assets/articles/how-ai-powers-embedded-insurance-decisioning.jpg" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+<script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
+
+<link rel="stylesheet" href="/style.css?v=2026052D" />
+<link rel="stylesheet" href="/home.css?v=2026052D" />
+<link rel="stylesheet" href="/blog.css?v=2026052D" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How AI Powers Embedded Insurance Decisioning","description":"How AI runs eligibility, pricing signals, and bind in one real-time API call at the point of sale, layered over the insurer core, with an LGPD note.","image":"/assets/articles/how-ai-powers-embedded-insurance-decisioning.jpg","datePublished":"2026-07-08","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Equipe"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/how-ai-powers-embedded-insurance-decisioning/","articleSection":"Artigo"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"How AI Powers Embedded Insurance Decisioning","item":"https://wirinnovation.ai/insights/how-ai-powers-embedded-insurance-decisioning/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://wirinnovation.ai/insights/how-ai-powers-embedded-insurance-decisioning/#faq","inLanguage":"pt-BR","mainEntity":[{"@type":"Question","name":"How AI powers embedded insurance decisioning","acceptedAnswer":{"@type":"Answer","text":"AI powers embedded insurance decisioning by running eligibility, pricing signals, and bind as a single real-time API call at the point of sale. An external AI layer normalizes the partner's transaction data, checks the insurer's appetite and rules, returns a price signal to the existing rating engine, and issues a bind or decline decision in a fraction of a second, while the core policy administration system stays the system of record."}},{"@type":"Question","name":"Does embedded decisioning require replacing the core policy system?","acceptedAnswer":{"@type":"Answer","text":"No. The most reliable pattern is an external AI layer that sits in front of the core system and answers the partner's API in real time. The core remains the system of record for the policy, premium, and ledger. This lets an insurer launch an embedded product in weeks and evolve decision logic independently, instead of running a multi-year core migration."}},{"@type":"Question","name":"How does LGPD affect sharing personal data across embedded partners in Brazil?","acceptedAnswer":{"@type":"Answer","text":"Under the LGPD (Lei nº 13.709 of 2018, enforced by the ANPD), the distribution partner and the insurer usually act as separate controllers, so each needs its own lawful basis and every transfer of personal data must rest on a legal basis in Article 7, such as consent or contract execution. The decisioning layer should carry consent and declared purpose through each call and log the legal basis with the decision. SUSEP's Open Insurance framework reflects the same consent-based principle."}},{"@type":"Question","name":"Where does AI stop and the rating engine begin?","acceptedAnswer":{"@type":"Answer","text":"The AI layer contributes or requests a pricing signal and enriches inputs, but it does not replace the rating engine. Actuarial rating stays in the insurer's existing engine, which keeps pricing control and governance where they belong while AI handles intake, eligibility, and the real-time orchestration of the decision."}}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SW9TDZ9H2', { anonymize_ip: true });
+</script>
+
+<script>document.documentElement.classList.add('js-ready');</script>
+</head>
+<body>
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>Plataforma de IA para seguros</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>Em conformidade com LGPD</span>
+    <span class="ticker__item"><span class="ticker__dot"></span>Decisão em minutos · auditável · explicável</span>
+    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing como padrão</span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <span class="nav__brand-sub">Innovation · AI Stack</span>
+    </a>
+    <div class="nav__links">
+      <a href="/" class="nav__link">Início</a>
+      <a href="/#about" class="nav__link">Sobre</a>
+      <a href="/insights/manifesto/" class="nav__link">Manifesto</a>
+      <a href="/#solutions" class="nav__link">Produtos &amp; IA</a>
+      <a href="/#protection" class="nav__link">Proteção de Dados</a>
+      <a href="/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    </div>
+    <a href="/#contact" class="nav__cta">
+      <span class="dot"></span>
+      Contato
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+<article class="blarticle">
+  <div class="wrap blarticle__wrap">
+    <a class="blarticle__back" href="/insights/">
+      <span aria-hidden="true">←</span> Voltar para Insights &amp; News
+    </a>
+
+    <header class="blarticle__head">
+      <div class="eyebrow">· Artigo</div>
+      <h1 class="display blarticle__title">How AI Powers Embedded Insurance Decisioning</h1>
+      <p class="blarticle__sub">AI powers embedded insurance decisioning by running eligibility, pricing signals, and bind as a single real-time API call at the point of sale, layered over the insurer&#39;s existing core system instead of replacing it. When a customer adds cover at checkout, an external AI layer reads the transaction context, checks appetite and rules, returns a price signal, and issues a bind decision in a fraction of a second, while the core policy administration system stays the system of record. The result is instant cover inside a partner&#39;s flow, with the insurer keeping full control of risk, rating, and compliance.</p>
+      <div class="blarticle__byline">
+        <div class="blarticle__author-initials">WI</div>
+        <div class="blarticle__byline-meta">
+          <div class="blarticle__byline-author"><b>WIR Innovation</b> · Equipe</div>
+          <div class="blarticle__byline-time">08 · Jul · 2026 · 6 min de leitura</div>
+        </div>
+      </div>
+    </header>
+
+    <figure class="blarticle__hero-img" style="background: linear-gradient(135deg,#3222E9,#7540AC); aspect-ratio: 16 / 9;">
+      <img src="/assets/articles/how-ai-powers-embedded-insurance-decisioning.jpg" alt="How AI Powers Embedded Insurance Decisioning" width="1600" height="900" loading="eager" fetchpriority="high" />
+    </figure>
+
+    <div class="blarticle__body">
+<p>Embedded insurance is cover sold inside another company&#39;s product journey: a ride booked in an app, a laptop bought online, a container moving through a freight platform. The customer never visits an insurer&#39;s website. That convenience only works if a real underwriting decision can be made in the milliseconds a checkout allows. This article explains how AI makes that decision, and how to wire it up over a core system you do not want to rip out.</p>
+<h3>How AI Powers Embedded Insurance Decisioning</h3>
+<p>AI powers embedded insurance decisioning by collapsing three traditionally separate steps, eligibility, pricing, and bind, into one real-time API call triggered at the point of sale. A partner&#39;s checkout sends a request with the transaction context. An external AI layer normalizes that data, checks the insurer&#39;s appetite and eligibility rules, computes or requests a price signal, and returns a bind or decline decision, all before the buyer clicks confirm. The insurer&#39;s core policy administration system remains the system of record for the policy, the premium, and the ledger. The AI does not replace it. It sits in front of it as a fast, external decisioning layer that speaks the partner&#39;s language on one side and the insurer&#39;s on the other.</p>
+<p>Put plainly: embedded insurance decisioning is the act of making a real underwriting decision at the exact moment of need, inside someone else&#39;s transaction, in a single API round trip.</p>
+<h3>Why the decision has to move to the point of sale</h3>
+<p>In a traditional flow, a submission arrives, a human reviews it, a quote is prepared, and the customer decides hours or days later. Embedded distribution has no room for that. The buyer is mid-purchase and the offer has to be there, priced and bindable, or it disappears. That is why the decisioning logic has to run as an API and why AI matters: the model has to infer risk from partial, messy, real-world signals rather than a clean, human-completed proposal form.</p>
+<p>The commercial reason to solve this is large. Simon Torrance, the embedded finance and insurance researcher, has estimated that embedded insurance could account for more than 700 billion dollars in gross written premiums by 2030. Capturing any slice of that depends on being able to decide, not just display, at the point of sale.</p>
+<h3>The anatomy of a real-time decisioning call</h3>
+<p>A production embedded decision breaks into five stages that run inside one request.</p>
+<h3>1. Intake and normalization</h3>
+<p>The partner sends whatever it has: a SKU, a route, a vehicle type, a cart value, a customer identifier. AI is what turns that into an underwriting-usable object. The same models that read ACORD submissions can normalize an embedded payload, map fields, infer the line of business, and flag missing data. If your intake is upstream of this, see how AI structures messy inputs in <a href="/library/how-to-extract-data-from-acord-forms-with-ai" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">how-to-extract-data-from-acord-forms-with-ai</a>.</p>
+<h3>2. Eligibility and appetite</h3>
+<p>Before any price is quoted, the layer checks the insurer&#39;s rules: is this risk in appetite, in an accepted territory, within limits, not on an exclusion list? These are the insurer&#39;s own rules, externalized as code and served fast. A clean pass or fail here is what makes straight-through processing possible, and it is also the stage that decides which cases can be automated versus referred.</p>
+<h3>3. Pricing signal</h3>
+<p>Here is the positioning that matters. The AI layer does not become the rating engine. It requests or contributes a pricing signal that the insurer&#39;s existing rating logic accepts, or it enriches the inputs so the rating engine prices better. This keeps actuarial control where it belongs. The full argument for signal over replacement is in <a href="/library/how-ai-optimizes-insurance-pricing-without-replacing-the-rating-engine" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">how-ai-optimizes-insurance-pricing-without-replacing-the-rating-engine</a>.</p>
+<h3>4. Decision and bind</h3>
+<p>The layer returns one of three outcomes: bind, decline, or refer. On a bind, it calls the core system to create the policy and record the premium. On a refer, it hands a structured case to an underwriter rather than guessing. The buyer sees an instant yes or a graceful fallback, and the insurer sees a clean audit trail of why.</p>
+<h3>5. Logging and feedback</h3>
+<p>Every decision, with its inputs and rationale, is logged. That record is what regulators, actuaries, and model owners need, and it is the data that improves the next decision. Measuring how many of these calls complete without human touch is the core operational metric, covered in <a href="/library/how-to-measure-straight-through-processing-rate-in-insurance" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">how-to-measure-straight-through-processing-rate-in-insurance</a>.</p>
+<h3>The LGPD line every embedded program has to draw</h3>
+<p>Embedded insurance moves personal data between a distribution partner and an insurer, and in Brazil that transfer is governed by the LGPD, Lei nº 13.709 of 2018, enforced by the Autoridade Nacional de Proteção de Dados (ANPD). In most embedded arrangements the partner and the insurer act as separate controllers of the data, which means each of them needs its own lawful basis for processing and each transfer of personal data needs to rest on one of the legal bases in Article 7, whether consent or another qualifying basis such as the execution of a contract. Sharing a customer&#39;s data across partners is not automatically permitted just because the customer is buying something. The decisioning layer has to carry the consent and purpose context through the call, not strip it. On the prudential side, insurance in Brazil is supervised by SUSEP, and its Open Insurance framework (Sistema de Seguros Aberto) is built around customer-consented data sharing, which reinforces the same principle: consent and purpose travel with the data.</p>
+<p>Practically, this means an embedded AI layer should treat the consent flag and the declared purpose as first-class fields in every request, refuse to enrich beyond the consented purpose, and log the legal basis alongside the decision. Convenience at checkout is never a substitute for a lawful basis.</p>
+<h3>Why an external layer beats a re-platform</h3>
+<p>The instinct when facing embedded distribution is to assume the core system needs to change. It does not. Core policy administration systems are stable, regulated, and expensive to replace, and they are good at what they do: being the system of record. What they are not built for is answering a partner&#39;s API in real time with model-driven decisions. Putting an external AI layer in front lets the insurer expose an embedded product in weeks rather than through a multi-year core migration, and it isolates the fast-changing decision logic from the slow-changing system of record. Rules, models, and partner integrations evolve in the layer. The ledger stays put.</p>
+<p>This pattern generalizes across lines. In a proof of concept with a global insurer in the Transport line, WIR ran exactly this shape, an external decisioning layer over the insurer&#39;s core, to automate intake and decisioning without touching the underlying policy system. The same architecture applies whether the embedded product is device protection, travel, or freight, and it pairs naturally with delegated authority setups, where an MGA needs to bind on a carrier&#39;s behalf inside a partner flow (see <a href="/library/delegated-authority-technology-for-mgas-2026" class="blarticle__link-ext" target="_blank" rel="noopener noreferrer">delegated-authority-technology-for-mgas-2026</a>).</p>
+<h3>How to start</h3>
+<p>Begin with one product, one partner, and one clearly bounded risk. Externalize the eligibility rules first, because deterministic appetite checks deliver most of the straight-through wins with the least model risk. Add AI intake normalization next, so the partner can send loose data and still get a clean decision. Keep the rating engine where it is and feed it signals. Wire consent and legal basis through the call from day one, not as a later compliance retrofit. Then measure the straight-through processing rate and the referral quality, and expand only once both hold up. Born in Brazil and shaped by LGPD and SUSEP realities, this is a globally repeatable way to make real decisions at the point of sale without betting the core system on it.</p>
+<section class="blarticle__faq" aria-label="Perguntas frequentes">
+<h3>Perguntas frequentes</h3>
+<details class="blarticle__faq-item">
+  <summary>How AI powers embedded insurance decisioning</summary>
+  <p>AI powers embedded insurance decisioning by running eligibility, pricing signals, and bind as a single real-time API call at the point of sale. An external AI layer normalizes the partner&#39;s transaction data, checks the insurer&#39;s appetite and rules, returns a price signal to the existing rating engine, and issues a bind or decline decision in a fraction of a second, while the core policy administration system stays the system of record.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Does embedded decisioning require replacing the core policy system?</summary>
+  <p>No. The most reliable pattern is an external AI layer that sits in front of the core system and answers the partner&#39;s API in real time. The core remains the system of record for the policy, premium, and ledger. This lets an insurer launch an embedded product in weeks and evolve decision logic independently, instead of running a multi-year core migration.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>How does LGPD affect sharing personal data across embedded partners in Brazil?</summary>
+  <p>Under the LGPD (Lei nº 13.709 of 2018, enforced by the ANPD), the distribution partner and the insurer usually act as separate controllers, so each needs its own lawful basis and every transfer of personal data must rest on a legal basis in Article 7, such as consent or contract execution. The decisioning layer should carry consent and declared purpose through each call and log the legal basis with the decision. SUSEP&#39;s Open Insurance framework reflects the same consent-based principle.</p>
+</details>
+<details class="blarticle__faq-item">
+  <summary>Where does AI stop and the rating engine begin?</summary>
+  <p>The AI layer contributes or requests a pricing signal and enriches inputs, but it does not replace the rating engine. Actuarial rating stays in the insurer&#39;s existing engine, which keeps pricing control and governance where they belong while AI handles intake, eligibility, and the real-time orchestration of the decision.</p>
+</details>
+</section>
+    </div>
+
+    <nav class="blarticle__related" aria-label="Leituras relacionadas">
+      <h3 class="blarticle__related-title">Leituras relacionadas</h3>
+      <ul class="blarticle__related-list">
+      <li class="blarticle__related-item"><a href="/insights/how-to-automate-bordereaux-processing-with-ai/"><span class="blarticle__related-cat">Artigo</span> How to Automate Bordereaux Processing with AI</a></li>
+      <li class="blarticle__related-item"><a href="/insights/how-to-extract-data-from-acord-forms-with-ai/"><span class="blarticle__related-cat">Artigo</span> How to Extract Data from ACORD Forms with AI</a></li>
+      <li class="blarticle__related-item"><a href="/insights/what-is-parametric-insurance-and-how-ai-enables-faster-payouts/"><span class="blarticle__related-cat">Artigo</span> What Is Parametric Insurance and How AI Enables Faster Payouts</a></li>
+      <li class="blarticle__related-item"><a href="/insights/ai-fraud-detection-underwriting-vs-claims/"><span class="blarticle__related-cat">Artigo</span> AI Fraud Detection at Underwriting vs Claims</a></li>
+      </ul>
+    </nav>
+
+    <footer class="blarticle__foot">
+      <a class="btn btn--ghost" href="/insights/">
+        <span aria-hidden="true">←</span> Outros Insights
+      </a>
+      <a class="btn btn--solid" href="/#contact">
+        Falar com a equipe <span class="btn__arrow">→</span>
+      </a>
+    </footer>
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#solutions">Produtos &amp; IA</a></li>
+          <li><a href="/#protection">Proteção de Dados</a></li>
+          <li><a href="/insights/">Insights &amp; News</a></li>
+          <li><a href="/#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/#contact">Falar com a equipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sócios &amp; Holding</h4>
+        <ul>
+          <li><a href="/#about">Mahway · California</a></li>
+          <li><a href="/#about">Avante · Brasil</a></li>
+          <li><a href="/#about">Conselheiros estratégicos</a></li>
+          <li><a href="/#about">Princípios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/5511981757505?text=Ol%C3%A1%20Nicholas%2C%20vim%20pelo%20site%20da%20WIR%20Innovation.%20Gostaria%20de%20conversar%20sobre%E2%80%A6" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="Falar com Nicholas no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+</body>
+</html>

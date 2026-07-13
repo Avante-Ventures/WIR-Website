@@ -4,6 +4,536 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 export const ARTICLES = [
   {
+    slug: "delegated-authority-technology-for-mgas-2026",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/delegated-authority-technology-for-mgas-2026.jpg",
+    title: "Delegated Authority Technology for MGAs in 2026",
+    sub: "In 2026, delegated authority is as much a technology question as an underwriting one. MGAs carry a large and growing share of specialty premium, but that authority concentrates operational load in three document-heavy tasks: submission intake, bordereaux processing, and straight-through processing. The right fix is not a new core system but an external AI layer that sits on top of the systems an MGA and its carrier already run, structures the inbound data, and preserves both the systems of record and the human accountability that delegated authority depends on. WIR is that external AI layer and never replaces the core.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "4 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "How MGAs handle delegated authority in 2026: submission intake, bordereaux, and STP with an external AI layer that never replaces the core, SUSEP and LGPD aware.",
+    body: `Managing general agents (MGAs) carry more delegated underwriting authority than ever, and in 2026 that authority is increasingly a technology question rather than a purely underwriting one. The MGA channel has grown into a large slice of specialty premium: in the United States, MGA premium reached approximately 85 billion dollars in 2022, according to Conning's managing general agent study, and the segment has kept expanding as carriers hand more binding authority to specialists. Delegated authority lets an MGA bind risk on a carrier's paper, but it also concentrates operational load. Every submission, every bordereau, and every audit trail has to be handled with the rigor a carrier would apply, usually with a far leaner team. The technology that supports that load is now a competitive differentiator.
+
+### Why delegated authority is a technology problem in 2026
+
+Delegated authority works because a carrier trusts an MGA to underwrite inside a defined appetite and to report accurately on what it binds. That trust rests on data. The carrier needs clean, timely bordereaux to see exposure and performance; the MGA needs fast submission intake to win business from brokers who expect same-day answers. When either side runs on manual re-keying and email attachments, the arrangement gets slower and riskier at the same time.
+
+At Lloyd's, delegated authority through coverholders accounts for a large share of the market's premium, according to Lloyd's coverholder reporting, which is a useful reminder that this is not a niche operating model but a mainstream one. As more premium flows through delegated arrangements, the operational and reporting demands scale with it, and the MGAs that handle that load cleanly are the ones carriers keep renewing capacity with.
+
+### Where the operational load actually sits
+
+Three tasks absorb most of the effort in a delegated authority operation, and all three are document-heavy.
+
+The first is submission intake. Submissions arrive as email bodies, PDFs, and spreadsheets in inconsistent formats, and a thin underwriting team has to read, structure, and triage them before any risk decision happens. Speed here directly affects hit rate. See [how insurance submission intake automation works](/articles/insurance-submission-intake-automation) for the mechanics.
+
+The second is bordereaux processing. Premium and claims bordereaux have to be validated, normalized, and reconciled before they can be reported to the carrier. Format drift across brokers and cover months makes this brittle and slow when it is done by hand.
+
+The third is straight-through processing. The more clean risks flow end to end without manual touch, the more an MGA's scarce underwriters can spend their time on complex, high-value risk. Measuring and lifting that rate is a direct lever on capacity. See [how to increase your straight-through processing rate](/articles/how-to-increase-straight-through-processing-rate-insurance).
+
+### An external AI layer, not a core replacement
+
+The instinct in many operations is to fix this with a bigger core system or a multi-year migration. For an MGA, that is usually the wrong shape of solution. The core policy administration and bordereaux systems already work, capacity providers are integrated with them, and ripping them out introduces risk and delay for a problem that lives at the edges: reading unstructured submissions, extracting fields, enriching broker and risk context, and routing by appetite.
+
+This is where an external AI layer fits. It sits on top of the systems an MGA and its carrier already run, reads the inbound material, structures it, and hands clean, decision-ready data to the existing workflow. Nothing in the core is replaced. The layer adds intelligence around the systems of record rather than becoming a new one. For a fuller treatment of that boundary, see [AI underwriting without replacing the core system](/articles/ai-underwriting-without-replacing-core-system) and [what an MGA is and how MGAs use AI](/articles/what-is-an-mga-and-how-mgas-use-ai).
+
+### Compliance stays where it belongs: SUSEP and LGPD
+
+In Brazil, delegated authority and specialty arrangements sit under SUSEP oversight, and the accountability for underwriting and reporting does not move because a task is automated. Any layer that touches personal or broker data also has to comply with the LGPD, which means clear purpose, data minimization, and traceability for how information is processed.
+
+An external AI layer helps rather than complicates this when it is built for auditability. Because it structures and logs how each submission and bordereau field was read and routed, it produces the kind of traceable record that both the carrier's audit team and a regulator expect. The design goal is straightforward: add speed without removing the human accountability and record-keeping that delegated authority depends on.
+
+### How WIR fits
+
+WIR is the external AI layer that runs on top of the systems an MGA and its capacity providers already use, and it never replaces the core policy or bordereaux system. It reads multichannel submissions, extracts and validates fields, enriches context, and routes work by appetite and exposure, leaving the systems of record and the underwriting authority exactly where they are.
+
+In a proof of concept with a global insurer in the Transport line, WIR's external AI layer sat on top of the insurer's existing systems. That is the shape of deployment an MGA can adopt without a core migration or a long IT project: intelligence added at the edge, accountability and records preserved, and underwriters freed to spend their time on the risk that actually needs judgment.`,
+    faq: [
+      { q: "What is delegated authority for an MGA?", a: "Delegated authority is the arrangement that lets a managing general agent bind risk on an insurer's paper within a defined appetite. The carrier delegates underwriting authority and relies on the MGA to underwrite inside those limits and to report accurately through bordereaux. Accountability for the underwriting and the reporting stays with the carrier and the MGA, so the data and audit trail behind that authority matter as much as the risk decisions themselves." },
+      { q: "Does adding AI to a delegated authority operation mean replacing the core system?", a: "No. The core policy administration and bordereaux systems already work and are integrated with capacity providers, so replacing them adds risk and delay. The load that slows an MGA down lives at the edges: reading unstructured submissions, extracting fields, and reconciling bordereaux. An external AI layer sits on top of the existing systems and handles that edge work without touching the core." },
+      { q: "How does an external AI layer help with bordereaux and submissions?", a: "It ingests multichannel submissions and bordereaux in their inconsistent formats, extracts and validates the fields, enriches broker and risk context, and routes work by appetite and exposure. Clean, decision-ready data then flows into the existing workflow. The result is faster submission intake, more reliable bordereaux reconciliation, and a higher straight-through processing rate, without a new system of record." },
+      { q: "How does this work with SUSEP and LGPD in Brazil?", a: "Delegated authority and specialty arrangements sit under SUSEP oversight, and automating a task does not move accountability. Any layer that touches personal or broker data must comply with the LGPD, which requires clear purpose, data minimization, and traceability. An external AI layer built for auditability logs how each field was read and routed, producing the traceable record that both the carrier's audit team and a regulator expect." },
+      { q: "Is WIR an MGA or an insurer?", a: "No. WIR does not carry risk and is not an MGA or an insurer. It is the external AI layer that an MGA or specialty insurer runs on top of its existing systems to read submissions, structure data, and route work. The underwriting authority, the systems of record, and the risk stay with the MGA and its carrier." }
+    ],
+  },
+  {
+    slug: "how-ai-analyzes-loss-run-reports-for-underwriting",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/how-ai-analyzes-loss-run-reports-for-underwriting.jpg",
+    title: "How AI Analyzes Loss Run Reports for Underwriting",
+    sub: "AI analyzes a loss run report by reading the document, extracting every claim into structured data, normalizing it across carriers, and computing the metrics an underwriter needs, loss ratio, frequency, severity, and open reserves. In WIR's architecture this runs in an external AI layer on top of your core, never replacing it.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "7 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "AI reads loss run PDFs, structures every claim, and computes loss ratio, frequency, and severity, in an external AI layer that never replaces your core system.",
+    body: `AI analyzes a loss run report by reading the document whatever its format, extracting every claim line into structured data, normalizing it across carriers and layouts, and then computing the numbers an underwriter actually needs, loss ratio, claim frequency, severity, and open reserve exposure, so the risk can be scored against your appetite. In WIR's architecture this work happens in an external AI layer that sits on top of your core policy administration system and never replaces it. The core stays the system of record. The layer just reads the history faster and more consistently than a person rekeying PDFs ever could.
+
+### What a loss run report is, and why it is hard to read
+
+A loss run report is the claims history a prior insurer produces for a policyholder, usually covering the last three to five years. Each line records a single claim: date of loss, cause, amount paid, reserves still held, and whether the claim is open or closed. For an underwriter pricing a renewal or a new submission, it is the most important evidence of how a risk has actually behaved, not how it describes itself.
+
+The difficulty is not the information, it is the packaging. Loss runs arrive as PDFs, and often as scans of printouts. Every carrier formats them differently. Columns move, labels change, and the same field can be named three different ways across three documents. A single mid-sized commercial account can carry several loss runs from several prior carriers, each in its own layout. Someone has to read all of it, rekey it, and reconcile it before any judgment is possible. That manual reading is exactly the kind of low-value work that quietly consumes an underwriter's day.
+
+### How AI analyzes a loss run report, step by step
+
+### Step 1: Read the document, whatever its format
+
+The layer ingests the file as it arrives, a native PDF, a scanned image, or a spreadsheet, and reads it. For scans it applies optical character recognition, and for born-digital files it parses the layout directly. This is the same [intelligent reading of submissions](/leitura-inteligente-submissoes-seguro-en) that lets an underwriter stop treating document handling as their job.
+
+### Step 2: Extract every claim line into structured fields
+
+Reading is not enough. The layer maps what it read into consistent fields: loss date, claim status, paid amount, reserve, cause of loss, and claimant type. Free-text descriptions are classified into categories the underwriter can filter and sort. What was a flat, unsearchable document becomes a table you can actually query.
+
+### Step 3: Normalize across carriers, currencies, and periods
+
+Because the loss runs come from different insurers, the same concept is expressed differently in each. The layer reconciles those differences, aligning field names, date formats, currencies, and coverage periods so the histories can be compared on one basis instead of five. This is where [structuring unstructured insurance data](/dados-nao-estruturados-seguros-ia-en) turns a pile of documents into a single view of the risk.
+
+### Step 4: Compute the metrics underwriters actually use
+
+With clean data in place, the layer calculates the figures that drive a decision. The loss ratio, incurred losses divided by earned premium under the standard industry convention, sits alongside claim frequency, average and peak severity, and the exposure still held in open reserves. These are not new metrics. The layer simply produces them in seconds, per year and per cause, instead of after an afternoon of spreadsheet work.
+
+### Step 5: Detect patterns and flag what needs a human
+
+Finally, the layer looks across the normalized history for what a fast human read tends to miss: a rising frequency trend, a cluster of claims from one cause, a large open reserve that could still develop, or a gap that suggests a missing year of history. It surfaces these as flags with the underlying claims attached, so the underwriter reviews a prepared case rather than assembling one.
+
+> An AI loss run analysis is the automated reading, structuring, and scoring of a policyholder's prior claims history, so an underwriter receives clean metrics and flagged patterns instead of a stack of inconsistent PDFs to rekey by hand.
+
+### Why this belongs in an external layer, not the core
+
+Core policy administration systems store policies, calculate premiums against filed rates, and manage billing and claims. They were never built to read a broker's scanned loss run or reason about whether its pattern fits your appetite. Forcing that intelligence into the core is what makes modernization projects long and costly. WIR's answer is to leave the core exactly where it is and add the intelligence beside it.
+
+The external layer reads and analyzes the loss runs, then writes the structured history and the resulting metrics back into the core through its APIs. The core stays authoritative for the policy, the billing, and the claims record. Nothing it is meant to own ever leaves it. This is the same pattern behind [automating underwriting without replacing your core system](/ai-underwriting-without-replacing-core-system), applied to the specific document that carries the most underwriting signal.
+
+Reading loss runs by hand is also a large share of where the time goes. Accenture's research on underwriting productivity has found that underwriters can spend as much as 40 percent of their time on non-core and administrative activities rather than on evaluating risk. Automating loss run analysis attacks that number directly, because it removes one of the most repetitive parts of preparing a submission.
+
+### What the loss ratio is telling you, and what it is not
+
+A loss ratio computed from a loss run is a summary of the past, not a verdict on the future. It tells you how the losses on a book compared with the premium earned, under the standard convention of incurred losses over earned premium, but on its own it says nothing about why. A ratio that runs a few points above plan can reflect one large open claim, a single bad year, or a genuine deterioration in the risk. The value of structuring the history is that the underwriter can separate those cases quickly instead of pricing off a single headline number. The metric points to where to look. A person still decides what it means.
+
+### Explainability, SUSEP, and LGPD
+
+WIR was born in Brazil, where two constraints shape any underwriting automation. The first is SUSEP, the insurance regulator, which expects insurers to own and justify their pricing and acceptance practices. The second is the LGPD, Brazil's general data protection law (Law 13.709 of 2018), whose Article 20 gives a person the right to request review of decisions made solely by automated processing that affect their interests.
+
+Both point to the same design rule. Every figure the layer produces has to trace back to the specific claim lines behind it, and a person has to be able to review it. That is why the layer is built to show its work: each computed metric links to the source claims, and the analysis is a prepared input for a human underwriter, not an unaccountable verdict. Keeping a person in the loop is a deliberate WIR design choice, and it is how the layer honors the spirit of Article 20 in practice.
+
+### A note on proof
+
+WIR has run this external-layer architecture in a proof of concept with a global insurer in the transport line, applying document intake and analysis on top of the insurer's existing environment. We reference it deliberately and sparingly, because the point of the pattern is that it reproduces across lines and systems, not that it rests on a single case.
+
+### The bottom line
+
+A loss run report holds the clearest signal an underwriter has about how a risk really behaves, and today most of that signal is trapped in inconsistent PDFs. An external AI layer reads those documents, structures them, computes the standard metrics, and flags what deserves a second look, then hands the result to a person who still makes the call. Your core keeps doing what it does well. The underwriter gets the history in minutes instead of hours.`,
+    faq: [
+      { q: "What is a loss run report in insurance?", a: "It is the claims history a prior insurer produces for a policyholder, usually covering the last three to five years. Each line shows a claim's date, cause, amount paid, reserves, and whether it is open or closed. Underwriters use it as the primary evidence of how a risk has actually performed." },
+      { q: "How does AI read a loss run that arrives as a scanned PDF?", a: "The AI layer applies optical character recognition to the scan, then maps the text into structured fields such as loss date, paid amount, and reserve. It normalizes those fields across carriers so loss runs in different formats can be compared on one basis." },
+      { q: "Does analyzing loss runs with AI mean replacing my core system?", a: "No. In WIR's approach the analysis runs in an external AI layer on top of the core. The layer reads and structures the loss runs and writes the results back through APIs, so the core stays the system of record. There is no migration and no rip-and-replace." },
+      { q: "Is automated loss run analysis compliant with LGPD and SUSEP?", a: "It can be, provided the output is explainable and reviewable. Every metric should trace back to the source claim lines, and a human underwriter should review the analysis before it drives a decision. That keeps the process aligned with SUSEP's expectations and the review right in Article 20 of the LGPD." }
+    ],
+  },
+  {
+    slug: "how-ai-automates-fnol-first-notice-of-loss",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/how-ai-automates-fnol-first-notice-of-loss.jpg",
+    title: "How AI Automates FNOL (First Notice of Loss)",
+    sub: "The first notice of loss (FNOL) is where a claim enters the insurer's world, and it almost never arrives in the structured form a claims system expects. AI automates that first step: it captures the report across channels, reads and structures the unstructured input, validates it against the policy, and routes the claim, then hands a clean, auditable record to the core. An external AI layer does this on top of the claims platform an insurer already runs, such as Guidewire, never in its place, and leaves coverage and settlement decisions with the insurer.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "5 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "AI automates FNOL by reading, structuring, validating, and routing the loss report. An external AI layer does this on top of the claims core, never replacing it.",
+    body: `When a policyholder reports a loss, the clock starts. The first notice of loss, or FNOL, is the moment a claim enters the insurer's world: a phone call, an email, a broker's spreadsheet, a photo of a damaged truck. It is also where most of the friction in claims begins, because that first report almost never arrives in the clean, structured form a claims system expects. Someone has to read it, make sense of it, check it, and decide where it goes. For decades that someone has been a person, and the queue behind them is where cycle time, leakage, and customer frustration accumulate.
+
+AI changes what happens in those first minutes. This article explains what FNOL automation actually does, where an external AI layer fits, and, just as important, what it does not touch. WIR is not a claims administrator and does not settle claims. What it offers is an architectural approach: structure and route the incoming report before it reaches the core, so the system of record receives a clean, validated, auditable claim instead of raw text.
+
+### What FNOL is, and why it is the bottleneck
+
+FNOL is the first structured record that a loss has occurred. In practice the raw input is anything but structured. A claimant describes an accident in their own words. A broker forwards a PDF. A driver sends photos and a transcribed voice note. A form is half filled. The claims core, whether it is Guidewire ClaimCenter or an insurer's own platform, needs specific fields populated correctly before it can open a claim, set a reserve, and route the file. Bridging that gap is manual work, and manual work at intake is slow, inconsistent, and easy to get wrong.
+
+The cost of getting it wrong at FNOL is not evenly distributed. A miskeyed coverage code, a missed severity signal, or a claim sent to the wrong queue does not stay a small error. It compounds downstream into a longer cycle, a mis-set reserve, or leakage that is only discovered after payment. FNOL is the cheapest place in the claims lifecycle to get the data right, and the most expensive place to get it wrong.
+
+### How AI automates the first notice of loss
+
+FNOL automation is a sequence, not a single model. An external AI layer works through it in order:
+
+- Capture across channels. The report arrives however the claimant sends it: email, portal, broker submission, document, image, or transcribed voice. The layer ingests all of it rather than forcing one channel.
+- Structure the unstructured. Language models read free text and documents and extract the fields the claim actually needs: what was lost, when, where, policy reference, parties involved, severity signals. This is [the same reading problem that submission intake solves on the underwriting side](/insurance-submission-intake-automation), applied to the claims report.
+- Validate. The extracted data is checked against the policy: is coverage in force, does the loss date fall inside the term, do the parties reconcile. Gaps and contradictions are flagged rather than silently passed through.
+- Triage and route. The claim is scored for complexity and severity and sent to the right path: a simple, low-severity claim toward straight-through handling, a complex or suspicious one to an experienced adjuster. [Triage at intake](/insurance-submission-triage-automation) is where cycle time is won or lost.
+- Surface fraud signals early. The same enriched record can carry an early fraud indicator, so a suspicious loss is flagged at first notice rather than after payment. This is the claims-side companion to [fraud detection at underwriting](/ai-fraud-detection-underwriting-vs-claims).
+
+The output is a clean, validated, routed claim with an audit trail, handed to the core to open.
+
+### The external-layer principle: structure and route before it reaches the core
+
+The design rule that makes this safe is the same one WIR applies everywhere: the AI never becomes the system of record. This external-layer principle is the same one WIR uses to structure and route intake before it reaches the core. The claims platform, Guidewire ClaimCenter or otherwise, still opens the claim, holds the reserve, and remains the source of truth. The layer sits in front of it, does the reading, validating, and routing, then writes a structured result back through APIs. There is no core migration and no rip and replace, which is exactly why [an external AI layer can sit on top of a system like Guidewire without replacing it](/how-ai-integrates-with-guidewire-without-replacing-it).
+
+WIR has demonstrated this external-layer approach in a proof of concept with a global insurer in the transport line, structuring and routing incoming submissions before they reached the core. That work was on the submission side of the business, but the architecture is identical: read the messy input, structure it, validate it, route it, and hand a clean record to the system of record. FNOL is the same problem pointed at the claims report instead of the quote request.
+
+### What AI does not do at FNOL
+
+Automating FNOL does not mean removing the human or handing settlement to a model. The layer prepares the claim; it does not decide the claim. Coverage determination, reserving, negotiation, and payment stay with the insurer and its adjusters. A low-severity, unambiguous claim can move quickly with light touch, but the moment ambiguity, high severity, or a fraud signal appears, the file goes to a person with the enriched record already assembled. [Deciding what happens next](/what-is-insurance-decisioning) remains the insurer's call, made against its own rules and appetite.
+
+### Why the economics favor automating FNOL
+
+Claims is the largest cost center most insurers have, and the FNOL step sets the trajectory of every claim behind it. McKinsey, in its analysis "Claims 2030: Dream or reality?", projects that advanced automation and analytics could reduce the cost of the claims journey by an estimated 25 to 30 percent. The mechanism is not mysterious: less manual rekeying, fewer misroutes, earlier fraud signals, and reserves set on better data. Getting the first notice right is where much of that saving originates, because a clean claim at intake is one that does not have to be reworked later. Higher straight-through processing follows from the same source, which is why [lifting the STP rate](/how-to-increase-straight-through-processing-rate-insurance) starts at intake rather than at settlement.
+
+### FNOL automation in Brazil: SUSEP and LGPD
+
+WIR was born in Brazil, and two constraints shape any claims automation there. The first is the Superintendência de Seguros Privados (SUSEP), which expects insurers to own and justify how claims are handled rather than defer them to an opaque process. The second is the LGPD, Brazil's general data protection law (Law 13.709 of 2018), whose Article 20 gives a person the right to request review of a decision made solely by automated processing that affects their interests.
+
+Both point to the same design rule that governs the layer itself. If AI triages a claim or raises a fraud flag at first notice, that step has to be explainable and reviewable, traceable to the data and the logic behind it, with a person able to step in. A layer that logs its reasoning, returns an audit trail, and keeps a human in the loop is built to stand behind both a SUSEP review and an LGPD review. Automating FNOL does not mean automating accountability away.
+
+### The bottom line
+
+The first notice of loss is where claims are made slow or made fast, clean or messy, cheap or expensive. AI automates the part that has always been manual, reading the report, structuring it, validating it, and routing it, so the claim that reaches the core is one the core can act on immediately. Done as an external layer, it changes the intake without touching the system of record, keeps a person in charge of the decisions that matter, and leaves an audit trail that a regulator can follow. That is the same architecture WIR uses to structure and route intake before it reaches the core, pointed at the moment a loss is first reported.`,
+    faq: [
+      { q: "What is FNOL and why does it matter?", a: "FNOL, the first notice of loss, is the first structured record that a loss has occurred and the moment a claim enters the insurer's systems. It matters because the raw report almost never arrives in the form a claims core expects, so intake is where cycle time, mis-set reserves, and leakage begin. Getting the data right at FNOL is the cheapest point in the claims lifecycle to prevent errors that would otherwise compound downstream." },
+      { q: "How does AI automate the first notice of loss?", a: "AI automates FNOL as a sequence: it captures the report across channels, uses language models to read and structure the unstructured input, validates the extracted data against the policy, then triages and routes the claim by complexity and severity, surfacing any early fraud signal. The result is a clean, validated, routed claim with an audit trail that is handed to the core to open. It does not decide, reserve, or settle the claim." },
+      { q: "Does an external AI layer replace the claims core system, such as Guidewire, at FNOL?", a: "No. An external AI layer sits in front of the claims core and connects through APIs. It reads, validates, and routes the incoming report, then writes a structured result back to the platform, which stays the system of record and still opens the claim, holds the reserve, and remains the source of truth. There is no core migration and no rip and replace, so a system like Guidewire ClaimCenter keeps running as before." },
+      { q: "Is automated FNOL triage compatible with SUSEP and the LGPD in Brazil?", a: "Yes, provided each step is explainable and reviewable. Brazil's LGPD (Law 13.709 of 2018) gives individuals the right to request review of a decision made solely by automated processing, and SUSEP expects insurers to justify how claims are handled. An external layer that logs its reasoning, returns an audit trail, and keeps a person in the loop is designed to stand behind both a SUSEP review and an LGPD review." }
+    ],
+  },
+  {
+    slug: "how-ai-automates-insurance-claims-processing",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/how-ai-automates-insurance-claims-processing.jpg",
+    title: "How AI Automates Insurance Claims Processing",
+    sub: "AI automates insurance claims processing by reading each notice of loss as it arrives, extracting and validating the data, scoring the claim against the insurer's own rules, and routing it to settlement, decline, or a human reviewer, with a complete audit trail. WIR does this as an external AI layer on top of the systems the insurer already runs, never in their place.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "5 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "AI automates insurance claims processing by reading each notice of loss, validating it, scoring it against the insurer's rules, and routing it, with a full audit trail. See how an external AI layer does it.",
+    body: `Insurance claims processing is the sequence an insurer runs from the moment a loss is reported to the moment the claim is paid, declined, or escalated. AI automates that sequence by handling the repetitive, document-heavy steps in real time, so adjusters spend their time on the claims that genuinely need judgment. The intelligence reads the notice of loss, extracts the relevant fields, checks them against the policy and the insurer's acceptance rules, and returns a decision or a routing, with every step explainable and logged.
+
+WIR Innovation approaches this as an AI layer that sits on top of existing systems. It does not replace the claims core, and it does not require a migration.
+
+### What claims processing actually involves
+
+A claim moves through several stages. First notice of loss, in Brazil the aviso de sinistro, opens the file. Then comes intake and validation, document gathering, coverage verification against the policy, loss assessment, fraud checks, reserve setting, and finally the decision to pay, decline, or investigate further. Most of these stages are still done by people copying data between screens and re-keying what the claimant already sent.
+
+### Where the time goes
+
+The bottleneck is rarely the decision itself. It is the unstructured data around it. Gartner estimates that corporate teams lose 20 to 30 percent of their time organizing unstructured data. In claims, that is exactly the raw material: e-mails, PDFs, photos, repair estimates, police reports, and medical documents. Deloitte has put the share of underwriter time spent on administrative tasks at 40 percent, and the same administrative drag shows up on the claims side. Automating the reading and validation of these documents is where AI returns the most time.
+
+### How an external AI layer automates the claims journey
+
+The mechanism mirrors the underwriting journey WIR already automates. It starts with multichannel intake. In Brazil the first notice of loss arrives through the channels each insurer already runs, whether e-mail, portal, or broker submission, and rarely in a single standardized template the way some North American markets rely on. The layer accepts the format the insurer already uses and validates it automatically on arrival.
+
+Next is intelligent document reading. The platform extracts the fields that matter, such as claimant, policy number, date and description of loss, amounts, and supporting evidence, from whatever the claimant sent, with high precision and without a human retyping them.
+
+Then comes enrichment and context. The claim is cross-referenced against the policy, prior history, and external sources, so the file reaches the adjuster already scored and prioritized rather than as a blank folder.
+
+The risk and fraud engine follows. A multi-factor Machine Learning model, calibrated to the insurer's own rules, flags anomalies and assigns a fraud probability. It does not decide alone on complex losses. It sorts the routine from the suspicious so the team looks first at what warrants attention.
+
+Finally, decision and routing. Straightforward claims can move toward settlement, clear declines are flagged with their reason, and anything ambiguous is escalated to a human. The platform writes the outcome back to the core and returns a complete audit trail.
+
+### From days to minutes, without overpromising
+
+McKinsey, in its "Insurance 2030" report, has described a near future in which routine claims are settled quickly and largely automatically, with human review reserved for exceptions. The direction of travel is clear. The realistic gain available today is narrower and still meaningful. The administrative steps that used to sit in a queue for days can be handled as the claim arrives, so the adjuster opens a file that is already read, validated, and prioritized.
+
+### What stays with the human
+
+Automation does not remove the adjuster. It changes what the adjuster spends the day on. Coverage disputes, large or complex losses, ambiguous evidence, and anything the model flags as suspicious still go to a person. The layer clears the routine volume and hands the harder decisions over with context attached, which is the opposite of a black box that decides on its own.
+
+### Why an external layer, not a core replacement
+
+Replacing a claims system is a multi-year project most insurers cannot justify. BCG has found that 70 percent of insurers do not execute innovation because of IT limitations. An external AI layer avoids that trap. It carries no load on the insurer's IT, requires no core migration, and connects to the systems already in production. The insurer keeps its core. The layer adds the intelligence on top of it.
+
+### Auditable by design: SUSEP and LGPD
+
+Automation in a regulated market only counts if it is explainable. Every decision the layer produces is auditable and returns the reasoning behind it, which is what a claims operation needs in order to answer to the Superintendência de Seguros Privados (SUSEP). On data, the platform is LGPD compliant and encrypts data at every step, which is non-negotiable when claims files carry personal and sometimes sensitive information.
+
+### Where WIR is today
+
+WIR is an InsurTech built between São Paulo and Silicon Valley, together with Mahway and Avante. Its first proof of concept is in execution with a global insurer in the Transport line. The positioning holds across the quotation, underwriting, and claims journeys. It is an external AI layer that automates the repetitive work and hands people the decisions that need judgment.
+
+The AI layer for insurance. On top of the systems the insurer already runs, never in their place.`,
+    faq: [
+      { q: "Does AI replace claims adjusters?", a: "No. AI automates the repetitive, document-heavy steps such as reading the notice of loss, extracting and validating data, and sorting routine claims from suspicious ones. Complex losses, coverage disputes, and flagged claims are escalated to a human. WIR positions the intelligence as an external layer that clears routine volume and hands harder decisions to people with context attached." },
+      { q: "Does WIR replace the insurer's claims core system?", a: "No. WIR is an external AI layer that sits on top of the systems the insurer already runs. There is no core migration and no load on the insurer's IT. It connects to the systems already in production and writes outcomes back to the core with an audit trail." },
+      { q: "Is automated claims processing compatible with SUSEP and LGPD in Brazil?", a: "Automation is workable in a regulated market when it stays explainable. Every decision the WIR layer produces is auditable and returns the reasoning behind it, which supports answering to the Superintendência de Seguros Privados (SUSEP). The platform is LGPD compliant and encrypts data at every step, which matters because claims files often carry personal and sensitive information." },
+      { q: "How does AI handle unstructured claims documents like photos, PDFs, and e-mails?", a: "Through intelligent document reading. The platform extracts the relevant fields, such as claimant, policy number, date and description of loss, and amounts, from whatever format the claimant sent, without a human re-keying it. In Brazil the first notice of loss (aviso de sinistro) arrives through whichever channels the insurer already uses rather than a single standardized template, and the layer validates it automatically on arrival." }
+    ],
+  },
+  {
+    slug: "how-ai-powers-embedded-insurance-decisioning",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/how-ai-powers-embedded-insurance-decisioning.jpg",
+    title: "How AI Powers Embedded Insurance Decisioning",
+    sub: "AI powers embedded insurance decisioning by running eligibility, pricing signals, and bind as a single real-time API call at the point of sale, layered over the insurer's existing core system instead of replacing it. When a customer adds cover at checkout, an external AI layer reads the transaction context, checks appetite and rules, returns a price signal, and issues a bind decision in a fraction of a second, while the core policy administration system stays the system of record. The result is instant cover inside a partner's flow, with the insurer keeping full control of risk, rating, and compliance.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "How AI runs eligibility, pricing signals, and bind in one real-time API call at the point of sale, layered over the insurer core, with an LGPD note.",
+    body: `Embedded insurance is cover sold inside another company's product journey: a ride booked in an app, a laptop bought online, a container moving through a freight platform. The customer never visits an insurer's website. That convenience only works if a real underwriting decision can be made in the milliseconds a checkout allows. This article explains how AI makes that decision, and how to wire it up over a core system you do not want to rip out.
+
+### How AI Powers Embedded Insurance Decisioning
+
+AI powers embedded insurance decisioning by collapsing three traditionally separate steps, eligibility, pricing, and bind, into one real-time API call triggered at the point of sale. A partner's checkout sends a request with the transaction context. An external AI layer normalizes that data, checks the insurer's appetite and eligibility rules, computes or requests a price signal, and returns a bind or decline decision, all before the buyer clicks confirm. The insurer's core policy administration system remains the system of record for the policy, the premium, and the ledger. The AI does not replace it. It sits in front of it as a fast, external decisioning layer that speaks the partner's language on one side and the insurer's on the other.
+
+Put plainly: embedded insurance decisioning is the act of making a real underwriting decision at the exact moment of need, inside someone else's transaction, in a single API round trip.
+
+### Why the decision has to move to the point of sale
+
+In a traditional flow, a submission arrives, a human reviews it, a quote is prepared, and the customer decides hours or days later. Embedded distribution has no room for that. The buyer is mid-purchase and the offer has to be there, priced and bindable, or it disappears. That is why the decisioning logic has to run as an API and why AI matters: the model has to infer risk from partial, messy, real-world signals rather than a clean, human-completed proposal form.
+
+The commercial reason to solve this is large. Simon Torrance, the embedded finance and insurance researcher, has estimated that embedded insurance could account for more than 700 billion dollars in gross written premiums by 2030. Capturing any slice of that depends on being able to decide, not just display, at the point of sale.
+
+### The anatomy of a real-time decisioning call
+
+A production embedded decision breaks into five stages that run inside one request.
+
+### 1. Intake and normalization
+
+The partner sends whatever it has: a SKU, a route, a vehicle type, a cart value, a customer identifier. AI is what turns that into an underwriting-usable object. The same models that read ACORD submissions can normalize an embedded payload, map fields, infer the line of business, and flag missing data. If your intake is upstream of this, see how AI structures messy inputs in [how-to-extract-data-from-acord-forms-with-ai](/library/how-to-extract-data-from-acord-forms-with-ai).
+
+### 2. Eligibility and appetite
+
+Before any price is quoted, the layer checks the insurer's rules: is this risk in appetite, in an accepted territory, within limits, not on an exclusion list? These are the insurer's own rules, externalized as code and served fast. A clean pass or fail here is what makes straight-through processing possible, and it is also the stage that decides which cases can be automated versus referred.
+
+### 3. Pricing signal
+
+Here is the positioning that matters. The AI layer does not become the rating engine. It requests or contributes a pricing signal that the insurer's existing rating logic accepts, or it enriches the inputs so the rating engine prices better. This keeps actuarial control where it belongs. The full argument for signal over replacement is in [how-ai-optimizes-insurance-pricing-without-replacing-the-rating-engine](/library/how-ai-optimizes-insurance-pricing-without-replacing-the-rating-engine).
+
+### 4. Decision and bind
+
+The layer returns one of three outcomes: bind, decline, or refer. On a bind, it calls the core system to create the policy and record the premium. On a refer, it hands a structured case to an underwriter rather than guessing. The buyer sees an instant yes or a graceful fallback, and the insurer sees a clean audit trail of why.
+
+### 5. Logging and feedback
+
+Every decision, with its inputs and rationale, is logged. That record is what regulators, actuaries, and model owners need, and it is the data that improves the next decision. Measuring how many of these calls complete without human touch is the core operational metric, covered in [how-to-measure-straight-through-processing-rate-in-insurance](/library/how-to-measure-straight-through-processing-rate-in-insurance).
+
+### The LGPD line every embedded program has to draw
+
+Embedded insurance moves personal data between a distribution partner and an insurer, and in Brazil that transfer is governed by the LGPD, Lei nº 13.709 of 2018, enforced by the Autoridade Nacional de Proteção de Dados (ANPD). In most embedded arrangements the partner and the insurer act as separate controllers of the data, which means each of them needs its own lawful basis for processing and each transfer of personal data needs to rest on one of the legal bases in Article 7, whether consent or another qualifying basis such as the execution of a contract. Sharing a customer's data across partners is not automatically permitted just because the customer is buying something. The decisioning layer has to carry the consent and purpose context through the call, not strip it. On the prudential side, insurance in Brazil is supervised by SUSEP, and its Open Insurance framework (Sistema de Seguros Aberto) is built around customer-consented data sharing, which reinforces the same principle: consent and purpose travel with the data.
+
+Practically, this means an embedded AI layer should treat the consent flag and the declared purpose as first-class fields in every request, refuse to enrich beyond the consented purpose, and log the legal basis alongside the decision. Convenience at checkout is never a substitute for a lawful basis.
+
+### Why an external layer beats a re-platform
+
+The instinct when facing embedded distribution is to assume the core system needs to change. It does not. Core policy administration systems are stable, regulated, and expensive to replace, and they are good at what they do: being the system of record. What they are not built for is answering a partner's API in real time with model-driven decisions. Putting an external AI layer in front lets the insurer expose an embedded product in weeks rather than through a multi-year core migration, and it isolates the fast-changing decision logic from the slow-changing system of record. Rules, models, and partner integrations evolve in the layer. The ledger stays put.
+
+This pattern generalizes across lines. In a proof of concept with a global insurer in the Transport line, WIR ran exactly this shape, an external decisioning layer over the insurer's core, to automate intake and decisioning without touching the underlying policy system. The same architecture applies whether the embedded product is device protection, travel, or freight, and it pairs naturally with delegated authority setups, where an MGA needs to bind on a carrier's behalf inside a partner flow (see [delegated-authority-technology-for-mgas-2026](/library/delegated-authority-technology-for-mgas-2026)).
+
+### How to start
+
+Begin with one product, one partner, and one clearly bounded risk. Externalize the eligibility rules first, because deterministic appetite checks deliver most of the straight-through wins with the least model risk. Add AI intake normalization next, so the partner can send loose data and still get a clean decision. Keep the rating engine where it is and feed it signals. Wire consent and legal basis through the call from day one, not as a later compliance retrofit. Then measure the straight-through processing rate and the referral quality, and expand only once both hold up. Born in Brazil and shaped by LGPD and SUSEP realities, this is a globally repeatable way to make real decisions at the point of sale without betting the core system on it.`,
+    faq: [
+      { q: "How AI powers embedded insurance decisioning", a: "AI powers embedded insurance decisioning by running eligibility, pricing signals, and bind as a single real-time API call at the point of sale. An external AI layer normalizes the partner's transaction data, checks the insurer's appetite and rules, returns a price signal to the existing rating engine, and issues a bind or decline decision in a fraction of a second, while the core policy administration system stays the system of record." },
+      { q: "Does embedded decisioning require replacing the core policy system?", a: "No. The most reliable pattern is an external AI layer that sits in front of the core system and answers the partner's API in real time. The core remains the system of record for the policy, premium, and ledger. This lets an insurer launch an embedded product in weeks and evolve decision logic independently, instead of running a multi-year core migration." },
+      { q: "How does LGPD affect sharing personal data across embedded partners in Brazil?", a: "Under the LGPD (Lei nº 13.709 of 2018, enforced by the ANPD), the distribution partner and the insurer usually act as separate controllers, so each needs its own lawful basis and every transfer of personal data must rest on a legal basis in Article 7, such as consent or contract execution. The decisioning layer should carry consent and declared purpose through each call and log the legal basis with the decision. SUSEP's Open Insurance framework reflects the same consent-based principle." },
+      { q: "Where does AI stop and the rating engine begin?", a: "The AI layer contributes or requests a pricing signal and enriches inputs, but it does not replace the rating engine. Actuarial rating stays in the insurer's existing engine, which keeps pricing control and governance where they belong while AI handles intake, eligibility, and the real-time orchestration of the decision." }
+    ],
+  },
+  {
+    slug: "how-to-automate-bordereaux-processing-with-ai",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/how-to-automate-bordereaux-processing-with-ai.jpg",
+    title: "How to Automate Bordereaux Processing with AI",
+    sub: "To automate bordereaux processing with AI, you place an external AI layer in front of your existing systems that reads each incoming coverholder file, maps its columns to a common schema, validates and reconciles the data, and writes clean records to your system of record. High confidence rows flow straight through, and only exceptions reach a person. The core stays exactly as it is, because WIR sits on top of it rather than replacing it.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "5 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "Automate bordereaux processing with an external AI layer that reads, maps, validates, and reconciles coverholder files before they reach your core, no rip and replace.",
+    body: `Bordereaux processing is one of the most repetitive and error prone jobs in delegated insurance, which makes it a natural fit for automation. A bordereau is the periodic spreadsheet that a coverholder, managing general agent (MGA), or delegated authority sends to its carrier or reinsurer, listing the risks written, the premium booked, or the claims paid over a period. To automate bordereaux processing with AI means using an external AI layer to read, map, validate, and reconcile those files as they arrive, so clean and structured data reaches the system of record without a person keying and checking every row.
+
+### Why bordereaux are so hard to process
+
+The difficulty is not the concept, it is the variety. Every coverholder tends to send its own template, so column names, ordering, date formats, currency conventions, and even the meaning of a field drift from one source to the next. One binder labels a column "Sum Insured", another calls the same thing "TSI" or "Limit", and a third splits it across two columns. Files arrive as spreadsheets, exported reports, or scanned attachments on a monthly or quarterly cadence, often late and often revised. Someone then has to open each one, understand its layout, key or paste the values into the delegated authority system, and reconcile premium and claims figures that rarely tie out on the first pass.
+
+Done by hand this is slow, and it does not scale. Adding coverholders means adding headcount, and every manual step is a place where a transcription error or a missed exception can distort reporting to capacity providers and reinsurers. This is precisely the kind of high volume, low variance work where a document reading pipeline earns its place.
+
+### The scale behind the problem
+
+Delegated authority is not a niche corner of the market. Lloyd's of London, the world's leading insurance and reinsurance marketplace, has described business written under delegated authority as a large part of its market, on the order of a third of premium. Whatever the exact figure in a given year, the direction is clear. A very large share of specialty and commercial risk is written through binders, and every binder produces bordereaux on a recurring cycle. Multiply that across a book of coverholders and the reporting burden becomes structural rather than occasional.
+
+The reason it stays manual is rarely appetite for change. Boston Consulting Group has found that roughly 70% of insurers fail to execute on innovation because of IT limitations, which is exactly why an approach that leaves the core untouched matters. The goal is to remove the manual step without asking the operation to migrate or rebuild the systems it already trusts.
+
+### What automating with AI actually means
+
+Automation here is a pipeline, not a single model, and it runs in a few clear stages.
+
+**Intake.** The layer receives bordereaux from wherever they land, whether that is a mailbox, a shared folder, or an upload, and it recognizes each file as a bordereau to be processed.
+
+**Intelligent reading and column mapping.** Machine learning reads the file and maps its columns to a common target schema, even for layouts it has never seen before. "TSI", "Sum Insured", and "Limit" all resolve to the same field, dates and currencies are normalized, and every mapping carries a confidence score.
+
+**Validation.** The system checks each row against rules and reference data. Missing mandatory fields, out of range values, invalid identifiers, and totals that do not add up are flagged rather than silently passed through.
+
+**Reconciliation.** Premium and claims figures are reconciled against expected values and prior periods, so discrepancies surface as specific, reviewable items instead of a vague sense that the numbers are off.
+
+**Exception routing.** High confidence rows flow straight through to the system of record. Only ambiguous mappings, failed validations, and reconciliation breaks are escalated to a person, with the reason attached. The machine acts when it is sure and hands off when it is not.
+
+**Write back.** Clean, structured, mapped data is written to the delegated authority system or data warehouse, ready for reporting to carriers, capacity providers, and reinsurers.
+
+### An external layer, not a core replacement
+
+This is the defining point. WIR is an external AI layer that sits on top of existing systems and never replaces the core. The bordereaux layer reads the files, structures them, and writes clean data back, but the system of record, the delegated authority platform, and the underwriting manual all stay exactly as they are. There is no migration, no rip and replace, and no load on the operation's own IT team. The intelligence lives in front of the core, not inside it.
+
+The same document reading approach that powers bordereaux processing has been validated in a proof of concept with a global insurer in the transport line, one of the most document heavy classes an operation can touch. That is the pattern generalized. If the layer can structure the messiest transport paperwork, a monthly bordereau is well within reach.
+
+### Built for Brazilian regulation
+
+For operations regulated in Brazil, the same layer is designed to run inside local expectations. Every mapping, validation, and exception is logged and explainable, which supports the auditability that SUSEP oversight assumes. Personal and business data flowing through the pipeline is handled in line with the LGPD, so automating the reporting cycle does not create a new compliance gap. The layer speeds the work up while keeping a clear, reviewable trail behind every field it touches.
+
+### How to measure whether it is working
+
+Bordereaux automation is worth doing only if you can see the gain, so instrument it. Track the straight through processing rate, meaning the share of rows that clear the pipeline without human touch, alongside the exception rate, the cycle time from file received to data booked, and a simple data quality measure such as validation failures caught before reporting. A healthy program pushes straight through processing up and cycle time down while catching more errors earlier, not fewer.
+
+### Getting started
+
+Begin with your highest volume coverholders, the ones whose bordereaux consume the most hours and generate the most reconciliation pain. Point the external layer at their historical files so it learns the layouts, set confidence thresholds conservatively so that anything uncertain routes to a person, and expand coverage as trust builds. Because the layer sits on top of your existing systems, you can prove the value on one binder before scaling across the book, without touching the core at all.`,
+    faq: [
+      { q: "What does it mean to automate bordereaux processing with AI?", a: "It means using an external AI layer to read each incoming bordereau, map its columns to a common schema, validate and reconcile the figures, and write clean structured data to your system of record. High confidence rows pass straight through and only exceptions reach a person, so the manual keying and checking of every row disappears while accuracy improves." },
+      { q: "Does WIR replace my delegated authority platform or core system?", a: "No. WIR is an external AI layer that sits on top of your existing systems and never replaces the core. It reads and structures bordereaux and writes clean data back, but the system of record, the delegated authority platform, and the underwriting manual stay exactly as they are. There is no migration and no rip and replace." },
+      { q: "Can the AI read bordereaux that arrive in different formats from different coverholders?", a: "Yes. That is the main reason to use AI here. The layer maps varied column names, orderings, date formats, and currencies to a single target schema, even for layouts it has not seen before, so labels like Sum Insured, TSI, and Limit all resolve to the same field. Each mapping carries a confidence score, and anything uncertain is routed to a person rather than guessed." },
+      { q: "Is automated bordereaux processing compliant with SUSEP and LGPD in Brazil?", a: "It is designed to be. Every mapping, validation, and exception is logged and explainable, which supports the auditability SUSEP oversight assumes, and personal and business data is handled in line with the LGPD. Automating the reporting cycle keeps a clear, reviewable trail behind every field rather than creating a new compliance gap." },
+      { q: "How do I measure whether bordereaux automation is working?", a: "Instrument it. Track the straight through processing rate, the share of rows cleared without human touch, together with the exception rate, the cycle time from file received to data booked, and a data quality measure such as validation failures caught before reporting. Success looks like higher straight through processing and lower cycle time while catching more errors earlier." }
+    ],
+  },
+  {
+    slug: "how-to-extract-data-from-acord-forms-with-ai",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/how-to-extract-data-from-acord-forms-with-ai.jpg",
+    title: "How to Extract Data from ACORD Forms with AI",
+    sub: "To extract data from ACORD forms with AI, you put a Machine Learning reading layer on top of the systems you already run. It parses each ACORD form wherever it arrives, an emailed PDF, a scanned certificate, or a portal upload, identifies the fields an underwriter needs by meaning rather than by fixed position, and returns clean, validated, structured data. It reads scanned and photographed forms reliably and also attempts handwritten and free-text fields, routing anything it is unsure about to a human reviewer through a per-field confidence score. That human in the loop, not a claim that handwriting is solved, is what keeps the output accurate and auditable.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "Extract data from ACORD forms with AI: a Machine Learning layer reads emailed, scanned, and photographed forms, validates every field, and keeps a human in the loop, no core migration.",
+    body: `### Why ACORD forms are hard to read at scale
+
+The ACORD form is the closest thing commercial insurance has to a common language, yet the data inside it still arrives as documents a person has to read and rekey. A single submission can travel as an emailed PDF proposal form, a scanned and signed certificate, a photographed page from a broker, and a spreadsheet of schedules, all describing the same risk. Before anyone can price it, someone has to find the named insured, the FEIN, the requested limits, the effective dates, and the loss history across those files, key them into the core or the rating engine, and reconcile the contradictions between them. Gartner has estimated that corporate teams lose 20 to 30 percent of their time organizing unstructured data instead of doing analytical work, and insurance intake is exactly where that loss lands.
+
+AI extraction attacks this at the intake stage of the quotation and underwriting journey. Instead of asking which character sits in a pixel region, a reading model asks what a value means, so it can pull the same field from a layout it has never seen in that exact form. That shift, from transcription to interpretation, is what makes ACORD extraction viable across the hundreds of broker and carrier variants a real book of business produces.
+
+### Why traditional OCR and RPA under-deliver on ACORD
+
+Most insurers have already tried to automate this, usually with classic OCR and RPA, and both fell short for the same structural reason. Traditional OCR turns pixels into characters but does not understand the document, so it is template bound: it works only when a field sits in the same place on the same form every time. ACORD reality is the opposite, because every broker, every line of business, and every insured sends a slightly different arrangement, a different attachment order, or a marked-up prior form. RPA scripts the clicks a human would make, so it breaks the moment a portal field, a form version, or an upstream layout changes. Both tools treated reading as mechanical, when the real task is judgment about what each value is.
+
+An AI reading layer replaces that brittleness with three properties. First, layout independence, because models trained on insurance documents generalize across forms, emails, certificates, and spreadsheets, so a new broker template does not require a new rule. Second, a confidence score on every field, so high-confidence values flow straight through while low-confidence ones route to a person for a quick check. Third, validation, where each value is checked for completeness against the requirements of that line, for format on fields like FEIN, ZIP, dates, and currency, and for consistency across the documents in the same submission. If you are weighing this against your current stack, the deeper comparison lives in [why AI reading beats RPA and OCR for insurance](/insights/substituir-rpa-ocr-ia-seguros-en/).
+
+### How the extraction pipeline actually works
+
+A production pipeline treats the whole submission as one object, not as isolated files. The layer ingests everything that arrives for a risk, the email body and each attachment together, and reads it as a single unit. It reads scanned and photographed ACORD forms reliably, and it attempts handwritten and free-text fields as well, which is where realism matters: handwriting recognition in 2026 is materially less accurate than print, so the pipeline does not pretend those fields are solved. Instead it scores each extracted value and sends anything uncertain, including most handwriting and marginal notes, to a reviewer. That inverts the old OCR model where a person checked everything; here a person checks only the genuinely ambiguous fields.
+
+The output is not raw text. It is a structured, validated submission object the rest of the workflow can consume, which is what makes downstream stages fast: broker enrichment, risk and fraud scoring, pricing, and the final decision all depend on clean intake. Clean, structured input is also the single biggest lever on your [straight-through processing rate](/insights/how-to-increase-straight-through-processing-rate-insurance/), because every field that arrives validated is a field no underwriter has to touch. The broader challenge of turning messy documents into decisions is covered in [handling unstructured data in insurance with AI](/insights/dados-nao-estruturados-seguros-ia-en/), and the intake-specific mechanics in [insurance submission intake automation](/insights/insurance-submission-intake-automation/).
+
+### Deploying it without replacing your core
+
+The architectural point that matters most is that this does not require a core migration. WIR is an external AI layer that sits on top of the systems the insurer already runs, and it never replaces the policy admin core, the underwriting workbench, or the rating engine. It ingests ACORD submissions from the channels above, produces structured validated data, and writes that data back into the system of record through APIs or files. The core stays intact. This matters because IT constraints are one of the most cited blockers to insurance innovation, and an overlay model lets an insurer modernize intake without betting the company on a multi-year replacement program.
+
+The work runs as a defined project rather than an open-ended IT effort. A one-time setup phase covers scope, integration with the existing core, calibration to the underwriting manual and risk appetite, testing, and go-live, with a fixed scope and KPIs agreed before the work starts. After go-live the layer moves to continuous operation in production, staying fully external with no load on the insurer's IT. The extracted data then feeds the desk directly, which is where an [AI underwriting workbench](/insights/what-is-ai-underwriting-workbench/) turns clean intake into faster, more consistent decisions.
+
+### Governance, explainability, and Brazil context
+
+Reading ACORD forms touches personal and corporate data, so governance is part of the design rather than an afterthought. For Brazilian operations, submission data often contains personal data under the LGPD (Lei Geral de Proteção de Dados, Lei 13.709/2018), so the layer must process it on a lawful basis, with data minimization, encryption at every step, and a human in the loop where an automated decision affects a person, with the ANPD as supervisory authority. SUSEP supervises the market, so automated reading and the underwriting that follows must stay consistent with the registered product terms and the underwriting manual.
+
+Explainability is where the confidence score stops being only an accuracy feature and becomes a governance mechanism. Every extraction, every confidence level, every validation outcome, and every human override is logged, so the insurer can prove which values were machine-extracted with high precision and which a person checked. Decisions are explainable and return a full audit trail, never presented as infallible. That provenance is exactly what makes automated ACORD extraction defensible to internal audit and to the regulator.
+
+### How WIR reads ACORD submissions
+
+WIR is the AI layer for insurance, on top of the systems the insurer already runs, never in their place. It automates the quotation and underwriting journey according to the insurer's own risk-acceptance policy, with Machine Learning calibrated to the risk appetite and the underwriting manual. ACORD reading is the intake stage of that flow: multichannel ingestion and validation, document reading, broker enrichment and scoring, a multi-factor risk and fraud engine, pricing, and a final decision written back to the core with its explanation and audit trail. WIR Innovation was founded in 2025 from accumulated operational experience, built with Mahway, a Venture Builder in California, and Avante, a Venture Studio in Brazil, and its first proof of concept is in execution with a global insurer in the Transport line. To see how ACORD extraction would map to your own forms and core, talk to WIR.`,
+    faq: [
+      { q: "Can AI read handwritten fields on ACORD forms?", a: "It attempts them, but it does not treat handwriting as solved. In 2026, handwriting recognition is materially less accurate than print, so the pipeline reads scanned and photographed forms reliably and then scores every field. Handwritten entries, marginal notes, and other low-confidence values route to a human reviewer through the confidence score. That human in the loop, not the handwriting model alone, is what guarantees the field is correct before it moves downstream." },
+      { q: "How is this different from traditional OCR?", a: "Traditional OCR turns pixels into characters but is template bound, so it only works when a field sits in the same place on the same form, which is the opposite of ACORD reality across brokers and versions. An AI reading layer asks what a value means, generalizes across layouts it has never seen in that exact form, attaches a confidence score per field, and validates each value for format and consistency. High-confidence values flow straight through, and only ambiguous ones reach a person." },
+      { q: "Do we have to replace our core system to extract ACORD data with AI?", a: "No. WIR is an external AI layer that sits on top of the systems you already run and never replaces the core. It ingests ACORD submissions, produces structured validated data, and writes that data into the policy core, underwriting workbench, or rating engine through APIs or files. The system of record stays intact, which lets you modernize intake without a multi-year core migration." },
+      { q: "Is AI extraction of ACORD data LGPD compliant?", a: "It is designed to be. Submission data often contains personal data under the LGPD, so it is processed on a lawful basis, encrypted at every step, with data minimization and a human in the loop where an automated decision affects a person. Every extraction, confidence level, validation outcome, and human override is logged, so the insurer can prove provenance to internal audit and to the regulator. The ANPD is the supervisory authority and SUSEP supervises the market." },
+      { q: "What formats can the layer read besides PDF ACORD forms?", a: "It treats the whole submission as one object, so it reads the email body and every attachment together: PDF proposal forms, scanned and photographed certificates, spreadsheets of schedules, and broker cover notes. It ingests from email, broker portal upload, and partner API at the same time, validates the extracted data, and flags missing or conflicting items for broker enrichment before pricing." }
+    ],
+  },
+  {
+    slug: "what-is-parametric-insurance-and-how-ai-enables-faster-payouts",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/what-is-parametric-insurance-and-how-ai-enables-faster-payouts.jpg",
+    title: "What Is Parametric Insurance and How AI Enables Faster Payouts",
+    sub: "Parametric insurance pays a fixed, pre-agreed amount the moment a measurable event crosses a defined threshold (a wind speed, a rainfall total, an earthquake magnitude), instead of reimbursing a documented loss after a claim is filed and adjusted. Because the decision rests on an independent data point rather than a loss investigation, settlement can happen in days rather than the weeks to months an indemnity claim often takes. AI does not change what a parametric policy pays; it strengthens the data and decisioning around the trigger, ingesting and validating the source data, monitoring the parameter continuously, and routing a clean, auditable pay-or-hold decision.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "08 · Jul · 2026", dateISO: "2026-07-08",
+    metaDesc: "Parametric insurance pays a fixed amount when a data trigger is met, so payouts can land in days. Learn how it works, how it differs from indemnity, and where AI fits.",
+    body: `### What is parametric insurance?
+
+Parametric insurance (also called index-based insurance) is a contract that pays a fixed, pre-agreed amount when a measurable parameter crosses a defined threshold. The payout is tied to the event itself, not to the specific loss a policyholder later documents. If a hurricane's sustained wind speed passes an agreed level near an insured location, or rainfall over a growing season falls below a set number of millimeters, the payout triggers automatically.
+
+Every parametric policy rests on three pieces:
+
+- **The trigger event.** The physical or economic event being covered, such as a cyclone, flood, drought, earthquake, or a flight cancellation.
+- **The index and threshold.** The measurable value that stands in for loss, plus the level at which cover activates. For example, wind speed above 150 km/h, or accumulated rainfall below 100 mm.
+- **The payout structure.** A fixed sum, or a schedule that scales with how far the index moves past the threshold.
+
+Because payment depends on an objective reading from an agreed data source, there is no need to inspect damage or negotiate a settlement figure. That is the mechanism behind the speed parametric products are known for, and also their main trade-off, known as basis risk: the payout is calibrated to the index, so it can land above or below the actual loss a policyholder experiences.
+
+### How parametric insurance works, step by step
+
+1. **Define the trigger and index.** The insurer and the insured agree on the covered event and the parameter that represents it, then set the threshold at which cover activates.
+2. **Set the payout schedule.** The contract states exactly what pays out at each index level, so the amount is known before any event occurs.
+3. **Choose an independent data source.** Weather stations, satellite feeds, seismographs, tide gauges, or flight databases provide the reading. Using a neutral third party keeps the trigger objective and reduces disputes.
+4. **Monitor the parameter.** Over the policy period, the agreed data is tracked against the threshold.
+5. **Pay on trigger.** When the index crosses the line, the fixed amount is released, without a traditional claims investigation.
+
+### Parametric vs indemnity insurance
+
+Traditional indemnity insurance reimburses the actual, documented loss. A policyholder files a claim, an adjuster assesses the damage, and the insurer investigates and settles. That process protects against paying more than the real loss, but it takes time: indemnity claims often take weeks to months to close, especially after a large catastrophe when adjusters are stretched thin.
+
+Parametric cover changes the settlement path. Because the payout is data-driven and the amount is fixed in advance, settlement can happen in days once the trigger is confirmed. A well-known example is CCRIF SPC (the Caribbean Catastrophe Risk Insurance Facility), a parametric pool that has paid member governments within about 14 days of a qualifying hurricane, earthquake, or excess-rainfall event, putting liquidity in place while indemnity claims are still being assessed.
+
+| Dimension | Parametric | Indemnity |
+|---|---|---|
+| What triggers payment | A measured index crossing a threshold | A documented, assessed loss |
+| Speed to settlement | Days, once the trigger is confirmed | Often weeks to months |
+| Basis of amount | Fixed or index-scaled, agreed upfront | The actual loss, up to policy limits |
+| Main trade-off | Basis risk (payout may not match loss) | Slower, adjuster-dependent process |
+| Best fit | Fast liquidity, hard-to-adjust or systemic risks | Precise reimbursement of specific damage |
+
+The two are complements more than substitutes. Many buyers use parametric cover for speed and liquidity right after an event, and keep indemnity cover for the precise, itemized loss.
+
+### Why parametric coverage is drawing attention
+
+Natural-catastrophe losses keep outpacing what is insured, and the gap is what parametric products are built to close quickly.
+
+> Insured natural-catastrophe losses reached USD 108 billion in 2023, while total economic losses came to roughly USD 280 billion, leaving well over half of the damage uninsured.
+> Source: Swiss Re Institute, sigma 1/2024.
+
+When a large share of economic damage sits outside traditional cover, and when indemnity settlement is slow, fast, data-triggered payouts become attractive for governments, agriculture, infrastructure, and businesses that need liquidity in the first days after an event.
+
+### Parametric insurance in Brazil
+
+Brazil is an active market for index-based cover, particularly in agriculture and climate risk, and it comes with two regulatory anchors worth naming for any insurer or MGA building a program locally.
+
+- **SUSEP.** As Brazil's insurance regulator, SUSEP has moved to accommodate index-based and parametric structures within the supervised market. Any product design, trigger definition, and disclosure has to fit the regulator's framework, so the index and payout logic must be transparent and well documented.
+- **LGPD.** The trigger data and any personal or business data used to price, place, or monitor a policy fall under Brazil's general data protection law. Purpose limitation, a clear legal basis, and traceability of how data feeds a decision are not optional; they are conditions for operating.
+
+For a Brazilian program, the practical implication is that the data pipeline behind a parametric trigger has to be both auditable for SUSEP and compliant with LGPD, which raises the bar on how trigger data is sourced, validated, and logged.
+
+### How AI fits into parametric insurance
+
+AI does not decide what a parametric policy pays. The contract already fixes that. What AI improves is the data and decisioning around the trigger, which is where speed, accuracy, and auditability are won or lost. In practical terms, the work breaks into a few jobs:
+
+- **Trigger data ingestion and validation.** Pulling readings from weather feeds, satellites, seismographs, or flight databases, then checking them for gaps, outliers, and source disagreement before they are trusted. A bad or missing reading is the most common way a parametric payout goes wrong, so validation matters as much as the model.
+- **Continuous monitoring.** Watching the index against the threshold in near real time, so a crossing is detected the moment it happens rather than discovered later.
+- **Decisioning and payout routing.** Turning a confirmed trigger into a clean pay-or-hold decision, with the reasoning attached, and escalating edge cases (conflicting data sources, borderline readings) to a human instead of guessing.
+- **A decision trail.** Recording which data source, reading, and rule produced each outcome, which is exactly what a regulator like SUSEP or an internal audit will ask to see.
+
+Done well, this is what lets a parametric program actually deliver on the promise of settlement in days: the trigger data is trustworthy, the crossing is caught immediately, and the decision is explainable end to end.
+
+### Where an external AI layer fits
+
+At WIR, the working principle is that this intelligence sits as an external layer on top of the insurer's existing systems, and never replaces the core. The core policy and payment system stays the system of record; the AI layer reads the trigger data, validates it, monitors the index, and writes an explainable decision back through APIs. That keeps the migration risk low and the audit trail intact, which is precisely what a regulated, LGPD-bound program needs.
+
+The pattern is not hypothetical for adjacent underwriting work. In a separate proof of concept with a global insurer in the Transport line (not a parametric program), WIR applied the same external-layer approach to submission intake and triage, leaving the core system untouched, the same architecture pattern that parametric monitoring and decisioning would use.
+
+### Key takeaways
+
+- Parametric insurance pays a fixed, pre-agreed amount when a measured index crosses a threshold, not when a loss is documented.
+- Settlement can happen in days because the payout is data-driven, whereas indemnity claims often take weeks to months. CCRIF SPC's within-14-days payouts are a real example.
+- The trade-off is basis risk: the payout tracks the index, not the exact loss.
+- With insured losses far below total economic losses (USD 108 billion vs roughly USD 280 billion in 2023, per Swiss Re Institute), fast, index-based cover is filling part of that gap.
+- In Brazil, SUSEP and LGPD shape how trigger data must be sourced, disclosed, and logged.
+- AI's role is in the data and decisioning around the trigger, and it works best as an external layer that leaves the core system in place.
+
+Related reading: [AI underwriting without replacing your core system](/ai-underwriting-without-replacing-core-system), [what insurance decisioning means](/what-is-insurance-decisioning), and [AI in commercial and specialty insurance underwriting](/ai-in-commercial-and-specialty-insurance-underwriting).`,
+    faq: [
+      { q: "What is parametric insurance in simple terms?", a: "It is a policy that pays a fixed, agreed amount when a measurable event crosses a set threshold, such as a wind speed, a rainfall total, or an earthquake magnitude. The payout is tied to that data point rather than to a documented loss, so it can settle quickly." },
+      { q: "How is parametric insurance different from traditional insurance?", a: "Traditional indemnity insurance reimburses your actual, assessed loss after a claim is filed and investigated, which often takes weeks to months. Parametric insurance pays a pre-agreed amount as soon as the trigger is confirmed, so settlement can happen in days. The trade-off is basis risk: the payout is calibrated to the index and may not exactly match your loss." },
+      { q: "How fast are parametric payouts?", a: "Because the amount is fixed in advance and the decision rests on an independent data reading, payouts can be released in days once the trigger is confirmed. For example, the Caribbean Catastrophe Risk Insurance Facility (CCRIF SPC) has paid member governments within about 14 days of a qualifying event." },
+      { q: "What is basis risk in parametric insurance?", a: "Basis risk is the gap between the payout and the actual loss. Since the payout tracks an index rather than your specific damage, you can receive more or less than your real loss. Careful index design and reliable data sources reduce, but do not eliminate, this risk." },
+      { q: "Does AI decide the parametric payout?", a: "No. The contract fixes what pays out at each index level. AI works on the data and decisioning around the trigger: ingesting and validating the source data, monitoring the index continuously, routing a clean pay-or-hold decision, and keeping an audit trail. At WIR this runs as an external layer that never replaces the core policy or payment system." },
+      { q: "How is parametric insurance regulated in Brazil?", a: "SUSEP, Brazil's insurance regulator, oversees index-based and parametric products, so triggers, disclosures, and payout logic must be transparent and documented. Separately, the trigger and personal or business data used to price and monitor a policy fall under LGPD, which requires a clear legal basis, purpose limitation, and traceability of how data feeds each decision." }
+    ],
+  },
+
+  {
     slug: "ai-fraud-detection-underwriting-vs-claims",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/ai-fraud-detection-underwriting-vs-claims.jpg",
