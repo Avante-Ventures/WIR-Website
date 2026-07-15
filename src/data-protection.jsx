@@ -614,8 +614,221 @@ function DPClose({ go }) {
   );
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   Security Manifesto · client-facing (PT-BR only)
+   Content authored by Luiz. Do not edit affirmations without his sign-off.
+═══════════════════════════════════════════════════════════════ */
+
+const MANIFESTO_SECTIONS = [
+  {
+    id: "compromisso",
+    num: "01",
+    title: "Nosso compromisso com a segurança",
+    body: (
+      <>
+        <p>A WIR desenvolve software de cálculo de risco e precificação para seguradoras. Entendemos que operamos com dados sensíveis e em um setor regulado e, por isso, tratamos a segurança da informação e a proteção de dados como parte central do nosso produto, e não como um item acessório.</p>
+        <p>Este documento descreve, de forma resumida, as práticas de segurança que adotamos para proteger os dados e as operações dos nossos clientes. Podemos complementá-lo com evidências, respostas a questionários de segurança e documentação contratual mediante solicitação.</p>
+      </>
+    ),
+  },
+  {
+    id: "operador",
+    num: "02",
+    title: "Nosso papel: operador de dados",
+    body: (
+      <>
+        <p>No tratamento de dados pessoais, a WIR atua como <strong>operador</strong>, processando dados exclusivamente por conta e ordem do cliente (a controladora), conforme as finalidades e instruções definidas em contrato.</p>
+        <ul className="dpm__list">
+          <li>Firmamos um <strong>Acordo de Tratamento de Dados (DPA)</strong> que define finalidade, instruções, medidas de segurança, subcontratados e a devolução ou eliminação dos dados ao término da relação.</li>
+          <li>Tratamos os dados do cliente <strong>somente</strong> para as finalidades contratadas. Não utilizamos os dados de um cliente para outras finalidades sem autorização contratual expressa.</li>
+          <li>Apoiamos o cliente no cumprimento das suas obrigações regulatórias (LGPD e requisitos aplicáveis do setor de seguros).</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: "governanca",
+    num: "03",
+    title: "Governança e programa de segurança",
+    body: (
+      <>
+        <p>Mantemos um programa de segurança da informação com políticas formais que orientam o desenvolvimento, a operação e o acesso aos sistemas.</p>
+        <ul className="dpm__list">
+          <li>Nossas práticas são orientadas por referências reconhecidas de mercado, como SOC 2.</li>
+          <li>Revisamos periodicamente políticas, acessos e riscos.</li>
+          <li>Responsabilidades de segurança e de proteção de dados são formalmente atribuídas na organização.</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: "protecao-dados",
+    num: "04",
+    title: "Proteção e privacidade dos dados",
+    body: (
+      <ul className="dpm__list">
+        <li><strong>Criptografia:</strong> dados são protegidos por criptografia em trânsito (TLS) e em repouso (padrão AES-256).</li>
+        <li><strong>Gestão de chaves:</strong> as chaves criptográficas são gerenciadas de forma segura.</li>
+        <li><strong>Residência de dados:</strong> todos os dados dos clientes são armazenados no Brasil, com redundância e backup por 30 dias.</li>
+        <li><strong>Minimização:</strong> coletamos e retemos apenas os dados necessários às finalidades contratadas.</li>
+        <li><strong>Retenção e eliminação:</strong> dados são retidos conforme o contrato e eliminados de forma segura ao término da relação ou mediante solicitação legítima.</li>
+        <li><strong>Ambientes segregados:</strong> dados de produção não são utilizados em ambientes de desenvolvimento ou de treinamento de modelos; nesses ambientes usamos dados anonimizados ou sintéticos.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "isolamento",
+    num: "05",
+    title: "Isolamento entre clientes",
+    body: (
+      <p>A arquitetura da plataforma garante o <strong>isolamento lógico entre os dados de diferentes clientes</strong>. Controles de autorização asseguram que os dados de um cliente não sejam acessíveis a outros clientes.</p>
+    ),
+  },
+  {
+    id: "infraestrutura",
+    num: "06",
+    title: "Infraestrutura e hospedagem",
+    body: (
+      <ul className="dpm__list">
+        <li>Nossa infraestrutura é operada na AWS, maior e mais seguro provedor de nuvem, com certificações de segurança internacionalmente aceitas.</li>
+        <li>Utilizamos serviços gerenciados com redundância e alta disponibilidade.</li>
+        <li>Aplicamos hardening, gestão de vulnerabilidades e atualização contínua dos componentes.</li>
+        <li>Segredos e credenciais são armazenados em cofres seguros e nunca em código-fonte.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "acesso",
+    num: "07",
+    title: "Controle de acesso",
+    body: (
+      <ul className="dpm__list">
+        <li><strong>Autenticação multifator (MFA)</strong> obrigatória para acessos administrativos e a sistemas que tratam dados de clientes.</li>
+        <li><strong>Menor privilégio:</strong> cada colaborador possui apenas o acesso necessário à sua função.</li>
+        <li>O acesso da nossa equipe a dados de clientes é <strong>restrito, controlado e registrado</strong>, e ocorre apenas quando necessário para operação, suporte ou obrigação contratual.</li>
+        <li>Acessos são revisados periodicamente e revogados imediatamente em desligamentos.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "sdlc",
+    num: "08",
+    title: "Segurança no desenvolvimento (SDLC)",
+    body: (
+      <ul className="dpm__list">
+        <li>Adotamos um ciclo de desenvolvimento seguro, com <strong>revisão de código</strong> antes da entrada em produção.</li>
+        <li>O pipeline inclui análise automatizada de código, de dependências e de segredos.</li>
+        <li>Mantemos rastreabilidade dos componentes de software utilizados.</li>
+        <li>As interfaces (APIs) aplicam validação de entradas e controles contra abuso.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "governanca-ia",
+    num: "09",
+    title: "Governança e transparência dos modelos de IA",
+    body: (
+      <>
+        <p>Como nosso produto calcula risco e preço por meio de modelos, tratamos a governança desses modelos como parte da segurança e da conformidade do cliente:</p>
+        <ul className="dpm__list">
+          <li><strong>Uso de dados:</strong> utilizamos os dados do cliente apenas conforme o contrato. Não combinamos dados de diferentes clientes para treinar modelos compartilhados sem autorização expressa.</li>
+          <li><strong>Explicabilidade:</strong> a plataforma oferece meios de justificar como um determinado risco resultou em determinado preço, apoiando o cliente no atendimento a exigências regulatórias e ao direito de revisão de decisões automatizadas (art. 20 da LGPD).</li>
+          <li><strong>Trilha de auditoria:</strong> cada precificação é registrada (dados de entrada, versão do modelo e resultado), permitindo auditoria pelo cliente.</li>
+          <li><strong>Controle de versões e aprovação:</strong> modelos são versionados e passam por aprovação antes de entrar em produção.</li>
+          <li><strong>Testes de robustez e de viés:</strong> avaliamos os modelos quanto a estabilidade e a vieses indevidos.</li>
+          <li><strong>Continuidade:</strong> mecanismos de contingência garantem a operação de precificação mesmo diante de indisponibilidade de um modelo.</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: "incidentes",
+    num: "10",
+    title: "Monitoramento e resposta a incidentes",
+    body: (
+      <ul className="dpm__list">
+        <li>Mantemos registros (logs) centralizados e monitoramento de eventos de segurança relevantes.</li>
+        <li>Dispomos de um <strong>plano de resposta a incidentes</strong> documentado.</li>
+        <li>Em caso de incidente de segurança envolvendo dados do cliente, <strong>notificamos o cliente dentro do prazo previsto em contrato</strong>, com as informações necessárias para que ele cumpra suas obrigações regulatórias.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "continuidade",
+    num: "11",
+    title: "Continuidade e disponibilidade",
+    body: (
+      <ul className="dpm__list">
+        <li>Realizamos <strong>backups regularmente</strong>, protegidos e testados periodicamente.</li>
+        <li>Nossa infraestrutura é projetada com redundância para sustentar os níveis de disponibilidade acordados.</li>
+        <li>Mantemos objetivos definidos de recuperação (RTO/RPO) e um plano de continuidade.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "conformidade",
+    num: "12",
+    title: "Conformidade",
+    body: (
+      <ul className="dpm__list">
+        <li>Realizamos testes de intrusão (pentest) por empresa independente com periodicidade anual.</li>
+        <li>Respondemos a <strong>questionários de segurança</strong> (ex.: SIG, CAIQ ou o modelo do cliente) e disponibilizamos documentação de apoio.</li>
+        <li>Oferecemos <strong>direito de auditoria</strong> conforme previsto em contrato, incluindo o fornecimento de relatórios e evidências equivalentes.</li>
+        <li>Mantemos apólice de seguro de responsabilidade cibernética.</li>
+      </ul>
+    ),
+  },
+];
+
+function DPManifesto() {
+  return (
+    <section className="dpm bg-editorial bg-editorial--tr">
+      <div className="wrap dpm__wrap">
+        <header className="dpm__hero" data-reveal>
+          <div className="dpm__pill">
+            <span className="dpm__pill-dot" aria-hidden/>
+            Documento voltado a clientes e parceiros
+          </div>
+          <div className="eyebrow dpm__eyebrow">· Security Manifesto</div>
+          <h2 className="display dpm__title">As práticas que protegem<br/><em>os dados e as operações</em><br/>dos nossos clientes.</h2>
+          <div className="dpm__meta">
+            <span>Versão 1.0</span>
+            <span aria-hidden>·</span>
+            <span>Julho / 2026</span>
+          </div>
+        </header>
+
+        <div className="dpm__content">
+          {MANIFESTO_SECTIONS.map((s) => (
+            <section key={s.id} id={s.id} className="dpm__sec" data-reveal>
+              <div className="dpm__sec-num">{s.num}</div>
+              <h3 className="dpm__sec-title display">{s.title}</h3>
+              <div className="dpm__sec-body">{s.body}</div>
+            </section>
+          ))}
+        </div>
+
+        <p className="dpm__foot-note">
+          Este documento é fornecido a título informativo. As práticas aqui descritas podem evoluir; obrigações específicas são definidas nos instrumentos contratuais firmados entre as partes.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export function DataProtectionPage({ go }) {
   useReveal();
+  // PT-BR: manifesto de Luiz (aprovado). EN/ES: manter conteúdo editorial atual
+  // até termos versões aprovadas nesses idiomas.
+  if (LANG === "pt") {
+    return (
+      <>
+        <DPHero go={go}/>
+        <DPManifesto/>
+        <DPClose go={go}/>
+      </>
+    );
+  }
   return (
     <>
       <DPHero go={go}/>
