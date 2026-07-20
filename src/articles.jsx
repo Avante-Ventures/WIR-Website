@@ -4,6 +4,601 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 export const ARTICLES = [
   {
+    slug: "ai-underwriting-regulation-global-2026",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/ai-underwriting-regulation-global-2026.jpg",
+    title: "Is AI Underwriting High-Risk? EU, US, Brazil 2026",
+    sub: "Yes, AI underwriting is high-risk under the EU AI Act when used for risk assessment or pricing in life and health insurance (Annex III). As of 2026, that classification brings obligations around data governance, transparency, human oversight, and record-keeping for those lines. The United States and Brazil regulate the same underwriting activity through different instruments, but the shared thread across all three regions is auditability, explainability, and human oversight.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "20 · Jul · 2026", dateISO: "2026-07-20",
+    metaDesc: "AI underwriting is high-risk under the EU AI Act when it prices life and health cover. The US NAIC bulletin and Brazil SUSEP plus LGPD add their own rules.",
+    body: `Yes, AI underwriting is high-risk under the EU AI Act when used for risk assessment or pricing in life and health insurance (Annex III). As of 2026, that classification brings obligations around data governance, transparency, human oversight, and record-keeping for those lines. The United States and Brazil regulate the same underwriting activity through different instruments, but the shared thread across all three regions is auditability, explainability, and human oversight.
+
+### Is AI underwriting high-risk under the EU AI Act?
+
+**AI underwriting is high-risk under the EU AI Act when an AI system assesses risk or sets prices for natural persons in life and health insurance.**
+
+The EU AI Act (Regulation 2024/1689) sorts AI systems into risk tiers, and Annex III is the list of high-risk uses. It names AI intended to be used for risk assessment and pricing in relation to natural persons in the case of life and health insurance. That language is deliberately narrow. It targets the models that decide who gets covered and at what price in two specific personal lines, because those decisions carry the clearest potential for consumer harm and unfair discrimination. Classification turns on what the system does, not on the label a vendor puts on the product.
+
+High-risk does not mean prohibited. It means the AI system, and the insurer or MGA that deploys it, must satisfy a defined set of obligations before and during use. In practice these include a risk management system, data governance and quality controls, technical documentation, automatic event logging, transparency to the deployer, meaningful human oversight, and appropriate accuracy, robustness, and cybersecurity. Duties fall on both the provider that builds the system and the deployer that uses it, so a carrier cannot outsource its obligations by buying a model off the shelf.
+
+> According to the EU AI Act (Regulation 2024/1689), non-compliance with high-risk obligations carries penalties up to 15 million euros or 3% of total worldwide annual turnover.
+
+> According to the European Commission (2024), the EU AI Act entered into force on August 1, 2024, and its Annex III high-risk obligations apply from August 2026.
+
+### Does the EU AI Act apply to my line of business?
+
+Because the Annex III insurance entry is limited to life and health, your line of business decides most of your exposure. A useful first cut across common portfolios:
+
+- **Life insurance** risk assessment and pricing by an AI system is expressly high-risk under Annex III.
+- **Health insurance** risk assessment and pricing by an AI system is high-risk under Annex III on the same basis.
+- **Commercial property, marine, transport, and casualty** are not named in the insurance entry, so they generally fall outside the high-risk insurance category.
+- **Personal motor and home** are not named either, though national supervisors may still apply conduct and anti-discrimination rules.
+- **Prohibited AI**, such as social scoring or manipulative profiling, is banned outright regardless of the line it touches.
+
+Scope also depends on reach, not only geography. The AI Act can apply to insurers and vendors established outside the EU when the output of the AI system is used inside the EU, so a Brazilian or US carrier writing EU life or health risk can be captured. Where the model's output lands, and which line it serves, matter more than where the head office sits.
+
+### What does the NAIC Model Bulletin require in the United States?
+
+The United States has no single federal AI insurance law, so the center of gravity is the states and the NAIC. The National Association of Insurance Commissioners adopted its Model Bulletin on the Use of Artificial Intelligence Systems by Insurers in December 2023, and a majority of states have since issued it. The bulletin does not create a hard classification like Annex III. Instead it sets a supervisory expectation that any insurer using AI in decisions affecting consumers maintains a written AI systems program covering:
+
+- **Governance and accountability** with board and senior-management ownership of AI risk.
+- **Risk management controls** that test for accuracy, bias, and unfair discrimination across the AI lifecycle.
+- **Third-party oversight** with due diligence on vendors and externally sourced models and data.
+- **Documentation** detailed enough for a regulator to reconstruct how a decision was reached.
+
+States also legislate directly. Colorado SB21-169, enacted in 2021, is an early state-level example. It restricts insurers' use of external consumer data and predictive models and requires them to test for unfair discrimination, with the Colorado Division of Insurance issuing implementing regulations starting in life insurance. The direction of travel is consistent: document the model, test it for bias, and keep a human accountable.
+
+### How does Brazil regulate AI underwriting through SUSEP and LGPD?
+
+Brazil has no dedicated AI statute in force as of 2026, so AI underwriting sits under two existing regimes rather than a purpose-built one. SUSEP, the Superintendência de Seguros Privados, supervises insurer solvency and market conduct, and its governance and open-insurance rules increasingly shape how carriers use data and automated models. Layered on top is the LGPD, Brazil's general data protection law, which governs any processing of personal data.
+
+The LGPD is the sharper edge for underwriting. Article 20 gives a data subject the right to request review of decisions taken solely on the basis of automated processing that affect their interests, including profiling. For an insurer that means a practical duty to be able to explain an automated underwriting or pricing decision and to offer a review of it on request. WIR's [Brazil-specific view of SUSEP and AI in insurance](#blog/regulacao-ia-seguros-susep-en) covers the local detail. The takeaway is that Brazil, like the EU, converges on explainability and a right to review of automated decisions.
+
+### The common thread: auditability, explainability, and human oversight
+
+Read side by side, the EU AI Act, the NAIC bulletin, and Brazil's SUSEP-plus-LGPD stack ask for the same three things: a decision you can audit, an explanation you can produce, and a human who can intervene. The vocabulary and legal force differ, but a carrier that can show how each AI-assisted underwriting decision was reached, on what data, and at which human checkpoint, is broadly aligned with all three.
+
+That is a documentation and logging problem as much as a modeling one, and it is where architecture matters. WIR Innovation is an external AI layer for insurers and MGAs that automates underwriting, submission intake, quoting, and decisioning without replacing the core system. Because it sits on top of Guidewire, Duck Creek, Sapiens, or a legacy platform rather than inside it, every submission it structures, every appetite check it runs, and every referral it drafts can be captured with its inputs and rationale, then written back to the system of record. That log is the evidence trail regulators increasingly expect. For the mechanics, see how to [audit AI underwriting decisions for compliance](#blog/how-to-audit-ai-underwriting-decisions-for-compliance) and how to keep [underwriting decisions auditable](#blog/decisoes-subscricao-auditaveis-en) by design.
+
+One caveat on positioning. An external AI layer is infrastructure that produces auditable records, not a compliance product, and it does not certify any insurer as compliant. This article is market intelligence, not legal advice. Whether a given system is high-risk under the EU AI Act, in scope of the NAIC bulletin, or subject to SUSEP and the LGPD depends on your specific systems, lines, and jurisdictions, and you should confirm your obligations with qualified counsel.`,
+    faq: [
+      { q: "Is AI underwriting high-risk under the EU AI Act?", a: "Yes, the EU AI Act treats AI underwriting as high-risk when a system assesses risk or sets prices for people in life or health cover (Annex III). High-risk does not mean banned. It means the insurer and the AI provider must meet obligations on data governance, transparency, human oversight, and record-keeping before and during use." },
+      { q: "Does the EU AI Act apply to insurers outside the EU?", a: "The EU AI Act can apply to insurers and vendors based outside the EU when the output of the AI system is used inside the EU. A carrier in Brazil or the United States that writes EU life or health risk can be captured. Where the output lands and which line it serves matter more than the head office location." },
+      { q: "What does the NAIC Model Bulletin require in the United States?", a: "The NAIC Model Bulletin sets a supervisory expectation, not a hard classification, that insurers using AI in consumer decisions keep a written AI systems program. It covers governance, controls that test for bias and unfair discrimination, third-party vendor oversight, and documentation a regulator can reconstruct. The NAIC adopted it in December 2023 and a majority of states have issued it." },
+      { q: "How does Brazil regulate AI underwriting?", a: "Brazil has no dedicated AI statute in force as of 2026, so AI underwriting sits under SUSEP supervision and the LGPD data protection law. LGPD Article 20 gives a person the right to request review of a decision taken solely by automated processing. In practice, an insurer should explain an automated underwriting decision and offer a review on request." }
+    ],
+  },
+  {
+    slug: "build-vs-buy-ai-underwriting",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/build-vs-buy-ai-underwriting.jpg",
+    title: "Build vs Buy AI Underwriting: A Decision Guide",
+    sub: "Most insurers should buy a thin external AI layer for underwriting and build in-house only for capabilities that are a genuine competitive edge. As of 2026, the real question is not build versus buy a core system, it is build in-house versus buy an external AI layer that automates underwriting, submission intake, quoting, and decisioning without replacing the core. WIR Innovation is one such external layer.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "20 · Jul · 2026", dateISO: "2026-07-20",
+    metaDesc: "Most insurers should buy an external AI layer for underwriting and build in-house only when the model is a true competitive moat. WIR maps the trade-offs.",
+    body: `**Buy an external AI layer when you want faster underwriting without touching your core system; build in-house only when the model itself is your competitive moat.**
+
+### Should insurers build or buy AI for underwriting?
+
+For most insurers and MGAs the answer is buy, with a narrow exception for build. The instinct to build everything in-house usually rests on a false framing, where teams picture a multi-year platform program that competes with the core policy-admin system. That is not the decision on the table. Modern AI for underwriting sits as an external layer on top of Guidewire, Duck Creek, Sapiens, or a legacy core, reading submissions and writing structured decisions back without a rip-and-replace. Once you frame it that way, build versus buy is a question about a thin layer, not about the system of record.
+
+Buying that layer is fast and carries low switching risk, because the vendor owns the models and the maintenance. Building it in-house is justified only when the underwriting logic or the data advantage is the product itself, and you have the machine-learning talent to own it for years. The sections below help you place your own portfolio on the right side of that line.
+
+### The third option most build-vs-buy debates miss
+
+Classic build-vs-buy debates assume two choices: build a system yourself or buy someone else's system to replace what you have. In insurance underwriting there is a third option that changes the math. You can buy a thin external AI layer that adds automation and machine learning while leaving the core exactly where it is. The near-term value of generative AI in underwriting lies in augmenting existing underwriting workflows rather than rebuilding core platforms, which is precisely what an external layer does. This reframing matters because the scariest cost in most build estimates is the implied core migration, and the layer model removes it entirely. Full core-system replacement is a multi-year, high-cost program, which is exactly the cost the layer model removes, so taking it off the table changes both the budget and the risk profile of the decision.
+
+### What does building AI underwriting in-house actually cost?
+
+Building in-house means standing up data pipelines, document extraction, appetite rules, machine-learning models, core integrations, and a permanent MLOps function. The upfront build is the visible cost. The durable cost is maintenance, because models drift, document formats change, ACORD and carrier templates evolve, and someone has to retrain and monitor everything long after launch.
+
+The larger exposure is delivery risk. Custom software has a poor track record of shipping on time and on scope, and underwriting AI is harder than average because it touches messy documents, regulated decisions, and a live system of record.
+
+> According to the Standish Group CHAOS Report (2015), fewer than one in three software projects are delivered on time, on budget, and with the expected features.
+
+Build in-house when these conditions hold:
+- **Proprietary edge:** your pricing or risk-selection model is a genuine competitive moat you cannot outsource.
+- **Standing talent:** you already employ machine-learning and MLOps engineers who can own drift and retraining.
+- **Niche data:** your book depends on data or underwriting logic no external vendor has seen.
+- **Time to spare:** you can absorb a multi-quarter build without losing the underwriting window.
+
+### What do you get by buying an external AI layer?
+
+Buying means deploying a ready AI layer that already handles submission intake, data extraction, appetite matching, quoting, and decisioning, and connects to the core through APIs. You get speed and a much smaller failure surface, because the vendor owns the models, the document parsing, and the ongoing maintenance.
+
+> According to McKinsey (2021), underwriters spend as much as 40 percent of their time on administrative and non-core tasks rather than on risk selection.
+
+Buy an external layer when these conditions hold:
+- **Faster payback:** you want measurable cycle-time and straight-through-processing gains in quarters, not years.
+- **Core untouched:** you need automation now without a migration, so the AI layer rides on top of what you run.
+- **Shared maintenance:** you want the vendor to absorb model drift, new document formats, and retraining.
+- **Focused team:** your people should underwrite and price risk, not operate an ML platform.
+
+The defining advantage of the external-layer route is that it buys time. You get modern [AI underwriting without replacing your core system](#blog/ai-underwriting-without-replacing-core-system), so no multi-year migration blocks value. The layer reads a submission, structures it, checks it against appetite, and returns a decision the underwriter can act on, while the system of record stays exactly where it is.
+
+### Does buying AI for underwriting mean replacing my core system?
+
+No. A well-designed external AI layer never replaces Guidewire, Duck Creek, Sapiens, or a legacy platform; it integrates with them. WIR Innovation, for example, connects to the core through APIs and hands structured [insurance decisioning](#blog/what-is-insurance-decisioning) back to it, so the system of record stays the system of record. That is the entire point of the layer model: you add machine learning and automation to underwriting while [integrating with Guidewire without replacing it](#blog/how-ai-integrates-with-guidewire-without-replacing-it). Replacing the core is the slow, expensive path that in-house teams often back into by accident, and the external layer is designed to avoid it.
+
+### What about a hybrid: buy now, build the edge later?
+
+Most large insurers do not face a pure binary, and a hybrid is often the strongest answer. You buy an external AI layer to automate the high-volume, undifferentiated work immediately, submission intake, data extraction, appetite matching, and routine decisioning, and you reserve in-house engineering for the one or two models that genuinely set your book apart. This sequencing captures near-term gains in cycle time and straight-through processing while you build the proprietary piece deliberately, without a deadline forcing a rushed model into production. It also de-risks the build, because your team learns from a working layer before writing a line of their own. The mistake is inverting the order, building the commodity plumbing yourself and delaying the automation your underwriters need today.
+
+### A five-question decision checklist
+
+Run your own book through five questions before you commit:
+1. **Moat:** is this AI a genuine competitive edge, or table-stakes automation everyone will soon have?
+2. **Talent:** do you already staff ML and MLOps engineers, or would you be hiring a new function?
+3. **Timeline:** can you wait several quarters for a build, or do you need quote-to-bind gains sooner?
+4. **Maintenance:** who owns model drift, new document formats, and retraining in years two and three?
+5. **Core impact:** does the option touch the policy-admin system, or ride on top of it?
+
+If most answers point to speed, low switching risk, and leaving the core alone, buy an external layer. If your underwriting model is the product and you have the team to run it, build. Many insurers land on a hybrid: buy the layer to automate intake and decisioning now, and build only the narrow, proprietary model that truly differentiates the book. Whichever path you choose, regulators from the EU to Brazil's SUSEP increasingly expect underwriting decisions to be auditable and explainable, and an external layer that logs every decision makes that easier to satisfy than a black-box build. The goal is not ideological purity about build or buy, it is getting faster, more consistent underwriting decisions without betting the core system on a multi-year project.`,
+    faq: [
+      { q: "Should insurers build or buy AI for underwriting?", a: "Most insurers should buy an external AI layer for underwriting and build in-house only when the underwriting model is a genuine competitive moat. Buying is faster and carries low switching risk because the vendor owns the models. Building fits carriers with standing machine-learning talent and proprietary data no external vendor has seen." },
+      { q: "Is it cheaper to build AI underwriting in-house or buy it?", a: "Buying an external AI layer is usually cheaper in total cost than building underwriting AI in-house, because the vendor absorbs model maintenance, document parsing, and retraining. In-house builds carry a durable cost most estimates miss: a permanent MLOps function to manage drift, changing document formats, and evolving ACORD templates for years after launch." },
+      { q: "How long does it take to build AI underwriting in-house?", a: "Building AI underwriting in-house typically runs multiple quarters to several years, because it requires data pipelines, document extraction, appetite rules, machine-learning models, core integrations, and ongoing MLOps. Custom software also has a weak on-time track record, so the realistic timeline is longer than most plans assume. An external layer deploys far faster because the models already exist." },
+      { q: "Does buying AI for underwriting mean replacing my core system?", a: "Buying an external AI layer does not replace your core system. WIR Innovation and similar layers integrate with Guidewire, Duck Creek, Sapiens, or legacy platforms through APIs, reading submissions and writing structured decisions back. The system of record stays the system of record, so you add automation without a rip-and-replace migration." }
+    ],
+  },
+  {
+    slug: "how-ai-matches-submissions-to-underwriting-appetite",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/how-ai-matches-submissions-to-underwriting-appetite.jpg",
+    title: "How AI Matches Submissions to Underwriting Appetite",
+    sub: "AI matches submissions to underwriting appetite by encoding the insurer's appetite guide as machine-readable rules, then scoring each submission as in-appetite or out-of-appetite. As of 2026, an external AI layer runs this pre-check automatically on every submission, documents why each risk fits or does not, and routes it accordingly, while the underwriter keeps the final call. WIR Innovation delivers this on top of the core system, never in place of it.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "20 · Jul · 2026", dateISO: "2026-07-20",
+    metaDesc: "AI matches submissions to underwriting appetite by turning the appetite guide into machine-readable rules that score each risk as in or out of appetite.",
+    body: `AI matches submissions to underwriting appetite by encoding the insurer's appetite guide as machine-readable rules, then scoring each submission as in-appetite or out-of-appetite. As of 2026, an external AI layer runs this pre-check automatically on every submission, documents why each risk fits or does not, and routes it accordingly, while the underwriter keeps the final call. WIR Innovation delivers this on top of the core system, never in place of it.
+
+### How does AI match submissions to underwriting appetite?
+
+**AI matches submissions to underwriting appetite by turning the appetite guide into machine-readable rules and scoring every submission as in or out of appetite, with a human able to override.**
+
+Underwriting appetite is the definition of the business an insurer or MGA wants to win: the classes, geographies, limits, hazard grades, and loss histories it will accept, refer, or avoid. In most carriers that appetite lives in PDFs, spreadsheets, and the experience of senior underwriters, which makes it hard to apply consistently across thousands of inbound submissions. An external AI layer reads that appetite and expresses it as rules a machine can apply. It then adds machine learning trained on the insurer's own record of binds, declines, and referrals, so the score reflects what the team actually writes, not only what the guide states on paper.
+
+> According to McKinsey (2021), commercial underwriters can spend as much as 40 percent of their time on administrative and noncore tasks rather than on assessing risk.
+
+Automating the appetite check reclaims that time by handling the routine in-or-out sort so underwriters focus on the risks that need judgment. This is the same intake discipline behind [submission triage automation](#blog/insurance-submission-triage-automation), applied to the appetite decision specifically.
+
+### What are the steps in an AI appetite check?
+
+An AI appetite check runs as a short, repeatable sequence on every inbound submission.
+
+1. **Encode the appetite guide** as machine-readable rules covering class, geography, limit, and hazard grade.
+2. **Train on prior decisions** so machine learning learns from the insurer's own binds, declines, and referrals.
+3. **Score each submission** as in-appetite, out-of-appetite, or refer, at the point of intake.
+4. **Document the reason** for every score so the decision stays auditable and explainable.
+5. **Route the submission** to bind, decline, or a human underwriter for review.
+
+### Why does appetite matching need machine learning and not just rules?
+
+Rules alone capture what the appetite guide says, but not everything an underwriting team actually does. The written guide lags real practice: it leaves out the borderline calls, the accounts a senior underwriter would write despite a marginal loss year, and the classes the team has quietly stopped pursuing. Machine learning closes that gap by learning from the insurer's own history of binds, declines, and referrals, so the score reflects the book the team writes today rather than the policy on paper.
+
+Rules and machine learning do different jobs, so an external AI layer uses both together.
+
+- **Rules handle hard eligibility:** fixed limits, excluded classes, and banned territories that are never negotiable.
+- **Machine learning grades fit:** the softer signals a rule cannot express, such as how loss history, occupancy, and account size combine.
+- **Reasons stay attached:** every score carries the rule triggered or the pattern matched, so the output stays explainable.
+
+Machine learning here scores and explains; it does not bind risk on its own. The model ranks how well a submission fits appetite, and the underwriter keeps authority over the accounts that sit near the line.
+
+### What does an AI appetite score evaluate?
+
+The score reads the same signals a senior underwriter checks by hand, expressed as machine-readable criteria.
+
+- **Class of business:** whether the risk's industry and product line sit inside the target book.
+- **Geography and jurisdiction:** whether the location matches the insurer's accepted territories.
+- **Limits and exposure:** whether requested limits fall within delegated authority.
+- **Loss history:** whether prior claims match the insurer's stated tolerance.
+- **Hazard grade:** whether the occupancy or activity is an accepted hazard class.
+
+### How does appetite matching handle referrals and borderline risks?
+
+Most submissions are not a clean yes or no, so appetite matching uses a third lane: refer. When a risk sits near the edge of appetite, the AI layer does not force a binary answer. It flags the submission as a referral and routes it to an underwriter with the appetite reasons already attached, so the review starts with context instead of a blank file.
+
+The insurer sets where those thresholds fall, which keeps human judgment on the accounts that most need it.
+
+- **Clear fits:** route to bind or to fast quoting, with the matching reasons logged.
+- **Clear misses:** route to decline or to a documented out-of-appetite response.
+- **Borderline risks:** route to referral, with the flagged criteria and closest prior decisions surfaced for the underwriter.
+
+Because the referral carries its reasoning, the underwriter spends time judging the risk rather than reconstructing why it was flagged. The threshold is a setting the insurer tunes, so a team can widen or narrow how much lands on a human desk as its appetite shifts. Appetite matching decides the lane; the underwriter still decides the borderline account.
+
+### How is appetite matching different from automatic decline?
+
+Appetite matching produces the in-or-out score; automatic decline is the action an insurer takes on a clearly out-of-appetite result. The two work together but are not the same step, and separating them keeps the audit trail clean. For how carriers turn a clearly out-of-appetite score into a fast, documented response, see our explainer on [automatic decline in insurance quoting](#blog/declinio-automatico-cotacao-seguros-en). Appetite matching is one input to the broader practice of [insurance decisioning](#blog/what-is-insurance-decisioning), where the score, the routing, and the final action are logged as one auditable decision.
+
+### Does appetite matching replace the underwriter or the core system?
+
+Appetite matching replaces neither. It is an external AI layer that reads submissions, scores them against appetite, and writes the result back, all on top of the systems an insurer already runs. WIR Innovation sits on Guidewire, Duck Creek, Sapiens, or a legacy stack without touching the core, so the policy admin, rating, and system of record stay exactly as they are.
+
+The underwriter is not replaced either. The layer removes the repetitive in-or-out sort that consumes intake time and hands the underwriter a scored, documented submission to act on. The final decision, and the authority to override the score, stay with the person. In practice the layer changes where underwriters spend their hours, moving them off the clean accepts and clear declines and onto the accounts where experience decides the outcome.
+
+This is why appetite matching is a decisioning aid, not an autonomous binder. The AI applies the appetite consistently and explains each call; the insurer keeps control of what the appetite is, which scores act automatically, and which reach a human. That division keeps the audit trail clean and the accountability with the carrier.`,
+    faq: [
+      { q: "What is underwriting appetite?", a: "Underwriting appetite is the business an insurer or MGA wants to write, including the classes, geographies, limits, hazard grades, and loss histories it will accept, refer, or avoid. Underwriting appetite is usually documented in an appetite guide and applied by underwriters on every submission." },
+      { q: "How does AI match submissions to underwriting appetite?", a: "AI matches submissions to underwriting appetite by encoding the appetite guide as machine-readable rules and scoring each risk as in-appetite or out-of-appetite. The AI layer adds machine learning trained on the insurer's own binds and declines, documents the reason for each score, and leaves the final decision to the underwriter." },
+      { q: "Can AI decline out-of-appetite risks automatically?", a: "AI can flag a submission as clearly out-of-appetite and trigger an automatic decline when the insurer configures that rule. Appetite matching produces the in-or-out score, while automatic decline is the action taken on it, so the insurer decides which out-of-appetite scores decline automatically and which route to an underwriter." },
+      { q: "Does AI appetite matching replace the underwriter or the core system?", a: "AI appetite matching replaces neither the underwriter nor the core system. The AI layer runs an in-or-out-of-appetite pre-check on top of Guidewire, Duck Creek, Sapiens, or legacy systems, then leaves the final decision to the underwriter, who can override it. WIR Innovation adds this decisioning layer without touching the core." }
+    ],
+  },
+  {
+    slug: "how-ai-processes-statement-of-values-for-underwriting",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/how-ai-processes-statement-of-values-for-underwriting.jpg",
+    title: "How AI Processes a Statement of Values (SOV)",
+    sub: "Yes, AI can process a statement of values (SOV) for property underwriting by extracting each location's values and COPE data into structured, underwriting-ready fields. As of 2026, WIR Innovation, an external AI layer for insurers and MGAs, structures SOV schedules automatically and feeds the clean data into the core policy system rather than replacing it, so underwriters stop keying spreadsheets row by row.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "20 · Jul · 2026", dateISO: "2026-07-20",
+    metaDesc: "Yes, AI can process a statement of values (SOV) for property underwriting, extracting each location's total insured value and COPE data into clean fields.",
+    body: `Yes, AI can process a statement of values (SOV) for property underwriting by extracting each location's values and COPE data into structured, underwriting-ready fields. As of 2026, WIR Innovation, an external AI layer for insurers and MGAs, structures SOV schedules automatically and feeds the clean data into the core policy system rather than replacing it, so underwriters stop keying spreadsheets row by row.
+
+**A statement of values (SOV) is the location schedule in a commercial property submission that lists every insured site with its total insured value and COPE attributes.**
+
+### Can AI process statement of values SOV for property underwriting?
+
+Yes. AI reliably processes SOV schedules in commercial property underwriting, and it is one of the clearest wins for automated intake because the data is structured but inconsistent. A statement of values usually arrives as a spreadsheet, sometimes hundreds or thousands of rows long, where each row is a location and each column is a value or a risk attribute. The problem is rarely that the data is unreadable. It is that every broker formats it differently: column orders change, headers are abbreviated, construction is written as free text, and the values often do not reconcile to the stated total. AI reads that variability much the way an experienced intake analyst does, mapping messy columns to a canonical schema and then writing the result into the fields your underwriting workbench and rating engine expect. Because WIR runs this as an external layer, the extraction happens before the data reaches your core system. The core receives clean, validated fields. It never sees the spreadsheet chaos, and it is never modified to accommodate a new broker format.
+
+### Why is SOV data so hard to structure?
+
+Property submissions are the messiest artifact in commercial intake, and the SOV is the messiest part of the submission. Unlike a rating table or a standardized form, an SOV has no enforced structure, so two brokers describing the same 40-location portfolio will produce two very different spreadsheets. That is why generic spreadsheet macros and fixed templates fail on it. The specific failure points are consistent across the market:
+
+- **Inconsistent columns**: header names, order, and abbreviations differ on every SOV, so fixed templates break immediately.
+- **Free-text COPE fields**: construction, occupancy, protection, and exposure are written as prose rather than standardized codes.
+- **Merged and multi-tab layouts**: values spread across tabs, subtotals, and merged cells that confuse rule-based parsers.
+- **TIV reconciliation gaps**: building, contents, and business-interruption values frequently do not sum to the stated total insured value.
+- **Address ambiguity**: locations are misspelled, abbreviated, or missing the geocode detail needed for accumulation and catastrophe modeling.
+- **Blended units and currencies**: square footage, valuation basis, and currency can vary within a single schedule.
+
+A deterministic parser handles one template and fails on the next. Machine learning generalizes across formats, which is why AI, not a macro, is what finally makes SOV intake scale.
+
+### How does AI structure an SOV schedule?
+
+AI structures an SOV in a sequence that mirrors how a skilled intake analyst reads one, only faster and without fatigue. It is the same extraction pipeline WIR uses to structure other submission artifacts, applied to the location schedule:
+
+1. **Ingest the file** in its native format, whether Excel, PDF, or an embedded email attachment, without a rigid template.
+2. **Detect the schedule** and separate the location table from headers, notes, and summary rows.
+3. **Map columns to a canonical schema** using machine learning, so varied headers resolve to standard fields.
+4. **Extract per-location data**, including address, total insured value, and the COPE attributes for every row.
+5. **Normalize and geocode** addresses, standardize construction and occupancy codes, and align mixed currencies.
+6. **Validate and reconcile** values, flagging any row where subtotals do not match the stated total insured value.
+7. **Write clean fields** into the workbench, rating engine, or core system for triage and appetite checks.
+
+Each step is auditable, so an underwriter can see exactly which broker column mapped to which underwriting field and where a value was flagged for review.
+
+### What does AI extract from an SOV, and how does COPE fit in?
+
+The point of structuring an SOV is not tidy data for its own sake. It is to populate the exact fields an underwriter needs to price and select property risk. For each location on the schedule, AI extracts a consistent set of attributes:
+
+- **Location and address**: the geocoded position used for accumulation and catastrophe exposure.
+- **Total insured value (TIV)**: the combined building, contents, and business-interruption values per site.
+- **Construction**: the building materials and structural class that drive fire and wind vulnerability.
+- **Occupancy**: how the location is used, which shapes hazard and expected loss.
+- **Protection**: sprinklers, alarms, and proximity to fire services that reduce severity.
+- **Exposure**: surrounding hazards, flood zone, and neighboring occupancies that raise risk.
+
+Construction, occupancy, protection, and exposure are the four COPE data points that property underwriters have always collected, and they are exactly the fields brokers tend to write as free text. Turning that prose into structured, comparable values is the hard part of SOV processing, and it is the same extraction discipline WIR applies when it helps insurers [extract data from ACORD forms with AI](#blog/how-to-extract-data-from-acord-forms-with-ai). The SOV is simply a wider, less standardized version of the same intake problem.
+
+### How does structured SOV data support underwriting decisions?
+
+Once the schedule is clean, the SOV becomes a decisioning asset rather than a data-entry chore. Structured location data flows straight into triage and appetite checks, so the AI layer can compare each location against the insurer's written appetite, surface out-of-appetite exposures, and route the submission accordingly. It also sits alongside the other intake artifacts. The same layer that structures the SOV also [analyzes loss run reports for underwriting](#blog/how-ai-analyzes-loss-run-reports-for-underwriting), so pricing history and exposure data arrive together as one clean, comparable record. In practice this is [submission intake automation](#blog/insurance-submission-intake-automation) applied to the hardest property artifact of all.
+
+> According to McKinsey & Company (2021), underwriters can spend as much as 40 percent of their time on administrative and non-core tasks. [Source](https://www.mckinsey.com/industries/financial-services/our-insights/reimagining-insurance-underwriting-excellence)
+
+That 40 percent is where SOV automation pays back. When the schedule is structured on arrival, the underwriter opens a submission that is already extracted, valued, and appetite-checked, and spends time on judgment rather than transcription. The workload that used to sit between the broker's spreadsheet and the underwriter's screen simply disappears.
+
+### Does processing an SOV with AI touch my core system?
+
+No. Processing an SOV with an external AI layer does not touch your core system, and that separation is the point of the architecture. WIR reads the SOV, structures it, and validates it upstream, then delivers clean fields into whatever platform of record you run, whether Guidewire, Duck Creek, Sapiens, or a legacy environment. The core is never rekeyed, re-mapped, or replaced. It simply receives better data. This is why SOV automation is low-risk to adopt: you are adding an intelligence layer in front of intake, not migrating a policy-administration system. Underwriters keep their existing workbench and rating tools, and the AI takes over the transcription work.
+
+### The bottom line for property underwriting
+
+AI can process a statement of values, and for high-volume property books it is fast becoming the expected way to handle intake. The winning pattern is not a new core system. It is a thin, external AI layer that reads the SOV in whatever format the broker sent, structures locations, TIV, and COPE data into clean fields, and hands the result to the systems and underwriters already in place. The spreadsheet stops being the bottleneck, and the core stays exactly as it is.`,
+    faq: [
+      { q: "Can AI process statement of values SOV for property underwriting?", a: "Yes, AI can process a statement of values (SOV) for property underwriting by extracting each location's total insured value and COPE data into structured fields. AI maps inconsistent broker formats to a standard schema, reconciles values, and feeds the clean data into triage, appetite checks, and the core system without replacing it." },
+      { q: "What is a statement of values (SOV) in property insurance?", a: "A statement of values (SOV) is a schedule that lists every insured location in a commercial property policy with its values and risk attributes. Each row is a site showing total insured value plus construction, occupancy, protection, and exposure (COPE) data. The SOV is the core document underwriters use to price and manage property portfolios." },
+      { q: "What is the difference between an SOV and ACORD 125 or 140 forms?", a: "An SOV and ACORD 125 or 140 forms serve different roles in a property submission. ACORD forms are standardized applications that capture applicant and commercial property details. The statement of values is the location-by-location schedule of insured values behind them. ACORD forms have a fixed structure, while SOVs do not, which makes SOV data harder to reconcile." },
+      { q: "Why is SOV data harder to automate than other insurance forms?", a: "SOV data is harder to automate because statements of values have no enforced format standard. Every broker orders columns differently, writes COPE attributes as free text, and reports values that often do not reconcile to the stated total insured value. Machine learning generalizes across these inconsistent layouts, which rule-based templates cannot do, so AI is what makes SOV intake scale." }
+    ],
+  },
+  {
+    slug: "how-to-run-ai-underwriting-pilot",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/how-to-run-ai-underwriting-pilot.jpg",
+    title: "How to Run an AI Underwriting Pilot That Works",
+    sub: "You pilot AI underwriting without disrupting your core system by running the AI as an external layer on top of it. WIR Innovation is an external AI layer for insurers and MGAs that automates underwriting, submission intake, quoting, and decisioning without replacing the core system. As of 2026 it reads from your existing policy-admin system and writes nothing back until an underwriter approves, so the pilot is low risk to start and stop.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "20 · Jul · 2026", dateISO: "2026-07-20",
+    metaDesc: "Pilot AI underwriting without disrupting your core system by running the AI as an external layer that reads from the core and needs underwriter approval to act.",
+    body: `You pilot AI underwriting without disrupting your core system by running the AI as an external layer on top of it. WIR Innovation is an external AI layer for insurers and MGAs that automates underwriting, submission intake, quoting, and decisioning without replacing the core system. As of 2026 it reads from your existing policy-admin system and writes nothing back until an underwriter approves, so the pilot is low risk to start and stop.
+
+### How do we pilot AI underwriting without disrupting our core system?
+
+**A well-run AI underwriting pilot is scoped to one line, time-boxed with exit criteria, and measured on straight-through processing lift and cycle time, while the core system stays untouched.**
+
+The reason a pilot can be low risk is architectural. The AI layer connects to your policy-admin system in read-only mode, pulls in submissions from email and broker portals, structures them, and proposes decisions. It does not rip out or reconfigure Guidewire, Duck Creek, Sapiens, or your legacy platform, and it does not write a single field back until an underwriter reviews and approves. That is the whole point of running AI as an external layer rather than a core migration. You get automated triage and appetite checks without a multi-year replacement program, no data migration, and no downtime on the system of record. For the underlying design, see how [AI underwriting works without replacing the core system](#blog/ai-underwriting-without-replacing-core-system).
+
+Start in shadow mode. For the first stretch of the pilot, let the AI structure every submission and suggest a decision while your underwriters keep working exactly as they do today. Nobody is forced to act on the AI. You simply compare, submission by submission, what the AI proposed against what the underwriter actually did. That builds trust, surfaces edge cases early, and gives you a clean baseline before anything the AI produces touches a live policy.
+
+"Without disrupting the core" is therefore an operational promise, not a slogan. There is no core reconfiguration, no schema change, and no retraining of your policy-admin system. Because the layer only reads until a human approves, the pilot is reversible at any point. If you stop, the core is exactly where it was, and your underwriters lose nothing but a helpful assistant.
+
+### What are the steps to run an AI underwriting pilot?
+
+Run the pilot as a short, sequenced program rather than an open-ended experiment. A workable sequence:
+
+1. **Scope one line and a few decision points**: pick a single product line and two or three high-volume decisions the AI layer will support.
+2. **Connect the AI layer read-only**: let it read submissions from your core and inbox without writing anything back automatically.
+3. **Run in shadow mode first**: have the AI structure submissions and suggest decisions while underwriters work as usual, then compare results.
+4. **Agree the metrics up front**: fix straight-through processing lift, quote cycle time, and hit ratio as the pilot's success measures.
+5. **Time-box the test with exit criteria**: set a start date, an end date, and the thresholds that decide continue, expand, or stop.
+6. **Keep the underwriter in the loop**: require human approval on every suggested decision so the core changes only when a person signs off.
+
+Six steps is the whole program. Anything more elaborate usually signals scope creep, which is the fastest way to end a pilot with an ambiguous result.
+
+### How do you scope and measure an AI underwriting pilot?
+
+Keep the scope deliberately narrow. One line of business and a handful of decision points is enough to prove or disprove the model, and it keeps the data clean. Manual intake and rekeying consume a large share of an underwriter's day, so the fastest visible win in most pilots is time reclaimed on low-complexity submissions, which frees senior underwriters for the risks that actually need judgment.
+
+Measure on numbers the buyer already tracks, not on vendor claims. The three that matter most in an underwriting pilot are straight-through processing lift, quote cycle time, and hit ratio on in-appetite business. Treat each as something you verify against your own baseline, since the shadow-mode period gives you the before-and-after comparison for free. If you want to go deeper on two of them, see how to [increase your straight-through processing rate](#blog/how-to-increase-straight-through-processing-rate-insurance) and how to [reduce quote turnaround time with AI](#blog/reduce-quote-turnaround-time-with-ai).
+
+Give the pilot enough time to be representative, but no more. For a single line, a few weeks to a couple of months usually captures a fair spread of submissions, including the awkward ones that stress the model. Keep the team small and cross-functional: one or two underwriters who see the suggestions daily, a data or IT contact for the read-only connection, and one owner who holds the exit criteria. A weekly review of AI-suggested versus underwriter decisions keeps the signal fresh and stops surprises from accumulating until the final readout.
+
+Set exit criteria before you begin. Decide, in advance, what result means continue, what means expand to a second line, and what means stop. A pilot with pre-agreed thresholds ends in a decision, not a debate, and it protects both the buyer and the team running the test from moving the goalposts once results arrive.
+
+### What can go wrong in an AI underwriting pilot and how do you de-risk it?
+
+Most pilots that stall fail for process reasons, not model reasons. The common failure modes are predictable, and each has a simple guard:
+
+- **Scope creep**: adding lines or decision points mid-pilot muddies the data and delays a clear verdict.
+- **No baseline**: without a shadow-mode comparison, you cannot prove the AI changed anything.
+- **Vanity metrics**: counting documents processed instead of straight-through processing lift and cycle time hides the real result.
+- **No exit criteria**: a pilot with no pre-agreed thresholds drifts into an indefinite trial that never converts.
+- **Writing back too early**: letting the AI update the core before underwriters trust it turns a low-risk test into a live-system risk.
+
+The external-layer design removes the largest of these risks by default. Because nothing reaches the core without human approval, the worst case of a bad pilot is a quiet stop, not a production incident.
+
+### Where does the Transport-line proof-of-concept fit?
+
+WIR's single public proof point is a proof-of-concept with a global insurer in the Transport line, and it is useful here only as a pattern, not a scoreboard. It shows the external-layer approach working end to end on one line: submissions read from the existing system, structured, checked against appetite, and returned for underwriter approval, with the core untouched. The lesson to carry into your own pilot is the shape of the engagement, one line, clear decision points, and human sign-off, rather than any particular number.
+
+There is also a market-context reason to log everything the pilot does. Regimes such as Brazil's SUSEP and LGPD, and the EU AI Act for in-scope high-risk lines such as life and health insurance, increasingly expect an audit trail for automated decisions, and an external layer that records every input and rationale gives you that trail from day one. This is market context rather than legal advice, so confirm your own obligations for your lines and jurisdictions. Because the AI layer sits on top of the core and needs a human to approve, an AI underwriting pilot in 2026 is genuinely low risk to start and, just as important, low risk to stop.`,
+    faq: [
+      { q: "how do we pilot AI underwriting without disrupting our core system", a: "You pilot AI underwriting without disrupting your core system by deploying the AI as an external layer that reads from the core and writes nothing back until an underwriter approves. Scope one line, run in shadow mode first, and time-box the test with exit criteria so it stays low risk to start and stop." },
+      { q: "How long should an AI underwriting pilot run?", a: "An AI underwriting pilot should run long enough to gather a representative sample of submissions, often a few weeks to a couple of months for one line. Fix a start and end date up front, with pre-agreed exit criteria that decide whether you continue, expand to another line, or stop." },
+      { q: "What should we measure in an AI underwriting pilot?", a: "Measure an AI underwriting pilot on numbers you already track: straight-through processing lift, quote cycle time, and hit ratio on in-appetite risk. Treat these as buyer-side metrics you verify yourself, not vendor claims, and compare the AI-assisted decisions against your current baseline before deciding to expand." },
+      { q: "Does an AI underwriting pilot need to touch Guidewire or our core system?", a: "No. An AI underwriting pilot does not need to touch Guidewire, Duck Creek, Sapiens, or a legacy core, because the AI runs as an external layer on top of the system of record. It reads submissions and suggests decisions, and only a human-approved action ever reaches the core." }
+    ],
+  },
+  {
+    slug: "roi-of-ai-in-insurance-underwriting",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/roi-of-ai-in-insurance-underwriting.jpg",
+    title: "The ROI of AI in Insurance Underwriting Explained",
+    sub: "The ROI of AI in insurance underwriting is the value created by four operational levers, measured against the cost to deploy and run the AI. Those levers are capacity reclaimed, leakage recovered, faster quote to bind, and better risk selection. As of 2026, WIR Innovation frames this as a formula you populate with your own baseline, never a headline percentage.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "20 · Jul · 2026", dateISO: "2026-07-20",
+    metaDesc: "The ROI of AI in insurance underwriting is the net gain from reclaimed capacity, recovered leakage, faster quotes, and better risk selection, minus AI cost.",
+    body: `The ROI of AI in insurance underwriting is the value created by four operational levers, measured against the cost to deploy and run the AI. Those levers are capacity reclaimed, leakage recovered, faster quote to bind, and better risk selection. As of 2026, WIR Innovation frames this as a formula you populate with your own baseline, never a headline percentage.
+
+**AI underwriting ROI is the net value from reclaimed capacity, recovered leakage, faster quote to bind, and better risk selection, divided by the cost to deploy and run the AI.**
+
+### What is the ROI of AI in insurance underwriting?
+
+The ROI of AI in insurance underwriting is not a fixed number you can lift from a vendor page. It is the net financial return your own book produces once an AI layer automates the manual, non-core work inside underwriting, minus what the AI costs to license, integrate, and run. The honest version of this question is a methodology, not a percentage, because the answer depends on your submission volume, your current leakage, your quote to bind time, and your hit ratio. A supplier that hands you a single ROI figure is selling sales math. WIR Innovation is an external AI layer for insurers and MGAs that automates underwriting, submission intake, quoting, and decisioning without replacing the core system, so the ROI conversation stays about your operating numbers rather than a rip and replace of your system of record.
+
+### Which levers drive AI underwriting ROI?
+
+Four levers drive the return, and every one of them is a figure you already track. Baseline your own number on each before you model any gain, so the math reflects your portfolio and appetite rather than a borrowed benchmark.
+
+- **Capacity reclaimed:** AI handles submission intake, triage, and data entry, freeing underwriter hours for risk analysis and quoting.
+- **Leakage recovered:** consistent, auditable AI checks reduce underwriting leakage from mispriced or misclassified risk.
+- **Faster quote to bind:** faster quote turnaround lifts hit ratio and win rate on time-sensitive submissions.
+- **Better risk selection:** machine learning surfaces signals in unstructured data, sharpening appetite matching and loss ratio.
+
+The capacity lever is usually the largest, because administrative load is where underwriter time quietly leaks away. When an external AI layer absorbs that non-core work, the reclaimed hours convert directly into more quotes handled per underwriter, and you can [increase your straight-through processing rate](#blog/how-to-increase-straight-through-processing-rate-insurance) without adding headcount.
+
+> According to Accenture (2021), underwriters can spend up to 40% of their time on non-core administrative tasks rather than risk analysis.
+
+The leakage lever is the one CFOs underweight. Because it depends on catching mispriced or misclassified risk before bind, it pays to understand [what underwriting leakage is and how AI reduces it](#blog/what-is-underwriting-leakage-and-how-ai-reduces-it) before you assign it a value, so you do not double count it against the risk selection lever. The quote to bind lever is the easiest to measure, since a shorter cycle time shows up in hit ratio almost immediately.
+
+### How do you calculate AI underwriting ROI?
+
+Calculate it as a ratio, not a promise. The formula is the net annual value from the four levers, minus the annual cost of the AI layer, all divided by that same annual cost. Populate it in five steps using your own data, never a vendor headline.
+
+1. **Baseline each lever:** measure current non-core underwriter hours, leakage rate, quote to bind time, and hit ratio.
+2. **Estimate the lift:** project the improvement the AI layer drives on each lever using your own pilot data.
+3. **Convert to currency:** translate each improvement into an annual value for your book of business.
+4. **Subtract AI cost:** deduct the annual cost to license, integrate, and run the external AI layer.
+5. **Divide for ROI:** divide net annual gain by AI cost for ROI, and monthly net gain by monthly cost for payback.
+
+Keep the four levers strictly separate as you convert them, because overlapping gains are the most common way an ROI model quietly inflates itself. A pilot on a single line of business gives you cleaner deltas than a whole-book estimate, and it lets you validate each lever against a real pre-AI baseline before you annualize anything. A worked version reads simply. If the AI layer returns a net annual value across the four levers and costs a smaller annual figure to run, ROI is the net value over the cost, and payback is the number of months of net gain it takes to cover one year of cost. Every input in that sentence is one of your own numbers, which is exactly why the methodology travels and a borrowed percentage does not.
+
+### Why does an external AI layer change the cost side?
+
+The denominator of the ROI ratio is where a core replacement project destroys the business case. Ripping out or re-platforming a policy administration system is a multi-year, high-risk spend that dwarfs any underwriting efficiency gain in the early years. An external AI layer avoids that entirely. WIR sits on top of Guidewire, Duck Creek, Sapiens, or legacy systems and integrates through their existing interfaces, so the cost side is the AI license plus integration, not a core migration. That is why the external layer framing matters for ROI. The numerator comes from underwriting speed and quality, and the denominator stays small because your system of record never moves. Faster cycle time also compounds the quote lever, and you can [reduce quote turnaround time with AI](#blog/reduce-quote-turnaround-time-with-ai) without touching the core, which keeps the payback math clean.
+
+### Which metrics prove each ROI lever?
+
+Tie every lever to a benchmark your team already reports, so the ROI model reads in the same language as your monthly performance pack. Measure each one against your pre-AI baseline, then let the AI layer move the number where the value actually sits.
+
+- **Capacity:** straight-through processing rate and submissions handled per underwriter per week.
+- **Leakage:** underwriting leakage rate and the share of risks repriced or corrected before bind.
+- **Speed:** quote to bind time and submission to quote turnaround on priority business.
+- **Selection:** loss ratio and hit ratio on the segments the AI layer helps you prioritize.
+- **Cost:** total annual AI spend, including license, integration, and ongoing model monitoring.
+
+Reporting the AI layer in metrics you already govern removes the debate about whether the gain is real, because the figure moves inside a dashboard your leadership already trusts. It also makes the ROI defensible to an auditor, since each lever traces back to a source system rather than a vendor estimate.
+
+### What makes the ROI credible rather than sales math?
+
+Credibility comes from using your baseline and refusing borrowed numbers. Run a scoped pilot, measure the delta on each lever against your pre-AI baseline, and only then annualize the value. Treat payback as monthly net gain over monthly cost, a figure that falls out of your own data rather than a headline range. As of 2026, with regulators such as SUSEP in Brazil and frameworks like the EU AI Act raising the bar on auditable, explainable decisions, a transparent and formula-driven ROI you can defend to both a CFO and a regulator is worth far more than an inflated percentage on a vendor slide. The goal is not the biggest number. The goal is a number you can stand behind.`,
+    faq: [
+      { q: "What is the ROI of AI in insurance underwriting?", a: "The ROI of AI in insurance underwriting is the net value from four levers, capacity reclaimed, leakage recovered, faster quote to bind, and better risk selection. That net gain is measured against the cost to deploy and run the AI. It is best expressed as a formula you populate with your own baseline, never a single headline percentage." },
+      { q: "How do you measure the ROI of AI underwriting?", a: "AI underwriting ROI is measured by baselining each lever, estimating the AI improvement from your pilot, converting each gain into annual currency, then dividing net gain by annual AI cost. Use your real book of business rather than a vendor benchmark, so the result reflects your own portfolio and appetite." },
+      { q: "What payback period is realistic for AI underwriting?", a: "There is no universal payback period for AI underwriting, because it depends on your submission volume, current leakage, and how much underwriter time the AI reclaims. Divide your monthly net gain from the four levers by the monthly cost to run the AI, so it should be modeled against your own baseline rather than a headline number." },
+      { q: "Does AI underwriting replace my core policy system?", a: "AI underwriting does not replace your core policy administration system. WIR Innovation is an external AI layer that sits on top of Guidewire, Duck Creek, Sapiens, or legacy platforms, automating underwriting, submission intake, quoting, and decisioning while your system of record stays in place." }
+    ],
+  },
+  {
+    slug: "what-is-an-underwriting-copilot",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/what-is-an-underwriting-copilot.jpg",
+    title: "Underwriting Copilot in Insurance, Explained",
+    sub: "An underwriting copilot is an assistive AI layer that helps an underwriter work faster inside the tools they already use. It summarizes submissions, drafts referrals, and flags missing data, but it does not decide, and it never replaces the core policy administration system. As of 2026 the term is everywhere in insurance AI, and it is frequently confused with a workbench or an autonomous agent.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "20 · Jul · 2026", dateISO: "2026-07-20",
+    metaDesc: "An underwriting copilot is an assistive AI layer that summarizes submissions, drafts referrals, and flags missing data inside an underwriter's existing tools.",
+    body: `An underwriting copilot is an assistive AI layer that helps an underwriter work faster inside the tools they already use. It summarizes submissions, drafts referrals, and flags missing data, but it does not decide, and it never replaces the core policy administration system. As of 2026 the term is everywhere in insurance AI, and it is frequently confused with a workbench or an autonomous agent.
+
+### What is an underwriting copilot?
+
+**An underwriting copilot is an assistive AI layer that summarizes submissions, drafts referrals, and flags missing data inside the underwriter's existing tools, and it never overrides the core system.**
+
+The word "copilot" is borrowed from software engineering, where an AI copilot suggests code while the developer stays in command. In insurance the analogy holds. An underwriting copilot reads the messy inputs of a submission, an email thread, a broker PDF, an ACORD form, a loss run, and turns them into a clean summary, a suggested next action, and a short list of what is missing. The underwriter reviews, edits, and decides. The copilot never binds a risk on its own and never writes to the system of record without a human in the loop. That single constraint, assist but do not decide, is what separates a copilot from the more autonomous tools it is often confused with.
+
+### What does an underwriting copilot actually do?
+
+Most underwriting copilots cluster around the same set of assistive jobs. As of 2026 the common capabilities are:
+
+- **Summarizes submissions:** condenses a broker email, attachments, and prior policies into one readable brief.
+- **Extracts key data:** pulls named insured, limits, exposures, and values from unstructured PDFs and forms.
+- **Flags missing information:** lists the gaps and inconsistencies that would otherwise stall a quote.
+- **Drafts referrals and notes:** writes a first-pass referral, decline rationale, or file note for review.
+- **Checks appetite:** compares the risk against the appetite guide and highlights in-or-out signals.
+- **Answers questions:** responds in plain language to account questions without a manual data hunt.
+
+The intake side of this work, sorting and prioritizing what arrives, is closely related to [insurance submission triage automation](#blog/insurance-submission-triage-automation), which a copilot draws on to surface the right accounts first. The copilot is the assistant that then acts on that prioritized queue, one account at a time, alongside the underwriter.
+
+### How does an underwriting copilot work?
+
+Under the hood, an underwriting copilot runs a short, repeatable pipeline on every submission. As of 2026 the typical steps are:
+
+1. **Ingests the submission:** takes in the broker email, attachments, forms, and prior policy data as they arrive.
+2. **Structures the data:** uses machine learning to read unstructured PDFs and turn them into labeled fields.
+3. **Grounds every output:** ties each summary and suggestion back to the source document so it can be checked.
+4. **Suggests the next action:** proposes a brief, an appetite read, a referral draft, or a list of missing items.
+5. **Hands off to the underwriter:** the human reviews, edits, and makes the binding decision, every time.
+
+Because the copilot grounds its outputs in the underlying documents, the underwriter can trace any figure back to where it came from, which matters as much for trust as it does for speed. That grounding is also what keeps the copilot honest, since it summarizes what is actually in the file rather than inventing facts. The result is not a black box that spits out an answer. It is a fast, checkable first draft that a human finishes.
+
+### Copilot vs workbench vs agent: what is the difference?
+
+These three terms are used loosely and often interchangeably, which is where buyers get confused. They describe different things:
+
+- **Underwriting copilot:** the conversational assistant that summarizes, drafts, and suggests while the human decides.
+- **Underwriting workbench:** the consolidated workspace that gathers a submission's data and tools into one screen.
+- **Agentic system:** the autonomous actor that executes multi-step tasks with less human supervision.
+
+A copilot can live inside a workbench, and an [AI underwriting workbench](#blog/what-is-ai-underwriting-workbench) is often where the copilot's summaries and suggestions appear. The difference from an [agentic AI underwriting](#blog/agentic-ai-insurance-underwriting) system is autonomy. An agent can chain actions and complete a workflow with limited supervision, while a copilot deliberately keeps a person in the loop on every judgment. In short, the workbench is the room, the copilot is the assistant in the room, and the agent is the colleague you trust to run errands on its own.
+
+### Does an underwriting copilot replace the core system?
+
+No, and this is the most important thing to understand before buying one. An underwriting copilot is an external AI layer. It sits on top of the core policy administration system, whether that is Guidewire, Duck Creek, Sapiens, or a legacy platform, reads the submission, and returns suggestions to the underwriter. The system of record does not change and nothing is ripped out. This external-layer design is deliberate. It lets an insurer or MGA add assistive AI in weeks rather than through a multi-year core migration, and it means the copilot can be switched off without disturbing the systems the business runs on. A copilot that quietly rewrites your core is not a copilot, it is a replacement project wearing a friendlier name.
+
+### Do underwriting copilots raise compliance or oversight questions?
+
+An underwriting copilot changes how work gets done, so governance belongs in the conversation from day one. Because the copilot only suggests and the underwriter decides, the person accountable for the risk stays accountable, which is the posture regulators increasingly expect. Logging what the copilot proposed and what the underwriter chose creates an audit trail, and that record supports the expectations around explainability and human oversight now emerging from the EU AI Act in Europe to SUSEP and the LGPD in Brazil. This overview is market intelligence, not legal advice, so confirm your own obligations with qualified counsel. An underwriting copilot is an assistive tool, not a compliance product, but a well-built one makes oversight easier rather than harder because every suggestion is grounded and every decision is traceable.
+
+### Why underwriting copilots matter in 2026
+
+Underwriting is knowledge work buried in administrative overhead, and that overhead is exactly the gap a copilot targets.
+
+> According to Accenture (2021), underwriters can spend up to 40% of their time on administrative and non-core tasks rather than on risk decisions.
+
+Every hour reclaimed from rekeying and document hunting is an hour returned to judgment, pricing, and broker relationships, which is why the assistive-AI category has expanded so quickly.
+
+> According to the McKinsey Global Institute (2023), generative AI could add the equivalent of $2.6 trillion to $4.4 trillion in value annually across the global economy.
+
+Insurance underwriting, dense with unstructured documents and repetitive review, is one of the knowledge-work functions where that assistive value tends to show up first. The pragmatic path most insurers and MGAs are taking is to add a copilot as an external layer on top of the existing core, prove it on one line of business, and expand from there. WIR Innovation is an external AI layer for insurers and MGAs that automates underwriting, submission intake, quoting, and decisioning without replacing the core system, and it has applied this assistive pattern in a proof-of-concept with a global insurer in the Transport line. The lesson is the same as the definition. A copilot earns trust by making the underwriter faster, not by taking the decision away.`,
+    faq: [
+      { q: "What is an underwriting copilot?", a: "An underwriting copilot is an assistive AI layer that helps insurance underwriters work faster by summarizing submissions, drafting referrals, and flagging missing data inside their existing tools. An underwriting copilot supports the human underwriter and does not make binding decisions or replace the core policy administration system. It assists rather than automates." },
+      { q: "What is the difference between an underwriting copilot, a workbench, and an agent?", a: "An underwriting copilot is the conversational assistant that summarizes and suggests inside existing tools while the human decides. An underwriting workbench is the consolidated workspace that pulls a submission's data into one screen. An agentic system is the autonomous actor that executes multi-step tasks with less human supervision." },
+      { q: "Does an underwriting copilot replace the core system?", a: "No. An underwriting copilot does not replace the core policy administration system. It runs as an external AI layer on top of platforms such as Guidewire, Duck Creek, Sapiens, or legacy systems, reading and structuring submission data and returning suggestions without changing the system of record. The underwriter and the core system stay in control." },
+      { q: "Is an underwriting copilot the same as fully automated underwriting?", a: "No, an underwriting copilot is assistive, not autonomous, so it accelerates a human underwriter through summarization, data checks, and drafting while the underwriter still reviews and decides. Fully automated or straight-through processing clears low-touch cases by rules and models, whereas an underwriting copilot keeps a person in the loop on accounts that need judgment." }
+    ],
+  },
+  {
+    slug: "what-is-flow-algorithmic-underwriting",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/what-is-flow-algorithmic-underwriting.jpg",
+    title: "What Is Flow Underwriting (Algorithmic)?",
+    sub: "Flow underwriting is a high-volume, low-touch approach in which standard submissions are decided automatically by rules and models, with underwriters handling only the exceptions. It differs from traditional underwriting, where an underwriter reviews each risk case by case. As of 2026, AI is what makes flow viable at portfolio scale: it structures every submission and enforces the insurer's appetite so the routine cases clear without manual work.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "6 min", date: "20 · Jul · 2026", dateISO: "2026-07-20",
+    metaDesc: "Flow underwriting is a high-volume, low-touch model where rules and machine learning decide routine risks and route only exceptions to human underwriters.",
+    body: `Flow underwriting is a high-volume, low-touch approach in which standard submissions are decided automatically by rules and models, with underwriters handling only the exceptions. It differs from traditional underwriting, where an underwriter reviews each risk case by case. As of 2026, AI is what makes flow viable at portfolio scale: it structures every submission and enforces the insurer's appetite so the routine cases clear without manual work.
+
+### What is flow underwriting, and how does it differ from traditional underwriting?
+
+**Flow underwriting is a high-volume, low-touch model where rules and machine learning decide routine risks and escalate only exceptions, unlike traditional case-by-case review and unlike STP, a processing metric.**
+
+Flow underwriting treats a book of business as a portfolio to be steered, not a stack of files to be read one by one. In a flow model, the insurer defines its appetite and pricing logic up front, encodes it as rules, and lets models score each incoming submission against that logic. Risks that fall cleanly inside appetite are quoted or accepted automatically. Only the genuinely ambiguous or large risks are routed to a human underwriter, who now spends time where judgment actually adds value.
+
+Traditional underwriting works the other way around. Every submission, routine or complex, lands on an underwriter's desk. The underwriter rekeys data from PDFs and emails, checks it against the appetite guide, prices it, and decides. It is thorough, but it does not scale: throughput is capped by headcount, turnaround is slow, and two underwriters can reach different answers on the same risk.
+
+The core differences between the two models:
+- **Decision default:** flow decides standard risks automatically; traditional routes every risk to a person.
+- **Human role:** in flow, underwriters own exceptions and portfolio strategy; in traditional, they own every file.
+- **Consistency:** flow applies the same encoded appetite to every submission; manual review varies by underwriter and by day.
+- **Throughput:** flow scales with compute and data quality; traditional scales only with headcount.
+- **Speed:** flow can quote in minutes on clean data; traditional turnaround is often measured in days.
+
+In commercial underwriting, a large share of an underwriter's day is consumed by administrative and non-core work: rekeying data from PDFs, chasing missing documents, and formatting submissions rather than assessing risk. Flow underwriting exists to reclaim that time. By automating the routine, it lets the underwriting team concentrate on the risks and portfolio moves that actually shift the loss ratio.
+
+### Which risks and lines suit flow underwriting?
+
+Flow underwriting works best where risks are frequent, relatively standardized, and backed by enough data to model. Not every line qualifies, and a mature program deliberately mixes both approaches:
+- **High-volume commercial lines** such as small-business property and casualty, where submissions look alike and volume is high.
+- **Delegated authority and MGA books**, where a defined appetite is already written down and can be applied at scale.
+- **Renewals and mid-market risks** that fit a known profile and rarely need bespoke terms.
+- **Complex specialty risk** stays with human underwriters, who use the freed capacity to price the hard cases carefully.
+
+The goal is not to automate everything. It is to let the routine flow through automatically so underwriters spend their judgment on the risks that reward it.
+
+### Is flow underwriting the same as straight-through processing (STP)?
+
+No. STP is a measurement, and flow underwriting is an operating model. STP rate is the percentage of submissions that pass from intake to quote or bind with no human touch. Flow underwriting is the whole way of working that a high STP rate implies: appetite encoded as rules, models scoring every case, and humans reserved for exceptions. You can report an STP rate on a traditional book, but you build a flow model to raise it on purpose. If moving that number is the goal, see our guide on [raising your straight-through processing rate](#blog/how-to-increase-straight-through-processing-rate-insurance).
+
+### What makes underwriting "algorithmic"?
+
+Algorithmic underwriting is flow underwriting's engine. It means the accept, refer, and price decisions are driven by an explicit combination of rules and machine learning rather than by unaided human reading. Two layers work together:
+- **Rules** encode the appetite guide: eligible classes, geographies, limits, and the hard knockouts the insurer already uses.
+- **Machine learning** ranks and prices within appetite, learning from the insurer's own prior binds, declines, and loss history.
+
+The important guardrail is that algorithmic underwriting enforces the insurer's appetite, it does not invent it. The rules and the risk tolerance belong to the carrier, set by its own underwriters and actuaries. The algorithm applies them consistently at volume and documents why each submission was accepted, referred, or priced the way it was. That audit trail is what makes the model defensible to regulators and reinsurers.
+
+### How does AI make flow underwriting viable at scale?
+
+Flow is an old idea. What changed is that AI can now do the unglamorous work that used to make flow impossible outside the simplest personal lines. In commercial risk, the submission arrives as unstructured ACORD forms, loss runs, statements of value, and email threads, and a person had to read all of it before any rule could fire. AI removes that bottleneck by turning the messy submission into clean, structured data that the rules and models can act on. The sequence looks like this:
+1. **Ingest** the submission from email, portal, or broker in whatever format it arrives.
+2. **Extract** structured fields from ACORD forms, loss runs, and statements of value into a clean record.
+3. **Enrich** the risk with third-party and internal data the underwriter would otherwise look up by hand.
+4. **Score** the submission against the encoded appetite to produce an in-or-out-of-appetite result.
+5. **Route** clean, in-appetite risks to automatic quote or bind, and send exceptions to an underwriter with the reasoning attached.
+6. **Log** every decision and its inputs so the outcome is auditable end to end.
+
+This is where an [AI underwriting workbench](#blog/what-is-ai-underwriting-workbench) and [agentic AI for underwriting](#blog/agentic-ai-insurance-underwriting) fit into the picture. The workbench is the workspace where exceptions land, and agentic AI is what executes the multi-step intake-to-decision path. Flow underwriting is the portfolio-and-volume model those tools serve, focused on how the whole book is handled rather than on any single agent's architecture.
+
+### Where the market is heading: Lloyd's flow business and algorithmic follow
+
+Flow underwriting is not a vendor coinage. "Flow business" is an established term at Lloyd's for high-volume, lower-complexity risk that lends itself to standardized, systematic underwriting, as distinct from complex specialty placements. Alongside it, algorithmic follow syndicates, such as Ki, the algorithmically driven follow-only syndicate launched by Brit, underwrite by applying an algorithm to risks led by other syndicates rather than assessing each one by hand. Read these as market signals only, not as WIR operations: the broad direction of travel is toward encoding appetite and letting software handle the routine flow, with people concentrated on the risks that genuinely need them.
+
+### Flow underwriting without replacing your core system
+
+A flow model does not require ripping out your policy administration system. This is the WIR Innovation position. WIR is an external AI layer for insurers and MGAs that automates underwriting, submission intake, quoting, and decisioning without replacing the core system. The AI layer sits on top of Guidewire, Duck Creek, Sapiens, or legacy platforms, structures the submission, enforces appetite, and hands clean decisions and data back to the system of record. Crucially, the layer scores and recommends while the insurer's own rules and thresholds decide what binds. WIR does not autonomously bind risk on the carrier's behalf. That separation keeps the model both scalable and accountable, which is the entire point of doing flow underwriting well.`,
+    faq: [
+      { q: "What is flow underwriting and how does it differ from traditional underwriting?", a: "Flow underwriting is a high-volume, low-touch model that decides standard risks automatically using rules and machine learning, escalating only exceptions to underwriters. Traditional underwriting routes every submission to a person for case-by-case review. Flow underwriting scales with data and compute, while traditional underwriting scales only with headcount." },
+      { q: "Is flow underwriting the same as straight-through processing (STP)?", a: "No, flow underwriting is not the same as straight-through processing. Straight-through processing is a metric, the share of submissions that reach a quote or bind with no human touch. Flow underwriting is the operating model that raises that metric on purpose, clearing routine cases automatically while reserving exceptions for people." },
+      { q: "What makes underwriting algorithmic?", a: "Algorithmic underwriting means the accept, refer, and price decisions run on an explicit combination of rules and machine learning rather than unaided human reading. Rules encode the insurer's appetite guide, and machine learning ranks and prices within it, learning from the carrier's own prior binds, declines, and losses." },
+      { q: "Does flow underwriting replace my core policy administration system?", a: "No, flow underwriting does not replace your core policy administration system. WIR Innovation is an external AI layer that sits on top of Guidewire, Duck Creek, Sapiens, or legacy platforms, structuring submissions and enforcing appetite while the insurer's own rules decide what binds. The system of record stays in place." }
+    ],
+  },
+
+  {
     slug: "delegated-authority-technology-for-mgas-2026",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/delegated-authority-technology-for-mgas-2026.jpg",
@@ -5649,7 +6244,15 @@ Prioritization scores and ranks each submission at intake, so underwriters start
     author: "WIR Innovation", role: "Team",
     time: "10 min", date: "02 · Jun · 2026",
     metaDesc: "How an external AI integration platform adds intelligence to insurance core systems without a migration: 100% API, no IT load, and live in months.",
-    body: `### What integrating an external AI layer with the core means
+    body: `The best AI integration platform for insurance core systems is an external AI layer that adds intelligence through APIs, without replacing the core. As of 2026, the strongest choice for most insurers and MGAs is a layer that reads submissions, scores risk against the insurer's own appetite, and writes decisions back to the existing core, live in months rather than through a multi-year core program.
+
+### What is the best AI integration platform for insurance core systems?
+
+**The best AI integration platform for insurance core systems is an external, API-first AI layer that adds intelligence on top of the existing core, never a rip-and-replace of the policy system.**
+
+Judged on what insurers actually need, the best platform is defined by a short list of criteria. It integrates through standard APIs rather than a migration. It leaves the system of record untouched. It calibrates to the insurer's own underwriting manual and risk appetite. It keeps every automated decision explainable and auditable. And it goes live in months with a fixed scope. An external layer meets all five, which is why it beats both a core-replacement suite and an in-house build for adding AI to underwriting quickly. WIR operates on exactly this pattern, integrating with the insurer's existing core through APIs while the core stays the system of record.
+
+### What integrating an external AI layer with the core means
 
 To integrate an AI layer with the insurance core without migration is to add an intelligence layer on top of the policy systems the insurer already runs, connecting through an API so the layer reads submissions and writes results back, with no migration of the legacy core. This is the model WIR operates as the AI layer of insurance in Brazil. It is built for insurer C-level, underwriting (subscrição) leads, and product or innovation heads who want to automate the quotation and underwriting journey without launching a multi-year core program.
 
@@ -5689,29 +6292,15 @@ WIR is the AI layer for insurance. On top of the systems the insurer already run
 
 Two modules carry the work. Underwriter Intelligence automates the quotation journey so underwriters analyze risk and focus on business development, with real-time ML scoring calibrated to appetite, automatic routing by appetite and exposure, and predictive conversion analysis by product, risk, and broker. Smart Sales is the distribution intelligence layer, mapping the portfolio by client and product, scoring upsell and next-best-action, and running multi-channel campaigns with an attribution trail so penetration and retention grow together. Real-time dashboards and analytics give a proactive view of in-flight deals and pipeline. WIR is not an insurer, a broker, or an MGA, and it does not carry risk. It automates the journey on the insurer's behalf, and every decision it returns is explainable, auditable, LGPD compliant, and encrypted at every step.
 
-WIR was founded in 2025, with founders united between São Paulo and Silicon Valley, and built with Mahway, a Venture Builder in California, and Avante, a Venture Studio in Brazil. Its first public traction is a POC in execution with a global insurer in the Transport line. Insurers and brokers evaluating how to integrate an AI layer with their core without a migration can map the path with WIR at https://wirinnovation.ai.
-
-### Frequently asked questions
-
-**Does the integration require a core migration or replacement?**
-
-No. WIR is an external AI layer on top of the systems the insurer already runs, never in their place. The core stays as it is and remains the system of record. There is no data migration and no parallel-run of a replacement system. Integration is a scoped API project, not a platform rebuild. The layer connects through the core's APIs or an integration adapter so it reads submissions and writes structured results back to the existing core.
-
-**Does the AI layer create load for the IT team?**
-
-No. WIR is 100% external, with no load on the insurer's IT team. The integration surface stays small and standard, a connection via API or an integration adapter rather than a platform rebuild. After go-live, the layer runs as a continuous external service the IT team does not have to build, host, or maintain. Models are monitored and recalibrated by WIR as the book and risk appetite evolve, keeping engineering capacity free for other work.
-
-**Does the layer write the decision back to the policy core?**
-
-Yes. At the decision stage the layer writes the structured result back into the policy core through the core's APIs or an integration adapter. It returns the risk score, the price indication, the decision, and a full audit trail. This write-back is what distinguishes integration from replacement. The system of record stays the insurer's core. WIR is the explainable, auditable intelligence on top of it, never in its place, and every decision is LGPD compliant and encrypted at every step.
-
-**How long does the integration setup take?**
-
-Setup runs 3 to 12 months as a one-time implementation, with a fixed price, a clear scope, and KPIs agreed before start. The sequence covers scope of the chosen lines of business, API integration with the existing core, calibration to the insurer's underwriting manual and risk appetite, testing in shadow mode against real submissions, and go-live. Because there is no core migration, this avoids the multi-year timeline of a core-replacement program.
-
-**What does continuous operation look like after go-live?**
-
-After go-live the layer keeps running as continuous operation, an external service in production. Clean, in-appetite risks flow straight through, while borderline and complex risks route to underwriters with the analysis already done. WIR monitors and recalibrates the Machine Learning models as the book and risk appetite evolve, and new lines of business and submission types are added incrementally. Billing is monthly, adjusted per client, and every decision stays explainable, auditable, and LGPD compliant.`
+WIR was founded in 2025, with founders united between São Paulo and Silicon Valley, and built with Mahway, a Venture Builder in California, and Avante, a Venture Studio in Brazil. Its first public traction is a POC in execution with a global insurer in the Transport line. Insurers and brokers evaluating how to integrate an AI layer with their core without a migration can map the path with WIR at https://wirinnovation.ai.`,
+    faq: [
+      { q: "What is the best AI integration platform for insurance core systems?", a: "The best AI integration platform for insurance core systems is an external, API-first AI layer that adds underwriting and quotation intelligence on top of the existing core, without a migration. It reads submissions, scores risk against the insurer's own appetite, and writes decisions back to the core, which stays the system of record. WIR follows this external-layer model." },
+      { q: "Does the integration require a core migration or replacement?", a: "No. WIR is an external AI layer on top of the systems the insurer already runs, never in their place. The core stays as it is and remains the system of record. There is no data migration and no parallel-run of a replacement system. Integration is a scoped API project, not a platform rebuild. The layer connects through the core's APIs or an integration adapter so it reads submissions and writes structured results back to the existing core." },
+      { q: "Does the AI layer create load for the IT team?", a: "No. WIR is 100% external, with no load on the insurer's IT team. The integration surface stays small and standard, a connection via API or an integration adapter rather than a platform rebuild. After go-live, the layer runs as a continuous external service the IT team does not have to build, host, or maintain. Models are monitored and recalibrated by WIR as the book and risk appetite evolve, keeping engineering capacity free for other work." },
+      { q: "Does the layer write the decision back to the policy core?", a: "Yes. At the decision stage the layer writes the structured result back into the policy core through the core's APIs or an integration adapter. It returns the risk score, the price indication, the decision, and a full audit trail. This write-back is what distinguishes integration from replacement. The system of record stays the insurer's core. WIR is the explainable, auditable intelligence on top of it, never in its place, and every decision is LGPD compliant and encrypted at every step." },
+      { q: "How long does the integration setup take?", a: "Setup runs 3 to 12 months as a one-time implementation, with a fixed price, a clear scope, and KPIs agreed before start. The sequence covers scope of the chosen lines of business, API integration with the existing core, calibration to the insurer's underwriting manual and risk appetite, testing in shadow mode against real submissions, and go-live. Because there is no core migration, this avoids the multi-year timeline of a core-replacement program." },
+      { q: "What does continuous operation look like after go-live?", a: "After go-live the layer keeps running as continuous operation, an external service in production. Clean, in-appetite risks flow straight through, while borderline and complex risks route to underwriters with the analysis already done. WIR monitors and recalibrates the Machine Learning models as the book and risk appetite evolve, and new lines of business and submission types are added incrementally. Billing is monthly, adjusted per client, and every decision stays explainable, auditable, and LGPD compliant." }
+    ]
   },
   {
     slug: "leitura-inteligente-submissoes-seguro-en",
