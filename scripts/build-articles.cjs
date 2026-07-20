@@ -85,6 +85,11 @@ const ALL_SLUGS = new Set(ARTICLES.map(a => a.slug));
 
 function renderHead(article) {
   const url = `${SITE_URL}/insights/${article.slug}/`;
+  // Optional canonical override: when an article declares `canonical: "<other-slug>"`,
+  // it is a near-duplicate that defers all ranking signals to that page (fixes keyword
+  // cannibalization). We point rel=canonical at the target and suppress this page's own
+  // hreflang so it does not fight the canonical target's language cluster.
+  const canonicalUrl = article.canonical ? `${SITE_URL}/insights/${article.canonical}/` : url;
   const isEn = isEnglish(article.slug);
   const lang = isEn ? "en" : "pt-BR";
   const ogLocale = isEn ? "en_US" : "pt_BR";
@@ -98,6 +103,7 @@ function renderHead(article) {
   if (hasEN) hreflangTags += `\n<link rel="alternate" hreflang="en" href="${SITE_URL}/insights/${enSibling}/" />`;
   // x-default points to PT-BR (primary language for WIR's BR market)
   if (hasPT) hreflangTags += `\n<link rel="alternate" hreflang="x-default" href="${SITE_URL}/insights/${ptSibling}/" />`;
+  if (article.canonical) hreflangTags = "";
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -144,7 +150,7 @@ function renderHead(article) {
 <meta name="theme-color" content="#7540AC" />
 <title>${esc(article.title)} · WIR Innovation</title>
 <meta name="description" content="${esc(article.metaDesc)}" />
-<link rel="canonical" href="${url}" />${hreflangTags}
+<link rel="canonical" href="${canonicalUrl}" />${hreflangTags}
 
 <meta property="og:type" content="article" />
 <meta property="og:title" content="${esc(article.title)}" />

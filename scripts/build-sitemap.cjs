@@ -8,9 +8,29 @@ const SITE = "https://wirinnovation.ai";
 const INSIGHTS = path.join("public", "insights");
 const today = new Date().toISOString().slice(0, 10);
 
+// Slugs that declare `canonical: "<other>"` are near-duplicates that defer to another page.
+// They must NOT appear in the sitemap (Google: list only canonical URLs).
+let canonicalizedAway = new Set();
+try {
+  const asrc = fs.readFileSync("src/articles.jsx", "utf8");
+  const m = "const ARTICLES = ";
+  const startIdx = asrc.indexOf(m) + m.length;
+  let depth = 0, aStart = -1, aEnd = -1;
+  for (let i = startIdx; i < asrc.length; i++) {
+    if (asrc[i] === "[") { if (depth === 0) aStart = i; depth++; }
+    if (asrc[i] === "]") { depth--; if (depth === 0) { aEnd = i + 1; break; } }
+  }
+  // eval is safe here: build-time only, over the project's own checked-in src/articles.jsx
+  // (trusted source, no untrusted input); mirrors the exact parser in build-articles.cjs
+  // because the JSX module cannot be require()'d.
+  const ARTICLES = eval(asrc.slice(aStart, aEnd));
+  canonicalizedAway = new Set(ARTICLES.filter(a => a.canonical).map(a => a.slug));
+} catch (e) { console.warn("sitemap: could not read canonicalized slugs:", e.message); }
+
 const slugs = fs.readdirSync(INSIGHTS, { withFileTypes: true })
   .filter(d => d.isDirectory() && fs.existsSync(path.join(INSIGHTS, d.name, "index.html")))
   .map(d => d.name)
+  .filter(s => !canonicalizedAway.has(s))
   .sort();
 
 const urls = [

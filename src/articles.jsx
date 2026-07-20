@@ -1782,6 +1782,7 @@ WIR was built with Mahway, a Venture Builder in California, and Avante, a Ventur
   },
   {
     slug: "insurance-submission-triage-automation",
+    canonical: "triagem-automatica-submissoes-seguro-en",
     cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/insurance-submission-triage-automation.jpg",
     title: "Insurance submission triage automation: rank the queue before underwriting",
