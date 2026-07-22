@@ -6,6 +6,11 @@ import { BlogArticle, ARTICLES } from './articles.jsx';
 // Match the static archives: PT tree lists PT articles, EN tree the -en ones (ES → PT set)
 const BLOG_ARTICLES = ARTICLES.filter(a => (LANG === "en") === a.slug.endsWith("-en"));
 
+// The destaque/hero slot at the top of the listing. An explicit `featured` entry
+// (e.g. the WIR Index report) wins; otherwise we fall back to the legacy `hero`
+// editorial. Whichever is chosen is pulled out of the grid + filter counts below.
+const HERO_POST = BLOG_ARTICLES.find(p => p.featured) || BLOG_ARTICLES.find(p => p.hero);
+
 // One brand color per category — reviewer feedback: "assign a specific brand color shade per content category"
 // Both PT/EN variants map to the same color, so the visual identity holds across language trees.
 const CAT_GRAD = {
@@ -133,8 +138,7 @@ function NewsletterForm() {
 }
 
 function BlogHero({ go }) {
-  const articles = BLOG_ARTICLES;
-  const hero = articles.find(p => p.hero);
+  const hero = HERO_POST;
   if (!hero) return null;
   return (
     <section className="blhero">
@@ -328,15 +332,15 @@ export function BlogPage({ go }) {
   const articles = BLOG_ARTICLES;
   const [query, setQuery] = React.useState("");
   const posts = React.useMemo(() => {
-    let list = articles.filter(p => !p.hero);
+    let list = articles.filter(p => p !== HERO_POST);
     if (active !== "Todos") list = list.filter(p => p.cat === active);
     const q = query.trim().toLowerCase();
     if (q) list = list.filter(p => `${p.title} ${p.sub || ""} ${p.author || ""}`.toLowerCase().includes(q));
     return list;
   }, [active, query, articles.length]);
   const counts = React.useMemo(() => {
-    const c = { Todos: Math.max(0, articles.length - 1) };
-    articles.filter(p => !p.hero).forEach(p => { c[p.cat] = (c[p.cat] || 0) + 1; });
+    const c = { Todos: Math.max(0, articles.length - (HERO_POST ? 1 : 0)) };
+    articles.filter(p => p !== HERO_POST).forEach(p => { c[p.cat] = (c[p.cat] || 0) + 1; });
     return c;
   }, [articles.length]);
 
