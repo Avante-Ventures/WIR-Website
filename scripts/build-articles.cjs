@@ -443,7 +443,24 @@ function renderInsightsIndex(lang = "pt-BR") {
       ? "Essays, use cases and technical notes from the WIR team on how Artificial Intelligence is redesigning insurance operations."
       : "Ensaios, casos de uso e notas técnicas do time da WIR sobre como Inteligência Artificial está redesenhando a operação do mercado segurador.",
   };
-  const cards = list.map(a => `
+  // Featured/destaque slot: an entry flagged `featured` (e.g. the WIR Index report)
+  // renders as the large hero card at the top; the rest fill the grid below.
+  const featured = list.find(a => a.featured);
+  const gridList = featured ? list.filter(a => a !== featured) : list;
+  const heroCard = featured ? `
+    <a href="/insights/${featured.slug}/" class="ix-hero">
+      <div class="ix-hero__img" style="background:${featured.grad};${featured.image ? `background-image:linear-gradient(180deg,rgba(11,10,8,0.15),rgba(11,10,8,0.6)),url(${featured.image});background-size:cover;background-position:center;` : ""}">
+        <span class="ix-hero__badge">${en ? "Featured" : "Destaque"}</span>
+        <span class="ix-hero__cat">${esc(featured.cat)}</span>
+      </div>
+      <div class="ix-hero__body">
+        <div class="ix-hero__meta">${esc(featured.cat)} · ${esc(featured.time)} · ${esc(featured.date)}</div>
+        <h2>${esc(featured.title)}</h2>
+        <p>${esc(featured.sub)}</p>
+        <div class="ix-hero__by"><b>${esc(featured.author)}</b> · ${esc(featured.role)}</div>
+      </div>
+    </a>` : "";
+  const cards = gridList.map(a => `
     <a href="/insights/${a.slug}/" class="ix-card">
       <div class="ix-card__img" style="background:${a.grad};${a.image ? `background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(${a.image});background-size:cover;background-position:center;` : ""}">
         <span class="ix-card__cat">${esc(a.cat)}</span>
@@ -488,6 +505,16 @@ function renderInsightsIndex(lang = "pt-BR") {
 .ix__head { max-width:760px; margin-bottom:48px;}
 .ix__head h1 { font-size:clamp(40px,5vw,64px); line-height:1.05; letter-spacing:-0.015em; margin:16px 0 20px; }
 .ix__head p { font-size:19px; color:var(--ink-2); line-height:1.5; max-width:600px;}
+.ix-hero { display:grid; grid-template-columns:1.15fr 1fr; gap:36px; align-items:center; margin-bottom:56px; text-decoration:none; color:inherit; transition:transform .2s ease;}
+.ix-hero:hover { transform:translateY(-3px);}
+.ix-hero__img { aspect-ratio:16/9; border-radius:16px; position:relative; overflow:hidden;}
+.ix-hero__badge { position:absolute; top:16px; right:16px; padding:5px 12px; background:var(--purple,#7540AC); color:#fff; border-radius:4px; font-family:var(--f-mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase;}
+.ix-hero__cat { position:absolute; top:16px; left:16px; padding:5px 12px; background:rgba(255,255,255,.92); border-radius:4px; font-family:var(--f-mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;}
+.ix-hero__meta { font-family:var(--f-mono); font-size:11px; letter-spacing:.04em; color:var(--ink-3); text-transform:uppercase;}
+.ix-hero__body h2 { font-family:var(--f-display); font-weight:500; font-size:clamp(28px,3.2vw,40px); line-height:1.12; margin:12px 0 12px; letter-spacing:-0.01em;}
+.ix-hero__body p { font-size:16px; line-height:1.55; color:var(--ink-2); max-width:52ch;}
+.ix-hero__by { font-family:var(--f-mono); font-size:11px; letter-spacing:.04em; color:var(--ink-3); margin-top:16px;}
+.ix-hero__by b { color:var(--ink); font-weight:500;}
 .ix__grid { display:grid; grid-template-columns:repeat(3,1fr); gap:32px;}
 .ix-card { display:flex; flex-direction:column; gap:14px; text-decoration:none; color:inherit; transition:transform .2s ease;}
 .ix-card:hover { transform:translateY(-3px);}
@@ -499,6 +526,7 @@ function renderInsightsIndex(lang = "pt-BR") {
 .ix-card__by { font-family:var(--f-mono); font-size:11px; letter-spacing:.04em; color:var(--ink-3); margin-top:6px;}
 .ix-card__by b { color:var(--ink); font-weight:500;}
 @media (max-width:980px){ .ix__grid { grid-template-columns:repeat(2,1fr);} }
+@media (max-width:820px){ .ix-hero { grid-template-columns:1fr; gap:20px; margin-bottom:40px;} }
 @media (max-width:640px){ .ix__grid { grid-template-columns:1fr; gap:24px;} .ix { padding:48px 0;} }
 </style>`;
 
@@ -517,6 +545,7 @@ ${renderNav(lang)}
       <h1>${idx.h1}</h1>
       <p>${idx.p}</p>
     </div>
+${heroCard}
     <div class="ix__grid">
 ${cards}
     </div>

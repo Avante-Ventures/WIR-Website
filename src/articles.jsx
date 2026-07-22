@@ -10,7 +10,9 @@ export const ARTICLES = [
     // WITHOUT generating/overwriting that static file.
     slug: "wir-index",
     linkOnly: true,
+    featured: true,
     cat: "Mercado", grad: "linear-gradient(135deg,#FE8B77,#AE46C0)",
+    image: "/assets/articles/wir-index.png",
     title: "WIR Index — Panorama InsurTech Brasil & LATAM · Q2 2026",
     sub: "O índice trimestral da WIR sobre capital, tecnologia e regulação na fronteira entre IA e seguros — Brasil, LATAM e o mundo. Dados de Gallagher Re, CB Insights e o WIR AI Adoption Index.",
     author: "WIR Innovation", role: "Equipe",
