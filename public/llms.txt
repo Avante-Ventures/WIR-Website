@@ -10,6 +10,7 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 
 - [Home — Plataforma de IA para o mercado segurador](https://wirinnovation.ai/): Visão geral da plataforma, produtos (Smart Sales, Underwriter Intelligence), camadas de IA, casos de uso e contato.
 - [Insights & News](https://wirinnovation.ai/insights/): Ensaios técnicos e análises sobre IA aplicada ao seguro, arquitetura de decisão, compliance, e casos de implementação.
+- [WIR Index — Panorama InsurTech Brasil & LATAM · Q2 2026](https://wirinnovation.ai/insights/wir-index/): Índice trimestral da WIR sobre capital, tecnologia e regulação na fronteira entre IA e seguros (Brasil, LATAM e mundo), com dados de Gallagher Re, CB Insights e o WIR AI Adoption Index. Relatório trilingue PT/EN/ES.
 
 ## Ensaios técnicos e guias (Insights · PT-BR)
 

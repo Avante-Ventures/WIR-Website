@@ -330,7 +330,9 @@ function renderWhatsAppFAB(lang = "pt-BR") {
 function renderRelated(article) {
   const lang = isEnglish(article.slug) ? "en" : "pt-BR";
   const heading = lang === "en" ? "Related insights" : "Leituras relacionadas";
-  const sameLang = ARTICLES.filter(a => isEnglish(a.slug) === isEnglish(article.slug));
+  // Exclude `linkOnly` entries (hand-authored static pages) from the related pool so
+  // their presence in ARTICLES does not shift the cyclic sibling picks of real articles.
+  const sameLang = ARTICLES.filter(a => isEnglish(a.slug) === isEnglish(article.slug) && !a.linkOnly);
   if (sameLang.length < 2) return "";
   const idx = sameLang.findIndex(a => a.slug === article.slug);
   const picks = [];
@@ -530,7 +532,10 @@ ${renderWhatsAppFAB(lang)}
 const insightsDir = path.join(process.cwd(), OUT_DIR);
 fs.mkdirSync(insightsDir, { recursive: true });
 
-ARTICLES.forEach(article => {
+// `linkOnly` articles are hand-authored static pages (e.g. the WIR Index report).
+// They must appear in the Insights index and be cross-linked, but we must NOT
+// generate a page for them — doing so would clobber the hand-authored file.
+ARTICLES.filter(article => !article.linkOnly).forEach(article => {
   const dir = path.join(insightsDir, article.slug);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, "index.html"), renderArticleHTML(article), "utf8");
