@@ -33,9 +33,9 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
 <script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
 
-<link rel="stylesheet" href="/style.css?v=2026052D" />
-<link rel="stylesheet" href="/home.css?v=2026052D" />
-<link rel="stylesheet" href="/blog.css?v=2026052D" />
+<link rel="stylesheet" href="/style.css?v=2026072301" />
+<link rel="stylesheet" href="/home.css?v=2026072301" />
+<link rel="stylesheet" href="/blog.css?v=2026072301" />
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI and Guidewire Integration: Adding Intelligence Without Replacing the Core","description":"Adding AI to Guidewire does not mean replacing PolicyCenter. See how an external AI layer scores risk and writes decisions back to the core, with no migration.","image":"/assets/articles/how-ai-integrates-with-guidewire-without-replacing-it.jpg","datePublished":"2026-07-08","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Equipe"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/how-ai-integrates-with-guidewire-without-replacing-it/","articleSection":"Artigo"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://wirinnovation.ai/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/insights/"},{"@type":"ListItem","position":3,"name":"AI and Guidewire Integration: Adding Intelligence Without Replacing the Core","item":"https://wirinnovation.ai/insights/how-ai-integrates-with-guidewire-without-replacing-it/"}]}</script>
@@ -117,13 +117,16 @@
 <p>That decision then flows back into PolicyCenter through Guidewire&#39;s APIs. WIR proposes. PolicyCenter records and binds. The layer does not bind coverage or overwrite the policy record. Those actions stay with Guidewire and the underwriter. Nothing about the data model changes, no tables are migrated, and the carrier&#39;s IT team does not run a project to make it work. WIR is 100% external, which means no load on core infrastructure and no core replacement.</p>
 <h3>What stays with Guidewire, and what the AI layer adds</h3>
 <p>The division of labor is clean. Guidewire remains the record. WIR supplies the intelligence and the speed in front of it.</p>
-<p>| Guidewire (PolicyCenter) | WIR (external AI layer) |
-| --- | --- |
-| System of record for the policy | Reads and enriches the submission |
-| Records the policy and binds coverage | Scores risk against the insurer&#39;s appetite |
-| Holds the underwriter&#39;s authority and workflow | Prices and returns a decision with an audit trail |
-| Owns the data model and compliance of record | Writes the recommendation back through the API |
-| Stays in place, with no migration | Sits on top, fully external |</p>
+<div class="blarticle__tablewrap"><table class="blarticle__table">
+<thead><tr><th>Guidewire (PolicyCenter)</th><th>WIR (external AI layer)</th></tr></thead>
+<tbody>
+<tr><td>System of record for the policy</td><td>Reads and enriches the submission</td></tr>
+<tr><td>Records the policy and binds coverage</td><td>Scores risk against the insurer&#39;s appetite</td></tr>
+<tr><td>Holds the underwriter&#39;s authority and workflow</td><td>Prices and returns a decision with an audit trail</td></tr>
+<tr><td>Owns the data model and compliance of record</td><td>Writes the recommendation back through the API</td></tr>
+<tr><td>Stays in place, with no migration</td><td>Sits on top, fully external</td></tr>
+</tbody>
+</table></div>
 <p>Read down either column and the boundary holds. Binding, the policy record, and final authority never leave Guidewire and the underwriter. Reading, enrichment, scoring, and pricing are where the AI layer does its work, and it hands the result back rather than keeping it.</p>
 <h3>Why this matters for carriers in Brazil</h3>
 <p>The pressure to automate underwriting is not abstract. Deloitte finds that underwriters spend around 40% of their time on administrative tasks. McKinsey has projected that by 2030 manual underwriting will cease to exist for most personal and small-business products, with the underwriter&#39;s role shifting toward judgment on complex risk. At the same time, BCG reports that 70% of insurers do not execute innovation because of IT limitations. That last figure is the trap. The appetite to modernize is real, but the fear of another core program stalls it.</p>

@@ -268,6 +268,23 @@
 }
 .blarticle__link-int { text-decoration-style: dotted; }
 
+/* Comparison / data tables */
+.blarticle__tablewrap { overflow-x: auto; margin: 32px 0; }
+.blarticle__table {
+  width: 100%; border-collapse: collapse;
+  font-size: 15px; line-height: 1.5;
+}
+.blarticle__table th {
+  text-align: left; font-weight: 600; color: var(--ink);
+  padding: 10px 14px; border-bottom: 2px solid var(--wir-purple);
+  white-space: nowrap;
+}
+.blarticle__table td {
+  padding: 10px 14px; vertical-align: top;
+  border-bottom: 1px solid rgba(0,0,0,.08); color: var(--ink);
+}
+.blarticle__table tr:last-child td { border-bottom: none; }
+
 /* Ordered + unordered lists */
 .blarticle__body ol, .blarticle__body ul {
   margin: 0 0 22px 0; padding-left: 24px;

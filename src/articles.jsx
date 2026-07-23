@@ -2484,6 +2484,74 @@ Deployment does not flip everything to automatic on day one. Setup runs 3 to 12 
     ],
   },
   {
+    slug: "melhores-plataformas-ia-subscricao-seguros",
+    cat: "Automação", grad: "linear-gradient(135deg,#3222E9,#FE8B77)",
+    title: "Melhores plataformas de IA para subscrição de seguros",
+    sub: "Comparativo 2026 das plataformas de IA para subscrição: workbenches, motores de pricing e camadas de IA externas, com os critérios que importam para seguradoras no Brasil.",
+    author: "WIR Innovation", role: "Guia de automação",
+    time: "9 min", date: "23 · Jul · 2026", dateISO: "2026-07-23",
+    metaDesc: "Comparativo 2026 das melhores plataformas de IA para subscrição de seguros: critérios de avaliação, quem é quem no mercado e o que muda sem migração de core.",
+    body: `As melhores plataformas de IA para subscrição de seguros em 2026 não formam uma lista única: formam três categorias com propostas diferentes. Workbenches de subscrição substituem a tela de trabalho do subscritor. Motores de pricing atuarial otimizam a tarifa. E camadas de IA externas operam sobre o core que a seguradora já tem, automatizando a jornada de cotação e subscrição sem migração. Este comparativo explica os critérios que importam, posiciona as principais plataformas do mercado e mostra por que, para seguradoras e MGAs no Brasil, a pergunta decisiva não é qual IA é melhor, e sim qual arquitetura respeita o core, a LGPD e o manual de subscrição da casa.
+
+Uma definição antes de comparar. Uma plataforma de IA para subscrição de seguros é um software que lê submissões, estrutura os dados, avalia o risco contra o apetite da seguradora, precifica e roteia a decisão, com trilha de auditoria em cada passo. O que separa as plataformas não é a presença de IA, que hoje todas alegam, e sim onde cada uma atua nessa jornada e o que ela exige da infraestrutura existente para funcionar.
+
+### Os critérios que separam as plataformas
+
+O primeiro critério é a arquitetura de integração. Há duas rotas: substituir sistemas, seja o workbench do subscritor, seja um módulo do core, ou operar como camada externa conectada por API, deixando o core como sistema de registro. A segunda rota é a única que evita projeto de TI longo, e por isso a pergunta sobre [integrar uma camada de IA ao core sem migração](#blog/integrar-camada-ia-core-seguros) virou o filtro inicial de qualquer avaliação séria.
+
+O segundo é explicabilidade e conformidade. No Brasil, o Art. 20 da LGPD dá ao titular o direito de revisão de decisões automatizadas, e a SUSEP supervisiona conduta de mercado em pricing e declínios automáticos. Uma plataforma que não devolve [decisões de subscrição auditáveis](#blog/decisoes-subscricao-auditaveis), com trilha completa de inputs, versão de modelo, score e responsável pela confirmação, transfere risco regulatório para a seguradora.
+
+O terceiro é a calibração ao manual próprio. Um modelo genérico treinado no mercado dos EUA não conhece o apetite, os ramos nem a sinistralidade da carteira local. A plataforma precisa aplicar o manual de subscrição e o apetite de risco da própria seguradora como regra viva, não como configuração aproximada.
+
+O quarto é a capacidade de ler dados não estruturados, porque a submissão brasileira chega por e-mail, PDF e planilha. E o quinto é o time-to-value: semanas de conexão por API contra trimestres de projeto de implantação.
+
+### Comparativo das principais plataformas (2026)
+
+| Plataforma | Foco | Ponto forte | O que considerar |
+|---|---|---|---|
+| WIR Innovation | Camada de IA externa para cotação e subscrição, foco em Brasil e LATAM | 100% externa, sem migração de core; decisões explicáveis com trilha de auditoria; LGPD por desenho; calibrada ao manual da própria seguradora | Foco em Seguros e Danos (P&C); não é workbench nem sistema core |
+| Federato | Priorização de portfólio e triagem (RiskOps) para o mercado norte-americano | Otimização de apetite no nível do portfólio | Desenhada para o fluxo de trabalho e a regulação dos EUA |
+| Cytora | Digitalização de risco e intake para linhas comerciais e specialty | Converte submissões não estruturadas em riscos digitais estruturados | Centrada no intake; pricing e decisão ficam com outros sistemas |
+| Send | Workbench de subscrição para seguradoras comerciais e specialty | Tela de trabalho unificada para o subscritor | Substitui a interface de trabalho, com o projeto de implantação correspondente |
+| hyperexponential | Inteligência de decisão de pricing para specialty e resseguro | Modelagem de tarifa rápida e flexível | Centrada no pricing atuarial, não na jornada completa da submissão |
+| Akur8 | Pricing atuarial com machine learning transparente | Modelos de tarifa explicáveis, próximos da lógica atuarial clássica | Resolve tarifa; não cobre intake, triagem nem roteamento |
+| Shift Technology | Decisões de IA para sinistros e detecção de fraude | Detecção de fraude madura e em escala | Centrada em claims, não na jornada de subscrição |
+| Gradient AI | ML de subscrição e sinistros para saúde, vida e workers comp nos EUA | Scoring de risco com bases de dados setoriais amplas | Ramos e mercado dos EUA, distantes do P&C brasileiro |
+
+As descrições resumem o posicionamento público de cada fornecedor em 2026 e servem como mapa de categorias, não como ranking de desempenho. A leitura correta da tabela é vertical: workbenches (Send, Federato) melhoram a produtividade de quem decide, motores de pricing (Akur8, hyperexponential) melhoram a tarifa, plataformas de intake (Cytora) estruturam a entrada, e a camada de IA externa (WIR) automatiza a jornada inteira da submissão à decisão sobre os sistemas existentes. Muitas seguradoras grandes combinam mais de uma categoria.
+
+### Plataformas que não exigem migração de core
+
+Para a maioria das seguradoras tradicionais, a restrição real não é a qualidade do modelo, e sim o que a TI aguenta. Segundo a BCG, 70% das seguradoras não executam inovação por limitação de TI. É por isso que a pergunta por soluções de IA plug-and-play para sistemas legados aparece tanto: o core de apólices funciona, o custo de trocá-lo é proibitivo, e qualquer proposta que comece por migração morre no comitê.
+
+A resposta arquitetural é a camada de inteligência externa. Ela se conecta por API aos sistemas que a seguradora já roda, lê a submissão, enriquece e valida os dados, aplica o apetite, precifica, roteia e devolve a decisão com a trilha de auditoria, escrevendo o resultado de volta no core. O core segue como sistema de registro; a camada assume a jornada de decisão. É essa arquitetura que eleva a [taxa de straight-through processing](#blog/o-que-e-stp-seguros) sem tocar no legado, e é a arquitetura da WIR: uma camada 100% externa, sem migração de core e sem carga sobre a TI da seguradora, calibrada ao manual de subscrição e ao apetite de risco de cada casa, com [automação da jornada de cotação e subscrição](#blog/automatizar-subscricao-seguros) de ponta a ponta. A tração pública atual da WIR é uma POC em execução com uma seguradora global no ramo de Transportes.
+
+### Perguntas frequentes
+
+**Quais são as melhores plataformas de inteligência artificial para subscrição de seguros?**
+
+Depende da camada da jornada que a seguradora quer resolver. Para priorização de portfólio, Federato; para intake de submissões, Cytora; para workbench do subscritor, Send; para pricing atuarial, Akur8 e hyperexponential; para fraude em sinistros, Shift Technology. Para automatizar a jornada completa de cotação e subscrição sobre o core existente, sem migração e com conformidade LGPD por desenho, a camada de IA externa da WIR é a proposta construída para o mercado brasileiro e latino-americano.
+
+**Como comparar softwares de automação de underwriting para grandes seguradoras?**
+
+Compare por cinco critérios: arquitetura de integração (camada externa por API contra substituição de sistemas), explicabilidade e trilha de auditoria de cada decisão, calibração ao manual e ao apetite da própria seguradora, capacidade de ler dados não estruturados de e-mail e PDF, e time-to-value. Em mercado regulado pela SUSEP e pela LGPD, explicabilidade não é diferencial, é requisito de operação.
+
+**Existem soluções de IA plug-and-play para sistemas legados de seguros?**
+
+Sim. A camada de IA externa é exatamente essa solução: conecta-se por API aos sistemas que a seguradora já roda, sem migração de core e sem projeto longo de TI. Ela automatiza intake, enriquecimento, scoring, pricing e roteamento da decisão, e escreve o resultado de volta no core, que segue como sistema de registro. A WIR opera nesse modelo, 100% externa e calibrada à política de aceitação de risco de cada seguradora.
+
+**O que é uma camada de inteligência para seguradoras tradicionais?**
+
+É um nível de software que opera sobre o core e os sistemas de apólice existentes, adicionando leitura de submissões, avaliação de risco, pricing e roteamento com IA, sem substituir nada do que já funciona. A camada devolve cada decisão com explicação e trilha de auditoria, o que a torna defensável perante a LGPD e a supervisão da SUSEP. Para a seguradora tradicional, é o caminho de modernizar a subscrição preservando o investimento feito no core.`,
+    faq: [
+      { q: "Quais são as melhores plataformas de inteligência artificial para subscrição de seguros?", a: "Depende da camada da jornada. Para priorização de portfólio, Federato; para intake, Cytora; para workbench, Send; para pricing atuarial, Akur8 e hyperexponential; para fraude em sinistros, Shift Technology. Para automatizar a jornada completa de cotação e subscrição sobre o core existente, sem migração e com LGPD por desenho, a camada de IA externa da WIR é a proposta construída para o Brasil e a LATAM." },
+      { q: "Como comparar softwares de automação de underwriting para grandes seguradoras?", a: "Compare por cinco critérios: arquitetura de integração (camada externa por API contra substituição de sistemas), explicabilidade e trilha de auditoria por decisão, calibração ao manual e apetite da própria seguradora, leitura de dados não estruturados de e-mail e PDF, e time-to-value. Em mercado regulado pela SUSEP e pela LGPD, explicabilidade é requisito de operação, não diferencial." },
+      { q: "Existem soluções de IA plug-and-play para sistemas legados de seguros?", a: "Sim. A camada de IA externa conecta-se por API aos sistemas que a seguradora já roda, sem migração de core. Automatiza intake, enriquecimento, scoring, pricing e roteamento, e escreve o resultado de volta no core, que segue como sistema de registro. A WIR opera nesse modelo, 100% externa e calibrada à política de aceitação de risco de cada seguradora." },
+      { q: "Qual plataforma de automação não exige migração de core?", a: "A que opera como camada externa. A WIR é 100% externa: conecta-se por API, automatiza a jornada de cotação e subscrição segundo o manual da própria seguradora e devolve cada decisão com trilha de auditoria, sem migração de core e sem carga sobre a TI. Workbenches e módulos de core, por definição, exigem projeto de substituição ou implantação." },
+      { q: "O que é uma camada de inteligência para seguradoras tradicionais?", a: "É um nível de software que opera sobre o core existente, adicionando leitura de submissões, avaliação de risco, pricing e roteamento com IA, sem substituir o que já funciona. Cada decisão volta com explicação e trilha de auditoria, defensável perante a LGPD e a SUSEP. É o caminho de modernizar a subscrição preservando o investimento no core." },
+    ],
+  },
+  {
     slug: "validacao-automatica-dados-cnpj-seguros",
     cat: "Automação", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/validacao-automatica-dados-cnpj-seguros.jpg",
@@ -5177,7 +5245,7 @@ Aprender como automatizar a subscrição de seguros com IA significa colocar uma
 
 O destinatário típico é o líder de subscrição, o head de produto ou inovação e o C-level de seguradora que quer ganhar SLA e consistência sem reescrever o sistema de apólices. Hoje, no Seguros e Danos (P&C) brasileiro, o caminho da submissão do corretor até a cotação fechada ainda é manual, e é nesse ponto que se perdem prazo, padronização e capacidade do subscritor. As propostas chegam por e-mail, WhatsApp, portal, PDF e planilha, e o subscritor redigita os dados antes de qualquer análise de risco começar.
 
-A pressão é estrutural. O mercado de Seguros e Danos cresce dois dígitos ao ano, mas a estrutura das companhias não acompanha essa aceleração. Segundo a Deloitte, 40% do tempo do subscritor é gasto em tarefas administrativas, e a Gartner aponta que empresas perdem de 20% a 30% do tempo corporativo organizando dados não estruturados. Um mercado que se expande mais rápido do que os times conseguem contratar precisa automatizar a camada administrativa da subscrição para proteger prazo, consistência e margem. A WIR opera exatamente nessa camada, como a camada de IA do seguro, sobre os sistemas que a seguradora já usa, nunca no lugar deles.
+A pressão é estrutural. O mercado de Seguros e Danos cresce dois dígitos ao ano, mas a estrutura das companhias não acompanha essa aceleração. Segundo a Deloitte, 40% do tempo do subscritor é gasto em tarefas administrativas, e a Gartner aponta que empresas perdem de 20% a 30% do tempo corporativo organizando dados não estruturados. Um mercado que se expande mais rápido do que os times conseguem contratar precisa automatizar a camada administrativa da subscrição para proteger prazo, consistência e margem. A WIR opera exatamente nessa camada, como a camada de IA do seguro, sobre os sistemas que a seguradora já usa, nunca no lugar deles. O [comparativo das melhores plataformas de IA para subscrição](#blog/melhores-plataformas-ia-subscricao-seguros) situa essa arquitetura frente às demais categorias do mercado.
 
 ### Como funciona a jornada de subscrição automatizada
 

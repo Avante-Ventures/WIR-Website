@@ -6,7 +6,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const CACHE_VER = "v=2026052D";
+const CACHE_VER = "v=2026072301";
 const SITE_URL = "https://wirinnovation.ai";
 const OUT_DIR = "public/insights"; // Vite copies public/* to dist/ root, so this lands at dist/insights/
 
@@ -70,6 +70,15 @@ function renderBody(body) {
     if (/^-\s/.test(block)) {
       const items = block.split("\n").map(l => l.replace(/^-\s+/, "").trim()).filter(Boolean);
       return `<ul>\n${items.map(it => `  <li>${renderInline(it)}</li>`).join("\n")}\n</ul>`;
+    }
+    if (block.startsWith("|")) {
+      const rows = block.split("\n").map(r => r.trim()).filter(Boolean);
+      if (rows.length >= 2 && /^\|[\s:|-]+\|$/.test(rows[1])) {
+        const cells = r => r.replace(/^\|/, "").replace(/\|$/, "").split("|").map(c => renderInline(c.trim()));
+        const head = cells(rows[0]);
+        const body = rows.slice(2).map(cells);
+        return `<div class="blarticle__tablewrap"><table class="blarticle__table">\n<thead><tr>${head.map(h => `<th>${h}</th>`).join("")}</tr></thead>\n<tbody>\n${body.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join("")}</tr>`).join("\n")}\n</tbody>\n</table></div>`;
+      }
     }
     return `<p>${renderInline(block)}</p>`;
   }).join("\n");

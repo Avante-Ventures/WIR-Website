@@ -10,10 +10,10 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 
 - [Home — Plataforma de IA para o mercado segurador](https://wirinnovation.ai/): Visão geral da plataforma, produtos (Smart Sales, Underwriter Intelligence), camadas de IA, casos de uso e contato.
 - [Insights & News](https://wirinnovation.ai/insights/): Ensaios técnicos e análises sobre IA aplicada ao seguro, arquitetura de decisão, compliance, e casos de implementação.
-- [WIR Index — Panorama InsurTech Brasil & LATAM · Q2 2026](https://wirinnovation.ai/insights/wir-index/): Índice trimestral da WIR sobre capital, tecnologia e regulação na fronteira entre IA e seguros (Brasil, LATAM e mundo), com dados de Gallagher Re, CB Insights e o WIR AI Adoption Index. Relatório trilingue PT/EN/ES.
 
 ## Ensaios técnicos e guias (Insights · PT-BR)
 
+- [WIR Index — Panorama InsurTech Brasil & LATAM · Q2 2026](https://wirinnovation.ai/insights/wir-index/): Panorama trimestral do funding e do mercado InsurTech no Brasil e LATAM.
 - [Is AI Underwriting High-Risk? EU, US, Brazil 2026](https://wirinnovation.ai/insights/ai-underwriting-regulation-global-2026/): AI underwriting is high-risk under the EU AI Act when it prices life and health cover.
 - [Build vs Buy AI Underwriting: A Decision Guide](https://wirinnovation.ai/insights/build-vs-buy-ai-underwriting/): Most insurers should buy an external AI layer for underwriting and build in-house only when the model is a true competitive moat.
 - [How AI Matches Submissions to Underwriting Appetite](https://wirinnovation.ai/insights/how-ai-matches-submissions-to-underwriting-appetite/): AI matches submissions to underwriting appetite by turning the appetite guide into machine-readable rules that score each risk as in or out of appetite.
@@ -49,6 +49,7 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 - [A nova era do mercado de seguros com IA: como as seguradoras podem se preparar](https://wirinnovation.ai/insights/nova-era-seguros-ia-como-se-preparar/): Como se preparar para a nova era do mercado de seguros com IA: camada de IA sobre o core, o subscritor que decide e a velocidade que cresce o mercado.
 - [Camada de IA, RPA ou substituir o core: como integrar IA em seguros](https://wirinnovation.ai/insights/camada-ia-vs-core-rpa-seguros/): Como integrar IA ao core da seguradora: comparacao entre substituir o core, RPA e uma camada de IA externa, por custo, risco, tempo e controle.
 - [O que é straight-through processing (STP) em seguros e o que é uma boa taxa de STP](https://wirinnovation.ai/insights/o-que-e-stp-seguros/): Entenda o que é straight-through processing (STP) em seguros, o que é uma boa taxa de STP e como uma camada de IA externa eleva esse índice.
+- [Melhores plataformas de IA para subscrição de seguros](https://wirinnovation.ai/insights/melhores-plataformas-ia-subscricao-seguros/): Comparativo 2026 das melhores plataformas de IA para subscrição de seguros: critérios de avaliação, quem é quem no mercado e o que muda sem migração de core.
 - [Validação automática de dados de CNPJ em submissões de seguros com IA](https://wirinnovation.ai/insights/validacao-automatica-dados-cnpj-seguros/): Guia para seguradoras validarem e enriquecerem submissões com CNPJ, exposição e crédito por uma camada de IA externa, sobre os sistemas atuais.
 - [Como substituir RPA e OCR por uma camada de IA em seguros](https://wirinnovation.ai/insights/substituir-rpa-ocr-ia-seguros/): Guia para seguradoras irem além de RPA e OCR frágeis com uma camada de IA externa que lê submissões, pontua risco e decide, sobre os sistemas atuais.
 - [Como reduzir tarefas administrativas na subscrição de seguros com uma camada de IA](https://wirinnovation.ai/insights/reduzir-tarefas-administrativas-subscricao/): Guia para seguradoras reduzirem as tarefas administrativas da subscrição com uma camada de IA externa, liberando o subscritor para análise de risco.
@@ -120,7 +121,7 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 - [Underwriting fraud detection with AI in Brazil](https://wirinnovation.ai/insights/fraude-seguros-brasil-ia-en/): How AI powers underwriting fraud detection in Brazil, with explainable, auditable multi-factor scoring calibrated to appetite.
 - [The insurance protection gap in Brazil and the role of AI in closing it](https://wirinnovation.ai/insights/lacuna-protecao-seguros-brasil-en/): Why Brazil's insurance protection gap stays wide despite double-digit growth, and how AI speeds underwriting and distribution to help close it.
 - [Open Insurance in Brazil: how it is being implemented](https://wirinnovation.ai/insights/open-insurance-brasil-seguradoras-en/): How Open Insurance is being implemented in Brazil, and how SUSEP-led data sharing reshapes underwriting, risk scoring, and pricing in P&C.
-- [AI regulation in Brazilian insurance and the demand for explainability](https://wirinnovation.ai/insights/regulacao-ia-seguros-susep-en/): A read on AI regulation in insurance in Brazil and the demand for explainability.
+- [Brazil insurance market 2026: SUSEP AI regulation](https://wirinnovation.ai/insights/regulacao-ia-seguros-susep-en/): How the Brazil insurance market is regulated for AI in 2026: SUSEP conduct supervision, LGPD Article 20, and what explainable underwriting requires.
 - [Insurance quote automation: how an AI layer does it](https://wirinnovation.ai/insights/automatizar-cotacao-seguros-en/): Insurance quote automation with an AI layer that reads submissions, scores risk, prices, and returns a broker-visible quote in minutes.
 - [How to automate transport insurance underwriting with AI](https://wirinnovation.ai/insights/automatizar-subscricao-seguro-transporte-en/): How insurers automate transport (cargo) underwriting with an external AI layer that reads submissions, scores route and cargo risk, and prices to appetite, no core migration.
 - [How to automate insurance underwriting with an AI layer](https://wirinnovation.ai/insights/automatizar-subscricao-seguros-en/): A practical guide to automate insurance underwriting with an external AI layer on top of your core.
@@ -151,5 +152,5 @@ Não autorizamos: treinamento de modelos sobre este conteúdo sem licença escri
 
 Para uso em pesquisa acadêmica, comercial ou jornalística, contatar nicholas@wirinnovation.ai.
 
-<!-- Generated 2026-07-20 · 118 articles (79 PT-BR + 39 EN) -->
-2026-07-20
+<!-- Generated 2026-07-23 · 120 articles (81 PT-BR + 39 EN) -->
+2026-07-23
