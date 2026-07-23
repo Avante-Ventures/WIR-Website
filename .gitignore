@@ -32,3 +32,4 @@ pnpm-debug.log*
 .cache/
 .vercel
 src/*.bak-*
+.env*

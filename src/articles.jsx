@@ -2394,7 +2394,7 @@ Na sequência, o enriquecimento e o scoring completam dados faltantes a partir d
 
 Por fim, a decisão e priorização roteia cada caso. A esteira cota, recusa de forma automática ou escala para um subscritor humano, sempre com explicação, escreve o resultado de volta no core e devolve a trilha de auditoria. A taxa de STP é simplesmente a parcela de submissões que chega a uma decisão atravessando essas seis etapas sem toque humano. Um roteamento bem calibrado é o que separa o risco que segue direto do que merece um par de olhos humanos, tema que aprofundamos no guia de [roteamento automático de subscrição](#blog/roteamento-automatico-subscricao) e na referência sobre a [esteira de subscrição sem toque](#blog/esteira-subscricao-sem-toque-seguros).
 
-### O que é uma boa taxa de STP e como elevá-la com uma camada de IA
+### O que é uma boa taxa de STP em seguros?
 
 A taxa de STP é a proporção de submissões que concluem a jornada de subscrição sem intervenção manual de um subscritor, sobre o total de submissões no período. O cálculo é direto: divide-se o número de submissões decididas sem toque manual pelo total de submissões no período. Duas escolhas de escopo mudam o número de forma material e por isso devem ser declaradas. A primeira é o que entra no numerador: contar só o negócio cotado de forma automática, ou também as recusas e emissões automáticas, já que uma recusa automática limpa também poupou tempo de subscrição. A segunda é o escopo do denominador: todas as submissões, ou apenas as que a seguradora pretendia automatizar, como riscos padronizados abaixo de um limite de importância segurada. Uma taxa sobre submissões elegíveis será bem maior do que uma taxa sobre tudo. Por isso, uma taxa de STP só é comparável quando o escopo está definido, e um título de 70% de STP diz pouco sem saber o ramo e o denominador.
 
@@ -2450,7 +2450,7 @@ Then enrichment and scoring complete missing data from internal and external sou
 
 Finally, decision and prioritization routes each case. The pipeline quotes, declines automatically, or escalates to a human underwriter, always with an explanation, writes the result back to the core, and returns the audit trail. The STP ratio is simply the share of submissions that reach a decision across these six stages without a human touch. Well-calibrated routing is what separates the risk that flows straight through from the risk that deserves a human pair of eyes, a topic covered in the guide to [automatic underwriting routing](#blog/roteamento-automatico-subscricao-en) and in the reference on the [touchless underwriting pipeline](#blog/esteira-subscricao-sem-toque-seguros-en).
 
-### What a good STP ratio looks like and how to raise it with an AI layer
+### What is a good STP ratio in insurance?
 
 A good STP ratio in insurance is not a single number. The STP ratio is the proportion of submissions that complete the underwriting journey with no manual underwriter intervention, over total submissions in the period. The calculation is direct: divide the number of submissions decided with no manual touch by the total submissions in the period. Two scope choices change the number materially and should therefore be stated. The first is what enters the numerator: only the auto-quoted business, or also the automatic declines and issuances, since a clean auto-decline still saved underwriting time. The second is the scope of the denominator: all submissions, or only those the insurer intended to automate, such as standard risks below a sum-insured threshold. A ratio over eligible submissions will be far higher than a ratio over everything. For that reason, an STP ratio is only comparable once the scope is defined, and a headline of 70% STP says little without knowing the line of business and the denominator.
 
@@ -4180,7 +4180,7 @@ The remaining phases harden the system. Testing shadow-runs the layer against hi
 
 ### Governance, explainability, and LGPD
 
-Automated underwriting in Brazil operates under the LGPD (Lei Geral de Proteção de Dados, Lei nº 13.709/2018) and under SUSEP supervision of the insurance market, and human-in-the-loop escalation is what makes that governance operable. LGPD Art. 20 gives the data subject the right to request review of decisions taken solely on the basis of automated processing that affect their interests, including decisions about risk profile. For underwriting automation, that means every automated quote, every decline, and the basis for each decision must be explainable and reviewable. The escalation path and the logged model rationale are precisely what satisfy this requirement.
+Automated underwriting in Brazil operates under the LGPD (Lei Geral de Proteção de Dados, Lei nº 13.709/2018) and under [SUSEP regulation of AI in the Brazil insurance market](#blog/regulacao-ia-seguros-susep-en), and human-in-the-loop escalation is what makes that governance operable. LGPD Art. 20 gives the data subject the right to request review of decisions taken solely on the basis of automated processing that affect their interests, including decisions about risk profile. For underwriting automation, that means every automated quote, every decline, and the basis for each decision must be explainable and reviewable. The escalation path and the logged model rationale are precisely what satisfy this requirement.
 
 Auditability is the second pillar. Each automated step and each escalation leaves a trail of what data was used, what the model recommended and why, which trigger escalated the case, and what the human ultimately decided. This supports both LGPD review rights and SUSEP supervisory expectations. Encryption and access controls apply at every step, in transit and at rest, in line with the LGPD principles of finalidade, necessidade, and segurança set out in LGPD Art. 6.
 
@@ -4941,14 +4941,14 @@ For policyholders, Open Insurance Brazil aims to bring more competition, better 
     slug: "regulacao-ia-seguros-susep-en",
     cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/regulacao-ia-seguros-susep-en.jpg",
-    title: "AI regulation in Brazilian insurance and the demand for explainability",
-    sub: "A read on AI regulation in insurance in Brazil and the demand for explainability. SUSEP, the LGPD, and how WIR keeps underwriting AI auditable.",
+    title: "Brazil insurance market 2026: SUSEP AI regulation",
+    sub: "How the Brazil insurance market is regulated for AI in 2026: SUSEP conduct supervision, LGPD Article 20, and what explainable underwriting requires.",
     author: "WIR Innovation", role: "Team",
     time: "8 min", date: "08 · Jun · 2026",
-    metaDesc: "A read on AI regulation in insurance in Brazil and the demand for explainability. SUSEP, the LGPD, and how WIR keeps underwriting AI auditable.",
+    metaDesc: "How the Brazil insurance market is regulated for AI in 2026: SUSEP conduct supervision, LGPD Article 20, and what explainable underwriting requires.",
     body: `### The market in one read
 
-AI regulation in insurance in Brazil does not yet live in a single dedicated rulebook, and that is exactly why explainability has become the operative demand. As of mid 2026, an AI driven underwriting decision sits at the intersection of three live frames: SUSEP (the insurance regulator) supervising market conduct and prudential risk, the LGPD, Law 13.709/2018, enforced by the ANPD (the data protection authority), and the proposed national AI bill moving through Congress, PL 2338/2023. The practical message for any insurer running models in Seguros e Danos (P&C) is consistent across all three. An automated risk score or an automated decline must be reviewable, explainable, and traceable, ahead of any prescriptive code.
+The Brazil insurance market in 2026 has no single dedicated rulebook for AI, and that is exactly why explainability has become the operative demand. An AI driven underwriting decision today sits at the intersection of three live frames: SUSEP regulation (the insurance regulator supervising market conduct and prudential risk), the LGPD, Law 13.709/2018, enforced by the ANPD (the data protection authority), and the proposed national AI bill moving through Congress, PL 2338/2023. The practical message for any insurer running models in Seguros e Danos (P&C) is consistent across all three. An automated risk score or an automated decline must be reviewable, explainable, and traceable, ahead of any prescriptive code.
 
 ### State of the P&C insurance market
 
@@ -7405,7 +7405,7 @@ A escolha verdadeira não é entre velocidade e compliance. É entre arquitetura
     authorPhoto: "assets/team/jose-carlos.jpg",
     time: "8 min", date: "08 · Mar · 2026",
     metaDesc: "Straight-through processing sem auditabilidade nativa é bomba-relógio regulatória. Checklist de 9 itens para validar antes de escalar volume.",
-    body: `Straight-through processing (STP) virou termo de venda no setor. Toda apresentação promete STP. Toda diretoria coloca STP em deck de transformação digital.
+    body: `[Straight-through processing (STP) em seguros](#blog/o-que-e-stp-seguros) virou termo de venda no setor. Toda apresentação promete STP. Toda diretoria coloca STP em deck de transformação digital.
 
 Muito do que se chama de STP no mercado brasileiro hoje é, tecnicamente, automação parcial sem trilha de auditoria. Funciona. Escala um pouco. E acumula risco invisível ao longo do tempo, até que o risco aparece, em fiscalização, em sinistro inesperado, em RFP de resseguro perdido.
 
