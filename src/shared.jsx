@@ -24,7 +24,7 @@ const T = {
       { id: "solutions", label: "Produtos & IA" },
       { id: "protection", label: "Proteção de Dados" },
       { id: "blog", label: "Insights & News", href: INSIGHTS_HREF }, // real static page
-      { id: "dashboard", label: "Dashboard", href: DASHBOARD_HREF, ext: true },
+      { id: "dashboard", label: "Dashboard", href: DASHBOARD_HREF, ext: true, badge: true },
     ],
     navCta: "Contato",
     footerDesc: "A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.",
@@ -57,7 +57,7 @@ const T = {
       { id: "solutions", label: "Products & AI" },
       { id: "protection", label: "Data Protection" },
       { id: "blog", label: "Insights & News", href: INSIGHTS_HREF },
-      { id: "dashboard", label: "Dashboard", href: DASHBOARD_HREF, ext: true },
+      { id: "dashboard", label: "Dashboard", href: DASHBOARD_HREF, ext: true, badge: true },
     ],
     navCta: "Contact",
     footerDesc: "The new era of insurance is data intelligence, speed, and scale. WIR Innovation is the AI platform that delivers that structure inside the systems you already run.",
@@ -90,7 +90,7 @@ const T = {
       { id: "solutions", label: "Productos & IA" },
       { id: "protection", label: "Protección de Datos" },
       { id: "blog", label: "Insights & News", href: INSIGHTS_HREF },
-      { id: "dashboard", label: "Dashboard", href: DASHBOARD_HREF, ext: true },
+      { id: "dashboard", label: "Dashboard", href: DASHBOARD_HREF, ext: true, badge: true },
     ],
     navCta: "Contacto",
     footerDesc: "La nueva era del seguro es inteligencia de datos, velocidad y escala. WIR Innovation es la plataforma de IA que entrega esa estructura dentro de los sistemas que ya operas.",
@@ -247,7 +247,7 @@ export function Nav({ route, go }) {
       <a key={l.id} href={l.href}
         target={l.ext ? "_blank" : undefined}
         rel={l.ext ? "noopener" : undefined}
-        className={"nav__link" + (route===l.id ? " nav__link--active": "")}
+        className={"nav__link" + (l.badge ? " nav__link--badge" : "") + (route===l.id ? " nav__link--active": "")}
         aria-current={route===l.id ? "page" : undefined}>
         {l.label}
       </a>

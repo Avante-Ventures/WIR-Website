@@ -1738,3 +1738,18 @@ html.js-ready [data-reveal].is-revealed{ opacity: 1; transform: translateY(0); }
   .dashcard__shot, .dashcard__cta { transition: none; }
   .dashcard__shot:hover { transform: none; }
 }
+
+/* Dashboard no nav — acento sólido para destacar do resto dos links.
+   Fica abaixo do CTA "Contato" na hierarquia (ele é preto e leva à conversa);
+   este é roxo, o acento padrão da marca. Padding generoso porque o alvo de
+   clique de um link de texto puro era pequeno demais. */
+.nav__link--badge {
+  background: var(--wir-purple);
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 999px;
+  transition: background .18s ease, transform .18s ease;
+}
+.nav__link--badge:hover { background: var(--wir-blue); color: #fff; transform: translateY(-1px); }
+.nav__link--badge::after { display: none; } /* sem o sublinhado dos links normais */
+@media (prefers-reduced-motion: reduce) { .nav__link--badge { transition: none; } .nav__link--badge:hover { transform: none; } }
