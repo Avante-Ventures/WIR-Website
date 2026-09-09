@@ -5,6 +5,10 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { LANG, INSIGHTS_HREF, MANIFESTO_HREF } from './i18n.js';
 
+// Painel público de dados SES/SUSEP. Vive num subdomínio próprio (projeto
+// Vercel separado), por isso abre em nova aba: é outro app, não outra página.
+export const DASHBOARD_HREF = 'https://dashboard.wirinnovation.ai/';
+
 const T = {
   pt: {
     ticker: [
@@ -20,6 +24,7 @@ const T = {
       { id: "solutions", label: "Produtos & IA" },
       { id: "protection", label: "Proteção de Dados" },
       { id: "blog", label: "Insights & News", href: INSIGHTS_HREF }, // real static page
+      { id: "dashboard", label: "Dashboard", href: DASHBOARD_HREF, ext: true },
     ],
     navCta: "Contato",
     footerDesc: "A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.",
@@ -52,6 +57,7 @@ const T = {
       { id: "solutions", label: "Products & AI" },
       { id: "protection", label: "Data Protection" },
       { id: "blog", label: "Insights & News", href: INSIGHTS_HREF },
+      { id: "dashboard", label: "Dashboard", href: DASHBOARD_HREF, ext: true },
     ],
     navCta: "Contact",
     footerDesc: "The new era of insurance is data intelligence, speed, and scale. WIR Innovation is the AI platform that delivers that structure inside the systems you already run.",
@@ -84,6 +90,7 @@ const T = {
       { id: "solutions", label: "Productos & IA" },
       { id: "protection", label: "Protección de Datos" },
       { id: "blog", label: "Insights & News", href: INSIGHTS_HREF },
+      { id: "dashboard", label: "Dashboard", href: DASHBOARD_HREF, ext: true },
     ],
     navCta: "Contacto",
     footerDesc: "La nueva era del seguro es inteligencia de datos, velocidad y escala. WIR Innovation es la plataforma de IA que entrega esa estructura dentro de los sistemas que ya operas.",
@@ -238,6 +245,8 @@ export function Nav({ route, go }) {
   const navItem = (l, onClick) => (
     l.href ? (
       <a key={l.id} href={l.href}
+        target={l.ext ? "_blank" : undefined}
+        rel={l.ext ? "noopener" : undefined}
         className={"nav__link" + (route===l.id ? " nav__link--active": "")}
         aria-current={route===l.id ? "page" : undefined}>
         {l.label}

@@ -276,6 +276,7 @@ function renderNav(lang = "pt-BR") {
       <a href="${c.base}/#solutions" class="nav__link">${c.navSolutions}</a>
       <a href="${c.base}/#protection" class="nav__link">${c.navProtection}</a>
       <a href="${insightsHref(lang)}" class="nav__link nav__link--active">Insights &amp; News</a>
+      <a href="https://dashboard.wirinnovation.ai/" target="_blank" rel="noopener" class="nav__link">Dashboard</a>
     </div>
     <a href="${c.base}/#contact" class="nav__cta">
       <span class="dot"></span>

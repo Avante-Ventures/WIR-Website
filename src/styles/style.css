@@ -1682,3 +1682,59 @@ html.js-ready [data-reveal].is-revealed{ opacity: 1; transform: translateY(0); }
   .nav__lang-btn{ padding: 6px 8px 6px 10px; font-size: 11px; }
   .nav__lang-flag{ font-size: 13px; }
 }
+
+/* ─────────── DASHBOARD CARD (home) ───────────
+   Painel público SES/SUSEP. Mesmo sistema editorial do resto do home: régua
+   hairline em cima e embaixo, eyebrow em mono, título em display com <em>. */
+.dashcard {
+  padding: 140px 0;
+  border-top: 1px solid var(--paper-3);
+  border-bottom: 1px solid var(--paper-3);
+}
+.dashcard__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 64px;
+  align-items: center;
+}
+.dashcard__eyebrow {
+  font-family: var(--f-mono); font-size: 11px;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: 28px;
+}
+.dashcard__title {
+  font-family: var(--f-display); font-weight: 400;
+  font-size: clamp(34px, 3.6vw, 54px);
+  line-height: 1.06; letter-spacing: -0.02em;
+  color: var(--ink); text-wrap: balance;
+}
+.dashcard__title em { font-style: italic; color: var(--ink-3); }
+.dashcard__text {
+  margin-top: 22px; max-width: 46ch;
+  font-size: 16px; line-height: 1.65; color: var(--ink-3);
+}
+.dashcard__cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 32px; padding-bottom: 3px;
+  font-weight: 500; color: var(--ink);
+  border-bottom: 1px solid var(--ink-3);
+  transition: gap .18s ease, border-color .18s ease;
+}
+.dashcard__cta:hover { gap: 16px; border-color: var(--ink); }
+.dashcard__shot {
+  display: block; border: 1px solid var(--paper-3);
+  background: var(--paper-2); overflow: hidden;
+  transition: transform .3s ease, border-color .3s ease;
+}
+.dashcard__shot img { display: block; width: 100%; height: auto; }
+.dashcard__shot:hover { transform: translateY(-3px); border-color: var(--ink-4); }
+
+@media (max-width: 900px) {
+  .dashcard { padding: 96px 0; }
+  .dashcard__inner { grid-template-columns: 1fr; gap: 40px; }
+  .dashcard__shot { order: 2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dashcard__shot, .dashcard__cta { transition: none; }
+  .dashcard__shot:hover { transform: none; }
+}

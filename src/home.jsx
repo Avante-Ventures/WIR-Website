@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { useReveal } from './shared.jsx';
+import { useReveal, DASHBOARD_HREF } from './shared.jsx';
 import { LANG, MANIFESTO_HREF } from './i18n.js';
 import { Opening, Proof } from './home-opening.jsx';
 import { Shift, ProductTabs } from './home-shift.jsx';
@@ -291,6 +291,53 @@ export function Voices() {
   );
 }
 
+
+// Painel público SES/SUSEP — o único ativo do site que é dado vivo, não conteúdo.
+// Serve de prova: mostra o mercado inteiro em números antes de pedir uma reunião.
+const DASH = {
+  pt: {
+    eyebrow: "· Dados abertos",
+    title: <>Todo o setor supervisionado, <em>em um painel</em>.</>,
+    text: "Arrecadação, sinistralidade, lucro e patrimônio de todos os grupos supervisionados pela SUSEP — seguros, VGBL, previdência e capitalização. Base SES/SUSEP, atualizada todo mês.",
+    cta: "Abrir o dashboard",
+    alt: "WIR Insights Dashboard: painel do mercado segurador brasileiro",
+  },
+  en: {
+    eyebrow: "· Open data",
+    title: <>The entire supervised market, <em>in one dashboard</em>.</>,
+    text: "Premiums, loss ratio, profit and equity for every group supervised by SUSEP — insurance, VGBL, pensions and capitalization. SES/SUSEP data, refreshed monthly.",
+    cta: "Open the dashboard",
+    alt: "WIR Insights Dashboard: the Brazilian insurance market",
+  },
+  es: {
+    eyebrow: "· Datos abiertos",
+    title: <>Todo el sector supervisado, <em>en un panel</em>.</>,
+    text: "Recaudación, siniestralidad, utilidad y patrimonio de todos los grupos supervisados por la SUSEP — seguros, VGBL, previsión y capitalización. Base SES/SUSEP, actualizada cada mes.",
+    cta: "Abrir el panel",
+    alt: "WIR Insights Dashboard: el mercado asegurador brasileño",
+  },
+}[LANG];
+
+export function DashboardCard() {
+  return (
+    <section className="dashcard bg-editorial bg-editorial--bl" data-reveal>
+      <div className="wrap dashcard__inner">
+        <div className="dashcard__copy">
+          <div className="dashcard__eyebrow">{DASH.eyebrow}</div>
+          <h2 className="dashcard__title">{DASH.title}</h2>
+          <p className="dashcard__text">{DASH.text}</p>
+          <a className="dashcard__cta" href={DASHBOARD_HREF} target="_blank" rel="noopener">
+            {DASH.cta} <span aria-hidden="true">&#8599;</span>
+          </a>
+        </div>
+        <a className="dashcard__shot" href={DASHBOARD_HREF} target="_blank" rel="noopener" tabIndex={-1} aria-hidden="true">
+          <img src="/assets/dashboard-preview.png" alt={DASH.alt} loading="lazy" width="1600" height="1000" />
+        </a>
+      </div>
+    </section>
+  );
+}
+
 export function HomePage({ go }) {
   useReveal();
   return (
@@ -302,6 +349,7 @@ export function HomePage({ go }) {
       <ArchFlow/>
       <Proof go={go}/>
       <Press/>
+      <DashboardCard/>
       <MidCta go={go}/>
       <Manifesto go={go}/>
       <Voices/>
