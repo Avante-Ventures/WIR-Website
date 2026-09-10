@@ -4,6 +4,247 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 export const ARTICLES = [
   {
+    slug: "defesa-civil-do-estado-de-sao-paulo",
+    cat: "Artigo", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/defesa-civil-do-estado-de-sao-paulo.jpg",
+    imageAlt: "Mesa de subscrição em escritório escuro com pilha de apólices impressas, prancheta de vistoria e mão humana sobre os papéis; ao fundo, vidro com chuva e monitor desfocado com mapa de risco em azul.",
+    title: "Defesa Civil do Estado de São Paulo: o que é, como funciona e como receber os alertas",
+    sub: "O que é a Defesa Civil do Estado de São Paulo, como ela nasceu, como cadastrar seu CEP para receber alertas por SMS e WhatsApp, e o que a lógica de alerta antecipado ensina a seguradoras e corretores de P&C no Brasil.",
+    author: "Nicholas Weiser", role: "CEO · Co-Founder",
+    authorPhoto: "assets/team/nicholas.jpg",
+    time: "7 min", date: "09 · Set · 2026", dateISO: "2026-09-09",
+    metaDesc: "O que é a Defesa Civil do Estado de São Paulo, como funciona a CEDEC, como cadastrar seu CEP no SMS 40199 e por que o modelo de alerta interessa ao seguro ",
+    alt: "sao-paulo-state-civil-defense",
+    faq: [
+      { q: "Como receber alerta da Defesa Civil de SP?", a: "Envie um SMS para o número 40199 com o CEP da região de interesse. O CEP pode ir em qualquer formato; assim que você receber a mensagem de confirmação, os alertas daquela região começam a chegar. Também é possível acompanhar a Defesa Civil pelo canal oficial no WhatsApp. O serviço de SMS é totalmente gratuito." },
+      { q: "Por que recebi um alerta da Defesa Civil?", a: "Porque um CEP vinculado ao seu cadastro está em área sob risco monitorado. O SP Sempre Alerta foi criado para prevenir e reduzir impactos de desastres causados por chuvas extremas e incêndios e classifica os cenários com cores, para facilitar a compreensão da gravidade de cada situação." },
+      { q: "Tem previsão de chuva no Estado de São Paulo?", a: "A Defesa Civil estadual trabalha com alertas, não com boletim de previsão convencional. O monitoramento é apoiado pelo Centro Paulista de Radares e Alertas Meteorológicos (CePRAM) e por ações como a Operação Chuvas. Para saber se sua região está sob alerta, cadastre o CEP no SMS 40199." },
+      { q: "Como parar de receber os SMS da Defesa Civil?", a: "Envie um SMS com a palavra SAIR junto ao número do CEP que você quer descadastrar; você recebe a confirmação. Cada CEP é cadastrado e cancelado individualmente." },
+      { q: "Qual o telefone da Defesa Civil de São Paulo?", a: "Em emergências, os números indicados são 199 (Defesa Civil), 193 (Corpo de Bombeiros) e 190 (Polícia Militar)." },
+    ],
+    body: `A Defesa Civil do Estado de São Paulo é o órgão responsável pelas ações preventivas e de prestação de socorro por desastres no âmbito do Estado de São Paulo, coordenado pela Coordenadoria Estadual de Proteção e Defesa Civil (CEDEC), cuja direção cabe ao Governador do Estado.
+
+- A Defesa Civil do Estado de São Paulo é o órgão responsável pelas ações preventivas e de socorro por desastres no estado [2].
+- O Sistema Estadual de Defesa Civil foi criado pelo Decreto 7.550, de 9 de fevereiro de 1976, e reorganizado pelo Decreto 40.151, de 16 de junho de 1995 [2].
+- Para receber alertas, basta enviar um SMS com o CEP da região de interesse para o número 40199; o serviço é gratuito e aceita o CEP em qualquer formato [1][3].
+- Para deixar de receber alertas de um CEP, envie um SMS com a palavra SAIR junto ao número do CEP [1].
+- Em emergências, os telefones são 199 (Defesa Civil), 193 (Bombeiros) e 190 (Polícia Militar) [3].
+
+### O que é a Defesa Civil do Estado de São Paulo
+
+A **Defesa Civil do Estado de São Paulo é o órgão responsável pelas ações preventivas e de prestação de socorro por desastres no âmbito do Estado de São Paulo** [2]. Na prática, ela coordena o que acontece antes, durante e depois de um evento extremo: monitoramento, alerta à população, socorro e assistência às áreas atingidas [5].
+
+A estrutura tem nome e dono. A direção do Sistema Estadual de Defesa Civil cabe ao Governador do Estado e é exercida por meio da **Coordenadoria Estadual de Defesa Civil (CEDEC)** [5], hoje apresentada como Coordenadoria Estadual de Proteção e Defesa Civil [1]. A CEDEC coordena, supervisiona, avalia e orienta, em nome do Governador, todas as medidas relacionadas ao sistema [5]. O Sistema Estadual é, por definição legal, um instrumento de coordenação: articula órgãos públicos estaduais, demais órgãos públicos, entidades privadas e a comunidade em geral para prevenir consequências nocivas de eventos calamitosos e socorrer a população atingida [5].
+
+Ou seja: não é uma equipe que aparece só na enchente. É uma camada de coordenação que fica por cima de várias estruturas já existentes, e é exatamente por isso que ela funciona sem substituir bombeiros, polícia ou prefeituras.
+
+### Por que ela existe: Caraguatatuba, Andraus e Joelma
+
+A Defesa Civil paulista nasceu de tragédias concretas. Sua origem está nos resultados desastrosos das intensas chuvas ocorridas em **Caraguatatuba (1967)** e nos incêndios dos edifícios **Andraus (1972)** e **Joelma (1974)**, que causaram inúmeras mortes pela falta de rápida coordenação dos órgãos públicos e de integração com as comunidades [2].
+
+A linha do tempo formal é curta e vale conhecer:
+
+- **1976**, o Sistema Estadual de Defesa Civil é criado pelo Decreto 7.550, de 9 de fevereiro [2].
+- **1989**, o Decreto 29.752, de 15 de março, reorganiza e regulamenta o Sistema Estadual de Defesa Civil [5].
+- **1995**, novo movimento de reorganização pelo Decreto 40.151, de 16 de junho, no governo Mário Covas [2].
+
+O ponto que interessa a quem trabalha com risco: o gatilho não foi tecnologia nova, foi coordenação ausente. O prejuízo veio da demora, não da falta de recurso.
+
+### Como receber os alertas da Defesa Civil de SP
+
+Essa é a pergunta mais comum de quem chega ao tema. Existem três caminhos diretos [3]:
+
+1. **SMS**, envie uma mensagem para o número **40199** com o CEP da região de interesse [3]. O CEP pode ser enviado em qualquer formato, com ou sem hífen; o importante é receber a mensagem de confirmação, a partir da qual você já começa a receber os alertas da sua região [1].
+2. **WhatsApp**, acompanhe a Defesa Civil pelo canal oficial no WhatsApp [3].
+3. **Telefone, em emergência**, 199, 193 e 190 [3].
+
+Detalhes que evitam frustração:
+
+- Você **pode cadastrar quantos CEPs quiser**, mas o cadastro deve ser feito de um em um [1]. Dá para monitorar casa, escritório, galpão e a casa dos pais.
+- Para **parar de receber** alertas de um CEP específico, envie um SMS com a palavra **SAIR** junto ao número do CEP; você recebe a confirmação [1].
+- O serviço é **totalmente gratuito** [1].
+
+### Por que recebi um alerta? O que o SP Sempre Alerta faz
+
+Se chegou uma mensagem no seu celular, provavelmente é porque um CEP associado a você está em uma região sob risco monitorado. O programa **SP Sempre Alerta** foi criado para prevenir e reduzir impactos de desastres causados por chuvas extremas e incêndios e para conscientizar a população, alertando também sobre riscos ligados às mudanças climáticas [3].
+
+O sistema **classifica os cenários com cores**, para facilitar a compreensão dos cidadãos sobre a gravidade de cada situação [3]. Um alerta não significa que o desastre está acontecendo na sua rua; significa que a probabilidade subiu o suficiente para você mudar de comportamento agora.
+
+O portal reúne orientações sobre o que fazer antes, durante e depois de cada tipo de evento: tempestades, raios e granizo, vendaval, calor extremo, deslizamentos, queda de energia, estiagem, inundações, afogamento, incêndios florestais, produtos perigosos e baixas temperaturas [3]. Há ainda o **plano familiar de emergência** e a possibilidade de se tornar voluntário [3].
+
+### Chuva, fogo e radar: onde vem a informação
+
+Sobre a pergunta "tem previsão de chuva no Estado de São Paulo?": a Defesa Civil não é um site de previsão do tempo comum, ela publica **alertas** ligados a operações específicas. O estado mantém a **Operação Chuvas** e a **Operação SP Sem Fogo** [3], e a estrutura de monitoramento inclui o **Centro Paulista de Radares e Alertas Meteorológicos (CePRAM)** [3].
+
+A lógica é simples e boa: radar e modelagem viram uma classificação por cor, que vira um SMS no bolso de quem mora naquele CEP [1][3]. Dado bruto de um lado, decisão humana do outro. No meio, uma camada de tradução.
+
+É esse desenho, e não o radar em si, que vale copiar.
+
+### O que isso ensina a seguradoras e corretores de P&C
+
+Quem trabalha com Seguros e Danos no Brasil olha para o SP Sempre Alerta e reconhece o próprio problema. A Defesa Civil não trocou o corpo de bombeiros, não trocou as prefeituras, não trocou a polícia. Ela **adicionou uma camada de coordenação por cima** de estruturas que continuam funcionando [5]. É exatamente a discussão que a WIR Innovation faz no mercado segurador: camada de IA versus core. Trocar o sistema de registro para poder usar dado novo é uma falsa escolha.
+
+Três leituras diretas para a operação:
+
+- **Alerta é priorização, não substituição.** A cor do alerta não decide por ninguém: ela empurra a atenção humana para onde o risco subiu [3]. Na subscrição, é a mesma coisa. O subscritor não morre, ele decide, com a carga manual tirada do caminho.
+- **Granularidade por CEP muda a conversa.** O cadastro do alerta é feito por CEP, um a um [1]. Carteira de patrimonial, frota e riscos nomeados também vive de geografia fina. Quem consegue cruzar acumulação por CEP com alerta ativo consegue agir antes do sinistro, não depois.
+- **Velocidade é serviço, não teatro.** O valor do SMS está em chegar antes [3]. O valor de uma cotação em minutos, de uma renovação tratada sem fila e de um aviso de sinistro triado no mesmo dia é da mesma natureza: mercado que cresce porque o atendimento existe quando importa.
+
+Para corretor, há um uso imediato e barato: cadastrar os CEPs dos principais riscos da carteira no SMS gratuito [1] e transformar cada alerta em contato ativo com o cliente. Prevenção comunicada é retenção.
+
+### Da sirene à apólice: onde entra a camada de IA
+
+A distância entre um alerta público e uma ação de carteira ainda é manual na maioria das operações brasileiras. Alguém vê a notícia, alguém abre a planilha, alguém procura quais apólices estão naquela região, alguém liga. Quando termina, choveu.
+
+Uma camada de IA conectada por API ao que já existe faz esse caminho no tempo certo: lê o dado de exposição onde ele mora, cruza com o sinal externo, monta a lista de clientes afetados e entrega ao humano uma decisão pronta para ser tomada, com a evidência ao lado. O core segue intacto. O subscritor e o corretor seguem no comando.
+
+A Defesa Civil de São Paulo já provou a tese fora do seguro: coordenação bem-feita antecipa perda [2][5]. O mercado segurador brasileiro pode fazer o mesmo com a informação que já tem.
+
+### Fontes
+
+1. [Secretaria da Defesa Civil | Governo do Estado de SP](https://www.defesacivil.sp.gov.br/)
+2. [Defesa Civil do Estado de São Paulo, Wikipédia, a enciclopédia livre](https://pt.wikipedia.org/wiki/Defesa_Civil_do_Estado_de_S%C3%A3o_Paulo)
+3. [Home - SP Sempre Alerta](https://www.spsemprealerta.sp.gov.br/)
+5. [Decreto n&ordm; 29.752, de 15 de mar&ccedil;o de 1989 - Assembleia Legislativa do Estado de S&atilde;o Paulo](https://www.al.sp.gov.br/repositorio/legislacao/decreto/1989/decreto-29752-15.03.1989.html)`,
+  },
+  {
+    slug: "sao-paulo-state-civil-defense",
+    cat: "Article", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
+    image: "/assets/articles/sao-paulo-state-civil-defense.jpg",
+    imageAlt: "Underwriting desk in a dark corporate office: hands resting on a stack of printed insurance proposals and an inspection clipboard, with a blurred blue risk map glowing on a monitor.",
+    title: "São Paulo State Civil Defense: What It Is, What It Does, and Why P&C Insurers Should Care",
+    sub: "A plain-language guide to the Civil Defense of the State of São Paulo, why it exists, how it is organized today, why your phone buzzes with its alerts, and what those warnings mean for underwriting and claims in Brazilian P&C insurance.",
+    author: "Nicholas Weiser", role: "CEO · Co-Founder",
+    authorPhoto: "assets/team/nicholas.jpg",
+    time: "8 min", date: "09 · Sep · 2026", dateISO: "2026-09-09",
+    metaDesc: "What the Civil Defense of the State of São Paulo is, how it is organized, why you get alerts, official 24h contact, and what it means for P&C underwriting",
+    lang: "en",
+    alt: "defesa-civil-do-estado-de-sao-paulo",
+    faq: [
+      { q: "What is the Civil Defense of the State of São Paulo?", a: "It is the São Paulo state government agency responsible for coordinating protection and civil defense, emergency management, in the state. It coordinates prevention, warning and response, and supports municipalities and residents during disasters. Specific decree numbers for its creation and later reorganization circulate online but are not confirmed by the sources used in this article, so we do not cite them." },
+      { q: "Why did I receive a Civil Defense alert, and what does it mean?", a: "An alert means the authority responsible for emergency management in your region issued a warning about a risk affecting a geographic area, commonly heavy rain, storm, flooding, landslide risk or extreme heat. It is broadcast to an area, not sent to you individually. Follow the instruction in the message and confirm updates through the official website or the verified @defesacivilsp profiles." },
+      { q: "How do I contact São Paulo state Civil Defense?", a: "The state Civil Defense operates 24 hours at Av. Morumbi, 4500, Sala 79, CEP 05650-905, São Paulo/SP, phone (11) 2193 8888, e-mail defesacivil@sp.gov.br. The official website is defesacivil.sp.gov.br." },
+      { q: "Who runs São Paulo state Civil Defense?", a: "Colonel Rinaldo de Araújo Monteiro is the Secretary-Chief of the Casa Militar and State Civil Defense Coordinator. He joined the São Paulo State Military Police in 1991 and previously served as regional coordinator for Protection and Civil Defense of the Vale do Paraíba, Litoral Norte and Serra da Mantiqueira and as director of the State Department of Protection and Civil Defense. The Casa Militar e Defesa Civil is a technical body linked directly to the Governor's Office." },
+      { q: "Why should insurers and brokers follow Civil Defense alerts?", a: "Because state warnings arrive before claims do. A single weather event in São Paulo can touch many municipalities on the same day, which means many policies at once, correlation, not frequency. Used well, that warning window becomes operational time for accumulation checks, triage and routing. This reading is our editorial interpretation, not a statement by the agency." },
+    ],
+    body: `The Civil Defense of the State of São Paulo is the São Paulo state government agency responsible for coordinating protection and civil defense, emergency management, across the state, supporting municipalities and residents before, during and after disasters such as floods, landslides, storms and fires.
+
+- It is a state government agency. Field of work: emergency management. Operating area: the state of São Paulo. Official site: defesacivil.sp.gov.br [1].
+- It exists because of failures, not plans: the intense rains in Caraguatatuba (1967) and the Andraus (1972) and Joelma (1974) building fires exposed a lack of fast coordination between public agencies and with the community [2].
+- The desk runs 24 hours: Av. Morumbi, 4500, Sala 79, São Paulo/SP, phone (11) 2193 8888, e-mail defesacivil@sp.gov.br [3].
+- Civil defense sits inside the Casa Militar e Defesa Civil, a technical body linked directly to the Governor's Office, currently led by Colonel Rinaldo de Araújo Monteiro [5].
+- Editorial note: decree numbers, historical casualty figures and social-media follower counts circulate widely online. We only publish what the sources consulted support, everything else is flagged as unverified.
+
+### What it is, in one paragraph
+
+The **Civil Defense of the State of São Paulo** is a state government agency. Its field of work is **emergency management**. Its operating area is the state of São Paulo, its working language is Portuguese, and its official website is \`defesacivil.sp.gov.br\` [1].
+
+What it does, in practice: it coordinates prevention, warning, response and municipal support for floods, landslides, storms, heat waves and fires across the state. It **supplements and supports municipalities and residents** in difficult moments [2]. The service desk operates **24 hours**, at Av. Morumbi, 4500, Sala 79, CEP 05650-905, São Paulo/SP, phone **(11) 2193 8888**, e-mail **defesacivil@sp.gov.br** [3].
+
+For anyone in insurance, the translation is short. The same rain event that triggers a state alert is the event that fills your claims queue 48 hours later.
+
+### Why it exists: 1967, 1972, 1974
+
+The agency was not born from a planning cycle. It was born from bodies.
+
+According to the agency's own institutional page, civil defense in São Paulo originated after the **intense rains in Caraguatatuba (1967)** and the fires in the **Andraus (1972)** and **Joelma (1974)** buildings, which caused several deaths **due to the lack of fast coordination between public agencies and integration with the community** [2]. The state government recognized the need for a body that could prevent such events or, when prevention was impossible, minimize their effects [2].
+
+That origin explains the institution's logic to this day. The failure was not a lack of resources. It was a lack of **coordination and speed**. Different agencies held different pieces of the picture and nobody could assemble them in time.
+
+Any insurance operator recognizes the pattern. The information existed. It just was not in one place at the moment of the decision.
+
+### How it is organized today
+
+Institutionally, civil defense sits with the **Casa Militar e Defesa Civil**, described as a technical body linked directly to the Governor's Office [5].
+
+The current **Secretary-Chief of the Casa Militar and State Civil Defense Coordinator is Colonel Rinaldo de Araújo Monteiro**, born in Cunha, in the Vale do Paraíba. He joined the São Paulo State Military Police in 1991 and served in territorial policing companies, tactical force and environmental policing, including as Commander of the 3rd Environmental Policing Battalion [5]. He was also **regional coordinator for Protection and Civil Defense of the Vale do Paraíba, Litoral Norte and Serra da Mantiqueira**, director of the State Department of Protection and Civil Defense, and chief of staff of the Casa Militar [5].
+
+Communication runs through official channels: the website, verified profiles under the handle **@defesacivilsp** on Instagram, X and Facebook, and the **DefesaCivilEstadualSP** channel on YouTube [1].
+
+One deliberate omission. Follower and subscriber counts for those profiles circulate in third-party directories and change constantly. We could not confirm specific figures in the sources consulted, so we do not publish any. If you need the current audience numbers, open the profiles.
+
+### Why you received an alert on your phone
+
+If your phone displayed a Civil Defense alert, the authority responsible for emergency management in your area [1] issued a warning about a risk in your region, typically heavy rain, storm, flooding, landslide risk or extreme heat.
+
+The alert is not addressed to you personally. You did not subscribe to it. It is broadcast to a geographic area.
+
+What to do with it is simple and unglamorous: read the instruction, avoid flooded roads and slope-risk areas, and follow the official channels for updates [1]. To report an emergency or ask about an occurrence in São Paulo state, the desk answers **24 hours a day on (11) 2193 8888** [3].
+
+One warning about sources. Alert wording travels fast on messaging apps, usually stripped of date and location. Before acting on a screenshot, check the verified **@defesacivilsp** profiles or the official site [1]. We will not describe here which handset models receive which alert format, the public sources we consulted do not specify that, and inventing technical detail about a public safety system is worse than saying "ask the agency."
+
+### Does Civil Defense have police power?
+
+This is one of the most searched questions about the agency. It deserves a careful answer rather than a confident one.
+
+What the public record supports: the Civil Defense of the State of São Paulo is a **government agency** whose field of work is **emergency management** [1], acting in coordination with and in support of municipalities and residents [2]. Institutionally it sits inside the **Casa Militar e Defesa Civil**, a technical body linked to the Governor's Office, currently led by a Military Police colonel [5].
+
+So the correct mental model is **coordination and warning**, exercised in close articulation with military and municipal structures, not a patrol force.
+
+For the precise legal scope of any specific measure, evacuation orders, interdiction of buildings, access restrictions, the authoritative source is the agency itself and the state legislation that organizes the system. We are not going to paraphrase decree text we could not verify.
+
+### What the sources confirm, and what they don't
+
+Editorial transparency, because this topic attracts a lot of confidently repeated numbers.
+
+**Confirmed by the sources consulted [1][2][3][5]:**
+
+- the agency's field of work (emergency management), operating area, language and official website [1];
+- the official communication handles and channels [1];
+- the institutional origin narrative, Caraguatatuba 1967, Andraus 1972, Joelma 1974, and the diagnosis of slow inter-agency coordination [2];
+- the coordinating and supporting role toward municipalities and residents [2];
+- the 24-hour desk, address, phone and e-mail [3];
+- the placement of civil defense within the Casa Militar e Defesa Civil and the current coordinator's biography [5].
+
+**Not confirmed, and therefore not asserted here:**
+
+- specific decree numbers and dates for the agency's creation and later reorganization, and the exact formal name of the current central coordinating structure;
+- casualty and damage figures for historical São Paulo disasters, including the 1983 flood season and the 1984 Cubatão fire;
+- current follower and subscriber counts on social channels.
+
+Those items appear in circulation, sometimes in reputable-looking places. They may well be accurate. They are simply outside what the sources behind this article support, so treat them as unverified until you check the agency's own publications and the state's official gazette.
+
+**Editorial inference, clearly labeled as ours:** the reading that follows, that state alerts function as a leading indicator for correlated P&C losses, is our interpretation as an insurance technology company, not a claim made by the agency.
+
+### What this means for P&C underwriting in Brazil
+
+Now the part that concerns our readers directly.
+
+A state civil defense history is, functionally, a loss history. Every event that mobilizes the agency is an event that touches policies, property, motor, business interruption, agro, life. And in São Paulo, those events are rarely isolated. Heavy rain does not hit one address. It hits a slope, a floodplain, an industrial district, a corridor of municipalities on the same day.
+
+Read as an underwriter, that is **correlation, not frequency**. It is the exact shape of exposure that portfolio concentration limits exist to control.
+
+Three practical consequences we see in Brazilian P&C operations:
+
+- **Accumulation is geographic, not commercial.** Your book can be diversified by product and channel and still be concentrated on the same hillside.
+- **Public warning is a leading indicator.** The alert arrives before the first claim call. That window is operational time you either use or waste.
+- **Post-event triage decides the loss ratio.** After a correlated event, the constraint is rarely appetite. It is how fast the team reads, classifies and routes hundreds of submissions and claims documents.
+
+None of that is an argument for replacing anyone. It is an argument for removing manual load from the people who should be deciding.
+
+### The WIR view: alerts are data, decisions are human
+
+Our position at **wir Innovation** is consistent, and we wrote it down in [our manifesto](https://wirinnovation.ai/insights/manifesto-en/): you add an **AI layer** on top of what you already run, connected by API, without touching the system of record. The choice between "replace the core" and "do nothing" is a false one.
+
+Applied to catastrophe exposure in São Paulo, that layer does the unglamorous work:
+
+- reads the pile, proposals, inspection reports, schedules of values, engineering annexes, and turns it into structured fields, which is [what an underwriting copilot actually does](https://wirinnovation.ai/insights/what-is-an-underwriting-copilot/);
+- normalizes addresses and geocoded exposure so accumulation questions get answered in minutes, not in a week of spreadsheets;
+- routes submissions and claims to the right desk after an event, by severity and by expertise;
+- keeps the human in the loop, because the underwriter does not disappear, the underwriter finally underwrites.
+
+São Paulo's civil defense was built because coordination was too slow when it mattered [2]. Insurance has the same problem in its own domain. The data exists, scattered across PDFs and inboxes, and the decision needs it now.
+
+Speed here is not efficiency theater. It is how the market serves risks it currently declines to serve.
+
+### Sources
+
+1. [Civil Defense of the State of São Paulo - Wikidata](https://www.wikidata.org/wiki/Q10264731)
+2. [Sobre](https://www.defesacivil.sp.gov.br/sec_defesa_civil/institucional/sobre)
+3. [Horário de atendimento, endereço e telefone](https://www.defesacivil.sp.gov.br/sec_defesa_civil/institucional/horario_de_atendimento_endereco_e_telefone)
+5. [Casa Militar e Defesa Civil](https://www.sp.gov.br/sp/institucional/estrutura/secretarias/casa-militar-defesa-civil)`,
+  },
+  {
     slug: "nicholas-weiser-entrevista",
     cat: "Entrevista", grad: "linear-gradient(135deg,#3222E9,#7540AC)",
     image: "/assets/articles/nicholas-weiser-entrevista.jpg",
