@@ -225,10 +225,8 @@ p{ text-wrap: pretty; }
   animation: tick 60s linear infinite;
 }
 .ticker__item{ display: inline-flex; align-items: center; gap: 10px; }
-.ticker__dot{ width: 6px; height: 6px; border-radius: 50%; background: var(--wir-amber); }
-.ticker__dot--b{ background: var(--wir-blue); }
-.ticker__dot--p{ background: var(--wir-purple); }
-.ticker__dot--o{ background: var(--wir-coral); }
+/* Pause on hover or keyboard focus (WCAG 2.2.2); prefers-reduced-motion already stops it */
+.ticker:hover .ticker__track, .ticker:focus-within .ticker__track{ animation-play-state: paused; }
 @keyframes tick { from{ transform: translateX(0);} to{ transform: translateX(-50%);} }
 
 .nav{
@@ -248,11 +246,6 @@ p{ text-wrap: pretty; }
 @media (max-width: 760px) {
   .nav__inner{ height: 68px; }
   .nav__brand img, .nav__brand svg{ height: 44px; }
-}
-.nav__brand-sub{
-  font-family: var(--f-mono); font-size: 10px;
-  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3);
-  border-left: 1px solid var(--paper-3); padding-left: 14px;
 }
 .nav__links{ display: flex; gap: 4px; flex-wrap: nowrap; }
 .nav__link{
@@ -355,13 +348,12 @@ p{ text-wrap: pretty; }
   display: flex; flex-direction: column; gap: 2px;
 }
 .nav__mobile-lang {
-  display: grid; grid-template-columns: 28px 1fr auto; gap: 14px; align-items: center;
+  display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center;
   padding: 14px 12px; border-radius: 10px;
   font-size: 15px; color: var(--ink-2);
 }
 .nav__mobile-lang:hover { background: var(--paper-2); color: var(--ink); }
 .nav__mobile-lang.is-active { background: color-mix(in oklab, var(--wir-purple) 8%, transparent); color: var(--ink); font-weight: 600; }
-.nav__mobile-lang-flag { font-size: 20px; line-height: 1; }
 .nav__mobile-lang-code {
   font-family: var(--f-mono); font-size: 11px; color: var(--ink-4);
   letter-spacing: .14em;
@@ -1656,7 +1648,6 @@ html.js-ready [data-reveal].is-revealed{ opacity: 1; transform: translateY(0); }
   cursor: pointer;
 }
 .nav__lang-btn:hover{ background: var(--paper-2); border-color: var(--ink); color: var(--ink); }
-.nav__lang-flag{ font-size: 14px; line-height: 1; }
 .nav__lang-code{ letter-spacing: .06em; }
 .nav__lang-caret{ font-size: 10px; opacity: .55; transition: transform .2s; }
 .nav__lang.is-open .nav__lang-caret{ transform: rotate(180deg); }
@@ -1680,7 +1671,6 @@ html.js-ready [data-reveal].is-revealed{ opacity: 1; transform: translateY(0); }
 .nav__lang-menu .nav__lang-opt.is-active{ background: var(--ink); color: var(--paper); font-weight: 600; }
 @media (max-width: 760px){
   .nav__lang-btn{ padding: 6px 8px 6px 10px; font-size: 11px; }
-  .nav__lang-flag{ font-size: 13px; }
 }
 
 /* ─────────── DASHBOARD CARD (home) ───────────
@@ -1753,3 +1743,10 @@ html.js-ready [data-reveal].is-revealed{ opacity: 1; transform: translateY(0); }
 .nav__link--badge:hover { background: var(--wir-blue); color: #fff; transform: translateY(-1px); }
 .nav__link--badge::after { display: none; } /* sem o sublinhado dos links normais */
 @media (prefers-reduced-motion: reduce) { .nav__link--badge { transition: none; } .nav__link--badge:hover { transform: none; } }
+
+/* Print (e.g. procurement printing Proteção de Dados): show every section that waits for
+   scroll to reveal, and drop the sticky/animated chrome. */
+@media print {
+  html.js-ready [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .ticker, .nav, .wa-fab, .nav__mobile { display: none !important; }
+}

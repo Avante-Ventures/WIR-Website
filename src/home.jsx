@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useReveal, DASHBOARD_HREF } from './shared.jsx';
-import { LANG, MANIFESTO_HREF } from './i18n.js';
-import { Opening, Proof } from './home-opening.jsx';
+import { LANG, MANIFESTO_HREF, MANIFESTO_HREFLANG, INSIGHTS_HREFLANG } from './i18n.js';
+import { Opening, Proof, HeroMetrics } from './home-opening.jsx';
 import { Shift, ProductTabs } from './home-shift.jsx';
 import { ArchFlow, Closing } from './home-how.jsx';
 
@@ -17,7 +17,7 @@ const T = {
     mKicker: "· Manifesto · A camada de IA do seguro",
     mText: <>Não troque o sistema de registro.<span className="manifesto__accent">Coloque um sistema de inteligência por cima dele.</span></>,
     mLink: "Ler o manifesto completo",
-    mLink2: "Conversar sobre isso →",
+    mLink2: "Falar com nossos sócios →",
     midCtaText: "Quer ver isso na sua operação?",
     midCtaBtn: "Falar com nossos sócios",
   },
@@ -30,7 +30,7 @@ const T = {
     mKicker: "· Manifesto · The AI layer of insurance",
     mText: <>Don't replace the system of record.<span className="manifesto__accent">Put a system of intelligence on top of it.</span></>,
     mLink: "Read the full manifesto",
-    mLink2: "Talk to us about it →",
+    mLink2: "Talk to our partners →",
     midCtaText: "Want to see this in your operation?",
     midCtaBtn: "Talk to our partners",
   },
@@ -42,8 +42,8 @@ const T = {
     teamCta: "Conoce a los fundadores y el track record →",
     mKicker: "· Manifiesto · La capa de IA del seguro",
     mText: <>No cambies el sistema de registro.<span className="manifesto__accent">Pon un sistema de inteligencia encima.</span></>,
-    mLink: "Leer el manifiesto completo",
-    mLink2: "Conversar sobre esto →",
+    mLink: "Leer el manifiesto completo (EN)",
+    mLink2: "Hablar con nuestros socios →",
     midCtaText: "¿Quieres ver esto en tu operación?",
     midCtaBtn: "Hablar con nuestros socios",
   },
@@ -51,17 +51,14 @@ const T = {
 
 // Sócios & Conselheiros + Experiência no setor
 export function TrustBar({ go }) {
-  // 5×2 grid with composite top-cells in cols 1 & 2:
-  //   Col 1 top: Bain Capital + Notredame Intermédica (both in same cell)
+  // 5×2 grid with a composite top-cell in col 2:
+  //   Col 1 top: Bain Capital (NotreDame already appears in the Hapvida · NotreDame cell)
   //   Col 2 top: Pátria + Athena Saúde (both in same cell)
   //   Col 5 top: Hapvida · NotreDame combined logo
   // Bottom row: Aon, Gallagher, JLT, Lockton, VIS — all single logos.
   const cells = [
     // Row 1
-    { composite: [
-        { src: "/assets/logos/bain-capital.webp",          alt: "Bain Capital" },
-        { src: "/assets/logos/notredame-intermedica.webp", alt: "Notredame Intermédica" },
-      ] },
+    { src: "/assets/logos/bain-capital.webp", alt: "Bain Capital" },
     { composite: [
         { src: "/assets/logos/patria.webp",       alt: "Pátria Investimentos" },
         { src: "/assets/logos/athena-saude.svg", alt: "Athena Saúde" },
@@ -86,6 +83,7 @@ export function TrustBar({ go }) {
   return (
     <section className="trustbar bg-editorial bg-editorial--bl" data-reveal>
       <div className="wrap">
+        <HeroMetrics/>
         <div className="trustbar__head">
           <div>
             <div className="eyebrow">{T.eyebrow}</div>
@@ -148,7 +146,7 @@ export function Manifesto({ go }) {
         <div className="manifesto__kicker">{T.mKicker}</div>
         <p className="manifesto__text">{T.mText}</p>
         <div className="manifesto__actions">
-          <a className="manifesto__cta" href={MANIFESTO_HREF}>
+          <a className="manifesto__cta" href={MANIFESTO_HREF} hrefLang={MANIFESTO_HREFLANG}>
             {T.mLink} <span aria-hidden="true">→</span>
           </a>
           {go && (
@@ -165,10 +163,11 @@ export function Manifesto({ go }) {
 
 // Na mídia — earned-media credibility band. Borrows third-party press authority
 // onto our own domain. PRESS_ITEMS is an array so new coverage drops straight in.
+// EN/ES tag the read link because the coverage itself is in Portuguese.
 const PRESS = {
-  pt: { eyebrow: "· Na mídia", title: <>O mercado <em>já está falando</em> sobre a WIR.</>, read: "Ler a matéria" },
-  en: { eyebrow: "· In the press", title: <>The market <em>is already talking</em> about WIR.</>, read: "Read the article" },
-  es: { eyebrow: "· En los medios", title: <>El mercado <em>ya está hablando</em> de WIR.</>, read: "Leer la nota" },
+  pt: { title: <>O mercado <em>já está falando</em> sobre a WIR.</>, read: "Ler a matéria" },
+  en: { title: <>The market <em>is already talking</em> about WIR.</>, read: "Read the article (PT)" },
+  es: { title: <>El mercado <em>ya está hablando</em> de WIR.</>, read: "Leer la nota (PT)" },
 }[LANG];
 
 const PRESS_ITEMS = [
@@ -178,6 +177,7 @@ const PRESS_ITEMS = [
     date: "Jul 2026",
     headline: "WIR Innovation quer acelerar uso de IA no mercado de seguros",
     href: "https://www.sonhoseguro.com.br/2026/07/wir-innovation-quer-acelerar-uso-de-ia-no-mercado-de-seguros/",
+    lang: "pt-BR",
   },
 ];
 
@@ -186,13 +186,12 @@ export function Press() {
     <section className="press bg-editorial bg-editorial--c" data-reveal>
       <div className="wrap">
         <div className="press__head">
-          <div className="eyebrow">{PRESS.eyebrow}</div>
           <h2 className="press__title display">{PRESS.title}</h2>
         </div>
         <ul className="press__list">
           {PRESS_ITEMS.map((it, i) => (
             <li key={i} className="press__item">
-              <a className="press__link-wrap" href={it.href} target="_blank" rel="noopener">
+              <a className="press__link-wrap" href={it.href} hrefLang={it.lang} target="_blank" rel="noopener">
                 <div className="press__meta">
                   <span className="press__outlet">{it.outlet}</span>
                   <span className="press__dot" aria-hidden="true">·</span>
@@ -228,7 +227,7 @@ const VOICES = {
   es: {
     eyebrow: "· Los fundadores, en primera persona",
     title: <>Quienes construyen esto <em>ya vivieron el problema</em>.</>,
-    read: "Leer la entrevista",
+    read: "Leer la entrevista (PT)",
   },
 }[LANG];
 
@@ -270,7 +269,7 @@ export function Voices() {
         <ul className="voices__list">
           {VOICES_ITEMS.map((it) => (
             <li key={it.name} className="voices__item">
-              <a className="voices__link-wrap" href={it.href[LANG]}>
+              <a className="voices__link-wrap" href={it.href[LANG]} hrefLang={INSIGHTS_HREFLANG}>
                 <div className="voices__person">
                   <img className="voices__photo" src={it.photo} alt={it.name}
                     width="64" height="64" loading="lazy" decoding="async"/>
@@ -296,21 +295,18 @@ export function Voices() {
 // Serve de prova: mostra o mercado inteiro em números antes de pedir uma reunião.
 const DASH = {
   pt: {
-    eyebrow: "· Dados abertos",
     title: <>Todo o setor supervisionado, <em>em um painel</em>.</>,
     text: "Arrecadação, sinistralidade, lucro e patrimônio de todos os grupos supervisionados pela SUSEP — seguros, VGBL, previdência e capitalização. Base SES/SUSEP, atualizada todo mês.",
     cta: "Abrir o dashboard",
     alt: "WIR Insights Dashboard: painel do mercado segurador brasileiro",
   },
   en: {
-    eyebrow: "· Open data",
     title: <>The entire supervised market, <em>in one dashboard</em>.</>,
     text: "Premiums, loss ratio, profit and equity for every group supervised by SUSEP — insurance, VGBL, pensions and capitalization. SES/SUSEP data, refreshed monthly.",
     cta: "Open the dashboard",
     alt: "WIR Insights Dashboard: the Brazilian insurance market",
   },
   es: {
-    eyebrow: "· Datos abiertos",
     title: <>Todo el sector supervisado, <em>en un panel</em>.</>,
     text: "Recaudación, siniestralidad, utilidad y patrimonio de todos los grupos supervisados por la SUSEP — seguros, VGBL, previsión y capitalización. Base SES/SUSEP, actualizada cada mes.",
     cta: "Abrir el panel",
@@ -323,7 +319,6 @@ export function DashboardCard() {
     <section className="dashcard bg-editorial bg-editorial--bl" data-reveal>
       <div className="wrap dashcard__inner">
         <div className="dashcard__copy">
-          <div className="dashcard__eyebrow">{DASH.eyebrow}</div>
           <h2 className="dashcard__title">{DASH.title}</h2>
           <p className="dashcard__text">{DASH.text}</p>
           <a className="dashcard__cta" href={DASHBOARD_HREF} target="_blank" rel="noopener">
@@ -347,7 +342,7 @@ export function HomePage({ go }) {
       <Shift/>
       <ProductTabs go={go}/>
       <ArchFlow/>
-      <Proof go={go}/>
+      <Proof/>
       <Press/>
       <DashboardCard/>
       <MidCta go={go}/>

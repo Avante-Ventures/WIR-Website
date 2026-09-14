@@ -3,7 +3,7 @@
    ─────────────────────────────────────────── */
 
 import React, { useEffect, useState, useRef, useMemo } from 'react';
-import { LANG, INSIGHTS_HREF, MANIFESTO_HREF } from './i18n.js';
+import { LANG, INSIGHTS_HREF, MANIFESTO_HREF, INSIGHTS_HREFLANG, MANIFESTO_HREFLANG } from './i18n.js';
 
 // Painel público de dados SES/SUSEP. Vive num subdomínio próprio (projeto
 // Vercel separado), por isso abre em nova aba: é outro app, não outra página.
@@ -12,10 +12,10 @@ export const DASHBOARD_HREF = 'https://dashboard.wirinnovation.ai/';
 const T = {
   pt: {
     ticker: [
-      { d: "a", t: "Decisão em minutos · auditável · explicável" },
-      { d: "p", t: "Straight-through processing como padrão" },
-      { d: "b", t: "Plataforma de IA para seguros" },
-      { d: "o", t: "Em conformidade com LGPD" },
+      "Decisão em minutos · auditável · explicável",
+      "Straight-through processing como padrão",
+      "Plataforma de IA para seguros",
+      "Em conformidade com LGPD",
     ],
     navLinks: [
       { id: "home", label: "Início" },
@@ -45,10 +45,10 @@ const T = {
   },
   en: {
     ticker: [
-      { d: "a", t: "Decisions in minutes · auditable · explainable" },
-      { d: "p", t: "Straight-through processing as the default" },
-      { d: "b", t: "AI platform for insurance" },
-      { d: "o", t: "LGPD-compliant" },
+      "Decisions in minutes · auditable · explainable",
+      "Straight-through processing as the default",
+      "AI platform for insurance",
+      "LGPD-compliant",
     ],
     navLinks: [
       { id: "home", label: "Home" },
@@ -78,18 +78,19 @@ const T = {
   },
   es: {
     ticker: [
-      { d: "a", t: "Decisión en minutos · auditable · explicable" },
-      { d: "p", t: "Straight-through processing como estándar" },
-      { d: "b", t: "Plataforma de IA para seguros" },
-      { d: "o", t: "Conforme a la LGPD" },
+      "Decisión en minutos · auditable · explicable",
+      "Straight-through processing como estándar",
+      "Plataforma de IA para seguros",
+      "Conforme a la LGPD",
     ],
     navLinks: [
       { id: "home", label: "Inicio" },
       { id: "about", label: "Nosotros" },
-      { id: "manifesto", label: "Manifiesto", href: MANIFESTO_HREF }, // cornerstone static page
+      // No ES manifesto or articles yet: the label announces the jump to EN / PT.
+      { id: "manifesto", label: "Manifiesto (EN)", href: MANIFESTO_HREF, hl: MANIFESTO_HREFLANG },
       { id: "solutions", label: "Productos & IA" },
       { id: "protection", label: "Protección de Datos" },
-      { id: "blog", label: "Insights & News", href: INSIGHTS_HREF },
+      { id: "blog", label: "Insights & News (PT)", href: INSIGHTS_HREF, hl: INSIGHTS_HREFLANG },
       { id: "dashboard", label: "Dashboard", href: DASHBOARD_HREF, ext: true, badge: true },
     ],
     navCta: "Contacto",
@@ -98,7 +99,7 @@ const T = {
     colContact: "Contacto",
     colHolding: "Socios & Holding",
     linkHome: "Inicio", linkAbout: "Nosotros", linkSolutions: "Productos & IA",
-    linkProtection: "Protección de Datos", linkBlog: "Insights & News", linkContact: "Contacto",
+    linkProtection: "Protección de Datos", linkBlog: "Insights & News (PT)", linkContact: "Contacto",
     talkTeam: "Hablar con el equipo",
     holdingLinks: { mahway: "Mahway · California", avante: "Avante · Brasil", advisors: "Consejeros estratégicos", principles: "Principios" },
     footerBot: "wirinnovation.ai · Hecho entre São Paulo y Silicon Valley",
@@ -123,17 +124,15 @@ export function Wordmark({ small, variant, h }) {
   );
 }
 
+// Brand statements in a slow marquee. No status dots: nothing here is live state.
+// Pauses on hover (style.css); prefers-reduced-motion stops it.
 export function Ticker() {
   const items = T.ticker;
-  const dotClass = (d) => "ticker__dot" + (d === "b" ? " ticker__dot--b" : d === "p" ? " ticker__dot--p" : d === "o" ? " ticker__dot--o" : "");
   return (
     <div className="ticker">
       <div className="ticker__track">
-        {[...items, ...items].map((it, i) => (
-          <span key={i} className="ticker__item">
-            <span className={dotClass(it.d)}/>
-            {it.t}
-          </span>
+        {[...items, ...items].map((t, i) => (
+          <span key={i} className="ticker__item">{t}</span>
         ))}
       </div>
     </div>
@@ -143,9 +142,9 @@ export function Ticker() {
 // PT · EN · ES — dropdown switcher (menu pattern, keyboard nav, focus restore)
 function LangSwitcher() {
   const langs = [
-    { k: "pt", label: "PT", flag: "🇧🇷", base: "" },
-    { k: "en", label: "EN", flag: "🇺🇸", base: "/en" },
-    { k: "es", label: "ES", flag: "🇪🇸", base: "/es" },
+    { k: "pt", label: "PT", base: "" },
+    { k: "en", label: "EN", base: "/en" },
+    { k: "es", label: "ES", base: "/es" },
   ];
   const [open, setOpen] = useState(false);
   const [focusIdx, setFocusIdx] = useState(0);
@@ -196,7 +195,6 @@ function LangSwitcher() {
             e.preventDefault(); openMenu();
           }
         }}>
-        <span className="nav__lang-flag" aria-hidden>{current.flag}</span>
         <span className="nav__lang-code">{current.label}</span>
         <span className="nav__lang-caret" aria-hidden>▾</span>
       </button>
@@ -211,7 +209,6 @@ function LangSwitcher() {
                 aria-current={LANG === l.k ? "true" : undefined}
                 className={"nav__lang-opt" + (LANG === l.k ? " is-active" : "")}
                 onClick={(e) => { e.preventDefault(); choose(l); }}>
-                <span className="nav__lang-flag" aria-hidden>{l.flag}</span>
                 <span className="nav__lang-code">{l.label}</span>
               </a>
             </li>
@@ -247,6 +244,7 @@ export function Nav({ route, go }) {
       <a key={l.id} href={l.href}
         target={l.ext ? "_blank" : undefined}
         rel={l.ext ? "noopener" : undefined}
+        hrefLang={l.hl}
         className={"nav__link" + (l.badge ? " nav__link--badge" : "") + (route===l.id ? " nav__link--active": "")}
         aria-current={route===l.id ? "page" : undefined}>
         {l.label}
@@ -305,9 +303,9 @@ export function Nav({ route, go }) {
           </a>
           <div className="nav__mobile-langs" role="group" aria-label={T.langAria}>
             {[
-              { k: "pt", label: "Português", flag: "🇧🇷", base: "" },
-              { k: "en", label: "English",   flag: "🇺🇸", base: "/en" },
-              { k: "es", label: "Español",   flag: "🇪🇸", base: "/es" },
+              { k: "pt", label: "Português", base: "" },
+              { k: "en", label: "English",   base: "/en" },
+              { k: "es", label: "Español",   base: "/es" },
             ].map(l => (
               <a key={l.k}
                 href={`${l.base}/`}
@@ -318,7 +316,6 @@ export function Nav({ route, go }) {
                   setMenuOpen(false);
                   if (LANG !== l.k) location.href = `${l.base}/${location.hash}`;
                 }}>
-                <span className="nav__mobile-lang-flag" aria-hidden>{l.flag}</span>
                 <span>{l.label}</span>
                 <span className="nav__mobile-lang-code">{l.k.toUpperCase()}</span>
               </a>
@@ -375,7 +372,7 @@ export function Footer({ go }) {
               <li><a href="#" onClick={(e)=>{e.preventDefault();go("about")}}>{T.linkAbout}</a></li>
               <li><a href="#" onClick={(e)=>{e.preventDefault();go("solutions")}}>{T.linkSolutions}</a></li>
               <li><a href="#" onClick={(e)=>{e.preventDefault();go("protection")}}>{T.linkProtection}</a></li>
-              <li><a href={INSIGHTS_HREF}>{T.linkBlog}</a></li>
+              <li><a href={INSIGHTS_HREF} hrefLang={INSIGHTS_HREFLANG}>{T.linkBlog}</a></li>
               <li><a href="#" onClick={(e)=>{e.preventDefault();go("contact")}}>{T.linkContact}</a></li>
             </ul>
           </div>
@@ -406,19 +403,28 @@ export function Footer({ go }) {
 }
 
 // Floating WhatsApp button — visible on every page except /contact, bottom-right
-// Reveals after 600px of scroll so it doesn't compete with the hero CTA.
+// Reveals once the reader is 600px down so it doesn't compete with the hero CTA.
+// An IntersectionObserver watches a 1px sentinel at 600px (no scroll listener).
+// Hooks run before the contact early-return so the hook order never changes between routes.
 export function WhatsappFab({ route }) {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return;
+    const sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.cssText = "position:absolute;top:600px;left:0;width:1px;height:1px;pointer-events:none;";
+    document.body.appendChild(sentinel);
+    // Past the sentinel = it left the viewport through the top edge.
+    const io = new IntersectionObserver(([entry]) => {
+      setShow(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+    });
+    io.observe(sentinel);
+    return () => { io.disconnect(); sentinel.remove(); };
+  }, []);
   if (route === "contact") return null;
   const num = "5511981757505"; // Nicholas Weiser · BR
   const url = typeof window !== "undefined" ? window.location.pathname + window.location.hash : "";
   const text = encodeURIComponent(`${T.waText}${url ? `\n${url}` : ""}`);
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 600);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
   return (
     <a href={`https://wa.me/${num}?text=${text}`}
        target="_blank" rel="noopener noreferrer"

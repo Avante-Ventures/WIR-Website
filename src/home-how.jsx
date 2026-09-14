@@ -6,7 +6,6 @@ import { LANG } from './i18n.js';
 
 const T = {
   pt: {
-    archEyebrow: "· Arquitetura WIR",
     archTitle: <>Automatizamos toda a jornada<br/>com uma camada de <em>Inteligência Artificial.</em></>,
     archLede: <>Cinco agentes em cadeia · um fluxo único · <em>continuous learning</em> realimentando o modelo a cada decisão auditada.</>,
     archInput:  { k: "INPUT",  v: "Submissão de risco",   sub: "e-mail · portal · API · OCR" },
@@ -20,7 +19,7 @@ const T = {
       { name: "Decision", fn: "Bind · refer · recusa", toolUp: "Policy engine", toolDown: "Sandbox" },
     ],
     archAuditLabel: "↻ AUDIT LOG · CONTINUOUS LEARNING",
-    archLegend: <><b>Pipeline ao vivo</b> · 4 agentes + audit · loop contínuo</>,
+    archLegend: <><b>Arquitetura</b> · 4 agentes + audit · aprendizado contínuo</>,
     trustEyebrow: "· Desafios do mercado",
     trustQuote: <>"Mercado de Seguros e Danos cresce <em>dois dígitos ao ano</em>. Mas a estrutura das empresas não acompanha esta aceleração."</>,
     trustBotK: "Quatro forças que tornam o status quo insustentável",
@@ -33,11 +32,10 @@ const T = {
     ],
     closeEyebrow: "· Próximo passo",
     closeTitle: <>Sua equipe tem o <em>conhecimento.</em><br/>A WIR dá a <em>plataforma de IA para escalar.</em></>,
-    closeTalk: "Iniciar agora",
+    closeTalk: "Falar com nossos sócios",
     closeExplore: "Explorar soluções",
   },
   en: {
-    archEyebrow: "· WIR Architecture",
     archTitle: <>We automate the entire journey<br/>with a layer of <em>Artificial Intelligence.</em></>,
     archLede: <>Five agents in a chain · one unified flow · <em>continuous learning</em> feeding every audited decision back into the model.</>,
     archInput:  { k: "INPUT",  v: "Risk submission",      sub: "email · portal · API · OCR" },
@@ -51,7 +49,7 @@ const T = {
       { name: "Decision", fn: "Bind · refer · decline", toolUp: "Policy engine", toolDown: "Sandbox" },
     ],
     archAuditLabel: "↻ AUDIT LOG · CONTINUOUS LEARNING",
-    archLegend: <><b>Live pipeline</b> · 4 agents + audit · continuous loop</>,
+    archLegend: <><b>Architecture</b> · 4 agents + audit · continuous learning</>,
     trustEyebrow: "· Market challenges",
     trustQuote: <>"The Property & Casualty market grows <em>double digits a year</em>. But companies' structures aren't keeping up with that acceleration."</>,
     trustBotK: "Four forces making the status quo unsustainable",
@@ -64,11 +62,10 @@ const T = {
     ],
     closeEyebrow: "· Next step",
     closeTitle: <>Your team has the <em>knowledge.</em><br/>WIR provides the <em>AI platform to scale.</em></>,
-    closeTalk: "Start now",
+    closeTalk: "Talk to our partners",
     closeExplore: "Explore solutions",
   },
   es: {
-    archEyebrow: "· Arquitectura WIR",
     archTitle: <>Automatizamos todo el recorrido<br/>con una capa de <em>Inteligencia Artificial.</em></>,
     archLede: <>Cinco agentes en cadena · un flujo único · <em>continuous learning</em> realimenta el modelo con cada decisión auditada.</>,
     archInput:  { k: "INPUT",  v: "Submission de riesgo", sub: "correo · portal · API · OCR" },
@@ -82,7 +79,7 @@ const T = {
       { name: "Decision", fn: "Bind · refer · declinar", toolUp: "Policy engine", toolDown: "Sandbox" },
     ],
     archAuditLabel: "↻ AUDIT LOG · CONTINUOUS LEARNING",
-    archLegend: <><b>Pipeline en vivo</b> · 4 agentes + audit · loop continuo</>,
+    archLegend: <><b>Arquitectura</b> · 4 agentes + audit · aprendizaje continuo</>,
     trustEyebrow: "· Desafíos del mercado",
     trustQuote: <>"El mercado de Seguros de Daños crece <em>dos dígitos al año</em>. Pero la estructura de las empresas no acompaña esta aceleración."</>,
     trustBotK: "Cuatro fuerzas que vuelven insostenible el status quo",
@@ -95,7 +92,7 @@ const T = {
     ],
     closeEyebrow: "· Próximo paso",
     closeTitle: <>Tu equipo tiene el <em>conocimiento.</em><br/>WIR da la <em>plataforma de IA para escalar.</em></>,
-    closeTalk: "Empezar ahora",
+    closeTalk: "Hablar con nuestros socios",
     closeExplore: "Explorar soluciones",
   },
 }[LANG];
@@ -142,7 +139,6 @@ export function ArchFlow() {
     <section className="archflow bg-editorial bg-editorial--cr" data-reveal>
       <div className="wrap">
         <div className="archflow__head">
-          <div className="eyebrow">{T.archEyebrow}</div>
           <h2 className="archflow__title display">
             {T.archTitle}
           </h2>
@@ -364,10 +360,7 @@ export function ArchFlow() {
           </svg>
         </div>
 
-        <div className="archflow__legend">
-          <span className="archflow__pulse"/>
-          {T.archLegend}
-        </div>
+        <div className="archflow__legend">{T.archLegend}</div>
       </div>
     </section>
   );

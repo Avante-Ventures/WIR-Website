@@ -11,24 +11,21 @@ const T = {
     dflowStages: ["INTAKE", "ENRICH", "SCORE", "DECISION"],
     dflowTitle: "Fluxo de decisão",
     dflowTitleV: "wir.flow",
-    dflowLive: "ao vivo",
+    dflowLive: "esquema",
     dflowInput: { k: "INPUT", v: "e-mail · anexos · API" },
     dflowOutput: { k: "OUTPUT", v: "cotação + trilha" },
-    dflowAudit: "audit trail · continuous learning",
+    dflowAudit: "trilha de auditoria · aprendizado contínuo",
     dflowAria: "Fluxo de decisão",
-    heroTitle: <>A nova era do seguro é<br/><em>inteligência de dados</em>,<br/>velocidade e escala.</>,
-    heroLede: "Camada de IA que pluga no seu core de apólices e devolve cotação em minutos — sem trocar o core, sem projeto de TI.",
+    heroTitle: <>A nova era do seguro é <em>inteligência de dados</em>, velocidade e escala.</>,
+    heroLede: "Camada de IA que pluga no seu core de apólices e devolve cotação em minutos. Sem trocar o core, sem projeto de TI.",
     ctaTalk: "Falar com nossos sócios",
     ctaSee: "Ver a plataforma →",
-    ctaMicrocopy: "Resposta de um sócio em 24h · conversa de 30 min · sem pitch comercial.",
     // Defensible static metrics — observation about the WIR thesis, not a fake live counter.
     liveStickers: [
-      { value: "1",        label: "Piloto em produção", note: "Seguradora Tier-1 · LATAM" },
+      { value: "1",        label: "POC em execução",    note: "Seguradora global · Transportes" },
       { value: "minutos",  label: "Tempo de decisão",   note: "vs. 6 semanas legadas" },
       { value: "24/7",     label: "Cobertura",          note: "Sem TI da seguradora" },
     ],
-    proofCta: "Quer ver isso na sua operação? · Falar com nossos sócios →",
-    proofEyebrow: "· Tese de retorno",
     proofTitle: "O retorno operacional, em 6 vetores",
     indicators: [
       { sign:"+", w:"Eficiência",   l:"Escalar volume de cotações",
@@ -49,23 +46,20 @@ const T = {
     dflowStages: ["INTAKE", "ENRICH", "SCORE", "DECISION"],
     dflowTitle: "Decision flow",
     dflowTitleV: "wir.flow",
-    dflowLive: "live",
+    dflowLive: "schematic",
     dflowInput: { k: "INPUT", v: "email · files · API" },
     dflowOutput: { k: "OUTPUT", v: "quote + trail" },
     dflowAudit: "audit trail · continuous learning",
     dflowAria: "Decision flow",
-    heroTitle: <>The new era of insurance is<br/><em>data intelligence</em>,<br/>speed and scale.</>,
-    heroLede: "An AI layer that plugs into your policy core and returns a quote in minutes — no core replacement, no IT project.",
+    heroTitle: <>The new era of insurance is <em>data intelligence</em>, speed and scale.</>,
+    heroLede: "An AI layer that plugs into your policy core and returns a quote in minutes. No core replacement, no IT project.",
     ctaTalk: "Talk to our partners",
     ctaSee: "See the platform →",
-    ctaMicrocopy: "Reply from a partner within 24h · 30-minute call · no sales pitch.",
     liveStickers: [
-      { value: "1",       label: "Pilot in production", note: "Tier-1 LATAM insurer" },
+      { value: "1",       label: "POC in progress",     note: "Global insurer · Transport" },
       { value: "minutes", label: "Decision time",       note: "vs. 6 legacy weeks" },
       { value: "24/7",    label: "Coverage",            note: "Without insurer IT" },
     ],
-    proofCta: "Want to see this in your operation? · Talk to our partners →",
-    proofEyebrow: "· Return thesis",
     proofTitle: "Operational return, in 6 vectors",
     indicators: [
       { sign:"+", w:"Efficiency",   l:"Scale quoting volume",
@@ -83,26 +77,23 @@ const T = {
     ],
   },
   es: {
-    dflowStages: ["CAPTURA", "ENRIQ.", "SCORE", "DECISIÓN"],
+    dflowStages: ["CAPTURA", "ENRIQUECER", "SCORE", "DECISIÓN"],
     dflowTitle: "Flujo de decisión",
     dflowTitleV: "wir.flow",
-    dflowLive: "en vivo",
+    dflowLive: "esquema",
     dflowInput: { k: "INPUT", v: "correo · anexos · API" },
     dflowOutput: { k: "OUTPUT", v: "cotización + traza" },
-    dflowAudit: "audit trail · continuous learning",
+    dflowAudit: "traza de auditoría · aprendizaje continuo",
     dflowAria: "Flujo de decisión",
-    heroTitle: <>La nueva era del seguro es<br/><em>inteligencia de datos</em>,<br/>velocidad y escala.</>,
-    heroLede: "Capa de IA que se enchufa a tu core de pólizas y devuelve cotización en minutos — sin reemplazar el core, sin proyecto de TI.",
+    heroTitle: <>La nueva era del seguro es <em>inteligencia de datos</em>, velocidad y escala.</>,
+    heroLede: "Capa de IA que se enchufa a tu core de pólizas y devuelve cotización en minutos. Sin reemplazar el core, sin proyecto de TI.",
     ctaTalk: "Hablar con nuestros socios",
     ctaSee: "Ver la plataforma →",
-    ctaMicrocopy: "Respuesta de un socio en 24h · llamada de 30 min · sin pitch comercial.",
     liveStickers: [
-      { value: "1",        label: "Piloto en producción", note: "Aseguradora Tier-1 · LATAM" },
+      { value: "1",        label: "POC en ejecución",   note: "Aseguradora global · Transporte" },
       { value: "minutos",  label: "Tiempo de decisión",   note: "vs. 6 semanas heredadas" },
       { value: "24/7",     label: "Cobertura",            note: "Sin TI de la aseguradora" },
     ],
-    proofCta: "¿Quieres ver esto en tu operación? · Hablar con nuestros socios →",
-    proofEyebrow: "· Tesis de retorno",
     proofTitle: "El retorno operacional, en 6 vectores",
     indicators: [
       { sign:"+", w:"Eficiencia",   l:"Escalar volumen de cotizaciones",
@@ -151,10 +142,8 @@ function DecisionFlow() {
           <span className="dflow__title-k">{T.dflowTitle}</span>
           <span className="dflow__title-v">{T.dflowTitleV}</span>
         </div>
-        <div className="dflow__status">
-          <span className="dflow__dot"/>
-          {T.dflowLive}
-        </div>
+        {/* A labelled schematic, not telemetry: no live dot */}
+        <div className="dflow__status">{T.dflowLive}</div>
       </div>
 
       <svg className="dflow__svg" viewBox={`0 0 360 ${outputY + chipH + 18}`} xmlns="http://www.w3.org/2000/svg" aria-hidden>
@@ -246,8 +235,9 @@ function DecisionFlow() {
   );
 }
 
-// Static hero metrics — no chrome, no label, no off-brand pulse.
-function HeroMetrics() {
+// Static metrics strip — no chrome, no label, no off-brand pulse.
+// Rendered at the top of the TrustBar (home.jsx) so the hero stays one moment.
+export function HeroMetrics() {
   return (
     <div className="livestrip">
       <div className="livestrip__cells">
@@ -285,10 +275,6 @@ export function Opening({ go }) {
                 {T.ctaSee}
               </a>
             </div>
-            {T.ctaMicrocopy && (
-              <p className="opening__microcopy">{T.ctaMicrocopy}</p>
-            )}
-            <HeroMetrics/>
           </div>
           <div className="opening__hero-R">
             <DecisionFlow/>
@@ -299,13 +285,12 @@ export function Opening({ go }) {
   );
 }
 
-export function Proof({ go }) {
+export function Proof() {
   const indicators = T.indicators;
   return (
     <section className="proof bg-editorial bg-editorial--tl" data-reveal>
       <div className="wrap">
         <div className="proof__head">
-          <div className="eyebrow">{T.proofEyebrow}</div>
           <h2 className="proof__title display">{T.proofTitle}</h2>
         </div>
         <div className="proof__grid proof__grid--6">
@@ -319,12 +304,6 @@ export function Proof({ go }) {
             </div>
           ))}
         </div>
-        {go && T.proofCta && (
-          <a href="#contact" className="proof__cta"
-            onClick={(e)=>{e.preventDefault(); go("contact")}}>
-            {T.proofCta}
-          </a>
-        )}
       </div>
     </section>
   );

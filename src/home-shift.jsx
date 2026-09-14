@@ -5,7 +5,6 @@ import { LANG } from './i18n.js';
 
 const T = {
   pt: {
-    shiftEyebrow: "· Dores vs. Soluções",
     shiftTitle: <>O problema estrutural.<br/><em>A resposta da WIR.</em></>,
     shiftSub: "Cada dor que observamos dentro das operações de subscrição mapeia diretamente para uma capacidade da plataforma — sem trocar o core, sem projeto pesado de TI.",
     shiftHeadL: "Antes · Problema estrutural",
@@ -20,14 +19,16 @@ const T = {
       { dor:"TI sobrecarregada e sem orçamento",     sol:"Plataforma 100% externa — sem TI",                 prod:"Smart Sales · UI",       status:"prod" },
     ],
     shiftLegend: "Mais 2 produtos em desenvolvimento — veja abaixo.",
-    stackTitle: <>Quatro produtos. <em>Soluções de IA unificada.</em></>,
+    stackTitle: <>Dois produtos em produção. <em>Dois a caminho.</em></>,
+    stackAria: "Produtos",
+    devLabel: "Em desenvolvimento",
     stackSub: "Inteligência plug-and-play que se conecta aos sistemas existentes. Sem migração, apenas transformação imediata. Possibilitando escalar o seu negócio.",
     stackCta: "Explorar",
     prods: [
       { k:"SS", c:"#3222E9", status:"prod", title:"Smart Sales", tag:"Inteligência de distribuição",
         lede:"Uma camada de IA com inteligência de distribuição, workflow, priorização, Dashboards, analytics e insights de negócio.",
         bullets:["Scoring em tempo real com Machine Learning calibrado ao apetite","Roteamento automático por apetite × exposure","Análise preditiva de conversão por produto × risco × corretor"],
-        m:[{v:"Real-time", l:"Scoring"},{v:"Calibrado", l:"Ao apetite"},{v:"Always-on", l:"Pipeline"}] },
+        m:[{v:"Tempo real", l:"Scoring"},{v:"Calibrado", l:"Ao apetite"},{v:"Sempre ativo", l:"Pipeline"}] },
       { k:"UI", c:"#AE46C0", status:"prod", title:"Underwriter Intelligence", tag:"Subscrição inteligente",
         lede:"Inteligência que automatiza a jornada da cotação, conforme política de riscos da seguradora, permitindo que os subscritores analisem riscos e foquem no desenvolvimento de negócios.",
         bullets:["Interpreta os dados e gera uma cotação de forma automática","Utiliza a política de aceitação de riscos com Inteligência em Machine Learning","Dados encriptografados em cada etapa e em compliance com a LGPD"],
@@ -43,7 +44,6 @@ const T = {
     ],
   },
   en: {
-    shiftEyebrow: "· Pains vs. Solutions",
     shiftTitle: <>The structural problem.<br/><em>The WIR answer.</em></>,
     shiftSub: "Every pain we observe inside underwriting operations maps directly to a platform capability — no core replacement, no heavy IT project.",
     shiftHeadL: "Before · Structural problem",
@@ -58,7 +58,9 @@ const T = {
       { dor:"IT overloaded and out of budget",       sol:"100% external platform — no IT required",          prod:"Smart Sales · UI",     status:"prod" },
     ],
     shiftLegend: "2 more products in development — see below.",
-    stackTitle: <>Four products. <em>Unified AI solutions.</em></>,
+    stackTitle: <>Two products in production. <em>Two on the way.</em></>,
+    stackAria: "Products",
+    devLabel: "In development",
     stackSub: "Plug-and-play intelligence that connects to your existing systems. No migration — just immediate transformation, built to scale your business.",
     stackCta: "Explore",
     prods: [
@@ -81,7 +83,6 @@ const T = {
     ],
   },
   es: {
-    shiftEyebrow: "· Dolores vs. Soluciones",
     shiftTitle: <>El problema estructural.<br/><em>La respuesta de WIR.</em></>,
     shiftSub: "Cada dolor que observamos dentro de las operaciones de suscripción mapea directamente a una capacidad de la plataforma — sin cambiar el core, sin proyectos pesados de TI.",
     shiftHeadL: "Antes · Problema estructural",
@@ -96,14 +97,16 @@ const T = {
       { dor:"TI sobrecargada y sin presupuesto",        sol:"Plataforma 100% externa — sin TI",                    prod:"Smart Sales · UI",     status:"prod" },
     ],
     shiftLegend: "2 productos más en desarrollo — ver abajo.",
-    stackTitle: <>Cuatro productos. <em>Soluciones de IA unificada.</em></>,
+    stackTitle: <>Dos productos en producción. <em>Dos en camino.</em></>,
+    stackAria: "Productos",
+    devLabel: "En desarrollo",
     stackSub: "Inteligencia plug-and-play que se conecta a los sistemas existentes. Sin migración, solo transformación inmediata. Permitiendo escalar tu negocio.",
     stackCta: "Explorar",
     prods: [
       { k:"SS", c:"#3222E9", status:"prod", title:"Smart Sales", tag:"Inteligencia de distribución",
         lede:"Una capa de IA con inteligencia de distribución, workflow, priorización, dashboards, analytics e insights de negocio.",
         bullets:["Scoring en tiempo real con Machine Learning calibrado al apetito","Ruteo automático por apetito × exposición","Análisis predictivo de conversión por producto × riesgo × corredor"],
-        m:[{v:"Real-time", l:"Scoring"},{v:"Calibrado", l:"Al apetito"},{v:"Always-on", l:"Pipeline"}] },
+        m:[{v:"Tiempo real", l:"Scoring"},{v:"Calibrado", l:"Al apetito"},{v:"Siempre activo", l:"Pipeline"}] },
       { k:"UI", c:"#AE46C0", status:"prod", title:"Underwriter Intelligence", tag:"Suscripción inteligente",
         lede:"Inteligencia que automatiza el recorrido de la cotización según la política de riesgos de la aseguradora, permitiendo que los suscriptores analicen riesgos y se enfoquen en el desarrollo de negocios.",
         bullets:["Interpreta los datos y genera una cotización de forma automática","Aplica la política de aceptación de riesgos con inteligencia de Machine Learning","Datos encriptados en cada etapa y en compliance con la LGPD"],
@@ -126,7 +129,6 @@ export function Shift() {
   return (
     <section className="shift bg-editorial bg-editorial--tl" data-reveal>
       <div className="wrap shift__head">
-        <div className="eyebrow">{T.shiftEyebrow}</div>
         <h2 className="shift__title display">
           {T.shiftTitle}
         </h2>
@@ -163,7 +165,8 @@ export function Shift() {
   );
 }
 
-export function ProductTabs({ go }) {
+// hideHead: /#solutions already opens with its own H1 about the products, so it hides this one.
+export function ProductTabs({ go, hideHead }) {
   const prods = T.prods;
   const [active, setActive] = React.useState(0);
   const tabRefs = React.useRef([]);
@@ -179,14 +182,16 @@ export function ProductTabs({ go }) {
   return (
     <section className="stack bg-editorial bg-editorial--br" data-reveal>
       <div className="wrap">
-        <div className="stack__head">
-          <h2 className="stack__title display">{T.stackTitle}</h2>
-          <p className="stack__sub">{T.stackSub}</p>
-        </div>
+        {!hideHead && (
+          <div className="stack__head">
+            <h2 className="stack__title display">{T.stackTitle}</h2>
+            <p className="stack__sub">{T.stackSub}</p>
+          </div>
+        )}
 
         <div className="stack__layout">
           {/* TOP — Horizontal agent tabs (WAI-ARIA tabs pattern) */}
-          <div className="stack__tabs stack__tabs--row" role="tablist" aria-label={T.stackTitle}>
+          <div className="stack__tabs stack__tabs--row" role="tablist" aria-label={T.stackAria}>
             {prods.map((x,i) => (
               <button key={x.k}
                 ref={el => tabRefs.current[i] = el}
@@ -202,6 +207,7 @@ export function ProductTabs({ go }) {
                 style={{"--c": x.c}}>
                 <span className="stack__tab-k">{x.k}</span>
                 <span className="stack__tab-l">{x.title}</span>
+                {x.status === "dev" && <span className="stack__tab-status">{T.devLabel}</span>}
                 <span className="stack__tab-dot" aria-hidden/>
               </button>
             ))}
@@ -213,6 +219,7 @@ export function ProductTabs({ go }) {
             <div className="stack__panel-head">
               <span className="stack__panel-code">{p.k}</span>
               <span className="stack__tag">{p.tag}</span>
+              {p.status === "dev" && <span className="stack__panel-status">{T.devLabel}</span>}
             </div>
             <div className="stack__panel-body">
               <div className="stack__panel-lhs">

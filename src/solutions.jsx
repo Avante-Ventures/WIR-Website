@@ -8,7 +8,7 @@ import { ProductTabs, Shift } from './home-shift.jsx';
 const T = {
   pt: {
     solHeroEyebrow: "· Produtos & IA",
-    solHeroTitle: <>Quatro produtos.<br/><em>Uma plataforma de inteligência.</em></>,
+    solHeroTitle: <>Dois produtos em produção.<br/><em>Dois a caminho.</em></>,
     solHeroLede: "Smart Sales e Underwriter Intelligence rodam hoje em produção. X-sell Brokers e SDR New Business estão em desenvolvimento. Tudo conecta ao seu core sem migração.",
     flowEyebrow: "· Workflow Inteligente de Subscrição",
     flowTitle: <><em>SS + UI</em> em operação.<br/>Seis estágios. Um único core.</>,
@@ -63,7 +63,7 @@ const T = {
   },
   en: {
     solHeroEyebrow: "· Products & AI",
-    solHeroTitle: <>Four products.<br/><em>One intelligence platform.</em></>,
+    solHeroTitle: <>Two products in production.<br/><em>Two on the way.</em></>,
     solHeroLede: "Smart Sales and Underwriter Intelligence run in production today. X-sell Brokers and SDR New Business are in development. Everything connects to your core without migration.",
     flowEyebrow: "· Intelligent Underwriting Workflow",
     flowTitle: <><em>SS + UI</em> in operation.<br/>Six stages. One single core.</>,
@@ -118,7 +118,7 @@ const T = {
   },
   es: {
     solHeroEyebrow: "· Productos & IA",
-    solHeroTitle: <>Cuatro productos.<br/><em>Una plataforma de inteligencia.</em></>,
+    solHeroTitle: <>Dos productos en producción.<br/><em>Dos en camino.</em></>,
     solHeroLede: "Smart Sales y Underwriter Intelligence corren en producción hoy. X-sell Brokers y SDR New Business están en desarrollo. Todo se conecta a tu core sin migración.",
     flowEyebrow: "· Workflow Inteligente de Suscripción",
     flowTitle: <><em>SS + UI</em> en operación.<br/>Seis etapas. Un único core.</>,
@@ -283,7 +283,7 @@ export function SolutionsPage({ go }) {
   return (
     <>
       <SolHero/>
-      <ProductTabs go={go}/>
+      <ProductTabs go={go} hideHead/>
       <SolWorkflow/>
       <Shift/>
       <SolPricing go={go}/>

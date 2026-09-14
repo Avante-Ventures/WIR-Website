@@ -6,7 +6,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const CACHE_VER = "v=2026072301";
+const CACHE_VER = "v=2026091401";
 const SITE_URL = "https://wirinnovation.ai";
 const OUT_DIR = "public/insights"; // Vite copies public/* to dist/ root, so this lands at dist/insights/
 
@@ -100,17 +100,10 @@ const enSlug = (slug) => hasEnSuffix(slug) ? slug : `${slug}-en`;
 // Build a Set of all known slugs once so we can detect siblings cheaply.
 const ALL_SLUGS = new Set(ARTICLES.map(a => a.slug));
 
-function renderHead(article) {
-  const url = `${SITE_URL}/insights/${article.slug}/`;
-  // Optional canonical override: when an article declares `canonical: "<other-slug>"`,
-  // it is a near-duplicate that defers all ranking signals to that page (fixes keyword
-  // cannibalization). We point rel=canonical at the target and suppress this page's own
-  // hreflang so it does not fight the canonical target's language cluster.
-  const canonicalUrl = article.canonical ? `${SITE_URL}/insights/${article.canonical}/` : url;
+// Translation pairing of an article, shared by the hreflang tags and the nav language link so
+// the two can never disagree. A sibling only counts if it actually exists.
+function siblings(article) {
   const isEn = isEnglish(article.slug);
-  const lang = isEn ? "en" : "pt-BR";
-  const ogLocale = isEn ? "en_US" : "pt_BR";
-  // Hreflang: include alternate ONLY if the sibling actually exists
   // An English-native page (lang:"en", no `-en` suffix) has no translation pair. Without this
   // guard ptSlug() returns the page itself, so it would advertise itself as its own pt-BR
   // alternate and x-default, telling Google an English page is the Brazilian one.
@@ -122,6 +115,20 @@ function renderHead(article) {
   const enSibling = alt ? (isEn ? article.slug : alt) : enSlug(article.slug);
   const hasPT = !standaloneEn && ALL_SLUGS.has(ptSibling);
   const hasEN = !standaloneEn && ALL_SLUGS.has(enSibling);
+  return { isEn, ptSibling, enSibling, hasPT, hasEN };
+}
+
+function renderHead(article) {
+  const url = `${SITE_URL}/insights/${article.slug}/`;
+  // Optional canonical override: when an article declares `canonical: "<other-slug>"`,
+  // it is a near-duplicate that defers all ranking signals to that page (fixes keyword
+  // cannibalization). We point rel=canonical at the target and suppress this page's own
+  // hreflang so it does not fight the canonical target's language cluster.
+  const canonicalUrl = article.canonical ? `${SITE_URL}/insights/${article.canonical}/` : url;
+  // Hreflang: include alternate ONLY if the sibling actually exists (see siblings()).
+  const { isEn, ptSibling, enSibling, hasPT, hasEN } = siblings(article);
+  const lang = isEn ? "en" : "pt-BR";
+  const ogLocale = isEn ? "en_US" : "pt_BR";
   let hreflangTags = "";
   if (hasPT) hreflangTags += `\n<link rel="alternate" hreflang="pt-BR" href="${SITE_URL}/insights/${ptSibling}/" />`;
   if (hasEN) hreflangTags += `\n<link rel="alternate" hreflang="en" href="${SITE_URL}/insights/${enSibling}/" />`;
@@ -232,6 +239,7 @@ const CHROME = {
     waAria: "Falar com Nicholas no WhatsApp",
     backTo: "Voltar para Insights &amp; News", moreInsights: "Outros Insights",
     readTime: "de leitura", faqTitle: "Perguntas frequentes",
+    menuOpen: "Abrir menu", menuClose: "Fechar menu", langAria: "Idioma",
   },
   en: {
     base: "/en",
@@ -246,46 +254,102 @@ const CHROME = {
     waAria: "Chat with Nicholas on WhatsApp",
     backTo: "Back to Insights &amp; News", moreInsights: "More Insights",
     readTime: "read", faqTitle: "Frequently asked questions",
+    menuOpen: "Open menu", menuClose: "Close menu", langAria: "Language",
   },
 };
 const insightsHref = (lang) => lang === "en" ? "/en/insights/" : "/insights/";
 
-function renderNav(lang = "pt-BR") {
+const LANG_META = {
+  "pt-BR": { code: "PT", name: "Português", hreflang: "pt-BR" },
+  en: { code: "EN", name: "English", hreflang: "en" },
+};
+
+// Where the static nav's language link points: the page's real translation, or null when there
+// is none (English-native pages, missing siblings, canonicalized near-duplicates), so a reader
+// is never sent to a different page in the other language.
+function navAlternate(article) {
+  if (article.canonical) return null;
+  const { isEn, ptSibling, enSibling, hasPT, hasEN } = siblings(article);
+  const target = isEn ? (hasPT ? ptSibling : null) : (hasEN ? enSibling : null);
+  if (!target || target === article.slug) return null;
+  return { href: `/insights/${target}/`, ...LANG_META[isEn ? "pt-BR" : "en"] };
+}
+
+// Burger toggle for the static nav, same behaviour as the SPA Nav (src/shared.jsx): Escape and
+// link clicks close it, body scroll locks while open, and `inert` keeps the closed menu out of
+// the tab order.
+const NAV_SCRIPT = "(function(){var b=document.querySelector('.nav__burger'),m=document.getElementById('nav-mobile-menu');if(!b||!m)return;var i=b.querySelector('.nav__burger-icon');function set(o){m.classList.toggle('is-open',o);i.classList.toggle('is-open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',b.getAttribute(o?'data-label-close':'data-label-open'));m.setAttribute('aria-hidden',o?'false':'true');if(o){m.removeAttribute('inert');}else{m.setAttribute('inert','');}document.body.style.overflow=o?'hidden':'';}b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}});m.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});var mq=window.matchMedia('(min-width: 761px)');if(mq.addEventListener)mq.addEventListener('change',function(e){if(e.matches)set(false);});})();";
+
+// Static chrome nav, mirroring the SPA Nav in src/shared.jsx: ticker, desktop links, language
+// link, CTA, burger and mobile menu. `alt` is the page's translation ({ href, code, name,
+// hreflang }) or null, in which case no language link renders.
+function renderNav(lang = "pt-BR", alt = null) {
   const c = CHROME[lang] || CHROME["pt-BR"];
-  const tick = (i) => c.ticker[i % c.ticker.length];
+  const cur = LANG_META[lang] || LANG_META["pt-BR"];
+  const tickerItems = [...c.ticker, ...c.ticker]
+    .map(t => `    <span class="ticker__item">${t}</span>`).join("\n");
+  const links = (indent) => [
+    `<a href="${c.base}/" class="nav__link">${c.navHome}</a>`,
+    `<a href="${c.base}/#about" class="nav__link">${c.navAbout}</a>`,
+    `<a href="${c.manifestoHref}" class="nav__link">${c.navManifesto}</a>`,
+    `<a href="${c.base}/#solutions" class="nav__link">${c.navSolutions}</a>`,
+    `<a href="${c.base}/#protection" class="nav__link">${c.navProtection}</a>`,
+    `<a href="${insightsHref(lang)}" class="nav__link nav__link--active">Insights &amp; News</a>`,
+    `<a href="https://dashboard.wirinnovation.ai/" target="_blank" rel="noopener" class="nav__link nav__link--badge">Dashboard</a>`,
+  ].map(l => indent + l).join("\n");
+  const langLink = alt ? `
+      <div class="nav__lang"><a class="nav__lang-btn" href="${alt.href}" hreflang="${alt.hreflang}" lang="${alt.hreflang}" aria-label="${alt.name}"><span class="nav__lang-code">${alt.code}</span></a></div>` : "";
+  const mobileLangs = alt ? `
+    <div class="nav__mobile-langs" role="group" aria-label="${c.langAria}">
+      <span class="nav__mobile-lang is-active" aria-current="true"><span>${cur.name}</span><span class="nav__mobile-lang-code">${cur.code}</span></span>
+      <a class="nav__mobile-lang" href="${alt.href}" hreflang="${alt.hreflang}" lang="${alt.hreflang}"><span>${alt.name}</span><span class="nav__mobile-lang-code">${alt.code}</span></a>
+    </div>` : "";
   return `<div class="ticker">
   <div class="ticker__track">
-    <span class="ticker__item"><span class="ticker__dot"></span>${tick(0)}</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>${tick(1)}</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>${tick(2)}</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>${tick(3)}</span>
-    <span class="ticker__item"><span class="ticker__dot"></span>${tick(0)}</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>${tick(1)}</span>
+${tickerItems}
   </div>
 </div>
-<nav class="nav">
+<nav class="nav" aria-label="Primary">
   <div class="wrap nav__inner">
     <a href="${c.base}/" class="nav__brand">
       <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
-      <span class="nav__brand-sub">Innovation · AI Stack</span>
     </a>
     <div class="nav__links">
-      <a href="${c.base}/" class="nav__link">${c.navHome}</a>
-      <a href="${c.base}/#about" class="nav__link">${c.navAbout}</a>
-      <a href="${c.manifestoHref}" class="nav__link">${c.navManifesto}</a>
-      <a href="${c.base}/#solutions" class="nav__link">${c.navSolutions}</a>
-      <a href="${c.base}/#protection" class="nav__link">${c.navProtection}</a>
-      <a href="${insightsHref(lang)}" class="nav__link nav__link--active">Insights &amp; News</a>
-      <a href="https://dashboard.wirinnovation.ai/" target="_blank" rel="noopener" class="nav__link nav__link--badge">Dashboard</a>
+${links("      ")}
     </div>
-    <a href="${c.base}/#contact" class="nav__cta">
+    <div class="nav__right">${langLink}
+      <a href="${c.base}/#contact" class="nav__cta">
+        <span class="dot"></span>
+        ${c.navCta}
+        <span aria-hidden="true">→</span>
+      </a>
+      <button type="button" class="nav__burger" aria-label="${c.menuOpen}" aria-expanded="false" aria-controls="nav-mobile-menu" data-label-open="${c.menuOpen}" data-label-close="${c.menuClose}">
+        <span class="nav__burger-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div id="nav-mobile-menu" class="nav__mobile" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true" inert>
+  <div class="nav__mobile-inner">
+${links("    ")}
+    <a href="${c.base}/#contact" class="nav__mobile-cta">
       <span class="dot"></span>
       ${c.navCta}
       <span aria-hidden="true">→</span>
-    </a>
+    </a>${mobileLangs}
   </div>
-</nav>`;
+</div>
+<script>${NAV_SCRIPT}</script>`;
 }
+
+// Social icons: the same Simple Icons (CC0) paths as SocialIcon in src/shared.jsx, so the static
+// footer matches the SPA footer (icon circles with accessible names, not text labels).
+const SOCIAL_PATHS = {
+  LinkedIn: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.37 4.267 5.455v6.288zM5.337 7.433a2.062 2.062 0 01-2.063-2.064 2.063 2.063 0 112.063 2.064zm1.778 13.019H3.555V9h3.56v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z",
+  Instagram: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z",
+  X: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z",
+};
+const socialIcon = (k) => `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="${SOCIAL_PATHS[k]}"/></svg>`;
 
 function renderFooter(lang = "pt-BR") {
   const c = CHROME[lang] || CHROME["pt-BR"];
@@ -296,9 +360,9 @@ function renderFooter(lang = "pt-BR") {
         <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
         <p class="footer__brand-desc">${c.footerDesc}</p>
         <div class="footer__social">
-          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
-          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
-          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn" title="LinkedIn">${socialIcon("LinkedIn")}</a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram" title="Instagram">${socialIcon("Instagram")}</a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="X" title="X">${socialIcon("X")}</a>
         </div>
       </div>
       <div>
@@ -401,7 +465,7 @@ ${article.faq.map(({ q, a }) => `<details class="blarticle__faq-item">
 ${head}
 </head>
 <body>
-${renderNav(lang)}
+${renderNav(lang, navAlternate(article))}
 
 <main>
 <article class="blarticle">
@@ -476,7 +540,6 @@ function renderInsightsIndex(lang = "pt-BR") {
     <a href="/insights/${featured.slug}/" class="ix-hero">
       <div class="ix-hero__img" style="background:${featured.grad};${featured.image ? `background-image:linear-gradient(180deg,rgba(11,10,8,0.15),rgba(11,10,8,0.6)),url(${featured.image});background-size:cover;background-position:center;` : ""}">
         <span class="ix-hero__badge">${en ? "Featured" : "Destaque"}</span>
-        <span class="ix-hero__cat">${esc(featured.cat)}</span>
       </div>
       <div class="ix-hero__body">
         <div class="ix-hero__meta">${esc(featured.cat)} · ${esc(featured.time)} · ${esc(featured.date)}</div>
@@ -488,7 +551,6 @@ function renderInsightsIndex(lang = "pt-BR") {
   const cards = gridList.map(a => `
     <a href="/insights/${a.slug}/" class="ix-card">
       <div class="ix-card__img" style="background:${a.grad};${a.image ? `background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(${a.image});background-size:cover;background-position:center;` : ""}">
-        <span class="ix-card__cat">${esc(a.cat)}</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">${esc(a.cat)} · ${esc(a.time)} · ${esc(a.date)}</div>
@@ -534,7 +596,6 @@ function renderInsightsIndex(lang = "pt-BR") {
 .ix-hero:hover { transform:translateY(-3px);}
 .ix-hero__img { aspect-ratio:16/9; border-radius:16px; position:relative; overflow:hidden;}
 .ix-hero__badge { position:absolute; top:16px; right:16px; padding:5px 12px; background:var(--purple,#7540AC); color:#fff; border-radius:4px; font-family:var(--f-mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase;}
-.ix-hero__cat { position:absolute; top:16px; left:16px; padding:5px 12px; background:rgba(255,255,255,.92); border-radius:4px; font-family:var(--f-mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;}
 .ix-hero__meta { font-family:var(--f-mono); font-size:11px; letter-spacing:.04em; color:var(--ink-3); text-transform:uppercase;}
 .ix-hero__body h2 { font-family:var(--f-display); font-weight:500; font-size:clamp(28px,3.2vw,40px); line-height:1.12; margin:12px 0 12px; letter-spacing:-0.01em;}
 .ix-hero__body p { font-size:16px; line-height:1.55; color:var(--ink-2); max-width:52ch;}
@@ -544,7 +605,6 @@ function renderInsightsIndex(lang = "pt-BR") {
 .ix-card { display:flex; flex-direction:column; gap:14px; text-decoration:none; color:inherit; transition:transform .2s ease;}
 .ix-card:hover { transform:translateY(-3px);}
 .ix-card__img { aspect-ratio:16/10; border-radius:12px; position:relative; overflow:hidden;}
-.ix-card__cat { position:absolute; top:14px; left:14px; padding:4px 10px; background:rgba(255,255,255,.92); border-radius:4px; font-family:var(--f-mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;}
 .ix-card__meta { font-family:var(--f-mono); font-size:11px; letter-spacing:.04em; color:var(--ink-3); text-transform:uppercase;}
 .ix-card__body h2 { font-family:var(--f-display); font-weight:500; font-size:22px; line-height:1.2; margin:8px 0 8px; letter-spacing:-0.005em;}
 .ix-card__body p { font-size:14px; line-height:1.55; color:var(--ink-2);}
@@ -561,7 +621,7 @@ function renderInsightsIndex(lang = "pt-BR") {
 ${head}
 </head>
 <body>
-${renderNav(lang)}
+${renderNav(lang, { href: en ? "/insights/" : "/en/insights/", ...LANG_META[en ? "pt-BR" : "en"] })}
 <main>
 <section class="ix">
   <div class="wrap">
