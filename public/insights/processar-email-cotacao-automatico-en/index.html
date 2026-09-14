@@ -34,9 +34,9 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
 <script>(function(){if(typeof navigator!=='undefined'&&navigator.webdriver)return;var href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";var inject=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);};if('requestIdleCallback' in window){requestIdleCallback(inject,{timeout:2000});}else{setTimeout(inject,0);}})();</script>
 
-<link rel="stylesheet" href="/style.css?v=2026072301" />
-<link rel="stylesheet" href="/home.css?v=2026072301" />
-<link rel="stylesheet" href="/blog.css?v=2026072301" />
+<link rel="stylesheet" href="/style.css?v=2026091401" />
+<link rel="stylesheet" href="/home.css?v=2026091401" />
+<link rel="stylesheet" href="/blog.css?v=2026091401" />
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to automatically process insurance quote e-mails with AI","description":"How an external AI layer reads insurance quote e-mails and attachments, extracts and validates the data, and feeds P&C underwriting without replacing the core.","image":"/assets/articles/processar-email-cotacao-automatico-en.jpg","datePublished":"02 · Jun · 2026","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Team"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/processar-email-cotacao-automatico-en/","articleSection":"Article"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wirinnovation.ai/en/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/en/insights/"},{"@type":"ListItem","position":3,"name":"How to automatically process insurance quote e-mails with AI","item":"https://wirinnovation.ai/insights/processar-email-cotacao-automatico-en/"}]}</script>
@@ -55,19 +55,20 @@
 <body>
 <div class="ticker">
   <div class="ticker__track">
-    <span class="ticker__item"><span class="ticker__dot"></span>Decisions in minutes · auditable · explainable</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing as the default</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>AI platform for insurance</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>LGPD-compliant</span>
-    <span class="ticker__item"><span class="ticker__dot"></span>Decisions in minutes · auditable · explainable</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing as the default</span>
+    <span class="ticker__item">Decisions in minutes · auditable · explainable</span>
+    <span class="ticker__item">Straight-through processing as the default</span>
+    <span class="ticker__item">AI platform for insurance</span>
+    <span class="ticker__item">LGPD-compliant</span>
+    <span class="ticker__item">Decisions in minutes · auditable · explainable</span>
+    <span class="ticker__item">Straight-through processing as the default</span>
+    <span class="ticker__item">AI platform for insurance</span>
+    <span class="ticker__item">LGPD-compliant</span>
   </div>
 </div>
-<nav class="nav">
+<nav class="nav" aria-label="Primary">
   <div class="wrap nav__inner">
     <a href="/en/" class="nav__brand">
       <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
-      <span class="nav__brand-sub">Innovation · AI Stack</span>
     </a>
     <div class="nav__links">
       <a href="/en/" class="nav__link">Home</a>
@@ -78,13 +79,40 @@
       <a href="/en/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
       <a href="https://dashboard.wirinnovation.ai/" target="_blank" rel="noopener" class="nav__link nav__link--badge">Dashboard</a>
     </div>
-    <a href="/en/#contact" class="nav__cta">
+    <div class="nav__right">
+      <div class="nav__lang"><a class="nav__lang-btn" href="/insights/processar-email-cotacao-automatico/" hreflang="pt-BR" lang="pt-BR" aria-label="Português"><span class="nav__lang-code">PT</span></a></div>
+      <a href="/en/#contact" class="nav__cta">
+        <span class="dot"></span>
+        Contact
+        <span aria-hidden="true">→</span>
+      </a>
+      <button type="button" class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu" data-label-open="Open menu" data-label-close="Close menu">
+        <span class="nav__burger-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div id="nav-mobile-menu" class="nav__mobile" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true" inert>
+  <div class="nav__mobile-inner">
+    <a href="/en/" class="nav__link">Home</a>
+    <a href="/en/#about" class="nav__link">About</a>
+    <a href="/insights/manifesto-en/" class="nav__link">Manifesto</a>
+    <a href="/en/#solutions" class="nav__link">Products &amp; AI</a>
+    <a href="/en/#protection" class="nav__link">Data Protection</a>
+    <a href="/en/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    <a href="https://dashboard.wirinnovation.ai/" target="_blank" rel="noopener" class="nav__link nav__link--badge">Dashboard</a>
+    <a href="/en/#contact" class="nav__mobile-cta">
       <span class="dot"></span>
       Contact
       <span aria-hidden="true">→</span>
     </a>
+    <div class="nav__mobile-langs" role="group" aria-label="Language">
+      <span class="nav__mobile-lang is-active" aria-current="true"><span>English</span><span class="nav__mobile-lang-code">EN</span></span>
+      <a class="nav__mobile-lang" href="/insights/processar-email-cotacao-automatico/" hreflang="pt-BR" lang="pt-BR"><span>Português</span><span class="nav__mobile-lang-code">PT</span></a>
+    </div>
   </div>
-</nav>
+</div>
+<script>(function(){var b=document.querySelector('.nav__burger'),m=document.getElementById('nav-mobile-menu');if(!b||!m)return;var i=b.querySelector('.nav__burger-icon');function set(o){m.classList.toggle('is-open',o);i.classList.toggle('is-open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',b.getAttribute(o?'data-label-close':'data-label-open'));m.setAttribute('aria-hidden',o?'false':'true');if(o){m.removeAttribute('inert');}else{m.setAttribute('inert','');}document.body.style.overflow=o?'hidden':'';}b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}});m.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});var mq=window.matchMedia('(min-width: 761px)');if(mq.addEventListener)mq.addEventListener('change',function(e){if(e.matches)set(false);});})();</script>
 
 <main>
 <article class="blarticle">
@@ -129,7 +157,7 @@
 <h3>How WIR processes quote e-mails</h3>
 <p>WIR is the AI layer of insurance in Brazil. It sits on top of the systems the insurer already runs, never in their place. For quote e-mails, this means WIR listens to the insurer&#39;s existing mailbox and channels, reads the body and every attachment with intelligent document reading, extracts the fields with high precision, validates them, and feeds the structured result into the existing quotation and underwriting flow. There is no new address for brokers, no core migration, and no IT project the insurer&#39;s team has to run. The core stays the system of record, and WIR writes back the structured submission and the audit trail.</p>
 <p>Two modules carry the work. Underwriter Intelligence automates the quotation journey per the insurer&#39;s own risk policy, with real-time Machine Learning scoring calibrated to the insurer&#39;s risk appetite and underwriting manual, automatic routing by appetite and exposure, and predictive conversion analysis by product, risk, and broker, so underwriters spend their time on risk selection instead of triage and data entry. Smart Sales adds distribution intelligence, mapping the portfolio by client and product, scoring upsell and next-best-action, and running multi-channel campaigns with an attribution trail. Real-time dashboards give a proactive view of in-flight deals and the underwriter queue. BCG finds that 70% of insurers do not execute innovation because of IT limitations, and an external layer is built precisely to remove that blocker.</p>
-<p>WIR was founded in 2025, built with Mahway, a Venture Builder in California, and Avante, a Venture Studio in Brazil. Its first POC is in execution with a global insurer in the Transport line, and that is the only traction WIR claims today. The AI layer for insurance. On top of the systems the insurer already runs, never in their place. To map how this would read your insurer&#39;s quote inbox, the next step is a working conversation with the WIR team.</p>
+<p>WIR was founded in January 2026, built with Mahway, a Venture Builder in California, and Avante, a Venture Studio in Brazil. Its first POC is in execution with a global insurer in the Transport line, and that is the only traction WIR claims today. The AI layer for insurance. On top of the systems the insurer already runs, never in their place. To map how this would read your insurer&#39;s quote inbox, the next step is a working conversation with the WIR team.</p>
 <section class="blarticle__faq" aria-label="Frequently asked questions">
 <h3>Frequently asked questions</h3>
 <details class="blarticle__faq-item">
@@ -180,9 +208,9 @@
         <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
         <p class="footer__brand-desc">The new era of insurance is data intelligence, speed, and scale. WIR Innovation is the AI platform that delivers that structure inside the systems you already run.</p>
         <div class="footer__social">
-          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
-          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
-          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.37 4.267 5.455v6.288zM5.337 7.433a2.062 2.062 0 01-2.063-2.064 2.063 2.063 0 112.063 2.064zm1.778 13.019H3.555V9h3.56v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="X" title="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         </div>
       </div>
       <div>

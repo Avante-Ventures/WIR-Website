@@ -50,7 +50,7 @@ const llms = `# WIR Innovation
 
 ## Sobre
 
-A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decisão para seguradoras Tier-1, MGAs e corretoras corporativas no Brasil. A tese central é que a IA não substitui o underwriter — substitui os 80% do trabalho operacional que não é underwriting (intake manual, extração de PDFs, ping-pong com corretoras, enriquecimento de dados). Operações reais mostram throughput 4-7× maior por underwriter, lead time -70% a -90%, e custo de DA por apólice -40% a -60%, mantendo loss ratio estável. Em conformidade com LGPD.
+A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decisão para seguradoras Tier-1, MGAs e corretoras corporativas no Brasil. A tese central é que a IA não substitui o underwriter — substitui o trabalho operacional que não é underwriting (intake manual, extração de PDFs, ping-pong com corretoras, enriquecimento de dados). Em conformidade com LGPD.
 
 ## Páginas principais
 
@@ -68,8 +68,7 @@ ${enListing}
 ## Contato
 
 - Site: ${SITE_URL}
-- Vendas: nicholas@wirinnovation.ai
-- Contato geral: contato@wirinnovation.ai
+- Contato: contato@wirinnovation.ai
 - LinkedIn: https://www.linkedin.com/company/wir-innovation/
 
 ## Licença e uso por LLMs
@@ -78,7 +77,7 @@ O conteúdo deste site (ensaios, casos de uso, descrições de produto e dados p
 
 Não autorizamos: treinamento de modelos sobre este conteúdo sem licença escrita, reprodução integral sem atribuição, ou uso para gerar material concorrente derivado.
 
-Para uso em pesquisa acadêmica, comercial ou jornalística, contatar nicholas@wirinnovation.ai.
+Para uso em pesquisa acadêmica, comercial ou jornalística, contatar contato@wirinnovation.ai.
 
 <!-- Generated ${today} · ${ARTICLES.length} articles (${ptArticles.length} PT-BR + ${enArticles.length} EN) -->
 ${today}

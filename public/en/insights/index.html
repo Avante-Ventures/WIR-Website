@@ -17,9 +17,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=2026072301" />
-<link rel="stylesheet" href="/home.css?v=2026072301" />
-<link rel="stylesheet" href="/blog.css?v=2026072301" />
+<link rel="stylesheet" href="/style.css?v=2026091401" />
+<link rel="stylesheet" href="/home.css?v=2026091401" />
+<link rel="stylesheet" href="/blog.css?v=2026091401" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -37,7 +37,6 @@
 .ix-hero:hover { transform:translateY(-3px);}
 .ix-hero__img { aspect-ratio:16/9; border-radius:16px; position:relative; overflow:hidden;}
 .ix-hero__badge { position:absolute; top:16px; right:16px; padding:5px 12px; background:var(--purple,#7540AC); color:#fff; border-radius:4px; font-family:var(--f-mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase;}
-.ix-hero__cat { position:absolute; top:16px; left:16px; padding:5px 12px; background:rgba(255,255,255,.92); border-radius:4px; font-family:var(--f-mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;}
 .ix-hero__meta { font-family:var(--f-mono); font-size:11px; letter-spacing:.04em; color:var(--ink-3); text-transform:uppercase;}
 .ix-hero__body h2 { font-family:var(--f-display); font-weight:500; font-size:clamp(28px,3.2vw,40px); line-height:1.12; margin:12px 0 12px; letter-spacing:-0.01em;}
 .ix-hero__body p { font-size:16px; line-height:1.55; color:var(--ink-2); max-width:52ch;}
@@ -47,7 +46,6 @@
 .ix-card { display:flex; flex-direction:column; gap:14px; text-decoration:none; color:inherit; transition:transform .2s ease;}
 .ix-card:hover { transform:translateY(-3px);}
 .ix-card__img { aspect-ratio:16/10; border-radius:12px; position:relative; overflow:hidden;}
-.ix-card__cat { position:absolute; top:14px; left:14px; padding:4px 10px; background:rgba(255,255,255,.92); border-radius:4px; font-family:var(--f-mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;}
 .ix-card__meta { font-family:var(--f-mono); font-size:11px; letter-spacing:.04em; color:var(--ink-3); text-transform:uppercase;}
 .ix-card__body h2 { font-family:var(--f-display); font-weight:500; font-size:22px; line-height:1.2; margin:8px 0 8px; letter-spacing:-0.005em;}
 .ix-card__body p { font-size:14px; line-height:1.55; color:var(--ink-2);}
@@ -61,19 +59,20 @@
 <body>
 <div class="ticker">
   <div class="ticker__track">
-    <span class="ticker__item"><span class="ticker__dot"></span>Decisions in minutes · auditable · explainable</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing as the default</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--b"></span>AI platform for insurance</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--o"></span>LGPD-compliant</span>
-    <span class="ticker__item"><span class="ticker__dot"></span>Decisions in minutes · auditable · explainable</span>
-    <span class="ticker__item"><span class="ticker__dot ticker__dot--p"></span>Straight-through processing as the default</span>
+    <span class="ticker__item">Decisions in minutes · auditable · explainable</span>
+    <span class="ticker__item">Straight-through processing as the default</span>
+    <span class="ticker__item">AI platform for insurance</span>
+    <span class="ticker__item">LGPD-compliant</span>
+    <span class="ticker__item">Decisions in minutes · auditable · explainable</span>
+    <span class="ticker__item">Straight-through processing as the default</span>
+    <span class="ticker__item">AI platform for insurance</span>
+    <span class="ticker__item">LGPD-compliant</span>
   </div>
 </div>
-<nav class="nav">
+<nav class="nav" aria-label="Primary">
   <div class="wrap nav__inner">
     <a href="/en/" class="nav__brand">
       <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
-      <span class="nav__brand-sub">Innovation · AI Stack</span>
     </a>
     <div class="nav__links">
       <a href="/en/" class="nav__link">Home</a>
@@ -84,13 +83,40 @@
       <a href="/en/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
       <a href="https://dashboard.wirinnovation.ai/" target="_blank" rel="noopener" class="nav__link nav__link--badge">Dashboard</a>
     </div>
-    <a href="/en/#contact" class="nav__cta">
+    <div class="nav__right">
+      <div class="nav__lang"><a class="nav__lang-btn" href="/insights/" hreflang="pt-BR" lang="pt-BR" aria-label="Português"><span class="nav__lang-code">PT</span></a></div>
+      <a href="/en/#contact" class="nav__cta">
+        <span class="dot"></span>
+        Contact
+        <span aria-hidden="true">→</span>
+      </a>
+      <button type="button" class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu" data-label-open="Open menu" data-label-close="Close menu">
+        <span class="nav__burger-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div id="nav-mobile-menu" class="nav__mobile" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true" inert>
+  <div class="nav__mobile-inner">
+    <a href="/en/" class="nav__link">Home</a>
+    <a href="/en/#about" class="nav__link">About</a>
+    <a href="/insights/manifesto-en/" class="nav__link">Manifesto</a>
+    <a href="/en/#solutions" class="nav__link">Products &amp; AI</a>
+    <a href="/en/#protection" class="nav__link">Data Protection</a>
+    <a href="/en/insights/" class="nav__link nav__link--active">Insights &amp; News</a>
+    <a href="https://dashboard.wirinnovation.ai/" target="_blank" rel="noopener" class="nav__link nav__link--badge">Dashboard</a>
+    <a href="/en/#contact" class="nav__mobile-cta">
       <span class="dot"></span>
       Contact
       <span aria-hidden="true">→</span>
     </a>
+    <div class="nav__mobile-langs" role="group" aria-label="Language">
+      <span class="nav__mobile-lang is-active" aria-current="true"><span>English</span><span class="nav__mobile-lang-code">EN</span></span>
+      <a class="nav__mobile-lang" href="/insights/" hreflang="pt-BR" lang="pt-BR"><span>Português</span><span class="nav__mobile-lang-code">PT</span></a>
+    </div>
   </div>
-</nav>
+</div>
+<script>(function(){var b=document.querySelector('.nav__burger'),m=document.getElementById('nav-mobile-menu');if(!b||!m)return;var i=b.querySelector('.nav__burger-icon');function set(o){m.classList.toggle('is-open',o);i.classList.toggle('is-open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',b.getAttribute(o?'data-label-close':'data-label-open'));m.setAttribute('aria-hidden',o?'false':'true');if(o){m.removeAttribute('inert');}else{m.setAttribute('inert','');}document.body.style.overflow=o?'hidden':'';}b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}});m.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});var mq=window.matchMedia('(min-width: 761px)');if(mq.addEventListener)mq.addEventListener('change',function(e){if(e.matches)set(false);});})();</script>
 <main>
 <section class="ix">
   <div class="wrap">
@@ -102,9 +128,19 @@
 
     <div class="ix__grid">
 
+    <a href="/insights/sao-paulo-state-civil-defense/" class="ix-card">
+      <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/sao-paulo-state-civil-defense.jpg);background-size:cover;background-position:center;">
+      </div>
+      <div class="ix-card__body">
+        <div class="ix-card__meta">Article · 8 min · 09 · Sep · 2026</div>
+        <h2>São Paulo State Civil Defense: What It Is, What It Does, and Why P&amp;C Insurers Should Care</h2>
+        <p>A plain-language guide to the Civil Defense of the State of São Paulo, why it exists, how it is organized today, why your phone buzzes with its alerts, and what those warnings mean for underwriting and claims in Brazilian P&amp;C insurance.</p>
+        <div class="ix-card__by"><b>Nicholas Weiser</b> · CEO · Co-Founder</div>
+      </div>
+    </a>
+
     <a href="/insights/nicholas-weiser-entrevista-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/nicholas-weiser-entrevista-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Entrevista</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Entrevista · 12 min · 04 · Sep · 2026</div>
@@ -116,7 +152,6 @@
 
     <a href="/insights/jose-carlos-de-paula-entrevista-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#0E7C86,#3222E9);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/jose-carlos-de-paula-entrevista-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Entrevista</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Entrevista · 12 min · 04 · Sep · 2026</div>
@@ -128,7 +163,6 @@
 
     <a href="/insights/what-is-an-algorithmic-mga/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#0E7C86);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/what-is-an-algorithmic-mga.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 7 min · 31 · Ago · 2026</div>
@@ -140,7 +174,6 @@
 
     <a href="/insights/what-is-fnol-first-notice-of-loss-process/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#0E7C86,#3222E9);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/what-is-fnol-first-notice-of-loss-process.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 7 min · 31 · Ago · 2026</div>
@@ -152,7 +185,6 @@
 
     <a href="/insights/what-is-an-underwriting-intelligence-layer/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#0E7C86,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/what-is-an-underwriting-intelligence-layer.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 8 min · 31 · Ago · 2026</div>
@@ -164,7 +196,6 @@
 
     <a href="/insights/parametric-vs-indemnity-insurance/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#7540AC,#0E7C86);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/parametric-vs-indemnity-insurance.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 7 min · 31 · Ago · 2026</div>
@@ -176,7 +207,6 @@
 
     <a href="/insights/what-is-shadow-mode-underwriting/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/what-is-shadow-mode-underwriting.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 7 min · 31 · Ago · 2026</div>
@@ -188,7 +218,6 @@
 
     <a href="/insights/pricing-engine-vs-underwriting-decision-platform/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#7540AC,#3222E9);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/pricing-engine-vs-underwriting-decision-platform.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 7 min · 31 · Ago · 2026</div>
@@ -200,7 +229,6 @@
 
     <a href="/insights/ai-underwriting-regulation-global-2026/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/ai-underwriting-regulation-global-2026.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 20 · Jul · 2026</div>
@@ -212,7 +240,6 @@
 
     <a href="/insights/build-vs-buy-ai-underwriting/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/build-vs-buy-ai-underwriting.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 20 · Jul · 2026</div>
@@ -224,7 +251,6 @@
 
     <a href="/insights/how-ai-matches-submissions-to-underwriting-appetite/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/how-ai-matches-submissions-to-underwriting-appetite.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 20 · Jul · 2026</div>
@@ -236,7 +262,6 @@
 
     <a href="/insights/how-ai-processes-statement-of-values-for-underwriting/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/how-ai-processes-statement-of-values-for-underwriting.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 20 · Jul · 2026</div>
@@ -248,7 +273,6 @@
 
     <a href="/insights/how-to-run-ai-underwriting-pilot/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/how-to-run-ai-underwriting-pilot.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 20 · Jul · 2026</div>
@@ -260,7 +284,6 @@
 
     <a href="/insights/roi-of-ai-in-insurance-underwriting/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/roi-of-ai-in-insurance-underwriting.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 20 · Jul · 2026</div>
@@ -272,7 +295,6 @@
 
     <a href="/insights/what-is-an-underwriting-copilot/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/what-is-an-underwriting-copilot.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 20 · Jul · 2026</div>
@@ -284,7 +306,6 @@
 
     <a href="/insights/what-is-flow-algorithmic-underwriting/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/what-is-flow-algorithmic-underwriting.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 20 · Jul · 2026</div>
@@ -296,7 +317,6 @@
 
     <a href="/insights/delegated-authority-technology-for-mgas-2026/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/delegated-authority-technology-for-mgas-2026.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 4 min · 08 · Jul · 2026</div>
@@ -308,7 +328,6 @@
 
     <a href="/insights/how-ai-analyzes-loss-run-reports-for-underwriting/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/how-ai-analyzes-loss-run-reports-for-underwriting.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 7 min · 08 · Jul · 2026</div>
@@ -320,7 +339,6 @@
 
     <a href="/insights/how-ai-automates-fnol-first-notice-of-loss/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/how-ai-automates-fnol-first-notice-of-loss.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 5 min · 08 · Jul · 2026</div>
@@ -332,7 +350,6 @@
 
     <a href="/insights/how-ai-automates-insurance-claims-processing/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/how-ai-automates-insurance-claims-processing.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 5 min · 08 · Jul · 2026</div>
@@ -344,7 +361,6 @@
 
     <a href="/insights/how-ai-powers-embedded-insurance-decisioning/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/how-ai-powers-embedded-insurance-decisioning.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 08 · Jul · 2026</div>
@@ -356,7 +372,6 @@
 
     <a href="/insights/how-to-automate-bordereaux-processing-with-ai/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/how-to-automate-bordereaux-processing-with-ai.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 5 min · 08 · Jul · 2026</div>
@@ -368,7 +383,6 @@
 
     <a href="/insights/how-to-extract-data-from-acord-forms-with-ai/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/how-to-extract-data-from-acord-forms-with-ai.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 08 · Jul · 2026</div>
@@ -380,7 +394,6 @@
 
     <a href="/insights/what-is-parametric-insurance-and-how-ai-enables-faster-payouts/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/what-is-parametric-insurance-and-how-ai-enables-faster-payouts.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 08 · Jul · 2026</div>
@@ -392,7 +405,6 @@
 
     <a href="/insights/ai-fraud-detection-underwriting-vs-claims/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/ai-fraud-detection-underwriting-vs-claims.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 08 · Jul · 2026</div>
@@ -404,7 +416,6 @@
 
     <a href="/insights/ai-in-commercial-and-specialty-insurance-underwriting/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/ai-in-commercial-and-specialty-insurance-underwriting.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 7 min · 08 · Jul · 2026</div>
@@ -416,7 +427,6 @@
 
     <a href="/insights/how-to-audit-ai-underwriting-decisions-for-compliance/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/how-to-audit-ai-underwriting-decisions-for-compliance.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 5 min · 08 · Jul · 2026</div>
@@ -428,7 +438,6 @@
 
     <a href="/insights/reduce-quote-turnaround-time-with-ai/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/reduce-quote-turnaround-time-with-ai.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 4 min · 08 · Jul · 2026</div>
@@ -440,7 +449,6 @@
 
     <a href="/insights/what-is-an-mga-and-how-mgas-use-ai/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/what-is-an-mga-and-how-mgas-use-ai.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 7 min · 08 · Jul · 2026</div>
@@ -452,7 +460,6 @@
 
     <a href="/insights/what-is-underwriting-leakage-and-how-ai-reduces-it/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/what-is-underwriting-leakage-and-how-ai-reduces-it.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 7 min · 08 · Jul · 2026</div>
@@ -464,7 +471,6 @@
 
     <a href="/insights/agentic-ai-insurance-underwriting/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/agentic-ai-insurance-underwriting.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 5 min · 08 · Jul · 2026</div>
@@ -476,7 +482,6 @@
 
     <a href="/insights/ai-underwriting-without-replacing-core-system/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/ai-underwriting-without-replacing-core-system.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 7 min · 08 · Jul · 2026</div>
@@ -488,7 +493,6 @@
 
     <a href="/insights/how-ai-integrates-with-guidewire-without-replacing-it/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/how-ai-integrates-with-guidewire-without-replacing-it.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 08 · Jul · 2026</div>
@@ -500,7 +504,6 @@
 
     <a href="/insights/how-to-increase-straight-through-processing-rate-insurance/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/how-to-increase-straight-through-processing-rate-insurance.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 7 min · 08 · Jul · 2026</div>
@@ -512,7 +515,6 @@
 
     <a href="/insights/insurance-submission-intake-automation/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/insurance-submission-intake-automation.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 08 · Jul · 2026</div>
@@ -524,7 +526,6 @@
 
     <a href="/insights/insurance-submission-triage-automation/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/insurance-submission-triage-automation.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 08 · Jul · 2026</div>
@@ -536,7 +537,6 @@
 
     <a href="/insights/what-is-ai-underwriting-workbench/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/what-is-ai-underwriting-workbench.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 08 · Jul · 2026</div>
@@ -548,7 +548,6 @@
 
     <a href="/insights/what-is-insurance-decisioning/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/what-is-insurance-decisioning.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 5 min · 08 · Jul · 2026</div>
@@ -560,7 +559,6 @@
 
     <a href="/insights/aparecer-recomendacoes-ia-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/aparecer-recomendacoes-ia-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 6 min · 03 · Jul · 2026</div>
@@ -572,7 +570,6 @@
 
     <a href="/insights/automacao-submissoes-mga-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#7540AC,#FE8B77);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/automacao-submissoes-mga-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Automação</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Automação · 6 min · 03 · Jul · 2026</div>
@@ -584,7 +581,6 @@
 
     <a href="/insights/camada-ia-vs-core-rpa-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/camada-ia-vs-core-rpa-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Artigo</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Artigo · 12 min · 21 · Jun · 2026</div>
@@ -596,7 +592,6 @@
 
     <a href="/insights/o-que-e-stp-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#7540AC,#FE8B77);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/o-que-e-stp-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Automação</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Automação · 6 min · 15 · Jun · 2026</div>
@@ -608,7 +603,6 @@
 
     <a href="/insights/melhores-plataformas-ia-subscricao-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#FE8B77);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/melhores-plataformas-ia-subscricao-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Automação</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Automação · 9 min · 24 · Jul · 2026</div>
@@ -620,7 +614,6 @@
 
     <a href="/insights/validacao-automatica-dados-cnpj-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/validacao-automatica-dados-cnpj-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Automação</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Automação · 8 min · 15 · Jun · 2026</div>
@@ -632,7 +625,6 @@
 
     <a href="/insights/substituir-rpa-ocr-ia-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#7540AC,#FE8B77);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/substituir-rpa-ocr-ia-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Automação</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Automação · 5 min · 15 · Jun · 2026</div>
@@ -644,7 +636,6 @@
 
     <a href="/insights/reduzir-tarefas-administrativas-subscricao-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#FE8B77,#F8AD39);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/reduzir-tarefas-administrativas-subscricao-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Automação</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Automação · 6 min · 15 · Jun · 2026</div>
@@ -656,7 +647,6 @@
 
     <a href="/insights/risco-climatico-seguros-brasil-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#F8AD39,#3222E9);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/risco-climatico-seguros-brasil-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Mercado</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Mercado · 6 min · 15 · Jun · 2026</div>
@@ -668,7 +658,6 @@
 
     <a href="/insights/seguro-cargas-transporte-brasil-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#AE46C0,#F8AD39);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/seguro-cargas-transporte-brasil-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Mercado</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Mercado · 7 min · 15 · Jun · 2026</div>
@@ -680,7 +669,6 @@
 
     <a href="/insights/seguro-cibernetico-brasil-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#7540AC,#3222E9);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/seguro-cibernetico-brasil-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Mercado</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Mercado · 5 min · 15 · Jun · 2026</div>
@@ -692,7 +680,6 @@
 
     <a href="/insights/seguro-parametrico-brasil-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#F8AD39,#FE8B77);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/seguro-parametrico-brasil-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Mercado</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Mercado · 8 min · 15 · Jun · 2026</div>
@@ -704,7 +691,6 @@
 
     <a href="/insights/telematica-seguro-auto-brasil-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#FE8B77);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/telematica-seguro-auto-brasil-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Mercado</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Mercado · 7 min · 15 · Jun · 2026</div>
@@ -716,7 +702,6 @@
 
     <a href="/insights/esteira-subscricao-sem-toque-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/esteira-subscricao-sem-toque-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Subscrição</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Subscrição · 6 min · 15 · Jun · 2026</div>
@@ -728,7 +713,6 @@
 
     <a href="/insights/triagem-automatica-submissoes-seguro-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#7540AC,#FE8B77);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/triagem-automatica-submissoes-seguro-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Automação</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Automação · 5 min · 15 · Jun · 2026</div>
@@ -740,7 +724,6 @@
 
     <a href="/insights/manifesto-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/manifesto-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Manifesto</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Manifesto · 4 min · 11 · Jun · 2026</div>
@@ -752,7 +735,6 @@
 
     <a href="/insights/analise-preditiva-conversao-cotacao-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/analise-preditiva-conversao-cotacao-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 9 min · 08 · Jun · 2026</div>
@@ -764,7 +746,6 @@
 
     <a href="/insights/automatizar-renovacao-seguros-ia-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/automatizar-renovacao-seguros-ia-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 9 min · 08 · Jun · 2026</div>
@@ -776,7 +757,6 @@
 
     <a href="/insights/automatizar-upsell-cross-sell-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/automatizar-upsell-cross-sell-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 9 min · 08 · Jun · 2026</div>
@@ -788,7 +768,6 @@
 
     <a href="/insights/declinio-automatico-cotacao-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/declinio-automatico-cotacao-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 9 min · 08 · Jun · 2026</div>
@@ -800,7 +779,6 @@
 
     <a href="/insights/escalonamento-humano-subscricao-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/escalonamento-humano-subscricao-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 10 min · 08 · Jun · 2026</div>
@@ -812,7 +790,6 @@
 
     <a href="/insights/dados-nao-estruturados-seguros-ia-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/dados-nao-estruturados-seguros-ia-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 8 min · 08 · Jun · 2026</div>
@@ -824,7 +801,6 @@
 
     <a href="/insights/fraude-seguros-brasil-ia-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/fraude-seguros-brasil-ia-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 8 min · 08 · Jun · 2026</div>
@@ -836,7 +812,6 @@
 
     <a href="/insights/lacuna-protecao-seguros-brasil-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/lacuna-protecao-seguros-brasil-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 9 min · 08 · Jun · 2026</div>
@@ -848,7 +823,6 @@
 
     <a href="/insights/open-insurance-brasil-seguradoras-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/open-insurance-brasil-seguradoras-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 9 min · 08 · Jun · 2026</div>
@@ -860,7 +834,6 @@
 
     <a href="/insights/regulacao-ia-seguros-susep-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/regulacao-ia-seguros-susep-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 8 min · 08 · Jun · 2026</div>
@@ -872,7 +845,6 @@
 
     <a href="/insights/automatizar-cotacao-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/automatizar-cotacao-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 9 min · 02 · Jun · 2026</div>
@@ -884,7 +856,6 @@
 
     <a href="/insights/automatizar-subscricao-seguro-transporte-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/automatizar-subscricao-seguro-transporte-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 8 min · 02 · Jun · 2026</div>
@@ -896,7 +867,6 @@
 
     <a href="/insights/automatizar-subscricao-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/automatizar-subscricao-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 10 min · 02 · Jun · 2026</div>
@@ -908,7 +878,6 @@
 
     <a href="/insights/decisoes-subscricao-auditaveis-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/decisoes-subscricao-auditaveis-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 11 min · 02 · Jun · 2026</div>
@@ -920,7 +889,6 @@
 
     <a href="/insights/enriquecimento-corretor-priorizacao-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/enriquecimento-corretor-priorizacao-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 10 min · 02 · Jun · 2026</div>
@@ -932,7 +900,6 @@
 
     <a href="/insights/integrar-camada-ia-core-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/integrar-camada-ia-core-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 10 min · 02 · Jun · 2026</div>
@@ -944,7 +911,6 @@
 
     <a href="/insights/leitura-inteligente-submissoes-seguro-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/leitura-inteligente-submissoes-seguro-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 9 min · 02 · Jun · 2026</div>
@@ -956,7 +922,6 @@
 
     <a href="/insights/motor-risco-fraude-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/motor-risco-fraude-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 10 min · 02 · Jun · 2026</div>
@@ -968,7 +933,6 @@
 
     <a href="/insights/precificacao-dinamica-seguros-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/precificacao-dinamica-seguros-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 12 min · 02 · Jun · 2026</div>
@@ -980,7 +944,6 @@
 
     <a href="/insights/processar-email-cotacao-automatico-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/processar-email-cotacao-automatico-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 10 min · 02 · Jun · 2026</div>
@@ -992,7 +955,6 @@
 
     <a href="/insights/proxima-melhor-acao-seguradoras-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/proxima-melhor-acao-seguradoras-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 9 min · 02 · Jun · 2026</div>
@@ -1004,7 +966,6 @@
 
     <a href="/insights/reduzir-tempo-resposta-cotacao-corretor-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/reduzir-tempo-resposta-cotacao-corretor-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 9 min · 02 · Jun · 2026</div>
@@ -1016,7 +977,6 @@
 
     <a href="/insights/roteamento-automatico-subscricao-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/roteamento-automatico-subscricao-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 12 min · 02 · Jun · 2026</div>
@@ -1028,7 +988,6 @@
 
     <a href="/insights/inteligencia-de-subscricao-brasil-en/" class="ix-card">
       <div class="ix-card__img" style="background:linear-gradient(135deg,#3222E9,#7540AC);background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(/assets/articles/inteligencia-de-subscricao-brasil-en.jpg);background-size:cover;background-position:center;">
-        <span class="ix-card__cat">Article</span>
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">Article · 8 min · 02 · Jun · 2026</div>
@@ -1048,9 +1007,9 @@
         <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
         <p class="footer__brand-desc">The new era of insurance is data intelligence, speed, and scale. WIR Innovation is the AI platform that delivers that structure inside the systems you already run.</p>
         <div class="footer__social">
-          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link">LinkedIn <span aria-hidden="true">↗</span></a>
-          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram <span aria-hidden="true">↗</span></a>
-          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link">X <span aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.37 4.267 5.455v6.288zM5.337 7.433a2.062 2.062 0 01-2.063-2.064 2.063 2.063 0 112.063 2.064zm1.778 13.019H3.555V9h3.56v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="X" title="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         </div>
       </div>
       <div>

@@ -27,3 +27,8 @@ export const INSIGHTS_HREF = LANG === "en" ? "/en/insights/" : "/insights/";
 // (no ES translation yet; EN is the non-PT international version, better than landing
 // a Spanish reader on a pt-BR page). Map es→/insights/manifesto-es/ if an ES page is added.
 export const MANIFESTO_HREF = (LANG === "en" || LANG === "es") ? "/insights/manifesto-en/" : "/insights/manifesto/";
+
+// Language of the page those two links land on. Used for hrefLang; the ES tree also tags the
+// visible label ("(PT)" / "(EN)") so the jump to another language is announced.
+export const INSIGHTS_HREFLANG = LANG === "en" ? "en" : "pt-BR";
+export const MANIFESTO_HREFLANG = LANG === "pt" ? "pt-BR" : "en";

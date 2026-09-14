@@ -25,7 +25,7 @@ const T = {
     step1Title: <>Conte um pouco do <em>contexto.</em></>,
     step2Title: <>Como te <em>chamamos?</em></>,
     fRole: "Seu papel na empresa", fSelect: "Selecione…",
-    fCompany: "Nome da empresa", fCompanyPh: "Ex: Mahway Seguros",
+    fCompany: "Nome da empresa", fCompanyPh: "Nome da seguradora ou corretora",
     fSize: "Porte",
     fName: "Nome completo", fNamePh: "Ana Paula Silva",
     fEmail: "E-mail corporativo", fEmailPh: "ana@empresa.com",
@@ -34,6 +34,9 @@ const T = {
     fNotesPh: "Qual é o problema concreto de hoje? (ex: levamos 6 semanas para cotar comercial…)",
     navBack: "Voltar", navStep: (n) => `Passo ${n} de 3`,
     navReady: "pronto para avançar", navIncomplete: "complete os campos obrigatórios",
+    stepsAria: "Etapas do formulário",
+    errInterest: "Escolha uma opção para continuar.", errSelect: "Selecione uma opção.",
+    errRequired: "Preencha este campo.", errEmail: "Informe um e-mail válido.",
     navContinue: "Continuar", navSending: "Enviando…", navSubmit: "Enviar pedido",
     nameFallback: "pessoal",
     doneOkEyebrow: "· Recebido",
@@ -42,7 +45,7 @@ const T = {
     doneOkBody2: (link) => <>Se precisar adiantar algo, escreva para {link} citando a Ref abaixo.</>,
     doneMailEyebrow: "· Confirme o envio",
     doneMailTitle: (n) => <>Quase lá, <em>{n}.</em></>,
-    doneMailBody1: <>Seu cliente de e-mail abriu uma mensagem pré-preenchida para <b>nicholas@wirinnovation.ai</b>. <b>Confirme o envio</b> e respondemos em até 24h úteis com 2 ou 3 horários.</>,
+    doneMailBody1: <>Seu cliente de e-mail abriu uma mensagem pré-preenchida para <b>contato@wirinnovation.ai</b>. <b>Confirme o envio</b> e respondemos em até 24h úteis com 2 ou 3 horários.</>,
     doneMailBody2: (link) => <>Caso o e-mail não tenha aberto, escreva direto para {link}.</>,
     doneErrEyebrow: "· Ops, falha no envio",
     doneErrTitle: <>Não conseguimos enviar.</>,
@@ -99,7 +102,7 @@ Enviado pelo formulário do site wirinnovation.ai`,
     step1Title: <>Tell us a bit of <em>context.</em></>,
     step2Title: <>How should we <em>reach you?</em></>,
     fRole: "Your role at the company", fSelect: "Select…",
-    fCompany: "Company name", fCompanyPh: "E.g.: Mahway Insurance",
+    fCompany: "Company name", fCompanyPh: "Insurer or brokerage name",
     fSize: "Size",
     fName: "Full name", fNamePh: "Ana Paula Silva",
     fEmail: "Work email", fEmailPh: "ana@company.com",
@@ -108,6 +111,9 @@ Enviado pelo formulário do site wirinnovation.ai`,
     fNotesPh: "What's the concrete problem today? (e.g.: commercial quotes take us 6 weeks…)",
     navBack: "Back", navStep: (n) => `Step ${n} of 3`,
     navReady: "ready to continue", navIncomplete: "complete the required fields",
+    stepsAria: "Form steps",
+    errInterest: "Choose an option to continue.", errSelect: "Select an option.",
+    errRequired: "Fill in this field.", errEmail: "Enter a valid email.",
     navContinue: "Continue", navSending: "Sending…", navSubmit: "Send request",
     nameFallback: "there",
     doneOkEyebrow: "· Received",
@@ -116,7 +122,7 @@ Enviado pelo formulário do site wirinnovation.ai`,
     doneOkBody2: (link) => <>If you need to move faster, write to {link} quoting the Ref below.</>,
     doneMailEyebrow: "· Confirm the send",
     doneMailTitle: (n) => <>Almost there, <em>{n}.</em></>,
-    doneMailBody1: <>Your email client opened a pre-filled message to <b>nicholas@wirinnovation.ai</b>. <b>Confirm the send</b> and we'll reply within 24 business hours with 2–3 time slots.</>,
+    doneMailBody1: <>Your email client opened a pre-filled message to <b>contato@wirinnovation.ai</b>. <b>Confirm the send</b> and we'll reply within 24 business hours with 2–3 time slots.</>,
     doneMailBody2: (link) => <>If the email didn't open, write directly to {link}.</>,
     doneErrEyebrow: "· Oops, send failed",
     doneErrTitle: <>We couldn't send it.</>,
@@ -173,15 +179,18 @@ Sent from the wirinnovation.ai website form`,
     step1Title: <>Cuéntanos un poco del <em>contexto.</em></>,
     step2Title: <>¿Cómo te <em>contactamos?</em></>,
     fRole: "Tu rol en la empresa", fSelect: "Selecciona…",
-    fCompany: "Nombre de la empresa", fCompanyPh: "Ej: Mahway Seguros",
+    fCompany: "Nombre de la empresa", fCompanyPh: "Nombre de la aseguradora o corredora",
     fSize: "Tamaño",
     fName: "Nombre completo", fNamePh: "Ana Paula Silva",
     fEmail: "Email corporativo", fEmailPh: "ana@empresa.com",
-    fPhone: "Teléfono · opcional", fPhonePh: "+57 300 999 9999",
+    fPhone: "Teléfono · opcional", fPhonePh: "+55 11 99999-9999",
     fNotes: "¿Qué está pasando allá? · opcional",
     fNotesPh: "¿Cuál es el problema concreto hoy? (ej: tardamos 6 semanas en cotizar comercial…)",
     navBack: "Volver", navStep: (n) => `Paso ${n} de 3`,
     navReady: "listo para avanzar", navIncomplete: "completa los campos obligatorios",
+    stepsAria: "Pasos del formulario",
+    errInterest: "Elige una opción para continuar.", errSelect: "Selecciona una opción.",
+    errRequired: "Completa este campo.", errEmail: "Ingresa un email válido.",
     navContinue: "Continuar", navSending: "Enviando…", navSubmit: "Enviar solicitud",
     nameFallback: "equipo",
     doneOkEyebrow: "· Recibido",
@@ -190,7 +199,7 @@ Sent from the wirinnovation.ai website form`,
     doneOkBody2: (link) => <>Si necesitas adelantar algo, escribe a {link} citando la Ref de abajo.</>,
     doneMailEyebrow: "· Confirma el envío",
     doneMailTitle: (n) => <>Casi listo, <em>{n}.</em></>,
-    doneMailBody1: <>Tu cliente de correo abrió un mensaje pre-llenado para <b>nicholas@wirinnovation.ai</b>. <b>Confirma el envío</b> y respondemos dentro de las 24h hábiles con 2 o 3 horarios.</>,
+    doneMailBody1: <>Tu cliente de correo abrió un mensaje pre-llenado para <b>contato@wirinnovation.ai</b>. <b>Confirma el envío</b> y respondemos dentro de las 24h hábiles con 2 o 3 horarios.</>,
     doneMailBody2: (link) => <>Si el correo no se abrió, escribe directo a {link}.</>,
     doneErrEyebrow: "· Ups, falló el envío",
     doneErrTitle: <>No pudimos enviarlo.</>,
@@ -229,35 +238,25 @@ Enviado desde el formulario del sitio wirinnovation.ai`,
   },
 }[LANG];
 
-const NICHOLAS_MAILTO = (
-  <a href="mailto:nicholas@wirinnovation.ai" style={{color: "var(--wir-purple)", textDecoration: "underline"}}>nicholas@wirinnovation.ai</a>
+const CONTACT_MAILTO = (
+  <a href="mailto:contato@wirinnovation.ai" style={{color: "var(--wir-purple)", textDecoration: "underline"}}>contato@wirinnovation.ai</a>
 );
 
-function ContactClocks() {
-  const [now, setNow] = React.useState(new Date());
-  React.useEffect(() => {
-    const id = setInterval(() => setNow(new Date()), 1000);
-    return () => clearInterval(id);
-  }, []);
+// Office addresses. Static: the old seconds-ticking clocks were decoration, not information.
+function ContactOffices() {
   const offices = [
-    { city:"São Paulo",      tz:"America/Sao_Paulo",     addr:"Av. Faria Lima, 3500 · 18º" },
-    { city:"Silicon Valley", tz:"America/Los_Angeles",   addr:T.svAddr                     },
+    { city:"São Paulo",      addr:"Av. Faria Lima, 3500 · 18º" },
+    { city:"Silicon Valley", addr:T.svAddr                     },
   ];
-  const fmt = (tz) => {
-    try {
-      return new Intl.DateTimeFormat("pt-BR", { timeZone: tz, hour:"2-digit", minute:"2-digit", second:"2-digit", hour12:false }).format(now);
-    } catch { return "--:--:--"; }
-  };
   return (
-    <div className="ctclocks">
+    <address className="ctclocks">
       {offices.map((o,i) => (
         <div key={i} className="ctclock">
-          <div className="ctclock__city">{o.city}</div>
-          <div className="ctclock__time num">{fmt(o.tz)}</div>
+          <div className="ctclock__place">{o.city}</div>
           <div className="ctclock__addr">{o.addr}</div>
         </div>
       ))}
-    </div>
+    </address>
   );
 }
 
@@ -311,7 +310,7 @@ function ContactHero() {
               <div className="cthero__founders-note">{T.foundersNote}</div>
             </div>
           </div>
-          <ContactClocks/>
+          <ContactOffices/>
         </div>
       </div>
     </section>
@@ -332,11 +331,38 @@ function ContactForm() {
   const roles = T.roles;
   const sizes = T.sizes;
 
-  const canNext = () => {
-    if (step === 0) return !!data.interest;
-    if (step === 1) return !!data.role && !!data.company && !!data.size;
-    if (step === 2) return !!data.name && !!data.email;
-    return false;
+  // Validation per step. Errors stay hidden until the reader tries to move on, then show
+  // inline under each field (role="alert", linked with aria-describedby) and focus moves to
+  // the first field that needs attention.
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const missing = [
+    { interest: !data.interest },
+    { role: !data.role, company: !data.company.trim(), size: !data.size },
+    { name: !data.name.trim(), email: !EMAIL_RE.test(data.email.trim()) },
+  ];
+  const [tried, setTried] = React.useState([false, false, false]);
+  const ERR = { interest: T.errInterest, role: T.errSelect, company: T.errRequired, size: T.errSelect, name: T.errRequired, email: T.errEmail };
+  const FIRST_CONTROL = { interest: "ctform-interest-0", role: "ctform-role", company: "ctform-company", size: "ctform-size-0", name: "ctform-name", email: "ctform-email" };
+  const hasErr = (k) => tried[step] && missing[step][k];
+  const errId = (k) => `ctform-err-${k}`;
+  const errFor = (k) => hasErr(k) ? <span id={errId(k)} className="ctform__err" role="alert">{ERR[k]}</span> : null;
+  const invalidProps = (k) => hasErr(k) ? { "aria-invalid": true, "aria-describedby": errId(k) } : {};
+  const stepOk = (s) => !Object.values(missing[s]).some(Boolean);
+  const canNext = () => stepOk(step);
+  const flagStep = (s) => {
+    const first = Object.keys(missing[s]).find(k => missing[s][k]);
+    setTried(t => t.map((v, i) => (i === s ? true : v)));
+    if (s !== step) setStep(s);
+    // Two frames: let React render the step and its errors before moving focus.
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      const el = document.getElementById(FIRST_CONTROL[first]);
+      if (el) el.focus();
+    }));
+  };
+  const onContinue = () => (stepOk(step) ? setStep(s => s + 1) : flagStep(step));
+  const onSubmit = () => {
+    const bad = missing.findIndex((m, i) => !stepOk(i));
+    if (bad === -1) handleSubmit(); else flagStep(bad);
   };
 
   const [submitted, setSubmitted] = React.useState(false);
@@ -419,7 +445,7 @@ function ContactForm() {
       const subject = T.mailtoSubject(data.name, data.company);
       const body = T.mailtoBody(data, interestLabel);
       try {
-        window.location.href = `mailto:nicholas@wirinnovation.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = `mailto:contato@wirinnovation.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         mailtoTriggered = true;
       } catch (e) {
         console.warn("mailto fallback failed", e);
@@ -448,7 +474,7 @@ function ContactForm() {
       body    = (
         <>
           <p className="ctform__done-lede">{T.doneOkBody1}</p>
-          <p className="ctform__done-lede" style={{marginTop: 16}}>{T.doneOkBody2(NICHOLAS_MAILTO)}</p>
+          <p className="ctform__done-lede" style={{marginTop: 16}}>{T.doneOkBody2(CONTACT_MAILTO)}</p>
         </>
       );
     } else if (submitMode === "mailto") {
@@ -457,7 +483,7 @@ function ContactForm() {
       body    = (
         <>
           <p className="ctform__done-lede">{T.doneMailBody1}</p>
-          <p className="ctform__done-lede" style={{marginTop: 16}}>{T.doneMailBody2(NICHOLAS_MAILTO)}</p>
+          <p className="ctform__done-lede" style={{marginTop: 16}}>{T.doneMailBody2(CONTACT_MAILTO)}</p>
         </>
       );
     } else {
@@ -465,7 +491,7 @@ function ContactForm() {
       title   = T.doneErrTitle;
       body    = (
         <>
-          <p className="ctform__done-lede">{T.doneErrBody(NICHOLAS_MAILTO)}</p>
+          <p className="ctform__done-lede">{T.doneErrBody(CONTACT_MAILTO)}</p>
         </>
       );
     }
@@ -495,27 +521,30 @@ function ContactForm() {
         <div className="ctform__head">
           <div className="eyebrow">{T.formEyebrow}</div>
           {/* Step pills are clickable buttons — users can jump back, and forward up to furthest visited */}
-          <div className="ctform__steps" role="list">
+          <ol className="ctform__steps" aria-label={T.stepsAria}>
             {T.steps.map((s,i) => (
-              <button key={i} type="button"
-                role="listitem"
-                aria-current={i === step ? "step" : undefined}
-                disabled={i > furthest}
-                onClick={() => i <= furthest && setStep(i)}
-                className={"ctform__step" + (i === step ? " is-active" : "") + (i < step ? " is-done" : "")}>
-                <span className="num">0{i+1}</span>
-                <span>{s}</span>
-              </button>
+              <li key={i}>
+                <button type="button"
+                  aria-current={i === step ? "step" : undefined}
+                  disabled={i > furthest}
+                  onClick={() => i <= furthest && setStep(i)}
+                  className={"ctform__step" + (i === step ? " is-active" : "") + (i < step ? " is-done" : "")}>
+                  <span className="num">0{i+1}</span>
+                  <span>{s}</span>
+                </button>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
 
         {step === 0 && (
           <div className="ctform__panel">
-            <h2 className="display ctform__panel-title">{T.step0Title}</h2>
-            <div className="ctform__options">
-              {interests.map(x => (
-                <button key={x.k}
+            <h2 className="display ctform__panel-title" id="ctform-step0-title">{T.step0Title}</h2>
+            <div className="ctform__options" role="group" aria-labelledby="ctform-step0-title"
+              aria-describedby={hasErr("interest") ? errId("interest") : undefined}>
+              {interests.map((x, i) => (
+                <button key={x.k} type="button" id={`ctform-interest-${i}`}
+                  aria-pressed={data.interest === x.k}
                   className={"ctform__opt" + (data.interest === x.k ? " is-sel" : "")}
                   onClick={()=>update("interest", x.k)}
                   style={{"--c": x.c}}>
@@ -525,6 +554,7 @@ function ContactForm() {
                 </button>
               ))}
             </div>
+            {errFor("interest")}
           </div>
         )}
 
@@ -532,28 +562,34 @@ function ContactForm() {
           <div className="ctform__panel">
             <h2 className="display ctform__panel-title">{T.step1Title}</h2>
             <div className="ctform__fields">
-              <label className="ctform__field">
-                <span>{T.fRole}</span>
-                <select value={data.role} onChange={(e)=>update("role", e.target.value)}>
+              <div className="ctform__field">
+                <label className="ctform__label" htmlFor="ctform-role">{T.fRole}</label>
+                <select id="ctform-role" value={data.role} onChange={(e)=>update("role", e.target.value)}
+                  required aria-required="true" {...invalidProps("role")}>
                   <option value="">{T.fSelect}</option>
                   {roles.map(r => <option key={r}>{r}</option>)}
                 </select>
-              </label>
-              <label className="ctform__field">
-                <span>{T.fCompany}</span>
-                <input type="text" value={data.company} onChange={(e)=>update("company", e.target.value)} placeholder={T.fCompanyPh}
-                  required aria-required="true" autoComplete="organization"/>
-              </label>
-              <label className="ctform__field ctform__field--full">
-                <span>{T.fSize}</span>
+                {errFor("role")}
+              </div>
+              <div className="ctform__field">
+                <label className="ctform__label" htmlFor="ctform-company">{T.fCompany}</label>
+                <input id="ctform-company" type="text" value={data.company} onChange={(e)=>update("company", e.target.value)} placeholder={T.fCompanyPh}
+                  required aria-required="true" autoComplete="organization" {...invalidProps("company")}/>
+                {errFor("company")}
+              </div>
+              <fieldset className="ctform__field ctform__field--full"
+                aria-describedby={hasErr("size") ? errId("size") : undefined}>
+                <legend className="ctform__label">{T.fSize}</legend>
                 <div className="ctform__chips">
-                  {sizes.map(s => (
-                    <button key={s} type="button"
+                  {sizes.map((s, i) => (
+                    <button key={s} type="button" id={`ctform-size-${i}`}
+                      aria-pressed={data.size === s}
                       className={"ctform__chip" + (data.size === s ? " is-sel" : "")}
                       onClick={()=>update("size", s)}>{s}</button>
                   ))}
                 </div>
-              </label>
+                {errFor("size")}
+              </fieldset>
             </div>
           </div>
         )}
@@ -562,26 +598,28 @@ function ContactForm() {
           <div className="ctform__panel">
             <h2 className="display ctform__panel-title">{T.step2Title}</h2>
             <div className="ctform__fields">
-              <label className="ctform__field">
-                <span>{T.fName}</span>
-                <input type="text" value={data.name} onChange={(e)=>update("name", e.target.value)} placeholder={T.fNamePh}
-                  required aria-required="true" autoComplete="name"/>
-              </label>
-              <label className="ctform__field">
-                <span>{T.fEmail}</span>
-                <input type="email" value={data.email} onChange={(e)=>update("email", e.target.value)} placeholder={T.fEmailPh}
-                  required aria-required="true" autoComplete="email" inputMode="email"/>
-              </label>
-              <label className="ctform__field">
-                <span>{T.fPhone}</span>
-                <input type="tel" value={data.phone} onChange={(e)=>update("phone", e.target.value)} placeholder={T.fPhonePh}
+              <div className="ctform__field">
+                <label className="ctform__label" htmlFor="ctform-name">{T.fName}</label>
+                <input id="ctform-name" type="text" value={data.name} onChange={(e)=>update("name", e.target.value)} placeholder={T.fNamePh}
+                  required aria-required="true" autoComplete="name" {...invalidProps("name")}/>
+                {errFor("name")}
+              </div>
+              <div className="ctform__field">
+                <label className="ctform__label" htmlFor="ctform-email">{T.fEmail}</label>
+                <input id="ctform-email" type="email" value={data.email} onChange={(e)=>update("email", e.target.value)} placeholder={T.fEmailPh}
+                  required aria-required="true" autoComplete="email" inputMode="email" {...invalidProps("email")}/>
+                {errFor("email")}
+              </div>
+              <div className="ctform__field">
+                <label className="ctform__label" htmlFor="ctform-phone">{T.fPhone}</label>
+                <input id="ctform-phone" type="tel" value={data.phone} onChange={(e)=>update("phone", e.target.value)} placeholder={T.fPhonePh}
                   autoComplete="tel" inputMode="tel"/>
-              </label>
-              <label className="ctform__field ctform__field--full">
-                <span>{T.fNotes}</span>
-                <textarea rows="4" value={data.notes} onChange={(e)=>update("notes", e.target.value)}
+              </div>
+              <div className="ctform__field ctform__field--full">
+                <label className="ctform__label" htmlFor="ctform-notes">{T.fNotes}</label>
+                <textarea id="ctform-notes" rows="4" value={data.notes} onChange={(e)=>update("notes", e.target.value)}
                   placeholder={T.fNotesPh}/>
-              </label>
+              </div>
             </div>
           </div>
         )}
@@ -594,11 +632,11 @@ function ContactForm() {
           </button>
           <div className="ctform__nav-meta">{T.navStep(step+1)} · {canNext() ? T.navReady : T.navIncomplete}</div>
           {step < 2 ? (
-            <button className="btn btn--solid" disabled={!canNext()} onClick={()=>setStep(s => s+1)}>
+            <button className="btn btn--solid" onClick={onContinue}>
               {T.navContinue} <span className="btn__arrow">→</span>
             </button>
           ) : (
-            <button className="btn btn--solid" disabled={!canNext() || submitting} onClick={handleSubmit}>
+            <button className="btn btn--solid" disabled={submitting} onClick={onSubmit}>
               {submitting ? T.navSending : T.navSubmit} <span className="btn__arrow">→</span>
             </button>
           )}
@@ -652,7 +690,7 @@ function ContactQuickChannels() {
       setEmail("");
     } else {
       // Fallback to mailto so signup still reaches us
-      const href = `mailto:nicholas@wirinnovation.ai?subject=${encodeURIComponent("Newsletter signup")}&body=${encodeURIComponent(T.newsMailtoBody + email)}`;
+      const href = `mailto:contato@wirinnovation.ai?subject=${encodeURIComponent("Newsletter signup")}&body=${encodeURIComponent(T.newsMailtoBody + email)}`;
       window.location.href = href;
       setNewsState("error");
     }
@@ -703,7 +741,7 @@ function ContactSocial() {
     { k:"LinkedIn",  v:"@wir-innovation",          href:"https://www.linkedin.com/company/wir-innovation/" },
     { k:"Instagram", v:"@wirinnovation",           href:"https://www.instagram.com/wirinnovation" },
     { k:"X",         v:"@wirinnovationai",         href:"https://x.com/wirinnovationai" },
-    { k:"E-mail",    v:"nicholas@wirinnovation.ai", href:"mailto:nicholas@wirinnovation.ai" },
+    { k:"E-mail",    v:"contato@wirinnovation.ai",  href:"mailto:contato@wirinnovation.ai" },
   ];
   return (
     <section className="ctsocial" data-reveal>

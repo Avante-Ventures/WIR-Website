@@ -303,3 +303,11 @@
   .blarticle__byline { gap: 12px; }
   .blarticle__author-photo, .blarticle__author-initials { width: 42px; height: 42px; }
 }
+
+/* ───────── Related insights (generated under the FAQ by scripts/build-articles.cjs) ───────── */
+.blarticle__related { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--paper-3); }
+.blarticle__related-title { font-family: var(--f-mono); font-size: 11px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+.blarticle__related-list { list-style: none; display: grid; gap: 12px; padding: 0; }
+.blarticle__related-item a { font-family: var(--f-display); font-size: 20px; line-height: 1.3; color: var(--ink); transition: color .18s ease; }
+.blarticle__related-item a:hover { color: var(--wir-purple); }
+.blarticle__related-cat { font-family: var(--f-mono); font-size: 11px; color: var(--ink-4); margin-right: 8px; }

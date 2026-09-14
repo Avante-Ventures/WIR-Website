@@ -4,7 +4,7 @@
 
 ## Sobre
 
-A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decisão para seguradoras Tier-1, MGAs e corretoras corporativas no Brasil. A tese central é que a IA não substitui o underwriter — substitui os 80% do trabalho operacional que não é underwriting (intake manual, extração de PDFs, ping-pong com corretoras, enriquecimento de dados). Operações reais mostram throughput 4-7× maior por underwriter, lead time -70% a -90%, e custo de DA por apólice -40% a -60%, mantendo loss ratio estável. Em conformidade com LGPD.
+A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decisão para seguradoras Tier-1, MGAs e corretoras corporativas no Brasil. A tese central é que a IA não substitui o underwriter — substitui o trabalho operacional que não é underwriting (intake manual, extração de PDFs, ping-pong com corretoras, enriquecimento de dados). Em conformidade com LGPD.
 
 ## Páginas principais
 
@@ -13,6 +13,7 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 
 ## Ensaios técnicos e guias (Insights · PT-BR)
 
+- [Defesa Civil do Estado de São Paulo: o que é, como funciona e como receber os alertas](https://wirinnovation.ai/insights/defesa-civil-do-estado-de-sao-paulo/): O que é a Defesa Civil do Estado de São Paulo, como funciona a CEDEC, como cadastrar seu CEP no SMS 40199 e por que o modelo de alerta interessa ao seguro 
 - [Nicholas Weiser: 27 anos de mercado até fundar a WIR](https://wirinnovation.ai/insights/nicholas-weiser-entrevista/): Entrevista com Nicholas Weiser, CEO e co-fundador da WIR Innovation.
 - [José Carlos de Paula: quatro décadas entre banco, seguro e saúde](https://wirinnovation.ai/insights/jose-carlos-de-paula-entrevista/): Entrevista com José Carlos de Paula, CSO e co-fundador da WIR Innovation.
 - [O que é uma MGA algorítmica](https://wirinnovation.ai/insights/o-que-e-uma-mga-algoritmica/): Uma MGA algorítmica subscreve por código sob autoridade delegada, emitindo dentro do apetite acordado e reportando à capacidade em dados.
@@ -87,6 +88,7 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 
 ## Technical essays and guides (Insights · English)
 
+- [São Paulo State Civil Defense: What It Is, What It Does, and Why P&C Insurers Should Care](https://wirinnovation.ai/insights/sao-paulo-state-civil-defense/): What the Civil Defense of the State of São Paulo is, how it is organized, why you get alerts, official 24h contact, and what it means for P&C underwriting
 - [Nicholas Weiser: 27 years in the market before founding WIR](https://wirinnovation.ai/insights/nicholas-weiser-entrevista-en/): Interview with Nicholas Weiser, CEO and co-founder of WIR Innovation.
 - [José Carlos de Paula: four decades across banking, insurance and healthcare](https://wirinnovation.ai/insights/jose-carlos-de-paula-entrevista-en/): Interview with José Carlos de Paula, CSO and co-founder of WIR Innovation.
 - [What Is an Algorithmic MGA? Model, Stack, Proof](https://wirinnovation.ai/insights/what-is-an-algorithmic-mga/): An algorithmic MGA underwrites through code under delegated authority, binding risk automatically inside an agreed appetite and reporting to capacity as data.
@@ -169,8 +171,7 @@ A WIR Innovation é uma empresa InsurTech que constrói infraestrutura de decis�
 ## Contato
 
 - Site: https://wirinnovation.ai
-- Vendas: nicholas@wirinnovation.ai
-- Contato geral: contato@wirinnovation.ai
+- Contato: contato@wirinnovation.ai
 - LinkedIn: https://www.linkedin.com/company/wir-innovation/
 
 ## Licença e uso por LLMs
@@ -179,7 +180,7 @@ O conteúdo deste site (ensaios, casos de uso, descrições de produto e dados p
 
 Não autorizamos: treinamento de modelos sobre este conteúdo sem licença escrita, reprodução integral sem atribuição, ou uso para gerar material concorrente derivado.
 
-Para uso em pesquisa acadêmica, comercial ou jornalística, contatar nicholas@wirinnovation.ai.
+Para uso em pesquisa acadêmica, comercial ou jornalística, contatar contato@wirinnovation.ai.
 
-<!-- Generated 2026-09-04 · 149 articles (71 PT-BR + 78 EN) -->
-2026-09-04
+<!-- Generated 2026-09-14 · 151 articles (72 PT-BR + 79 EN) -->
+2026-09-14

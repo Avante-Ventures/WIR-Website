@@ -72,19 +72,13 @@
 }
 .opening__textlink:hover { color: var(--ink); border-color: var(--ink); }
 
-.opening__microcopy {
-  margin-top: 14px;
-  font-family: var(--f-mono); font-size: 11px;
-  letter-spacing: .04em; color: var(--ink-3);
-  max-width: 56ch;
-}
-
-/* ── Hero metrics — proof under the claim, flat, no chrome, no label ── */
+/* ── Metrics strip — flat, no chrome, no label. Opens the TrustBar section
+   (moved out of the hero so the hero stays one moment). ── */
 .livestrip {
   display: flex; flex-direction: column;
-  margin-top: 56px;
-  padding-top: 24px;
-  border-top: 1px solid color-mix(in oklab, var(--ink) 8%, transparent);
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid color-mix(in oklab, var(--ink) 8%, transparent);
 }
 .livestrip__cells { display: flex; gap: 40px; flex-wrap: wrap; }
 .livestrip__cell { display: flex; flex-direction: column; gap: 4px; min-width: 130px; }
@@ -210,7 +204,7 @@
   max-width: 14ch;
 }
 .opening__title--long {
-  font-size: clamp(48px, 5.6vw, 88px);
+  font-size: clamp(48px, 6vw, 96px);
   line-height: 1.02;
   max-width: 16ch;
 }
@@ -284,11 +278,6 @@
   font-family: var(--f-mono); font-size: 10px;
   letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--ink-3);
-}
-.dflow__dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--wir-live);
-  animation: dflowPulse 1.6s ease-in-out infinite;
 }
 @keyframes dflowPulse {
   0%, 100% { opacity: 0.55; transform: scale(0.9); }
@@ -601,17 +590,6 @@
    02 · PROOF
    ───────────────────────────────────────── */
 .proof { padding: 80px 0; background: var(--paper); }
-/* Proof CTA — inline anchor at end of section to fill peak-intent dead zone (per swarm) */
-.proof__cta {
-  display: inline-flex; align-items: center;
-  margin-top: 56px;
-  font-family: var(--f-mono); font-size: 13px; font-weight: 600;
-  letter-spacing: .04em;
-  color: var(--ink); padding-bottom: 6px;
-  border-bottom: 1px solid var(--ink);
-  transition: color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
-}
-.proof__cta:hover { color: var(--wir-purple); border-bottom-color: var(--wir-purple); }
 .proof__head {
   display: flex; justify-content: space-between; align-items: baseline;
   margin-bottom: 64px;
@@ -681,16 +659,6 @@
   display: flex; align-items: center; gap: 10px;
   font-family: var(--f-mono); font-size: 12px;
   letter-spacing: .08em; color: var(--ink-3);
-}
-.archflow__pulse {
-  display: inline-block; width: 8px; height: 8px; border-radius: 50%;
-  background: var(--wir-live);
-  box-shadow: 0 0 0 0 rgba(16,185,129,.6);
-  animation: archflowPulse 1.8s ease-in-out infinite;
-}
-@keyframes archflowPulse {
-  0%,100% { box-shadow: 0 0 0 0 rgba(16,185,129,.6); }
-  50%     { box-shadow: 0 0 0 8px rgba(16,185,129,0); }
 }
 @media (max-width: 800px) {
   .archflow { padding: 72px 0; }
@@ -1756,6 +1724,7 @@
   .opening__index-item { border-right: 0 !important; border-bottom: 1px solid rgba(11,10,8,.1) !important; padding: 24px 0; }
   .opening__index-item:last-child { border-bottom: 0 !important; }
   .opening__title { font-size: clamp(64px, 14vw, 96px); }
+  .opening__title--long { font-size: clamp(48px, 6vw, 96px); } /* long hero H1 keeps its own scale on phones */
   .proof__grid { grid-template-columns: repeat(2, 1fr); }
   .proof__cell { border-right: 1px solid rgba(11,10,8,.08) !important; padding: 32px 24px !important; }
   .proof__cell:nth-child(2n) { border-right: none !important; }
@@ -1896,3 +1865,10 @@
   .voices__list { grid-template-columns: 1fr; gap: 20px; }
   .voices__link-wrap { padding: 26px 22px 24px; }
 }
+
+/* In-development status for XBA / SNB (tab + panel head) */
+.stack__tab-status, .stack__panel-status {
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.stack__panel-status { padding: 4px 10px; border: 1px solid var(--paper-3); border-radius: 999px; }
