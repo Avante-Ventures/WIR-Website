@@ -10072,7 +10072,7 @@ export function BlogArticle({ article, go }) {
       datePublished: article.date,
       author: { "@type": "Person", name: article.author, jobTitle: article.role },
       publisher: { "@type": "Organization", name: "WIR Innovation",
-        logo: { "@type": "ImageObject", url: "https://wirinnovation.ai/assets/wir-logo-azul.svg" } },
+        logo: { "@type": "ImageObject", url: "https://wirinnovation.ai/assets/wir-logo-512.png" } },
       mainEntityOfPage: `https://wirinnovation.ai/#blog/${article.slug}`,
       articleSection: article.cat,
     });

@@ -145,7 +145,7 @@ function renderHead(article) {
     "author": { "@type": "Person", "name": article.author, "jobTitle": article.role },
     "publisher": {
       "@type": "Organization", "name": "WIR Innovation",
-      "logo": { "@type": "ImageObject", "url": `${SITE_URL}/assets/wir-logo-azul.svg` },
+      "logo": { "@type": "ImageObject", "url": `${SITE_URL}/assets/wir-logo-512.png` },
     },
     "mainEntityOfPage": url,
     "articleSection": article.cat,
@@ -198,8 +198,9 @@ ${article.image ? `<meta property="og:image" content="${SITE_URL}${article.image
 <meta name="twitter:description" content="${esc(article.metaDesc)}" />
 ${article.image ? `<meta name="twitter:image" content="${SITE_URL}${article.image}" />` : ""}
 
-<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
-<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+<link rel="icon" href="/assets/favicon.ico" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -312,7 +313,7 @@ ${tickerItems}
 <nav class="nav" aria-label="Primary">
   <div class="wrap nav__inner">
     <a href="${c.base}/" class="nav__brand">
-      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" width="98" height="72" style="height:72px;width:auto;display:block" />
     </a>
     <div class="nav__links">
 ${links("      ")}
@@ -357,7 +358,7 @@ function renderFooter(lang = "pt-BR") {
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" width="87" height="64" style="height:64px;width:auto;display:block" />
         <p class="footer__brand-desc">${c.footerDesc}</p>
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn" title="LinkedIn">${socialIcon("LinkedIn")}</a>
@@ -572,7 +573,8 @@ function renderInsightsIndex(lang = "pt-BR") {
 <meta property="og:title" content="${idx.title}" />
 <meta property="og:description" content="${idx.desc}" />
 <meta property="og:url" content="${idx.url}" />
-<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
+<link rel="icon" href="/assets/favicon.ico" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">

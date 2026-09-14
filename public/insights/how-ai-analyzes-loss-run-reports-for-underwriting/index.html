@@ -23,8 +23,9 @@
 <meta name="twitter:description" content="AI reads loss run PDFs, structures every claim, and computes loss ratio, frequency, and severity, in an external AI layer that never replaces your core system." />
 <meta name="twitter:image" content="https://wirinnovation.ai/assets/articles/how-ai-analyzes-loss-run-reports-for-underwriting.jpg" />
 
-<link rel="icon" type="image/svg+xml" href="/assets/wir-logo-azul.svg" />
-<link rel="apple-touch-icon" href="/assets/wir-logo-azul.svg" />
+<link rel="icon" href="/assets/favicon.ico" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +36,7 @@
 <link rel="stylesheet" href="/home.css?v=2026091401" />
 <link rel="stylesheet" href="/blog.css?v=2026091401" />
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How AI Analyzes Loss Run Reports for Underwriting","description":"AI reads loss run PDFs, structures every claim, and computes loss ratio, frequency, and severity, in an external AI layer that never replaces your core system.","image":"/assets/articles/how-ai-analyzes-loss-run-reports-for-underwriting.jpg","datePublished":"2026-07-08","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Equipe"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-azul.svg"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/how-ai-analyzes-loss-run-reports-for-underwriting/","articleSection":"Artigo"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How AI Analyzes Loss Run Reports for Underwriting","description":"AI reads loss run PDFs, structures every claim, and computes loss ratio, frequency, and severity, in an external AI layer that never replaces your core system.","image":"/assets/articles/how-ai-analyzes-loss-run-reports-for-underwriting.jpg","datePublished":"2026-07-08","author":{"@type":"Person","name":"WIR Innovation","jobTitle":"Equipe"},"publisher":{"@type":"Organization","name":"WIR Innovation","logo":{"@type":"ImageObject","url":"https://wirinnovation.ai/assets/wir-logo-512.png"}},"mainEntityOfPage":"https://wirinnovation.ai/insights/how-ai-analyzes-loss-run-reports-for-underwriting/","articleSection":"Artigo"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wirinnovation.ai/en/"},{"@type":"ListItem","position":2,"name":"Insights & News","item":"https://wirinnovation.ai/en/insights/"},{"@type":"ListItem","position":3,"name":"How AI Analyzes Loss Run Reports for Underwriting","item":"https://wirinnovation.ai/insights/how-ai-analyzes-loss-run-reports-for-underwriting/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://wirinnovation.ai/insights/how-ai-analyzes-loss-run-reports-for-underwriting/#faq","inLanguage":"en","mainEntity":[{"@type":"Question","name":"What is a loss run report in insurance?","acceptedAnswer":{"@type":"Answer","text":"It is the claims history a prior insurer produces for a policyholder, usually covering the last three to five years. Each line shows a claim's date, cause, amount paid, reserves, and whether it is open or closed. Underwriters use it as the primary evidence of how a risk has actually performed."}},{"@type":"Question","name":"How does AI read a loss run that arrives as a scanned PDF?","acceptedAnswer":{"@type":"Answer","text":"The AI layer applies optical character recognition to the scan, then maps the text into structured fields such as loss date, paid amount, and reserve. It normalizes those fields across carriers so loss runs in different formats can be compared on one basis."}},{"@type":"Question","name":"Does analyzing loss runs with AI mean replacing my core system?","acceptedAnswer":{"@type":"Answer","text":"No. In WIR's approach the analysis runs in an external AI layer on top of the core. The layer reads and structures the loss runs and writes the results back through APIs, so the core stays the system of record. There is no migration and no rip-and-replace."}},{"@type":"Question","name":"Is automated loss run analysis compliant with LGPD and SUSEP?","acceptedAnswer":{"@type":"Answer","text":"It can be, provided the output is explainable and reviewable. Every metric should trace back to the source claim lines, and a human underwriter should review the analysis before it drives a decision. That keeps the process aligned with SUSEP's expectations and the review right in Article 20 of the LGPD."}}]}</script>
 
@@ -65,7 +66,7 @@
 <nav class="nav" aria-label="Primary">
   <div class="wrap nav__inner">
     <a href="/en/" class="nav__brand">
-      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" style="height:60px;width:auto;display:block" />
+      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" width="98" height="72" style="height:72px;width:auto;display:block" />
     </a>
     <div class="nav__links">
       <a href="/en/" class="nav__link">Home</a>
@@ -207,7 +208,7 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" style="height:64px;width:auto;display:block" />
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" width="87" height="64" style="height:64px;width:auto;display:block" />
         <p class="footer__brand-desc">The new era of insurance is data intelligence, speed, and scale. WIR Innovation is the AI platform that delivers that structure inside the systems you already run.</p>
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.37 4.267 5.455v6.288zM5.337 7.433a2.062 2.062 0 01-2.063-2.064 2.063 2.063 0 112.063 2.064zm1.778 13.019H3.555V9h3.56v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>

@@ -112,15 +112,26 @@ const T = {
   },
 }[LANG];
 
-// Official WIR logo — uses brandbook SVG with proper gradient
+// Official WIR logo — symbol + "AI for insurance" lockup, tight-cropped SVG
 // (absolute /assets paths so the same bundle works from /, /en/ and /es/)
-// In nav, defaults to 32px (was 80px — out of lockup proportion);
-// callers can pass an explicit `small` for an even tighter use case.
-export function Wordmark({ small, variant, h }) {
+// Tagline stops being legible below ~56px tall, so `compact` swaps to the
+// symbol alone on narrow screens (nav is 44px there, see .nav__brand CSS).
+const LOCKUP_RATIO = 637 / 469.6; // viewBox width / height of wir-logo-*.svg
+
+export function Wordmark({ small, variant, h, compact }) {
   const height = h != null ? h : (small ? 44 : 80);
   const src = variant === "white" ? "/assets/wir-logo-branco.svg" : "/assets/wir-logo-azul.svg";
+  // compact (nav) leaves height to .nav__brand CSS so the mobile breakpoint can shrink it
+  const img = (
+    <img src={src} alt="WIR Innovation" width={Math.round(height * LOCKUP_RATIO)} height={height}
+      style={compact ? { display: "block" } : { height: height + "px", width: "auto", display: "block" }} />
+  );
+  if (!compact) return img;
   return (
-    <img src={src} alt="WIR Innovation" style={{ height: height + "px", width: "auto", display: "block" }} />
+    <picture>
+      <source media="(max-width: 760px)" srcSet="/assets/wir-simbolo.svg" />
+      {img}
+    </picture>
   );
 }
 
@@ -265,7 +276,7 @@ export function Nav({ route, go }) {
       <nav className="nav" aria-label="Primary">
         <div className="wrap nav__inner">
           <a href="#home" onClick={(e)=>{e.preventDefault();go("home")}} className="nav__brand" aria-label="WIR — Home">
-            <Wordmark h={56}/>
+            <Wordmark h={72} compact/>
           </a>
           <div className="nav__links">
             {links.map(l => navItem(l))}

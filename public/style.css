@@ -241,8 +241,8 @@ p{ text-wrap: pretty; }
   height: 84px;
 }
 .nav__brand{ display: flex; align-items: center; gap: 14px; }
-.nav__brand img{ height: 56px; width: auto; }
-.nav__brand svg{ height: 56px; width: auto; }
+.nav__brand img{ height: 72px; width: auto; }
+.nav__brand svg{ height: 72px; width: auto; }
 @media (max-width: 760px) {
   .nav__inner{ height: 68px; }
   .nav__brand img, .nav__brand svg{ height: 44px; }
