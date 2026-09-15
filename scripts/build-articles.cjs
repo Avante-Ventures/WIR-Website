@@ -296,6 +296,7 @@ function renderNav(lang = "pt-BR", alt = null) {
     `<a href="${c.base}/#how" class="nav__link">${lang === "en" ? "How it works" : "Como funciona"}</a>`,
     `<a href="/dashboard/?lang=${lang === "en" ? "en" : "pt"}" class="nav__link nav__link--badge">Dashboard SUSEP ↗</a>`,
     `<a href="${c.base}/#about" class="nav__link">${lang === "en" ? "About WIR" : "Sobre a WIR"}</a>`,
+    `<a href="${c.base}/#protection" class="nav__link">${c.navProtection}</a>`,
     `<a href="${insightsHref(lang)}" class="nav__link nav__link--active">Insights</a>`,
   ].map(l => indent + l).join("\n");
   const langLink = alt ? `
