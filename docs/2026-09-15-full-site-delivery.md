@@ -1,5 +1,7 @@
 # Approved scale design — complete public site
 
+> Historical implementation checkpoint. The site was subsequently approved and published. For current status, routes, tests and deployment instructions, read the [production handoff](2026-09-15-production-handoff.md).
+
 ## Scope and authorization
 
 Cristian confirmed the home approval and expanded scope to all public pages, articles, and the existing SUSEP dashboard. He explicitly selected the existing SUSEP dashboard, excluding new Smart Sales or underwriting product dashboards. No publication, commit, or push was requested or performed.

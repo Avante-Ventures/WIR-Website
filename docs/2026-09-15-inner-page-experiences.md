@@ -1,5 +1,7 @@
 # Sculptural internal page redesign
 
+> Historical implementation checkpoint. The site was subsequently approved and published. For current status, routes, tests and deployment instructions, read the [production handoff](2026-09-15-production-handoff.md).
+
 Cristian requested that Solutions, How it works and About WIR match the visual impact of the approved home, with SUSEP visibly differentiated in the menu.
 
 - Solutions: navy hero with three translucent glass panels and amber-to-lavender light paths; lavender capability rows; existing product tabs and statuses; layered analytics illustration; SUSEP and implementation entry points.

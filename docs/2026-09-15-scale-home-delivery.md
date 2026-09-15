@@ -1,5 +1,7 @@
 # WIR scale home — local delivery
 
+> Historical implementation checkpoint. The site was subsequently approved and published. For current status, routes, tests and deployment instructions, read the [production handoff](2026-09-15-production-handoff.md).
+
 ## Approved direction
 
 Cristian requested the complete home plus an eight-second cinematic opening, using Nicholas's selection: A's luminous ribbon hero, C's dark capabilities, E's lavender implementation journey. The central headline remains visible from the first frame. Emails are the origin of the connected flow; earlier email prototypes remain archived.

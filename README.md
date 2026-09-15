@@ -1,32 +1,36 @@
-# WIR Innovation - AI Platform
+# WIR Innovation website
 
-Website oficial de WIR Innovation — infraestrutura de IA para o mercado segurador.
+The approved public WIR website: a cinematic email-to-ribbon opening, complete PT/EN/ES site, editorial archive and access to the existing SUSEP market dashboard.
 
-## Arquitetura
+- **Production:** https://wirinnovation.ai/
+- **Dashboard:** https://dashboard.wirinnovation.ai/
+- **Start here:** [Current state and operating guide](docs/2026-09-15-production-handoff.md)
+- **Design, implementation and archives:** [Documentation index](docs/README.md)
 
-Site estático multi-página. HTML + CSS + JSX compilado no navegador via Babel standalone.
+## Local development
 
-- `index.html` — entry point, carrega todos os scripts
-- `src/*.jsx` — componentes React (home, solutions, about, blog, contact)
-- `style.css`, `home.css`, `solutions.css`, `about.css` — estilos
+React 18 and Vite 6 build the website. The browser does not compile JSX.
 
-Routing baseado em hash (`#home`, `#solutions`, etc.). Não requer build — serve como arquivos estáticos.
-
-## Rodar localmente
-
-```bash
-python3 -m http.server 5173
-# ou
-npx serve -p 5173
+```sh
+npm install
+npm run dev -- --host 127.0.0.1
 ```
 
-Abre http://localhost:5173.
+Open http://127.0.0.1:3000/ or the [responsive review](http://127.0.0.1:3000/docs/full-site-review.html). Reuse an existing Vite server before starting another. Local dashboard review requires the sibling `../wir-susep-dashboard` checkout; no second server is necessary.
 
-## Deploy
+## Build and validation
 
-Deployed no Vercel — qualquer push a `main` redeploya automaticamente.
+```sh
+npm run build
+npm test
+```
 
-## Branches
+`npm run build` generates the article pages and shared static styles, then builds the PT, EN and ES Vite entries into `dist/`. For a React-only change that should not regenerate articles, use `npx vite build`. Dashboard tests explicitly skip when the sibling repository is missing.
 
-- `main` — design atual (Claude Design v2, Abril 2026)
-- `backup/react-vite-version` — versão anterior em React + Vite + Tailwind (preservada para referência)
+Article bodies live in `src/articles.jsx`; generated `public/insights/*/index.html` files are not an editing surface. Preserve the separate hand-authored WIR Index report.
+
+## Publication
+
+Both repositories use `main`. The website and dashboard are separate Vercel projects. Do not assume a Git push publishes the site: the verified release path uses the Vercel CLI with scope `cristian-2293s-projects`. See the [deployment procedure and traps](docs/2026-09-15-production-handoff.md#deployment).
+
+Commit, push and publication require Cristian's authorization. The September 15 release and its requested refinements were explicitly authorized and published; this README does not authorize unrelated future releases. Keep credentials in ignored `.env.local` and never add them to documentation.
