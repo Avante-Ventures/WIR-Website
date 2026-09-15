@@ -17,6 +17,11 @@
       "permanent": false
     },
     {
+      "source": "/dashboard/",
+      "destination": "https://dashboard.wirinnovation.ai/",
+      "permanent": false
+    },
+    {
       "source": "/dashboard/:path*",
       "destination": "https://dashboard.wirinnovation.ai/:path*",
       "permanent": false
