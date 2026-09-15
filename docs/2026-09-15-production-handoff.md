@@ -148,3 +148,7 @@ Website `.vercelignore` excludes docs, tests, agent instructions, node modules a
 | Dashboard `02d7c77` | SUSEP visual/interaction alignment without changing data or calculations |
 
 The historical delivery records are linked in the [documentation index](README.md). Their earlier local-only status and smaller test counts describe intermediate checkpoints, not remaining work.
+
+## Hero ribbon alignment follow-up
+
+Cristian requested that Distribuição, Subscrição and Visibilidade sit in the center of their respective luminous ribbons. `src/styles/hero-film.css` now anchors each label by its vertical midpoint, adjusts desktop positions for the image cover crop, and uses separate mobile positions. The film, images and copy are unchanged. Desktop and 390px poster compositions were checked visually in Safari; `npx vite build` passed. This refinement follows the application commits listed above.

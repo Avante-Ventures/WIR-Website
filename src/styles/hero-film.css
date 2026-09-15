@@ -11,11 +11,18 @@
 .scale-hero__description { font-size: clamp(17px, 1.5vw, 21px); line-height: 1.42; max-width: 390px; margin: 25px 0; color: var(--scale-white); letter-spacing: -.025em; }
 .scale-hero__labels, .scale-hero__subjects { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; pointer-events: none; }
 .scale-hero__labels.is-visible, .scale-hero__subjects.is-visible { opacity: 1; }
-.scale-hero__labels > span { position: absolute; left: 81%; display: flex; align-items: center; gap: 16px; font-size: clamp(13px, 1.3vw, 18px); color: var(--scale-white); text-shadow: 0 1px 12px var(--wir-navy); }
+.scale-hero__labels > span { position: absolute; left: 81%; display: flex; align-items: center; gap: 16px; transform: translateY(-50%); white-space: nowrap; font-size: clamp(13px, 1.3vw, 18px); color: var(--scale-white); text-shadow: 0 1px 12px var(--wir-navy); }
 .scale-hero__labels i { display: block; width: 40px; height: 1px; background: var(--wir-lavender); opacity: .7; }
-.scale-hero__labels .ribbon-0 { top: 25%; }
-.scale-hero__labels .ribbon-1 { top: 48%; }
-.scale-hero__labels .ribbon-2 { top: 73%; }
+/* Anchor the label's center inside each ribbon, including the cover crop. */
+.scale-hero__labels { container-type: size; }
+.scale-hero__labels .ribbon-0 { top: calc(45cqh - 15cqw); }
+.scale-hero__labels .ribbon-1 { top: calc(54cqh - 4.4cqw); }
+.scale-hero__labels .ribbon-2 { top: calc(66cqh + 3.1cqw); }
+@container (min-aspect-ratio: 1672 / 941) {
+  .scale-hero__labels .ribbon-0 { top: calc(50cqh - 17.82cqw); }
+  .scale-hero__labels .ribbon-1 { top: calc(50cqh - 2.144cqw); }
+  .scale-hero__labels .ribbon-2 { top: calc(50cqh + 12.11cqw); }
+}
 .scale-hero__subjects span { position: absolute; font-size: 13px; letter-spacing: .02em; padding: 5px 10px; border: 1px solid color-mix(in srgb, var(--wir-lavender) 25%, transparent); background: color-mix(in srgb, var(--wir-navy) 85%, transparent); border-radius: 4px; color: var(--wir-lavender); }
 .scale-hero__subjects .subject-0 { left: 65%; top: 34%; }
 .scale-hero__subjects .subject-1 { right: 4%; top: 38%; }
@@ -29,7 +36,6 @@
 .scale-film-controls button:hover { background: var(--wir-navy); border-color: var(--wir-lavender); }
 .scale-film-controls button > span:first-child { font-size: 19px; line-height: 1; }
 .scale-film-controls .scale-film-replay { width: 40px; padding: 0; justify-content: center; }
-@media (min-width: 1600px) { .scale-hero__labels > span { left: 79%; } }
 @media (min-width: 761px) and (max-width: 1050px) {
   .scale-hero { min-height: 700px; }
   .scale-hero h1 { font-size: 70px; }
@@ -53,9 +59,9 @@
   .scale-hero__visual::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 22%; background: linear-gradient(var(--wir-navy), transparent); pointer-events: none; }
   .scale-hero__labels > span { left: auto; right: 5%; gap: 8px; font-size: 12px; }
   .scale-hero__labels i { width: 22px; }
-  .scale-hero__labels .ribbon-0 { top: 24%; }
-  .scale-hero__labels .ribbon-1 { top: 48%; }
-  .scale-hero__labels .ribbon-2 { top: 74%; }
+  .scale-hero__labels .ribbon-0 { top: 20%; }
+  .scale-hero__labels .ribbon-1 { top: 47%; }
+  .scale-hero__labels .ribbon-2 { top: 71%; }
   .scale-hero__subjects span { font-size: 10px; padding: 3px 6px; }
   .scale-hero__subjects .subject-0 { left: 52%; top: 28%; }
   .scale-hero__subjects .subject-1 { right: 3%; top: 38%; }
