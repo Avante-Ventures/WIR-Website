@@ -132,7 +132,6 @@ export function Opening({ go }) {
         </div>
       </div>
       <div className="scale-wrap scale-hero__content">
-        <p className="scale-kicker">AI Scale Solutions · {LANG === 'en' ? 'Brazil' : 'Brasil'}</p>
         <h1 id="scale-title">{COPY.title}</h1>
         <p className="scale-hero__description">{COPY.description}</p>
         <div className="scale-actions">
