@@ -7,7 +7,7 @@ import { LANG, INSIGHTS_HREF, MANIFESTO_HREF, INSIGHTS_HREFLANG, MANIFESTO_HREFL
 
 // Painel público de dados SES/SUSEP. Vive num subdomínio próprio (projeto
 // Vercel separado), por isso abre em nova aba: é outro app, não outra página.
-export const DASHBOARD_HREF = 'https://dashboard.wirinnovation.ai/';
+export const DASHBOARD_HREF = `/dashboard/?lang=${LANG}`;
 
 const T = {
   pt: {
@@ -18,21 +18,20 @@ const T = {
       "Em conformidade com LGPD",
     ],
     navLinks: [
-      { id: "home", label: "Início" },
-      { id: "about", label: "Sobre" },
-      { id: "manifesto", label: "Manifesto", href: MANIFESTO_HREF }, // cornerstone static page
-      { id: "solutions", label: "Produtos & IA" },
-      { id: "protection", label: "Proteção de Dados" },
-      { id: "blog", label: "Insights & News", href: INSIGHTS_HREF }, // real static page
-      { id: "dashboard", label: "Dashboard", href: DASHBOARD_HREF, ext: true, badge: true },
+      { id: "solutions", label: "Soluções" },
+      { id: "how", label: "Como funciona" },
+      { id: "dashboard", label: "Dashboard SUSEP ↗", href: DASHBOARD_HREF, badge: true },
+      { id: "about", label: "Sobre a WIR" },
+      { id: "blog", label: "Insights", href: INSIGHTS_HREF },
     ],
-    navCta: "Contato",
-    footerDesc: "A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.",
+    navCta: "Falar com a WIR",
+    footerDesc: "AI Scale Solutions para o mercado segurador. Distribuição, subscrição e inteligência operacional conectadas ao crescimento da sua operação.",
     colCompany: "Empresa",
     colContact: "Contato",
     colHolding: "Sócios & Holding",
     linkHome: "Início", linkAbout: "Sobre", linkSolutions: "Produtos & IA",
     linkProtection: "Proteção de Dados", linkBlog: "Insights & News", linkContact: "Contato",
+    linkManifesto: "Manifesto",
     talkTeam: "Falar com a equipe",
     holdingLinks: { mahway: "Mahway · California", avante: "Avante · Brasil", advisors: "Conselheiros estratégicos", principles: "Princípios" },
     footerBot: "wirinnovation.ai · Feito entre São Paulo e Silicon Valley",
@@ -51,21 +50,20 @@ const T = {
       "LGPD-compliant",
     ],
     navLinks: [
-      { id: "home", label: "Home" },
-      { id: "about", label: "About" },
-      { id: "manifesto", label: "Manifesto", href: MANIFESTO_HREF }, // cornerstone static page
-      { id: "solutions", label: "Products & AI" },
-      { id: "protection", label: "Data Protection" },
-      { id: "blog", label: "Insights & News", href: INSIGHTS_HREF },
-      { id: "dashboard", label: "Dashboard", href: DASHBOARD_HREF, ext: true, badge: true },
+      { id: "solutions", label: "Solutions" },
+      { id: "how", label: "How it works" },
+      { id: "dashboard", label: "Dashboard SUSEP ↗", href: DASHBOARD_HREF, badge: true },
+      { id: "about", label: "About WIR" },
+      { id: "blog", label: "Insights", href: INSIGHTS_HREF },
     ],
-    navCta: "Contact",
-    footerDesc: "The new era of insurance is data intelligence, speed, and scale. WIR Innovation is the AI platform that delivers that structure inside the systems you already run.",
+    navCta: "Talk to WIR",
+    footerDesc: "AI Scale Solutions for insurance. Distribution, underwriting, and operational intelligence connected to the growth of your operation.",
     colCompany: "Company",
     colContact: "Contact",
     colHolding: "Partners & Holding",
     linkHome: "Home", linkAbout: "About", linkSolutions: "Products & AI",
     linkProtection: "Data Protection", linkBlog: "Insights & News", linkContact: "Contact",
+    linkManifesto: "Manifesto",
     talkTeam: "Talk to the team",
     holdingLinks: { mahway: "Mahway · California", avante: "Avante · Brazil", advisors: "Strategic advisors", principles: "Principles" },
     footerBot: "wirinnovation.ai · Built between São Paulo and Silicon Valley",
@@ -84,22 +82,20 @@ const T = {
       "Conforme a la LGPD",
     ],
     navLinks: [
-      { id: "home", label: "Inicio" },
-      { id: "about", label: "Nosotros" },
-      // No ES manifesto or articles yet: the label announces the jump to EN / PT.
-      { id: "manifesto", label: "Manifiesto (EN)", href: MANIFESTO_HREF, hl: MANIFESTO_HREFLANG },
-      { id: "solutions", label: "Productos & IA" },
-      { id: "protection", label: "Protección de Datos" },
-      { id: "blog", label: "Insights & News (PT)", href: INSIGHTS_HREF, hl: INSIGHTS_HREFLANG },
-      { id: "dashboard", label: "Dashboard", href: DASHBOARD_HREF, ext: true, badge: true },
+      { id: "solutions", label: "Soluciones" },
+      { id: "how", label: "Cómo funciona" },
+      { id: "dashboard", label: "Dashboard SUSEP ↗", href: DASHBOARD_HREF, badge: true },
+      { id: "about", label: "Sobre WIR" },
+      { id: "blog", label: "Insights (PT)", href: INSIGHTS_HREF, hl: INSIGHTS_HREFLANG },
     ],
-    navCta: "Contacto",
-    footerDesc: "La nueva era del seguro es inteligencia de datos, velocidad y escala. WIR Innovation es la plataforma de IA que entrega esa estructura dentro de los sistemas que ya operas.",
+    navCta: "Hablar con WIR",
+    footerDesc: "AI Scale Solutions para el mercado asegurador. Distribución, suscripción e inteligencia operativa conectadas al crecimiento de tu operación.",
     colCompany: "Empresa",
     colContact: "Contacto",
     colHolding: "Socios & Holding",
     linkHome: "Inicio", linkAbout: "Nosotros", linkSolutions: "Productos & IA",
     linkProtection: "Protección de Datos", linkBlog: "Insights & News (PT)", linkContact: "Contacto",
+    linkManifesto: "Manifiesto (EN)",
     talkTeam: "Hablar con el equipo",
     holdingLinks: { mahway: "Mahway · California", avante: "Avante · Brasil", advisors: "Consejeros estratégicos", principles: "Principios" },
     footerBot: "wirinnovation.ai · Hecho entre São Paulo y Silicon Valley",
@@ -120,7 +116,7 @@ const LOCKUP_RATIO = 637 / 469.6; // viewBox width / height of wir-logo-*.svg
 
 export function Wordmark({ small, variant, h, compact }) {
   const height = h != null ? h : (small ? 44 : 80);
-  const src = variant === "white" ? "/assets/wir-logo-branco.svg" : "/assets/wir-logo-azul.svg";
+  const src = variant === "white" ? "/assets/wir-logo-branco.svg" : "/assets/wir-logo.svg";
   // compact (nav) leaves height to .nav__brand CSS so the mobile breakpoint can shrink it
   const img = (
     <img src={src} alt="WIR Innovation" width={Math.round(height * LOCKUP_RATIO)} height={height}
@@ -233,6 +229,8 @@ function LangSwitcher() {
 export function Nav({ route, go }) {
   const links = T.navLinks;
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  const burgerRef = useRef(null);
 
   // Close mobile menu on route change
   useEffect(() => { setMenuOpen(false); }, [route]);
@@ -242,11 +240,23 @@ export function Nav({ route, go }) {
     if (!menuOpen) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const onKey = (e) => { if (e.key === "Escape") setMenuOpen(false); };
+    menuRef.current?.querySelector('a')?.focus();
+    const onKey = (e) => {
+      if (e.key === "Escape") { setMenuOpen(false); burgerRef.current?.focus(); }
+      if (e.key === "Tab") {
+        const items = [burgerRef.current, ...menuRef.current.querySelectorAll('a')];
+        const index = items.indexOf(document.activeElement);
+        if (e.shiftKey && index <= 0) { e.preventDefault(); items.at(-1)?.focus(); }
+        else if (!e.shiftKey && index === items.length - 1) { e.preventDefault(); items[0]?.focus(); }
+      }
+    };
+    const onResize = () => { if (window.innerWidth > 1120) setMenuOpen(false); };
     document.addEventListener("keydown", onKey);
+    window.addEventListener('resize', onResize);
     return () => {
       document.body.style.overflow = prev;
       document.removeEventListener("keydown", onKey);
+      window.removeEventListener('resize', onResize);
     };
   }, [menuOpen]);
 
@@ -261,8 +271,8 @@ export function Nav({ route, go }) {
         {l.label}
       </a>
     ) : (
-      <a key={l.id} href={"#"+l.id}
-        onClick={(e)=>{e.preventDefault(); onClick && onClick(); go(l.id)}}
+      <a key={l.id} href={"#"+(l.route || l.id)+(l.anchor ? '#'+l.anchor : '')}
+        onClick={(e)=>{e.preventDefault(); onClick && onClick(); go(l.route || l.id, l.anchor)}}
         className={"nav__link" + (route===l.id ? " nav__link--active": "")}
         aria-current={route===l.id ? "page" : undefined}>
         {l.label}
@@ -272,7 +282,6 @@ export function Nav({ route, go }) {
 
   return (
     <>
-      <Ticker />
       <nav className="nav" aria-label="Primary">
         <div className="wrap nav__inner">
           <a href="#home" onClick={(e)=>{e.preventDefault();go("home")}} className="nav__brand" aria-label="WIR — Home">
@@ -284,11 +293,11 @@ export function Nav({ route, go }) {
           <div className="nav__right">
             <LangSwitcher/>
             <a href="#contact" onClick={(e)=>{e.preventDefault();go("contact")}} className="nav__cta">
-              <span className="dot"/>
               {T.navCta}
               <span aria-hidden>→</span>
             </a>
             <button type="button" className="nav__burger"
+              ref={burgerRef}
               aria-label={menuOpen ? T.menuClose : T.menuOpen}
               aria-expanded={menuOpen}
               aria-controls="nav-mobile-menu"
@@ -302,7 +311,7 @@ export function Nav({ route, go }) {
       </nav>
 
       {/* Mobile slide-in menu — visible only ≤760px (CSS) */}
-      <div id="nav-mobile-menu" className={"nav__mobile" + (menuOpen ? " is-open" : "")}
+      <div id="nav-mobile-menu" ref={menuRef} inert={!menuOpen ? '' : undefined} className={"nav__mobile" + (menuOpen ? " is-open" : "")}
         role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden={!menuOpen}>
         <div className="nav__mobile-inner">
           {links.map(l => navItem(l, () => setMenuOpen(false)))}
@@ -379,19 +388,21 @@ export function Footer({ go }) {
           <div>
             <h4>{T.colCompany}</h4>
             <ul>
-              <li><a href="#" onClick={(e)=>{e.preventDefault();go("home")}}>{T.linkHome}</a></li>
-              <li><a href="#" onClick={(e)=>{e.preventDefault();go("about")}}>{T.linkAbout}</a></li>
-              <li><a href="#" onClick={(e)=>{e.preventDefault();go("solutions")}}>{T.linkSolutions}</a></li>
-              <li><a href="#" onClick={(e)=>{e.preventDefault();go("protection")}}>{T.linkProtection}</a></li>
+              <li><a href="#home" onClick={(e)=>{e.preventDefault();go("home")}}>{T.linkHome}</a></li>
+              <li><a href="#about" onClick={(e)=>{e.preventDefault();go("about")}}>{T.linkAbout}</a></li>
+              <li><a href="#solutions" onClick={(e)=>{e.preventDefault();go("solutions")}}>{T.linkSolutions}</a></li>
+              <li><a href="#protection" onClick={(e)=>{e.preventDefault();go("protection")}}>{T.linkProtection}</a></li>
               <li><a href={INSIGHTS_HREF} hrefLang={INSIGHTS_HREFLANG}>{T.linkBlog}</a></li>
-              <li><a href="#" onClick={(e)=>{e.preventDefault();go("contact")}}>{T.linkContact}</a></li>
+              <li><a href={MANIFESTO_HREF} hrefLang={MANIFESTO_HREFLANG}>{T.linkManifesto}</a></li>
+              <li><a href={DASHBOARD_HREF} target="_blank" rel="noopener noreferrer">Dashboard ↗</a></li>
+              <li><a href="#contact" onClick={(e)=>{e.preventDefault();go("contact")}}>{T.linkContact}</a></li>
             </ul>
           </div>
           <div>
             <h4>{T.colContact}</h4>
             <ul>
               <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
-              <li><a href="#" onClick={(e)=>{e.preventDefault();go("contact")}}>{T.talkTeam}</a></li>
+              <li><a href="#contact" onClick={(e)=>{e.preventDefault();go("contact")}}>{T.talkTeam}</a></li>
             </ul>
           </div>
           <div>

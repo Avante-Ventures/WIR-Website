@@ -1,3 +1,4 @@
+import { postForm } from './form-transport.mjs';
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useReveal } from './shared.jsx';
 import { LANG, INSIGHTS_HREF } from './i18n.js';
@@ -103,17 +104,8 @@ function NewsletterForm() {
     let ok = false;
     if (cfg.supabaseUrl && cfg.supabaseAnonKey) {
       try {
-        const res = await fetch(`${cfg.supabaseUrl}/rest/v1/${cfg.newsletterTable || "newsletter_signups"}`, {
-          method: "POST",
-          headers: {
-            "Content-Type":  "application/json",
-            "apikey":        cfg.supabaseAnonKey,
-            "Authorization": `Bearer ${cfg.supabaseAnonKey}`,
-            "Prefer":        "return=minimal",
-          },
-          body: JSON.stringify(payload),
-        });
-        ok = res.ok;
+        const res = await postForm(cfg, cfg.newsletterTable || "newsletter_subs", payload);
+        ok = res.ok || res.status === 409;
       } catch (err) { console.warn("newsletter insert failed", err); }
     }
     if (cfg.notifyWebhook) {

@@ -1,310 +1,154 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { LANG } from './i18n.js';
+import { filmPhase, mayPlay, readSeen, rememberSeen } from './hero-playback.mjs';
+import './styles/hero-film.css';
 
-// (useLiveCounter removed — see Sesión 3 swarm: the fake counter undermined credibility.
-// Hero metrics are now defensible static observations about the WIR thesis.)
-
-/* ───────── Movement 01 · Opening + 02 · Proof ───────── */
-
-const T = {
+const COPY = {
   pt: {
-    dflowStages: ["INTAKE", "ENRICH", "SCORE", "DECISION"],
-    dflowTitle: "Fluxo de decisão",
-    dflowTitleV: "wir.flow",
-    dflowLive: "esquema",
-    dflowInput: { k: "INPUT", v: "e-mail · anexos · API" },
-    dflowOutput: { k: "OUTPUT", v: "cotação + trilha" },
-    dflowAudit: "trilha de auditoria · aprendizado contínuo",
-    dflowAria: "Fluxo de decisão",
-    heroTitle: <>A nova era do seguro é <em>inteligência de dados</em>, velocidade e escala.</>,
-    heroLede: "Camada de IA que pluga no seu core de apólices e devolve cotação em minutos. Sem trocar o core, sem projeto de TI.",
-    ctaTalk: "Falar com nossos sócios",
-    ctaSee: "Ver a plataforma →",
-    // Defensible static metrics — observation about the WIR thesis, not a fake live counter.
-    liveStickers: [
-      { value: "1",        label: "POC em execução",    note: "Seguradora global · Transportes" },
-      { value: "minutos",  label: "Tempo de decisão",   note: "vs. 6 semanas legadas" },
-      { value: "24/7",     label: "Cobertura",          note: "Sem TI da seguradora" },
-    ],
-    proofTitle: "O retorno operacional, em 6 vetores",
-    indicators: [
-      { sign:"+", w:"Eficiência",   l:"Escalar volume de cotações",
-        c:"Volume de cotações cresce sem crescer headcount na mesma proporção." },
-      { sign:"+", w:"Faturamento",  l:"Mais cotações, mais negócios fechados",
-        c:"Resposta mais rápida ao corretor gera repiques e fechamentos adicionais." },
-      { sign:"−", w:"DA · Custos",  l:"Margem expandida",
-        c:"Despesa Administrativa cai quando o intake é automático." },
-      { sign:"+", w:"Inteligência", l:"Dashboards em tempo real",
-        c:"Análise pró-ativa do pipeline e foco nos fechamentos." },
-      { sign:"+", w:"AI First",     l:"Pioneirismo na automação",
-        c:"Quem se adianta lidera — risk assessment e pricing acima dos concorrentes." },
-      { sign:"+", w:"Escalar",      l:"Futuro das seguradoras",
-        c:"Escalar o negócio sobre automação e evolução da IA." },
-    ],
+    title: <>IA para<br/><em>escalar</em> o<br/>mercado<br/>segurador.</>,
+    description: 'Distribuição, subscrição e inteligência operacional conectadas ao crescimento da sua operação.',
+    explore: 'Explorar soluções', contact: 'Falar com a WIR',
+    subjects: ['Cotação', 'Consulta', 'Acompanhamento'], labels: ['Distribuição', 'Subscrição', 'Visibilidade'],
+    story: ['O trabalho chega todos os dias.', 'A informação começa a se conectar.', 'Mais capacidade para crescer.'],
+    pause: 'Pausar intro', resume: 'Continuar intro', replay: 'Repetir intro', play: 'Ver intro',
+    film: 'Três e-mails se conectam em fios de luz e se transformam em três cintas: distribuição, subscrição e visibilidade.', scroll: 'Conheça a WIR',
   },
   en: {
-    dflowStages: ["INTAKE", "ENRICH", "SCORE", "DECISION"],
-    dflowTitle: "Decision flow",
-    dflowTitleV: "wir.flow",
-    dflowLive: "schematic",
-    dflowInput: { k: "INPUT", v: "email · files · API" },
-    dflowOutput: { k: "OUTPUT", v: "quote + trail" },
-    dflowAudit: "audit trail · continuous learning",
-    dflowAria: "Decision flow",
-    heroTitle: <>The new era of insurance is <em>data intelligence</em>, speed and scale.</>,
-    heroLede: "An AI layer that plugs into your policy core and returns a quote in minutes. No core replacement, no IT project.",
-    ctaTalk: "Talk to our partners",
-    ctaSee: "See the platform →",
-    liveStickers: [
-      { value: "1",       label: "POC in progress",     note: "Global insurer · Transport" },
-      { value: "minutes", label: "Decision time",       note: "vs. 6 legacy weeks" },
-      { value: "24/7",    label: "Coverage",            note: "Without insurer IT" },
-    ],
-    proofTitle: "Operational return, in 6 vectors",
-    indicators: [
-      { sign:"+", w:"Efficiency",   l:"Scale quoting volume",
-        c:"Volume grows without growing headcount at the same rate." },
-      { sign:"+", w:"Revenue",      l:"More quotes, more closed business",
-        c:"Faster broker turnaround creates additional closings and repeat asks." },
-      { sign:"−", w:"Admin · Costs", l:"Margin expanded",
-        c:"Administrative expense drops when intake is automatic." },
-      { sign:"+", w:"Intelligence", l:"Real-time dashboards",
-        c:"Proactive pipeline analysis to focus on closings." },
-      { sign:"+", w:"AI First",     l:"Automation pioneer",
-        c:"Moving first leads — risk assessment and pricing ahead of competitors." },
-      { sign:"+", w:"Scale",        l:"Carriers' future",
-        c:"Scale the business on automation and AI evolution." },
-    ],
+    title: <>AI to<br/><em>scale</em> the<br/>insurance<br/>market.</>,
+    description: 'Distribution, underwriting, and operational intelligence connected to the growth of your operation.',
+    explore: 'Explore solutions', contact: 'Talk to WIR',
+    subjects: ['Quote request', 'Inquiry', 'Follow-up'], labels: ['Distribution', 'Underwriting', 'Visibility'],
+    story: ['Work arrives every day.', 'Information starts to connect.', 'More capacity to grow.'],
+    pause: 'Pause intro', resume: 'Resume intro', replay: 'Replay intro', play: 'Watch intro',
+    film: 'Three emails connect through threads of light and become three ribbons: distribution, underwriting, and visibility.', scroll: 'Discover WIR',
   },
   es: {
-    dflowStages: ["CAPTURA", "ENRIQUECER", "SCORE", "DECISIÓN"],
-    dflowTitle: "Flujo de decisión",
-    dflowTitleV: "wir.flow",
-    dflowLive: "esquema",
-    dflowInput: { k: "INPUT", v: "correo · anexos · API" },
-    dflowOutput: { k: "OUTPUT", v: "cotización + traza" },
-    dflowAudit: "traza de auditoría · aprendizaje continuo",
-    dflowAria: "Flujo de decisión",
-    heroTitle: <>La nueva era del seguro es <em>inteligencia de datos</em>, velocidad y escala.</>,
-    heroLede: "Capa de IA que se enchufa a tu core de pólizas y devuelve cotización en minutos. Sin reemplazar el core, sin proyecto de TI.",
-    ctaTalk: "Hablar con nuestros socios",
-    ctaSee: "Ver la plataforma →",
-    liveStickers: [
-      { value: "1",        label: "POC en ejecución",   note: "Aseguradora global · Transporte" },
-      { value: "minutos",  label: "Tiempo de decisión",   note: "vs. 6 semanas heredadas" },
-      { value: "24/7",     label: "Cobertura",            note: "Sin TI de la aseguradora" },
-    ],
-    proofTitle: "El retorno operacional, en 6 vectores",
-    indicators: [
-      { sign:"+", w:"Eficiencia",   l:"Escalar volumen de cotizaciones",
-        c:"El volumen crece sin crecer headcount en la misma proporción." },
-      { sign:"+", w:"Facturación",  l:"Más cotizaciones, más cierres",
-        c:"Respuesta más rápida al corredor genera repiques y cierres extra." },
-      { sign:"−", w:"GA · Costos",  l:"Margen expandido",
-        c:"Gasto administrativo cae cuando el intake es automático." },
-      { sign:"+", w:"Inteligencia", l:"Dashboards en tiempo real",
-        c:"Análisis proactivo del pipeline, foco en cierres." },
-      { sign:"+", w:"AI First",     l:"Pionerismo en automatización",
-        c:"Quien se adelanta lidera — risk y pricing por encima de la competencia." },
-      { sign:"+", w:"Escalar",      l:"Futuro de las aseguradoras",
-        c:"Escalar el negocio sobre automatización y evolución de la IA." },
-    ],
+    title: <>IA para<br/><em>escalar</em> el<br/>mercado<br/>asegurador.</>,
+    description: 'Distribución, suscripción e inteligencia operativa conectadas al crecimiento de tu operación.',
+    explore: 'Explorar soluciones', contact: 'Hablar con WIR',
+    subjects: ['Cotización', 'Consulta', 'Seguimiento'], labels: ['Distribución', 'Suscripción', 'Visibilidad'],
+    story: ['El trabajo llega todos los días.', 'La información empieza a conectarse.', 'Más capacidad para crecer.'],
+    pause: 'Pausar intro', resume: 'Continuar intro', replay: 'Repetir intro', play: 'Ver intro',
+    film: 'Tres correos se conectan mediante hilos de luz y se transforman en tres cintas: distribución, suscripción y visibilidad.', scroll: 'Conoce WIR',
   },
 }[LANG];
 
-// DecisionFlow — schematic pipeline (Stripe-style), VERTICAL layout for hero right column.
-// Chips stacked top-to-bottom, gradient-stroke connectors between them, mono labels.
-// Palette runs amber TOP → blue BOTTOM, matching the WIR logo direction.
-function DecisionFlow() {
-  const [pulse, setPulse] = React.useState(0);
-  React.useEffect(() => {
-    const id = setInterval(() => setPulse(p => (p + 1) % 4), 2400);
-    return () => clearInterval(id);
-  }, []);
-
-  const stages = T.dflowStages;
-  // Vertical compact layout — viewBox 0 0 360 380
-  // INPUT chip · 4 single-line stage chips · OUTPUT chip · audit return on right
-  const chipW = 280, chipH = 42, stageH = 36;
-  const chipX = (360 - chipW) / 2; // 40
-  const inputY = 18;
-  const stageStartY = inputY + chipH + 14;
-  const stageGap = 6;
-  const stageY = (i) => stageStartY + i * (stageH + stageGap);
-  const outputY = stageY(stages.length - 1) + stageH + 14;
-  // Active stage palette progression (amber → coral → magenta → purple → blue)
-  const stageColors = ["#F8AD39", "#FE8B77", "#AE46C0", "#7540AC"];
-
-  return (
-    <div className="dflow" aria-label={T.dflowAria}>
-      <div className="dflow__head">
-        <div className="dflow__title">
-          <span className="dflow__title-k">{T.dflowTitle}</span>
-          <span className="dflow__title-v">{T.dflowTitleV}</span>
-        </div>
-        {/* A labelled schematic, not telemetry: no live dot */}
-        <div className="dflow__status">{T.dflowLive}</div>
-      </div>
-
-      <svg className="dflow__svg" viewBox={`0 0 360 ${outputY + chipH + 18}`} xmlns="http://www.w3.org/2000/svg" aria-hidden>
-        <defs>
-          {/* Main flow gradient — amber TOP → blue BOTTOM (matches logo direction, vertical) */}
-          <linearGradient id="dflowMain" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"   stopColor="#F8AD39"/>
-            <stop offset="25%"  stopColor="#FE8B77"/>
-            <stop offset="50%"  stopColor="#AE46C0"/>
-            <stop offset="75%"  stopColor="#7540AC"/>
-            <stop offset="100%" stopColor="#3222E9"/>
-          </linearGradient>
-        </defs>
-
-        {/* INPUT chip (top) — 2-line compact */}
-        <g>
-          <rect x={chipX} y={inputY} width={chipW} height={chipH} rx="6"
-            fill="#FAF6EE" stroke="#0B0A08" strokeOpacity="0.25" strokeWidth="1"/>
-          <text x={chipX + 14} y={inputY + 17} fill="#524C42" fontSize="9"
-            fontFamily="JetBrains Mono, monospace" letterSpacing="1.8" fontWeight="600">
-            {T.dflowInput.k}
-          </text>
-          <text x={chipX + 14} y={inputY + 33} fill="#0B0A08" fontSize="11"
-            fontFamily="JetBrains Mono, monospace" letterSpacing="0.4" fontWeight="500">
-            {T.dflowInput.v}
-          </text>
-        </g>
-
-        {/* Vertical connector: INPUT → first stage */}
-        <line x1="180" y1={inputY + chipH} x2="180" y2={stageStartY}
-          stroke="url(#dflowMain)" strokeWidth="1.5"/>
-
-        {/* 4 stage chips — single line, compact */}
-        {stages.map((k, i) => {
-          const y = stageY(i);
-          const active = pulse === i;
-          const color = stageColors[i];
-          return (
-            <g key={k}>
-              <rect x={chipX} y={y} width={chipW} height={stageH} rx="6"
-                fill="#FAF6EE"
-                stroke={active ? color : "#0B0A08"}
-                strokeOpacity={active ? 1 : 0.22}
-                strokeWidth={active ? 1.4 : 1}
-                style={{transition: "all .3s ease"}}/>
-              <text x={chipX + 14} y={y + 16} fill="#6E695C" fontSize="8"
-                fontFamily="JetBrains Mono, monospace"
-                letterSpacing="1.6" fontWeight="600">
-                0{i+1}
-              </text>
-              <text x={chipX + 14} y={y + 28} fill={active ? "#0B0A08" : "#2B2720"}
-                fontSize="13" fontFamily="JetBrains Mono, monospace"
-                letterSpacing="0.5" fontWeight="600"
-                style={{transition: "fill .3s"}}>
-                {k}
-              </text>
-              {/* Vertical connector to next stage */}
-              {i < stages.length - 1 && (
-                <line x1="180" y1={y + stageH} x2="180" y2={y + stageH + stageGap}
-                  stroke="url(#dflowMain)" strokeWidth="1.5"/>
-              )}
-              {/* Active state — color bar on left */}
-              {active && (
-                <rect x={chipX} y={y} width="2" height={stageH} fill={color}/>
-              )}
-            </g>
-          );
-        })}
-
-        {/* Vertical connector: last stage → OUTPUT */}
-        <line x1="180" y1={stageY(stages.length - 1) + stageH} x2="180" y2={outputY}
-          stroke="url(#dflowMain)" strokeWidth="1.5"/>
-
-        {/* OUTPUT chip (bottom) — 2-line compact */}
-        <g>
-          <rect x={chipX} y={outputY} width={chipW} height={chipH} rx="6"
-            fill="#FAF6EE" stroke="#3222E9" strokeOpacity="0.5" strokeWidth="1"/>
-          <text x={chipX + 14} y={outputY + 17} fill="#3222E9" fontSize="9"
-            fontFamily="JetBrains Mono, monospace" letterSpacing="1.8" fontWeight="600">
-            {T.dflowOutput.k}
-          </text>
-          <text x={chipX + 14} y={outputY + 33} fill="#0B0A08" fontSize="11"
-            fontFamily="JetBrains Mono, monospace" letterSpacing="0.4" fontWeight="500">
-            {T.dflowOutput.v}
-          </text>
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-// Static metrics strip — no chrome, no label, no off-brand pulse.
-// Rendered at the top of the TrustBar (home.jsx) so the hero stays one moment.
-export function HeroMetrics() {
-  return (
-    <div className="livestrip">
-      <div className="livestrip__cells">
-        {T.liveStickers.map((s, i) => (
-          <div key={i} className="livestrip__cell">
-            <div className="livestrip__v">{s.value}</div>
-            <div className="livestrip__l">{s.label}</div>
-            {s.note && <div className="livestrip__n">{s.note}</div>}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export function Opening({ go }) {
+  const hero = useRef(null), video = useRef(null), controls = useRef(null);
+  const [scene, setScene] = useState('poster');
+  const [phase, setPhase] = useState(2);
+  const [playing, setPlaying] = useState(false);
+  const [started, setStarted] = useState(false);
+  useEffect(() => {
+    const el = video.current;
+    el.muted = true;
+    el.defaultMuted = true;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobile = window.matchMedia('(max-width: 760px)').matches;
+    const source = mobile ? '/assets/scale/intro-mobile.mp4' : '/assets/scale/intro-desktop.mp4';
+    let wanted = !reduced.matches && !readSeen();
+    let visible = false, disposed = false, pending = false, finished = false, hasPlayed = false, showingFilm = false;
+    const fallback = () => {
+      if (disposed) return;
+      wanted = false; pending = false; showingFilm = false; el.pause();
+      setPlaying(false); setScene('poster'); setPhase(2);
+    };
+    const sync = () => {
+      if (disposed) return;
+      if (!mayPlay({ wanted, visible, hidden: document.hidden, finished })) { el.pause(); return; }
+      if (pending || !el.paused) return;
+      if (!el.getAttribute('src')) { el.src = source; el.load(); }
+      pending = true;
+      Promise.resolve(el.play()).then(() => {
+        pending = false;
+        if (disposed || !mayPlay({ wanted, visible, hidden: document.hidden, finished })) el.pause();
+      }).catch(error => {
+        pending = false;
+        if (!disposed && wanted && visible && !document.hidden) fallback(error);
+      });
+    };
+    const onPlaying = () => {
+      if (disposed) return;
+      hasPlayed = true; showingFilm = true; rememberSeen(); setStarted(true);
+      setScene('film'); setPhase(filmPhase(el.currentTime)); setPlaying(true);
+    };
+    const onTime = () => { if (showingFilm) setPhase(filmPhase(el.currentTime)); };
+    const onPause = () => setPlaying(false);
+    const onEnded = () => {
+      finished = true; wanted = false; showingFilm = false;
+      setPlaying(false); setPhase(2); setScene('ended');
+    };
+    const onPreference = () => { if (reduced.matches) fallback(); };
+    controls.current = {
+      toggle: () => {
+        if (!el.paused) { wanted = false; el.pause(); }
+        else {
+          if (finished || !hasPlayed || el.error) {
+            finished = false;
+            if (el.error) el.removeAttribute('src');
+            if (el.readyState > 0) el.currentTime = 0;
+          }
+          wanted = true; sync();
+        }
+      },
+      replay: () => {
+        finished = false; wanted = true;
+        if (el.error) el.removeAttribute('src');
+        if (el.readyState > 0) el.currentTime = 0;
+        sync();
+      },
+    };
+    const events = { playing: onPlaying, pause: onPause, timeupdate: onTime, ended: onEnded, error: fallback };
+    Object.entries(events).forEach(([name, handler]) => el.addEventListener(name, handler));
+    document.addEventListener('visibilitychange', sync);
+    reduced.addEventListener('change', onPreference);
+    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); }, { threshold: .12 });
+    observer.observe(hero.current);
+    return () => {
+      disposed = true; controls.current = null; observer.disconnect();
+      document.removeEventListener('visibilitychange', sync);
+      reduced.removeEventListener('change', onPreference);
+      Object.entries(events).forEach(([name, handler]) => el.removeEventListener(name, handler));
+      el.pause(); el.removeAttribute('src'); el.load();
+    };
+  }, []);
+  const inFilm = scene === 'film';
+  const final = !inFilm || phase === 2;
+  const label = playing ? COPY.pause : inFilm ? COPY.resume : started || readSeen() ? COPY.replay : COPY.play;
+  const visit = (e, route, anchor) => { e.preventDefault(); go(route, anchor); };
   return (
-    <section className="opening bg-editorial bg-editorial--tr">
-      <div className="wrap">
-        {/* 2-column hero — H1 left, DecisionFlow right (vertical schematic), pushed lower */}
-        <div className="opening__hero">
-          <div className="opening__hero-L">
-            <h1 className="display opening__title opening__title--long">
-              {T.heroTitle}
-            </h1>
-            <p className="opening__lede">
-              {T.heroLede}
-            </p>
-            <div className="opening__actions">
-              <button className="btn btn--solid" onClick={()=>go("contact")}>
-                {T.ctaTalk} <span className="btn__arrow">→</span>
-              </button>
-              <a className="opening__textlink" href="#solutions"
-                onClick={(e)=>{e.preventDefault(); go("solutions")}}>
-                {T.ctaSee}
-              </a>
-            </div>
-          </div>
-          <div className="opening__hero-R">
-            <DecisionFlow/>
-          </div>
+    <section className={'scale-hero scale-hero--' + LANG} ref={hero} aria-labelledby="scale-title" data-scene={scene}>
+      <div className="scale-hero__visual">
+        <picture className="scale-hero__poster" aria-hidden="true">
+          <source media="(max-width: 760px)" srcSet="/assets/scale/hero-mobile.jpg"/>
+          <img src="/assets/scale/hero-final.jpg" width="1672" height="941" alt="" fetchPriority="high"/>
+        </picture>
+        <video ref={video} className={inFilm ? 'is-visible' : ''} muted playsInline preload="none" aria-hidden="true" tabIndex={-1}/>
+        <div className={'scale-hero__subjects' + (inFilm && phase === 0 ? ' is-visible' : '')} aria-hidden="true">
+          {COPY.subjects.map((subject, i) => <span key={subject} className={'subject-' + i}>{subject}</span>)}
+        </div>
+        <div className={'scale-hero__labels' + (final ? ' is-visible' : '')} aria-hidden="true">
+          {COPY.labels.map((name, i) => <span key={name} className={'ribbon-' + i}><i/>{name}</span>)}
         </div>
       </div>
-    </section>
-  );
-}
-
-export function Proof() {
-  const indicators = T.indicators;
-  return (
-    <section className="proof bg-editorial bg-editorial--tl" data-reveal>
-      <div className="wrap">
-        <div className="proof__head">
-          <h2 className="proof__title display">{T.proofTitle}</h2>
-        </div>
-        <div className="proof__grid proof__grid--6">
-          {indicators.map((x,i) => (
-            <div key={i} className="proof__cell">
-              <div className="proof__word display">
-                <span className="proof__sign">{x.sign}</span> {x.w}
-              </div>
-              <div className="proof__label">{x.l}</div>
-              <div className="proof__caption">{x.c}</div>
-            </div>
-          ))}
+      <div className="scale-wrap scale-hero__content">
+        <p className="scale-kicker">AI Scale Solutions · {LANG === 'en' ? 'Brazil' : 'Brasil'}</p>
+        <h1 id="scale-title">{COPY.title}</h1>
+        <p className="scale-hero__description">{COPY.description}</p>
+        <div className="scale-actions">
+          <a className="scale-button scale-button--light" href="#home#home-capabilities" onClick={e => visit(e, 'home', 'home-capabilities')}>{COPY.explore}<span aria-hidden="true">→</span></a>
+          <a className="scale-button scale-button--outline" href="#contact" onClick={e => visit(e, 'contact')}>{COPY.contact}</a>
         </div>
       </div>
+      <div className="scale-wrap scale-hero__bottom">
+        <a className="scale-hero__scroll" href="#home#home-capabilities" onClick={e => visit(e, 'home', 'home-capabilities')}><span aria-hidden="true">↓</span>{COPY.scroll}</a>
+        <div className="scale-film-controls">
+          <span className="scale-film-story">{COPY.story[phase]}</span>
+          <button type="button" onClick={() => controls.current?.toggle()} aria-label={label} title={label}><span aria-hidden="true">{playing ? 'Ⅱ' : '▷'}</span><span>{label}</span></button>
+          {inFilm && <button type="button" className="scale-film-replay" onClick={() => controls.current?.replay()} aria-label={COPY.replay} title={COPY.replay}><span aria-hidden="true">↻</span></button>}
+        </div>
+      </div>
+      <p className="scale-sr-only">{COPY.film}</p>
     </section>
   );
 }

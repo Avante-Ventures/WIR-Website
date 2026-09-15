@@ -1,3 +1,4 @@
+import { AboutOpening, ExperienceClose } from './experience-pages.jsx';
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useReveal } from './shared.jsx';
 import { LANG } from './i18n.js';
@@ -534,7 +535,7 @@ function AboutTeam() {
   const founders = T.founders;
   const partners = T.partners;
   return (
-    <section className="abteam" data-reveal>
+    <section className="abteam" id="wir-team" data-reveal>
       <div className="wrap">
         <div className="abteam__head">
           <div className="eyebrow">{T.teamEyebrow}</div>
@@ -755,17 +756,12 @@ function AboutClose({ go }) {
 
 export function AboutPage({ go }) {
   useReveal();
-  return (
-    <>
-      <AboutHero/>
-      <AboutEssay/>
-      <AboutTimeline/>
-      <AboutPartners/>
-      <AboutTeam/>
-      <AboutTechIA/>
-      <AboutValues/>
-      <AboutFAQ/>
-      <AboutClose go={go}/>
-    </>
-  );
+  return <div className="experience-page experience-about">
+    <AboutOpening go={go}/>
+    <AboutTeam/>
+    <AboutPartners/>
+    <AboutValues/>
+    <AboutFAQ/>
+    <ExperienceClose go={go}/>
+  </div>;
 }

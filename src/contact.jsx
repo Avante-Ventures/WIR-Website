@@ -1,3 +1,4 @@
+import { postForm } from './form-transport.mjs';
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useReveal } from './shared.jsx';
 import { LANG, LANG_BASE } from './i18n.js';
@@ -412,16 +413,7 @@ function ContactForm() {
     // Step 1 · Supabase REST insert
     if (cfg.supabaseUrl && cfg.supabaseAnonKey) {
       try {
-        const res = await fetch(`${cfg.supabaseUrl}/rest/v1/${cfg.leadsTable || "leads"}`, {
-          method: "POST",
-          headers: {
-            "Content-Type":  "application/json",
-            "apikey":        cfg.supabaseAnonKey,
-            "Authorization": `Bearer ${cfg.supabaseAnonKey}`,
-            "Prefer":        "return=minimal",
-          },
-          body: JSON.stringify(payload),
-        });
+        const res = await postForm(cfg, cfg.leadsTable || "leads", payload);
         supabaseOk = res.ok;
         if (!res.ok) console.warn("Supabase lead insert failed", res.status, await res.text());
       } catch (e) {
@@ -668,16 +660,7 @@ function ContactQuickChannels() {
 
     if (cfg.supabaseUrl && cfg.supabaseAnonKey) {
       try {
-        const res = await fetch(`${cfg.supabaseUrl}/rest/v1/${cfg.newsletterTable || "newsletter_subs"}`, {
-          method: "POST",
-          headers: {
-            "Content-Type":  "application/json",
-            "apikey":        cfg.supabaseAnonKey,
-            "Authorization": `Bearer ${cfg.supabaseAnonKey}`,
-            "Prefer":        "return=minimal",
-          },
-          body: JSON.stringify(payload),
-        });
+        const res = await postForm(cfg, cfg.newsletterTable || "newsletter_subs", payload);
         // 201 = created · 409 = duplicate email (already subscribed) — both count as success
         ok = res.ok || res.status === 409;
       } catch (err) {

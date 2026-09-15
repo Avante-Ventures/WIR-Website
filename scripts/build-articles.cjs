@@ -6,7 +6,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const CACHE_VER = "v=2026091401";
+const CACHE_VER = "v=2026091502";
 const SITE_URL = "https://wirinnovation.ai";
 const OUT_DIR = "public/insights"; // Vite copies public/* to dist/ root, so this lands at dist/insights/
 
@@ -210,6 +210,8 @@ ${article.image ? `<meta name="twitter:image" content="${SITE_URL}${article.imag
 <link rel="stylesheet" href="/style.css?${CACHE_VER}" />
 <link rel="stylesheet" href="/home.css?${CACHE_VER}" />
 <link rel="stylesheet" href="/blog.css?${CACHE_VER}" />
+<link rel="stylesheet" href="/scale-site.css?${CACHE_VER}" />
+<script defer src="/article-tools.js?${CACHE_VER}"></script>
 
 <script type="application/ld+json">${JSON.stringify(schema)}</script>
 <script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>${faqSchema ? `\n<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>` : ""}
@@ -230,7 +232,7 @@ const CHROME = {
   "pt-BR": {
     base: "",
     ticker: ["Decisão em minutos · auditável · explicável", "Straight-through processing como padrão", "Plataforma de IA para seguros", "Em conformidade com LGPD"],
-    navHome: "Início", navAbout: "Sobre", navSolutions: "Produtos &amp; IA", navProtection: "Proteção de Dados", navCta: "Contato", navManifesto: "Manifesto", manifestoHref: "/insights/manifesto/",
+    navHome: "Início", navAbout: "Sobre", navSolutions: "Produtos &amp; IA", navProtection: "Proteção de Dados", navCta: "Falar com a WIR", navManifesto: "Manifesto", manifestoHref: "/insights/manifesto/",
     footerDesc: "A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.",
     colCompany: "Empresa", colContact: "Contato", colHolding: "Sócios &amp; Holding",
     talkTeam: "Falar com a equipe",
@@ -245,7 +247,7 @@ const CHROME = {
   en: {
     base: "/en",
     ticker: ["Decisions in minutes · auditable · explainable", "Straight-through processing as the default", "AI platform for insurance", "LGPD-compliant"],
-    navHome: "Home", navAbout: "About", navSolutions: "Products &amp; AI", navProtection: "Data Protection", navCta: "Contact", navManifesto: "Manifesto", manifestoHref: "/insights/manifesto-en/",
+    navHome: "Home", navAbout: "About", navSolutions: "Products &amp; AI", navProtection: "Data Protection", navCta: "Talk to WIR", navManifesto: "Manifesto", manifestoHref: "/insights/manifesto-en/",
     footerDesc: "The new era of insurance is data intelligence, speed, and scale. WIR Innovation is the AI platform that delivers that structure inside the systems you already run.",
     colCompany: "Company", colContact: "Contact", colHolding: "Partners &amp; Holding",
     talkTeam: "Talk to the team",
@@ -279,7 +281,7 @@ function navAlternate(article) {
 // Burger toggle for the static nav, same behaviour as the SPA Nav (src/shared.jsx): Escape and
 // link clicks close it, body scroll locks while open, and `inert` keeps the closed menu out of
 // the tab order.
-const NAV_SCRIPT = "(function(){var b=document.querySelector('.nav__burger'),m=document.getElementById('nav-mobile-menu');if(!b||!m)return;var i=b.querySelector('.nav__burger-icon');function set(o){m.classList.toggle('is-open',o);i.classList.toggle('is-open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',b.getAttribute(o?'data-label-close':'data-label-open'));m.setAttribute('aria-hidden',o?'false':'true');if(o){m.removeAttribute('inert');}else{m.setAttribute('inert','');}document.body.style.overflow=o?'hidden':'';}b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}});m.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});var mq=window.matchMedia('(min-width: 761px)');if(mq.addEventListener)mq.addEventListener('change',function(e){if(e.matches)set(false);});})();";
+const NAV_SCRIPT = "(function(){var b=document.querySelector('.nav__burger'),m=document.getElementById('nav-mobile-menu');if(!b||!m)return;var i=b.querySelector('.nav__burger-icon');function set(o){m.classList.toggle('is-open',o);i.classList.toggle('is-open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',b.getAttribute(o?'data-label-close':'data-label-open'));m.setAttribute('aria-hidden',o?'false':'true');if(o){m.removeAttribute('inert');}else{m.setAttribute('inert','');}document.body.style.overflow=o?'hidden':'';}b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}});m.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});var mq=window.matchMedia('(min-width: 1121px)');if(mq.addEventListener)mq.addEventListener('change',function(e){if(e.matches)set(false);});})();";
 
 // Static chrome nav, mirroring the SPA Nav in src/shared.jsx: ticker, desktop links, language
 // link, CTA, burger and mobile menu. `alt` is the page's translation ({ href, code, name,
@@ -290,13 +292,11 @@ function renderNav(lang = "pt-BR", alt = null) {
   const tickerItems = [...c.ticker, ...c.ticker]
     .map(t => `    <span class="ticker__item">${t}</span>`).join("\n");
   const links = (indent) => [
-    `<a href="${c.base}/" class="nav__link">${c.navHome}</a>`,
-    `<a href="${c.base}/#about" class="nav__link">${c.navAbout}</a>`,
-    `<a href="${c.manifestoHref}" class="nav__link">${c.navManifesto}</a>`,
-    `<a href="${c.base}/#solutions" class="nav__link">${c.navSolutions}</a>`,
-    `<a href="${c.base}/#protection" class="nav__link">${c.navProtection}</a>`,
-    `<a href="${insightsHref(lang)}" class="nav__link nav__link--active">Insights &amp; News</a>`,
-    `<a href="https://dashboard.wirinnovation.ai/" target="_blank" rel="noopener" class="nav__link nav__link--badge">Dashboard</a>`,
+    `<a href="${c.base}/#solutions" class="nav__link">${lang === "en" ? "Solutions" : "Soluções"}</a>`,
+    `<a href="${c.base}/#how" class="nav__link">${lang === "en" ? "How it works" : "Como funciona"}</a>`,
+    `<a href="/dashboard/?lang=${lang === "en" ? "en" : "pt"}" class="nav__link nav__link--badge">Dashboard SUSEP ↗</a>`,
+    `<a href="${c.base}/#about" class="nav__link">${lang === "en" ? "About WIR" : "Sobre a WIR"}</a>`,
+    `<a href="${insightsHref(lang)}" class="nav__link nav__link--active">Insights</a>`,
   ].map(l => indent + l).join("\n");
   const langLink = alt ? `
       <div class="nav__lang"><a class="nav__lang-btn" href="${alt.href}" hreflang="${alt.hreflang}" lang="${alt.hreflang}" aria-label="${alt.name}"><span class="nav__lang-code">${alt.code}</span></a></div>` : "";
@@ -305,15 +305,11 @@ function renderNav(lang = "pt-BR", alt = null) {
       <span class="nav__mobile-lang is-active" aria-current="true"><span>${cur.name}</span><span class="nav__mobile-lang-code">${cur.code}</span></span>
       <a class="nav__mobile-lang" href="${alt.href}" hreflang="${alt.hreflang}" lang="${alt.hreflang}"><span>${alt.name}</span><span class="nav__mobile-lang-code">${alt.code}</span></a>
     </div>` : "";
-  return `<div class="ticker">
-  <div class="ticker__track">
-${tickerItems}
-  </div>
-</div>
+  return `<a class="skip-link" href="#main">${lang === "en" ? "Skip to content" : "Ir para conteúdo"}</a>
 <nav class="nav" aria-label="Primary">
   <div class="wrap nav__inner">
     <a href="${c.base}/" class="nav__brand">
-      <img src="/assets/wir-logo-azul.svg" alt="WIR Innovation" width="98" height="72" style="height:72px;width:auto;display:block" />
+      <img src="/assets/wir-logo.svg" alt="WIR Innovation" width="98" height="72" style="height:72px;width:auto;display:block" />
     </a>
     <div class="nav__links">
 ${links("      ")}
@@ -375,6 +371,8 @@ function renderFooter(lang = "pt-BR") {
           <li><a href="${c.base}/#protection">${c.navProtection}</a></li>
           <li><a href="${insightsHref(lang)}">Insights &amp; News</a></li>
           <li><a href="${c.base}/#contact">${c.navCta}</a></li>
+          <li><a href="/dashboard/?lang=${lang === "en" ? "en" : "pt"}">Dashboard SUSEP ↗</a></li>
+          <li><a href="${c.manifestoHref}">${c.navManifesto}</a></li>
         </ul>
       </div>
       <div>
@@ -465,10 +463,10 @@ ${article.faq.map(({ q, a }) => `<details class="blarticle__faq-item">
 <head>
 ${head}
 </head>
-<body>
+<body class="static-scale">
 ${renderNav(lang, navAlternate(article))}
 
-<main>
+<main id="main" tabindex="-1">
 <article class="blarticle">
   <div class="wrap blarticle__wrap">
     <a class="blarticle__back" href="${insightsHref(lang)}">
@@ -538,7 +536,7 @@ function renderInsightsIndex(lang = "pt-BR") {
   const featured = list.find(a => a.featured);
   const gridList = featured ? list.filter(a => a !== featured) : list;
   const heroCard = featured ? `
-    <a href="/insights/${featured.slug}/" class="ix-hero">
+    <a href="/insights/${featured.slug}/" class="ix-hero" data-category="${esc(featured.cat)}">
       <div class="ix-hero__img" style="background:${featured.grad};${featured.image ? `background-image:linear-gradient(180deg,rgba(11,10,8,0.15),rgba(11,10,8,0.6)),url(${featured.image});background-size:cover;background-position:center;` : ""}">
         <span class="ix-hero__badge">${en ? "Featured" : "Destaque"}</span>
       </div>
@@ -550,8 +548,9 @@ function renderInsightsIndex(lang = "pt-BR") {
       </div>
     </a>` : "";
   const cards = gridList.map(a => `
-    <a href="/insights/${a.slug}/" class="ix-card">
-      <div class="ix-card__img" style="background:${a.grad};${a.image ? `background-image:linear-gradient(180deg,rgba(11,10,8,0.2),rgba(11,10,8,0.7)),url(${a.image});background-size:cover;background-position:center;` : ""}">
+    <a href="/insights/${a.slug}/" class="ix-card" data-category="${esc(a.cat)}">
+      <div class="ix-card__img" style="background:${a.grad};">
+        ${a.image ? `<img src="${esc(a.image)}" alt="" width="1600" height="1000" loading="lazy" decoding="async">` : ''}
       </div>
       <div class="ix-card__body">
         <div class="ix-card__meta">${esc(a.cat)} · ${esc(a.time)} · ${esc(a.date)}</div>
@@ -581,6 +580,8 @@ function renderInsightsIndex(lang = "pt-BR") {
 <link rel="stylesheet" href="/style.css?${CACHE_VER}" />
 <link rel="stylesheet" href="/home.css?${CACHE_VER}" />
 <link rel="stylesheet" href="/blog.css?${CACHE_VER}" />
+<link rel="stylesheet" href="/scale-site.css?${CACHE_VER}" />
+<script defer src="/article-tools.js?${CACHE_VER}"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW9TDZ9H2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -622,9 +623,9 @@ function renderInsightsIndex(lang = "pt-BR") {
 <head>
 ${head}
 </head>
-<body>
+<body class="static-scale">
 ${renderNav(lang, { href: en ? "/insights/" : "/en/insights/", ...LANG_META[en ? "pt-BR" : "en"] })}
-<main>
+<main id="main" tabindex="-1">
 <section class="ix">
   <div class="wrap">
     <div class="ix__head">
@@ -632,7 +633,13 @@ ${renderNav(lang, { href: en ? "/insights/" : "/en/insights/", ...LANG_META[en ?
       <h1>${idx.h1}</h1>
       <p>${idx.p}</p>
     </div>
+    <form class="ix-tools" role="search" data-archive-tools>
+      <label for="insight-search">${en ? "Search insights" : "Buscar insights"}<input id="insight-search" type="search" name="q" placeholder="${en ? "Topic, title or author" : "Tema, título ou autor"}" autocomplete="off"></label>
+      <label for="insight-category">${en ? "Topic" : "Tema"}<select id="insight-category" name="category"><option value="">${en ? "All topics" : "Todos os temas"}</option>${[...new Set(list.map(a => a.cat))].sort().map(cat => `<option value="${esc(cat)}">${esc(cat)}</option>`).join('')}</select></label>
+      <p class="ix-count" role="status" aria-live="polite"></p>
+    </form>
 ${heroCard}
+    <p class="ix-empty" hidden>${en ? "No matching articles. Try another search or topic." : "Nenhum artigo encontrado. Tente outra busca ou tema."}</p>
     <div class="ix__grid">
 ${cards}
     </div>
@@ -644,6 +651,17 @@ ${renderWhatsAppFAB(lang)}
 </body>
 </html>`;
 }
+
+// Static articles and React share the approved shell and visual tokens.
+fs.copyFileSync('src/styles/style.css', 'public/style.css');
+fs.copyFileSync('src/styles/site-scale.css', 'public/scale-site.css');
+const latest = {};
+for (const [key, en] of [['pt', false], ['en', true]]) {
+  latest[key] = ARTICLES.filter(a => isEnglish(a.slug) === en && !a.linkOnly)
+    .sort((a,b) => (b.dateISO || '').localeCompare(a.dateISO || '')).slice(0,3)
+    .map(({slug,title,date,dateISO,image,time}) => ({slug,title,date,dateISO,image,time}));
+}
+fs.writeFileSync('src/home-insights.mjs', '// Generated by scripts/build-articles.cjs. Article bodies stay out of the home bundle.\nexport const HOME_INSIGHTS = ' + JSON.stringify(latest,null,2) + ';\n');
 
 const insightsDir = path.join(process.cwd(), OUT_DIR);
 fs.mkdirSync(insightsDir, { recursive: true });

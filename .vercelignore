@@ -1,0 +1,5 @@
+docs/
+tests/
+AGENTS.md
+node_modules/
+.env*

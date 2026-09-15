@@ -12,3 +12,5 @@ import './styles/contact.css';
 import './styles/data-protection.css';
 
 ReactDOM.createRoot(document.getElementById('app')).render(<App />);
+
+import './styles/site-scale.css';

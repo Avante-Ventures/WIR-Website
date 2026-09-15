@@ -168,7 +168,15 @@ export function Shift() {
 // hideHead: /#solutions already opens with its own H1 about the products, so it hides this one.
 export function ProductTabs({ go, hideHead }) {
   const prods = T.prods;
-  const [active, setActive] = React.useState(0);
+  const selectedFromHash = () => Math.max(0, prods.findIndex(p => location.hash.endsWith('stack-tab-' + p.k)));
+  const [active, setActive] = React.useState(selectedFromHash);
+  useEffect(() => {
+    const select = () => {
+      if (location.hash.includes('stack-tab-')) setActive(selectedFromHash());
+    };
+    window.addEventListener('hashchange', select);
+    return () => window.removeEventListener('hashchange', select);
+  }, []);
   const tabRefs = React.useRef([]);
   const p = prods[active];
 
@@ -180,7 +188,7 @@ export function ProductTabs({ go, hideHead }) {
   };
 
   return (
-    <section className="stack bg-editorial bg-editorial--br" data-reveal>
+    <section id="solution-products" className="stack bg-editorial bg-editorial--br" data-reveal>
       <div className="wrap">
         {!hideHead && (
           <div className="stack__head">

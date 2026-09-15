@@ -1,3 +1,4 @@
+import { SolutionsExperience } from './experience-pages.jsx';
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useReveal } from './shared.jsx';
 import { LANG } from './i18n.js';
@@ -8,7 +9,7 @@ import { ProductTabs, Shift } from './home-shift.jsx';
 const T = {
   pt: {
     solHeroEyebrow: "· Produtos & IA",
-    solHeroTitle: <>Dois produtos em produção.<br/><em>Dois a caminho.</em></>,
+    solHeroTitle: <>Mais alcance.<br/><em>Mais capacidade.</em></>,
     solHeroLede: "Smart Sales e Underwriter Intelligence rodam hoje em produção. X-sell Brokers e SDR New Business estão em desenvolvimento. Tudo conecta ao seu core sem migração.",
     flowEyebrow: "· Workflow Inteligente de Subscrição",
     flowTitle: <><em>SS + UI</em> em operação.<br/>Seis estágios. Um único core.</>,
@@ -63,7 +64,7 @@ const T = {
   },
   en: {
     solHeroEyebrow: "· Products & AI",
-    solHeroTitle: <>Two products in production.<br/><em>Two on the way.</em></>,
+    solHeroTitle: <>Greater reach.<br/><em>More capacity.</em></>,
     solHeroLede: "Smart Sales and Underwriter Intelligence run in production today. X-sell Brokers and SDR New Business are in development. Everything connects to your core without migration.",
     flowEyebrow: "· Intelligent Underwriting Workflow",
     flowTitle: <><em>SS + UI</em> in operation.<br/>Six stages. One single core.</>,
@@ -118,7 +119,7 @@ const T = {
   },
   es: {
     solHeroEyebrow: "· Productos & IA",
-    solHeroTitle: <>Dos productos en producción.<br/><em>Dos en camino.</em></>,
+    solHeroTitle: <>Más alcance.<br/><em>Más capacidad.</em></>,
     solHeroLede: "Smart Sales y Underwriter Intelligence corren en producción hoy. X-sell Brokers y SDR New Business están en desarrollo. Todo se conecta a tu core sin migración.",
     flowEyebrow: "· Workflow Inteligente de Suscripción",
     flowTitle: <><em>SS + UI</em> en operación.<br/>Seis etapas. Un único core.</>,
@@ -279,15 +280,17 @@ function SolHero() {
 }
 
 export function SolutionsPage({ go }) {
-  useReveal();
-  return (
-    <>
-      <SolHero/>
-      <ProductTabs go={go} hideHead/>
-      <SolWorkflow/>
-      <Shift/>
-      <SolPricing go={go}/>
-      <SolClosing go={go}/>
-    </>
-  );
+  return <SolutionsExperience go={go}><ProductTabs go={go} hideHead/></SolutionsExperience>;
+}
+
+function VisibilitySection() {
+  const t = {
+    pt: ["03 / VISIBILIDADE", "Clareza para", "decidir.", "Acompanhe sua operação com dashboards e analytics. Conecte as informações que sua equipe precisa para acompanhar processos e orientar prioridades.", "Explore também o mercado", "O dashboard público da WIR reúne dados da SUSEP sobre o setor segurador brasileiro. Consulte períodos, ramos e grupos seguradores.", "Abrir dashboard SUSEP"],
+    en: ["03 / VISIBILITY", "Clarity to", "decide.", "Monitor your operation with dashboards and analytics. Connect the information your team needs to follow processes and guide priorities.", "Explore the market too", "WIR’s public dashboard brings together SUSEP data on the Brazilian insurance sector. Explore periods, business lines and insurance groups.", "Open SUSEP dashboard"],
+    es: ["03 / VISIBILIDAD", "Claridad para", "decidir.", "Sigue tu operación con dashboards y analytics. Conecta la información que tu equipo necesita para seguir procesos y orientar prioridades.", "Explora también el mercado", "El dashboard público de WIR reúne datos de SUSEP sobre el sector asegurador brasileño. Consulta períodos, ramos y grupos aseguradores.", "Abrir dashboard SUSEP"]
+  }[LANG];
+  return <section id="operational-intelligence" className="visibility-scale"><div className="wrap visibility-scale__grid">
+    <div><div className="eyebrow">{t[0]}</div><h2>{t[1]}<br/><em>{t[2]}</em></h2><p>{t[3]}</p></div>
+    <div className="visibility-scale__market"><div className="visibility-scale__bars" aria-hidden="true">{[34,58,46,73,92].map((h,i)=><span key={i} style={{height:h+'%'}}/>)}</div><h3>{t[4]}</h3><p>{t[5]}</p><a className="btn btn--solid" href={'/dashboard/?lang='+LANG}>{t[6]} →</a></div>
+  </div></section>;
 }

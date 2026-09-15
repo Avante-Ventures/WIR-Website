@@ -1,0 +1,6 @@
+/* The hand-authored report retains its charts, content and language controls. */
+html:root {--paper:#f8f8fd;--paper-2:#eeedfb;--paper-3:#d9d8ee;--paper-4:#f1effc;--ink:#0a0a2e;--ink-2:#33334e;--ink-3:#575773;--night:#111333;--night-2:#1b1e43;--navy:#f8f8fd;--navy-2:#eeedfb;--line:#d9d8ee}
+body::before {display:none}
+body .site-backlink {background:#fafaff!important;color:#111333!important;border-bottom:1px solid #d9d8ee!important;font-size:14px!important;padding:18px!important}
+body h1,body h2 {font-family:var(--sans);font-weight:500;letter-spacing:-.04em}
+body h1 em,body h2 em {font-family:var(--serif);font-weight:400}

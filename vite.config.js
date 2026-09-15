@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { articlesDev } from './scripts/articles-dev.mjs';
+import { dashboardDev } from './scripts/dashboard-dev.mjs';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), dashboardDev(), articlesDev()],
   build: {
     outDir: 'dist',
     // Don't inline small assets — keep the CSS that lives in public/ untouched

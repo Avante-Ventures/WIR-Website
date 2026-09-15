@@ -1,0 +1,210 @@
+{
+  "status": "Archived exploration; creative direction rejected; preserve for selective reuse",
+  "files": [
+    {
+      "path": "docs/concepts/2026-09-14-wir-a-sculptural-flow.png",
+      "bytes": 1754936,
+      "sha256": "4e64e593fe5e47f71ada3c19cf0c71eb6b1a456949563f6d189366430c791ef3"
+    },
+    {
+      "path": "docs/concepts/2026-09-14-wir-ai-scale-homepage-v2.png",
+      "bytes": 1828363,
+      "sha256": "8d5f7e8837340987e8bc70467c64a67ac4baf1b9cffa74fefcb2af4e3e9c6c8d"
+    },
+    {
+      "path": "docs/concepts/2026-09-14-wir-ai-scale-homepage.png",
+      "bytes": 2134848,
+      "sha256": "c22856d068514e7a34100f00d345a9d46216e8a4e7dd30d963fab4b496570a8e"
+    },
+    {
+      "path": "docs/concepts/2026-09-14-wir-ai-scale-prompts.md",
+      "bytes": 2824,
+      "sha256": "7c229a61dfbb00cf0016813d43bfd54d38d1b81198c83bf446c09ac94585ddbb"
+    },
+    {
+      "path": "docs/concepts/2026-09-14-wir-b-luminous-flow.png",
+      "bytes": 1783507,
+      "sha256": "9764cc25a32144b69b72cb4171d67bd7b94f8dd29c2109d0b8bc0f7298568201"
+    },
+    {
+      "path": "docs/concepts/2026-09-14-wir-c-visible-operation.png",
+      "bytes": 1775784,
+      "sha256": "cf9740e9e784161dd3b7f3df8e41e70035a0bc46b16fa77b6523cf2c5108c5aa"
+    },
+    {
+      "path": "docs/concepts/2026-09-14-wir-c2-email-orchestration.md",
+      "bytes": 5150,
+      "sha256": "700585bc6e18531c20afc13cd607f9b661fa510434e6d6cff693480c479c95c4"
+    },
+    {
+      "path": "docs/concepts/2026-09-14-wir-c2-email-orchestration.png",
+      "bytes": 1873604,
+      "sha256": "ffafaa947d1e2437651fd11aa688d44a178c6621ba90140d3ac31f68fe8e641d"
+    },
+    {
+      "path": "docs/concepts/2026-09-14-wir-d-real-economy.png",
+      "bytes": 1844223,
+      "sha256": "0408a01cfa71996e842e8bda88ddb6dbfdf5fe6d337fab358eff29e3c5fe4506"
+    },
+    {
+      "path": "docs/concepts/2026-09-14-wir-e-modular-scale.png",
+      "bytes": 1666577,
+      "sha256": "7f937406353e3fcf25822bec8ba65abdcdcf9ae09f29f343a2b3ec320e6e06e8"
+    },
+    {
+      "path": "docs/concepts/2026-09-14-wir-five-directions.md",
+      "bytes": 16595,
+      "sha256": "04a1628b5031cba40a0103c3b70add6c5f8478f19288523830d206c21adaa9f1"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/concept.md",
+      "bytes": 8522,
+      "sha256": "eb16035365f4b0403f685f4beafef60c3239c3d7decf7c3424df1c6d19917c0d"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/hero-email-flow.jpg",
+      "bytes": 167838,
+      "sha256": "5fd8a0841b08094b5c735e8205329c28967e3fa465bcfd43ed92536b341ba76a"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/hero-email-flow.png",
+      "bytes": 1832744,
+      "sha256": "001a922eaca3f48b73667ea0b10bd5e2a0b1a1c6afc8608be4b942641eef42aa"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/index-v1.html",
+      "bytes": 720505,
+      "sha256": "48fb7295a970d1b92023a1adba035a9a93bcc0faf345aed811d68ce138c09159"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/index.html",
+      "bytes": 222,
+      "sha256": "91c185a5cfb1e13e78239458554a4b7be8c094b54b9fea941828631d48d88d11"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/jose-carlos-preview.jpg",
+      "bytes": 23328,
+      "sha256": "1f8a2599f737d8661bf106c04621cfcbee2748c4de2f0f74dae1e68bafbd4a24"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/nicholas-preview.jpg",
+      "bytes": 26896,
+      "sha256": "6d2c83b7362cd91c97ca25f53715199eda5ca98afa4425277873dbaf19faba9a"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v2/README.md",
+      "bytes": 3504,
+      "sha256": "90e90c4b461a1572a21f1c57f14bc91ed35cecdb0b2ec9c02ad48c0ede9463b8"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v2/experience.bundle.js",
+      "bytes": 625803,
+      "sha256": "a842b08af0d8a178c2455358e597116b279dc61c2962c1d9b7a19f83a2aa0c3d"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v2/experience.css",
+      "bytes": 18573,
+      "sha256": "15ad9bc881a7a0fa7d2b1616cc262ab198c8dba99079d321751bc45c17a8eb14"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v2/experience.js",
+      "bytes": 7338,
+      "sha256": "92bfbb55534a47f8fe782872ebdd03d3d5a74de11d2a2db6367008fa6a49fc61"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v2/index.html",
+      "bytes": 13410,
+      "sha256": "674755175cd1a438d05ee95232e3b34cb2b5b2c193817465c2fcdae90ca9e894"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v2/logo-blue.svg",
+      "bytes": 13896,
+      "sha256": "9df3e27240f089a6a29a008c6223e99d874aa21be55ccaee2818ceb2ad7fb9e3"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v2/logo-white.svg",
+      "bytes": 13896,
+      "sha256": "4b4387ae97499566d21d7b755616508f77b2d7e5181c8d9e87f4e8ac8e13bec2"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v2/model.js",
+      "bytes": 5345,
+      "sha256": "aea188163495b7d5f933d5b340f2402d3b9a5c66eb190871427646bc4e6bc0c1"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v2/qa-mobile.html",
+      "bytes": 362,
+      "sha256": "c3ecb250863c4636067bc4441e12d732662b892a33f1a8e8cfd33b13a014895f"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v2/scene.js",
+      "bytes": 17273,
+      "sha256": "9e8dcd760c2fad24f4cd6ec1b4dbaed46c4cfa2963899e5b8bc5a70026bdac24"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v3/README.md",
+      "bytes": 2728,
+      "sha256": "509717d563a54981519dc5fabb3feb58cc94f6001855efc7a8ddd5a79dbfd700"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v3/base.css",
+      "bytes": 18573,
+      "sha256": "15ad9bc881a7a0fa7d2b1616cc262ab198c8dba99079d321751bc45c17a8eb14"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v3/email-motion.js",
+      "bytes": 5586,
+      "sha256": "04f2c96c62b4c3c3e0d1223805b93be3b3fdf0b7b21c4aaa37a77b2bbf638a4e"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v3/experience.bundle.js",
+      "bytes": 629484,
+      "sha256": "38d1fcd4435d197d297aa9bb866d116091e23fe7b71ff47d809e751eebd150de"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v3/experience.css",
+      "bytes": 13747,
+      "sha256": "f4e440051d87be11feeb18a7ac4ac57eca950562f138bcfd80825bbdeed06dfa"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v3/experience.js",
+      "bytes": 6556,
+      "sha256": "f6174b5c67443f1d2b1872f8787d529bb81634a269b0660462ecfd146877fa11"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v3/index.html",
+      "bytes": 13536,
+      "sha256": "f467fb42f270d809100ae6d2e3fc2d2588c58f5e0d7317ab134c42e537d70d64"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v3/logo-blue.svg",
+      "bytes": 13896,
+      "sha256": "9df3e27240f089a6a29a008c6223e99d874aa21be55ccaee2818ceb2ad7fb9e3"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v3/logo-white.svg",
+      "bytes": 13896,
+      "sha256": "4b4387ae97499566d21d7b755616508f77b2d7e5181c8d9e87f4e8ac8e13bec2"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v3/model.js",
+      "bytes": 5345,
+      "sha256": "aea188163495b7d5f933d5b340f2402d3b9a5c66eb190871427646bc4e6bc0c1"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v3/qa-mobile.html",
+      "bytes": 264,
+      "sha256": "970d35183a5368ff0605d9d49177b914e0c4daeefc9ff9c0249cfa91576a139c"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/v3/scene.js",
+      "bytes": 17273,
+      "sha256": "9e8dcd760c2fad24f4cd6ec1b4dbaed46c4cfa2963899e5b8bc5a70026bdac24"
+    },
+    {
+      "path": "docs/concepts/wir-email-complete/wir-email-concept.html",
+      "bytes": 669620,
+      "sha256": "19eb550d424187c8157750dbcffcb8c65514eb193d3f7687c53d30439682cef2"
+    }
+  ]
+}

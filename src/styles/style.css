@@ -23,6 +23,7 @@
 }
 
 :root{
+  --shell-white: #FAFAFF;
   /* Paper */
   --paper:        #F5F1EA;    /* warm off-white */
   --paper-2:      #EDE7DC;    /* card contrast */
@@ -231,14 +232,14 @@ p{ text-wrap: pretty; }
 
 .nav{
   position: sticky; top: 0; z-index: 50;
-  background: color-mix(in oklab, var(--paper) 92%, transparent);
+  background: var(--shell-white);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid color-mix(in oklab, var(--ink) 8%, transparent);
 }
 .nav__inner{
   display: flex; align-items: center; justify-content: space-between;
-  height: 84px;
+  height: 100px;
 }
 .nav__brand{ display: flex; align-items: center; gap: 14px; }
 .nav__brand img{ height: 72px; width: auto; }
@@ -358,7 +359,7 @@ p{ text-wrap: pretty; }
   font-family: var(--f-mono); font-size: 11px; color: var(--ink-4);
   letter-spacing: .14em;
 }
-@media (min-width: 761px) {
+@media (min-width: 961px) {
   .nav__mobile { display: none; }
 }
 
@@ -1334,7 +1335,7 @@ p{ text-wrap: pretty; }
 }
 
 /* Reveal (graceful: only hides when JS ready) — canonical single definition; `.in` rules dead, JS uses `.is-revealed` */
-html.js-ready [data-reveal]{ opacity: 0; transform: translateY(16px); transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out); }
+html.js-ready [data-reveal]{ opacity: 1; transform: none; }
 html.js-ready [data-reveal].is-revealed{ opacity: 1; transform: translateY(0); }
 
 /* ─────────────  BG-EDITORIAL UTILITY  ─────────────
@@ -1397,9 +1398,12 @@ html.js-ready [data-reveal].is-revealed{ opacity: 1; transform: translateY(0); }
   .interest-grid{ grid-template-columns: 1fr; }
   .nav__links{ display: none; }
 }
-@media (max-width: 760px) {
+@media (max-width: 960px) {
   .nav__links, .nav__cta, .nav__lang { display: none; }
   .nav__burger { display: inline-flex; }
+  .nav__inner { height: 76px; }
+  .nav__brand img, .nav__brand svg { height: 56px; }
+  .nav__mobile { top: 76px; background: var(--shell-white); }
 }
 
 /* ───────── Manifesto — editorial premium ─────────
@@ -1749,4 +1753,15 @@ html.js-ready [data-reveal].is-revealed{ opacity: 1; transform: translateY(0); }
 @media print {
   html.js-ready [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
   .ticker, .nav, .wa-fab, .nav__mobile { display: none !important; }
+}
+
+/* SUSEP remains distinct in every shared navigation. */
+.nav__link.nav__link--badge{background:#fff0d6;color:#77501d;border:1px solid #e6c58e;border-radius:100px;padding:9px 13px;align-self:center;font-size:11px;white-space:nowrap}
+.nav__link.nav__link--badge:hover{background:#f8d99f;color:#3d2b16;transform:none}
+@media(max-width:1120px){
+ .nav__links,.nav__cta,.nav__lang{display:none}
+ .nav__burger{display:flex}
+ .nav__inner{height:76px;min-height:76px}
+ .nav__mobile{top:76px}
+ .nav__mobile .nav__link--badge{align-self:stretch;border-radius:6px;padding:15px 18px;font-size:15px;margin:8px 0}
 }
