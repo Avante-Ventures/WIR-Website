@@ -6,7 +6,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const CACHE_VER = "v=2026091502";
+const CACHE_VER = "v=2026091503";
 const SITE_URL = "https://wirinnovation.ai";
 const OUT_DIR = "public/insights"; // Vite copies public/* to dist/ root, so this lands at dist/insights/
 
@@ -546,6 +546,7 @@ function renderInsightsIndex(lang = "pt-BR") {
         <h2>${esc(featured.title)}</h2>
         <p>${esc(featured.sub)}</p>
         <div class="ix-hero__by"><b>${esc(featured.author)}</b> · ${esc(featured.role)}</div>
+        <div class="ix-read">${en ? "Read the story" : "Ler a matéria"}<span aria-hidden="true">↗</span></div>
       </div>
     </a>` : "";
   const cards = gridList.map(a => `
@@ -558,6 +559,7 @@ function renderInsightsIndex(lang = "pt-BR") {
         <h2>${esc(a.title)}</h2>
         <p>${esc(a.sub)}</p>
         <div class="ix-card__by"><b>${esc(a.author)}</b> · ${esc(a.role)}</div>
+        <div class="ix-read">${en ? "Read article" : "Ler artigo"}<span aria-hidden="true">↗</span></div>
       </div>
     </a>`).join("\n");
 
@@ -628,12 +630,15 @@ ${head}
 ${renderNav(lang, { href: en ? "/insights/" : "/en/insights/", ...LANG_META[en ? "pt-BR" : "en"] })}
 <main id="main" tabindex="-1">
 <section class="ix">
-  <div class="wrap">
+  <header class="ix-mast"><div class="wrap">
+    <div class="ix-mast__line"><span>WIR / INSIGHTS &amp; NEWS</span><span>AI FOR INSURANCE</span></div>
     <div class="ix__head">
-      <div class="eyebrow">· Insights &amp; News</div>
       <h1>${idx.h1}</h1>
       <p>${idx.p}</p>
     </div>
+  </div></header>
+  <div class="wrap">
+    <div class="ix-library-head"><h2>${en ? "Explore the perspectives." : "Explore as perspectivas."}</h2><span>${en ? "KNOWLEDGE / IN CONTEXT" : "CONHECIMENTO / EM CONTEXTO"}</span></div>
     <form class="ix-tools" role="search" data-archive-tools>
       <label for="insight-search">${en ? "Search insights" : "Buscar insights"}<input id="insight-search" type="search" name="q" placeholder="${en ? "Topic, title or author" : "Tema, título ou autor"}" autocomplete="off"></label>
       <label for="insight-category">${en ? "Topic" : "Tema"}<select id="insight-category" name="category"><option value="">${en ? "All topics" : "Todos os temas"}</option>${[...new Set(list.map(a => a.cat))].sort().map(cat => `<option value="${esc(cat)}">${esc(cat)}</option>`).join('')}</select></label>
@@ -655,7 +660,7 @@ ${renderWhatsAppFAB(lang)}
 
 // Static articles and React share the approved shell and visual tokens.
 fs.copyFileSync('src/styles/style.css', 'public/style.css');
-fs.copyFileSync('src/styles/site-scale.css', 'public/scale-site.css');
+fs.writeFileSync('public/scale-site.css', fs.readFileSync('src/styles/site-scale.css', 'utf8') + '\n' + fs.readFileSync('src/styles/editorial-details.css', 'utf8'));
 const latest = {};
 for (const [key, en] of [['pt', false], ['en', true]]) {
   latest[key] = ARTICLES.filter(a => isEnglish(a.slug) === en && !a.linkOnly)

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { LANG } from './i18n.js';
+import { SolutionArt } from './solution-art.jsx';
 
 /* ───────── Movement 03 · The Shift + 04 · The Stack ───────── */
 
@@ -230,12 +231,13 @@ export function ProductTabs({ go, hideHead }) {
               {p.status === "dev" && <span className="stack__panel-status">{T.devLabel}</span>}
             </div>
             <div className="stack__panel-body">
+              <SolutionArt kind={p.k}/>
               <div className="stack__panel-lhs">
                 <h3 className="display stack__panel-title">{p.title}</h3>
                 <p className="stack__panel-lede">{p.lede}</p>
               </div>
               <ul className="stack__bullets">
-                {p.bullets.map((b,j) => <li key={j}><span className="stack__bu"/>{b}</li>)}
+                {p.bullets.map((b,j) => <li key={j}><span className="stack__bu">0{j+1}</span>{b}</li>)}
               </ul>
             </div>
             <div className="stack__panel-bot">

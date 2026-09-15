@@ -259,142 +259,16 @@ const T = {
   },
 }[LANG];
 
-// SecurityShield — defense-in-depth atom diagram. Smaller central WIR core (hex)
-// with 4 orbital security layers that ROTATE at different speeds + directions.
-// Curved textPath labels stay anchored to static paths (legible). Live core dot pulses.
+// Layered shield sculpture. Decorative geometry carries no compliance claims.
 function SecurityShield() {
-  const CX = 200, CY = 200;
-  // 4 layer radii (outer → inner) + rotation config per layer
-  const LAYERS = [
-    { r: 180, label: T.shieldNetwork || "NETWORK · TLS 1.3 · WAF",       color: "#3222E9", spinDur: 80, spinDir: 1  },
-    { r: 145, label: T.shieldApp     || "APPLICATION · OAuth 2.0 · MFA", color: "#7540AC", spinDur: 60, spinDir: -1 },
-    { r: 110, label: T.shieldData    || "DATA · AES-256 · BYOK",         color: "#AE46C0", spinDur: 45, spinDir: 1  },
-    { r:  75, label: T.shieldAuditR  || "AUDIT · LGPD · IMMUTABLE",      color: "#FE8B77", spinDur: 30, spinDir: -1 },
-  ];
-
-  // Cardinal data-point dots per layer (N, E, S, W) — these ROTATE with the ring group
-  const ringDots = (r, color, offset = 0) =>
-    [0, 90, 180, 270].map((deg, i) => {
-      const a = ((deg + offset) * Math.PI) / 180;
-      return (
-        <circle key={i}
-          cx={CX + r * Math.cos(a)}
-          cy={CY + r * Math.sin(a)}
-          r="3.5"
-          fill={color}
-          stroke="#FAF6EE"
-          strokeWidth="1.5"/>
-      );
-    });
-
-  return (
-    <div className="dphero__shield">
-      <svg viewBox="0 0 400 400" className="dphero__shield-svg" aria-hidden>
-        <defs>
-          <linearGradient id="shieldGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%"   stopColor="#F8AD39"/>
-            <stop offset="50%"  stopColor="#AE46C0"/>
-            <stop offset="100%" stopColor="#3222E9"/>
-          </linearGradient>
-          <radialGradient id="shieldBg" cx="0.5" cy="0.5" r="0.5">
-            <stop offset="0%"   stopColor="rgba(117,64,172,0.08)"/>
-            <stop offset="60%"  stopColor="rgba(117,64,172,0.02)"/>
-            <stop offset="100%" stopColor="rgba(117,64,172,0)"/>
-          </radialGradient>
-          <filter id="shieldShadow" x="-30%" y="-30%" width="160%" height="160%">
-            <feDropShadow dx="0" dy="3" stdDeviation="4" floodOpacity="0.18"/>
-          </filter>
-          {/* Static text-anchor paths — labels follow the ring TOP arc, never rotate */}
-          {LAYERS.map((L, i) => (
-            <path key={i} id={`ring-${i}`}
-              d={`M ${CX - L.r} ${CY} A ${L.r} ${L.r} 0 0 1 ${CX + L.r} ${CY}`}/>
-          ))}
-        </defs>
-
-        {/* Soft radial background fill */}
-        <circle cx={CX} cy={CY} r="195" fill="url(#shieldBg)"/>
-
-        {/* 4 concentric layer rings — each <g> rotates around center independently */}
-        {LAYERS.map((L, i) => (
-          <g key={i}>
-            <animateTransform attributeName="transform" attributeType="XML"
-              type="rotate"
-              from={`0 ${CX} ${CY}`}
-              to={`${360 * L.spinDir} ${CX} ${CY}`}
-              dur={`${L.spinDur}s`}
-              repeatCount="indefinite"/>
-            {/* Ring stroke */}
-            <circle cx={CX} cy={CY} r={L.r}
-              fill="none" stroke={L.color}
-              strokeWidth={1 + i * 0.2}
-              strokeOpacity={0.3 + i * 0.12}
-              strokeDasharray={i === LAYERS.length - 1 ? "0" : `${3 + i} ${5 + i}`}/>
-            {/* Cardinal data dots — rotate with the ring */}
-            {ringDots(L.r, L.color, i * 22)}
-          </g>
-        ))}
-
-        {/* Curved labels — STATIC (sit outside rotating groups, anchored to defs paths) */}
-        {LAYERS.map((L, i) => (
-          <text key={`lbl-${i}`} fill={L.color} fontSize="9.5" fontWeight="700"
-            fontFamily="JetBrains Mono, monospace" letterSpacing=".22em">
-            <textPath href={`#ring-${i}`} startOffset="50%" textAnchor="middle">
-              · {L.label} ·
-            </textPath>
-          </text>
-        ))}
-
-        {/* Connecting hairlines from core to outer ring — static */}
-        {[45, 135, 225, 315].map((deg, i) => {
-          const a = (deg * Math.PI) / 180;
-          const innerR = 28, outerR = LAYERS[0].r - 8;
-          return (
-            <line key={i}
-              x1={CX + innerR * Math.cos(a)} y1={CY + innerR * Math.sin(a)}
-              x2={CX + outerR * Math.cos(a)} y2={CY + outerR * Math.sin(a)}
-              stroke="#7540AC" strokeWidth="0.8" strokeDasharray="2 4" opacity="0.15"/>
-          );
-        })}
-
-        {/* Central WIR core hex — SMALLER (radius 36 → 26), still branded */}
-        <g transform={`translate(${CX} ${CY})`}>
-          {/* Hex outer — radius reduced from 36 to 26 */}
-          <path d="M0,-26 L22.5,-13 L22.5,13 L0,26 L-22.5,13 L-22.5,-13 Z"
-            fill="url(#shieldGrad)" stroke="#FAF6EE" strokeWidth="1.6"
-            filter="url(#shieldShadow)"/>
-          {/* Inner shield glyph — reduced proportionally */}
-          <path d="M0,-13 L-10,-7 L-10,3 C-10,10 -6,15 0,18 C6,15 10,10 10,3 L10,-7 Z"
-            fill="#FAF6EE" fillOpacity="0.94"/>
-          {/* Check mark — smaller */}
-          <path d="M-4.5,0 L-1,5 L5,-4" fill="none" stroke="#0B0A08"
-            strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        </g>
-
-        {/* Center label below core */}
-        <text x={CX} y={CY + 44} textAnchor="middle" fill="#0B0A08"
-          fontSize="10" fontWeight="700" letterSpacing=".24em"
-          fontFamily="JetBrains Mono, monospace">
-          WIR · CORE
-        </text>
-
-        {/* Live indicator — pulsing dot with halo */}
-        <g transform={`translate(${CX} ${CY + 62})`}>
-          <circle r="9" fill="#10B981" opacity="0.15">
-            <animate attributeName="r" values="5;12;5" dur="2.4s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.25;0.05;0.25" dur="2.4s" repeatCount="indefinite"/>
-          </circle>
-          <circle r="3.5" fill="#10B981">
-            <animate attributeName="opacity" values="0.65;1;0.65" dur="2s" repeatCount="indefinite"/>
-          </circle>
-        </g>
-        <text x={CX} y={CY + 82} textAnchor="middle" fill="#0B0A08"
-          fontSize="9" fontWeight="600" letterSpacing=".22em"
-          fontFamily="JetBrains Mono, monospace">
-          {T.shieldLive}
-        </text>
-      </svg>
-    </div>
-  );
+  return <div className="security-sculpture" aria-hidden="true">
+    <div className="security-sculpture__orbit"/>
+    {[2,1,0].map(i=><div className="security-sculpture__pane" key={i} style={{'--layer':i}}>
+      <span className="security-sculpture__corners"/>
+      {i===0&&<svg viewBox="0 0 160 190" fill="none"><path d="M80 15L139 39V89C139 128 116 158 80 177C44 158 21 128 21 89V39Z" fill="#c2afff25" stroke="#dfd1ff" strokeWidth="1.5"/><path d="M80 35L122 52V90C122 118 107 140 80 157C53 140 38 118 38 90V52Z" stroke="#c9b6ff" opacity=".5"/><rect x="61" y="83" width="38" height="32" rx="5" fill="#e9ddff"/><path d="M68 83V74a12 12 0 0 1 24 0v9" stroke="#e9ddff" strokeWidth="4"/><circle cx="80" cy="96" r="3" fill="#443483"/><path d="M80 96v7" stroke="#443483" strokeWidth="2"/></svg>}
+    </div>)}
+    <div className="security-sculpture__base"/>
+  </div>;
 }
 
 function DPHero({ go }) {
@@ -798,14 +672,21 @@ function DPManifesto() {
           </div>
         </header>
 
+        <div className="dpm__layout">
+        <nav className="dpm__index" aria-label="Nesta página">
+          <span className="eyebrow">Nesta página</span>
+          {MANIFESTO_SECTIONS.map(s=><a key={s.id} href={'#protection#'+s.id} onClick={e=>{e.preventDefault();document.getElementById(s.id)?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});document.getElementById(s.id)?.focus({preventScroll:true});}}><span>{s.num}</span>{s.title}</a>)}
+        </nav>
         <div className="dpm__content">
           {MANIFESTO_SECTIONS.map((s) => (
-            <section key={s.id} id={s.id} className="dpm__sec" data-reveal>
+            <section key={s.id} id={s.id} className="dpm__sec" tabIndex={-1} data-reveal>
               <div className="dpm__sec-num">{s.num}</div>
               <h3 className="dpm__sec-title display">{s.title}</h3>
               <div className="dpm__sec-body">{s.body}</div>
             </section>
           ))}
+        </div>
+
         </div>
 
         <p className="dpm__foot-note">

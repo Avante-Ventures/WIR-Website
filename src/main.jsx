@@ -14,3 +14,5 @@ import './styles/data-protection.css';
 ReactDOM.createRoot(document.getElementById('app')).render(<App />);
 
 import './styles/site-scale.css';
+
+import './styles/editorial-details.css';

@@ -7,7 +7,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { parseHTML } from 'linkedom';
 const require=createRequire(import.meta.url);
-const entries=[['src/solutions.jsx','SolutionsPage','solution-overview'],['src/experience-pages.jsx','HowPage','information-flow'],['src/about.jsx','AboutPage','wir-team']];
+const entries=[['src/solutions.jsx','SolutionsPage','solution-overview'],['src/experience-pages.jsx','HowPage','information-flow'],['src/about.jsx','AboutPage','wir-team'],['src/data-protection.jsx','DataProtectionPage',null]];
 for(const [file,name,anchor] of entries){
  const result=await build({entryPoints:[file],bundle:true,platform:'node',format:'cjs',write:false,packages:'external',loader:{'.css':'empty'}});
  for(const lang of ['pt-BR','en','es'])test(`${name} renders complete semantic content in ${lang}`,()=>{
@@ -15,10 +15,15 @@ for(const [file,name,anchor] of entries){
   vm.runInNewContext(result.outputFiles[0].text,{module,exports:module.exports,require,document:{documentElement:{lang}},location:{hash:''},console});
   const {document}=parseHTML(renderToString(React.createElement(module.exports[name],{go(){}})));
   assert.equal(document.querySelectorAll('h1').length,1);
-  assert(document.getElementById(anchor));
-  assert(document.querySelector('a[href="#contact"]'));
+  if(anchor)assert(document.getElementById(anchor));
+  if(name!=='DataProtectionPage')assert(document.querySelector('a[href="#contact"]'));
   assert(!document.textContent?.includes('undefined'));
   const ids=[...document.querySelectorAll('[id]')].map(el=>el.id);assert.equal(new Set(ids).size,ids.length);
+  if(name==='DataProtectionPage'&&lang==='pt-BR'){
+   const links=[...document.querySelectorAll('.dpm__index a')];assert.equal(links.length,12);
+   for(const link of links){const id=link.getAttribute('href').split('#').at(-1);assert(document.getElementById(id));}
+   assert.equal(document.querySelectorAll('.dpm__sec').length,12);
+  }
   if(name==='HowPage'){
    const tabs=document.querySelectorAll('[role="tab"]');assert.equal(tabs.length,3);
    assert.equal(document.querySelectorAll('[aria-selected="true"]').length,1);
