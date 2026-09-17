@@ -126,35 +126,43 @@
 <p><strong>Flow underwriting is a high-volume, low-touch model where rules and machine learning decide routine risks and escalate only exceptions, unlike traditional case-by-case review and unlike STP, a processing metric.</strong></p>
 <p>Flow underwriting treats a book of business as a portfolio to be steered, not a stack of files to be read one by one. In a flow model, the insurer defines its appetite and pricing logic up front, encodes it as rules, and lets models score each incoming submission against that logic. Risks that fall cleanly inside appetite are quoted or accepted automatically. Only the genuinely ambiguous or large risks are routed to a human underwriter, who now spends time where judgment actually adds value.</p>
 <p>Traditional underwriting works the other way around. Every submission, routine or complex, lands on an underwriter&#39;s desk. The underwriter rekeys data from PDFs and emails, checks it against the appetite guide, prices it, and decides. It is thorough, but it does not scale: throughput is capped by headcount, turnaround is slow, and two underwriters can reach different answers on the same risk.</p>
-<p>The core differences between the two models:
-- <strong>Decision default:</strong> flow decides standard risks automatically; traditional routes every risk to a person.
-- <strong>Human role:</strong> in flow, underwriters own exceptions and portfolio strategy; in traditional, they own every file.
-- <strong>Consistency:</strong> flow applies the same encoded appetite to every submission; manual review varies by underwriter and by day.
-- <strong>Throughput:</strong> flow scales with compute and data quality; traditional scales only with headcount.
-- <strong>Speed:</strong> flow can quote in minutes on clean data; traditional turnaround is often measured in days.</p>
+<p>The core differences between the two models:</p>
+<ul>
+  <li><strong>Decision default:</strong> flow decides standard risks automatically; traditional routes every risk to a person.</li>
+  <li><strong>Human role:</strong> in flow, underwriters own exceptions and portfolio strategy; in traditional, they own every file.</li>
+  <li><strong>Consistency:</strong> flow applies the same encoded appetite to every submission; manual review varies by underwriter and by day.</li>
+  <li><strong>Throughput:</strong> flow scales with compute and data quality; traditional scales only with headcount.</li>
+  <li><strong>Speed:</strong> flow can quote in minutes on clean data; traditional turnaround is often measured in days.</li>
+</ul>
 <p>In commercial underwriting, a large share of an underwriter&#39;s day is consumed by administrative and non-core work: rekeying data from PDFs, chasing missing documents, and formatting submissions rather than assessing risk. Flow underwriting exists to reclaim that time. By automating the routine, it lets the underwriting team concentrate on the risks and portfolio moves that actually shift the loss ratio.</p>
 <h3>Which risks and lines suit flow underwriting?</h3>
-<p>Flow underwriting works best where risks are frequent, relatively standardized, and backed by enough data to model. Not every line qualifies, and a mature program deliberately mixes both approaches:
-- <strong>High-volume commercial lines</strong> such as small-business property and casualty, where submissions look alike and volume is high.
-- <strong>Delegated authority and MGA books</strong>, where a defined appetite is already written down and can be applied at scale.
-- <strong>Renewals and mid-market risks</strong> that fit a known profile and rarely need bespoke terms.
-- <strong>Complex specialty risk</strong> stays with human underwriters, who use the freed capacity to price the hard cases carefully.</p>
+<p>Flow underwriting works best where risks are frequent, relatively standardized, and backed by enough data to model. Not every line qualifies, and a mature program deliberately mixes both approaches:</p>
+<ul>
+  <li><strong>High-volume commercial lines</strong> such as small-business property and casualty, where submissions look alike and volume is high.</li>
+  <li><strong>Delegated authority and MGA books</strong>, where a defined appetite is already written down and can be applied at scale.</li>
+  <li><strong>Renewals and mid-market risks</strong> that fit a known profile and rarely need bespoke terms.</li>
+  <li><strong>Complex specialty risk</strong> stays with human underwriters, who use the freed capacity to price the hard cases carefully.</li>
+</ul>
 <p>The goal is not to automate everything. It is to let the routine flow through automatically so underwriters spend their judgment on the risks that reward it.</p>
 <h3>Is flow underwriting the same as straight-through processing (STP)?</h3>
 <p>No. STP is a measurement, and flow underwriting is an operating model. STP rate is the percentage of submissions that pass from intake to quote or bind with no human touch. Flow underwriting is the whole way of working that a high STP rate implies: appetite encoded as rules, models scoring every case, and humans reserved for exceptions. You can report an STP rate on a traditional book, but you build a flow model to raise it on purpose. If moving that number is the goal, see our guide on <a href="/insights/how-to-increase-straight-through-processing-rate-insurance/" class="blarticle__link-int">raising your straight-through processing rate</a>.</p>
 <h3>What makes underwriting &quot;algorithmic&quot;?</h3>
-<p>Algorithmic underwriting is flow underwriting&#39;s engine. It means the accept, refer, and price decisions are driven by an explicit combination of rules and machine learning rather than by unaided human reading. Two layers work together:
-- <strong>Rules</strong> encode the appetite guide: eligible classes, geographies, limits, and the hard knockouts the insurer already uses.
-- <strong>Machine learning</strong> ranks and prices within appetite, learning from the insurer&#39;s own prior binds, declines, and loss history.</p>
+<p>Algorithmic underwriting is flow underwriting&#39;s engine. It means the accept, refer, and price decisions are driven by an explicit combination of rules and machine learning rather than by unaided human reading. Two layers work together:</p>
+<ul>
+  <li><strong>Rules</strong> encode the appetite guide: eligible classes, geographies, limits, and the hard knockouts the insurer already uses.</li>
+  <li><strong>Machine learning</strong> ranks and prices within appetite, learning from the insurer&#39;s own prior binds, declines, and loss history.</li>
+</ul>
 <p>The important guardrail is that algorithmic underwriting enforces the insurer&#39;s appetite, it does not invent it. The rules and the risk tolerance belong to the carrier, set by its own underwriters and actuaries. The algorithm applies them consistently at volume and documents why each submission was accepted, referred, or priced the way it was. That audit trail is what makes the model defensible to regulators and reinsurers.</p>
 <h3>How does AI make flow underwriting viable at scale?</h3>
-<p>Flow is an old idea. What changed is that AI can now do the unglamorous work that used to make flow impossible outside the simplest personal lines. In commercial risk, the submission arrives as unstructured ACORD forms, loss runs, statements of value, and email threads, and a person had to read all of it before any rule could fire. AI removes that bottleneck by turning the messy submission into clean, structured data that the rules and models can act on. The sequence looks like this:
-1. <strong>Ingest</strong> the submission from email, portal, or broker in whatever format it arrives.
-2. <strong>Extract</strong> structured fields from ACORD forms, loss runs, and statements of value into a clean record.
-3. <strong>Enrich</strong> the risk with third-party and internal data the underwriter would otherwise look up by hand.
-4. <strong>Score</strong> the submission against the encoded appetite to produce an in-or-out-of-appetite result.
-5. <strong>Route</strong> clean, in-appetite risks to automatic quote or bind, and send exceptions to an underwriter with the reasoning attached.
-6. <strong>Log</strong> every decision and its inputs so the outcome is auditable end to end.</p>
+<p>Flow is an old idea. What changed is that AI can now do the unglamorous work that used to make flow impossible outside the simplest personal lines. In commercial risk, the submission arrives as unstructured ACORD forms, loss runs, statements of value, and email threads, and a person had to read all of it before any rule could fire. AI removes that bottleneck by turning the messy submission into clean, structured data that the rules and models can act on. The sequence looks like this:</p>
+<ol>
+  <li><strong>Ingest</strong> the submission from email, portal, or broker in whatever format it arrives.</li>
+  <li><strong>Extract</strong> structured fields from ACORD forms, loss runs, and statements of value into a clean record.</li>
+  <li><strong>Enrich</strong> the risk with third-party and internal data the underwriter would otherwise look up by hand.</li>
+  <li><strong>Score</strong> the submission against the encoded appetite to produce an in-or-out-of-appetite result.</li>
+  <li><strong>Route</strong> clean, in-appetite risks to automatic quote or bind, and send exceptions to an underwriter with the reasoning attached.</li>
+  <li><strong>Log</strong> every decision and its inputs so the outcome is auditable end to end.</li>
+</ol>
 <p>This is where an <a href="/insights/what-is-ai-underwriting-workbench/" class="blarticle__link-int">AI underwriting workbench</a> and <a href="/insights/agentic-ai-insurance-underwriting/" class="blarticle__link-int">agentic AI for underwriting</a> fit into the picture. The workbench is the workspace where exceptions land, and agentic AI is what executes the multi-step intake-to-decision path. Flow underwriting is the portfolio-and-volume model those tools serve, focused on how the whole book is handled rather than on any single agent&#39;s architecture.</p>
 <h3>Where the market is heading: Lloyd&#39;s flow business and algorithmic follow</h3>
 <p>Flow underwriting is not a vendor coinage. &quot;Flow business&quot; is an established term at Lloyd&#39;s for high-volume, lower-complexity risk that lends itself to standardized, systematic underwriting, as distinct from complex specialty placements. Alongside it, algorithmic follow syndicates, such as Ki, the algorithmically driven follow-only syndicate launched by Brit, underwrite by applying an algorithm to risks led by other syndicates rather than assessing each one by hand. Read these as market signals only, not as WIR operations: the broad direction of travel is toward encoding appetite and letting software handle the routine flow, with people concentrated on the risks that genuinely need them.</p>

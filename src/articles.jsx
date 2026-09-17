@@ -9984,33 +9984,40 @@ Observabilidade de decisões de IA é, no fundo, o que separa a operação que a
   },
 ];
 
-// Markdown-lite parser: paragraphs, ### subheads, **bold**, *italic*, [text](url), > quote, 1./- lists
+// Markdown-lite parser: paragraphs, #..###### subheads, **bold**, *italic*, `code`, [text](url), > quote, 1./- lists.
+// A block between blank lines can still mix kinds ("Intro:\n- a\n- b", "## Title\ntext"): it is split into runs of one
+// kind so a list never prints as a paragraph with literal dashes. Keep in sync with splitBlock in scripts/build-articles.cjs.
+function splitBlock(block) {
+  const kind = (l) => /^#{1,6}\s/.test(l) ? "h3" : /^>\s?/.test(l) ? "quote" : /^\d+[.)]\s/.test(l) ? "ol" : /^[-*•]\s/.test(l) ? "ul" : "p";
+  const runs = [];
+  for (const line of block.split("\n").map(l => l.trim()).filter(Boolean)) {
+    const k = kind(line), last = runs[runs.length - 1];
+    if (last && k !== "h3" && (last.type === k || (last.type === "quote" && k === "p"))) last.lines.push(line);
+    else runs.push({ type: k, lines: [line] });
+  }
+  return runs;
+}
+
 function parseBody(text) {
-  return text.trim().split(/\n\s*\n/).map(block => {
-    const t = block.trim();
-    if (t.startsWith("### ")) return { type: "h3", text: t.slice(4) };
-    if (t.startsWith("> ")) return { type: "quote", text: t.slice(2) };
-    if (/^\d+\.\s/.test(t)) {
-      const items = t.split("\n").map(l => l.replace(/^\d+\.\s+/, "").trim()).filter(Boolean);
-      return { type: "ol", items };
-    }
-    if (/^-\s/.test(t)) {
-      const items = t.split("\n").map(l => l.replace(/^-\s+/, "").trim()).filter(Boolean);
-      return { type: "ul", items };
-    }
-    return { type: "p", text: t };
-  });
+  return text.trim().split(/\n\s*\n/).flatMap(block => splitBlock(block.trim()).map(({ type, lines }) => {
+    if (type === "h3") return { type, text: lines[0].replace(/^#{1,6}\s+/, "") };
+    if (type === "quote") return { type, text: lines.map(l => l.replace(/^>\s?/, "")).join("\n") };
+    if (type === "ol" || type === "ul") return { type, items: lines.map(l => l.replace(/^(?:\d+[.)]|[-*•])\s+/, "")) };
+    return { type: "p", text: lines.join("\n") };
+  }));
 }
 
 function renderInline(text) {
   const parts = [];
   // Order matters: bold first, then italic, then images, then links
-  const re = /(\*\*[^*]+\*\*|!\[[^\]]*\]\([^)]+\)|\[[^\]]+\]\([^)]+\)|\*[^*]+\*)/g;
+  const re = /(\*\*[^*]+\*\*|!\[[^\]]*\]\([^)]+\)|\[[^\]]+\]\([^)]+\)|\*[^*]+\*|`[^`\n]+`)/g;
   let last = 0, m, key = 0;
   while ((m = re.exec(text)) !== null) {
     if (m.index > last) parts.push(text.slice(last, m.index));
     const tok = m[0];
-    if (tok.startsWith("**")) {
+    if (tok.startsWith("`")) {
+      parts.push(React.createElement("code", { key: key++ }, tok.slice(1, -1)));
+    } else if (tok.startsWith("**")) {
       parts.push(React.createElement("strong", { key: key++ }, tok.slice(2, -2)));
     } else if (tok.startsWith("![")) {
       const im = /^!\[([^\]]*)\]\(([^)]+)\)$/.exec(tok);

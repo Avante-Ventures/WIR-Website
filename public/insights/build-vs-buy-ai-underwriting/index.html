@@ -131,31 +131,37 @@
 <p>Building in-house means standing up data pipelines, document extraction, appetite rules, machine-learning models, core integrations, and a permanent MLOps function. The upfront build is the visible cost. The durable cost is maintenance, because models drift, document formats change, ACORD and carrier templates evolve, and someone has to retrain and monitor everything long after launch.</p>
 <p>The larger exposure is delivery risk. Custom software has a poor track record of shipping on time and on scope, and underwriting AI is harder than average because it touches messy documents, regulated decisions, and a live system of record.</p>
 <blockquote>According to the Standish Group CHAOS Report (2015), fewer than one in three software projects are delivered on time, on budget, and with the expected features.</blockquote>
-<p>Build in-house when these conditions hold:
-- <strong>Proprietary edge:</strong> your pricing or risk-selection model is a genuine competitive moat you cannot outsource.
-- <strong>Standing talent:</strong> you already employ machine-learning and MLOps engineers who can own drift and retraining.
-- <strong>Niche data:</strong> your book depends on data or underwriting logic no external vendor has seen.
-- <strong>Time to spare:</strong> you can absorb a multi-quarter build without losing the underwriting window.</p>
+<p>Build in-house when these conditions hold:</p>
+<ul>
+  <li><strong>Proprietary edge:</strong> your pricing or risk-selection model is a genuine competitive moat you cannot outsource.</li>
+  <li><strong>Standing talent:</strong> you already employ machine-learning and MLOps engineers who can own drift and retraining.</li>
+  <li><strong>Niche data:</strong> your book depends on data or underwriting logic no external vendor has seen.</li>
+  <li><strong>Time to spare:</strong> you can absorb a multi-quarter build without losing the underwriting window.</li>
+</ul>
 <h3>What do you get by buying an external AI layer?</h3>
 <p>Buying means deploying a ready AI layer that already handles submission intake, data extraction, appetite matching, quoting, and decisioning, and connects to the core through APIs. You get speed and a much smaller failure surface, because the vendor owns the models, the document parsing, and the ongoing maintenance.</p>
 <blockquote>According to McKinsey (2021), underwriters spend as much as 40 percent of their time on administrative and non-core tasks rather than on risk selection.</blockquote>
-<p>Buy an external layer when these conditions hold:
-- <strong>Faster payback:</strong> you want measurable cycle-time and straight-through-processing gains in quarters, not years.
-- <strong>Core untouched:</strong> you need automation now without a migration, so the AI layer rides on top of what you run.
-- <strong>Shared maintenance:</strong> you want the vendor to absorb model drift, new document formats, and retraining.
-- <strong>Focused team:</strong> your people should underwrite and price risk, not operate an ML platform.</p>
+<p>Buy an external layer when these conditions hold:</p>
+<ul>
+  <li><strong>Faster payback:</strong> you want measurable cycle-time and straight-through-processing gains in quarters, not years.</li>
+  <li><strong>Core untouched:</strong> you need automation now without a migration, so the AI layer rides on top of what you run.</li>
+  <li><strong>Shared maintenance:</strong> you want the vendor to absorb model drift, new document formats, and retraining.</li>
+  <li><strong>Focused team:</strong> your people should underwrite and price risk, not operate an ML platform.</li>
+</ul>
 <p>The defining advantage of the external-layer route is that it buys time. You get modern <a href="/insights/ai-underwriting-without-replacing-core-system/" class="blarticle__link-int">AI underwriting without replacing your core system</a>, so no multi-year migration blocks value. The layer reads a submission, structures it, checks it against appetite, and returns a decision the underwriter can act on, while the system of record stays exactly where it is.</p>
 <h3>Does buying AI for underwriting mean replacing my core system?</h3>
 <p>No. A well-designed external AI layer never replaces Guidewire, Duck Creek, Sapiens, or a legacy platform; it integrates with them. WIR Innovation, for example, connects to the core through APIs and hands structured <a href="/insights/what-is-insurance-decisioning/" class="blarticle__link-int">insurance decisioning</a> back to it, so the system of record stays the system of record. That is the entire point of the layer model: you add machine learning and automation to underwriting while <a href="/insights/how-ai-integrates-with-guidewire-without-replacing-it/" class="blarticle__link-int">integrating with Guidewire without replacing it</a>. Replacing the core is the slow, expensive path that in-house teams often back into by accident, and the external layer is designed to avoid it.</p>
 <h3>What about a hybrid: buy now, build the edge later?</h3>
 <p>Most large insurers do not face a pure binary, and a hybrid is often the strongest answer. You buy an external AI layer to automate the high-volume, undifferentiated work immediately, submission intake, data extraction, appetite matching, and routine decisioning, and you reserve in-house engineering for the one or two models that genuinely set your book apart. This sequencing captures near-term gains in cycle time and straight-through processing while you build the proprietary piece deliberately, without a deadline forcing a rushed model into production. It also de-risks the build, because your team learns from a working layer before writing a line of their own. The mistake is inverting the order, building the commodity plumbing yourself and delaying the automation your underwriters need today.</p>
 <h3>A five-question decision checklist</h3>
-<p>Run your own book through five questions before you commit:
-1. <strong>Moat:</strong> is this AI a genuine competitive edge, or table-stakes automation everyone will soon have?
-2. <strong>Talent:</strong> do you already staff ML and MLOps engineers, or would you be hiring a new function?
-3. <strong>Timeline:</strong> can you wait several quarters for a build, or do you need quote-to-bind gains sooner?
-4. <strong>Maintenance:</strong> who owns model drift, new document formats, and retraining in years two and three?
-5. <strong>Core impact:</strong> does the option touch the policy-admin system, or ride on top of it?</p>
+<p>Run your own book through five questions before you commit:</p>
+<ol>
+  <li><strong>Moat:</strong> is this AI a genuine competitive edge, or table-stakes automation everyone will soon have?</li>
+  <li><strong>Talent:</strong> do you already staff ML and MLOps engineers, or would you be hiring a new function?</li>
+  <li><strong>Timeline:</strong> can you wait several quarters for a build, or do you need quote-to-bind gains sooner?</li>
+  <li><strong>Maintenance:</strong> who owns model drift, new document formats, and retraining in years two and three?</li>
+  <li><strong>Core impact:</strong> does the option touch the policy-admin system, or ride on top of it?</li>
+</ol>
 <p>If most answers point to speed, low switching risk, and leaving the core alone, buy an external layer. If your underwriting model is the product and you have the team to run it, build. Many insurers land on a hybrid: buy the layer to automate intake and decisioning now, and build only the narrow, proprietary model that truly differentiates the book. Whichever path you choose, regulators from the EU to Brazil&#39;s SUSEP increasingly expect underwriting decisions to be auditable and explainable, and an external layer that logs every decision makes that easier to satisfy than a black-box build. The goal is not ideological purity about build or buy, it is getting faster, more consistent underwriting decisions without betting the core system on a multi-year project.</p>
 <section class="blarticle__faq" aria-label="Frequently asked questions">
 <h3>Frequently asked questions</h3>

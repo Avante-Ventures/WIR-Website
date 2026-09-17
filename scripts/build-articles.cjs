@@ -30,12 +30,14 @@ const esc = (s) => String(s)
   .replace(/'/g, "&#39;");
 
 function renderInline(text) {
-  const re = /(\*\*[^*]+\*\*|!\[[^\]]*\]\([^)]+\)|\[[^\]]+\]\([^)]+\)|\*[^*]+\*)/g;
+  const re = /(\*\*[^*]+\*\*|!\[[^\]]*\]\([^)]+\)|\[[^\]]+\]\([^)]+\)|\*[^*]+\*|`[^`\n]+`)/g;
   let out = "", lastIndex = 0, m;
   while ((m = re.exec(text)) !== null) {
     if (m.index > lastIndex) out += esc(text.slice(lastIndex, m.index));
     const tok = m[0];
-    if (tok.startsWith("**")) {
+    if (tok.startsWith("`")) {
+      out += `<code>${esc(tok.slice(1, -1))}</code>`;
+    } else if (tok.startsWith("**")) {
       out += `<strong>${esc(tok.slice(2, -2))}</strong>`;
     } else if (tok.startsWith("![")) {
       const im = /^!\[([^\]]*)\]\(([^)]+)\)$/.exec(tok);
@@ -58,19 +60,23 @@ function renderInline(text) {
   return out;
 }
 
+// A block between blank lines can still mix kinds ("Intro:\n- a\n- b", "## Title\ntext"):
+// split it into runs of one kind so a list never prints as a paragraph with literal dashes.
+// Keep in sync with splitBlock in src/articles.jsx.
+function splitBlock(block) {
+  const kind = (l) => /^#{1,6}\s/.test(l) ? "h3" : /^>\s?/.test(l) ? "quote" : /^\d+[.)]\s/.test(l) ? "ol" : /^[-*•]\s/.test(l) ? "ul" : "p";
+  const runs = [];
+  for (const line of block.split("\n").map(l => l.trim()).filter(Boolean)) {
+    const k = kind(line), last = runs[runs.length - 1];
+    if (last && k !== "h3" && (last.type === k || (last.type === "quote" && k === "p"))) last.lines.push(line);
+    else runs.push({ type: k, lines: [line] });
+  }
+  return runs;
+}
+
 function renderBody(body) {
   const blocks = body.trim().split(/\n\s*\n/).map(b => b.trim());
   return blocks.map(block => {
-    if (block.startsWith("### ")) return `<h3>${renderInline(block.slice(4))}</h3>`;
-    if (block.startsWith("> ")) return `<blockquote>${renderInline(block.slice(2))}</blockquote>`;
-    if (/^\d+\.\s/.test(block)) {
-      const items = block.split("\n").map(l => l.replace(/^\d+\.\s+/, "").trim()).filter(Boolean);
-      return `<ol>\n${items.map(it => `  <li>${renderInline(it)}</li>`).join("\n")}\n</ol>`;
-    }
-    if (/^-\s/.test(block)) {
-      const items = block.split("\n").map(l => l.replace(/^-\s+/, "").trim()).filter(Boolean);
-      return `<ul>\n${items.map(it => `  <li>${renderInline(it)}</li>`).join("\n")}\n</ul>`;
-    }
     if (block.startsWith("|")) {
       const rows = block.split("\n").map(r => r.trim()).filter(Boolean);
       if (rows.length >= 2 && /^\|[\s:|-]+\|$/.test(rows[1])) {
@@ -80,7 +86,15 @@ function renderBody(body) {
         return `<div class="blarticle__tablewrap"><table class="blarticle__table">\n<thead><tr>${head.map(h => `<th>${h}</th>`).join("")}</tr></thead>\n<tbody>\n${body.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join("")}</tr>`).join("\n")}\n</tbody>\n</table></div>`;
       }
     }
-    return `<p>${renderInline(block)}</p>`;
+    return splitBlock(block).map(({ type, lines }) => {
+      if (type === "h3") return `<h3>${renderInline(lines[0].replace(/^#{1,6}\s+/, ""))}</h3>`;
+      if (type === "quote") return `<blockquote>${renderInline(lines.map(l => l.replace(/^>\s?/, "")).join("\n"))}</blockquote>`;
+      if (type === "ol" || type === "ul") {
+        const items = lines.map(l => l.replace(/^(?:\d+[.)]|[-*•])\s+/, ""));
+        return `<${type}>\n${items.map(it => `  <li>${renderInline(it)}</li>`).join("\n")}\n</${type}>`;
+      }
+      return `<p>${renderInline(lines.join("\n"))}</p>`;
+    }).join("\n");
   }).join("\n");
 }
 
