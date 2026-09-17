@@ -18,6 +18,11 @@ Cristian and Nicholas approved the complete site and existing SUSEP dashboard. C
 
 - React/Vite website here; separate dashboard checkout at `../wir-susep-dashboard`.
 - Article source: `src/articles.jsx`. Update the generator and source styles, never generated article HTML directly. Keep the hand-authored WIR Index report.
+- **No Markdown syntax is ever shown to a reader.** Published articles must never display `**`, `*`, `#`–`######`, `> `, `- ` / `1. ` list markers, backticks or `|` pipes as text.
+  - Article `body` strings use markdown-lite only. Each kind goes in its own blank-line block: `### ` subheads, `- ` / `1. ` lists, `> ` quotes and `|` tables. Inside blocks, use only `**bold**`, `*italic*`, `` `code` `` and `[links](…)`.
+  - The two parsers must stay in sync: `splitBlock` in `src/articles.jsx` and in `scripts/build-articles.cjs`.
+  - After any content or parser change, check the generated `public/insights/*/index.html`, not only the source.
+  - Background: on 2026-09-17, lists glued to a paragraph printed as one paragraph with literal dashes.
 - PT Protection uses Luiz's approved twelve-section manifesto. Do not change its assertions without his sign-off. Existing EN/ES editorial versions remain until approved translations exist.
 - Preserve product production/development statuses, dashboard data/calculations/ETL, real team identities, languages and contact contracts. Add no invented metrics or commitments.
 - Reuse media and editable SVG/CSS. The only recorded Higgsfield video generation cost 72 credits; later refinements used no paid generation.
