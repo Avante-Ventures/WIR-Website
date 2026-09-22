@@ -1677,6 +1677,62 @@ html.js-ready [data-reveal].is-revealed{ opacity: 1; transform: translateY(0); }
   .nav__lang-btn{ padding: 6px 8px 6px 10px; font-size: 11px; }
 }
 
+/* ── Insights → WIR Index (painel do nav) ───────
+   Abre no hover/foco, sem atraso e sem JS: o mesmo markup sai do React
+   (src/shared.jsx) e do gerador estático (scripts/build-articles.cjs), e as
+   páginas de /insights/ não carregam bundle nenhum. O ::before é a ponte
+   invisível sobre a folga entre o link e o painel — sem ela o menu fecha no
+   meio do caminho do mouse. :focus-within dá o mesmo acesso pelo teclado. */
+.nav__has-menu{ position: relative; display: flex; align-items: center; }
+.nav__menu{
+  position: absolute; top: calc(100% + 10px); left: 8px;
+  min-width: 262px; padding: 6px;
+  background: var(--paper);
+  border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px -16px rgba(11,10,8,.18);
+  z-index: 60;
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .16s var(--ease-out), transform .16s var(--ease-out), visibility .16s;
+}
+.nav__menu::before{ content: ""; position: absolute; left: 0; right: 0; top: -10px; height: 10px; }
+.nav__has-menu:hover > .nav__menu,
+.nav__has-menu:focus-within > .nav__menu{
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.nav__menu-link{
+  display: block; padding: 10px 12px; border-radius: 8px;
+  transition: background .15s;
+}
+.nav__menu-link:hover{ background: var(--paper-2); }
+.nav__menu-label{ display: block; font-size: 13px; font-weight: 600; color: var(--ink); letter-spacing: -.01em; }
+.nav__menu-desc{ display: block; margin-top: 3px; font-size: 11px; line-height: 1.45; color: var(--ink-2); }
+@media (prefers-reduced-motion: reduce){
+  .nav__menu{ transition: none; transform: none; }
+  .nav__has-menu:hover > .nav__menu,
+  .nav__has-menu:focus-within > .nav__menu{ transform: none; }
+}
+
+/* No menu mobile não existe hover: o WIR Index vira um item recuado, sempre à vista.
+   A régua passa do link para o grupo inteiro, senão ela cortaria entre Insights e o
+   sub-item, separando visualmente o pai do filho. */
+.nav__mobile .nav__has-menu{
+  display: block;
+  border-bottom: 1px solid color-mix(in oklab, var(--ink) 8%, transparent);
+}
+.nav__mobile .nav__has-menu > .nav__link{ border-bottom: 0; }
+.nav__mobile .nav__menu{
+  position: static; opacity: 1; visibility: visible; transform: none;
+  min-width: 0; padding: 4px 0 4px 14px; margin: 0;
+  background: none; border: 0;
+  border-left: 2px solid var(--paper-3); border-radius: 0;
+  box-shadow: none; transition: none;
+}
+.nav__mobile .nav__menu::before{ display: none; }
+.nav__mobile .nav__menu-link{ padding: 12px; }
+.nav__mobile .nav__menu-label{ font-size: 15px; }
+.nav__mobile .nav__menu-desc{ font-size: 12px; }
+
 /* ─────────── DASHBOARD CARD (home) ───────────
    Painel público SES/SUSEP. Mesmo sistema editorial do resto do home: régua
    hairline em cima e embaixo, eyebrow em mono, título em display com <em>. */

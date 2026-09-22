@@ -305,13 +305,20 @@ function renderNav(lang = "pt-BR", alt = null) {
   const cur = LANG_META[lang] || LANG_META["pt-BR"];
   const tickerItems = [...c.ticker, ...c.ticker]
     .map(t => `    <span class="ticker__item">${t}</span>`).join("\n");
+  // Painel do WIR Index pendurado em "Insights", igual ao SPA (src/shared.jsx): hover
+  // e foco resolvidos só por CSS (.nav__has-menu), porque estas páginas não carregam
+  // bundle. O relatório só existe em PT, daí o "(PT)" + hreflang na árvore inglesa.
+  const wirIndexMenu = `<div class="nav__menu"><a href="/insights/wir-index/" hreflang="pt-BR" class="nav__menu-link">` +
+    `<span class="nav__menu-label">${lang === "en" ? "WIR Index (PT)" : "WIR Index"}</span>` +
+    `<span class="nav__menu-desc">${lang === "en" ? "InsurTech landscape · Brazil &amp; LATAM" : "Panorama InsurTech · Brasil &amp; LATAM"}</span>` +
+    `</a></div>`;
   const links = (indent) => [
     `<a href="${c.base}/#solutions" class="nav__link">${lang === "en" ? "Solutions" : "Soluções"}</a>`,
     `<a href="${c.base}/#how" class="nav__link">${lang === "en" ? "How it works" : "Como funciona"}</a>`,
-    `<a href="/dashboard/?lang=${lang === "en" ? "en" : "pt"}" class="nav__link nav__link--badge">Dashboard SUSEP ↗</a>`,
     `<a href="${c.base}/#about" class="nav__link">${lang === "en" ? "About WIR" : "Sobre a WIR"}</a>`,
     `<a href="${c.base}/#protection" class="nav__link">${c.navProtection}</a>`,
-    `<a href="${insightsHref(lang)}" class="nav__link nav__link--active">Insights</a>`,
+    `<div class="nav__has-menu"><a href="${insightsHref(lang)}" class="nav__link nav__link--active">Insights</a>${wirIndexMenu}</div>`,
+    `<a href="/dashboard/?lang=${lang === "en" ? "en" : "pt"}" class="nav__link nav__link--badge">Dashboard SUSEP ↗</a>`,
   ].map(l => indent + l).join("\n");
   const langLink = alt ? `
       <div class="nav__lang"><a class="nav__lang-btn" href="${alt.href}" hreflang="${alt.hreflang}" lang="${alt.hreflang}" aria-label="${alt.name}"><span class="nav__lang-code">${alt.code}</span></a></div>` : "";

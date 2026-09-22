@@ -9,6 +9,11 @@ import { LANG, INSIGHTS_HREF, MANIFESTO_HREF, INSIGHTS_HREFLANG, MANIFESTO_HREFL
 // Vercel separado), por isso abre em nova aba: é outro app, não outra página.
 export const DASHBOARD_HREF = `/dashboard/?lang=${LANG}`;
 
+// Relatório trimestral carro-chefe. Página estática escrita à mão, só em PT: as
+// árvores EN/ES apontam para a mesma URL e marcam "(PT)" + hrefLang, para o salto
+// de idioma ser anunciado em vez de silencioso.
+export const WIR_INDEX_HREF = "/insights/wir-index/";
+
 const T = {
   pt: {
     ticker: [
@@ -20,10 +25,12 @@ const T = {
     navLinks: [
       { id: "solutions", label: "Soluções" },
       { id: "how", label: "Como funciona" },
-      { id: "dashboard", label: "Dashboard SUSEP ↗", href: DASHBOARD_HREF, badge: true },
       { id: "about", label: "Sobre a WIR" },
       { id: "protection", label: "Proteção de Dados" },
-      { id: "blog", label: "Insights", href: INSIGHTS_HREF },
+      { id: "blog", label: "Insights", href: INSIGHTS_HREF, menu: [
+        { label: "WIR Index", desc: "Panorama InsurTech · Brasil & LATAM", href: WIR_INDEX_HREF, hl: "pt-BR" },
+      ] },
+      { id: "dashboard", label: "Dashboard SUSEP ↗", href: DASHBOARD_HREF, badge: true },
     ],
     navCta: "Falar com a WIR",
     footerDesc: "AI Scale Solutions para o mercado segurador. Distribuição, subscrição e inteligência operacional conectadas ao crescimento da sua operação.",
@@ -53,10 +60,12 @@ const T = {
     navLinks: [
       { id: "solutions", label: "Solutions" },
       { id: "how", label: "How it works" },
-      { id: "dashboard", label: "Dashboard SUSEP ↗", href: DASHBOARD_HREF, badge: true },
       { id: "about", label: "About WIR" },
       { id: "protection", label: "Data Protection" },
-      { id: "blog", label: "Insights", href: INSIGHTS_HREF },
+      { id: "blog", label: "Insights", href: INSIGHTS_HREF, menu: [
+        { label: "WIR Index (PT)", desc: "InsurTech landscape · Brazil & LATAM", href: WIR_INDEX_HREF, hl: "pt-BR" },
+      ] },
+      { id: "dashboard", label: "Dashboard SUSEP ↗", href: DASHBOARD_HREF, badge: true },
     ],
     navCta: "Talk to WIR",
     footerDesc: "AI Scale Solutions for insurance. Distribution, underwriting, and operational intelligence connected to the growth of your operation.",
@@ -86,10 +95,12 @@ const T = {
     navLinks: [
       { id: "solutions", label: "Soluciones" },
       { id: "how", label: "Cómo funciona" },
-      { id: "dashboard", label: "Dashboard SUSEP ↗", href: DASHBOARD_HREF, badge: true },
       { id: "about", label: "Sobre WIR" },
       { id: "protection", label: "Protección de Datos" },
-      { id: "blog", label: "Insights (PT)", href: INSIGHTS_HREF, hl: INSIGHTS_HREFLANG },
+      { id: "blog", label: "Insights (PT)", href: INSIGHTS_HREF, hl: INSIGHTS_HREFLANG, menu: [
+        { label: "WIR Index (PT)", desc: "Panorama InsurTech · Brasil y LATAM", href: WIR_INDEX_HREF, hl: "pt-BR" },
+      ] },
+      { id: "dashboard", label: "Dashboard SUSEP ↗", href: DASHBOARD_HREF, badge: true },
     ],
     navCta: "Hablar con WIR",
     footerDesc: "AI Scale Solutions para el mercado asegurador. Distribución, suscripción e inteligencia operativa conectadas al crecimiento de tu operación.",
@@ -263,7 +274,7 @@ export function Nav({ route, go }) {
     };
   }, [menuOpen]);
 
-  const navItem = (l, onClick) => (
+  const navAnchor = (l, onClick) => (
     l.href ? (
       <a key={l.id} href={l.href}
         target={l.ext ? "_blank" : undefined}
@@ -281,6 +292,26 @@ export function Nav({ route, go }) {
         {l.label}
       </a>
     )
+  );
+
+  // "Insights" carrega um painel com o WIR Index. Abre no hover/foco por CSS puro
+  // (:hover / :focus-within em style.css), sem estado nem temporizador: o mesmo
+  // markup roda aqui e nas páginas estáticas de /insights/, que não carregam React.
+  const navItem = (l, onClick) => (
+    l.menu ? (
+      <div key={l.id} className="nav__has-menu">
+        {navAnchor(l, onClick)}
+        <div className="nav__menu">
+          {l.menu.map(m => (
+            <a key={m.href} href={m.href} hrefLang={m.hl} className="nav__menu-link"
+              onClick={() => onClick && onClick()}>
+              <span className="nav__menu-label">{m.label}</span>
+              <span className="nav__menu-desc">{m.desc}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    ) : navAnchor(l, onClick)
   );
 
   return (
