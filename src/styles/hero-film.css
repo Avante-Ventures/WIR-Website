@@ -11,8 +11,7 @@
 .scale-hero__description { font-size: clamp(17px, 1.5vw, 21px); line-height: 1.42; max-width: 390px; margin: 25px 0; color: var(--scale-white); letter-spacing: -.025em; }
 .scale-hero__labels, .scale-hero__subjects { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; pointer-events: none; }
 .scale-hero__labels.is-visible, .scale-hero__subjects.is-visible { opacity: 1; }
-.scale-hero__labels > span { position: absolute; left: 81%; display: flex; align-items: center; gap: 16px; transform: translateY(-50%); white-space: nowrap; font-size: clamp(13px, 1.3vw, 18px); color: var(--scale-white); text-shadow: 0 1px 12px var(--wir-navy); }
-.scale-hero__labels i { display: block; width: 40px; height: 1px; background: var(--wir-lavender); opacity: .7; }
+.scale-hero__labels > span { position: absolute; left: calc(81% + 56px); display: flex; align-items: center; transform: translateY(-50%); white-space: nowrap; font-size: clamp(13px, 1.3vw, 18px); font-weight: 700; color: var(--scale-white); text-shadow: 0 1px 12px var(--wir-navy); }
 /* Anchor the label's center inside each ribbon, including the cover crop. */
 .scale-hero__labels { container-type: size; }
 .scale-hero__labels .ribbon-0 { top: calc(45cqh - 15cqw); }
@@ -42,8 +41,7 @@
   .scale-hero__description { max-width: 340px; }
   .scale-hero .scale-actions { gap: 10px; }
   .scale-hero .scale-button { padding: 0 20px; font-size: 12px; }
-  .scale-hero__labels > span { left: 78%; gap: 8px; }
-  .scale-hero__labels i { width: 22px; }
+  .scale-hero__labels > span { left: calc(78% + 30px); }
 }
 @media (max-width: 760px) {
   .scale-hero { height: auto; min-height: 0; padding-bottom: 0; display: flex; flex-direction: column; }
@@ -57,8 +55,7 @@
   .scale-hero__visual { position: relative; height: auto; width: 100%; aspect-ratio: 4 / 3; z-index: 0; margin-top: 12px; order: 1; }
   .scale-hero__visual video { object-position: right center; }
   .scale-hero__visual::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 22%; background: linear-gradient(var(--wir-navy), transparent); pointer-events: none; }
-  .scale-hero__labels > span { left: auto; right: 5%; gap: 8px; font-size: 12px; }
-  .scale-hero__labels i { width: 22px; }
+  .scale-hero__labels > span { left: auto; right: 5%; font-size: 12px; }
   .scale-hero__labels .ribbon-0 { top: 20%; }
   .scale-hero__labels .ribbon-1 { top: 47%; }
   .scale-hero__labels .ribbon-2 { top: 71%; }

@@ -128,7 +128,7 @@ export function Opening({ go }) {
           {COPY.subjects.map((subject, i) => <span key={subject} className={'subject-' + i}>{subject}</span>)}
         </div>
         <div className={'scale-hero__labels' + (final ? ' is-visible' : '')} aria-hidden="true">
-          {COPY.labels.map((name, i) => <span key={name} className={'ribbon-' + i}><i/>{name}</span>)}
+          {COPY.labels.map((name, i) => <span key={name} className={'ribbon-' + i}>{name}</span>)}
         </div>
       </div>
       <div className="scale-wrap scale-hero__content">
