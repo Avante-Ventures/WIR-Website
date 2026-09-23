@@ -300,7 +300,7 @@ const NAV_SCRIPT = "(function(){var b=document.querySelector('.nav__burger'),m=d
 // Static chrome nav, mirroring the SPA Nav in src/shared.jsx: ticker, desktop links, language
 // link, CTA, burger and mobile menu. `alt` is the page's translation ({ href, code, name,
 // hreflang }) or null, in which case no language link renders.
-function renderNav(lang = "pt-BR", alt = null) {
+function renderNav(lang = "pt-BR", alt = null, active = "insights") {
   const c = CHROME[lang] || CHROME["pt-BR"];
   const cur = LANG_META[lang] || LANG_META["pt-BR"];
   const tickerItems = [...c.ticker, ...c.ticker]
@@ -317,7 +317,7 @@ function renderNav(lang = "pt-BR", alt = null) {
     `<a href="${c.base}/#how" class="nav__link">${lang === "en" ? "How it works" : "Como funciona"}</a>`,
     `<a href="${c.base}/#about" class="nav__link">${lang === "en" ? "About WIR" : "Sobre a WIR"}</a>`,
     `<a href="${c.base}/#protection" class="nav__link">${c.navProtection}</a>`,
-    `<div class="nav__has-menu"><a href="${insightsHref(lang)}" class="nav__link nav__link--active">Insights</a>${wirIndexMenu}</div>`,
+    `<div class="nav__has-menu"><a href="${insightsHref(lang)}" class="nav__link${active === "insights" ? " nav__link--active" : ""}">Insights</a>${wirIndexMenu}</div>`,
     `<a href="/dashboard/?lang=${lang === "en" ? "en" : "pt"}" class="nav__link nav__link--badge">Dashboard SUSEP ↗</a>`,
   ].map(l => indent + l).join("\n");
   const langLink = alt ? `
@@ -392,7 +392,7 @@ function renderFooter(lang = "pt-BR") {
           <li><a href="${c.base}/#solutions">${c.navSolutions}</a></li>
           <li><a href="${c.base}/#protection">${c.navProtection}</a></li>
           <li><a href="${insightsHref(lang)}">Insights &amp; News</a></li>
-          <li><a href="${c.base}/#contact">${c.navCta}</a></li>
+          <li><a href="${c.base}/#contact">${lang === "en" ? "Contact" : "Contato"}</a></li>
           <li><a href="/dashboard/?lang=${lang === "en" ? "en" : "pt"}">Dashboard SUSEP ↗</a></li>
           <li><a href="${c.manifestoHref}">${c.navManifesto}</a></li>
         </ul>
@@ -416,6 +416,11 @@ function renderFooter(lang = "pt-BR") {
     </div>
     <div class="footer__bot">
       <span>© 2026 WIR Innovation</span>
+      <span class="footer__legal">
+        <a href="https://dashboard.wirinnovation.ai/#aviso-legal" target="_blank" rel="noopener noreferrer">${lang === "en" ? "Legal Notice" : "Aviso Legal"}</a>
+        <a href="/politica-de-privacidade/" hreflang="pt-BR">${lang === "en" ? "Privacy Policy (PT)" : "Política de Privacidade"}</a>
+        <a href="${c.base}/#contact">${c.navCta}</a>
+      </span>
       <span>${c.footerBot}</span>
     </div>
   </div>
@@ -702,6 +707,87 @@ ARTICLES.filter(article => !article.linkOnly).forEach(article => {
   fs.writeFileSync(path.join(dir, "index.html"), renderArticleHTML(article), "utf8");
   console.log(`  ok ${OUT_DIR}/${article.slug}/index.html`);
 });
+
+// ── Política de Privacidade ──────────────────────────────────────────────────
+// Texto redigido por Renata (FÃS Advogados) e publicado literalmente: nem uma
+// palavra, ordem ou termo foi alterado. Só em pt-BR — é um documento jurídico
+// brasileiro sob a LGPD, e traduzir texto legal sem advogado seria irresponsável.
+// As árvores EN/ES apontam para esta mesma página com hreflang, a convenção que
+// o site já usa para o Manifesto e o WIR Index.
+const PRIVACY_PARAGRAPHS = [
+  "A WIR Innovation respeita a privacidade e a proteção dos dados pessoais de seus usuários.",
+  "Os dados eventualmente coletados por meio deste site, como nome, e-mail, informações de contato, dados de navegação e registros técnicos, serão tratados de acordo com a Lei nº 13.709/2018 – Lei Geral de Proteção de Dados Pessoais (LGPD).",
+  "Os dados poderão ser utilizados para viabilizar funcionalidades do site, responder solicitações, enviar comunicações autorizadas, produzir estatísticas de uso, aprimorar nossos conteúdos e serviços e cumprir obrigações legais ou regulatórias.",
+  "A WIR Innovation busca limitar o tratamento aos dados necessários para cada finalidade e adota medidas razoáveis de segurança para protegê-los contra acessos não autorizados, perda, alteração ou divulgação indevida.",
+  "Os dados poderão ser tratados por fornecedores de tecnologia e outros prestadores de serviços necessários à operação da plataforma, observadas as finalidades aplicáveis e as medidas de proteção cabíveis.",
+  "O titular poderá solicitar, nos termos da legislação aplicável, confirmação da existência de tratamento, acesso, correção, atualização, exclusão quando cabível e demais direitos previstos na LGPD.",
+  "O uso de cookies e tecnologias semelhantes poderá ocorrer para permitir o funcionamento do site, produzir métricas de acesso e melhorar a experiência do usuário.",
+  "Esta Política poderá ser atualizada periodicamente para refletir alterações legais, tecnológicas ou operacionais.",
+  "Para questões relacionadas à privacidade e ao tratamento de dados pessoais, entre em contato pelos canais disponibilizados pela WIR Innovation.",
+];
+
+function renderPrivacyPage() {
+  const title = "Política de Privacidade · WIR Innovation";
+  const desc = "Como a WIR Innovation trata os dados pessoais coletados por meio deste site, nos termos da Lei nº 13.709/2018 (LGPD).";
+  const url = `${SITE_URL}/politica-de-privacidade/`;
+  const body = PRIVACY_PARAGRAPHS.map(t => `      <p>${esc(t)}</p>`).join("\n");
+  return `<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>${title}</title>
+<meta name="description" content="${desc}" />
+<link rel="canonical" href="${url}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="${title}" />
+<meta property="og:description" content="${desc}" />
+<meta property="og:url" content="${url}" />
+<link rel="icon" href="/assets/favicon.ico" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css?${CACHE_VER}" />
+<link rel="stylesheet" href="/home.css?${CACHE_VER}" />
+<link rel="stylesheet" href="/scale-site.css?${CACHE_VER}" />
+<script>document.documentElement.classList.add('js-ready');</script>
+<style>
+.legal { padding:80px 0 96px; background:var(--paper); }
+.legal__line { display:flex; justify-content:space-between; font-family:var(--f-mono); font-size:11px; letter-spacing:.14em; color:var(--ink-3); text-transform:uppercase; padding-bottom:18px; border-bottom:1px solid var(--paper-3); }
+.legal__head h1 { font-size:clamp(38px,4.6vw,58px); line-height:1.06; letter-spacing:-0.015em; margin:34px 0 0; max-width:14ch; }
+.legal__body { margin-top:44px; max-width:68ch; }
+.legal__body p { font-size:17px; line-height:1.68; color:var(--ink-2); margin:0 0 22px; }
+.legal__body p:first-child { font-size:19px; color:var(--ink); }
+@media (max-width:640px){ .legal { padding:48px 0 64px; } .legal__body p { font-size:16px; } }
+</style>
+</head>
+<body class="static-scale">
+${renderNav("pt-BR", null, null)}
+<main id="main" tabindex="-1">
+<article class="legal">
+  <div class="wrap">
+    <header class="legal__head">
+      <div class="legal__line"><span>WIR / JURÍDICO</span><span>LGPD · LEI Nº 13.709/2018</span></div>
+      <h1>Política de Privacidade</h1>
+    </header>
+    <div class="legal__body">
+${body}
+    </div>
+  </div>
+</article>
+</main>
+${renderFooter("pt-BR")}
+<script>${NAV_SCRIPT}</script>
+</body>
+</html>
+`;
+}
+
+const privacyDir = path.join(process.cwd(), "public", "politica-de-privacidade");
+fs.mkdirSync(privacyDir, { recursive: true });
+fs.writeFileSync(path.join(privacyDir, "index.html"), renderPrivacyPage(), "utf8");
+console.log(`  ok public/politica-de-privacidade/index.html (pt-BR)`);
 
 fs.writeFileSync(path.join(insightsDir, "index.html"), renderInsightsIndex("pt-BR"), "utf8");
 console.log(`  ok ${OUT_DIR}/index.html (pt-BR)`);

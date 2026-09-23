@@ -753,8 +753,18 @@ p{ text-wrap: pretty; }
 }
 .footer__bot{
   display: flex; justify-content: space-between; align-items: center;
+  gap: 20px; flex-wrap: wrap;
   padding-top: 32px; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.12em;
   color: rgba(245,241,234,0.5); text-transform: uppercase;
+}
+/* Links legais permanentes (Aviso Legal · Política de Privacidade · Contato).
+   Separados por barra, como pediu a assessoria jurídica. */
+.footer__legal{ display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.footer__legal a{ color: rgba(245,241,234,.62); transition: color .18s; }
+.footer__legal a:hover{ color: var(--paper); text-decoration: underline; }
+.footer__legal a + a{ padding-left: 12px; border-left: 1px solid rgba(245,241,234,.22); }
+@media (max-width: 760px){
+  .footer__bot{ flex-direction: column; align-items: flex-start; gap: 14px; }
 }
 .footer__marquee{
   font-family: var(--f-display);

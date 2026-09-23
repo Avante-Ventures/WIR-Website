@@ -375,3 +375,16 @@ legend.ctform__label { padding: 0; margin-bottom: 8px; }
 @media (max-width: 920px) {
   .ctquick__grid { grid-template-columns: 1fr; }
 }
+
+/* Aviso de privacidade nos pontos de coleta (formulário e newsletter).
+   Discreto mas legível: é informação obrigatória, não letra miúda decorativa. */
+.ctform__privacy, .ctquick__privacy{
+  margin: 14px 0 0;
+  font-size: 12.5px; line-height: 1.5;
+  color: var(--ink-3);
+}
+.ctform__privacy a, .ctquick__privacy a{
+  color: var(--ink-2); text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.ctform__privacy a:hover, .ctquick__privacy a:hover{ color: var(--ink); }

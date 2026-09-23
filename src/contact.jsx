@@ -2,6 +2,7 @@ import { postForm } from './form-transport.mjs';
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useReveal } from './shared.jsx';
 import { LANG, LANG_BASE } from './i18n.js';
+import { PRIVACY_HREF } from './shared.jsx';
 
 /* ───────── Contato · humano + steps ───────── */
 
@@ -79,6 +80,7 @@ Enviado pelo formulário do site wirinnovation.ai`,
     newsDone: "✓ Inscrição recebida. Você receberá os próximos Insights.",
     newsPh: "seu@email.com", newsAria: "Seu e-mail",
     newsBtn: "Inscrever", newsSending: "Enviando…",
+    privacyBefore: "Ao enviar seus dados, você declara ter lido a ", privacyLink: "Política de Privacidade",
     newsMailtoBody: "Inscreva-me na newsletter da WIR Innovation.\n\nE-mail: ",
     socialEyebrow: "· Outros canais",
     socialTitle: <>Acompanhe a WIR<br/><em>nas nossas redes.</em></>,
@@ -156,6 +158,7 @@ Sent from the wirinnovation.ai website form`,
     newsDone: "✓ Subscription received. You'll get the next Insights.",
     newsPh: "you@email.com", newsAria: "Your email",
     newsBtn: "Subscribe", newsSending: "Sending…",
+    privacyBefore: "By submitting your data, you confirm you have read the ", privacyLink: "Privacy Policy (PT)",
     newsMailtoBody: "Subscribe me to the WIR Innovation newsletter.\n\nEmail: ",
     socialEyebrow: "· Other channels",
     socialTitle: <>Follow WIR<br/><em>on our channels.</em></>,
@@ -233,6 +236,7 @@ Enviado desde el formulario del sitio wirinnovation.ai`,
     newsDone: "✓ Suscripción recibida. Recibirás los próximos Insights.",
     newsPh: "tu@email.com", newsAria: "Tu email",
     newsBtn: "Suscribirme", newsSending: "Enviando…",
+    privacyBefore: "Al enviar tus datos, declaras haber leído la ", privacyLink: "Política de Privacidad (PT)",
     newsMailtoBody: "Suscríbeme al newsletter de WIR Innovation.\n\nEmail: ",
     socialEyebrow: "· Otros canales",
     socialTitle: <>Sigue a WIR<br/><em>en nuestras redes.</em></>,
@@ -633,6 +637,14 @@ function ContactForm() {
             </button>
           )}
         </div>
+        {/* Aviso no ponto de coleta, como pediu a assessoria jurídica: aparece no
+            passo do envio, que é onde os dados saem de fato. */}
+        {step === 2 && (
+          <p className="ctform__privacy">
+            {T.privacyBefore}
+            <a href={PRIVACY_HREF} hrefLang="pt-BR">{T.privacyLink}</a>.
+          </p>
+        )}
       </div>
     </section>
   );
@@ -711,6 +723,12 @@ function ContactQuickChannels() {
                   {newsState === "sending" ? T.newsSending : T.newsBtn} <span className="btn__arrow">→</span>
                 </button>
               </div>
+            )}
+            {newsState !== "done" && (
+              <p className="ctquick__privacy">
+                {T.privacyBefore}
+                <a href={PRIVACY_HREF} hrefLang="pt-BR">{T.privacyLink}</a>.
+              </p>
             )}
           </form>
         </div>

@@ -14,6 +14,14 @@ export const DASHBOARD_HREF = `/dashboard/?lang=${LANG}`;
 // de idioma ser anunciado em vez de silencioso.
 export const WIR_INDEX_HREF = "/insights/wir-index/";
 
+// Política de Privacidade redigida pela Renata (FÃS Advogados). Só existe em
+// pt-BR: é documento jurídico brasileiro sob a LGPD. EN/ES apontam para cá com
+// hreflang, como já fazem com o Manifesto e o WIR Index.
+export const PRIVACY_HREF = "/politica-de-privacidade/";
+// O aviso legal vive dentro do dashboard (é ele que fala de rankings SES e de
+// agregação por grupo econômico), por isso o link sai do site.
+export const LEGAL_HREF = "https://dashboard.wirinnovation.ai/#aviso-legal";
+
 const T = {
   pt: {
     ticker: [
@@ -40,6 +48,7 @@ const T = {
     linkHome: "Início", linkAbout: "Sobre", linkSolutions: "Produtos & IA",
     linkProtection: "Proteção de Dados", linkBlog: "Insights & News", linkContact: "Contato",
     linkManifesto: "Manifesto",
+    legalNotice: "Aviso Legal", privacyPolicy: "Política de Privacidade",
     talkTeam: "Falar com a equipe",
     holdingLinks: { mahway: "Mahway · California", avante: "Avante · Brasil", advisors: "Conselheiros estratégicos", principles: "Princípios" },
     footerBot: "wirinnovation.ai · Feito entre São Paulo e Silicon Valley",
@@ -75,6 +84,7 @@ const T = {
     linkHome: "Home", linkAbout: "About", linkSolutions: "Products & AI",
     linkProtection: "Data Protection", linkBlog: "Insights & News", linkContact: "Contact",
     linkManifesto: "Manifesto",
+    legalNotice: "Legal Notice", privacyPolicy: "Privacy Policy (PT)",
     talkTeam: "Talk to the team",
     holdingLinks: { mahway: "Mahway · California", avante: "Avante · Brazil", advisors: "Strategic advisors", principles: "Principles" },
     footerBot: "wirinnovation.ai · Built between São Paulo and Silicon Valley",
@@ -110,6 +120,7 @@ const T = {
     linkHome: "Inicio", linkAbout: "Nosotros", linkSolutions: "Productos & IA",
     linkProtection: "Protección de Datos", linkBlog: "Insights & News (PT)", linkContact: "Contacto",
     linkManifesto: "Manifiesto (EN)",
+    legalNotice: "Aviso Legal", privacyPolicy: "Política de Privacidad (PT)",
     talkTeam: "Hablar con el equipo",
     holdingLinks: { mahway: "Mahway · California", avante: "Avante · Brasil", advisors: "Consejeros estratégicos", principles: "Principios" },
     footerBot: "wirinnovation.ai · Hecho entre São Paulo y Silicon Valley",
@@ -451,6 +462,12 @@ export function Footer({ go }) {
         </div>
         <div className="footer__bot">
           <span>© 2026 WIR Innovation</span>
+          {/* Links legais permanentes, na ordem pedida pela Renata (FÃS Advogados). */}
+          <span className="footer__legal">
+            <a href={LEGAL_HREF} target="_blank" rel="noopener noreferrer">{T.legalNotice}</a>
+            <a href={PRIVACY_HREF} hrefLang="pt-BR">{T.privacyPolicy}</a>
+            <a href="#contact" onClick={(e)=>{e.preventDefault();go("contact")}}>{T.linkContact}</a>
+          </span>
           <span>{T.footerBot}</span>
         </div>
       </div>
