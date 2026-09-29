@@ -17,6 +17,9 @@ export const WIR_INDEX_HREF = "/insights/wir-index/";
 // Política de Privacidade redigida pela Renata (FÃS Advogados). Só existe em
 // pt-BR: é documento jurídico brasileiro sob a LGPD. EN/ES apontam para cá com
 // hreflang, como já fazem com o Manifesto e o WIR Index.
+// Ação social: apoio ao programa "O Líder em Mim" em escolas públicas. Só em
+// pt-BR — é um projeto brasileiro, e o conteúdo ainda não foi traduzido.
+export const ESG_HREF = "/esg/";
 export const PRIVACY_HREF = "/politica-de-privacidade/";
 // O aviso legal vive dentro do dashboard (é ele que fala de rankings SES e de
 // agregação por grupo econômico), por isso o link sai do site.
@@ -33,7 +36,9 @@ const T = {
     navLinks: [
       { id: "solutions", label: "Soluções" },
       { id: "how", label: "Como funciona" },
-      { id: "about", label: "Sobre a WIR" },
+      { id: "about", label: "Sobre a WIR", menu: [
+        { label: "ESG · Ação Social", desc: "Nosso apoio a escolas públicas", href: ESG_HREF, hl: "pt-BR" },
+      ] },
       { id: "protection", label: "Proteção de Dados" },
       { id: "blog", label: "Insights", href: INSIGHTS_HREF, menu: [
         { label: "WIR Index", desc: "Panorama InsurTech · Brasil & LATAM", href: WIR_INDEX_HREF, hl: "pt-BR" },
@@ -69,7 +74,9 @@ const T = {
     navLinks: [
       { id: "solutions", label: "Solutions" },
       { id: "how", label: "How it works" },
-      { id: "about", label: "About WIR" },
+      { id: "about", label: "About WIR", menu: [
+        { label: "ESG · Social impact (PT)", desc: "Our support for public schools", href: ESG_HREF, hl: "pt-BR" },
+      ] },
       { id: "protection", label: "Data Protection" },
       { id: "blog", label: "Insights", href: INSIGHTS_HREF, menu: [
         { label: "WIR Index (PT)", desc: "InsurTech landscape · Brazil & LATAM", href: WIR_INDEX_HREF, hl: "pt-BR" },
@@ -105,7 +112,9 @@ const T = {
     navLinks: [
       { id: "solutions", label: "Soluciones" },
       { id: "how", label: "Cómo funciona" },
-      { id: "about", label: "Sobre WIR" },
+      { id: "about", label: "Sobre WIR", menu: [
+        { label: "ESG · Acción Social (PT)", desc: "Nuestro apoyo a escuelas públicas", href: ESG_HREF, hl: "pt-BR" },
+      ] },
       { id: "protection", label: "Protección de Datos" },
       { id: "blog", label: "Insights (PT)", href: INSIGHTS_HREF, hl: INSIGHTS_HREFLANG, menu: [
         { label: "WIR Index (PT)", desc: "Panorama InsurTech · Brasil y LATAM", href: WIR_INDEX_HREF, hl: "pt-BR" },

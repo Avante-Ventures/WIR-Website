@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ESG · Ação Social · WIR Innovation</title>
+<meta name="description" content="A WIR Innovation apoia a implementação do programa O Líder em Mim, da 7H Brasil, em escolas públicas — e convida o mercado de seguros a apadrinhar escolas junto com a gente." />
+<link rel="canonical" href="https://wirinnovation.ai/esg/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ESG · Ação Social · WIR Innovation" />
+<meta property="og:description" content="A WIR Innovation apoia a implementação do programa O Líder em Mim, da 7H Brasil, em escolas públicas — e convida o mercado de seguros a apadrinhar escolas junto com a gente." />
+<meta property="og:url" content="https://wirinnovation.ai/esg/" />
+<link rel="icon" href="/assets/favicon.ico" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css?v=2026091503" />
+<link rel="stylesheet" href="/home.css?v=2026091503" />
+<link rel="stylesheet" href="/scale-site.css?v=2026091503" />
+<script>document.documentElement.classList.add('js-ready');</script>
+<style>
+.esg { background: var(--paper); }
+.esg section { padding: 96px 0; border-top: 1px solid var(--paper-3); }
+.esg section:first-child { border-top: 0; }
+.esg h2 { font-size: clamp(30px,3.6vw,44px); line-height:1.1; letter-spacing:-.015em; max-width:17ch; }
+.esg h2 em { font-family: var(--f-display); font-style: italic; font-weight:400; font-size:1.08em; }
+.esg p.lede { margin-top:18px; font-size:18px; line-height:1.6; color:var(--ink-2); max-width:62ch; }
+
+/* hero */
+.esg-hero { padding: 104px 0 88px; }
+.esg-hero h1 { font-size:clamp(40px,6vw,76px); line-height:1.02; letter-spacing:-.025em; max-width:15ch; }
+.esg-hero h1 em { font-family:var(--f-display); font-style:italic; font-weight:400; font-size:1.06em; }
+.esg-hero p { margin-top:26px; font-size:19px; line-height:1.55; color:var(--ink-2); max-width:56ch; }
+.esg-hero__par { margin-top:34px; font-family:var(--f-mono); font-size:12px; letter-spacing:.1em; color:var(--ink-3); }
+
+/* manifesto — texto puro, o coração da página não é um card */
+.esg-manif { display:grid; grid-template-columns: 1.1fr .9fr; gap:64px; align-items:start; }
+.esg-manif__voz { font-family:var(--f-display); font-size:clamp(24px,2.9vw,36px); line-height:1.3; letter-spacing:-.01em; color:var(--ink); }
+.esg-manif__voz em { font-style:italic; }
+.esg-manif__corpo p { font-size:16.5px; line-height:1.68; color:var(--ink-2); margin:0 0 18px; }
+.esg-manif__corpo p:last-child { margin-bottom:0; }
+@media (max-width:860px){ .esg-manif { grid-template-columns:1fr; gap:34px; } }
+
+/* propagação — degraus, não placar: cada um cresce sobre o anterior */
+/* A multiplicação precisa ser visível, não declarada: os três números partem da
+   mesma margem e cada um é maior que o anterior, então o salto de 21 para 4.200
+   se lê no tipo antes de se ler no texto. Alinhar à direita numa coluna estreita
+   (primeira tentativa) anulava justamente isso. */
+.esg-prop { list-style:none; margin:52px 0 0; padding:0; }
+.esg-prop__degrau { display:grid; grid-template-columns:auto 1fr; gap:4px 24px;
+  padding:30px 0; border-top:1px solid var(--paper-3); align-items:last baseline; }
+.esg-prop__degrau:last-child { border-bottom:1px solid var(--paper-3); }
+.esg-prop__n { font-family:var(--f-display); line-height:.9; letter-spacing:-.035em; color:var(--ink);
+  /* o piso do clamp também cresce com --i: com um mínimo fixo os três degraus
+     saturavam no mesmo tamanho no celular e a progressão sumia. */
+  font-size:clamp(calc(34px + var(--i) * 10px), calc(3.4vw + var(--i) * 1.9vw), calc(46px + var(--i) * 26px)); }
+.esg-prop__u { font-size:17px; font-weight:600; color:var(--ink); }
+.esg-prop__d { grid-column:2; font-size:15px; line-height:1.55; color:var(--ink-3); }
+@media (max-width:640px){ .esg-prop__degrau { grid-template-columns:1fr; gap:2px; }
+  .esg-prop__d { grid-column:1; } }
+
+/* evidência */
+.esg-provas { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:44px; }
+.esg-prova__p { font-size:44px; font-weight:600; letter-spacing:-.025em; line-height:1; color:var(--wir-purple); }
+.esg-prova__q { margin-top:12px; font-size:15px; line-height:1.55; color:var(--ink-2); max-width:26ch; }
+@media (max-width:760px){ .esg-provas { grid-template-columns:1fr; gap:26px; } }
+
+/* o que a escola recebe */
+.esg-recebe { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:44px;
+  background:var(--paper-3); border:1px solid var(--paper-3); }
+.esg-recebe__item { background:var(--paper); padding:30px 28px; }
+.esg-recebe__item h3 { font-size:15.5px; font-weight:600; letter-spacing:-.005em; }
+.esg-recebe__item p { margin-top:8px; font-size:14.5px; line-height:1.55; color:var(--ink-3); }
+@media (max-width:860px){ .esg-recebe { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .esg-recebe { grid-template-columns:1fr; } }
+
+/* caso */
+.esg-caso { margin-top:52px; padding:38px 40px; background:var(--paper-2); border-left:3px solid var(--wir-purple); }
+.esg-caso h3 { font-family:var(--f-display); font-size:clamp(21px,2.3vw,28px); font-weight:400; line-height:1.28; max-width:40ch; }
+.esg-caso p { margin-top:14px; font-size:16px; line-height:1.62; color:var(--ink-2); max-width:70ch; }
+.esg-caso cite { display:block; margin-top:16px; font-style:normal; font-family:var(--f-mono); font-size:11.5px; letter-spacing:.06em; color:var(--ink-3); }
+@media (max-width:640px){ .esg-caso { padding:28px 24px; } }
+
+/* mercado */
+.esg-mercado { display:grid; grid-template-columns:repeat(3,1fr); gap:34px; margin-top:46px; }
+.esg-mercado__c h3 { font-size:17px; font-weight:600; padding-bottom:12px; border-bottom:2px solid var(--wir-purple); }
+.esg-mercado__c p { margin-top:14px; font-size:15px; line-height:1.6; color:var(--ink-2); }
+@media (max-width:760px){ .esg-mercado { grid-template-columns:1fr; gap:24px; } }
+
+/* vídeo */
+.esg-video { margin-top:40px; border:1px solid var(--paper-3); }
+.esg-video__ratio { position:relative; padding-top:56.25%; }
+.esg-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+.esg-canal { display:inline-flex; align-items:center; gap:10px; margin-top:20px; font-size:15px; font-weight:500; }
+
+/* fecho */
+.esg-fecho { background:var(--wir-navy); color:var(--paper); }
+.esg-fecho h2 { color:var(--paper); max-width:20ch; }
+.esg-fecho h2 em { font-family:var(--f-display); font-style:italic; font-weight:400; }
+.esg-fecho p { margin-top:20px; font-size:17.5px; line-height:1.6; color:color-mix(in oklab, var(--paper) 78%, transparent); max-width:58ch; }
+.esg-fecho__acao { display:inline-flex; align-items:center; gap:10px; margin-top:32px; padding:15px 26px;
+  background:var(--paper); color:var(--ink); border-radius:999px; font-weight:600; font-size:15px; }
+.esg-fecho__acao:hover { background:#fff; }
+.esg-fonte { margin-top:34px; font-family:var(--f-mono); font-size:11.5px; line-height:1.7; letter-spacing:.04em; color:var(--ink-3); }
+.esg-fonte a { color:var(--ink-2); text-decoration:underline; text-underline-offset:2px; }
+</style>
+</head>
+<body class="static-scale">
+<a class="skip-link" href="#main">Ir para conteúdo</a>
+<nav class="nav" aria-label="Primary">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/wir-logo.svg" alt="WIR Innovation" width="98" height="72" style="height:72px;width:auto;display:block" />
+    </a>
+    <div class="nav__links">
+      <a href="/#solutions" class="nav__link">Soluções</a>
+      <a href="/#how" class="nav__link">Como funciona</a>
+      <div class="nav__has-menu"><a href="/#about" class="nav__link">Sobre a WIR</a><div class="nav__menu"><a href="/esg/" hreflang="pt-BR" class="nav__menu-link"><span class="nav__menu-label">ESG · Ação Social</span><span class="nav__menu-desc">Nosso apoio a escolas públicas</span></a></div></div>
+      <a href="/#protection" class="nav__link">Proteção de Dados</a>
+      <div class="nav__has-menu"><a href="/insights/" class="nav__link">Insights</a><div class="nav__menu"><a href="/insights/wir-index/" hreflang="pt-BR" class="nav__menu-link"><span class="nav__menu-label">WIR Index</span><span class="nav__menu-desc">Panorama InsurTech · Brasil &amp; LATAM</span></a></div></div>
+      <a href="/dashboard/?lang=pt" class="nav__link nav__link--badge">Dashboard SUSEP ↗</a>
+    </div>
+    <div class="nav__right">
+      <a href="/#contact" class="nav__cta">
+        <span class="dot"></span>
+        Falar com a WIR
+        <span aria-hidden="true">→</span>
+      </a>
+      <button type="button" class="nav__burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-mobile-menu" data-label-open="Abrir menu" data-label-close="Fechar menu">
+        <span class="nav__burger-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div id="nav-mobile-menu" class="nav__mobile" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true" inert>
+  <div class="nav__mobile-inner">
+    <a href="/#solutions" class="nav__link">Soluções</a>
+    <a href="/#how" class="nav__link">Como funciona</a>
+    <div class="nav__has-menu"><a href="/#about" class="nav__link">Sobre a WIR</a><div class="nav__menu"><a href="/esg/" hreflang="pt-BR" class="nav__menu-link"><span class="nav__menu-label">ESG · Ação Social</span><span class="nav__menu-desc">Nosso apoio a escolas públicas</span></a></div></div>
+    <a href="/#protection" class="nav__link">Proteção de Dados</a>
+    <div class="nav__has-menu"><a href="/insights/" class="nav__link">Insights</a><div class="nav__menu"><a href="/insights/wir-index/" hreflang="pt-BR" class="nav__menu-link"><span class="nav__menu-label">WIR Index</span><span class="nav__menu-desc">Panorama InsurTech · Brasil &amp; LATAM</span></a></div></div>
+    <a href="/dashboard/?lang=pt" class="nav__link nav__link--badge">Dashboard SUSEP ↗</a>
+    <a href="/#contact" class="nav__mobile-cta">
+      <span class="dot"></span>
+      Falar com a WIR
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</div>
+<script>(function(){var b=document.querySelector('.nav__burger'),m=document.getElementById('nav-mobile-menu');if(!b||!m)return;var i=b.querySelector('.nav__burger-icon');function set(o){m.classList.toggle('is-open',o);i.classList.toggle('is-open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',b.getAttribute(o?'data-label-close':'data-label-open'));m.setAttribute('aria-hidden',o?'false':'true');if(o){m.removeAttribute('inert');}else{m.setAttribute('inert','');}document.body.style.overflow=o?'hidden':'';}b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}});m.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});var mq=window.matchMedia('(min-width: 1121px)');if(mq.addEventListener)mq.addEventListener('change',function(e){if(e.matches)set(false);});})();</script>
+<main id="main" tabindex="-1">
+<article class="esg">
+
+  <section class="esg-hero"><div class="wrap">
+    <h1>Liderança transforma empresas. E transforma <em>vidas.</em></h1>
+    <p>A WIR apoia a 7H Brasil na implementação de “O Líder em Mim” — os 7 hábitos de Stephen Covey — dentro de escolas públicas brasileiras, sem custo para a escola nem para as famílias.</p>
+    <p class="esg-hero__par">WIR INNOVATION × INSTITUTO 7H BRASIL</p>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>Por que uma empresa de IA para seguros apoia uma <em>escola pública</em></h2>
+    <div class="esg-manif" style="margin-top:44px">
+      <p class="esg-manif__voz">Como empreendedores, sabemos o que liderança e responsabilidade constroem. O programa dá a crianças de comunidades carentes a chance de aprender isso <em>cedo, dentro da escola.</em></p>
+      <div class="esg-manif__corpo">
+        <p>Quando uma criança aprende a ser proativa e a liderar a própria vida, a transformação não para nela. Ela chega em casa, contagia irmãos e responsáveis, e a família inteira passa a evoluir junto.</p>
+        <p>É o mesmo que nos move na WIR: pessoas preparadas mudam o próprio destino. Empreender é isso — e queremos que mais crianças descubram esse caminho.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>O alcance <em>se multiplica</em> a cada degrau</h2>
+    <p class="lede">O programa entra pela escola, mas não para nela. Cada aluno leva os hábitos para casa, e é aí que o número cresce.</p>
+    <ol class="esg-prop">
+      <li class="esg-prop__degrau" style="--i:0">
+        <span class="esg-prop__n">21</span>
+        <span class="esg-prop__u">escolas públicas</span>
+        <span class="esg-prop__d">em 8 cidades de Minas Gerais e São Paulo</span>
+      </li>
+      <li class="esg-prop__degrau" style="--i:1">
+        <span class="esg-prop__n">2.118</span>
+        <span class="esg-prop__u">alunos</span>
+        <span class="esg-prop__d">aprendem os 7 hábitos dentro da grade da escola</span>
+      </li>
+      <li class="esg-prop__degrau" style="--i:2">
+        <span class="esg-prop__n">4.200+</span>
+        <span class="esg-prop__u">pais e responsáveis</span>
+        <span class="esg-prop__d">alcançados pelo que os filhos levam para casa</span>
+      </li>
+    </ol>
+    <div class="esg-provas">
+      <div class="esg-prova">
+        <p class="esg-prova__p">93%</p>
+        <p class="esg-prova__q">das escolas se dizem satisfeitas com o programa</p>
+      </div>
+      <div class="esg-prova">
+        <p class="esg-prova__p">89%</p>
+        <p class="esg-prova__q">dos pais veem os filhos mais preparados para a cidadania</p>
+      </div>
+      <div class="esg-prova">
+        <p class="esg-prova__p">82%</p>
+        <p class="esg-prova__q">dos professores relatam mais autonomia e responsabilidade</p>
+      </div>
+    </div>
+    <div class="esg-caso">
+      <h3>A escola de maior destaque de Minas Gerais é uma escola municipal de Montes Claros.</h3>
+      <p>Sob a direção de Renata Beatriz, a EM Bolívar de Andrade conquistou o 1º lugar nacional no ranking de engajamento do programa entre as 21 escolas atendidas pela 7H.</p>
+      <cite>Release oficial da 7H Brasil</cite>
+    </div>
+    <p class="esg-fonte">Dados de alcance e satisfação: 7H Brasil, 2026 · <a href="https://7hab.org" target="_blank" rel="noopener noreferrer">7hab.org</a>. A metodologia “O Líder em Mim” está em mais de 7 mil escolas em 64 países e alcança mais de 206 mil alunos no Brasil.</p>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>O que a escola recebe</h2>
+    <p class="lede">O programa é gratuito para a escola e viabilizado por apoiadores. A 7H formaliza a parceria com a prefeitura e a secretaria de educação, o que dá respaldo institucional e continuidade.</p>
+    <div class="esg-recebe">
+      <div class="esg-recebe__item">
+        <h3>Formação de educadores</h3>
+        <p>Capacitação para professores, gestores e coordenadores.</p>
+      </div>
+      <div class="esg-recebe__item">
+        <h3>Kits de estudo</h3>
+        <p>Materiais completos do programa para alunos e educadores.</p>
+      </div>
+      <div class="esg-recebe__item">
+        <h3>Planejamento BNCC</h3>
+        <p>Alinhado à Base Nacional Comum Curricular.</p>
+      </div>
+      <div class="esg-recebe__item">
+        <h3>Cultura escolar e famílias</h3>
+        <p>Integração das famílias na jornada dos alunos.</p>
+      </div>
+      <div class="esg-recebe__item">
+        <h3>Métricas de impacto</h3>
+        <p>Acompanhamento contínuo de desempenho e transformação.</p>
+      </div>
+      <div class="esg-recebe__item">
+        <h3>Bolsas PECEGE</h3>
+        <p>Educação executiva e MBA de Educação da USP para secretários e diretores.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>O mesmo que o mercado de seguros <em>está pedindo</em> das suas pessoas</h2>
+    <p class="lede">Corretores e seguradoras atravessam uma transformação que cobra exatamente o que o programa ensina. Por isso a WIR não quer apoiar sozinha: queremos levar o projeto ao setor.</p>
+    <div class="esg-mercado">
+      <div class="esg-mercado__c"><h3>Inovar</h3><p>A mentalidade que aplicamos com IA no seguro, aplicada à formação de novas gerações.</p></div>
+      <div class="esg-mercado__c"><h3>Empreender</h3><p>Protagonismo e iniciativa — na escola, na corretora e na seguradora.</p></div>
+      <div class="esg-mercado__c"><h3>Evoluir</h3><p>Crescimento contínuo de pessoas, famílias e de todo o mercado.</p></div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>A entrega, <em>acontecendo</em></h2>
+    <p class="lede">Capacitação de educadores e implementação nas escolas de São Paulo e Minas Gerais, registrada pelo canal da 7H Brasil.</p>
+    <div class="esg-video"><div class="esg-video__ratio">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=UUWUzBPyNalgJG3dffdsugPQ" title="7H Brasil — capacitação e implementação nas escolas" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div></div>
+    <a class="esg-canal" href="https://www.youtube.com/@7hab" target="_blank" rel="noopener noreferrer">Ver o canal da 7H Brasil</a>
+  </div></section>
+
+  <section class="esg-fecho"><div class="wrap">
+    <h2>WIR quer dizer <em>“nós”.</em> Este é o nosso “nós” mais amplo.</h2>
+    <p>Seguradoras, corretoras e parceiros podem apadrinhar escolas junto com a gente. Quem entra recebe reconhecimento permanente na escola, leva o próprio time para conversar com os alunos e se enquadra no pilar social da agenda ESG.</p>
+    <a class="esg-fecho__acao" href="mailto:contato@wirinnovation.ai?subject=ESG%20%C2%B7%20A%C3%A7%C3%A3o%20Social%20WIR%20%2B%207H">Falar sobre apadrinhar uma escola</a>
+  </div></section>
+
+</article>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="/assets/wir-logo-branco.svg" alt="WIR Innovation" width="87" height="64" style="height:64px;width:auto;display:block" />
+        <p class="footer__brand-desc">A nova era do seguro é inteligência de dados, velocidade e escala. A WIR Innovation é a plataforma de IA que entrega essa estrutura dentro dos sistemas que você já opera.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/wir-innovation/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.37 4.267 5.455v6.288zM5.337 7.433a2.062 2.062 0 01-2.063-2.064 2.063 2.063 0 112.063 2.064zm1.778 13.019H3.555V9h3.56v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://www.instagram.com/wirinnovation" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://x.com/wirinnovationai" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="X" title="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#solutions">Produtos &amp; IA</a></li>
+          <li><a href="/#protection">Proteção de Dados</a></li>
+          <li><a href="/insights/">Insights &amp; News</a></li>
+          <li><a href="/#contact">Contato</a></li>
+          <li><a href="/dashboard/?lang=pt">Dashboard SUSEP ↗</a></li>
+          <li><a href="/insights/manifesto/">Manifesto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@wirinnovation.ai">contato@wirinnovation.ai</a></li>
+          <li><a href="/#contact">Falar com a equipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sócios &amp; Holding</h4>
+        <ul>
+          <li><a href="/#about">Mahway · California</a></li>
+          <li><a href="/#about">Avante · Brasil</a></li>
+          <li><a href="/#about">Conselheiros estratégicos</a></li>
+          <li><a href="/#about">Princípios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 WIR Innovation</span>
+      <span class="footer__legal">
+        <a href="https://dashboard.wirinnovation.ai/#aviso-legal" target="_blank" rel="noopener noreferrer">Aviso Legal</a>
+        <a href="/politica-de-privacidade/" hreflang="pt-BR">Política de Privacidade</a>
+        <a href="/#contact">Falar com a WIR</a>
+      </span>
+      <span>wirinnovation.ai · Feito entre São Paulo e Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+<script>(function(){var b=document.querySelector('.nav__burger'),m=document.getElementById('nav-mobile-menu');if(!b||!m)return;var i=b.querySelector('.nav__burger-icon');function set(o){m.classList.toggle('is-open',o);i.classList.toggle('is-open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',b.getAttribute(o?'data-label-close':'data-label-open'));m.setAttribute('aria-hidden',o?'false':'true');if(o){m.removeAttribute('inert');}else{m.setAttribute('inert','');}document.body.style.overflow=o?'hidden':'';}b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}});m.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});var mq=window.matchMedia('(min-width: 1121px)');if(mq.addEventListener)mq.addEventListener('change',function(e){if(e.matches)set(false);});})();</script>
+</body>
+</html>

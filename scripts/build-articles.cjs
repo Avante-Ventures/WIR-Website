@@ -308,14 +308,20 @@ function renderNav(lang = "pt-BR", alt = null, active = "insights") {
   // Painel do WIR Index pendurado em "Insights", igual ao SPA (src/shared.jsx): hover
   // e foco resolvidos só por CSS (.nav__has-menu), porque estas páginas não carregam
   // bundle. O relatório só existe em PT, daí o "(PT)" + hreflang na árvore inglesa.
-  const wirIndexMenu = `<div class="nav__menu"><a href="/insights/wir-index/" hreflang="pt-BR" class="nav__menu-link">` +
-    `<span class="nav__menu-label">${lang === "en" ? "WIR Index (PT)" : "WIR Index"}</span>` +
-    `<span class="nav__menu-desc">${lang === "en" ? "InsurTech landscape · Brazil &amp; LATAM" : "Panorama InsurTech · Brasil &amp; LATAM"}</span>` +
-    `</a></div>`;
+  const painel = (href, rotulo, descricao) =>
+    `<div class="nav__menu"><a href="${href}" hreflang="pt-BR" class="nav__menu-link">` +
+    `<span class="nav__menu-label">${rotulo}</span>` +
+    `<span class="nav__menu-desc">${descricao}</span></a></div>`;
+  const wirIndexMenu = painel("/insights/wir-index/",
+    lang === "en" ? "WIR Index (PT)" : "WIR Index",
+    lang === "en" ? "InsurTech landscape · Brazil &amp; LATAM" : "Panorama InsurTech · Brasil &amp; LATAM");
+  const esgMenu = painel("/esg/",
+    lang === "en" ? "ESG · Social impact (PT)" : "ESG · Ação Social",
+    lang === "en" ? "Our support for public schools" : "Nosso apoio a escolas públicas");
   const links = (indent) => [
     `<a href="${c.base}/#solutions" class="nav__link">${lang === "en" ? "Solutions" : "Soluções"}</a>`,
     `<a href="${c.base}/#how" class="nav__link">${lang === "en" ? "How it works" : "Como funciona"}</a>`,
-    `<a href="${c.base}/#about" class="nav__link">${lang === "en" ? "About WIR" : "Sobre a WIR"}</a>`,
+    `<div class="nav__has-menu"><a href="${c.base}/#about" class="nav__link">${lang === "en" ? "About WIR" : "Sobre a WIR"}</a>${esgMenu}</div>`,
     `<a href="${c.base}/#protection" class="nav__link">${c.navProtection}</a>`,
     `<div class="nav__has-menu"><a href="${insightsHref(lang)}" class="nav__link${active === "insights" ? " nav__link--active" : ""}">Insights</a>${wirIndexMenu}</div>`,
     `<a href="/dashboard/?lang=${lang === "en" ? "en" : "pt"}" class="nav__link nav__link--badge">Dashboard SUSEP ↗</a>`,
@@ -783,6 +789,258 @@ ${renderFooter("pt-BR")}
 </html>
 `;
 }
+
+// ── ESG · Ação Social ────────────────────────────────────────────────────────
+// Apoio da WIR ao programa "O Líder em Mim" da 7H Brasil em escolas públicas.
+//
+// O que NÃO entra aqui, e por quê: o documento interno traz o compromisso de
+// 1% da receita + 1% do lucro, cenários de orçamento por escola, o número de
+// escolas ainda em aberto e notas do comitê (enquadramento fiscal, estágio
+// pré-breakeven). Nada disso é público: o próprio documento diz que a
+// governança do modelo se define em ata "antes do anúncio". A página apresenta
+// a iniciativa e convida o mercado; os números de compromisso entram quando
+// estiverem fechados.
+//
+// Os dados de alcance são da 7H Brasil (7hab.org) e estão atribuídos no rodapé
+// da seção — não são números da WIR.
+function renderESGPage() {
+  const title = "ESG · Ação Social · WIR Innovation";
+  const desc = "A WIR Innovation apoia a implementação do programa O Líder em Mim, da 7H Brasil, em escolas públicas — e convida o mercado de seguros a apadrinhar escolas junto com a gente.";
+  const url = `${SITE_URL}/esg/`;
+
+  // Alcance: uma progressão, não um placar. Cada degrau multiplica o anterior,
+  // que é exatamente como o programa funciona — a criança leva para casa.
+  const propagacao = [
+    { n: "21", u: "escolas públicas", d: "em 8 cidades de Minas Gerais e São Paulo" },
+    { n: "2.118", u: "alunos", d: "aprendem os 7 hábitos dentro da grade da escola" },
+    { n: "4.200+", u: "pais e responsáveis", d: "alcançados pelo que os filhos levam para casa" },
+  ];
+  // Evidência é outra coisa que alcance: mede qualidade, não tamanho.
+  const evidencia = [
+    { p: "93%", q: "das escolas se dizem satisfeitas com o programa" },
+    { p: "89%", q: "dos pais veem os filhos mais preparados para a cidadania" },
+    { p: "82%", q: "dos professores relatam mais autonomia e responsabilidade" },
+  ];
+  const recebe = [
+    ["Formação de educadores", "Capacitação para professores, gestores e coordenadores."],
+    ["Kits de estudo", "Materiais completos do programa para alunos e educadores."],
+    ["Planejamento BNCC", "Alinhado à Base Nacional Comum Curricular."],
+    ["Cultura escolar e famílias", "Integração das famílias na jornada dos alunos."],
+    ["Métricas de impacto", "Acompanhamento contínuo de desempenho e transformação."],
+    ["Bolsas PECEGE", "Educação executiva e MBA de Educação da USP para secretários e diretores."],
+  ];
+
+  const degraus = propagacao.map((x, i) => `
+      <li class="esg-prop__degrau" style="--i:${i}">
+        <span class="esg-prop__n">${esc(x.n)}</span>
+        <span class="esg-prop__u">${esc(x.u)}</span>
+        <span class="esg-prop__d">${esc(x.d)}</span>
+      </li>`).join("");
+
+  const provas = evidencia.map(x => `
+      <div class="esg-prova">
+        <p class="esg-prova__p">${esc(x.p)}</p>
+        <p class="esg-prova__q">${esc(x.q)}</p>
+      </div>`).join("");
+
+  const oferta = recebe.map(([t, d]) => `
+      <div class="esg-recebe__item">
+        <h3>${esc(t)}</h3>
+        <p>${esc(d)}</p>
+      </div>`).join("");
+
+  const head = `<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>${title}</title>
+<meta name="description" content="${desc}" />
+<link rel="canonical" href="${url}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="${title}" />
+<meta property="og:description" content="${desc}" />
+<meta property="og:url" content="${url}" />
+<link rel="icon" href="/assets/favicon.ico" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css?${CACHE_VER}" />
+<link rel="stylesheet" href="/home.css?${CACHE_VER}" />
+<link rel="stylesheet" href="/scale-site.css?${CACHE_VER}" />
+<script>document.documentElement.classList.add('js-ready');</script>
+<style>
+.esg { background: var(--paper); }
+.esg section { padding: 96px 0; border-top: 1px solid var(--paper-3); }
+.esg section:first-child { border-top: 0; }
+.esg h2 { font-size: clamp(30px,3.6vw,44px); line-height:1.1; letter-spacing:-.015em; max-width:17ch; }
+.esg h2 em { font-family: var(--f-display); font-style: italic; font-weight:400; font-size:1.08em; }
+.esg p.lede { margin-top:18px; font-size:18px; line-height:1.6; color:var(--ink-2); max-width:62ch; }
+
+/* hero */
+.esg-hero { padding: 104px 0 88px; }
+.esg-hero h1 { font-size:clamp(40px,6vw,76px); line-height:1.02; letter-spacing:-.025em; max-width:15ch; }
+.esg-hero h1 em { font-family:var(--f-display); font-style:italic; font-weight:400; font-size:1.06em; }
+.esg-hero p { margin-top:26px; font-size:19px; line-height:1.55; color:var(--ink-2); max-width:56ch; }
+.esg-hero__par { margin-top:34px; font-family:var(--f-mono); font-size:12px; letter-spacing:.1em; color:var(--ink-3); }
+
+/* manifesto — texto puro, o coração da página não é um card */
+.esg-manif { display:grid; grid-template-columns: 1.1fr .9fr; gap:64px; align-items:start; }
+.esg-manif__voz { font-family:var(--f-display); font-size:clamp(24px,2.9vw,36px); line-height:1.3; letter-spacing:-.01em; color:var(--ink); }
+.esg-manif__voz em { font-style:italic; }
+.esg-manif__corpo p { font-size:16.5px; line-height:1.68; color:var(--ink-2); margin:0 0 18px; }
+.esg-manif__corpo p:last-child { margin-bottom:0; }
+@media (max-width:860px){ .esg-manif { grid-template-columns:1fr; gap:34px; } }
+
+/* propagação — degraus, não placar: cada um cresce sobre o anterior */
+/* A multiplicação precisa ser visível, não declarada: os três números partem da
+   mesma margem e cada um é maior que o anterior, então o salto de 21 para 4.200
+   se lê no tipo antes de se ler no texto. Alinhar à direita numa coluna estreita
+   (primeira tentativa) anulava justamente isso. */
+.esg-prop { list-style:none; margin:52px 0 0; padding:0; }
+.esg-prop__degrau { display:grid; grid-template-columns:auto 1fr; gap:4px 24px;
+  padding:30px 0; border-top:1px solid var(--paper-3); align-items:last baseline; }
+.esg-prop__degrau:last-child { border-bottom:1px solid var(--paper-3); }
+.esg-prop__n { font-family:var(--f-display); line-height:.9; letter-spacing:-.035em; color:var(--ink);
+  /* o piso do clamp também cresce com --i: com um mínimo fixo os três degraus
+     saturavam no mesmo tamanho no celular e a progressão sumia. */
+  font-size:clamp(calc(34px + var(--i) * 10px), calc(3.4vw + var(--i) * 1.9vw), calc(46px + var(--i) * 26px)); }
+.esg-prop__u { font-size:17px; font-weight:600; color:var(--ink); }
+.esg-prop__d { grid-column:2; font-size:15px; line-height:1.55; color:var(--ink-3); }
+@media (max-width:640px){ .esg-prop__degrau { grid-template-columns:1fr; gap:2px; }
+  .esg-prop__d { grid-column:1; } }
+
+/* evidência */
+.esg-provas { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:44px; }
+.esg-prova__p { font-size:44px; font-weight:600; letter-spacing:-.025em; line-height:1; color:var(--wir-purple); }
+.esg-prova__q { margin-top:12px; font-size:15px; line-height:1.55; color:var(--ink-2); max-width:26ch; }
+@media (max-width:760px){ .esg-provas { grid-template-columns:1fr; gap:26px; } }
+
+/* o que a escola recebe */
+.esg-recebe { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:44px;
+  background:var(--paper-3); border:1px solid var(--paper-3); }
+.esg-recebe__item { background:var(--paper); padding:30px 28px; }
+.esg-recebe__item h3 { font-size:15.5px; font-weight:600; letter-spacing:-.005em; }
+.esg-recebe__item p { margin-top:8px; font-size:14.5px; line-height:1.55; color:var(--ink-3); }
+@media (max-width:860px){ .esg-recebe { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .esg-recebe { grid-template-columns:1fr; } }
+
+/* caso */
+.esg-caso { margin-top:52px; padding:38px 40px; background:var(--paper-2); border-left:3px solid var(--wir-purple); }
+.esg-caso h3 { font-family:var(--f-display); font-size:clamp(21px,2.3vw,28px); font-weight:400; line-height:1.28; max-width:40ch; }
+.esg-caso p { margin-top:14px; font-size:16px; line-height:1.62; color:var(--ink-2); max-width:70ch; }
+.esg-caso cite { display:block; margin-top:16px; font-style:normal; font-family:var(--f-mono); font-size:11.5px; letter-spacing:.06em; color:var(--ink-3); }
+@media (max-width:640px){ .esg-caso { padding:28px 24px; } }
+
+/* mercado */
+.esg-mercado { display:grid; grid-template-columns:repeat(3,1fr); gap:34px; margin-top:46px; }
+.esg-mercado__c h3 { font-size:17px; font-weight:600; padding-bottom:12px; border-bottom:2px solid var(--wir-purple); }
+.esg-mercado__c p { margin-top:14px; font-size:15px; line-height:1.6; color:var(--ink-2); }
+@media (max-width:760px){ .esg-mercado { grid-template-columns:1fr; gap:24px; } }
+
+/* vídeo */
+.esg-video { margin-top:40px; border:1px solid var(--paper-3); }
+.esg-video__ratio { position:relative; padding-top:56.25%; }
+.esg-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+.esg-canal { display:inline-flex; align-items:center; gap:10px; margin-top:20px; font-size:15px; font-weight:500; }
+
+/* fecho */
+.esg-fecho { background:var(--wir-navy); color:var(--paper); }
+.esg-fecho h2 { color:var(--paper); max-width:20ch; }
+.esg-fecho h2 em { font-family:var(--f-display); font-style:italic; font-weight:400; }
+.esg-fecho p { margin-top:20px; font-size:17.5px; line-height:1.6; color:color-mix(in oklab, var(--paper) 78%, transparent); max-width:58ch; }
+.esg-fecho__acao { display:inline-flex; align-items:center; gap:10px; margin-top:32px; padding:15px 26px;
+  background:var(--paper); color:var(--ink); border-radius:999px; font-weight:600; font-size:15px; }
+.esg-fecho__acao:hover { background:#fff; }
+.esg-fonte { margin-top:34px; font-family:var(--f-mono); font-size:11.5px; line-height:1.7; letter-spacing:.04em; color:var(--ink-3); }
+.esg-fonte a { color:var(--ink-2); text-decoration:underline; text-underline-offset:2px; }
+</style>`;
+
+  return `<!doctype html>
+<html lang="pt-BR">
+<head>
+${head}
+</head>
+<body class="static-scale">
+${renderNav("pt-BR", null, null)}
+<main id="main" tabindex="-1">
+<article class="esg">
+
+  <section class="esg-hero"><div class="wrap">
+    <h1>Liderança transforma empresas. E transforma <em>vidas.</em></h1>
+    <p>A WIR apoia a 7H Brasil na implementação de “O Líder em Mim” — os 7 hábitos de Stephen Covey — dentro de escolas públicas brasileiras, sem custo para a escola nem para as famílias.</p>
+    <p class="esg-hero__par">WIR INNOVATION × INSTITUTO 7H BRASIL</p>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>Por que uma empresa de IA para seguros apoia uma <em>escola pública</em></h2>
+    <div class="esg-manif" style="margin-top:44px">
+      <p class="esg-manif__voz">Como empreendedores, sabemos o que liderança e responsabilidade constroem. O programa dá a crianças de comunidades carentes a chance de aprender isso <em>cedo, dentro da escola.</em></p>
+      <div class="esg-manif__corpo">
+        <p>Quando uma criança aprende a ser proativa e a liderar a própria vida, a transformação não para nela. Ela chega em casa, contagia irmãos e responsáveis, e a família inteira passa a evoluir junto.</p>
+        <p>É o mesmo que nos move na WIR: pessoas preparadas mudam o próprio destino. Empreender é isso — e queremos que mais crianças descubram esse caminho.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>O alcance <em>se multiplica</em> a cada degrau</h2>
+    <p class="lede">O programa entra pela escola, mas não para nela. Cada aluno leva os hábitos para casa, e é aí que o número cresce.</p>
+    <ol class="esg-prop">${degraus}
+    </ol>
+    <div class="esg-provas">${provas}
+    </div>
+    <div class="esg-caso">
+      <h3>A escola de maior destaque de Minas Gerais é uma escola municipal de Montes Claros.</h3>
+      <p>Sob a direção de Renata Beatriz, a EM Bolívar de Andrade conquistou o 1º lugar nacional no ranking de engajamento do programa entre as 21 escolas atendidas pela 7H.</p>
+      <cite>Release oficial da 7H Brasil</cite>
+    </div>
+    <p class="esg-fonte">Dados de alcance e satisfação: 7H Brasil, 2026 · <a href="https://7hab.org" target="_blank" rel="noopener noreferrer">7hab.org</a>. A metodologia “O Líder em Mim” está em mais de 7 mil escolas em 64 países e alcança mais de 206 mil alunos no Brasil.</p>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>O que a escola recebe</h2>
+    <p class="lede">O programa é gratuito para a escola e viabilizado por apoiadores. A 7H formaliza a parceria com a prefeitura e a secretaria de educação, o que dá respaldo institucional e continuidade.</p>
+    <div class="esg-recebe">${oferta}
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>O mesmo que o mercado de seguros <em>está pedindo</em> das suas pessoas</h2>
+    <p class="lede">Corretores e seguradoras atravessam uma transformação que cobra exatamente o que o programa ensina. Por isso a WIR não quer apoiar sozinha: queremos levar o projeto ao setor.</p>
+    <div class="esg-mercado">
+      <div class="esg-mercado__c"><h3>Inovar</h3><p>A mentalidade que aplicamos com IA no seguro, aplicada à formação de novas gerações.</p></div>
+      <div class="esg-mercado__c"><h3>Empreender</h3><p>Protagonismo e iniciativa — na escola, na corretora e na seguradora.</p></div>
+      <div class="esg-mercado__c"><h3>Evoluir</h3><p>Crescimento contínuo de pessoas, famílias e de todo o mercado.</p></div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>A entrega, <em>acontecendo</em></h2>
+    <p class="lede">Capacitação de educadores e implementação nas escolas de São Paulo e Minas Gerais, registrada pelo canal da 7H Brasil.</p>
+    <div class="esg-video"><div class="esg-video__ratio">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=UUWUzBPyNalgJG3dffdsugPQ" title="7H Brasil — capacitação e implementação nas escolas" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div></div>
+    <a class="esg-canal" href="https://www.youtube.com/@7hab" target="_blank" rel="noopener noreferrer">Ver o canal da 7H Brasil</a>
+  </div></section>
+
+  <section class="esg-fecho"><div class="wrap">
+    <h2>WIR quer dizer <em>“nós”.</em> Este é o nosso “nós” mais amplo.</h2>
+    <p>Seguradoras, corretoras e parceiros podem apadrinhar escolas junto com a gente. Quem entra recebe reconhecimento permanente na escola, leva o próprio time para conversar com os alunos e se enquadra no pilar social da agenda ESG.</p>
+    <a class="esg-fecho__acao" href="mailto:contato@wirinnovation.ai?subject=ESG%20%C2%B7%20A%C3%A7%C3%A3o%20Social%20WIR%20%2B%207H">Falar sobre apadrinhar uma escola</a>
+  </div></section>
+
+</article>
+</main>
+${renderFooter("pt-BR")}
+<script>${NAV_SCRIPT}</script>
+</body>
+</html>
+`;
+}
+
+const esgDir = path.join(process.cwd(), "public", "esg");
+fs.mkdirSync(esgDir, { recursive: true });
+fs.writeFileSync(path.join(esgDir, "index.html"), renderESGPage(), "utf8");
+console.log(`  ok public/esg/index.html (pt-BR)`);
 
 const privacyDir = path.join(process.cwd(), "public", "politica-de-privacidade");
 fs.mkdirSync(privacyDir, { recursive: true });
