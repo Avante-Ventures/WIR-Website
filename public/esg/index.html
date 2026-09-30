@@ -22,38 +22,49 @@
 <style>
 .esg { background: var(--paper); }
 .esg section { padding: 96px 0; border-top: 1px solid var(--paper-3); }
-.esg section:first-child { border-top: 0; }
 .esg h2 { font-size: clamp(30px,3.6vw,44px); line-height:1.1; letter-spacing:-.015em; max-width:17ch; }
 .esg h2 em { font-family: var(--f-display); font-style: italic; font-weight:400; font-size:1.08em; }
 .esg p.lede { margin-top:18px; font-size:18px; line-height:1.6; color:var(--ink-2); max-width:62ch; }
 
-/* hero */
-.esg-hero { padding: 104px 0 88px; }
-.esg-hero h1 { font-size:clamp(40px,6vw,76px); line-height:1.02; letter-spacing:-.025em; max-width:15ch; }
+/* hero — o texto divide espaço com a arte, senão a página abre fria */
+.esg-hero { padding:88px 0 92px; border-top:0; }
+.esg-hero__grid { display:grid; grid-template-columns:1.15fr .85fr; gap:56px; align-items:center; }
+.esg-hero h1 { font-size:clamp(38px,5.2vw,68px); line-height:1.03; letter-spacing:-.025em; max-width:14ch; }
 .esg-hero h1 em { font-family:var(--f-display); font-style:italic; font-weight:400; font-size:1.06em; }
-.esg-hero p { margin-top:26px; font-size:19px; line-height:1.55; color:var(--ink-2); max-width:56ch; }
-.esg-hero__par { margin-top:34px; font-family:var(--f-mono); font-size:12px; letter-spacing:.1em; color:var(--ink-3); }
+.esg-hero p { margin-top:24px; font-size:18.5px; line-height:1.55; color:var(--ink-2); max-width:52ch; }
+.esg-hero__par { margin-top:30px; font-family:var(--f-mono); font-size:11.5px; letter-spacing:.11em; color:var(--ink-3); }
+.esg-arte { width:100%; height:auto; max-width:460px; margin-inline:auto; display:block; }
+@media (max-width:900px){ .esg-hero__grid { grid-template-columns:1fr; gap:36px; }
+  .esg-arte { max-width:320px; order:-1; } }
 
-/* manifesto — texto puro, o coração da página não é um card */
-.esg-manif { display:grid; grid-template-columns: 1.1fr .9fr; gap:64px; align-items:start; }
+/* manifesto */
+.esg-manif { display:grid; grid-template-columns:1.1fr .9fr; gap:64px; align-items:start; margin-top:44px; }
 .esg-manif__voz { font-family:var(--f-display); font-size:clamp(24px,2.9vw,36px); line-height:1.3; letter-spacing:-.01em; color:var(--ink); }
 .esg-manif__voz em { font-style:italic; }
 .esg-manif__corpo p { font-size:16.5px; line-height:1.68; color:var(--ink-2); margin:0 0 18px; }
 .esg-manif__corpo p:last-child { margin-bottom:0; }
 @media (max-width:860px){ .esg-manif { grid-template-columns:1fr; gap:34px; } }
 
-/* propagação — degraus, não placar: cada um cresce sobre o anterior */
-/* A multiplicação precisa ser visível, não declarada: os três números partem da
-   mesma margem e cada um é maior que o anterior, então o salto de 21 para 4.200
-   se lê no tipo antes de se ler no texto. Alinhar à direita numa coluna estreita
-   (primeira tentativa) anulava justamente isso. */
+/* os sete hábitos — a numeração é legítima: o método é uma sequência, e o
+   agrupamento em três blocos é o do próprio Covey */
+.esg-hab { display:grid; grid-template-columns:repeat(3,1fr); gap:44px; margin-top:48px; align-items:start; }
+.esg-hab__g { font-family:var(--f-mono); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--wir-purple); padding-bottom:14px; border-bottom:1px solid var(--paper-3); }
+.esg-hab__lista { list-style:none; margin:0; padding:0; }
+.esg-hab__item { display:grid; grid-template-columns:auto 1fr; gap:16px; padding:20px 0; align-items:start; }
+.esg-hab__n { font-family:var(--f-display); font-size:30px; line-height:.9; color:var(--wir-purple); opacity:.5; }
+.esg-hab__t { font-size:16px; font-weight:600; line-height:1.3; color:var(--ink); }
+.esg-hab__l { margin-top:5px; font-size:14.5px; line-height:1.5; color:var(--ink-3); }
+@media (max-width:900px){ .esg-hab { grid-template-columns:1fr; gap:26px; } }
+
+/* progressão — a multiplicação se lê no tipo antes do texto */
 .esg-prop { list-style:none; margin:52px 0 0; padding:0; }
-.esg-prop__degrau { display:grid; grid-template-columns:auto 1fr; gap:4px 24px;
-  padding:30px 0; border-top:1px solid var(--paper-3); align-items:last baseline; }
+.esg-prop__degrau { display:grid; grid-template-columns:auto 1fr; gap:4px 24px; padding:30px 0;
+  border-top:1px solid var(--paper-3); align-items:last baseline; }
 .esg-prop__degrau:last-child { border-bottom:1px solid var(--paper-3); }
-.esg-prop__n { font-family:var(--f-display); line-height:.9; letter-spacing:-.035em; color:var(--ink);
-  /* o piso do clamp também cresce com --i: com um mínimo fixo os três degraus
-     saturavam no mesmo tamanho no celular e a progressão sumia. */
+.esg-prop__n { font-family:var(--f-display); line-height:.9; letter-spacing:-.035em;
+  background:var(--wir-grad-cool); -webkit-background-clip:text; background-clip:text; color:transparent;
+  /* o piso do clamp cresce com --i: com mínimo fixo os três saturavam igual no celular */
   font-size:clamp(calc(34px + var(--i) * 10px), calc(3.4vw + var(--i) * 1.9vw), calc(46px + var(--i) * 26px)); }
 .esg-prop__u { font-size:17px; font-weight:600; color:var(--ink); }
 .esg-prop__d { grid-column:2; font-size:15px; line-height:1.55; color:var(--ink-3); }
@@ -66,14 +77,14 @@
 .esg-prova__q { margin-top:12px; font-size:15px; line-height:1.55; color:var(--ink-2); max-width:26ch; }
 @media (max-width:760px){ .esg-provas { grid-template-columns:1fr; gap:26px; } }
 
-/* o que a escola recebe */
-.esg-recebe { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:44px;
-  background:var(--paper-3); border:1px solid var(--paper-3); }
-.esg-recebe__item { background:var(--paper); padding:30px 28px; }
-.esg-recebe__item h3 { font-size:15.5px; font-weight:600; letter-spacing:-.005em; }
-.esg-recebe__item p { margin-top:8px; font-size:14.5px; line-height:1.55; color:var(--ink-3); }
-@media (max-width:860px){ .esg-recebe { grid-template-columns:repeat(2,1fr); } }
-@media (max-width:560px){ .esg-recebe { grid-template-columns:1fr; } }
+/* onde já está */
+.esg-mapa { display:grid; grid-template-columns:repeat(2,1fr); gap:48px; margin-top:44px; }
+.esg-uf h3 { font-size:17px; font-weight:600; padding-bottom:12px; border-bottom:2px solid var(--wir-blue); }
+.esg-uf ul { list-style:none; margin:16px 0 0; padding:0; }
+.esg-uf li { position:relative; padding:9px 0 9px 22px; font-size:15.5px; color:var(--ink-2); }
+.esg-uf li::before { content:""; position:absolute; left:0; top:16px; width:7px; height:7px; border-radius:50%;
+  background:var(--wir-blue); }
+@media (max-width:640px){ .esg-mapa { grid-template-columns:1fr; gap:30px; } }
 
 /* caso */
 .esg-caso { margin-top:52px; padding:38px 40px; background:var(--paper-2); border-left:3px solid var(--wir-purple); }
@@ -81,6 +92,15 @@
 .esg-caso p { margin-top:14px; font-size:16px; line-height:1.62; color:var(--ink-2); max-width:70ch; }
 .esg-caso cite { display:block; margin-top:16px; font-style:normal; font-family:var(--f-mono); font-size:11.5px; letter-spacing:.06em; color:var(--ink-3); }
 @media (max-width:640px){ .esg-caso { padding:28px 24px; } }
+
+/* o que a escola recebe */
+.esg-recebe { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:44px;
+  background:var(--paper-3); border:1px solid var(--paper-3); }
+.esg-recebe__item { background:var(--paper); padding:30px 28px; }
+.esg-recebe__item h3 { font-size:15.5px; font-weight:600; }
+.esg-recebe__item p { margin-top:8px; font-size:14.5px; line-height:1.55; color:var(--ink-3); }
+@media (max-width:860px){ .esg-recebe { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .esg-recebe { grid-template-columns:1fr; } }
 
 /* mercado */
 .esg-mercado { display:grid; grid-template-columns:repeat(3,1fr); gap:34px; margin-top:46px; }
@@ -95,7 +115,10 @@
 .esg-canal { display:inline-flex; align-items:center; gap:10px; margin-top:20px; font-size:15px; font-weight:500; }
 
 /* fecho */
-.esg-fecho { background:var(--wir-navy); color:var(--paper); }
+.esg-fecho { background:var(--wir-navy); color:var(--paper); border-top:0; position:relative; overflow:hidden; }
+.esg-fecho::after { content:""; position:absolute; inset:auto -120px -220px auto; width:520px; height:520px;
+  border-radius:50%; background:radial-gradient(circle, rgba(117,64,172,.45), transparent 68%); pointer-events:none; }
+.esg-fecho .wrap { position:relative; z-index:1; }
 .esg-fecho h2 { color:var(--paper); max-width:20ch; }
 .esg-fecho h2 em { font-family:var(--f-display); font-style:italic; font-weight:400; }
 .esg-fecho p { margin-top:20px; font-size:17.5px; line-height:1.6; color:color-mix(in oklab, var(--paper) 78%, transparent); max-width:58ch; }
@@ -104,6 +127,7 @@
 .esg-fecho__acao:hover { background:#fff; }
 .esg-fonte { margin-top:34px; font-family:var(--f-mono); font-size:11.5px; line-height:1.7; letter-spacing:.04em; color:var(--ink-3); }
 .esg-fonte a { color:var(--ink-2); text-decoration:underline; text-underline-offset:2px; }
+@media (prefers-reduced-motion: reduce){ .esg * { transition:none !important; } }
 </style>
 </head>
 <body class="static-scale">
@@ -153,18 +177,81 @@
 <article class="esg">
 
   <section class="esg-hero"><div class="wrap">
-    <h1>Liderança transforma empresas. E transforma <em>vidas.</em></h1>
-    <p>A WIR apoia a 7H Brasil na implementação de “O Líder em Mim” — os 7 hábitos de Stephen Covey — dentro de escolas públicas brasileiras, sem custo para a escola nem para as famílias.</p>
-    <p class="esg-hero__par">WIR INNOVATION × INSTITUTO 7H BRASIL</p>
+    <div class="esg-hero__grid">
+      <div>
+        <h1>Liderança transforma empresas. E transforma <em>vidas.</em></h1>
+        <p>A WIR apoia a 7H Brasil na implementação de “O Líder em Mim” — os 7 hábitos de Stephen Covey — dentro de escolas públicas brasileiras, sem custo para a escola nem para as famílias.</p>
+        <p class="esg-hero__par">WIR INNOVATION × INSTITUTO 7H BRASIL</p>
+      </div>
+      <svg class="esg-arte" viewBox="0 0 520 520" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="esgG" x1="90" y1="70" x2="440" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3222E9"/><stop offset=".52" stop-color="#7540AC"/><stop offset="1" stop-color="#FE8B77"/>
+    </linearGradient>
+    <radialGradient id="esgN" cx="0" cy="0" r="1" gradientTransform="translate(260 260) rotate(90) scale(210)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7540AC" stop-opacity=".22"/><stop offset="1" stop-color="#7540AC" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="260" cy="260" r="205" fill="url(#esgN)"/>
+  <circle cx="260" cy="260" r="58"  stroke="url(#esgG)" stroke-width="2.5" opacity=".95"/>
+  <circle cx="260" cy="260" r="108" stroke="url(#esgG)" stroke-width="2"   opacity=".62"/>
+  <circle cx="260" cy="260" r="158" stroke="url(#esgG)" stroke-width="1.6" opacity=".38"/>
+  <circle cx="260" cy="260" r="205" stroke="url(#esgG)" stroke-width="1.2" opacity=".2"/>
+  <circle cx="260" cy="260" r="9" fill="#3222E9"/>
+  <circle cx="318" cy="260" r="5.5" fill="#7540AC"/>
+  <circle cx="211" cy="357" r="5"   fill="#7540AC" opacity=".8"/>
+  <circle cx="368" cy="182" r="4.5" fill="#AE46C0" opacity=".75"/>
+  <circle cx="153" cy="207" r="4"   fill="#FE8B77" opacity=".7"/>
+  <circle cx="404" cy="356" r="3.6" fill="#FE8B77" opacity=".55"/>
+  <circle cx="260" cy="102" r="3.4" fill="#F8AD39" opacity=".6"/>
+  <circle cx="102" cy="300" r="3"   fill="#F8AD39" opacity=".45"/>
+</svg>
+    </div>
   </div></section>
 
   <section><div class="wrap">
     <h2>Por que uma empresa de IA para seguros apoia uma <em>escola pública</em></h2>
-    <div class="esg-manif" style="margin-top:44px">
+    <div class="esg-manif">
       <p class="esg-manif__voz">Como empreendedores, sabemos o que liderança e responsabilidade constroem. O programa dá a crianças de comunidades carentes a chance de aprender isso <em>cedo, dentro da escola.</em></p>
       <div class="esg-manif__corpo">
         <p>Quando uma criança aprende a ser proativa e a liderar a própria vida, a transformação não para nela. Ela chega em casa, contagia irmãos e responsáveis, e a família inteira passa a evoluir junto.</p>
         <p>É o mesmo que nos move na WIR: pessoas preparadas mudam o próprio destino. Empreender é isso — e queremos que mais crianças descubram esse caminho.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>Os sete hábitos que a criança <em>leva para a vida</em></h2>
+    <p class="lede">O método de Stephen Covey chega à sala de aula na linguagem das crianças. Os três primeiros formam a autonomia; os três seguintes, a convivência; o último sustenta os seis.</p>
+    <div class="esg-hab">
+      <div class="esg-hab__grupo">
+        <h3 class="esg-hab__g">Começa em si</h3>
+        <ol class="esg-hab__lista">
+          <li class="esg-hab__item"><span class="esg-hab__n">1</span><div>
+            <p class="esg-hab__t">Seja proativo</p><p class="esg-hab__l">Assuma o controle das suas ações</p></div></li>
+          <li class="esg-hab__item"><span class="esg-hab__n">2</span><div>
+            <p class="esg-hab__t">Comece com o objetivo em mente</p><p class="esg-hab__l">Pense no futuro desde agora</p></div></li>
+          <li class="esg-hab__item"><span class="esg-hab__n">3</span><div>
+            <p class="esg-hab__t">Faça primeiro o mais importante</p><p class="esg-hab__l">Organize-se e foque no que importa</p></div></li>
+        </ol>
+      </div>
+      <div class="esg-hab__grupo">
+        <h3 class="esg-hab__g">Chega nos outros</h3>
+        <ol class="esg-hab__lista">
+          <li class="esg-hab__item"><span class="esg-hab__n">4</span><div>
+            <p class="esg-hab__t">Pense ganha-ganha</p><p class="esg-hab__l">Todo mundo pode vencer</p></div></li>
+          <li class="esg-hab__item"><span class="esg-hab__n">5</span><div>
+            <p class="esg-hab__t">Procure primeiro compreender</p><p class="esg-hab__l">Ouça de verdade</p></div></li>
+          <li class="esg-hab__item"><span class="esg-hab__n">6</span><div>
+            <p class="esg-hab__t">Crie sinergia</p><p class="esg-hab__l">Juntos somos melhores</p></div></li>
+        </ol>
+      </div>
+      <div class="esg-hab__grupo">
+        <h3 class="esg-hab__g">E se renova</h3>
+        <ol class="esg-hab__lista">
+          <li class="esg-hab__item"><span class="esg-hab__n">7</span><div>
+            <p class="esg-hab__t">Afine o instrumento</p><p class="esg-hab__l">Cuide de si por inteiro</p></div></li>
+        </ol>
       </div>
     </div>
   </div></section>
@@ -190,23 +277,29 @@
       </li>
     </ol>
     <div class="esg-provas">
-      <div class="esg-prova">
-        <p class="esg-prova__p">93%</p>
-        <p class="esg-prova__q">das escolas se dizem satisfeitas com o programa</p>
-      </div>
-      <div class="esg-prova">
-        <p class="esg-prova__p">89%</p>
-        <p class="esg-prova__q">dos pais veem os filhos mais preparados para a cidadania</p>
-      </div>
-      <div class="esg-prova">
-        <p class="esg-prova__p">82%</p>
-        <p class="esg-prova__q">dos professores relatam mais autonomia e responsabilidade</p>
-      </div>
+      <div class="esg-prova"><p class="esg-prova__p">93%</p><p class="esg-prova__q">das escolas se dizem satisfeitas com o programa</p></div>
+      <div class="esg-prova"><p class="esg-prova__p">89%</p><p class="esg-prova__q">dos pais veem os filhos mais preparados para a cidadania</p></div>
+      <div class="esg-prova"><p class="esg-prova__p">82%</p><p class="esg-prova__q">dos professores relatam mais autonomia e responsabilidade</p></div>
     </div>
     <div class="esg-caso">
       <h3>A escola de maior destaque de Minas Gerais é uma escola municipal de Montes Claros.</h3>
       <p>Sob a direção de Renata Beatriz, a EM Bolívar de Andrade conquistou o 1º lugar nacional no ranking de engajamento do programa entre as 21 escolas atendidas pela 7H.</p>
       <cite>Release oficial da 7H Brasil</cite>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>Onde o programa <em>já está</em></h2>
+    <p class="lede">Oito cidades, dois estados, 21 escolas municipais — todas com o programa rodando dentro da grade curricular.</p>
+    <div class="esg-mapa">
+      <div class="esg-uf">
+        <h3>Minas Gerais</h3>
+        <ul><li>Montes Claros</li><li>Porteirinha</li><li>Nova Porteirinha</li><li>Carmo da Mata</li><li>Couto de Magalhães de Minas</li></ul>
+      </div>
+      <div class="esg-uf">
+        <h3>São Paulo</h3>
+        <ul><li>Piracicaba</li><li>Atibaia</li><li>Holambra</li></ul>
+      </div>
     </div>
     <p class="esg-fonte">Dados de alcance e satisfação: 7H Brasil, 2026 · <a href="https://7hab.org" target="_blank" rel="noopener noreferrer">7hab.org</a>. A metodologia “O Líder em Mim” está em mais de 7 mil escolas em 64 países e alcança mais de 206 mil alunos no Brasil.</p>
   </div></section>
@@ -215,30 +308,12 @@
     <h2>O que a escola recebe</h2>
     <p class="lede">O programa é gratuito para a escola e viabilizado por apoiadores. A 7H formaliza a parceria com a prefeitura e a secretaria de educação, o que dá respaldo institucional e continuidade.</p>
     <div class="esg-recebe">
-      <div class="esg-recebe__item">
-        <h3>Formação de educadores</h3>
-        <p>Capacitação para professores, gestores e coordenadores.</p>
-      </div>
-      <div class="esg-recebe__item">
-        <h3>Kits de estudo</h3>
-        <p>Materiais completos do programa para alunos e educadores.</p>
-      </div>
-      <div class="esg-recebe__item">
-        <h3>Planejamento BNCC</h3>
-        <p>Alinhado à Base Nacional Comum Curricular.</p>
-      </div>
-      <div class="esg-recebe__item">
-        <h3>Cultura escolar e famílias</h3>
-        <p>Integração das famílias na jornada dos alunos.</p>
-      </div>
-      <div class="esg-recebe__item">
-        <h3>Métricas de impacto</h3>
-        <p>Acompanhamento contínuo de desempenho e transformação.</p>
-      </div>
-      <div class="esg-recebe__item">
-        <h3>Bolsas PECEGE</h3>
-        <p>Educação executiva e MBA de Educação da USP para secretários e diretores.</p>
-      </div>
+      <div class="esg-recebe__item"><h3>Formação de educadores</h3><p>Capacitação para professores, gestores e coordenadores.</p></div>
+      <div class="esg-recebe__item"><h3>Kits de estudo</h3><p>Materiais completos do programa para alunos e educadores.</p></div>
+      <div class="esg-recebe__item"><h3>Planejamento BNCC</h3><p>Alinhado à Base Nacional Comum Curricular.</p></div>
+      <div class="esg-recebe__item"><h3>Cultura escolar e famílias</h3><p>Integração das famílias na jornada dos alunos.</p></div>
+      <div class="esg-recebe__item"><h3>Métricas de impacto</h3><p>Acompanhamento contínuo de desempenho e transformação.</p></div>
+      <div class="esg-recebe__item"><h3>Bolsas PECEGE</h3><p>Educação executiva e MBA de Educação da USP para secretários e diretores.</p></div>
     </div>
   </div></section>
 
