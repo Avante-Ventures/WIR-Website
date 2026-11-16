@@ -1,7 +1,7 @@
 import React from 'react';
 import { Opening } from './home-opening.jsx';
 import { LANG, INSIGHTS_HREF, INSIGHTS_HREFLANG } from './i18n.js';
-import { HOME_INSIGHTS } from './home-insights.mjs';
+import { HOME_INSIGHTS, HOME_FEATURED } from './home-insights.mjs';
 import './styles/home-scale.css';
 
 const T = {
@@ -50,6 +50,7 @@ const T = {
     teamLink: 'Conoce WIR', founder: 'Cofundador', bios: ['Emprendedor y ejecutivo con trayectoria en aseguradoras, corredoras e InsurTechs.', 'Ejecutivo con experiencia en seguros, salud y transformación de negocios.'],
     insightsKicker: '04 / Insights', insightsTitle: <>El mercado en movimiento.<br/><em>Perspectivas para decidir.</em></>, archive: 'Ver archivo en portugués', read: 'Leer artículo',
     archiveNote: 'Nuestros artículos están disponibles en portugués e inglés. Explora el archivo en portugués.',
+    featuredNote: 'también está disponible en español.', featuredCta: 'Leer el WIR Index',
     closeKicker: 'El próximo paso empieza con una conversación', closeTitle: <>Ampliemos la capacidad<br/>de tu <em>operación.</em></>, closeNote: 'Cuéntanos qué es prioridad para tu negocio. Exploremos cómo WIR puede ayudarte.', contact: 'Hablar con WIR',
   },
 }[LANG];
@@ -126,8 +127,8 @@ export function HomePage({ go }) {
     </section>
     <section className="scale-insights" aria-labelledby="insights-title"><div className="scale-wrap">
       <p className="scale-kicker">{T.insightsKicker}</p><div className="scale-section-head"><h2 id="insights-title">{T.insightsTitle}</h2><a className="scale-link" href={INSIGHTS_HREF} hrefLang={INSIGHTS_HREFLANG}>{T.archive}<span aria-hidden="true">↗</span></a></div>
-      {LANG === 'es' ? <div className="scale-insights__archive"><span aria-hidden="true">PT / EN</span><p>{T.archiveNote}</p><a className="scale-button scale-button--navy" href={INSIGHTS_HREF} hrefLang="pt-BR">{T.archive}<span aria-hidden="true">↗</span></a></div> : <div className="scale-insights__grid">{HOME_INSIGHTS[LANG].map(article => <article className="scale-article" key={article.slug}>
-        <a href={'/insights/' + article.slug + '/'} hrefLang={LANG === 'pt' ? 'pt-BR' : 'en'}><div className="scale-article__image"><img src={article.image} alt="" width="600" height="400" loading="lazy"/></div><div className="scale-article__meta"><time dateTime={article.dateISO}>{article.date}</time><span>{article.time}</span></div><h3>{article.title}</h3><span className="scale-link">{T.read}<span aria-hidden="true">↗</span></span></a>
+      {LANG === 'es' ? <div className="scale-insights__archive"><span aria-hidden="true">PT / EN</span><p>{T.archiveNote}{HOME_FEATURED.es && <> <strong>{HOME_FEATURED.es.title}</strong> {T.featuredNote}</>}</p><div className="scale-insights__actions">{HOME_FEATURED.es && <a className="scale-button scale-button--navy" href={HOME_FEATURED.es.href} hrefLang="es">{T.featuredCta}<span aria-hidden="true">↗</span></a>}<a className={HOME_FEATURED.es ? 'scale-link' : 'scale-button scale-button--navy'} href={INSIGHTS_HREF} hrefLang="pt-BR">{T.archive}<span aria-hidden="true">↗</span></a></div></div> : <div className="scale-insights__grid">{HOME_INSIGHTS[LANG].map(article => <article className="scale-article" key={article.slug}>
+        <a href={article.href || ('/insights/' + article.slug + '/')} hrefLang={LANG === 'pt' ? 'pt-BR' : 'en'}><div className="scale-article__image"><img src={article.image} alt="" width="600" height="400" loading="lazy" style={article.imageFit ? {objectFit: article.imageFit, background: article.imageBg} : undefined}/></div><div className="scale-article__meta"><time dateTime={article.dateISO}>{article.date}</time><span>{article.time}</span></div><h3>{article.title}</h3><span className="scale-link">{T.read}<span aria-hidden="true">↗</span></span></a>
       </article>)}</div>}
     </div></section>
     <section className="scale-contact" aria-labelledby="contact-title"><div className="scale-wrap"><p className="scale-kicker">{T.closeKicker}</p><h2 id="contact-title">{T.closeTitle}</h2><p className="scale-contact__note">{T.closeNote}</p><RouteLink go={go} route="contact" className="scale-button scale-button--light">{T.contact}</RouteLink></div></section>

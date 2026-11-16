@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { filmPhase, mayPlay, readSeen, rememberSeen, SESSION_KEY } from '../src/hero-playback.mjs';
-import { HOME_INSIGHTS } from '../src/home-insights.mjs';
+import { HOME_INSIGHTS, HOME_FEATURED } from '../src/home-insights.mjs';
 import { existsSync } from 'node:fs';
 
 test('timeline follows decoded time across the two story boundaries', () => {
@@ -27,6 +27,19 @@ test('homepage articles resolve to real local pages and assets', () => {
       assert.ok(existsSync('public/insights/'+a.slug+'/index.html'),a.slug);
       assert.ok(existsSync('public'+a.image),a.image);
     }
-    assert.equal([...articles].sort((a,b)=>b.dateISO.localeCompare(a.dateISO))[0],articles[0]);
+    // A `featured` entry (the WIR Index) is pinned first; the rest are newest first.
+    const rest=articles.slice(articles[0].featured?1:0);
+    assert.deepEqual(rest,[...rest].sort((a,b)=>b.dateISO.localeCompare(a.dateISO)));
+    for(const a of articles) assert.ok(existsSync('public'+a.href.split('?')[0]+'index.html'),a.href);
   }
+});
+test('featured entry leads every home language and opens in that language', () => {
+  if(!HOME_FEATURED.pt) return;
+  assert.equal(HOME_INSIGHTS.pt[0].slug,HOME_FEATURED.pt.slug);
+  for(const lang of ['en','es']) {
+    const f=HOME_FEATURED[lang]; if(!f) continue;
+    assert.ok(f.href.endsWith('?lang='+lang),f.href);
+    assert.ok(existsSync('public'+f.href.split('?')[0]+'index.html'),f.href);
+  }
+  if(HOME_FEATURED.en) assert.equal(HOME_INSIGHTS.en[0].href,HOME_FEATURED.en.href);
 });

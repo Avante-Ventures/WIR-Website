@@ -868,6 +868,6 @@ section{padding-top:clamp(38px,4.3vw,58px);padding-bottom:clamp(38px,4.3vw,58px)
 <script>
 function applyLang(l){window.LANG=l;var m={pt:"pt-BR",en:"en",es:"es"};document.documentElement.lang=m[l]||l;var d=(window.I18N&&window.I18N[l])||{};document.querySelectorAll("[data-i18n]").forEach(function(el){var k=el.getAttribute("data-i18n");if(!(k in d))return;if(el.hasAttribute("data-i18n-text"))el.textContent=d[k];else el.innerHTML=d[k];});document.querySelectorAll(".langseg button").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-l")===l);});try{localStorage.setItem("wirLang",l);}catch(e){}}
 function setLang(l){applyLang(l);}
-(function(){var s=null;try{s=localStorage.getItem("wirLang");}catch(e){}applyLang(s&&["pt","en","es"].indexOf(s)>=0?s:"pt");})();
+(function(){var s=null;try{s=new URLSearchParams(location.search).get("lang");}catch(e){}if(!s){try{s=localStorage.getItem("wirLang");}catch(e){}}applyLang(s&&["pt","en","es"].indexOf(s)>=0?s:"pt");})();
 </script>
 </body></html>

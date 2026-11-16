@@ -81,6 +81,7 @@
 .scale-insights__archive { display: grid; grid-template-columns: auto 1fr auto; gap: 36px; align-items: center; background: var(--wir-lavender); padding: 36px; margin-top: 40px; }
 .scale-insights__archive > span { font-family: var(--f-display); font-size: 38px; color: var(--wir-blue); }
 .scale-insights__archive p { font-size: 16px; line-height: 1.5; max-width: 390px; }
+.scale-insights__actions { display: flex; flex-direction: column; gap: 16px; align-items: center; }
 .scale-contact { position: relative; overflow: hidden; padding: 90px 0; color: var(--scale-white); background: var(--wir-navy); }
 .scale-contact::after { content: ''; position: absolute; inset: -20% -25% -60% 60%; background: radial-gradient(ellipse, color-mix(in srgb, var(--wir-blue) 60%, transparent), transparent 67%); pointer-events: none; }
 .scale-contact .scale-wrap { position: relative; z-index: 1; }
@@ -147,6 +148,7 @@
   .scale-article h3 { font-size: 23px; }
   .scale-insights__archive { grid-template-columns: 1fr; gap: 20px; padding: 25px; }
   .scale-insights__archive .scale-button { width: fit-content; font-size: 12px; }
+  .scale-insights__actions { align-items: flex-start; }
   .scale-contact { padding: 55px 0; }
   .scale-contact__note { font-size: 16px; }
 }

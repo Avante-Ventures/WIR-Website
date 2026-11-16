@@ -2895,11 +2895,17 @@ Se você opera uma MGA, uma seguradora ou uma corretora de grande porte e está 
     featured: true,
     cat: "Mercado", grad: "linear-gradient(135deg,#FE8B77,#AE46C0)",
     image: "/assets/articles/wir-index-q3-2026.png",
+    // Share card with text to the edges: letterbox it on its own background, never crop.
+    imageFit: "contain", imageBg: "#0B0A08",
     title: "WIR Index Q3 2026: Panorama InsurTech Brasil & LATAM",
     sub: "Edição 02 do índice trimestral da WIR sobre capital, tecnologia e regulação na fronteira entre IA e seguros. Primeiro scorecard das previsões, rubrica do WIR AI Adoption Index e dados abertos.",
     author: "WIR Innovation", role: "Equipe",
     time: "14 min", date: "16 · Nov · 2026", dateISO: "2026-11-16",
     metaDesc: "WIR Index Q3 2026: funding InsurTech global, deals Brasil e LATAM, regulação de IA e o primeiro scorecard das previsões da WIR.",
+    // Trilingual page under a PT slug: EN/ES surfaces (home, /en/insights/) use these fields
+    // and open the page in that language with ?lang=.
+    en: { title: "WIR Index Q3 2026: InsurTech Landscape Brazil & LATAM", sub: "Issue 02 of WIR's quarterly index on capital, technology and regulation at the frontier of AI and insurance. First scorecard of our predictions, the WIR AI Adoption Index rubric and open data.", cat: "Market" },
+    es: { title: "WIR Index Q3 2026: Panorama InsurTech Brasil y LATAM" },
   },
   {
     // Edição 01, archived when Edição 02 took over /insights/wir-index/. Hand-authored

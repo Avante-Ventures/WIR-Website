@@ -2,7 +2,20 @@
 export const HOME_INSIGHTS = {
   "pt": [
     {
+      "slug": "wir-index",
+      "href": "/insights/wir-index/",
+      "title": "WIR Index Q3 2026: Panorama InsurTech Brasil & LATAM",
+      "date": "16 · Nov · 2026",
+      "dateISO": "2026-11-16",
+      "image": "/assets/articles/wir-index-q3-2026.png",
+      "time": "14 min",
+      "featured": true,
+      "imageFit": "contain",
+      "imageBg": "#0B0A08"
+    },
+    {
       "slug": "defesa-civil-do-estado-de-sao-paulo",
+      "href": "/insights/defesa-civil-do-estado-de-sao-paulo/",
       "title": "Defesa Civil do Estado de São Paulo: o que é, como funciona e como receber os alertas",
       "date": "09 · Set · 2026",
       "dateISO": "2026-09-09",
@@ -11,24 +24,30 @@ export const HOME_INSIGHTS = {
     },
     {
       "slug": "nicholas-weiser-entrevista",
+      "href": "/insights/nicholas-weiser-entrevista/",
       "title": "Nicholas Weiser: 27 anos de mercado até fundar a WIR",
       "date": "04 · Set · 2026",
       "dateISO": "2026-09-04",
       "image": "/assets/articles/nicholas-weiser-entrevista.jpg",
       "time": "12 min"
-    },
-    {
-      "slug": "jose-carlos-de-paula-entrevista",
-      "title": "José Carlos de Paula: quatro décadas entre banco, seguro e saúde",
-      "date": "04 · Set · 2026",
-      "dateISO": "2026-09-04",
-      "image": "/assets/articles/jose-carlos-de-paula-entrevista.jpg",
-      "time": "12 min"
     }
   ],
   "en": [
     {
+      "slug": "wir-index",
+      "href": "/insights/wir-index/?lang=en",
+      "title": "WIR Index Q3 2026: InsurTech Landscape Brazil & LATAM",
+      "date": "16 · Nov · 2026",
+      "dateISO": "2026-11-16",
+      "image": "/assets/articles/wir-index-q3-2026.png",
+      "time": "14 min",
+      "featured": true,
+      "imageFit": "contain",
+      "imageBg": "#0B0A08"
+    },
+    {
       "slug": "sao-paulo-state-civil-defense",
+      "href": "/insights/sao-paulo-state-civil-defense/",
       "title": "São Paulo State Civil Defense: What It Is, What It Does, and Why P&C Insurers Should Care",
       "date": "09 · Sep · 2026",
       "dateISO": "2026-09-09",
@@ -37,19 +56,50 @@ export const HOME_INSIGHTS = {
     },
     {
       "slug": "nicholas-weiser-entrevista-en",
+      "href": "/insights/nicholas-weiser-entrevista-en/",
       "title": "Nicholas Weiser: 27 years in the market before founding WIR",
       "date": "04 · Sep · 2026",
       "dateISO": "2026-09-04",
       "image": "/assets/articles/nicholas-weiser-entrevista-en.jpg",
       "time": "12 min"
-    },
-    {
-      "slug": "jose-carlos-de-paula-entrevista-en",
-      "title": "José Carlos de Paula: four decades across banking, insurance and healthcare",
-      "date": "04 · Sep · 2026",
-      "dateISO": "2026-09-04",
-      "image": "/assets/articles/jose-carlos-de-paula-entrevista-en.jpg",
-      "time": "12 min"
     }
   ]
+};
+export const HOME_FEATURED = {
+  "pt": {
+    "slug": "wir-index",
+    "href": "/insights/wir-index/",
+    "title": "WIR Index Q3 2026: Panorama InsurTech Brasil & LATAM",
+    "date": "16 · Nov · 2026",
+    "dateISO": "2026-11-16",
+    "image": "/assets/articles/wir-index-q3-2026.png",
+    "time": "14 min",
+    "featured": true,
+    "imageFit": "contain",
+    "imageBg": "#0B0A08"
+  },
+  "en": {
+    "slug": "wir-index",
+    "href": "/insights/wir-index/?lang=en",
+    "title": "WIR Index Q3 2026: InsurTech Landscape Brazil & LATAM",
+    "date": "16 · Nov · 2026",
+    "dateISO": "2026-11-16",
+    "image": "/assets/articles/wir-index-q3-2026.png",
+    "time": "14 min",
+    "featured": true,
+    "imageFit": "contain",
+    "imageBg": "#0B0A08"
+  },
+  "es": {
+    "slug": "wir-index",
+    "href": "/insights/wir-index/?lang=es",
+    "title": "WIR Index Q3 2026: Panorama InsurTech Brasil y LATAM",
+    "date": "16 · Nov · 2026",
+    "dateISO": "2026-11-16",
+    "image": "/assets/articles/wir-index-q3-2026.png",
+    "time": "14 min",
+    "featured": true,
+    "imageFit": "contain",
+    "imageBg": "#0B0A08"
+  }
 };

@@ -51,6 +51,12 @@ LOGO = '<img class="logo-mark" src="/assets/wir-logo.svg" alt="WIR Innovation" w
 FOOTLOGO = '<img class="foot-logo" src="/assets/wir-logo-branco.svg" alt="WIR Innovation" width="54" height="40">'
 TEAM = balanced_div(shell, '<div class="team-grid">')
 SCRIPT = between(shell, "<script>\nfunction applyLang", "</script>")
+# Honour ?lang=pt|en|es so EN/ES surfaces (home, /en/insights/) open this edition in their language.
+# Edição 01 stays as published; only the generated edition gets the URL parameter.
+_INIT = '(function(){var s=null;try{s=localStorage.getItem("wirLang");}catch(e){}'
+if SCRIPT.count(_INIT) != 1:
+    sys.exit("language init not found in the Edição 01 script")
+SCRIPT = SCRIPT.replace(_INIT, '(function(){var s=null;try{s=new URLSearchParams(location.search).get("lang");}catch(e){}if(!s){try{s=localStorage.getItem("wirLang");}catch(e){}}')
 Q2_I18N = json.loads(re.search(r"window\.I18N=(\{.*?\});?</script>", shell, re.S).group(1))
 
 # Team bios: reuse Edição 01 translations unless content.py overrides the key.
