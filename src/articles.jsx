@@ -2894,12 +2894,25 @@ Se você opera uma MGA, uma seguradora ou uma corretora de grande porte e está 
     linkOnly: true,
     featured: true,
     cat: "Mercado", grad: "linear-gradient(135deg,#FE8B77,#AE46C0)",
+    image: "/assets/articles/wir-index-q3-2026.png",
+    title: "WIR Index Q3 2026: Panorama InsurTech Brasil & LATAM",
+    sub: "Edição 02 do índice trimestral da WIR sobre capital, tecnologia e regulação na fronteira entre IA e seguros. Primeiro scorecard das previsões, rubrica do WIR AI Adoption Index e dados abertos.",
+    author: "WIR Innovation", role: "Equipe",
+    time: "14 min", date: "16 · Nov · 2026", dateISO: "2026-11-16",
+    metaDesc: "WIR Index Q3 2026: funding InsurTech global, deals Brasil e LATAM, regulação de IA e o primeiro scorecard das previsões da WIR.",
+  },
+  {
+    // Edição 01, archived when Edição 02 took over /insights/wir-index/. Hand-authored
+    // static page at public/insights/wir-index/2026-q2/index.html, never generated.
+    slug: "wir-index/2026-q2",
+    linkOnly: true,
+    cat: "Mercado", grad: "linear-gradient(135deg,#FE8B77,#AE46C0)",
     image: "/assets/articles/wir-index.png",
-    title: "WIR Index — Panorama InsurTech Brasil & LATAM · Q2 2026",
-    sub: "O índice trimestral da WIR sobre capital, tecnologia e regulação na fronteira entre IA e seguros — Brasil, LATAM e o mundo. Dados de Gallagher Re, CB Insights e o WIR AI Adoption Index.",
+    title: "WIR Index Q2 2026 (Edição 01): Panorama InsurTech Brasil & LATAM",
+    sub: "A primeira edição do índice trimestral da WIR sobre capital, tecnologia e regulação na fronteira entre IA e seguros. Dados de Gallagher Re, CB Insights e o WIR AI Adoption Index.",
     author: "WIR Innovation", role: "Equipe",
     time: "12 min", date: "22 · Jul · 2026", dateISO: "2026-07-22",
-    metaDesc: "Panorama trimestral do funding e do mercado InsurTech no Brasil e LATAM. WIR Index Q2 2026, com dados de Gallagher Re, CB Insights e o WIR AI Adoption Index.",
+    metaDesc: "Edição 01 do WIR Index (Q2 2026): funding InsurTech global, deals Brasil e LATAM e o WIR AI Adoption Index.",
   },
   {
     slug: "ai-underwriting-regulation-global-2026",

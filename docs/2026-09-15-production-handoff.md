@@ -67,7 +67,8 @@ Smart Sales and Underwriter Intelligence retain their existing production status
 | `src/articles.jsx` | Article source of truth |
 | `scripts/build-articles.cjs` | Static articles, archive, shared styles and latest-home metadata |
 | `public/article-tools.js` | Archive filtering, article TOC, reading progress and menu keyboard handling |
-| `public/report-scale.css` | Theme for the preserved hand-authored WIR Index report |
+| `public/report-scale.css` | Theme for the WIR Index report pages |
+| `scripts/wir-index/` | WIR Index generator (`build.py`), content (`content.py`) and social cover template |
 | `src/form-transport.mjs` | Existing form transport with a 15-second timeout |
 | `scripts/articles-dev.mjs` | Correct local static article directory routing |
 | `scripts/dashboard-dev.mjs` | Local access to the sibling dashboard's public files only |
@@ -114,7 +115,9 @@ Latest validation evidence:
 
 Check `git status` first and preserve other contributors' work. Commit/push/publication require Cristian's authorization; this record confirms the completed release rather than granting permission for unrelated future releases.
 
-The correct Vercel scope is **`cristian-2293s-projects`**:
+> **Update 2026-10-28:** the `wir-website` project was transferred to the **`avante-ventures`** team (`team_1Ytn02XJImXFsWTRtivxNb5W`), same project ID. With the old local link, `vercel deploy` fails with a misleading "Project names can be up to 100 characters" error. Deploy with `--scope avante-ventures` (re-link with `vercel link --scope avante-ventures --project wir-website` if `.vercel/project.json` still shows the old orgId). The table below is the September state.
+
+The Vercel scope in September was **`cristian-2293s-projects`**:
 
 | Project | Vercel project ID |
 | --- | --- |
@@ -126,7 +129,7 @@ Both use organization `team_c1MqRUFlXbosQdcutUBLC4YP`. Verify the local `.vercel
 After relevant checks and authorized Git integration, deploy from the corresponding repository:
 
 ```sh
-vercel deploy --prod --scope cristian-2293s-projects --yes
+vercel deploy --prod --scope avante-ventures --yes
 ```
 
 Do not rely on a Git webhook or an old deployment's redeploy button as proof that the current source is live. Confirm the new deployment is ready and aliased to the intended domain, then verify production assets against the local build.

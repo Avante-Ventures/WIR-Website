@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- WIR Index social cover (1200x630). Render: serve the site, open this page at a
+     1200x630 viewport and screenshot it to public/assets/articles/wir-index-<yyyy>-q<n>.png.
+     Update the edition, headline and numbers for each issue. -->
+<html lang="pt-BR"><head><meta charset="UTF-8">
+<title>WIR Index cover</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px;overflow:hidden;background:#0B0A08}
+  .card{position:relative;width:1200px;height:630px;padding:64px 80px 56px;color:#ECE6DA;font-family:'Space Grotesk',system-ui,sans-serif;
+    background:radial-gradient(900px 520px at 100% 0%,rgba(117,64,172,.22),transparent 60%),#0B0A08}
+  .card::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(236,230,218,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(236,230,218,.035) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+  .logo{position:relative;height:56px;width:auto;display:block}
+  .left{position:absolute;left:80px;top:186px;width:640px}
+  .kick{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#F8AD39;margin-bottom:14px}
+  h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:132px;line-height:.86;letter-spacing:-.02em;color:#ECE6DA}
+  h1 em{font-style:italic;background:linear-gradient(96deg,#3222E9 0%,#7540AC 38%,#E0603F 72%,#F8AD39 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:6px}
+  .dek{margin-top:26px;font-family:'Instrument Serif',Georgia,serif;font-size:31px;line-height:1.18;color:#D9D1C2;max-width:600px}
+  .by{position:absolute;left:80px;bottom:52px;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.04em;color:#A69E8D}
+  .by b{color:#ECE6DA;font-weight:500}
+  .rule{position:absolute;left:780px;top:160px;bottom:160px;width:1px;background:#2E2A24}
+  .right{position:absolute;left:820px;top:150px;width:300px;text-align:center}
+  .ring{width:196px;height:196px;margin:0 auto;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#7540AC 83.2%,#2E2A24 0)}
+  .ring-c{width:166px;height:166px;border-radius:50%;background:#0B0A08;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+  .ring-n{font-family:'Instrument Serif',Georgia,serif;font-size:56px;line-height:1;color:#ECE6DA}
+  .ring-l{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#A69E8D}
+  .big{margin-top:28px;font-family:'Instrument Serif',Georgia,serif;font-size:64px;line-height:1;color:#ECE6DA}
+  .big em{font-style:normal;color:#8A5CC0}
+  .big-l{margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#A69E8D}
+  .score{position:absolute;right:80px;bottom:48px;display:flex;gap:8px;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .score .t{color:#A69E8D;margin-right:4px}
+  .st{border-radius:999px;padding:5px 11px}
+  .ok{background:rgba(31,143,98,.18);color:#5FD3A0}.no{background:rgba(194,59,46,.2);color:#F08A7E}.op{background:rgba(117,64,172,.24);color:#C9A8F0}
+</style></head>
+<body><div class="card">
+  <img class="logo" src="/assets/wir-logo-branco.svg" alt="WIR Innovation">
+  <div class="left">
+    <div class="kick">WIR Index · Edição 02 · Q3 2026</div>
+    <h1>WIR <em>Index</em></h1>
+    <p class="dek">Menos apostas, cheques maiores. No Brasil, o seguro entrou na fase de concentração.</p>
+  </div>
+  <div class="rule"></div>
+  <div class="right">
+    <div class="ring"><div class="ring-c"><span class="ring-n">83,2%</span><span class="ring-l">do capital → IA</span></div></div>
+    <div class="big">US$<em>1,36</em>bi</div>
+    <div class="big-l">Funding insurtech global · Q3'26</div>
+  </div>
+  <div class="by"><b>Nicholas Weiser</b> &amp; <b>José Carlos de Paula</b> · WIR Innovation</div>
+  <div class="score"><span class="t">Primeiro scorecard</span><span class="st ok">✓ 1</span><span class="st no">✗ 1</span><span class="st op">1 em aberto</span></div>
+</div></body></html>
