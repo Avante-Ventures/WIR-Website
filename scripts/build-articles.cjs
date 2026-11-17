@@ -47,6 +47,13 @@ function renderInline(text) {
       const isInternal = lm[2].startsWith("#blog/");
       const slug = isInternal ? lm[2].replace("#blog/", "") : null;
       const href = isInternal ? `/insights/${slug}/` : lm[2];
+      // Solo esquemas seguros: esc() no neutraliza un `javascript:` en el href, y los
+      // cuerpos pueden venir del content engine (LLM sobre contenido externo).
+      if (!isInternal && !/^(https?:\/\/|\/|#|mailto:)/i.test(href.trim())) {
+        out += esc(lm[1]);
+        lastIndex = m.index + tok.length;
+        continue;
+      }
       const attrs = isInternal
         ? `class="blarticle__link-int"`
         : `class="blarticle__link-ext" target="_blank" rel="noopener noreferrer"`;
