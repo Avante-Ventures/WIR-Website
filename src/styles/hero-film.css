@@ -4,7 +4,7 @@
 .scale-hero__visual video { opacity: 0; }
 .scale-hero__visual video.is-visible { opacity: 1; }
 .scale-hero__content { padding-top: clamp(54px, 5vw, 82px); position: relative; pointer-events: none; }
-.scale-hero__content a { pointer-events: auto; }
+.scale-hero__content a, .scale-hero__content button { pointer-events: auto; }
 .scale-hero .scale-kicker { color: var(--wir-lavender); margin-bottom: 25px; }
 .scale-hero h1 { font-family: var(--f-sans); font-size: clamp(68px, 6.5vw, 96px); line-height: .94; letter-spacing: -.063em; font-weight: 500; max-width: 7.5em; margin: 0; }
 .scale-hero h1 em { font-family: var(--f-display); font-weight: 400; color: var(--wir-lavender); font-size: 1.1em; line-height: .75; }

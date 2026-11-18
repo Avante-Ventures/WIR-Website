@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { LANG } from './i18n.js';
 import { filmPhase, mayPlay, readSeen, rememberSeen } from './hero-playback.mjs';
+import { CompanyVideoButton } from './company-video.jsx';
 import './styles/hero-film.css';
 
 const COPY = {
@@ -80,6 +81,7 @@ export function Opening({ go }) {
     };
     const onPreference = () => { if (reduced.matches) fallback(); };
     controls.current = {
+      pause: () => { wanted = false; el.pause(); },
       toggle: () => {
         if (!el.paused) { wanted = false; el.pause(); }
         else {
@@ -138,6 +140,7 @@ export function Opening({ go }) {
           <a className="scale-button scale-button--light" href="#home#home-capabilities" onClick={e => visit(e, 'home', 'home-capabilities')}>{COPY.explore}<span aria-hidden="true">→</span></a>
           <a className="scale-button scale-button--outline" href="#contact" onClick={e => visit(e, 'contact')}>{COPY.contact}</a>
         </div>
+        <CompanyVideoButton onOpen={() => controls.current?.pause()}/>
       </div>
       <div className="scale-wrap scale-hero__bottom">
         <a className="scale-hero__scroll" href="#home#home-capabilities" onClick={e => visit(e, 'home', 'home-capabilities')}><span aria-hidden="true">↓</span>{COPY.scroll}</a>
